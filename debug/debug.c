@@ -6,9 +6,9 @@
 int main(void)
 {
     // Ask for your name and where live
-    int name = get_string("What is your name? ");
-    int location = get_string("Where do you live? ");
+    char * name = get_string("What is your name? ");
+    char * location = get_string("Where do you live? ");
 
     // Say hello
-    print("Hello, %i, from %i!", name, location)
+    printf("Hello, %i, from %i!", name, location);
 }
