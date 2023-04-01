@@ -40,6 +40,14 @@ bool prime(int number)
             else if (number == 2 || number == 3)
             {
                 return true;
-            
+            for (int c = 2;c < number;c++)
+            {
+            if (number % c != 0)
+            {
+            return true;
+            }
+            }
+            return false;
+}
 
 }
