@@ -33,7 +33,7 @@ bool prime(int number)
     // TODO
     if (number > 2)
         {
-            if (number % number != 0)
+            if (number % != 0)
             {
                 return number;
             }
