@@ -19,7 +19,7 @@ int main(void)
 float half(float bill, float tax, int tip)
 {
     double tax_total = (bill / 100 * tax );
-    double tip_total = (bill / 100 * tip);
+    double tip_total = ((bill + tax_total) / 100 * tip);
     double bill_total = (bill + tax_total + tip_total) / 2;
     return bill_total;
 }
