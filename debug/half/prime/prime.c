@@ -31,14 +31,18 @@ int main(void)
 bool prime(int number)
 {
     // TODO
-    for (number )
-
-    if (number % 2 == 0)
-    {
-        return number;
-    }
-    else
-    {
+    if (number > 2)
+        {
+            if (number % 2 == 0)
+            {
+                return number;
+            }
+            else
+            {
+            return false;
+            }
+        }
+    else {
         return false;
     }
 
