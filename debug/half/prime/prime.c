@@ -33,21 +33,13 @@ bool prime(int number)
     // TODO
     if (number > 2)
         {
-            if (number % 2 != 0)
-            {
-                return number;
-            }
-            else if (number % 3 != 0)
-            {
-                return number;
-            }
-            else
+            if (number < 2)
             {
                 return false;
             }
-        }
-    else {
-        return false;
-    }
+            else if (number == 2 || number == 3)
+            {
+                return true;
+            
 
 }
