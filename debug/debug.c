@@ -1,6 +1,6 @@
 // Become familiar wih C syntax
 // Learn to debug buggy code
-
+#include <stdio.h>
 #include <cs50.h>
 
 int main(void)
@@ -10,5 +10,5 @@ int main(void)
     char * location = get_string("Where do you live? ");
 
     // Say hello
-    printf("Hello, %i, from %i!", name, location);
+    printf("Hello, %s, from %s!", name, location);
 }
