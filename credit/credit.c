@@ -17,7 +17,7 @@ int main(void)
         long card_digits = validate_card(card, card_length);
         if (card_digits == 1)
         {
-            printf("INVALID\n");
+            printf("I1NVALID\n");
         }
     }
 
@@ -44,7 +44,7 @@ long get_card_length(long card)
     while (cc > 0);
     if (count < 13 || count > 16)
     {
-        printf("INVALID\n");
+        printf("2INVALID\n");
 
     }
     return count;
@@ -95,7 +95,7 @@ long get_card_type(long card, long count)
         }
         else
         {
-            printf("INVALID\n");
+            printf("3INVALID\n");
         }
     }
     else if (count == 16)
@@ -112,7 +112,7 @@ long get_card_type(long card, long count)
         }
         else
         {
-            printf("INVALID\n");
+            printf("4INVALID\n");
         }
     }
     else if (count == 13)
@@ -124,7 +124,7 @@ long get_card_type(long card, long count)
         }
         else
         {
-            printf("INVALID\n");
+            printf("5INVALID\n");
         }
     }
     return 0;
