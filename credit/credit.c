@@ -184,7 +184,7 @@ long validate_card(long card, long count)
         printf("%ld\n", d2);
         printf("D%ld\n", d21);
         printf("D%ld\n", d22);
-        printf("%ld\n", digit1);
+        // printf("%ld\n", digit1);
 
         // Find the last digit and every other digit after that
         a = a % modular2;
