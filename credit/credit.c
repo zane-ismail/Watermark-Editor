@@ -172,6 +172,7 @@ long validate_card(long card, long count)
         }
         digit1 = digit1 + int_b;
         digit4 = digit1 + digit3;
+//Rounds up for cards with an odd number of digits
         if (cycle % 10 > 0)
         {
             cycle ++;
