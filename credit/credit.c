@@ -27,17 +27,17 @@ long get_card_number(void)
     long card_number = get_long("Card number: ");
     return card_number;
 }
+
 // Get card number length
 long get_card_length(long card)
 {
-    long cc = card;
     long count = 0;
     do
     {
-        cc = cc / 10;
+        long card_length = card / 10;
         count++;
     }
-    while (cc > 0);
+    while (card_length > 0);
 // Reject cards with less than 13 or more than 16 numbers
     if (count < 13 || count > 16)
     {
