@@ -55,31 +55,32 @@ long get_card_type(long card, long count)
 {
 
     long num = card;
-    long i = 10;
-    long j = 10;
+    long a = 10;
+    long b = 10;
     int runs;
     int runs_visa;
     int digits;
     int digits_visa;
-    int n = 0;
+    int i = 0;
+    int j = 0;
 
 // Calculate first digit/s as per card type
     runs = count - 3;
     do
     {
-        i = i * 10;
-        n++;
+        a = a * 10;
+        i++;
     }
-    while (n < runs);
+    while (i < runs);
     runs_visa = count - 2;
     do
     {
-        j = j * 10;
-        n++;
+        b = b * 10;
+        j++;
     }
-    while (n < runs_visa);
-    digits = card / i;
-    digits_visa = card / j;
+    while (j < runs_visa);
+    digits = card / a;
+    digits_visa = card / b;
 
 // Validate card type
     if (count == 15)
