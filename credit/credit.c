@@ -67,7 +67,7 @@ long get_card_type(long card, long count)
     int n = 0;
     int m = 0;
 
-// Calculate number of iterations for card type
+// Calculate first digit/s as per card type
     runs = count - 3;
     do
     {
@@ -82,10 +82,10 @@ long get_card_type(long card, long count)
         m++;
     }
     while (m < runs_visa);
-
-//
     digits = card / i;
     digits_visa = card / j;
+
+// Validate card type
     if (count == 15)
     {
         if (digits == 34 || digits == 37)
@@ -136,8 +136,8 @@ long validate_card(long card, long count)
     int m = 0;
     int n = 0;
     long modular1 = 100;
-    long divide1 = 10;
     long modular2 = 10;
+    long divide1 = 10;
     long divide2 = 1;
     long digit1 = 0;
     long digit2 = 0;
