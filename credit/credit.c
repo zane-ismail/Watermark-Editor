@@ -117,11 +117,10 @@ long get_card_type(long card, long count)
         // else
         // {
         //     printf("INVALID\n");
-        // }
+    }
     else
     {
         printf("INVALID\n");
-    }
     }
     return 0;
 }
