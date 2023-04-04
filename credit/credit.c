@@ -131,7 +131,7 @@ long get_card_type(long card, long count)
             return 1;
         }
     }
-    return card;
+    return 0;
 }
 
 // Luhn's algorithm
