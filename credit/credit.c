@@ -135,10 +135,10 @@ long validate_card(long card, long count)
 {
     int m = 0;
     int n = 0;
-    long modular1 = 100;
-    long modular2 = 10;
-    long divide1 = 10;
-    long divide2 = 1;
+    long modular_a = 100;
+    long modular_b = 10;
+    long divide_a = 10;
+    long divide_b = 1;
     long digit1 = 0;
     long digit2 = 0;
     long digit3 = 0;
@@ -155,10 +155,10 @@ long validate_card(long card, long count)
     {
         long a = card;
 // Find the second to last digit and every other digit after that
-        a = a % modular1;
-        d1 = a / divide1;
-        modular1 = modular1 * 100;
-        divide1 = divide1 * 100;
+        a = a % modular_a;
+        d1 = a / divide_a;
+        modular_a = modular_b * 100;
+        divide_a = divide_a * 100;
 // Multiply digit by 2 and add together
         d2 = (d1 * 2);
         if (d2 > 9)
@@ -173,10 +173,10 @@ long validate_card(long card, long count)
         }
         // Find the last digit and every other digit after that
         {
-        a = a % modular2;
-        d3 = a / divide2;
-        modular2 = modular2 * 100;
-        divide2 = divide2 * 100;
+        a = a % modular_b;
+        d3 = a / divide_b;
+        modular_b = modular_b * 100;
+        divide_b = divide_b * 100;
         // Multiply digit by 2 and add together
         digit2 = (digit2 + d3);
         m++;
