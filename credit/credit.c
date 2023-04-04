@@ -20,7 +20,6 @@ int main(void)
             printf("INVALID\n");
         }
     }
-
 }
 
 // Get card number
@@ -30,7 +29,7 @@ long get_card_number(void)
     return card_number;
 }
 
-// Get card number length and validate
+// Get card number length
 long get_card_length(long card)
 {
     long cc;
@@ -42,10 +41,10 @@ long get_card_length(long card)
         count++;
     }
     while (cc > 0);
+// Reject cards with less than 13 or more than 16 numbers
     if (count < 13 || count > 16)
     {
         printf("INVALID\n");
-
     }
     return count;
 }
@@ -53,7 +52,6 @@ long get_card_length(long card)
 // Identify card type
 long get_card_type(long card, long count)
 {
-
     long num = card;
     long a = 10;
     long b = 10;
@@ -64,7 +62,7 @@ long get_card_type(long card, long count)
     int i = 0;
     int j = 0;
 
-// Calculate first digit/s as per card type
+// Calculate first 2 digits for other cards and 1 digit for visa
     runs = count - 3;
     do
     {
@@ -136,8 +134,8 @@ long validate_card(long card, long count)
     int digit1 = 0;
     int digit2 = 0;
     int digit3 = 0;
+    int digit4 = 0;
     int sum;
-    int digit4;
     int int_a;
     int int_b;
     int int_c;
@@ -145,18 +143,19 @@ long validate_card(long card, long count)
     do
     {
         long a = card;
-// Find the second to last digit and every other digit after that
+// Iterate to find the second to last digit and every other digit after that
         a = a % modular1;
         int_a = a / divide1;
         modular1 = modular1 * 100;
         divide1 = divide1 * 100;
-// Multiply digit by 2 and add together
+// Multiply digit by 2
         int_b = (int_a * 2);
 // Split 2 digit numbers into single digits
         if (int_b > 9)
         {
             int_b = (int_b / 10) + (int_b % 10);
         }
+// Add all single digits together
         digit1 = digit1 + int_b;
         digit4 = digit1 + digit3;
 //Rounds up for cards with an odd number of digits
@@ -174,7 +173,6 @@ long validate_card(long card, long count)
     }
     while (m != cycle);
     sum = (digit1 + digit2);
-    // printf("%i", sum);
     if (sum % 10 == 0)
     {
         return 0;
