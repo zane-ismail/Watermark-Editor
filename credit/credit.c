@@ -144,7 +144,7 @@ long validate_card(long card, long count)
     long digit3 = 0;
     long int_b1 = 0;
     long int_b2 = 0;
-    long luhns_a;
+    long sum;
     long digit4;
     long cycle = count / 2;
     int int_a;
@@ -186,8 +186,8 @@ long validate_card(long card, long count)
     }
     while (m != cycle);
     digit3 = digit3 + int_b1 + int_b2;
-    luhns_a = (digit1 + digit2);
-    if (luhns_a % 10 == 0)
+    sum = (digit1 + digit2);
+    if (sum % 10 == 0)
     {
         return 0;
     }
