@@ -153,16 +153,15 @@ long validate_card(long card, long count)
     int int_d;
     do
     {
-        long a = card;
 // Find the second to last digit and every other digit after that
-        a = a % modular_a;
-        int_a = a / divide_a;
+        card = card % modular_a;
+        int_a = card / divide_a;
         modular_a = modular_b * 100;
         divide_a = divide_a * 100;
 // Multiply digit by 2 and add together
         int_b = (int_a * 2);
 // Split 2 digit numbers into single digits
-        if (int_b => 10)
+        if (int_b >= 10)
         {
             int_b = (int_b / 10) + (int_b % 10);
         }
@@ -174,8 +173,8 @@ long validate_card(long card, long count)
         }
 // Find the last digit and every other digit after that
         {
-        a = a % modular_b;
-        int_c = a / divide_b;
+        card = card % modular_b;
+        int_c = card / divide_b;
         modular_b = modular_b * 100;
         divide_b = divide_b * 100;
         // Multiply digit by 2 and add together
