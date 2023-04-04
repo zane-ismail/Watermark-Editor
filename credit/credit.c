@@ -55,17 +55,13 @@ long get_card_type(long card, long count)
 {
 
     long num = card;
-    long runs;
-    long runs_visa;
     long i = 10;
     long j = 10;
-    long digits;
-    long digits_visa;
-    int amex = 1;
-    int maca = 2;
-    int visa = 3;
+    int runs;
+    int runs_visa;
+    int digits;
+    int digits_visa;
     int n = 0;
-    int m = 0;
 
 // Calculate first digit/s as per card type
     runs = count - 3;
@@ -79,9 +75,9 @@ long get_card_type(long card, long count)
     do
     {
         j = j * 10;
-        m++;
+        n++;
     }
-    while (m < runs_visa);
+    while (n < runs_visa);
     digits = card / i;
     digits_visa = card / j;
 
@@ -90,7 +86,6 @@ long get_card_type(long card, long count)
     {
         if (digits == 34 || digits == 37)
         {
-            digits = amex;
             printf("AMEX\n");
         }
         else
@@ -102,12 +97,10 @@ long get_card_type(long card, long count)
     {
         if (digits == 51 || digits == 52 || digits == 53 || digits == 54 || digits == 55)
         {
-            digits = maca;
             printf("MASTERCARD\n");
         }
         else if (digits_visa == 4)
         {
-            digits_visa = visa;
             printf("VISA\n");
         }
         else
@@ -119,7 +112,6 @@ long get_card_type(long card, long count)
     {
         if (digits_visa == 4)
         {
-            digits_visa = visa;
             printf("VISA\n");
         }
         else
@@ -139,16 +131,16 @@ long validate_card(long card, long count)
     long modular2 = 10;
     long divide1 = 10;
     long divide2 = 1;
-    long digit1 = 0;
-    long digit2 = 0;
-    long digit3 = 0;
-    long sum;
-    long digit4;
-    long cycle = count / 2;
-    long int_a;
-    long int_b;
-    long int_c;
-    long int_d;
+    int cycle = count / 2;
+    int digit1 = 0;
+    int digit2 = 0;
+    int digit3 = 0;
+    int sum;
+    int digit4;
+    int int_a;
+    int int_b;
+    int int_c;
+    int int_d;
     do
     {
         long a = card;
@@ -183,6 +175,7 @@ long validate_card(long card, long count)
     }
     while (m != cycle);
     sum = (digit1 + digit2);
+    printf("%i", sum);
     if (sum % 10 == 0)
     {
         return 0;
