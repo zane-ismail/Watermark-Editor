@@ -166,21 +166,21 @@ long validate_card(long card, long count)
         }
 // Find the last digit and every other digit after that
         {
-        a = a % modular2;
-        int_c = a / divide2;
-        modular2 = modular2 * 100;
-        divide2 = divide2 * 100;
-        digit2 = (digit2 + int_c);
-        m++;
+            a = a % modular2;
+            int_c = a / divide2;
+            modular2 = modular2 * 100;
+            divide2 = divide2 * 100;
+            digit2 = (digit2 + int_c);
+            m++;
         }
     }
     while (m != cycle);
     sum = (digit1 + digit2);
-
+    // printf("%i", sum);
     if (sum % 10 == 0)
     {
         return 0;
     }
     else return 1;
-}
+}\n
 
