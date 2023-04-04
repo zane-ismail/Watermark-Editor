@@ -203,6 +203,7 @@ long validate_card(long card, long count)
         digit2 = (digit2 + d3);
         // printf("%ld\n", digit2);
         m++;
+        }
     }
     while (m != cycle);
 
