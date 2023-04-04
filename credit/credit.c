@@ -100,10 +100,6 @@ long validate_card(long card, long count)
     {
         return 0;
     }
-    else
-    {
-        printf("INVALID\n");
-    }
     return 1;
 }
 
@@ -164,6 +160,10 @@ long get_card_type(long card, long count)
         {
             printf("VISA\n");
         }
+    }
+    else
+    {
+        printf("INVALID!\n");
     }
     return 0;
 }
