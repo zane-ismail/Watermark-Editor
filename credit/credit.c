@@ -133,8 +133,6 @@ long validate_card(long card, long count)
     int cycle = count / 2;
     int digit1 = 0;
     int digit2 = 0;
-    int digit3 = 0;
-    int digit4 = 0;
     int sum;
     int int_a;
     int int_b;
