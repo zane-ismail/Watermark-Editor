@@ -56,17 +56,18 @@ long get_card_type(long card, long count)
 
     long num = card;
     long runs;
+    long runs_visa;
     long i = 10;
+    long j = 10;
     long digits;
-    long digit;
-    long m1;
-    long m2 = 10;
-    long m3;
+    long digits_visa;
     int amex = 1;
     int maca = 2;
     int visa = 3;
     int n = 0;
     int m = 0;
+
+// Calculate number of iterations for card type
     runs = count - 3;
     do
     {
@@ -74,16 +75,17 @@ long get_card_type(long card, long count)
         n++;
     }
     while (n < runs);
-
-    m1 = count - 2;
+    runs_visa = count - 2;
     do
     {
-        m2 = m2 * 10;
+        j = j * 10;
         m++;
     }
-    while (m < m1);
+    while (m < runs_visa);
+
+//
     digits = card / i;
-    digit = card / m2;
+    digits_visa = card / j;
     if (count == 15)
     {
         if (digits == 34 || digits == 37)
@@ -103,9 +105,9 @@ long get_card_type(long card, long count)
             digits = maca;
             printf("MASTERCARD\n");
         }
-        else if (digit == 4)
+        else if (digits_visa == 4)
         {
-            digit = visa;
+            digits_visa = visa;
             printf("VISA\n");
         }
         else
@@ -115,9 +117,9 @@ long get_card_type(long card, long count)
     }
     else if (count == 13)
     {
-        if (digit == 4)
+        if (digits_visa == 4)
         {
-            digit = visa;
+            digits_visa = visa;
             printf("VISA\n");
         }
         else
