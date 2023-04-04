@@ -154,12 +154,12 @@ long validate_card(long card, long count)
     do
     {
         long a = card;
-        // Find the second to last digit and every other digit after that
+// Find the second to last digit and every other digit after that
         a = a % modular1;
         d1 = a / divide1;
         modular1 = modular1 * 100;
         divide1 = divide1 * 100;
-        // Multiply digit by 2 and add together
+// Multiply digit by 2 and add together
         d2 = (d1 * 2);
         if (d2 > 9)
         {
@@ -181,6 +181,7 @@ long validate_card(long card, long count)
         digit2 = (digit2 + d3);
         m++;
         }
+
     }
     while (m != cycle);
     digit3 = digit3 + d21 + d22;
