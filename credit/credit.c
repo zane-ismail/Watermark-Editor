@@ -166,7 +166,7 @@ long validate_card(long card, long count)
 // Multiply digit by 2 and add together
         int_b = (int_a * 2);
 // Split 2 digit numbers into single digits
-        if (int_b >= 10)
+        if (int_b > 9)
         {
             int_b = (int_b / 10) + (int_b % 10);
         }
@@ -191,6 +191,7 @@ long validate_card(long card, long count)
     while (m != cycle);
     digit3 = digit3 + int_b1 + int_b2;
     luhns_a = (digit1 + digit2);
+    printf("%ld\n", luhns_a);
     if (luhns_a % 10 == 0)
     {
         return 0;
