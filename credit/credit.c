@@ -1,5 +1,6 @@
 #include <cs50.h>
 #include <stdio.h>
+#include<math.h>
 
 long get_card_number(void);
 long get_card_length(long card);
@@ -59,6 +60,7 @@ long validate_card(long card, long count)
     int sum = 0;
     int i;
     int j;
+
 // Iterate to find the second to last digit and every other digit after that
     do
     {
@@ -99,6 +101,7 @@ long validate_card(long card, long count)
     }
     return 1;
 }
+
 // Identify card type
 long get_card_type(long card, long count)
 {
@@ -111,6 +114,7 @@ long get_card_type(long card, long count)
     int digits_visa;
     int i = 0;
     int j = 0;
+
 // Calculate first 2 digits for Mastercard and American Express
     runs = count - 3;
     do
