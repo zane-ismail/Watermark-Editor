@@ -32,9 +32,8 @@ long get_card_number(void)
 // Get card number length
 long get_card_length(long card)
 {
-    long cc;
+    long cc = card;
     long count = 0;
-    cc = card;
     do
     {
         cc = cc / 10;
