@@ -60,7 +60,6 @@ long validate_card(long card, long count)
     int sum = 0;
     int i;
     int j;
-
 // Iterate to find the second to last digit and every other digit after that
     do
     {
@@ -114,7 +113,6 @@ long get_card_type(long card, long count)
     int digits_visa;
     int i = 0;
     int j = 0;
-
 // Calculate first 2 digits for Mastercard and American Express
     runs = count - 3;
     do
@@ -133,7 +131,6 @@ long get_card_type(long card, long count)
     while (j < runs_visa);
     digits = card / a;
     digits_visa = card / b;
-
 // Validate card type
     if ((count == 15) && (digits == 34 || digits == 37))
     {
