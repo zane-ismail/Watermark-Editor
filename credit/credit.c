@@ -11,12 +11,15 @@ int main(void)
 {
     long card = get_card_number();
     long card_length = get_card_length(card);
-    long first_digits = get_first_digits(card, card_length);
-    long card_digits = validate_card(card, card_length);
-    if (card_digits == 1)
-  {
-    printf("2INVALID\n");
-  }
+    if (card_length > 12 && card_length < 17)
+    {
+        long first_digits = get_first_digits(card, card_length);
+        long card_digits = validate_card(card, card_length);
+        if (card_digits == 1)
+        {
+            printf("INVALID\n");
+        }
+    }
 
 }
 
@@ -43,8 +46,8 @@ long get_card_length(long card)
     // Validate length
     if (count < 13 || count > 16)
     {
-        printf("1INVALID\n");
-        
+        printf("INVALID\n");
+
     }
 
     // printf("Card length: %ld\n", count);
