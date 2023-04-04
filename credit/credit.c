@@ -125,8 +125,8 @@ long get_card_type(long card, long count)
 long validate_card(long card, long count)
 {
     int n = 0;
-    long modular_a = 100;
-    long modular_b = 10;
+    int modular_a = 100;
+    int modular_b = 10;
     long divide1 = 10;
     long divide2 = 1;
     int cycle = count / 2;
