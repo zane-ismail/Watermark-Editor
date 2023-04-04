@@ -94,7 +94,6 @@ long validate_card(long card, long count)
     }
 // Iterates through loop until count is complete
     while (n != cycle);
-    printf("%d\n", sum);
 // Validate modulo 10 is congruent to 0
     if (sum % 10 == 0)
     {
@@ -136,34 +135,25 @@ long get_card_type(long card, long count)
     digits_visa = card / b;
 
 // Validate card type
-    if (count == 15)
+    if ((count == 15) && (digits == 34 || digits == 37))
     {
-        if (digits == 34 || digits == 37)
-        {
-            printf("AMEX\n");
-        }
+        printf("AMEX\n");
     }
-    else if (count == 16)
+    else if ((count == 16) && (digits == 51 || digits == 52 || digits == 53 || digits == 54 || digits == 55))
     {
-        if (digits == 51 || digits == 52 || digits == 53 || digits == 54 || digits == 55)
-        {
-            printf("MASTERCARD\n");
-        }
-        else if (digits_visa == 4)
-        {
-            printf("VISA\n");
-        }
+        printf("MASTERCARD\n");
     }
-    else if (count == 13)
+    else if (digits_visa == 4)
     {
-        if (digits_visa == 4)
-        {
-            printf("VISA\n");
-        }
+        printf("VISA\n");
+    }
+    else if ((count == 13) && (digits_visa == 4))
+    {
+        printf("VISA\n");
     }
     else
     {
-        printf("INVALID!\n");
+        printf("INVALID\n");
     }
     return 0;
 }
