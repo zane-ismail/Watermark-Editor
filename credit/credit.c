@@ -99,6 +99,7 @@ long validate_card(long card, long count)
     {
         return 0;
     }
+    printf("INVALID\n");
     return 1;
 }
 
