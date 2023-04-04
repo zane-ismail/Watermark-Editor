@@ -27,7 +27,6 @@ long get_card_number(void)
     long card_number = get_long("Card number: ");
     return card_number;
 }
-
 // Get card number length
 long get_card_length(long card)
 {
@@ -59,7 +58,6 @@ long validate_card(long card, long count)
     int sum = 0;
     int i;
     int j;
-
 // Iterate to find the second to last digit and every other digit after that
     do
     {
