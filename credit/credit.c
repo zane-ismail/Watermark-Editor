@@ -158,6 +158,7 @@ long validate_card(long card, long count)
     do
     {
         long a = card;
+        printf("%ld", card);
 // Find the second to last digit and every other digit after that
         a = a % modular_a;
         int_a = a / divide_a;
