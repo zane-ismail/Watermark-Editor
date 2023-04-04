@@ -54,6 +54,7 @@ long get_card_type(long card, long count)
 {
     long num = card;
     long a = 10;
+    long b = 10;
     int runs;
     int runs_visa;
     int digits;
@@ -73,12 +74,12 @@ long get_card_type(long card, long count)
     runs_visa = count - 2;
     do
     {
-        a = a * 10;
+        b = b * 10;
         j++;
     }
     while (j < runs_visa);
     digits = card / a;
-    digits_visa = card / a;
+    digits_visa = card / b;
 
 // Validate card type
     if (count == 15)
