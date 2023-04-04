@@ -58,7 +58,7 @@ long get_card_type(long card, long count)
     long runs;
     long i = 10;
     long digits;
-    long n4;
+    long digit;
     long m1;
     long m2 = 10;
     long m3;
@@ -83,7 +83,7 @@ long get_card_type(long card, long count)
     }
     while (m < m1);
     digits = card / i;
-    n4 = card / m2;
+    digit = card / m2;
     if (count == 15)
     {
         if (digits == 34 || digits == 37)
@@ -103,9 +103,9 @@ long get_card_type(long card, long count)
             digits = maca;
             printf("MASTERCARD\n");
         }
-        else if (n4 == 4)
+        else if (digit == 4)
         {
-            n4 = visa;
+            digit = visa;
             printf("VISA\n");
         }
         else
@@ -115,9 +115,9 @@ long get_card_type(long card, long count)
     }
     else if (count == 13)
     {
-        if (n4 == 4)
+        if (digit == 4)
         {
-            n4 = visa;
+            digit = visa;
             printf("VISA\n");
         }
         else
