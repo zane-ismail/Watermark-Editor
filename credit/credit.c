@@ -70,7 +70,7 @@ long get_card_type(long card, long count)
         i++;
     }
     while (i < runs);
-// Calculate first digit for Visa 
+// Calculate first digit for Visa
     runs_visa = count - 2;
     do
     {
@@ -126,8 +126,8 @@ long get_card_type(long card, long count)
 long validate_card(long card, long count)
 {
     int n = 0;
-    long modular1 = 100;
-    long modular2 = 10;
+    long modular_a = 100;
+    long modular_b = 10;
     long divide1 = 10;
     long divide2 = 1;
     int cycle = count / 2;
@@ -138,9 +138,9 @@ long validate_card(long card, long count)
     {
         long cc = card;
 // Iterate to find the second to last digit and every other digit after that
-        cc = cc % modular1;
+        cc = cc % modular_a;
         i = cc / divide1;
-        modular1 = modular1 * 100;
+        modular_a = modular_a * 100;
         divide1 = divide1 * 100;
 // Multiply digit by 2
         i = (i * 2);
@@ -157,9 +157,9 @@ long validate_card(long card, long count)
             cycle ++;
         }
 // Find the last digit and every other digit after that
-        cc = cc % modular2;
+        cc = cc % modular_b;
         j = cc / divide2;
-        modular2 = modular2 * 100;
+        modular_b = modular_b * 100;
         divide2 = divide2 * 100;
 // Add all digits together
         sum = sum + j;
