@@ -43,6 +43,7 @@ long get_card_length(long card)
     if (count < 13 || count > 16)
     {
         printf("INVALID\n");
+        return false;
     }
     return count;
 }
