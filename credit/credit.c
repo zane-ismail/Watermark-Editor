@@ -142,49 +142,50 @@ long validate_card(long card, long count)
     long digit1 = 0;
     long digit2 = 0;
     long digit3 = 0;
-    long d21 = 0;
-    long d22 = 0;
+    long int_b1 = 0;
+    long int_b2 = 0;
     long luhns_a;
     long digit4;
     long cycle = count / 2;
-    long d1;
-    long d2;
-    long d3;
-    long d4;
+    int int_a;
+    int int_b;
+    int int_c;
+    int int_d;
     do
     {
         long a = card;
 // Find the second to last digit and every other digit after that
         a = a % modular_a;
-        d1 = a / divide_a;
+        int_a = a / divide_a;
         modular_a = modular_b * 100;
         divide_a = divide_a * 100;
 // Multiply digit by 2 and add together
-        d2 = (d1 * 2);
-        if (d2 > 9)
+        int_b = (int_a * 2);
+// Split 2 digit numbers into single digits
+        if (int_b => 10)
         {
-            d2 = (d2 / 10) + (d2 % 10);
+            int_b = (int_b / 10) + (int_b % 10);
         }
-        digit1 = digit1 + d2;
+        digit1 = digit1 + int_b;
         digit4 = digit1 + digit3;
         if (cycle % 10 > 0)
         {
             cycle ++;
         }
-        // Find the last digit and every other digit after that
+// Find the last digit and every other digit after that
         {
         a = a % modular_b;
-        d3 = a / divide_b;
+        int_c = a / divide_b;
         modular_b = modular_b * 100;
         divide_b = divide_b * 100;
         // Multiply digit by 2 and add together
-        digit2 = (digit2 + d3);
+        digit2 = (digit2 + int_c);
         m++;
         }
 
     }
     while (m != cycle);
-    digit3 = digit3 + d21 + d22;
+    digit3 = digit3 + int_b1 + int_b2;
     luhns_a = (digit1 + digit2);
     if (luhns_a % 10 == 0)
     {
