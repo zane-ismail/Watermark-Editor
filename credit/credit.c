@@ -144,7 +144,7 @@ long validate_card(long card, long count)
     long digit3 = 0;
     long int_b1 = 0;
     long int_b2 = 0;
-    long sum;
+    long luhns_a;
     long digit4;
     long cycle = count / 2;
     int int_a;
@@ -153,9 +153,10 @@ long validate_card(long card, long count)
     int int_d;
     do
     {
+        long a = card;
 // Find the second to last digit and every other digit after that
-        card = card % modular_a;
-        int_a = card / divide_a;
+        a = a % modular_a;
+        int_a = a / divide_a;
         modular_a = modular_b * 100;
         divide_a = divide_a * 100;
 // Multiply digit by 2 and add together
@@ -173,8 +174,8 @@ long validate_card(long card, long count)
         }
 // Find the last digit and every other digit after that
         {
-        card = card % modular_b;
-        int_c = card / divide_b;
+        a = a % modular_b;
+        int_c = a / divide_b;
         modular_b = modular_b * 100;
         divide_b = divide_b * 100;
         // Multiply digit by 2 and add together
@@ -185,8 +186,8 @@ long validate_card(long card, long count)
     }
     while (m != cycle);
     digit3 = digit3 + int_b1 + int_b2;
-    sum = (digit1 + digit2);
-    if (sum % 10 == 0)
+    luhns_a = (digit1 + digit2);
+    if (luhns_a % 10 == 0)
     {
         return 0;
     }
