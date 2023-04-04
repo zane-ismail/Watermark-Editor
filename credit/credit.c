@@ -160,7 +160,6 @@ long validate_card(long card, long count)
         long a = card;
 // Find the second to last digit and every other digit after that
         a = a % modular_a;
-        int_b = a / modular_a;
         int_a = a / divide_a;
         modular_a = modular_b * 100;
         divide_a = divide_a * 100;
