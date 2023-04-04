@@ -94,6 +94,7 @@ long validate_card(long card, long count)
     }
 // Iterates through loop until count is complete
     while (n != cycle);
+    printf("%d\n", sum);
 // Validate modulo 10 is congruent to 0
     if (sum % 10 == 0)
     {
