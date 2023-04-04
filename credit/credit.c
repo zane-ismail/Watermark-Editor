@@ -62,7 +62,6 @@ long get_card_type(long card, long count)
     int digits;
     int digits_visa;
     int i = 0;
-    int j = 0;
 
 // Calculate first digit/s as per card type
     runs = count - 3;
@@ -76,9 +75,9 @@ long get_card_type(long card, long count)
     do
     {
         b = b * 10;
-        j++;
+        i++;
     }
-    while (j < runs_visa);
+    while (i < runs_visa);
     digits = card / a;
     digits_visa = card / b;
 
@@ -176,7 +175,7 @@ long validate_card(long card, long count)
     }
     while (m != cycle);
     sum = (digit1 + digit2);
-    printf("%i", sum);
+    // printf("%i", sum);
     if (sum % 10 == 0)
     {
         return 0;
