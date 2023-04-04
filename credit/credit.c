@@ -54,7 +54,6 @@ long get_card_type(long card, long count)
 {
     long num = card;
     long a = 10;
-    long b = 10;
     int runs;
     int runs_visa;
     int digits;
@@ -74,12 +73,12 @@ long get_card_type(long card, long count)
     runs_visa = count - 2;
     do
     {
-        b = b * 10;
+        a = a * 10;
         j++;
     }
     while (j < runs_visa);
     digits = card / a;
-    digits_visa = card / b;
+    digits_visa = card / a;
 
 // Validate card type
     if (count == 15)
@@ -88,7 +87,10 @@ long get_card_type(long card, long count)
         {
             printf("AMEX\n");
         }
-        else (printf("INVALID\n"));
+        else
+        {
+            printf("INVALID\n");
+        }
     }
     else if (count == 16)
     {
@@ -100,7 +102,10 @@ long get_card_type(long card, long count)
         {
             printf("VISA\n");
         }
-        else (printf("INVALID\n"));
+        else
+        {
+            printf("INVALID\n");
+        }
     }
     else if (count == 13)
     {
@@ -108,7 +113,10 @@ long get_card_type(long card, long count)
         {
             printf("VISA\n");
         }
-        else (printf("INVALID\n"));
+        else
+        {
+            printf("INVALID\n");
+        }
     }
     return 0;
 }
