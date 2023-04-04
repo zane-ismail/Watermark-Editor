@@ -4,8 +4,8 @@
 
 long get_card_number(void);
 long get_card_length(long card);
-long get_card_type(long card, long count);
 long validate_card(long card, long count);
+long get_card_type(long card, long count);
 
 int main(void)
 {
