@@ -133,10 +133,11 @@ long validate_card(long card, long count)
     int sum = 0;
     int i;
     int j;
+
+// Iterate to find the second to last digit and every other digit after that
     do
     {
         long cc = card;
-// Iterate to find the second to last digit and every other digit after that
         cc = cc % modular_a;
         i = cc / divide1;
         modular_a = modular_a * 100;
