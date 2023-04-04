@@ -157,7 +157,6 @@ long validate_card(long card, long count)
         }
 // Add all single digits together
         digit1 = digit1 + int_b;
-        digit4 = digit1 + digit3;
 //Rounds up for cards with an odd number of digits
         if (cycle % 10 > 0)
         {
@@ -168,7 +167,7 @@ long validate_card(long card, long count)
         int_c = a / divide2;
         modular2 = modular2 * 100;
         divide2 = divide2 * 100;
-        digit2 = (digit2 + int_c);
+        digit2 = digit2 + int_c;
         m++;
     }
     while (m != cycle);
