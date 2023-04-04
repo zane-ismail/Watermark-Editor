@@ -1,6 +1,5 @@
 #include <cs50.h>
 #include <stdio.h>
-#include<math.h>
 
 long get_card_number(void);
 long get_card_length(long card);
