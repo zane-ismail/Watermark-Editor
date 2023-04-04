@@ -44,7 +44,7 @@ long get_card_length(long card)
     while (cc > 0);
     if (count < 13 || count > 16)
     {
-        printf("2INVALID\n");
+        printf("INVALID\n");
 
     }
     return count;
