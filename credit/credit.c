@@ -40,10 +40,6 @@ long get_card_length(long card)
     }
     while (cc > 0);
 // Reject cards with less than 13 or more than 16 numbers
-    if (count < 13 || count > 16)
-    {
-        printf("INVALID\n");
-    }
     return count;
 }
 
