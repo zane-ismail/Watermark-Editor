@@ -10,15 +10,15 @@ int main(void)
 {
     long card = get_card_number();
     long card_length = get_card_length(card);
-    if (card_length > 12 && card_length < 17)
+    // if (card_length > 12 && card_length < 17)
+    // {
+    long card_digits = validate_card(card, card_length);
+    long first_digits = get_card_type(card, card_length);
+    if (card_digits == 1)
     {
-        long card_digits = validate_card(card, card_length);
-        long first_digits = get_card_type(card, card_length);
-        if (card_digits == 1)
-        {
-            printf("INVALID\n");
-        }
+        printf("INVALID\n");
     }
+    // }
 }
 
 // Get card number
