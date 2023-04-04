@@ -15,7 +15,7 @@ int main(void)
   long card_digits = validate_card(card, card_length);
   if (card_digits == 1)
   {
-    printf("VALID\n");
+    printf("INVALID\n");
   }
 
 }
@@ -210,10 +210,10 @@ long validate_card(long card, long count)
 
     digit3 = digit3 + d21 + d22;
     luhns_a = (digit1 + digit2);
-    printf("%ld\n", luhns_a);
+    // printf("%ld\n", luhns_a);
     if (luhns_a % 10 == 0)
     {
-        return ;
+        return 0;
     }
-    else return 0;
+    else return 1;
 }
