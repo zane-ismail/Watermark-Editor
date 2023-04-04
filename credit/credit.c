@@ -62,7 +62,7 @@ long get_card_type(long card, long count)
     int i = 0;
     int j = 0;
 
-// Calculate first 2 digits for other cards and 1 digit for visa
+// Calculate first 2 digits for Mastercard and American Express
     runs = count - 3;
     do
     {
@@ -70,6 +70,7 @@ long get_card_type(long card, long count)
         i++;
     }
     while (i < runs);
+// Calculate first digit for Visa 
     runs_visa = count - 2;
     do
     {
@@ -166,7 +167,7 @@ long validate_card(long card, long count)
     }
 // Iterates through loop until count is complete
     while (n != cycle);
-// Validate for numbers 
+// Validate modulo 10 is congruent to 0
     if (sum % 10 == 0)
     {
         return 0;
