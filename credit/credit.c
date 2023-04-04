@@ -54,8 +54,8 @@ long validate_card(long card, long count)
     int n = 0;
     long modular_a = 100;
     long modular_b = 10;
-    long divide1 = 10;
-    long divide2 = 1;
+    long divide_a = 10;
+    long divide_b = 1;
     int cycle = count / 2;
     int sum = 0;
     int i;
@@ -65,9 +65,9 @@ long validate_card(long card, long count)
     {
         long cc = card;
         cc = cc % modular_a;
-        i = cc / divide1;
+        i = cc / divide_a;
         modular_a = modular_a * 100;
-        divide1 = divide1 * 100;
+        divide_a = divide_a * 100;
 // Multiply digit by 2
         i = (i * 2);
 // Split 2 digit numbers into single digits
@@ -84,9 +84,9 @@ long validate_card(long card, long count)
         }
 // Find the last digit and every other digit after that
         cc = cc % modular_b;
-        j = cc / divide2;
+        j = cc / divide_b;
         modular_b = modular_b * 100;
-        divide2 = divide2 * 100;
+        divide_b = divide_b * 100;
 // Add all digits together
         sum = sum + j;
         n++;
