@@ -187,8 +187,13 @@ long validate_card(long card, long count)
         // printf("%ld\n", digit1);
     }
     while (m != cycle);
+    if (cycle % 10 != 0)
+    {
+        cycle = cycle + 1;
+    }
     do
         // Find the last digit and every other digit after that
+    {
         a = a % modular2;
         d3 = a / divide2;
         // printf("%ld\n", d3);
