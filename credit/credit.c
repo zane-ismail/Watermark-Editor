@@ -95,7 +95,7 @@ long get_card_type(long card, long count)
         }
         else
         {
-            printf("3INVALID\n");
+            printf("INVALID\n");
         }
     }
     else if (count == 16)
@@ -112,7 +112,7 @@ long get_card_type(long card, long count)
         }
         else
         {
-            printf("4INVALID\n");
+            printf("INVALID\n");
         }
     }
     else if (count == 13)
@@ -124,7 +124,7 @@ long get_card_type(long card, long count)
         }
         else
         {
-            printf("5INVALID\n");
+            printf("INVALID\n");
         }
     }
     return 0;
