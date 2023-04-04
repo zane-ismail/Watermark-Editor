@@ -124,15 +124,13 @@ long get_card_type(long card, long count)
 // Luhn's algorithm
 long validate_card(long card, long count)
 {
-    int m = 0;
     int n = 0;
     long modular1 = 100;
     long modular2 = 10;
     long divide1 = 10;
     long divide2 = 1;
     int cycle = count / 2;
-    int total = 0;
-    int sum;
+    int sum = 0;
     int i;
     int j;
     do
@@ -151,7 +149,7 @@ long validate_card(long card, long count)
             i = (i / 10) + (i % 10);
         }
 // Add all single digits together
-        total = total + i;
+        sum = sum + i;
 //Rounds up for cards with an odd number of digits
         if (cycle % 10 > 0)
         {
@@ -162,11 +160,13 @@ long validate_card(long card, long count)
         j = cc / divide2;
         modular2 = modular2 * 100;
         divide2 = divide2 * 100;
-        total = total + j;
-        m++;
+// Add all digits together
+        sum = sum + j;
+        n++;
     }
-    while (m != cycle);
-    sum = (total + total);
+// Iterates through loop until count is complete
+    while (n != cycle);
+// Validate for numbers 
     if (sum % 10 == 0)
     {
         return 0;
