@@ -1,0 +1,4 @@
+Prompt user for height (1-8)
+If user is not within range, repeat prompt
+Iterate from 1 through to given number
+Print #\n i times for iteration i
