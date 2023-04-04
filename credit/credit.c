@@ -131,30 +131,27 @@ long validate_card(long card, long count)
     long divide1 = 10;
     long divide2 = 1;
     int cycle = count / 2;
-    int digit1 = 0;
-    int digit2 = 0;
+    int total = 0;
     int sum;
-    int int_a;
-    int int_b;
-    int int_c;
-    int int_d;
+    int i;
+    int j;
     do
     {
         long cc = card;
 // Iterate to find the second to last digit and every other digit after that
         cc = cc % modular1;
-        int_a = cc / divide1;
+        i = cc / divide1;
         modular1 = modular1 * 100;
         divide1 = divide1 * 100;
 // Multiply digit by 2
-        int_a = (int_a * 2);
+        i = (i * 2);
 // Split 2 digit numbers into single digits
-        if (int_a > 9)
+        if (i > 9)
         {
-            int_a = (int_a / 10) + (int_a % 10);
+            i = (i / 10) + (i % 10);
         }
 // Add all single digits together
-        digit1 = digit1 + int_a;
+        total = total + i;
 //Rounds up for cards with an odd number of digits
         if (cycle % 10 > 0)
         {
@@ -162,14 +159,14 @@ long validate_card(long card, long count)
         }
 // Find the last digit and every other digit after that
         cc = cc % modular2;
-        int_b = cc / divide2;
+        j = cc / divide2;
         modular2 = modular2 * 100;
         divide2 = divide2 * 100;
-        digit2 = digit2 + int_b;
+        total = total + j;
         m++;
     }
     while (m != cycle);
-    sum = (digit1 + digit2);
+    sum = (total + total);
     if (sum % 10 == 0)
     {
         return 0;
