@@ -140,32 +140,32 @@ long validate_card(long card, long count)
     int int_d;
     do
     {
-        long a = card;
+        long cc = card;
 // Iterate to find the second to last digit and every other digit after that
-        a = a % modular1;
-        int_a = a / divide1;
+        cc = cc % modular1;
+        int_a = cc / divide1;
         modular1 = modular1 * 100;
         divide1 = divide1 * 100;
 // Multiply digit by 2
-        int_b = (int_a * 2);
+        int_a = (int_a * 2);
 // Split 2 digit numbers into single digits
-        if (int_b > 9)
+        if (int_a > 9)
         {
-            int_b = (int_b / 10) + (int_b % 10);
+            int_a = (int_a / 10) + (int_a % 10);
         }
 // Add all single digits together
-        digit1 = digit1 + int_b;
+        digit1 = digit1 + int_a;
 //Rounds up for cards with an odd number of digits
         if (cycle % 10 > 0)
         {
             cycle ++;
         }
 // Find the last digit and every other digit after that
-        a = a % modular2;
-        int_c = a / divide2;
+        cc = cc % modular2;
+        int_b = cc / divide2;
         modular2 = modular2 * 100;
         divide2 = divide2 * 100;
-        digit2 = digit2 + int_c;
+        digit2 = digit2 + int_b;
         m++;
     }
     while (m != cycle);
