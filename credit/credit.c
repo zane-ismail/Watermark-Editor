@@ -202,7 +202,7 @@ long validate_card(long card, long count)
 
     digit3 = digit3 + d21 + d22;
     luhns_a = (digit1 + digit2);
-    printf("%ld\n", luhns_a);
+    // printf("%ld\n", luhns_a);
     if (luhns_a % 10 == 0)
     {
         return 0;
