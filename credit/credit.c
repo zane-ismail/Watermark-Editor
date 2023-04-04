@@ -88,10 +88,10 @@ long get_card_type(long card, long count)
         {
             printf("AMEX\n");
         }
-        else
-        {
-            printf("INVALID\n");
-        }
+        // else
+        // {
+        //     printf("INVALID\n");
+        // }
     }
     else if (count == 16)
     {
@@ -103,10 +103,10 @@ long get_card_type(long card, long count)
         {
             printf("VISA\n");
         }
-        else
-        {
-            printf("INVALID\n");
-        }
+        // else
+        // {
+        //     printf("INVALID\n");
+        // }
     }
     else if (count == 13)
     {
@@ -114,10 +114,10 @@ long get_card_type(long card, long count)
         {
             printf("VISA\n");
         }
-        else
-        {
-            printf("INVALID\n");
-        }
+        // else
+        // {
+        //     printf("INVALID\n");
+        // }
     }
     return 0;
 }
