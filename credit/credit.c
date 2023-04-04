@@ -176,7 +176,7 @@ long validate_card(long card, long count)
     }
     while (m != cycle);
     sum = (digit1 + digit2);
-    // printf("%i", sum);
+
     if (sum % 10 == 0)
     {
         return 0;
