@@ -17,7 +17,7 @@ int main(void)
         long card_digits = validate_card(card, card_length);
         if (card_digits == 1)
         {
-            printf("I1NVALID\n");
+            printf("INVALID\n");
         }
     }
 
