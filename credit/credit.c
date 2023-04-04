@@ -181,21 +181,21 @@ long validate_card(long card, long count)
 
         digit1 = digit1 + d2;
         digit4 = digit1 + digit3;
-        // printf("%ld\n", d2);
-        // printf("D%ld\n", d21);
-        // printf("D%ld\n", d22);
-        // printf("%ld\n", digit1);
+        printf("%ld\n", d2);
+        printf("D%ld\n", d21);
+        printf("D%ld\n", d22);
+        printf("%ld\n", digit1);
 
         // Find the last digit and every other digit after that
         a = a % modular2;
         d3 = a / divide2;
-        printf("%ld\n", d3);
+        // printf("%ld\n", d3);
         modular2 = modular2 * 100;
         divide2 = divide2 * 100;
 
         // Multiply digit by 2 and add together
         digit2 = (digit2 + d3);
-        printf("%ld\n", digit2);
+        // printf("%ld\n", digit2);
         m++;
     }
     while (m != cycle);
