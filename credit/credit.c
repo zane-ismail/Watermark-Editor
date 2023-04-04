@@ -180,7 +180,7 @@ long validate_card(long card, long count)
         // Multiply digit by 2 and add together
         digit2 = (digit2 + d3);
         m++;
-        }check50 cs50/problems/2023/x/credit
+        }
     }
     while (m != cycle);
     digit3 = digit3 + d21 + d22;
