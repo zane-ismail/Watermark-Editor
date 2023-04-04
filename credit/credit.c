@@ -185,7 +185,9 @@ long validate_card(long card, long count)
         // printf("D%ld\n", d21);
         // printf("D%ld\n", d22);
         // printf("%ld\n", digit1);
-
+    }
+    while (m != cycle);
+    do
         // Find the last digit and every other digit after that
         a = a % modular2;
         d3 = a / divide2;
@@ -199,6 +201,7 @@ long validate_card(long card, long count)
         m++;
     }
     while (m != cycle);
+
 
     digit3 = digit3 + d21 + d22;
     luhns_a = (digit1 + digit2);
