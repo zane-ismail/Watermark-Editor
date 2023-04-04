@@ -55,9 +55,9 @@ long get_card_type(long card, long count)
 {
 
     long num = card;
-    long n1;
-    long n2 = 10;
-    long n3;
+    long runs;
+    long i = 10;
+    long digits;
     long n4;
     long m1;
     long m2 = 10;
@@ -65,16 +65,15 @@ long get_card_type(long card, long count)
     int amex = 1;
     int maca = 2;
     int visa = 3;
-
     int n = 0;
     int m = 0;
-    n1 = count - 3;
+    runs = count - 3;
     do
     {
-        n2 = n2 * 10;
+        i = i * 10;
         n++;
     }
-    while (n < n1);
+    while (n < runs);
 
     m1 = count - 2;
     do
@@ -83,13 +82,13 @@ long get_card_type(long card, long count)
         m++;
     }
     while (m < m1);
-    n3 = card / n2;
+    digits = card / i;
     n4 = card / m2;
     if (count == 15)
     {
-        if (n3 == 34 || n3 == 37)
+        if (digits == 34 || digits == 37)
         {
-            n3 = amex;
+            digits = amex;
             printf("AMEX\n");
         }
         else
@@ -99,9 +98,9 @@ long get_card_type(long card, long count)
     }
     else if (count == 16)
     {
-        if (n3 == 51 || n3 == 52 || n3 == 53 || n3 == 54 || n3 == 55)
+        if (digits == 51 || digits == 52 || digits == 53 || digits == 54 || digits == 55)
         {
-            n3 = maca;
+            digits = maca;
             printf("MASTERCARD\n");
         }
         else if (n4 == 4)
