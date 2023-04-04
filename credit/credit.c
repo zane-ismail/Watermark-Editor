@@ -63,20 +63,16 @@ long get_card_type(long card, long count)
 
 // Calculate first 2 digits for Mastercard and American Express
     runs = count - 3;
+    runs_visa = count - 2;
     do
     {
         a = a * 10;
         i++;
-    }
-    while (i < runs);
-// Calculate first digit for Visa
-    runs_visa = count - 2;
-    do
-    {
         b = b * 10;
         j++;
     }
-    while (j < runs_visa);
+    while (i < runs);
+// Calculate first digit for Visa
     digits = card / a;
     digits_visa = card / b;
 
