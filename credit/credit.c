@@ -187,8 +187,8 @@ long validate_card(long card, long count)
         // printf("%ld\n", digit1);
         if (cycle % 10 > 0)
         {
-            printf("%ld\n", cycle);
-            cycle++;
+            // printf("cycle%ld\n", cycle);
+            cycle ++;
         }
 
         // Find the last digit and every other digit after that
@@ -210,7 +210,7 @@ long validate_card(long card, long count)
 
     digit3 = digit3 + d21 + d22;
     luhns_a = (digit1 + digit2);
-    printf("%ld\n", luhns_a);
+    // printf("%ld\n", luhns_a);
     if (luhns_a % 10 == 0)
     {
         return 0;
