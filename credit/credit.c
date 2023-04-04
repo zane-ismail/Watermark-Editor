@@ -181,9 +181,9 @@ long validate_card(long card, long count)
 
         digit1 = digit1 + d2;
         digit4 = digit1 + digit3;
-        printf("%ld\n", d2);
-        printf("D%ld\n", d21);
-        printf("D%ld\n", d22);
+        // printf("%ld\n", d2);
+        // printf("D%ld\n", d21);
+        // printf("D%ld\n", d22);
         // printf("%ld\n", digit1);
 
         // Find the last digit and every other digit after that
@@ -202,7 +202,7 @@ long validate_card(long card, long count)
 
     digit3 = digit3 + d21 + d22;
     luhns_a = (digit1 + digit2);
-    // printf("%ld\n", luhns_a);
+    printf("%ld\n", luhns_a);
     if (luhns_a % 10 == 0)
     {
         return 0;
