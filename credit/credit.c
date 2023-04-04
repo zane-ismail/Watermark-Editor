@@ -100,7 +100,6 @@ long validate_card(long card, long count)
     }
     return 1;
 }
-
 // Identify card type
 long get_card_type(long card, long count)
 {
@@ -113,7 +112,6 @@ long get_card_type(long card, long count)
     int digits_visa;
     int i = 0;
     int j = 0;
-
 // Calculate first 2 digits for Mastercard and American Express
     runs = count - 3;
     do
