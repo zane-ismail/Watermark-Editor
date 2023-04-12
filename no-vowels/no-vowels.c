@@ -17,7 +17,7 @@ int main(int argc, string argv[])
     }
     else
     {
-        printf("Oopy doopsy!");
+        printf("Oopy doopsy!\n");
     }
     return 1;
 
