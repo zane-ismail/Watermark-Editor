@@ -14,23 +14,23 @@
 int main(int argc, string argv[])
 {
     int i;
-    int newi;
-    for (i = 0; i < argc; i++)
-        {
-            newi = i;
-        }
+    // int newi;
+    // for (i = 0; i < argc; i++)
+    //     {
+    //         newi = i;
+    //     }
     // Validate 1 word
-    if (newi == 1)
+    if (argc == 1)
     {
         printf("%s Okay!\n", argv[i]);
-        for (i = 0; i < argc; i++)
+        // for (i = 0; i < argc; i++)
         // int replace(argv[i]);
     }
     else
     {
         printf("Oopy doopsy!\n");
     }
-    return newi;
+    return 0;
 
 }
 
