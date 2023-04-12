@@ -23,6 +23,7 @@ int main(int argc, string argv[])
     if (newi == 1)
     {
         printf("%s Okay!\n", argv[i]);
+        for (i = 0; i < argc; i++)
         // int replace(argv[i]);
     }
     else
