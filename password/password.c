@@ -30,22 +30,22 @@ bool valid(string password)
     bool symbol = 0;
     for (i = 0; password[i] != '\0'; i++)
     {
-    // Validate upper case
+// Validate upper case
         if (password[i] >= 65 && password[i] <= 90)
         {
             upper = 1;
         }
-    // Validate lower case
+// Validate lower case
         else if (password[i] >= 97 && password[i] <= 122)
         {
             lower = 1;
         }
-    // Validate number
+// Validate number
         else if (password[i] >= 48 && password[i] <= 57)
         {
             number = 1;
         }
-    // Validate symbol
+// Validate symbol
         else if (password[i] >= 32 && password[i] <= 47)
         {
             symbol = 1;
@@ -54,7 +54,6 @@ bool valid(string password)
         {
             symbol = 1;
         }
-    printf("\n");
     }
     if (upper == 1 && lower == 1 && number == 1 && symbol == 1)
     {
