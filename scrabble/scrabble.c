@@ -36,24 +36,25 @@ int main(void)
 int compute_score(string word)
 // TODO: Compute and return score for string
 {
+    int length = 0;
     int sum = 0;
     int score = 0;
-    int letter;
 // Iterate through each letter and convert to integer
-    for (int length = 0; word[length] != '\0'; length++)
+    for (length = 0; word[length] != '\0'; length++)
     {
 // Adjust for upper and lower case
         if islower(word[length])
         {
-            letter = (word[length] - 97);
+            int letter = (word[length] - 97);
+            score = (POINTS[letter]);
+            sum = (sum + score);
         }
         else if isupper(word[length])
         {
-            letter = (word[length] - 65);
+            int letter = (word[length] - 65);
+            score = (POINTS[letter]);
+            sum = (sum + score);
         }
-        score = (POINTS[letter]);
-        sum = (sum + score);
-        printf("%i\n", letter);
     }
     return sum;
 }
