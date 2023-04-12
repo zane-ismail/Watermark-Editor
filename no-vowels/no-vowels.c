@@ -14,16 +14,32 @@
 int main(int argc, string argv[])
 {
     printf("%i\n", argc);
-    // int i;
-    // int newi;
-    // for (i = 0; i < argc; i++)
-    //     {
-    //         newi = i;
-    //     }
     // Validate 1 word
     if (argc == 2)
     {
         printf("Okay!\n");
+        int i;
+        for (i = 0; i < argc; i++)
+            {
+                string j = argv[i];
+                if (j == 'a')
+                {
+                    j = 6;
+                }
+                else if (j == 'e')
+                {
+                    j = 3;
+                }
+                else if (j == 'i')
+                {
+                    j = 1;
+                }
+                else if (j == o)
+                {
+                    j = 0;
+                }
+                printf("%s\n", argv[i]);
+            }
         // for (i = 0; i < argc; i++)
         // int replace(argv[i]);
     }
