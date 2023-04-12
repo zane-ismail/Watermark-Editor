@@ -42,7 +42,11 @@ bool valid(string password)
         return true;
     }
 // Validate symbol
-    else if (password[i] >= 32 && password[i] <= 47) || (password[i] >= 58 && password[i] <= 126)
+    else if (password[i] >= 32 && password[i] <= 47)
+    {
+        return true;
+    }
+    else if (password[i] >= 58 && password[i] <= 126)
     {
         return true;
     }
