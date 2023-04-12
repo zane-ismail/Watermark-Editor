@@ -13,6 +13,7 @@
 
 int main(int argc, string argv[])
 {
+    printf("%i\n", argc);
     // int i;
     // int newi;
     // for (i = 0; i < argc; i++)
@@ -20,7 +21,7 @@ int main(int argc, string argv[])
     //         newi = i;
     //     }
     // Validate 1 word
-    if (argc == 1)
+    if (argc == 2)
     {
         printf("Okay!\n");
         // for (i = 0; i < argc; i++)
