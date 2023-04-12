@@ -25,6 +25,7 @@ int main(int argc, string argv[])
                 char j = argv[1][i];
                 if (j == 'a' || (j == 'e') || (j == 'i') || (j == 'o'))
                 {
+                    j = (j - 98);
                     printf("%i\n", j);
                 }
                 else
