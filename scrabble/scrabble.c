@@ -10,44 +10,38 @@ int compute_score(string word);
 
 int main(void)
 {
-    // Get input words from both players
+// Get input words from both players
     string word1 = get_string("Player 1: ");
     string word2 = get_string("Player 2: ");
 
-    // Score both words
+// Score both words
     int score1 = compute_score(word1);
     int score2 = compute_score(word2);
 
-    printf("%i ", score1);
-    printf("%i ", score2);
-
-    // TODO: Print the winner
+// TODO: Print the winner
     if (score1 > score2)
     {
-        printf("%i ", score1);
-        printf("wins!\n");
+        printf("Player 1 wins!\n");
     }
     else
     {
-        printf("%i ", score2);
-        printf("wins!\n");
+        printf("Player 2 wins!\n");
     }
 }
 
 int compute_score(string word)
 {
-    // TODO: Compute and return score for string
+// TODO: Compute and return score for string
     int length = 0;
     int sum = 0;
     int score = 0;
-    // Iterate through each letter and convert to integer
+// Iterate through each letter and convert to integer
     for (length = 0; word[length] != '\0'; length++)
     {
         int letter = (word[length] - 97);
-    // Create and tally a score
+// Create and tally a score
         score = (POINTS[letter]);
         sum = (sum + score);
     }
-    printf("%i\n", sum);
     return sum;
 }
