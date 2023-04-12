@@ -19,13 +19,20 @@ int main(int argc, string argv[])
     {
         printf("Okay!\n");
         int i;
-        for (i = 0; i < argc; i++)
+        int length = 4;
+        int vowel;
+        for (i = 0; i < length; i++)
             {
-                printf("%c\n", argv[1][i]);
-                // string j = argv[1][i];
-                // if (j == 'a' || (j == 'e') || (j == 'i') || (j == 'o'))
-                // {
-                //     printf("ok");
+                char j = argv[1][i];
+                if (j == 'a' || (j == 'e') || (j == 'i') || (j == 'o'))
+                {
+                    j = vowel;
+                    printf("%i\n", vowel);
+                }
+                else
+                {
+                    printf("%c\n", argv[1][i]);
+                }
             }
 
 
