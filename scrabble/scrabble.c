@@ -39,21 +39,20 @@ int compute_score(string word)
     int length = 0;
     int sum = 0;
     int score = 0;
+    int letter;
 // Iterate through each letter and convert to integer
     for (length = 0; word[length] != '\0'; length++)
     {
         if islower(word[length])
         {
-            int letter = (word[length] - 97);
-            score = (POINTS[letter]);
-            sum = (sum + score);
+            letter = (word[length] - 97);
         }
         else if isupper(word[length])
         {
-            int letter = (word[length] - 65);
-            score = (POINTS[letter]);
-            sum = (sum + score);
+            letter = (word[length] - 65);
         }
+        score = (POINTS[letter]);
+        sum = (sum + score);
 // Create and tally a score
     }
     printf("%i\n", sum);
