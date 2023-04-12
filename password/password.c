@@ -23,6 +23,8 @@ int main(void)
 // TODO: Complete the Boolean function below
 bool valid(string password)
 {
-    for (i = 0; )
+    int i;
+    for (i = 0; password[i] != '\0'; i++)
+    printf("%i\n", password[i]);
     return false;
 }
