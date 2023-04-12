@@ -55,6 +55,6 @@ int compute_score(string word)
         sum = (sum + score);
 // Create and tally a score
     }
-    printf("%i\n", sum);
+    // printf("%i\n", sum);
     return sum;
 }
