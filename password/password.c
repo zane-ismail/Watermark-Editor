@@ -26,6 +26,9 @@ bool valid(string password)
     int i;
     for (i = 0; password[i] != '\0'; i++)
     printf("%i\n", password[i]);
-    if password[i] > 
+// Validate upper case
+    if (password[i] => 97 && password[i] =< 122)
+// Validate lower case
+    else if (password[i] => 97 && password[i] =< 122)
     return false;
 }
