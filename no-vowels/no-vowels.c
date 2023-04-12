@@ -22,24 +22,24 @@ int main(int argc, string argv[])
         for (i = 0; i < argc; i++)
             {
                 string j = argv[i];
-                if (j == 'a')
+                if (j == 'a' || (j == 'e') || (j == 'i') || (j == 'o'))
                 {
-                    j = 6;
+                    printf("ok");
                 }
-                else if (j == 'e')
-                {
-                    j = 3;
-                }
-                else if (j == 'i')
-                {
-                    j = 1;
-                }
-                else if (j == o)
-                {
-                    j = 0;
-                }
-                printf("%s\n", argv[i]);
-            }
+            //     else if (j == 'e')
+            //     {
+            //         j = 3;
+            //     }
+            //     else if (j == 'i')
+            //     {
+            //         j = 1;
+            //     }
+            //     else if (j == o)
+            //     {
+            //         j = 0;
+            //     }
+            //     printf("%s\n", argv[i]);
+            // }
         // for (i = 0; i < argc; i++)
         // int replace(argv[i]);
     }
