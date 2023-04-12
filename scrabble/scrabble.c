@@ -34,8 +34,8 @@ int main(void)
 }
 
 int compute_score(string word)
-{
 // TODO: Compute and return score for string
+{
     int length = 0;
     int sum = 0;
     int score = 0;
