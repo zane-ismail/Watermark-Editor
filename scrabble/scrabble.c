@@ -51,8 +51,8 @@ int compute_score(string word)
         {
             letter = (word[length] - 65);
         }
+        score = (POINTS[letter]);
+        sum = (sum + score);
     }
-    score = (POINTS[letter]);
-    sum = (sum + score);
     return sum;
 }
