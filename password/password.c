@@ -26,5 +26,6 @@ bool valid(string password)
     int i;
     for (i = 0; password[i] != '\0'; i++)
     printf("%i\n", password[i]);
+    if password[i] 
     return false;
 }
