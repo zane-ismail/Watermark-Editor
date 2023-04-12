@@ -23,10 +23,22 @@ int main(int argc, string argv[])
         for (i = 0; i < length; i++)
             {
                 char j = argv[1][i];
-                if (j == 'a' || (j == 'e') || (j == 'i') || (j == 'o'))
+                if (j == 'a')
                 {
                     j = (j - 98);
                     printf("%i\n", j);
+                }
+                else if (j == 'e')
+                {
+                    j = (j - 95);
+                }
+                else if (j == 'i')
+                {
+                    j = (j - 95);
+                }
+                else if (j == 'o')
+                {
+                    j = (j - 95);
                 }
                 else
                 {
