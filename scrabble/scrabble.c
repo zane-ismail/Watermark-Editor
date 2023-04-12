@@ -42,6 +42,7 @@ int compute_score(string word)
 // Iterate through each letter and convert to integer
     for (length = 0; word[length] != '\0'; length++)
     {
+// Adjust for upper and lower case
         if islower(word[length])
         {
             int letter = (word[length] - 97);
@@ -54,8 +55,6 @@ int compute_score(string word)
             score = (POINTS[letter]);
             sum = (sum + score);
         }
-// Create and tally a score
     }
-// printf("%i\n", sum);
     return sum;
 }
