@@ -23,9 +23,13 @@ int main(void)
     {
         printf("Player 1 wins!\n");
     }
-    else
+    else if (score2 > score1)
     {
         printf("Player 2 wins!\n");
+    }
+    else
+    {
+        printf("Tie!\n");
     }
 }
 
@@ -38,10 +42,20 @@ int compute_score(string word)
 // Iterate through each letter and convert to integer
     for (length = 0; word[length] != '\0'; length++)
     {
-        int letter = (word[length] - 97);
+        if islower(word[length])
+        {
+            int letter = (word[length] - 97);
+            score = (POINTS[letter]);
+            sum = (sum + score);
+        }
+        else if isupper(word[length])
+        {
+            int letter = (word[length] - 97);
+            score = (POINTS[letter]);
+            sum = (sum + score);
+        }
 // Create and tally a score
-        score = (POINTS[letter]);
-        sum = (sum + score);
     }
+    printf("%i\n", sum);
     return sum;
 }
