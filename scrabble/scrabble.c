@@ -25,6 +25,10 @@ int compute_score(string word)
 {
     // TODO: Compute and return score for string
     int length = 0;
-    for (length = 0; word[length] < != '\0'; length++);
-    letter = (word - 97)
+    for (length = 0; word[length] != '\0'; length++)
+    {
+        int letter = (word[length] - 97);
+        printf("%i\n", letter);
+    }
+    return 0;
 }
