@@ -26,6 +26,8 @@ int compute_score(string word)
     // TODO: Compute and return score for string
     int length = 0;
     int sum = 0;
+    score1 = 0
+    score2 = 0
     // Iterate through each letter and convert to integer
     for (length = 0; word[length] != '\0'; length++)
     {
@@ -33,6 +35,7 @@ int compute_score(string word)
     // Create and tally a score
         int score = (POINTS[letter]);
         sum = (sum + score);
+        return score;
     }
     printf("%i\n", sum);
     return sum;
