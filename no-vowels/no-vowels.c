@@ -6,7 +6,9 @@
 #include <cs50.h>
 #include <stdio.h>
 
+int replace(void)
+
 int main(int argc, string argv[])
 {
-    
+    for (i = 0; i < length[i]; length ++)
 }
