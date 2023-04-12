@@ -10,7 +10,6 @@ int replace(void);
 
 int main(int argc, string argv[])
 {
-    int length = argc;
-    for (int i = 0; i < length[i]; length ++)
-    printf("%i\n", i)
+    for (int i = 0; i < argc; i++)
+    printf("%i\n", i);
 }
