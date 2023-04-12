@@ -50,7 +50,7 @@ int compute_score(string word)
         }
         else if isupper(word[length])
         {
-            int letter = (word[length] - 97);
+            int letter = (word[length] - 65);
             score = (POINTS[letter]);
             sum = (sum + score);
         }
