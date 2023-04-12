@@ -14,6 +14,8 @@ int main(int argc, string argv[])
     if (i < 2) && (i > 0)
     {
         printf("%i\n", i);
+        int replace(argv[i]);
+
     }
     else
     {
@@ -21,4 +23,10 @@ int main(int argc, string argv[])
     }
     return 1;
 
+}
+
+int replace(string argv[])
+{
+    int argv = argv;
+    return argv;
 }
