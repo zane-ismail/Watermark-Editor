@@ -6,45 +6,62 @@
 #include <cs50.h>
 #include <stdio.h>
 
-// a = 6
-// e = 3
-// i = 1
-// o = 0
+int replace(string argv[]);
 
 int main(int argc, string argv[])
 {
-    printf("%i\n", argc);
     // Validate 1 word
     if (argc == 2)
     {
-        printf("Okay!\n");
-        int i;
-        int length = 4;
-        for (i = 0; i < length; i++)
+        replace(argv);
+    }
+    else
+    {
+        return 1;
+    }
+
+    return 0;
+}
+
+
+int replace(string argv[])
+{
+    int i;
+    int length = 9;
+    for (i = 0; i < length; i++)
+        {
+            char j = argv[1][i];
+            if (j == 'a')
             {
-                char j = argv[1][i];
-                if (j == 'a')
-                {
-                    j = (j - 98);
-                    printf("%i\n", j);
-                }
-                else if (j == 'e')
-                {
-                    j = (j - 95);
-                }
-                else if (j == 'i')
-                {
-                    j = (j - 95);
-                }
-                else if (j == 'o')
-                {
-                    j = (j - 95);
-                }
-                else
-                {
-                    printf("%c\n", argv[1][i]);
-                }
+                j = (j - 91);
+                printf("%i", j);
             }
+            else if (j == 'e')
+            {
+                j = (j - 98);
+                printf("%i", j);
+            }
+            else if (j == 'i')
+            {
+                j = (j - 104);
+                printf("%i", j);
+            }
+            else if (j == 'o')
+            {
+                j = (j - 111);
+                printf("%i", j);
+            }
+            else
+            {
+                printf("%c", argv[1][i]);
+            }
+        }
+    printf("\n");
+    return 0;
+}
+
+
+
 
 
 
@@ -71,12 +88,3 @@ int main(int argc, string argv[])
     // {
     //     printf("Oopy doopsy!\n");
     // }
-    return 0;
-    }
-}
-
-// int replace(main)
-// {
-//     int argv = argv;
-//     return argv;
-// }
