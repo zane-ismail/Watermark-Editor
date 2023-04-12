@@ -31,7 +31,7 @@ float calc_hours(int hours[], int weeks, char output)
     for (int i = 0; i < weeks; i++)
     {
         total += hours[i];
-        printf("%.1f total\n", total);
+        // printf("%.1f total\n", total);
     }
-    return 0;
+    return total;
 }
