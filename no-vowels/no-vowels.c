@@ -10,8 +10,9 @@ int replace(void);
 
 int main(int argc, string argv[])
 {
+    int i;
     for (int i = 0; i < argc; i++)
-
+    printf("%i\n", i);
     if (i < 2) && (i > 0)
     {
         printf("%i\n", i);
