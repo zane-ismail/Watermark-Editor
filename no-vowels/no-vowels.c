@@ -21,11 +21,15 @@ int main(int argc, string argv[])
         int i;
         for (i = 0; i < argc; i++)
             {
-                string j = argv[i];
-                if (j == 'a' || (j == 'e') || (j == 'i') || (j == 'o'))
-                {
-                    printf("ok");
-                }
+                printf("%c\n", argv[1][i]);
+                // string j = argv[1][i];
+                // if (j == 'a' || (j == 'e') || (j == 'i') || (j == 'o'))
+                // {
+                //     printf("ok");
+            }
+
+
+
             //     else if (j == 'e')
             //     {
             //         j = 3;
@@ -42,13 +46,15 @@ int main(int argc, string argv[])
             // }
         // for (i = 0; i < argc; i++)
         // int replace(argv[i]);
-    }
-    else
-    {
-        printf("Oopy doopsy!\n");
-    }
-    return 0;
 
+
+    // }
+    // else
+    // {
+    //     printf("Oopy doopsy!\n");
+    // }
+    return 0;
+    }
 }
 
 // int replace(main)
