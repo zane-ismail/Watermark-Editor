@@ -16,16 +16,15 @@ int main(int argc, string argv[])
             newi = i;
         }
     // Validate 1 word
-    if (i == 1)
+    if (newi == 1)
     {
-        printf("%i\n", i);
+        printf("%i Okay!\n", i);
         // int replace(argv[i]);
     }
     else
     {
         printf("Oopy doopsy!\n");
     }
-    printf("%i\n", newi);
     return newi;
 
 }
