@@ -24,5 +24,7 @@ int main(void)
 int compute_score(string word)
 {
     // TODO: Compute and return score for string
-    
+    length = get_len
+    for (i = 0; i < )
+    letter = (word - 97)
 }
