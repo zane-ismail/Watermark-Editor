@@ -10,7 +10,7 @@ int replace(string argv[]);
 
 int main(int argc, string argv[])
 {
-    // Validate 1 word
+// Validate 1 word
     if (argc == 2)
     {
         replace(argv);
@@ -26,66 +26,40 @@ int main(int argc, string argv[])
 
 int replace(string argv[])
 {
+// Count how many letters
     int i;
     int length = 0;
     for (length = 0; argv[1][length] != '\0'; length++);
+// For each letter, convert and print vowels to numbers
     for (i = 0; i < length; i++)
+    {
+        char j = argv[1][i];
+        if (j == 'a')
         {
-            char j = argv[1][i];
-            if (j == 'a')
-            {
-                j = (j - 91);
-                printf("%i", j);
-            }
-            else if (j == 'e')
-            {
-                j = (j - 98);
-                printf("%i", j);
-            }
-            else if (j == 'i')
-            {
-                j = (j - 104);
-                printf("%i", j);
-            }
-            else if (j == 'o')
-            {
-                j = (j - 111);
-                printf("%i", j);
-            }
-            else
-            {
-                printf("%c", argv[1][i]);
-            }
+            j = (j - 91);
+            printf("%i", j);
         }
+        else if (j == 'e')
+        {
+            j = (j - 98);
+            printf("%i", j);
+        }
+        else if (j == 'i')
+        {
+            j = (j - 104);
+            printf("%i", j);
+        }
+        else if (j == 'o')
+        {
+            j = (j - 111);
+            printf("%i", j);
+        }
+// Print all other letters
+        else
+        {
+            printf("%c", argv[1][i]);
+        }
+    }
     printf("\n");
     return 0;
 }
-
-
-
-
-
-
-            //     else if (j == 'e')
-            //     {
-            //         j = 3;
-            //     }
-            //     else if (j == 'i')
-            //     {
-            //         j = 1;
-            //     }
-            //     else if (j == o)
-            //     {
-            //         j = 0;
-            //     }
-            //     printf("%s\n", argv[i]);
-            // }
-        // for (i = 0; i < argc; i++)
-        // int replace(argv[i]);
-
-
-    // }
-    // else
-    // {
-    //     printf("Oopy doopsy!\n");
-    // }
