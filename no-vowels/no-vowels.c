@@ -15,7 +15,6 @@ int main(int argc, string argv[])
     {
         printf("%i\n", i);
         int replace(argv[i]);
-
     }
     else
     {
