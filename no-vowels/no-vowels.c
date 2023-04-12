@@ -11,7 +11,7 @@ int replace(void);
 int main(int argc, string argv[])
 {
     for (int i = 0; i < argc; i++)
-    if (i < 2)
+    if (i < 2) && (i > 0)
     {
         printf("%i\n", i);
     }
