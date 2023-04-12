@@ -6,6 +6,10 @@
 #include <cs50.h>
 #include <stdio.h>
 
+// a = 6
+// e = 3
+// i = 1
+// o = 0
 
 int main(int argc, string argv[])
 {
@@ -18,7 +22,7 @@ int main(int argc, string argv[])
     // Validate 1 word
     if (newi == 1)
     {
-        printf("%i Okay!\n", i);
+        printf("%s Okay!\n", argv[i]);
         // int replace(argv[i]);
     }
     else
