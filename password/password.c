@@ -29,26 +29,26 @@ bool valid(string password)
 // Validate upper case
     if (password[i] >= 65 && password[i] <= 90)
     {
-        return true;
+        printf("Upper Case");
     }
 // Validate lower case
     else if (password[i] >= 97 && password[i] <= 122)
     {
-        return true;
+        printf("Lower Case");
     }
 // Validate number
     else if (password[i] >= 48 && password[i] <= 57)
     {
-        return true;
+        printf("Number");
     }
 // Validate symbol
     else if (password[i] >= 32 && password[i] <= 47)
     {
-        return true;
+        printf("Symbol1");
     }
     else if (password[i] >= 58 && password[i] <= 126)
     {
-        return true;
+        printf("Symbol2");
     }
     return false;
 }
