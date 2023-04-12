@@ -20,14 +20,12 @@ int main(int argc, string argv[])
         printf("Okay!\n");
         int i;
         int length = 4;
-        int vowel;
         for (i = 0; i < length; i++)
             {
                 char j = argv[1][i];
                 if (j == 'a' || (j == 'e') || (j == 'i') || (j == 'o'))
                 {
-                    j = vowel;
-                    printf("%i\n", vowel);
+                    printf("%i\n", j);
                 }
                 else
                 {
