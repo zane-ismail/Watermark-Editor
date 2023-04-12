@@ -10,23 +10,28 @@
 int main(int argc, string argv[])
 {
     int i;
+    int newi;
     for (i = 0; i < argc; i++)
-    printf("%i\n", i);
-    // if (i < 2) && (i > 0)
-    // {
-    //     printf("%i\n", i);
-    //     int replace(argv[i]);
-    // }
-    // else
-    // {
-    //     printf("Oopy doopsy!\n");
-    // }
-    return argv;
+        {
+            newi = i;
+        }
+    // Validate 1 word
+    if (i == 1)
+    {
+        printf("%i\n", i);
+        // int replace(argv[i]);
+    }
+    else
+    {
+        printf("Oopy doopsy!\n");
+    }
+    printf("%i\n", newi);
+    return newi;
 
 }
 
-int replace(main)
-{
-    int argv = argv;
-    return argv;
-}
+// int replace(main)
+// {
+//     int argv = argv;
+//     return argv;
+// }
