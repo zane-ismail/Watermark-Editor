@@ -11,9 +11,14 @@ int replace(void);
 int main(int argc, string argv[])
 {
     for (int i = 0; i < argc; i++)
-    if i == 1
+    if (i < 2)
     {
         printf("%i\n", i);
     }
     else
+    {
+        printf("Oopy doopsy!");
+    }
+    return 1;
+
 }
