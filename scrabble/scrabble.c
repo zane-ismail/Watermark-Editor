@@ -53,6 +53,7 @@ int compute_score(string word)
         }
         score = (POINTS[letter]);
         sum = (sum + score);
+        printf("%i\n", letter);
     }
     return sum;
 }
