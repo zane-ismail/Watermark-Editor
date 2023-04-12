@@ -43,8 +43,8 @@ int compute_score(string word)
     {
         int letter = (word[length] - 97);
     // Create and tally a score
-        int score = (POINTS[letter]);
-        sum = (sum + score);
+        int score1 = (POINTS[letter]);
+        sum1 = (sum + score);
     }
     printf("%i\n", sum);
     return winner;
