@@ -27,7 +27,8 @@ int main(int argc, string argv[])
 int replace(string argv[])
 {
     int i;
-    int length = 9;
+    int length = 0
+    for (i = 0; i > 0)
     for (i = 0; i < length; i++)
         {
             char j = argv[1][i];
