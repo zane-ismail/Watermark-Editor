@@ -11,5 +11,9 @@ int replace(void);
 int main(int argc, string argv[])
 {
     for (int i = 0; i < argc; i++)
-    printf("%i\n", i);
+    if i == 1
+    {
+        printf("%i\n", i);
+    }
+    else
 }
