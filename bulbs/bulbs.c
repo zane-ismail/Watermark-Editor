@@ -27,14 +27,16 @@ int main(void)
         {
             int digit = message[letter] / 10;
             int a = digit % 2;
+            a = digit / 2;
             int b = a % 2;
+            b = a / 2;
             int c = b % 2;
             int d = c % 2;
             printf("First digit: %i\n", digit);
-            // printf("%i\n", a);
-            // printf("%i\n", b);
-            // printf("%i\n", c);
-            // printf("%i\n", d);
+            printf("Binary 4: %i\n", a);
+            printf("Binary 3: %i\n", b);
+            printf("Binary 2: %i\n", c);
+            printf("Binary 1: %i\n", d);
             j++;
         }
         while (j < 1);
