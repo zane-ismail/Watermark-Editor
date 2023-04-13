@@ -3,11 +3,26 @@
 #include <string.h>
 
 const int BITS = 8;
+int txttobin(void);
 void print_bulb(int bit);
 
 int main(void)
 {
-    // TODO
+    txttobin;
+    print_bulb(txttobin);
+// Take last digit
+//         do
+//         {
+//             int digit = message[letter] % 10;
+//             printf("Second digit: %i\n", digit);
+//             j++;
+//         }
+//         while (j < 1);
+}
+
+int txttobin(void)
+{
+// TODO
     int letter = 0;
     string message = get_string("Message: ");
 
@@ -59,17 +74,9 @@ int main(void)
             printf("6: %i\n", bits[5]);
             printf("7: %i\n", bits[6]);
             printf("8: %i\n", bits[7]);
-
+            return bits[0];
         }
         while (j < 1);
-// Take last digit
-//         do
-//         {
-//             int digit = message[letter] % 10;
-//             printf("Second digit: %i\n", digit);
-//             j++;
-//         }
-//         while (j < 1);
 }
 
 
