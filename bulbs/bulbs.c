@@ -19,11 +19,7 @@ int main(void)
 // Take each digit
     for (letter = 0; message[letter] != '\0'; letter++)
     {
-
-
-
 // Take first digit
-
             int digit = message[letter] / 10;
             int a_1 = digit % 2;
             int a = digit / 2;
