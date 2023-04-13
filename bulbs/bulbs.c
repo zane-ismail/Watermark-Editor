@@ -11,24 +11,28 @@ int main(void)
     // TODO
     int letter = 0;
     string message = get_string("Message: ");
-    int count = 0;
+
+// Count number of letters
+    int i = 0;
     do
     {
-        cc = cc / 10;
-        count++;
+        message[letter] = message[letter] / 10;
+        i++;
     }
-    while (cc > 0);
+    while (message[letter] > 0);
+    printf("%i\n", i);
+// Take each digit
     for (letter = 0; message[letter] != '\0'; letter++)
     {
 
-        int digit = 0;
+        int j = 0;
         int count = 0;
         do
         {
-            digit = message[letter] % 10;
+            int digit = message[letter] % 10;
             printf("%i\n", message[letter]);
         }
-        while (count > 0);
+        while (j < i);
     }
 }
 
