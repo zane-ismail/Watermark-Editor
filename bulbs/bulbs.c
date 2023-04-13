@@ -20,16 +20,27 @@ int main(void)
     for (letter = 0; message[letter] != '\0'; letter++)
     {
 // Take first digit
-            int digit = message[letter] / 10;
-            int a_1 = digit % 2;
-            int a = digit / 2;
+            int digit_1 = message[letter] / 10;
+            int digit_2 = message[letter] % 10;
+            int a_1 = digit_1 % 2;
+            int a = digit_1 / 2;
             int b_1 = a % 2;
             int b = a / 2;
             int c_1 = b % 2;
             int c = b / 2;
             int d_1 = c % 2;
             int d = c / 2;
-            printf("First digit: %i\n", digit);
+
+            int e_1 = digit_2 % 2;
+            int e = digit_2 / 2;
+            int f_1 = e % 2;
+            int f = e / 2;
+            int g_1 = f % 2;
+            int g = f / 2;
+            int h_1 = g % 2;
+            int h = g / 2;
+            printf("First digit: %i\n", digit_1);
+            printf("First digit: %i\n", digit_2);
             printf("Binary 4: %i\n", a_1);
             printf("Binary 3: %i\n", b_1);
             printf("Binary 2: %i\n", c_1);
@@ -39,11 +50,16 @@ int main(void)
             // printf("2: %i\n", c);
             // printf("1: %i\n", d);
             j++;
-            int bits[] = {d_1, c_1, b_1, a_1};
+            int bits[] = {d_1, c_1, b_1, a_1, h_1, g_1, f_1, e_1};
             printf("1: %i\n", bits[0]);
             printf("2: %i\n", bits[1]);
             printf("3: %i\n", bits[2]);
             printf("4: %i\n", bits[3]);
+            printf("5: %i\n", bits[4]);
+            printf("6: %i\n", bits[5]);
+            printf("7: %i\n", bits[6]);
+            printf("8: %i\n", bits[7]);
+
         }
         while (j < 1);
 // Take last digit
