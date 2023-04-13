@@ -14,10 +14,9 @@ int main(void)
     for (letter = 0; message[letter] != '\0'; letter++)
     {
         int digit = 0;
-        int count = 0;
         do
         {
-            digit = digit / 10;
+            digit = message[letter] % 10;
             count++;
         }
         while (digit > 0);
