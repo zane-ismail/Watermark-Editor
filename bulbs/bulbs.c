@@ -17,10 +17,19 @@ int main(void)
     for (letter = 0; message[letter] != '\0'; letter++)
     {
         int j = 0;
+// Take first digit
+        do
+        {
+            int digit = message[letter] / 10;
+            printf("%i\n", digit);
+            j++;
+        }
+        while (j < 1);
+// Take last digit
         do
         {
             int digit = message[letter] % 10;
-            printf("%i\n", message[letter]);
+            printf("%i\n", digit);
             j++;
         }
         while (j < 1);
