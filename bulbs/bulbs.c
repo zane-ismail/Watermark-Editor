@@ -22,14 +22,14 @@ int main(void)
         {
             int digit = message[letter] / 10;
             int a = digit % 2;
-            int b = a % a;
+            int b = a % 2;
             int c = b % 2;
             int d = c % 2;
+            printf("%i\n", digit);
             printf("%i\n", a);
             printf("%i\n", b);
             printf("%i\n", c);
             printf("%i\n", d);
-            printf("%i\n", digit);
             j++;
         }
         while (j < 1);
