@@ -14,16 +14,17 @@ int main(void)
 // Get length
     int length = strlen(message);
     printf("Length: %i\n", length);
+    int j = 0;
 
 // Take each digit
     for (letter = 0; message[letter] != '\0'; letter++)
     {
-        int j = 0;
+
 
 
 // Take first digit
 
-            int digit = message[letter] / divide;
+            int digit = message[letter] / 10;
             int a_1 = digit % 2;
             int a = digit / 2;
             int b_1 = a % 2;
@@ -42,7 +43,6 @@ int main(void)
             printf("2: %i\n", c);
             printf(": %i\n", d);
             j++;
-            divide = divide * 10;
         }
         while (j < length);
 // Take last digit
@@ -53,8 +53,8 @@ int main(void)
 //             j++;
 //         }
 //         while (j < 1);
-    }
 }
+
 
 void print_bulb(int bit)
 {
