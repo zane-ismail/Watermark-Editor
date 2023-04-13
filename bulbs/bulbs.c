@@ -35,10 +35,14 @@ int main(void)
             int d_1 = c % 2;
             int d = c / 2;
             printf("First digit: %i\n", digit);
-            printf("Binary 4: %i\n", a);
-            printf("Binary 3: %i\n", b);
-            printf("Binary 2: %i\n", c);
-            printf("Binary 1: %i\n", d);
+            printf("Binary 4: %i\n", a_1);
+            printf("Binary 3: %i\n", b_1);
+            printf("Binary 2: %i\n", c_1);
+            printf("Binary 1: %i\n", d_1);
+            printf("4: %i\n", a);
+            printf("3: %i\n", b);
+            printf("2: %i\n", c);
+            printf(": %i\n", d);
             j++;
         }
         while (j < 1);
