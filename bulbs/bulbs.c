@@ -3,7 +3,7 @@
 #include <string.h>
 
 const int BITS = 8;
-
+const int DIVIDE = 1;
 void print_bulb(int bit);
 
 int main(void)
@@ -25,7 +25,7 @@ int main(void)
 // Take first digit
         do
         {
-            int digit = message[letter] / 10;
+            int digit = message[letter] / DIVIDE;
             int a_1 = digit % 2;
             int a = digit / 2;
             int b_1 = a % 2;
@@ -44,16 +44,17 @@ int main(void)
             printf("2: %i\n", c);
             printf(": %i\n", d);
             j++;
+            DIVIDE * 10;
         }
         while (j < length);
 // Take last digit
-        do
-        {
-            int digit = message[letter] % 10;
-            printf("Second digit: %i\n", digit);
-            j++;
-        }
-        while (j < 1);
+//         do
+//         {
+//             int digit = message[letter] % 10;
+//             printf("Second digit: %i\n", digit);
+//             j++;
+//         }
+//         while (j < 1);
     }
 }
 
