@@ -9,8 +9,8 @@ void print_bulb(int bit);
 int main(void)
 {
     // TODO
-    string message = get_string("Message: ");
-    int ascii = atoi(message);
+    char message = get_string("Message: ");
+    for (i = 0; i <)
     printf("%i\n", ascii);
 
 }
