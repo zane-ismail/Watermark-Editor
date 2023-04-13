@@ -17,13 +17,9 @@ int main(void)
         do
         {
             digit = message[letter] % 10;
-            count++;
+            printf("%i\n", message[letter]);
         }
         while (digit > 0);
-        for (digit = 0; digit message[letter]
-        printf("%i\n", message[letter]);
-    }
-
 }
 
 void print_bulb(int bit)
