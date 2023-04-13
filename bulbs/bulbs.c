@@ -43,7 +43,7 @@ int main(void)
             printf("2: %i\n", c);
             printf("1: %i\n", d);
             j++;
-            int bit =[a, b, c, d];
+            int bit[a, b, c, d];
             printf("1: %i\n", bit);
         }
         while (j < length);
