@@ -30,6 +30,7 @@ int main(void)
             {
                 divide = divide * 10;
                 i++;
+                printf("Divide: %i\n", divide);
             }
             while (i < length);
             int digit = message[letter] / divide;
