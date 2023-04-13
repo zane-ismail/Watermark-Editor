@@ -21,6 +21,7 @@ int main(void)
     }
     while (message[letter] > 0);
     printf("%i\n", i);
+    printf("%i\n", message[letter]);
 // Take each digit
     for (letter = 0; message[letter] != '\0'; letter++)
     {
