@@ -8,21 +8,12 @@ void print_bulb(int bit);
 
 int main(void)
 {
-    txttobin;
-    print_bulb(txttobin);
-// Take last digit
-//         do
-//         {
-//             int digit = message[letter] % 10;
-//             printf("Second digit: %i\n", digit);
-//             j++;
-//         }
-//         while (j < 1);
+    int txttobin(void);
+    void print_bulb(int txttobin);
 }
 
 int txttobin(void)
 {
-// TODO
     int letter = 0;
     string message = get_string("Message: ");
 
@@ -77,6 +68,7 @@ int txttobin(void)
             return bits[0];
         }
         while (j < 1);
+        return 0;
 }
 
 
@@ -94,6 +86,15 @@ void print_bulb(int bit)
     }
 }
 
+
+// Take last digit
+//         do
+//         {
+//             int digit = message[letter] % 10;
+//             printf("Second digit: %i\n", digit);
+//             j++;
+//         }
+//         while (j < 1);
 
 
 // // Count number of letters
