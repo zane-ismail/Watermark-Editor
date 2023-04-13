@@ -13,7 +13,7 @@ int main(void)
 
 // Get length
     int length = strlen(message);
-    printf("Length: %i\n", length);
+    // printf("Length: %i\n", length);
     int j = 0;
 
 // Take each digit
@@ -39,26 +39,26 @@ int main(void)
             int g = f / 2;
             int h_1 = g % 2;
             int h = g / 2;
-            printf("First digit: %i\n", digit_1);
-            printf("First digit: %i\n", digit_2);
-            printf("Binary 4: %i\n", a_1);
-            printf("Binary 3: %i\n", b_1);
-            printf("Binary 2: %i\n", c_1);
-            printf("Binary 1: %i\n", d_1);
+            // printf("First digit: %i\n", digit_1);
+            // printf("First digit: %i\n", digit_2);
+            // printf("Binary 4: %i\n", a_1);
+            // printf("Binary 3: %i\n", b_1);
+            // printf("Binary 2: %i\n", c_1);
+            // printf("Binary 1: %i\n", d_1);
             // printf("4: %i\n", a);
             // printf("3: %i\n", b);
             // printf("2: %i\n", c);
             // printf("1: %i\n", d);
             j++;
             int bits[] = {d_1, c_1, b_1, a_1, h_1, g_1, f_1, e_1};
-            printf("1: %i\n", bits[0]);
-            printf("2: %i\n", bits[1]);
-            printf("3: %i\n", bits[2]);
-            printf("4: %i\n", bits[3]);
-            printf("5: %i\n", bits[4]);
-            printf("6: %i\n", bits[5]);
-            printf("7: %i\n", bits[6]);
-            printf("8: %i\n", bits[7]);
+            // printf("1: %i\n", bits[0]);
+            // printf("2: %i\n", bits[1]);
+            // printf("3: %i\n", bits[2]);
+            // printf("4: %i\n", bits[3]);
+            // printf("5: %i\n", bits[4]);
+            // printf("6: %i\n", bits[5]);
+            // printf("7: %i\n", bits[6]);
+            // printf("8: %i\n", bits[7]);
             print_bulb(bits[0]);
             print_bulb(bits[1]);
             print_bulb(bits[2]);
