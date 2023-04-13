@@ -31,7 +31,9 @@ int main(void)
             int b = a % 2;
             b = a / 2;
             int c = b % 2;
+            c = b / 2;
             int d = c % 2;
+            d = c / 2;
             printf("First digit: %i\n", digit);
             printf("Binary 4: %i\n", a);
             printf("Binary 3: %i\n", b);
