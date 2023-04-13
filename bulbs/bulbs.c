@@ -26,11 +26,11 @@ int main(void)
     {
 
         int j = 0;
-        int count = 0;
         do
         {
             int digit = message[letter] % 10;
             printf("%i\n", message[letter]);
+            j++;
         }
         while (j < i);
     }
