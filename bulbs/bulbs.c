@@ -21,6 +21,14 @@ int main(void)
         do
         {
             int digit = message[letter] / 10;
+            int a = digit % 2;
+            int b = a % a;
+            int c = b % 2;
+            int d = c % 2;
+            printf("%i\n", a);
+            printf("%i\n", b);
+            printf("%i\n", c);
+            printf("%i\n", d);
             printf("%i\n", digit);
             j++;
         }
