@@ -4,13 +4,13 @@
 
 const int BITS = 8;
 int txttobin(string message);
-int print_bulb(int bit);
+void print_bulb(int bit);
 
 int main(void)
 {
     string message = get_string("Message: ");
     int bit = txttobin(message);
-    int lights = print_bulb(bit);
+    void print_bulb(int bit);
 }
 
 int txttobin(string message)
@@ -56,6 +56,7 @@ int txttobin(string message)
             // printf("2: %i\n", c);
             // printf("1: %i\n", d);
             j++;
+            BITS --
             int bits[] = {d_1, c_1, b_1, a_1, h_1, g_1, f_1, e_1};
             printf("1: %i\n", bits[0]);
             printf("2: %i\n", bits[1]);
@@ -65,13 +66,14 @@ int txttobin(string message)
             printf("6: %i\n", bits[5]);
             printf("7: %i\n", bits[6]);
             printf("8: %i\n", bits[7]);
-            return bits[0];
+            return bits[BITS];
         }
         while (j < 1);
         return 1;
 }
 
-int print_bulb(int bit)
+
+void print_bulb(int bit)
 {
     if (bit == 0)
     {
@@ -83,7 +85,6 @@ int print_bulb(int bit)
         // Light emoji
         printf("\U0001F7E1");
     }
-
 }
 
 
