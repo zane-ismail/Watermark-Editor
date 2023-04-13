@@ -67,6 +67,7 @@ int main(void)
             print_bulb(bits[5]);
             print_bulb(bits[6]);
             print_bulb(bits[7]);
+            printf("\n");
         }
         while (j < 1);
 }
