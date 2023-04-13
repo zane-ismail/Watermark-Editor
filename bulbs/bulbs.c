@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 
-const int BI = 8;
+const int BITS = 8;
 
 void print_bulb(int bit);
 
@@ -14,7 +14,7 @@ int main(void)
 
 // Get length
     int length = strlen(message);
-    printf("%i\n", length);
+    printf("Length: %i\n", length);
 
 // Take each digit
     for (letter = 0; message[letter] != '\0'; letter++)
@@ -30,7 +30,7 @@ int main(void)
             int b = a % 2;
             int c = b % 2;
             int d = c % 2;
-            printf("%i\n", digit);
+            printf("First digit: %i\n", digit);
             // printf("%i\n", a);
             // printf("%i\n", b);
             // printf("%i\n", c);
@@ -42,7 +42,7 @@ int main(void)
         do
         {
             int digit = message[letter] % 10;
-            printf("%i\n", digit);
+            printf("Second digit: %i\n", digit);
             j++;
         }
         while (j < 1);
