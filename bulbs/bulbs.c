@@ -49,7 +49,7 @@ int main(void)
             printf("3: %i\n", bits[2]);
             printf("4: %i\n", bits[3]);
         }
-        while (j < length);
+        while (j < 1);
 // Take last digit
 //         do
 //         {
