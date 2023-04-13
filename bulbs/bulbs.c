@@ -13,7 +13,7 @@ int main(void)
     string message = get_string("Message: ");
     for (letter = 0; message[letter] != '\0'; letter++)
     {
-        message[letter]
+        for (digit = 0; digit message[letter]
         printf("%i\n", message[letter]);
     }
 
