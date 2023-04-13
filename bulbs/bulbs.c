@@ -11,8 +11,16 @@ int main(void)
     // TODO
     int letter = 0;
     string message = get_string("Message: ");
+    int count = 0;
+    do
+    {
+        cc = cc / 10;
+        count++;
+    }
+    while (cc > 0);
     for (letter = 0; message[letter] != '\0'; letter++)
     {
+
         int digit = 0;
         int count = 0;
         do
