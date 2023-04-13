@@ -45,7 +45,7 @@ int main(void)
             printf(": %i\n", d);
             j++;
         }
-        while (j < 1);
+        while (j < length);
 // Take last digit
         do
         {
