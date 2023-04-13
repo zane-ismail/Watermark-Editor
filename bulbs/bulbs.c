@@ -20,6 +20,7 @@ int main(void)
             printf("%i\n", message[letter]);
         }
         while (digit > 0);
+    }
 }
 
 void print_bulb(int bit)
