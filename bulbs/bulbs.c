@@ -9,11 +9,12 @@ void print_bulb(int bit);
 int main(void)
 {
     // TODO
-    int length = 0;
+    int letter = 0;
     string message = get_string("Message: ");
-    for (length = 0; message[length] != '\0'; length++)
+    for (letter = 0; message[letter] != '\0'; letter++)
     {
-        printf("%i\n", message[length]);
+        message[letter]
+        printf("%i\n", message[letter]);
     }
 
 }
