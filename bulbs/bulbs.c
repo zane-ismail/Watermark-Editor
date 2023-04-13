@@ -14,12 +14,13 @@ int main(void)
     for (letter = 0; message[letter] != '\0'; letter++)
     {
         int digit = 0;
+        int count = 0;
         do
         {
             digit = message[letter] % 10;
             printf("%i\n", message[letter]);
         }
-        while (digit > 0);
+        while (count > 0);
     }
 }
 
