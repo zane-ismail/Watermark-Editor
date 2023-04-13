@@ -3,19 +3,20 @@
 #include <string.h>
 
 const int BITS = 8;
-int txttobin(void);
+int txttobin(string message);
 void print_bulb(int bit);
 
 int main(void)
 {
-    int txttobin(void);
+    string message = get_string("Message: ");
+    int txttobin(string message);
     void print_bulb(int txttobin);
 }
 
-int txttobin(void)
+int txttobin(string message)
 {
     int letter = 0;
-    string message = get_string("Message: ");
+
 
 // Get length
     int length = strlen(message);
