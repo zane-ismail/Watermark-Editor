@@ -12,20 +12,10 @@ int main(void)
     int letter = 0;
     string message = get_string("Message: ");
 
-// Count number of letters
-    int i = 0;
-    do
-    {
-        message[letter] = message[letter] / 10;
-        i++;
-    }
-    while (message[letter] > 0);
-    printf("%i\n", i);
-    printf("%i\n", message[letter]);
+
 // Take each digit
     for (letter = 0; message[letter] != '\0'; letter++)
     {
-
         int j = 0;
         do
         {
@@ -33,7 +23,7 @@ int main(void)
             printf("%i\n", message[letter]);
             j++;
         }
-        while (j < i);
+        while (j < 1);
     }
 }
 
@@ -50,3 +40,16 @@ void print_bulb(int bit)
         printf("\U0001F7E1");
     }
 }
+
+
+
+// // Count number of letters
+//     int i = 0;
+//     do
+//     {
+//         message[letter] = message[letter] / 10;
+//         i++;
+//     }
+//     while (message[letter] > 0);
+//     printf("%i\n", i);
+//     printf("%i\n", message[letter]);
