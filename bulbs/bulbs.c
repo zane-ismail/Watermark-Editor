@@ -20,7 +20,7 @@ int main(void)
     for (letter = 0; message[letter] != '\0'; letter++)
     {
 // Take first digit
-            int digit_1 = message[letter] ;
+            int digit_1 = message[letter] / 10;
             int digit_2 = message[letter] % 10;
             int a_1 = digit_1 % 2;
             int a = digit_1 / 2;
