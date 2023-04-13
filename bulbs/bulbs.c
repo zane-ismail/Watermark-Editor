@@ -41,8 +41,10 @@ int main(void)
             printf("4: %i\n", a);
             printf("3: %i\n", b);
             printf("2: %i\n", c);
-            printf(": %i\n", d);
+            printf("1: %i\n", d);
             j++;
+            int bit =[a, b, c, d];
+            printf("1: %i\n", bit);
         }
         while (j < length);
 // Take last digit
