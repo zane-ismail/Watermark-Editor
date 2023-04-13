@@ -22,17 +22,7 @@ int main(void)
 
 
 // Take first digit
-        do
-        {
-            int divide = 1;
-            int i = 1;
-            do
-            {
-                divide = divide * 10;
-                i++;
-                printf("Divide: %i\n", divide);
-            }
-            while (i < length);
+
             int digit = message[letter] / divide;
             int a_1 = digit % 2;
             int a = digit / 2;
@@ -92,3 +82,18 @@ void print_bulb(int bit)
 //     while (message[letter] > 0);
 //     printf("%i\n", i);
 //     printf("%i\n", message[letter]);
+
+
+
+
+        // do
+        // {
+        //     int divide = 1;
+        //     int i = 1;
+        //     do
+        //     {
+        //         divide = divide * 10;
+        //         i++;
+        //         printf("Divide: %i\n", divide);
+        //     }
+        //     while (i < length);
