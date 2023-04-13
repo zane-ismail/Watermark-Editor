@@ -17,7 +17,6 @@ int txttobin(string message)
 {
     int letter = 0;
 
-
 // Get length
     int length = strlen(message);
     printf("Length: %i\n", length);
@@ -69,7 +68,7 @@ int txttobin(string message)
             return bits[0];
         }
         while (j < 1);
-        return 0;
+        return 1;
 }
 
 
