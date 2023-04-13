@@ -38,13 +38,16 @@ int main(void)
             printf("Binary 3: %i\n", b_1);
             printf("Binary 2: %i\n", c_1);
             printf("Binary 1: %i\n", d_1);
-            printf("4: %i\n", a);
-            printf("3: %i\n", b);
-            printf("2: %i\n", c);
-            printf("1: %i\n", d);
+            // printf("4: %i\n", a);
+            // printf("3: %i\n", b);
+            // printf("2: %i\n", c);
+            // printf("1: %i\n", d);
             j++;
-            int bit[a, b, c, d];
-            printf("1: %i\n", bit);
+            int bits[] = {d_1, c_1, b_1, a_1};
+            printf("1: %i\n", bits[0]);
+            printf("2: %i\n", bits[1]);
+            printf("3: %i\n", bits[2]);
+            printf("4: %i\n", bits[3]);
         }
         while (j < length);
 // Take last digit
