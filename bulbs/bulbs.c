@@ -3,19 +3,13 @@
 #include <string.h>
 
 const int BITS = 8;
-int txttobin(string message);
 void print_bulb(int bit);
 
 int main(void)
 {
-    string message = get_string("Message: ");
-    int bit = txttobin(message);
-    void print_bulb(int bit);
-}
-
-int txttobin(string message)
-{
+    // TODO
     int letter = 0;
+    string message = get_string("Message: ");
 
 // Get length
     int length = strlen(message);
@@ -56,7 +50,6 @@ int txttobin(string message)
             // printf("2: %i\n", c);
             // printf("1: %i\n", d);
             j++;
-            BITS --
             int bits[] = {d_1, c_1, b_1, a_1, h_1, g_1, f_1, e_1};
             printf("1: %i\n", bits[0]);
             printf("2: %i\n", bits[1]);
@@ -66,11 +59,18 @@ int txttobin(string message)
             printf("6: %i\n", bits[5]);
             printf("7: %i\n", bits[6]);
             printf("8: %i\n", bits[7]);
-            return bits[BITS];
+            print_bulb(bits[0]);
+            print_bulb(bits[1]);
+            print_bulb(bits[2]);
+            print_bulb(bits[3]);
+            print_bulb(bits[4]);
+            print_bulb(bits[5]);
+            print_bulb(bits[6]);
+            print_bulb(bits[7]);
         }
         while (j < 1);
-        return 1;
 }
+
 
 
 void print_bulb(int bit)
@@ -87,15 +87,6 @@ void print_bulb(int bit)
     }
 }
 
-
-// Take last digit
-//         do
-//         {
-//             int digit = message[letter] % 10;
-//             printf("Second digit: %i\n", digit);
-//             j++;
-//         }
-//         while (j < 1);
 
 
 // // Count number of letters
@@ -123,3 +114,14 @@ void print_bulb(int bit)
         //         printf("Divide: %i\n", divide);
         //     }
         //     while (i < length);
+
+
+
+// Take last digit
+//         do
+//         {
+//             int digit = message[letter] % 10;
+//             printf("Second digit: %i\n", digit);
+//             j++;
+//         }
+//         while (j < 1);
