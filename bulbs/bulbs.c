@@ -45,7 +45,7 @@ int main(void)
             printf("%i\n", digit);
             j++;
         }
-        while (j < (length - 2));
+        while (j < 1);
     }
 }
 
