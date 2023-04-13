@@ -10,6 +10,8 @@ int main(void)
 {
     // TODO
     string message = get_string("Message: ");
+    printf("%i\n", message);
+
 }
 
 void print_bulb(int bit)
