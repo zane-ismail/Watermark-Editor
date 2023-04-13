@@ -20,6 +20,8 @@ int main(void)
     for (letter = 0; message[letter] != '\0'; letter++)
     {
         int j = 0;
+
+
 // Take first digit
         do
         {
@@ -29,10 +31,10 @@ int main(void)
             int c = b % 2;
             int d = c % 2;
             printf("%i\n", digit);
-            printf("%i\n", a);
-            printf("%i\n", b);
-            printf("%i\n", c);
-            printf("%i\n", d);
+            // printf("%i\n", a);
+            // printf("%i\n", b);
+            // printf("%i\n", c);
+            // printf("%i\n", d);
             j++;
         }
         while (j < 1);
@@ -43,7 +45,7 @@ int main(void)
             printf("%i\n", digit);
             j++;
         }
-        while (j < 1);
+        while (j < (length - 1));
     }
 }
 
