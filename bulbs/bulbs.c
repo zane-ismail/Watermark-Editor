@@ -12,6 +12,9 @@ int main(void)
     int letter = 0;
     string message = get_string("Message: ");
 
+// Get length
+    int length = strlen(message);
+    printf("%i\n", length);
 
 // Take each digit
     for (letter = 0; message[letter] != '\0'; letter++)
