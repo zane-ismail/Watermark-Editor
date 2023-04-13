@@ -25,19 +25,19 @@ int main(void)
 // Take first digit
         do
         {
-            message[letter] = message[letter] / 10;
-            int a = message[letter] % 2;
+            int digit = message[letter] / 10;
+            int a = digit % 2;
             int b = a % 2;
             int c = b % 2;
             int d = c % 2;
-            printf("%i\n", message[letter]);
+            printf("%i\n", digit);
             // printf("%i\n", a);
             // printf("%i\n", b);
             // printf("%i\n", c);
             // printf("%i\n", d);
             j++;
         }
-        while (j < length);
+        while (j < 1);
 // Take last digit
         do
         {
