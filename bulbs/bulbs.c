@@ -25,11 +25,10 @@ int main(void)
         do
         {
             int divide = 1;
-            int i;
+            int i = 1;
             do
             {
-                divide = divide* 10;
-                i = 1;
+                divide = divide * 10;
                 i++;
             }
             while (i < length);
