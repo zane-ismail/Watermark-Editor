@@ -10,7 +10,8 @@ int main(void)
 {
     // TODO
     string message = get_string("Message: ");
-    printf("%i\n", message);
+    int ascii = atoi(message);
+    printf("%i\n", ascii);
 
 }
 
