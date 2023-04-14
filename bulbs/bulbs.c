@@ -10,9 +10,16 @@ int main(void)
     // TODO
     int letter = 0;
     int sum;
+    int power = 2;
     string message = get_string("Message: ");
-    sum = (21 % 2);
-    printf("%i\n", sum);
+    int number = 21;
+    do
+    {
+        power = (power * 2);
+        printf("Power: %i\n", power);
+    }
+    while (power < number);
+    printf("%i\n", number);
 }
 
 
