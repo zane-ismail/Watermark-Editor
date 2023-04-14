@@ -12,10 +12,9 @@ int main(void)
     int sum;
     // int binary;
     string message = get_string("Message: ");
-    int number = 72;
+    int number = message;
     int bit[] = {0, 0, 0, 0, 0, 0, 0, 0};
     int i = 0;
-
 // Convert to binary
     do
     {
@@ -24,11 +23,16 @@ int main(void)
         // printf("Binary: %i\n", bit[i]);
         // printf("Number: %i\n", number);
         // printf("1: %i\n", bit[0]);
-        print_bulb(bit[i]);
-        i--;
+        // print_bulb(bit[i]);
+        i++;
     }
     while (number > 0);
+    for (int j = 7; j != -1; j--)
+    {
+        print_bulb(bit[j]);
+    }
     printf("\n");
+
     // printf("2: %i\n", bit[7]);
     // printf("2: %i\n", bit[6]);
     // printf("2: %i\n", bit[5]);
