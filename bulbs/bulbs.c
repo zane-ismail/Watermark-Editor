@@ -22,16 +22,9 @@ int main(void)
         printf("Binary: %i\n", binary);
         // printf("Number: %i\n", number);
         int bit[] = {binary};
+        printf("1: %i\n", bit[0]);
     }
     while (number > 0);
-    printf("1: %i\n", bit[0]);
-    printf("2: %i\n", bit[1]);
-    printf("3: %i\n", bit[2]);
-    printf("4: %i\n", bit[3]);
-    printf("5: %i\n", bit[4]);
-    printf("6: %i\n", bit[5]);
-    printf("7: %i\n", bit[6]);
-    printf("8: %i\n", bit[7]);
     print_bulb(binary);
 }
 
