@@ -10,7 +10,7 @@ int main(void)
     // TODO
 
     int sum;
-    int binary;
+    // int binary;
     string message = get_string("Message: ");
     int number = 72;
     int bit[] = {0, 0, 0, 0, 0, 0, 0, 0};
@@ -21,13 +21,22 @@ int main(void)
     {
         bit[i] = number % 2;
         number = number / 2;
-        printf("Binary: %i\n", binary);
+        printf("Binary: %i\n", bit[i]);
         // printf("Number: %i\n", number);
-        // printf("1: %i\n", bit[0]);
+        printf("1: %i\n", bit[0]);
         i++;
     }
     while (number > 0);
-    print_bulb(binary);
+    printf("2: %i\n", bit[0]);
+    printf("2: %i\n", bit[1]);
+    printf("2: %i\n", bit[2]);
+    printf("2: %i\n", bit[3]);
+    printf("2: %i\n", bit[4]);
+    printf("2: %i\n", bit[5]);
+    printf("2: %i\n", bit[6]);
+    printf("2: %i\n", bit[7]);
+
+
 }
 
 void print_bulb(int bit)
