@@ -19,6 +19,7 @@ int main(void)
         binary = number % 2;
         number = number / 2;
         printf("Binary: %i\n", binary);
+        printf("Number: %i\n", number);
         if (binary == 1)
         {
             number = (number - 0.5);
