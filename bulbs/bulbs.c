@@ -21,13 +21,13 @@ int main(void)
     {
         bit[i] = number % 2;
         number = number / 2;
-        printf("Binary: %i\n", bit[i]);
+        // printf("Binary: %i\n", bit[i]);
         // printf("Number: %i\n", number);
-        printf("1: %i\n", bit[0]);
+        // printf("1: %i\n", bit[0]);
         i++;
     }
     while (number > 0);
-    printf("2: %i\n", bit[7]);
+    printf("2: %i\n", bit[]);
     printf("2: %i\n", bit[6]);
     printf("2: %i\n", bit[5]);
     printf("2: %i\n", bit[4]);
