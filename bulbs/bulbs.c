@@ -18,11 +18,10 @@ int main(void)
         int letter = 0;
         do
         {
-            power = power * power)
             power = (power * 2);
-            printf("Power: %i\n", power);
         }
         while (power < number / 2);
+        printf("Power: %i\n", power);
         number = (number - power);
         printf("%i\n", number);
     }
