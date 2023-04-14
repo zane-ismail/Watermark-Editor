@@ -18,9 +18,10 @@ int main(void)
         int letter = 0;
         do
         {
+            power = (power * 1);
             power = (power * 2);
         }
-        while (power < number / 2);
+        while (power < number * 0.75);
         printf("Power: %i\n", power);
         number = (number - power);
         printf("%i\n", number);
