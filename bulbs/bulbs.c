@@ -11,7 +11,7 @@ int main(void)
     int letter = 0;
     int sum;
     string message = get_string("Message: ");
-    sum = (75 % 2);
+    sum = (21 % 2);
     printf("%i\n", sum);
 }
 
