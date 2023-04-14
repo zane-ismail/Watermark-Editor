@@ -11,22 +11,25 @@ int main(void)
     int sum;
     string message = get_string("Message: ");
     int bit[] = {0, 0, 0, 0, 0, 0, 0, 0};
-    int number = 72;
     int i = 0;
+    int length = strlen(message);
 // Convert to binary
-    do
+    for (int j = 0; j == length; j++)
     {
-        bit[i] = number % 2;
-        number = number / 2;
-        i++;
+        int number = message[j];
+        do
+        {
+            bit[i] = number % 2;
+            number = number / 2;
+            i++;
+        }
+        while (number > 0);
+        for (int j = 7; j != -1; j--)
+        {
+            print_bulb(bit[j]);
+        }
+        printf("\n");
     }
-    while (number > 0);
-// Print bulbs
-    for (int j = 7; j != -1; j--)
-    {
-        print_bulb(bit[j]);
-    }
-    printf("\n");
 }
 
 void print_bulb(int bit)
