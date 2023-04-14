@@ -10,23 +10,24 @@ int main(void)
 // TODO
     int sum;
     string message = get_string("Message: ");
-    int bit[] = {0, 0, 0, 0, 0, 0, 0, 0};
-    int i = 0;
+    int binary[] = {0, 0, 0, 0, 0, 0, 0, 0};
+    int bit = 0;
     int length = strlen(message);
 // Convert to binary
-    for (int j = 0; j == length; j++)
+    for (int i = 0; i < length; i++)
     {
-        int number = message[j];
+        int number = message[i];
+        printf("%i\n", message[i]);
         do
         {
-            bit[i] = number % 2;
+            binary[bit] = number % 2;
             number = number / 2;
             i++;
         }
         while (number > 0);
         for (int j = 7; j != -1; j--)
         {
-            print_bulb(bit[j]);
+            print_bulb(binary[j]);
         }
         printf("\n");
     }
