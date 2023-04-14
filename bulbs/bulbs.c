@@ -27,14 +27,14 @@ int main(void)
         i++;
     }
     while (number > 0);
-    printf("2: %i\n", bit[0]);
-    printf("2: %i\n", bit[1]);
-    printf("2: %i\n", bit[2]);
-    printf("2: %i\n", bit[3]);
-    printf("2: %i\n", bit[4]);
-    printf("2: %i\n", bit[5]);
-    printf("2: %i\n", bit[6]);
     printf("2: %i\n", bit[7]);
+    printf("2: %i\n", bit[6]);
+    printf("2: %i\n", bit[5]);
+    printf("2: %i\n", bit[4]);
+    printf("2: %i\n", bit[3]);
+    printf("2: %i\n", bit[2]);
+    printf("2: %i\n", bit[1]);
+    printf("2: %i\n", bit[0]);
 
 
 }
