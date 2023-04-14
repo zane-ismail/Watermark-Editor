@@ -14,6 +14,7 @@ int main(void)
     string message = get_string("Message: ");
     int number = 73;
 
+// Convert to binary
     do
     {
         binary = number % 2;
@@ -22,7 +23,7 @@ int main(void)
         // printf("Number: %i\n", number);
         if (binary == 1)
         {
-            // printf("Number: %i\n", number);
+        // printf("Number: %i\n", number);
         }
     }
     while (number > 0);
