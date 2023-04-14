@@ -18,6 +18,7 @@ int main(void)
         int letter = 0;
         do
         {
+            power = power * power)
             power = (power * 2);
             printf("Power: %i\n", power);
         }
