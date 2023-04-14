@@ -23,7 +23,7 @@ int main(void)
             bit++;
         }
         while (number > 0);
-        // Loop through eight times
+        // Loop through eight times to print row of bulbs
         for (int j = 7; j != -1; j--)
         {
             print_bulb(binary[j]);
