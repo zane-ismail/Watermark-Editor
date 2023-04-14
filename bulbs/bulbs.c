@@ -24,17 +24,19 @@ int main(void)
         // printf("Binary: %i\n", bit[i]);
         // printf("Number: %i\n", number);
         // printf("1: %i\n", bit[0]);
-        i++;
+        print_bulb(bit[i]);
+        i--;
     }
     while (number > 0);
-    printf("2: %i\n", bit[]);
-    printf("2: %i\n", bit[6]);
-    printf("2: %i\n", bit[5]);
-    printf("2: %i\n", bit[4]);
-    printf("2: %i\n", bit[3]);
-    printf("2: %i\n", bit[2]);
-    printf("2: %i\n", bit[1]);
-    printf("2: %i\n", bit[0]);
+    printf("\n");
+    // printf("2: %i\n", bit[7]);
+    // printf("2: %i\n", bit[6]);
+    // printf("2: %i\n", bit[5]);
+    // printf("2: %i\n", bit[4]);
+    // printf("2: %i\n", bit[3]);
+    // printf("2: %i\n", bit[2]);
+    // printf("2: %i\n", bit[1]);
+    // printf("2: %i\n", bit[0]);
 
 
 }
