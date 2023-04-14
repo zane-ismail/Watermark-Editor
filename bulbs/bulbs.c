@@ -21,8 +21,7 @@ int main(void)
         number = number / 2;
         printf("Binary: %i\n", binary);
         // printf("Number: %i\n", number);
-        int bit[] = {binary};
-        printf("1: %i\n", bit[0]);
+        // printf("1: %i\n", bit[0]);
     }
     while (number > 0);
     print_bulb(binary);
