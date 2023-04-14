@@ -8,18 +8,24 @@ void print_bulb(int bit);
 int main(void)
 {
     // TODO
-    int letter = 0;
+
     int sum;
-    int power = 1;
     string message = get_string("Message: ");
     int number = 21;
     do
     {
-        power = (power * 2);
-        printf("Power: %i\n", power);
+        int power = 1;
+        int letter = 0;
+        do
+        {
+            power = (power * 2);
+            printf("Power: %i\n", power);
+        }
+        while (power < number / 2);
+        number = (number - power);
+        printf("%i\n", number);
     }
-    while (power < number / 2);
-    printf("%i\n", number);
+    while (number > 0);
 }
 
 
