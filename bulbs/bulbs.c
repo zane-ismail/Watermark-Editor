@@ -12,18 +12,17 @@ int main(void)
     int sum;
     int binary;
     string message = get_string("Message: ");
-    int number = 21;
+    int number = 73;
 
     do
     {
         binary = number % 2;
         number = number / 2;
         printf("Binary: %i\n", binary);
-        printf("Number: %i\n", number);
+        // printf("Number: %i\n", number);
         if (binary == 1)
         {
-            number = (number - 0.5);
-            printf("Number: %i\n", number);
+            // printf("Number: %i\n", number);
         }
     }
     while (number > 0);
