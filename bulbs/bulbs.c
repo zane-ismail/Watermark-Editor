@@ -13,15 +13,18 @@ int main(void)
     int binary;
     string message = get_string("Message: ");
     int number = 72;
+    int bit[] = {0, 0, 0, 0, 0, 0, 0, 0};
+    int i = 0;
 
 // Convert to binary
     do
     {
-        binary = number % 2;
+        bit[i] = number % 2;
         number = number / 2;
         printf("Binary: %i\n", binary);
         // printf("Number: %i\n", number);
         // printf("1: %i\n", bit[0]);
+        i++;
     }
     while (number > 0);
     print_bulb(binary);
