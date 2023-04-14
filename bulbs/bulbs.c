@@ -10,23 +10,26 @@ int main(void)
     // TODO
 
     int sum;
+    int binary;
     string message = get_string("Message: ");
     int number = 21;
+
     do
     {
-        int power = 1;
-        int letter = 0;
-        do
+        binary = number % 2;
+        number = number / 2;
+        printf("Binary: %i\n", binary);
+        if (binary == 1)
         {
-            power = (power * 1);
-            power = (power * 2);
+            number = (number - 0.5);
+            printf("Number: %i\n", number);
         }
-        while (power < number * 0.75);
-        printf("Power: %i\n", power);
-        number = (number - power);
-        printf("%i\n", number);
     }
     while (number > 0);
+
+
+
+
 }
 
 
