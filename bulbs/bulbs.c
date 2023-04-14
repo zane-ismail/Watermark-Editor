@@ -6,7 +6,6 @@ void print_bulb(int bit);
 
 int main(void)
 {
-    int binary[] = {0, 0, 0, 0, 0, 0, 0, 0};
     int bit = 0;
 // Prompt message and establish length
     string message = get_string("Message: ");
@@ -15,6 +14,7 @@ int main(void)
     for (int i = 0; i < length; i++)
     {
 // Convert to binary
+        int binary[] = {0, 0, 0, 0, 0, 0, 0, 0};
         int number = message[i];
         printf("LETTER: %i\n", message[i]);
         printf("ITERATION: %i\n", i);
