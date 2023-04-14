@@ -12,11 +12,12 @@ int main(void)
     string message = get_string("Message: ");
     int length = strlen(message);
 // Iterate for length of word
-    for (int i = 0; i < length + 1; i++)
+    for (int i = 0; i < length; i++)
     {
 // Convert to binary
         int number = message[i];
-        printf("%i\n", message[i]);
+        printf("LETTER: %i\n", message[i]);
+        printf("ITERATION: %i\n", i);
         do
         {
             binary[bit] = number % 2;
@@ -26,8 +27,8 @@ int main(void)
         while (number > 0);
         for (int j = 7; j != -1; j--)
         {
-            // printf("%i\n", binary[j]);
             print_bulb(binary[j]);
+            printf("%i\n", binary[j]);
         }
         printf("\n");
     }
