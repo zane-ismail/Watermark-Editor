@@ -18,7 +18,7 @@ int main(void)
         power = (power * 2);
         printf("Power: %i\n", power);
     }
-    while (power < number);
+    while (power < number / 2);
     printf("%i\n", number);
 }
 
