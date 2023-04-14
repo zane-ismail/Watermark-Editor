@@ -2,20 +2,19 @@
 #include <stdio.h>
 #include <string.h>
 
-const int BITS = 8;
 void print_bulb(int bit);
 
 int main(void)
 {
-// TODO
-    int sum;
-    string message = get_string("Message: ");
     int binary[] = {0, 0, 0, 0, 0, 0, 0, 0};
     int bit = 0;
+// Prompt message and establish length
+    string message = get_string("Message: ");
     int length = strlen(message);
-// Convert to binary
-    for (int i = 0; i < length; i++)
+// Iterate for length of word
+    for (int i = 0; i < length + 1; i++)
     {
+// Convert to binary
         int number = message[i];
         printf("%i\n", message[i]);
         do
