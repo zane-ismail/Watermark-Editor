@@ -10,7 +10,7 @@ int main(void)
     // TODO
     int letter = 0;
     int sum;
-    int power = 2;
+    int power = 1;
     string message = get_string("Message: ");
     int number = 21;
     do
