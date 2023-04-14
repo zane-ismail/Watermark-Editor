@@ -6,18 +6,16 @@ void print_bulb(int bit);
 
 int main(void)
 {
-// Prompt message and establish length
+    // Prompt message and establish length
     string message = get_string("Message: ");
     int length = strlen(message);
-// Iterate for length of word
+    // Iterate for length of word
     for (int i = 0; i < length; i++)
     {
-// Convert to binary
         int binary[] = {0, 0, 0, 0, 0, 0, 0, 0};
         int bit = 0;
         int number = message[i];
-        // printf("LETTER: %i\n", message[i]);
-        // printf("ITERATION: %i\n", i);
+        // Convert to binary
         do
         {
             binary[bit] = number % 2;
@@ -25,10 +23,10 @@ int main(void)
             bit++;
         }
         while (number > 0);
+        // Loop through eight times
         for (int j = 7; j != -1; j--)
         {
             print_bulb(binary[j]);
-            // printf("%i\n", binary[j]);
         }
         printf("\n");
     }
@@ -47,5 +45,3 @@ void print_bulb(int bit)
         printf("\U0001F7E1");
     }
 }
-
-
