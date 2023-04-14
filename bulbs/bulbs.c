@@ -22,11 +22,12 @@ int main(void)
         {
             binary[bit] = number % 2;
             number = number / 2;
+            bit++;
         }
         while (number > 0);
         for (int j = 7; j != -1; j--)
         {
-            printf("%i\n", binary[j]);
+            // printf("%i\n", binary[j]);
             print_bulb(binary[j]);
         }
         printf("\n");
