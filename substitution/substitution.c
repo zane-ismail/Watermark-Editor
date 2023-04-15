@@ -51,7 +51,10 @@ int main(int argc, string argv[])
                 character = key[character];
 
                 // ADD EXTRA IF CONDITIONAL FOR KEY[CHARACTER] UPPER CASE, THEN MINUS
-
+                if (character <= ASCII_LOW_END && character >= ASCII_LOW_START)
+                {
+                    character = (character + 33);
+                }
 
                 // printf("%c", character);
                 // if (character > ASCII_UPP_END)
@@ -59,10 +62,15 @@ int main(int argc, string argv[])
                 //     character = character - ALPHABET;
                 // }
             }
-            else if (character <= ASCII_LOW_END && character >= ASCII_LOW_START)
+            else if (character <= ASCII_UPP_END && character >= ASCII_UPP_START)
             {
                 character = (plaintext[i] - ASCII_LOW_START);
                 character = key[character];
+
+                if (character <= ASCII_LOW_END && character >= ASCII_LOW_START)
+                {
+                    character = (character - 33);
+                }
                 // printf("%d", character);
                 // if (character > ASCII_LOW_END)
                 // {
