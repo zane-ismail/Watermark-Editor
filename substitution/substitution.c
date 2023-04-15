@@ -10,8 +10,8 @@ int main(int argc, string argv[])
     const int ASCII_UPP_END = 90;
     const int ASCII_LOW_START = 97;
     const int ASCII_LOW_END = 122;
-    int factor = 1;
-    int key = 0;
+    int num;
+    int key[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
     int i;
     string plaintext;
     // Terminate if wrong value is entered
@@ -20,5 +20,19 @@ int main(int argc, string argv[])
         printf("Usage: ./substitution key\n");
         return 1;
     }
-    
+    // Validate correct number of characters
+    // Iterate through argv to add each value to an array
+     for (i = 0; argv[1][i] != '\0'; i++)
+        {
+
+            num = argv[1][i];
+            key[i] = num;
+        }
+    if (i != 25)
+    {
+        printf("Key must contain 26 characters.\n");
+    }
+        // printf("%i\n", key[0]);
+        // printf("%i\n", key[1]);
+        // printf("%i\n", key[2]);
 }
