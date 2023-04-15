@@ -1,4 +1,4 @@
-male sub#include <cs50.h>
+#include <cs50.h>
 #include <stdio.h>
 
 int main(int argc, string argv[])
@@ -14,9 +14,10 @@ int main(int argc, string argv[])
     int key = 0;
     int i;
     string plaintext;
-    // Terminate if no value is entered
-    if (argc == 1)
+    // Terminate if wrong value is entered
+    if (argc != 2)
     {
+        printf("Usage: ./substitution key\n");
         return 1;
     }
 }
