@@ -79,21 +79,21 @@ int main(int argc, string argv[])
             // printf("ch: %i", character);
             if (character <= ASCII_UPP_END && character >= ASCII_UPP_START)
             {
-                character = (plaintext[length] - new_key);
-                if (character < 65)
+                character = (plaintext[length] + new_key);
+                if (character > 65)
                 {
                     // printf("upper: %c", character);
-                    character = character + 26;
+                    character = character - 26;
                 }
                 // else (character = character - new_key);
             }
             else if (character <= ASCII_LOW_END && character >= ASCII_LOW_START)
             {
-                character = (plaintext[length] - new_key);
-                if (character < 97)
+                character = (plaintext[length] + new_key);
+                if (character > 97)
                 {
                     // printf("lower: %c", character);
-                    character = character + 26;
+                    character = character - 26;
                 }
             }
             printf("%c", character);
