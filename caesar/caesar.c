@@ -28,7 +28,7 @@ int main(int argc, string argv[])
         {
          multi = (multi * 10);
         }
-    printf("%i\n", multi);
+    // printf("%i\n", multi);
     for (length = 0; argv[1][length] != '\0'; length++)
     {
         int digit = argv[1][length];
@@ -46,14 +46,14 @@ int main(int argc, string argv[])
         }
         else (printf("Usage: ./caesar key\n"));
     }
-    printf("Old Key: %i\n", key);
+    // printf("Old Key: %i\n", key);
     //
     // Keep key number or below
     if (key > 26)
     {
-        printf("Old Key1: %i\n", key);
+        // printf("Old Key1: %i\n", key);
         new_key = (key % 26);
-        printf("New Key: %i\n", new_key);
+        // printf("New Key: %i\n", new_key);
     }
     else (new_key = key);
     // Validate only one input
@@ -63,7 +63,7 @@ int main(int argc, string argv[])
     // Turn string input into integer
     if (argc == 2 && length != 0)
     {
-        printf("Key: %s\n", input);
+        // printf("Key: %s\n", input);
         // Prompt user
         plaintext = get_string("plaintext: ");
         // Uses key to convert character
@@ -72,30 +72,29 @@ int main(int argc, string argv[])
         {
             // int character = (plaintext[length] - new_key);
             int character = plaintext[length];
-            printf("character: %i", character);
+            // printf("character: %i", character);
             // printf("newkey: %i\n", new_key);
             // printf("ch: %i", character);
-            if (character <= ASCII_UPP_END)
+            if (character <= ASCII_UPP_END && character >= ASCII_LOW_END)
             {
+                character = (plaintext[length] - new_key);
                 if (character < 65)
                 {
                     // printf("upper: %c", character);
-                    new_new_key = 26 - new_key;
-                    character = character + (26 + new_new_key);
+                    character = character + 26;
                 }
             }
-            else if (character >= ASCII_LOW_START)
+            else if (character <= ASCII_UPP_END && character >= ASCII_LOW_START)
             {
                 character = (plaintext[length] - new_key);
                 if (character < 97)
                 {
                     // printf("lower: %c", character);
-                    new_new_key = 26 - new_key;
-                    character = character + (26 + new_new_key);
+                    character = character + 26;
                 }
             }
             else (character = character - 26);
-            printf("ciphercode: %c", character);
+            printf("%c", character);
         }
     }
     // Return error message
