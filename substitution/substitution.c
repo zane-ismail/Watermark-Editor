@@ -62,7 +62,7 @@ int main(int argc, string argv[])
                 //     character = character - ALPHABET;
                 // }
             }
-            else if ( character >= ASCII_UPP_START && character <= ASCII_UPP_END)
+            else if (character >= ASCII_UPP_START && character <= ASCII_UPP_END)
             {
                 if (key[i] >= ASCII_LOW_START && key[i] <= ASCII_LOW_END)
                 {
