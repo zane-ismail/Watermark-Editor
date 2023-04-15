@@ -95,7 +95,6 @@ int main(int argc, string argv[])
                 }
                 else (character = character - new_key);
             }
-            else (printf("%c", character));
             printf("%c", character);
         }
     }
