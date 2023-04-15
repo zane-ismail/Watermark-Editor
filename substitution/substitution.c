@@ -47,11 +47,11 @@ int main(int argc, string argv[])
             // Validation so character stays within the 26 letter range
             if (character <= ASCII_UPP_END && character >= ASCII_UPP_START)
             {
-                character = (plaintext[i] - );
-                if (character > ASCII_UPP_END)
-                {
-                    character = character - ALPHABET;
-                }
+                character = (plaintext[i] - ASCII_LOW_END);
+                // if (character > ASCII_UPP_END)
+                // {
+                //     character = character - ALPHABET;
+                // }
             }
             else if (character <= ASCII_LOW_END && character >= ASCII_LOW_START)
             {
