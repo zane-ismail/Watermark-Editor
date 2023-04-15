@@ -44,7 +44,7 @@ int main(int argc, string argv[])
         for (i = 0; plaintext[i] != '\0'; i++)
         {
             int character = plaintext[i];
-            // Validation for input characters 
+            // Validation for input characters
             if (character >= ASCII_UPP_START && character <= ASCII_UPP_END)
             {
                 if (key[i] >= ASCII_LOW_START && key[i] <= ASCII_LOW_END)
