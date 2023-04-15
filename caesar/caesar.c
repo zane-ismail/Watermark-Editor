@@ -67,7 +67,7 @@ int main(int argc, string argv[])
         // Prompt user
         plaintext = get_string("plaintext: ");
         // Uses key to convert character
-        printf("ciphercode: ");
+        printf("ciphertext: ");
         for (length = 0; plaintext[length] != '\0'; length++)
         // Keep within a 26 letter range
         {
