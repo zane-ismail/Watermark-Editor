@@ -31,7 +31,7 @@ int main(int argc, string argv[])
         // Validate character as a decimal number
         if (digit >= ASCII_NUM_START && digit <= ASCII_NUM_END)
         {
-            // Convert from ascii character into decimal number
+            // Convert ascii character to decimal number
             digit = digit - 48;
             digit = (digit * factor);
             key += digit;
@@ -59,9 +59,9 @@ int main(int argc, string argv[])
         printf("ciphertext: ");
         // Iterate through plaintext and convert character to integer
         for (i = 0; plaintext[i] != '\0'; i++)
-        // Validation so character stays within the 26 letter range
         {
             int character = plaintext[i];
+            // Validation so character stays within the 26 letter range
             if (character <= ASCII_UPP_END && character >= ASCII_UPP_START)
             {
                 character = (plaintext[i] + key);
@@ -81,7 +81,6 @@ int main(int argc, string argv[])
             printf("%c", character);
         }
     }
-    // Return error message
     else
     {
         (printf("Usage: ./caesar key\n"));
