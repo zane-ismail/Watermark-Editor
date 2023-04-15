@@ -71,7 +71,7 @@ int main(int argc, string argv[])
         // Keep within a 26 letter range
         {
             int character = (plaintext[length] - new_key);
-            printf("character: %c\n", character);
+            printf("character: %i", character);
             // printf("newkey: %i\n", new_key);
             // printf("ch: %i", character);
             if (character <= ASCII_UPP_END)
