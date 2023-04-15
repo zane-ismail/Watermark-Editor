@@ -25,61 +25,60 @@ int main(int argc, string argv[])
      for (i = 0; argv[1][i] != '\0'; i++)
         {
             num = argv[1][i];
-            if (num >= ASCII_NUM_START && num <= ASCII_NUM_END)
-            {
-                key[i] = num;
-            }
-            else
+            if (num < ASCII_NUM_START && num > ASCII_NUM_END)
             {
                 return 1;
             }
-
-        }
-    if (i != 26)
-    {
-        printf("Key must contain 26 characters.\n");
-        return 1;
-    }
-    // Prompt user for plaintext
-        plaintext = get_string("plaintext: ");
-        printf("ciphertext: ");
-
-        for (i = 0; plaintext[i] != '\0'; i++)
-        {
-            int character = plaintext[i];
-            // Validation for input characters
-            if (character >= ASCII_UPP_START && character <= ASCII_UPP_END)
+            else
             {
-                character = (plaintext[i] - ASCII_UPP_START);
-                character = key[character];
-                if (character >= ASCII_LOW_START)
+                key[i] = num;
+                if (i != 26)
                 {
-                    character = (character - 32);
-                    // printf("!");
+                    printf("Key must contain 26 characters.\n");
+                    return 1;
                 }
-                else
-                {
-                    // printf(",");
-                }
-            }
-            else if (character >= ASCII_LOW_START && character <= ASCII_LOW_END)
-            {
-                character = (plaintext[i] - ASCII_LOW_START);
-                character = key[character];
-                if (character <= ASCII_UPP_END)
-                {
-                    // printf(".%i.", key[character]);
-                    character = (character + 32);
-                    // printf(".%i.", key[i]);
-                }
-                else
-                {
-                    // printf(".");
-                }
-            }
+                // Prompt user for plaintext
+                    plaintext = get_string("plaintext: ");
+                    printf("ciphertext: ");
 
-            printf("%c", character);
+                    for (i = 0; plaintext[i] != '\0'; i++)
+                    {
+                        int character = plaintext[i];
+                        // Validation for input characters
+                        if (character >= ASCII_UPP_START && character <= ASCII_UPP_END)
+                        {
+                            character = (plaintext[i] - ASCII_UPP_START);
+                            character = key[character];
+                            if (character >= ASCII_LOW_START)
+                            {
+                                character = (character - 32);
+                                // printf("!");
+                            }
+                            else
+                            {
+                                // printf(",");
+                            }
+                        }
+                        else if (character >= ASCII_LOW_START && character <= ASCII_LOW_END)
+                        {
+                            character = (plaintext[i] - ASCII_LOW_START);
+                            character = key[character];
+                            if (character <= ASCII_UPP_END)
+                            {
+                                // printf(".%i.", key[character]);
+                                character = (character + 32);
+                                // printf(".%i.", key[i]);
+                            }
+                            else
+                            {
+                                // printf(".");
+                            }
+                        }
+
+                        printf("%c", character);
+                    }
+                printf("\n");
+                return 1;
+            }
         }
-    printf("\n");
-    return 1;
 }
