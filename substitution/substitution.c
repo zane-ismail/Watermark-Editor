@@ -63,4 +63,5 @@ int main(int argc, string argv[])
             }
             printf("%c", character);
         }
+    printf("\n");
 }
