@@ -49,6 +49,10 @@ int main(int argc, string argv[])
             {
                 character = (plaintext[i] - ASCII_UPP_START);
                 character = key[character];
+
+                ADD EXTRA IF CONDITIONAL FOR KEY[CHARACTER] UPPER VASE, THEN MINUS
+
+
                 // printf("%c", character);
                 // if (character > ASCII_UPP_END)
                 // {
