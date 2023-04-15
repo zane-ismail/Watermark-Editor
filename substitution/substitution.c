@@ -57,7 +57,7 @@ int main(int argc, string argv[])
                 {
                     character = (plaintext[i] - ASCII_UPP_START);
                     character = key[character];
-                    character = (character + 32);
+                    character = (character - 32);
                 }
                 else
                 {
@@ -80,13 +80,13 @@ int main(int argc, string argv[])
                 {
                     character = (plaintext[i] - ASCII_LOW_START);
                     character = key[character];
-                    character = (character + 32);
+                    // character = (character);
                 }
                 else if (key[i] <= ASCII_UPP_END)
                 {
                     character = (plaintext[i] - ASCII_LOW_START);
                     character = key[character];
-                    character = (character - 32);
+                    character = (character + 32);
                 }
                 else
                 {
