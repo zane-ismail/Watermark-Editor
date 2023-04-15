@@ -50,7 +50,7 @@ int main(int argc, string argv[])
                 character = (plaintext[i] - ASCII_UPP_START);
                 character = key[character];
 
-                ADD EXTRA IF CONDITIONAL FOR KEY[CHARACTER] UPPER VASE, THEN MINUS
+                // ADD EXTRA IF CONDITIONAL FOR KEY[CHARACTER] UPPER CASE, THEN MINUS
 
 
                 // printf("%c", character);
