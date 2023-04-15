@@ -4,7 +4,7 @@
 int main(int argc, string argv[])
 {
     // Iterate through each digit
-    int length = 0;
+    int i;
     int key = 0;
     int new_key = 0;
     int multi = 1;
@@ -22,14 +22,14 @@ int main(int argc, string argv[])
         return 1;
     }
     // Set multiplier to turn key string characters into integer of correct value
-    for (length = 0; argv[1][length] != '\0'; length++)
-    if (length > 0)
+    for (i = 0; argv[1][i] != '\0'; i++)
+    if (i > 0)
         {
          multi = (multi * 10);
         }
-    for (length = 0; argv[1][length] != '\0'; length++)
+    for (i = 0; argv[1][i] != '\0'; i++)
     {
-        int digit = argv[1][length];
+        int digit = argv[1][i];
         // Validate character as a decimal number
         if (digit >= ASCII_NUM_START && digit <= ASCII_NUM_END)
         {
@@ -55,19 +55,19 @@ int main(int argc, string argv[])
     // Validate only one input
     string input = argv[1];
     // Turn string input into integer
-    if (argc == 2 && length != 0)
+    if (argc == 2 && i != 0)
     {
         // Prompt user
         plaintext = get_string("plaintext: ");
         printf("ciphertext: ");
         // Iterate through plaintext and convert character to integer
-        for (length = 0; plaintext[length] != '\0'; length++)
+        for (i = 0; plaintext[i] != '\0'; i++)
         // Validation so character stays within the 26 letter range
         {
-            int character = plaintext[length];
+            int character = plaintext[i];
             if (character <= ASCII_UPP_END && character >= ASCII_UPP_START)
             {
-                character = (plaintext[length] + new_key);
+                character = (plaintext[i] + new_key);
                 if (character > ASCII_UPP_END)
                 {
                     character = character - ALPHABET;
@@ -75,7 +75,7 @@ int main(int argc, string argv[])
             }
             else if (character <= ASCII_LOW_END && character >= ASCII_LOW_START)
             {
-                character = (plaintext[length] + new_key);
+                character = (plaintext[i] + new_key);
                 if (character > ASCII_LOW_END)
                 {
                     character = character - ALPHABET;
