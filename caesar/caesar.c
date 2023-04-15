@@ -95,6 +95,7 @@ int main(int argc, string argv[])
                     // printf("lower: %c", character);
                     character = character - 26;
                 }
+            else if (character <=  && >=)
             }
             printf("%c", character);
         }
