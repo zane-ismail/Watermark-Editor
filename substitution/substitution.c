@@ -48,8 +48,8 @@ int main(int argc, string argv[])
             if (character <= ASCII_UPP_END && character >= ASCII_UPP_START)
             {
                 character = (plaintext[i]);
+                character = key[character];
                 printf("UPPER: %i\n", character - ASCII_UPP_START);
-                
                 // if (character > ASCII_UPP_END)
                 // {
                 //     character = character - ALPHABET;
@@ -58,6 +58,7 @@ int main(int argc, string argv[])
             else if (character <= ASCII_LOW_END && character >= ASCII_LOW_START)
             {
                 character = (plaintext[i]);
+                character = key[character];
                 printf("LOWER: %i\n", character - ASCII_LOW_START);
                 // if (character > ASCII_LOW_END)
                 // {
