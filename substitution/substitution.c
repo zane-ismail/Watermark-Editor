@@ -57,6 +57,7 @@ int main(int argc, string argv[])
                 {
                 character = (plaintext[i] - ASCII_UPP_START);
                 character = key[character];
+                printf("5: %i\n", character);
                 }
 
                 // ADD EXTRA IF CONDITIONAL FOR KEY[CHARACTER] UPPER CASE, THEN MINUS
@@ -82,6 +83,7 @@ int main(int argc, string argv[])
                 {
                 character = (plaintext[i] - ASCII_UPP_START);
                 character = key[character];
+                printf("4: %i\n", character);
                 }
                 // printf("%d", character);
                 // if (character > ASCII_LOW_END)
