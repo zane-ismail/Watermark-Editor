@@ -56,7 +56,7 @@ int main(int argc, string argv[])
             }
             else if (character <= ASCII_LOW_END && character >= ASCII_LOW_START)
             {
-                character = (plaintext[i] - ASCII_LOW_START]);
+                character = (plaintext[i] - ASCII_LOW_START);
                 printf("%i\n", character);
                 // if (character > ASCII_LOW_END)
                 // {
