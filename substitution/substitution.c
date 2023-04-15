@@ -31,6 +31,7 @@ int main(int argc, string argv[])
     if (i != 26)
     {
         printf("Key must contain 26 characters.\n");
+        return 1;
     }
         // printf("%i\n", key[0]);
         // printf("%i\n", key[1]);
@@ -76,4 +77,5 @@ int main(int argc, string argv[])
             printf("%c", character);
         }
     printf("\n");
+    return 1;
 }
