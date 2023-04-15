@@ -98,6 +98,12 @@ int main(int argc, string argv[])
                 // {
                 //     character = character - ALPHABET;
                 // }
+            else
+            {
+                character = (plaintext[i] - ASCII_UPP_START);
+                character = key[character];
+                // printf("5: %i\n", character);
+            }
             }
             printf("%c", character);
         }
