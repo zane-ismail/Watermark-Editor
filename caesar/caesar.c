@@ -83,6 +83,7 @@ int main(int argc, string argv[])
                     // printf("upper: %c", character);
                     character = character + 26;
                 }
+                else (character = character - new_key);
             }
             else if (character <= ASCII_LOW_END && character >= ASCII_LOW_START)
             {
@@ -92,8 +93,9 @@ int main(int argc, string argv[])
                     // printf("lower: %c", character);
                     character = character + 26;
                 }
+                else (character = character - new_key);
             }
-            else (character = character - 26);
+            else (printf("%c", character));
             printf("%c", character);
         }
     }
