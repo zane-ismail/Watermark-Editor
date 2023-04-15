@@ -49,7 +49,7 @@ int main(int argc, string argv[])
     // Check for duplicates
     for (i = 0; i < ALPHABET; i++)
     {
-        
+        if letters[i] == 
     }
 
     // Prompt user for plaintext
