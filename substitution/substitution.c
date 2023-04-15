@@ -28,12 +28,12 @@ int main(int argc, string argv[])
             if (num >= ASCII_UPP_START && num <= ASCII_UPP_END)
             {
                 key[i] = num;
-                printf("%i", i);
+                // printf("%i", i);
             }
             else if (num >= ASCII_LOW_START && num <= ASCII_LOW_END)
             {
                 key[i] = num;
-                printf("%i", i);
+                // printf("%i", i);
             }
             else
             {
