@@ -21,9 +21,9 @@ int main(int argc, string argv[])
     }
     // Set multiplier to convert key string characters into integer of correct value
     for (i = 0; argv[1][i] != '\0'; i++)
-    if (i > 0)
+        if (i > 0)
         {
-         factor = (factor * 10);
+            factor = (factor * 10);
         }
     for (i = 0; argv[1][i] != '\0'; i++)
     {
@@ -37,12 +37,12 @@ int main(int argc, string argv[])
             key += digit;
             factor = (factor / 10);
         }
-    else
-    // Reject non decimal numbers
-    {
-        printf("Usage: ./caesar key\n");
-        return 1;
-    }
+        // Reject non decimal numbers
+        else
+        {
+            printf("Usage: ./caesar key\n");
+            return 1;
+        }
     }
     // Keep key number 26 or below
     if (key > ALPHABET)
