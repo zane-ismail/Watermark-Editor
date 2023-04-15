@@ -50,6 +50,7 @@ int main(int argc, string argv[])
                 if (key[i] >= ASCII_LOW_START)
                 {
                     character = (character - 32);
+                    printf("!");
                 }
                 else
                 {
@@ -63,6 +64,7 @@ int main(int argc, string argv[])
                 if (key[character] <= ASCII_UPP_END)
                 {
                     character = (character + 32);
+                    printf("?");
                 }
                 else
                 {
