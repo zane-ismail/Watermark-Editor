@@ -16,6 +16,7 @@ int main(int argc, string argv[])
     const int ASCII_NUM_END = 57;
     const int ALPHABET = 26;
     string plaintext;
+    // Terminate if no value is entered
     if (argc == 1)
     {
         return 1;
@@ -53,8 +54,6 @@ int main(int argc, string argv[])
     else (new_key = key);
     // Validate only one input
     string input = argv[1];
-
-
     // Turn string input into integer
     if (argc == 2 && length != 0)
     {
