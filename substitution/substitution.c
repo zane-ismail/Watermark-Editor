@@ -28,11 +28,40 @@ int main(int argc, string argv[])
             num = argv[1][i];
             key[i] = num;
         }
-    if (i != 25)
+    if (i != 26)
     {
         printf("Key must contain 26 characters.\n");
     }
         // printf("%i\n", key[0]);
         // printf("%i\n", key[1]);
         // printf("%i\n", key[2]);
+    // Prompt user for plaintext
+        plaintext = get_string("plaintext: ");
+        printf("ciphertext: ");
+
+
+
+         for (i = 0; plaintext[i] != '\0'; i++)
+        {
+            int character = plaintext[i];
+            // Validation so character stays within the 26 letter range
+            if (character <= ASCII_UPP_END && character >= ASCII_UPP_START)
+            {
+                character = (plaintext[i] + key);
+                if (character > ASCII_UPP_END)
+                {
+                    character = character - ALPHABET;
+                }
+            }
+            else if (character <= ASCII_LOW_END && character >= ASCII_LOW_START)
+            {
+                character = (plaintext[i] + key);
+                if (character > ASCII_LOW_END)
+                {
+                    character = character - ALPHABET;
+                }
+            }
+            printf("%c", character);
+        }
+    }
 }
