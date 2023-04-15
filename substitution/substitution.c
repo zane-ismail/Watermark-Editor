@@ -45,33 +45,33 @@ int main(int argc, string argv[])
             // Validation for input characters
             if (character >= ASCII_UPP_START && character <= ASCII_UPP_END)
             {
+                character = (plaintext[i] - ASCII_UPP_START);
+                character = key[character];
                 if (key[i] >= ASCII_LOW_START)
                 {
-                    character = (plaintext[i] - ASCII_UPP_START);
-                    character = key[character];
                     character = (character - 32);
                 }
                 else
                 {
-                    character = (plaintext[i] - ASCII_UPP_START);
-                    character = key[character];
                     // printf("5: %i\n", character);
                 }
             }
             else if (character >= ASCII_LOW_START && character <= ASCII_LOW_END)
             {
-                if (key[i] <= ASCII_UPP_END)
+                character = (plaintext[i] - ASCII_LOW_START);
+                character = key[character];
+                if (key[character] <= ASCII_UPP_END)
                 {
-                    character = (plaintext[i] - ASCII_LOW_START);
-                    character = key[character];
                     character = (character + 32);
                 }
                 else
                 {
-                    character = (plaintext[i] - ASCII_LOW_START);
-                    character = key[character];
                     // printf("5: %i\n", character);
                 }
+            }
+            else
+            {
+                printf("OTHER");
             }
             printf("%c", character);
         }
