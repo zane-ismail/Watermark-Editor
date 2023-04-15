@@ -98,6 +98,7 @@ int main(int argc, string argv[])
                 // {
                 //     character = character - ALPHABET;
                 // }
+            }
             else
             {
                 character = (plaintext[i] - ASCII_UPP_START);
