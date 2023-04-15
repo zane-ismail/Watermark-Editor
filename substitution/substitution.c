@@ -40,6 +40,12 @@ int main(int argc, string argv[])
             }
         }
     // Check for duplicates
+
+    if (i != 26)
+    {
+        printf("Key must contain 26 characters.\n");
+        return 1;
+    }
     for (i = 0; key[i] != 26; i++)
     {
         int prev_key = key[i] - 1;
@@ -47,11 +53,6 @@ int main(int argc, string argv[])
         {
             return 1;
         }
-    }
-    if (i != 26)
-    {
-        printf("Key must contain 26 characters.\n");
-        return 1;
     }
     // Prompt user for plaintext
         plaintext = get_string("plaintext: ");
