@@ -25,7 +25,12 @@ int main(int argc, string argv[])
      for (i = 0; argv[1][i] != '\0'; i++)
         {
             num = argv[1][i];
-            if (num < ASCII_NUM_START && num > ASCII_NUM_END)
+            if (num >= ASCII_UPP_START && num <= ASCII_UPP_END)
+            {
+                key[i] = num;
+                printf("%i", i);
+            }
+            else if (num >= ASCII_LOW_START && num <= ASCII_LOW_END)
             {
                 key[i] = num;
                 printf("%i", i);
