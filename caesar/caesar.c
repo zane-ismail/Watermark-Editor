@@ -44,7 +44,12 @@ int main(int argc, string argv[])
             // printf("Length: %i\n", length);
 
         }
-        else (printf("Usage: ./caesar key\n"));
+        
+        else
+        {
+            printf("Usage: ./caesar key\n");
+            return 1;
+        }
     }
     // printf("Old Key: %i\n", key);
     //
@@ -95,7 +100,6 @@ int main(int argc, string argv[])
                     // printf("lower: %c", character);
                     character = character - 26;
                 }
-            else if (character <=  && >=)
             }
             printf("%c", character);
         }
