@@ -15,7 +15,7 @@ int main(int argc, string argv[])
     int key = 0;
     int new_key = 0;
     int new_new_key = 0;
-    int multi = 10;
+    int multi = 1;
     const int ASCII_UPP_START = 65;
     const int ASCII_UPP_END = 90;
     const int ASCII_LOW_START = 97;
@@ -23,6 +23,9 @@ int main(int argc, string argv[])
     const int ASCII_NUM_START = 48;
     const int ASCII_NUM_END = 57;
     string plaintext;
+    for (length = 0; argv[1][length] != '\0'; length++)
+    multi = (multi * 10);
+    printf("%i\n", multi);
     for (length = 0; argv[1][length] != '\0'; length++)
     {
         int digit = argv[1][length];
