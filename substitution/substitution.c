@@ -28,7 +28,6 @@ int main(int argc, string argv[])
             if (num >= ASCII_UPP_START && num <= ASCII_UPP_END)
             {
                 key[i] = num;
-                // printf("%i", i);
             }
             else if (num >= ASCII_LOW_START && num <= ASCII_LOW_END)
             {
@@ -40,6 +39,11 @@ int main(int argc, string argv[])
                 return 1;
             }
         }
+    // Check for duplicates
+    for (i = 0; argv[1][i] != '\0'; i++)'
+    {
+        if argv
+    }
     if (i != 26)
     {
         printf("Key must contain 26 characters.\n");
