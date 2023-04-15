@@ -47,9 +47,9 @@ int main(int argc, string argv[])
             // Validation so character stays within the 26 letter range
             if (character <= ASCII_UPP_END && character >= ASCII_UPP_START)
             {
-                character = (plaintext[i]);
+                character = (plaintext[i]- ASCII_UPP_START);
                 character = key[character];
-                printf("UPPER: %i\n", character - ASCII_UPP_START);
+                // printf("%c", character);
                 // if (character > ASCII_UPP_END)
                 // {
                 //     character = character - ALPHABET;
@@ -57,9 +57,9 @@ int main(int argc, string argv[])
             }
             else if (character <= ASCII_LOW_END && character >= ASCII_LOW_START)
             {
-                character = (plaintext[i]);
+                character = (plaintext[i] - ASCII_LOW_START);
                 character = key[character];
-                printf("LOWER: %i\n", character - ASCII_LOW_START);
+                // printf("%d", character);
                 // if (character > ASCII_LOW_END)
                 // {
                 //     character = character - ALPHABET;
