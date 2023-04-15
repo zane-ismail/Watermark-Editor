@@ -44,17 +44,17 @@ int main(int argc, string argv[])
         for (i = 0; plaintext[i] != '\0'; i++)
         {
             int character = plaintext[i];
-            // Validation so character stays within the 26 letter range
-            if (character <= ASCII_UPP_END && character >= ASCII_UPP_START)
+            // Validation
+            if (character >= ASCII_UPP_START && character <= ASCII_UPP_END)
             {
+                if (key[i] >= ASCII_LOW_START && key[i] <= ASCII_LOW_END)
+                {
+                    character = (character + 33);
+                }
                 character = (plaintext[i] - ASCII_UPP_START);
                 character = key[character];
 
                 // ADD EXTRA IF CONDITIONAL FOR KEY[CHARACTER] UPPER CASE, THEN MINUS
-                if (key[character] <= ASCII_LOW_END && character >= ASCII_LOW_START)
-                {
-                    character = (character + 33);
-                }
 
                 // printf("%c", character);
                 // if (character > ASCII_UPP_END)
@@ -62,15 +62,14 @@ int main(int argc, string argv[])
                 //     character = character - ALPHABET;
                 // }
             }
-            else if (character <= ASCII_UPP_END && character >= ASCII_UPP_START)
+            else if ( character >= ASCII_UPP_START && character <= ASCII_UPP_END)
             {
-                character = (plaintext[i] - ASCII_LOW_START);
-                character = key[character];
-
-                if (character <= ASCII_LOW_END && character >= ASCII_LOW_START)
+                if (key[i] >= ASCII_LOW_START && key[i] <= ASCII_LOW_END)
                 {
                     character = (character - 33);
                 }
+                character = (plaintext[i] - ASCII_LOW_START);
+                character = key[character];
                 // printf("%d", character);
                 // if (character > ASCII_LOW_END)
                 // {
