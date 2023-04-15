@@ -53,7 +53,7 @@ int main(int argc, string argv[])
                 // ADD EXTRA IF CONDITIONAL FOR KEY[CHARACTER] UPPER CASE, THEN MINUS
                 if (character <= ASCII_LOW_END && character >= ASCII_LOW_START)
                 {
-                    character = (character + 13);
+                    character = (character + 33);
                 }
 
                 // printf("%c", character);
