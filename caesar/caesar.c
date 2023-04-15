@@ -3,29 +3,27 @@
 
 int main(int argc, string argv[])
 {
-    // Iterate through each digit
-    int i;
-    int key = 0;
-    int new_key = 0;
-    int multi = 1;
+    const int ALPHABET = 26;
+    const int ASCII_NUM_START = 48;
+    const int ASCII_NUM_END = 57;
     const int ASCII_UPP_START = 65;
     const int ASCII_UPP_END = 90;
     const int ASCII_LOW_START = 97;
     const int ASCII_LOW_END = 122;
-    const int ASCII_NUM_START = 48;
-    const int ASCII_NUM_END = 57;
-    const int ALPHABET = 26;
+    int factor = 1;
+    int key = 0;
+    int i;
     string plaintext;
     // Terminate if no value is entered
     if (argc == 1)
     {
         return 1;
     }
-    // Set multiplier to turn key string characters into integer of correct value
+    // Set multiplier to convert key string characters into integer of correct value
     for (i = 0; argv[1][i] != '\0'; i++)
     if (i > 0)
         {
-         multi = (multi * 10);
+         factor = (factor * 10);
         }
     for (i = 0; argv[1][i] != '\0'; i++)
     {
@@ -35,9 +33,9 @@ int main(int argc, string argv[])
         {
             // Convert from ascii character into decimal number
             digit = digit - 48;
-            digit = (digit * multi);
+            digit = (digit * factor);
             key += digit;
-            multi = (multi / 10);
+            factor = (factor / 10);
         }
     else
     // Reject non decimal numbers
@@ -49,9 +47,8 @@ int main(int argc, string argv[])
     // Keep key number 26 or below
     if (key > ALPHABET)
     {
-        new_key = (key % ALPHABET);
+        key = (key % ALPHABET);
     }
-    else (new_key = key);
     // Validate only one input
     string input = argv[1];
     // Turn string input into integer
@@ -67,7 +64,7 @@ int main(int argc, string argv[])
             int character = plaintext[i];
             if (character <= ASCII_UPP_END && character >= ASCII_UPP_START)
             {
-                character = (plaintext[i] + new_key);
+                character = (plaintext[i] + key);
                 if (character > ASCII_UPP_END)
                 {
                     character = character - ALPHABET;
@@ -75,7 +72,7 @@ int main(int argc, string argv[])
             }
             else if (character <= ASCII_LOW_END && character >= ASCII_LOW_START)
             {
-                character = (plaintext[i] + new_key);
+                character = (plaintext[i] + key);
                 if (character > ASCII_LOW_END)
                 {
                     character = character - ALPHABET;
