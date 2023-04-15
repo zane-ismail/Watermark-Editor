@@ -63,8 +63,9 @@ int main(int argc, string argv[])
                 character = key[character];
                 if (key[i] <= ASCII_UPP_END)
                 {
+                    printf(".%i.", key[i]);
                     character = (character + 32);
-                    printf("%i", key[i]);
+                    printf(".%i.", key[i]);
                 }
                 else
                 {
