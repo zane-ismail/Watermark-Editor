@@ -24,7 +24,10 @@ int main(int argc, string argv[])
     const int ASCII_NUM_END = 57;
     string plaintext;
     for (length = 0; argv[1][length] != '\0'; length++)
-    multi = (multi * 10);
+    if (length > 0)
+        {
+         multi = (multi * 10);
+        }
     printf("%i\n", multi);
     for (length = 0; argv[1][length] != '\0'; length++)
     {
