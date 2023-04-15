@@ -40,9 +40,13 @@ int main(int argc, string argv[])
             }
         }
     // Check for duplicates
-    for (i = 0; key[i] != 26; i++)'
+    for (i = 0; key[i] != 26; i++)
     {
-        if key[1]
+        int prev_key = key[i] - 1;
+        if (key[i] == prev_key)
+        {
+            return 1;
+        }
     }
     if (i != 26)
     {
