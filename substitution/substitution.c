@@ -33,9 +33,7 @@ int main(int argc, string argv[])
         printf("Key must contain 26 characters.\n");
         return 1;
     }
-        // printf("%i\n", key[0]);
-        // printf("%i\n", key[1]);
-        // printf("%i\n", key[2]);
+        else if (argc)
     // Prompt user for plaintext
         plaintext = get_string("plaintext: ");
         printf("ciphertext: ");
