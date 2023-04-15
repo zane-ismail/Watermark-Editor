@@ -61,7 +61,7 @@ int main(int argc, string argv[])
             {
                 character = (plaintext[i] - ASCII_LOW_START);
                 character = key[character];
-                if (key[character] <= ASCII_UPP_END)
+                if (key[i] <= ASCII_UPP_END)
                 {
                     character = (character + 32);
                     printf("?");
