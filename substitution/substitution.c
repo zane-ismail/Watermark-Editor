@@ -72,8 +72,11 @@ int main(int argc, string argv[])
                 if (key[i] >= ASCII_UPP_START && key[i] <= ASCII_UPP_END)
                 {
                     character = (plaintext[i] - ASCII_UPP_START);
+                    printf("1:%i\n", character);
                     character = key[character];
+                    printf("2:%i\n", character);
                     character = (character + 33);
+                    printf("3:%i\n", character);
                 }
                 else
                 {
