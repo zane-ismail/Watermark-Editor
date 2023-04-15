@@ -51,7 +51,7 @@ int main(int argc, string argv[])
                 character = key[character];
 
                 // ADD EXTRA IF CONDITIONAL FOR KEY[CHARACTER] UPPER CASE, THEN MINUS
-                if (character <= ASCII_LOW_END && character >= ASCII_LOW_START)
+                if (key[character] <= ASCII_LOW_END && character >= ASCII_LOW_START)
                 {
                     character = (character + 33);
                 }
