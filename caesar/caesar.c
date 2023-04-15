@@ -23,6 +23,7 @@ int main(int argc, string argv[])
     const int ASCII_NUM_START = 48;
     const int ASCII_NUM_END = 57;
     string plaintext;
+    if 
     for (length = 0; argv[1][length] != '\0'; length++)
     if (length > 0)
         {
@@ -44,12 +45,11 @@ int main(int argc, string argv[])
             // printf("Length: %i\n", length);
 
         }
-        
-        else
-        {
-            printf("Usage: ./caesar key\n");
-            return 1;
-        }
+    else
+    {
+        printf("Usage: ./caesar key\n");
+        return 1;
+    }
     }
     // printf("Old Key: %i\n", key);
     //
