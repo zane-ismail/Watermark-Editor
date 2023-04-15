@@ -39,8 +39,6 @@ int main(int argc, string argv[])
         plaintext = get_string("plaintext: ");
         printf("ciphertext: ");
 
-
-
         for (i = 0; plaintext[i] != '\0'; i++)
         {
             int character = plaintext[i];
