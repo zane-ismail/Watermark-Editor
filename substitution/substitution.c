@@ -40,12 +40,14 @@ int main(int argc, string argv[])
             }
         }
 
-    if (i != 26)
+    if (i != ALPHABET)
     {
         printf("Key must contain 26 characters.\n");
         return 1;
     }
     // Check for duplicates
+    for (i = 0; i < ALPHABET; i++)
+    {
 
     // Prompt user for plaintext
         plaintext = get_string("plaintext: ");
