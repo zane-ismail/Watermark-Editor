@@ -1,20 +1,12 @@
 #include <cs50.h>
 #include <stdio.h>
 
-// Make sure program was run with just one command-line argument
-// Make sure every character in argv[1] is a digit
-// Convert argv[1] from a `string` to an `int`
-// Prompt user for plaintext
-// For each character in the plaintext:
-// Rotate the character if it's a letter
-
 int main(int argc, string argv[])
 {
     // Iterate through each digit
     int length = 0;
     int key = 0;
     int new_key = 0;
-    int new_new_key = 0;
     int multi = 1;
     const int ASCII_UPP_START = 65;
     const int ASCII_UPP_END = 90;
@@ -22,17 +14,18 @@ int main(int argc, string argv[])
     const int ASCII_LOW_END = 122;
     const int ASCII_NUM_START = 48;
     const int ASCII_NUM_END = 57;
+    const int ALPHABET = 26;
     string plaintext;
     if (argc == 1)
     {
         return 1;
     }
+    // Set multiplier to turn key string characters into integer of correct value
     for (length = 0; argv[1][length] != '\0'; length++)
     if (length > 0)
         {
          multi = (multi * 10);
         }
-    // printf("%i\n", multi);
     for (length = 0; argv[1][length] != '\0'; length++)
     {
         int digit = argv[1][length];
@@ -44,24 +37,18 @@ int main(int argc, string argv[])
             digit = (digit * multi);
             key += digit;
             multi = (multi / 10);
-            // printf("Key: %i\n", character);
-            // printf("Length: %i\n", length);
-
         }
     else
+    // Reject non decimal numbers
     {
         printf("Usage: ./caesar key\n");
         return 1;
     }
     }
-    // printf("Old Key: %i\n", key);
-    //
-    // Keep key number or below
-    if (key > 26)
+    // Keep key number 26 or below
+    if (key > ALPHABET)
     {
-        // printf("Old Key1: %i\n", key);
-        new_key = (key % 26);
-        // printf("New Key: %i\n", new_key);
+        new_key = (key % ALPHABET);
     }
     else (new_key = key);
     // Validate only one input
@@ -71,37 +58,28 @@ int main(int argc, string argv[])
     // Turn string input into integer
     if (argc == 2 && length != 0)
     {
-        // printf("Key: %s\n", input);
         // Prompt user
         plaintext = get_string("plaintext: ");
-        // Uses key to convert character
         printf("ciphertext: ");
+        // Iterate through plaintext and convert character to integer
         for (length = 0; plaintext[length] != '\0'; length++)
-        // Keep within a 26 letter range
+        // Validation so character stays within the 26 letter range
         {
-            // int character = (plaintext[length] - new_key);
             int character = plaintext[length];
-
-            // printf("character: %i", character);
-            // printf("newkey: %i\n", new_key);
-            // printf("ch: %i", character);
             if (character <= ASCII_UPP_END && character >= ASCII_UPP_START)
             {
                 character = (plaintext[length] + new_key);
                 if (character > ASCII_UPP_END)
                 {
-                    // printf("upper: %c", character);
-                    character = character - 26;
+                    character = character - ALPHABET;
                 }
-                // else (character = character - new_key);
             }
             else if (character <= ASCII_LOW_END && character >= ASCII_LOW_START)
             {
                 character = (plaintext[length] + new_key);
                 if (character > ASCII_LOW_END)
                 {
-                    // printf("lower: %c", character);
-                    character = character - 26;
+                    character = character - ALPHABET;
                 }
             }
             printf("%c", character);
