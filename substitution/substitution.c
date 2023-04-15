@@ -24,16 +24,26 @@ int main(int argc, string argv[])
     // Iterate through argv to add each value to an array
      for (i = 0; argv[1][i] != '\0'; i++)
         {
-
             num = argv[1][i];
-            key[i] = num;
+            if (num >= ASCII_UPP_START && num <= ASCII_UPP_END)
+            {
+                key[i] = num;
+            }
+            else if(num >= ASCII_LOW_START && num <=ASCII_LOW_END)
+            {
+                key[i] = num;
+            }
+            else
+            {
+                return 1;
+            }
+
         }
     if (i != 26)
     {
         printf("Key must contain 26 characters.\n");
         return 1;
     }
-        else if (argc)
     // Prompt user for plaintext
         plaintext = get_string("plaintext: ");
         printf("ciphertext: ");
