@@ -72,10 +72,7 @@ int main(int argc, string argv[])
                     // printf(".");
                 }
             }
-            else
-            {
-                printf("OTHER");
-            }
+
             printf("%c", character);
         }
     printf("\n");
