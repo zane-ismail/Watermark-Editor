@@ -75,7 +75,7 @@ int main(int argc, string argv[])
             // printf("character: %i", character);
             // printf("newkey: %i\n", new_key);
             // printf("ch: %i", character);
-            if (character <= ASCII_UPP_END && character >= ASCII_LOW_END)
+            if (character <= ASCII_UPP_END && character >= ASCII_UPP_START)
             {
                 character = (plaintext[length] - new_key);
                 if (character < 65)
@@ -84,7 +84,7 @@ int main(int argc, string argv[])
                     character = character + 26;
                 }
             }
-            else if (character <= ASCII_UPP_END && character >= ASCII_LOW_START)
+            else if (character <= ASCII_LOW_END && character >= ASCII_LOW_START)
             {
                 character = (plaintext[length] - new_key);
                 if (character < 97)
