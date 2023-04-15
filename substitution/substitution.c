@@ -104,7 +104,6 @@ int main(int argc, string argv[])
                 character = key[character];
                 // printf("5: %i\n", character);
             }
-            }
             printf("%c", character);
         }
     printf("\n");
