@@ -71,7 +71,8 @@ int main(int argc, string argv[])
             {
                 if (key[i] >= ASCII_UPP_START && key[i] <= ASCII_UPP_END)
                 {
-                    character = (character + 33);
+                    // character = (character + 33);
+                    character = (key[character] - 33);
                 }
                 else
                 {
