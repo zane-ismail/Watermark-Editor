@@ -47,29 +47,29 @@ int main(int argc, string argv[])
             {
                 character = (plaintext[i] - ASCII_UPP_START);
                 character = key[character];
-                if (key[i] >= ASCII_LOW_START)
+                if (character >= ASCII_LOW_START)
                 {
                     character = (character - 32);
-                    printf("!");
+                    // printf("!");
                 }
                 else
                 {
-                    printf(",");
+                    // printf(",");
                 }
             }
             else if (character >= ASCII_LOW_START && character <= ASCII_LOW_END)
             {
                 character = (plaintext[i] - ASCII_LOW_START);
                 character = key[character];
-                if (key[character] <= ASCII_UPP_END)
+                if (character <= ASCII_UPP_END)
                 {
-                    printf(".%i.", key[character]);
+                    // printf(".%i.", key[character]);
                     character = (character + 32);
                     // printf(".%i.", key[i]);
                 }
                 else
                 {
-                    printf(".");
+                    // printf(".");
                 }
             }
             else
