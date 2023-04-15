@@ -51,8 +51,11 @@ int main(int argc, string argv[])
                 {
                     character = (character + 33);
                 }
+                else
+                {
                 character = (plaintext[i] - ASCII_UPP_START);
                 character = key[character];
+                }
 
                 // ADD EXTRA IF CONDITIONAL FOR KEY[CHARACTER] UPPER CASE, THEN MINUS
 
