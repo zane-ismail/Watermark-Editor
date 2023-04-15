@@ -71,8 +71,11 @@ int main(int argc, string argv[])
                 {
                     character = (character - 33);
                 }
-                character = (plaintext[i] - ASCII_LOW_START);
+                else
+                {
+                character = (plaintext[i] - ASCII_UPP_START);
                 character = key[character];
+                }
                 // printf("%d", character);
                 // if (character > ASCII_LOW_END)
                 // {
