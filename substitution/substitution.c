@@ -39,16 +39,18 @@ int main(int argc, string argv[])
                 return 1;
             }
         }
-    // Check for duplicates
 
     if (i != 26)
     {
         printf("Key must contain 26 characters.\n");
         return 1;
     }
+    // Check for duplicates
     for (i = 0; i < 26; i++)
     {
-        int prev_key = key[i] - 1;
+        int prev_key = key[i];
+        printf("prev key %i", prev_key);
+        printf("key %i", key[i]);
         if (key[i] == prev_key)
         {
             printf("duplicate!");
