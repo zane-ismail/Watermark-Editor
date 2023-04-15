@@ -54,7 +54,7 @@ int main(int argc, string argv[])
                 }
                 else
                 {
-                    // printf("5: %i\n", character);
+                    printf(",");
                 }
             }
             else if (character >= ASCII_LOW_START && character <= ASCII_LOW_END)
@@ -68,7 +68,7 @@ int main(int argc, string argv[])
                 }
                 else
                 {
-                    // printf("5: %i\n", character);
+                    printf(".");
                 }
             }
             else
