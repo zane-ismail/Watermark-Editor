@@ -65,12 +65,13 @@ int main(int argc, string argv[])
     {
         printf("Key: %s\n", input);
         // Prompt user
-        plaintext = get_string("Plaintext: ");
+        plaintext = get_string("plaintext: ");
         // Uses key to convert character
         for (length = 0; plaintext[length] != '\0'; length++)
         // Keep within a 26 letter range
         {
             int character = (plaintext[length] - new_key);
+            printf("character: %c\n", character);
             // printf("newkey: %i\n", new_key);
             // printf("ch: %i", character);
             if (character <= ASCII_UPP_END)
@@ -92,7 +93,7 @@ int main(int argc, string argv[])
                 }
             }
             else (character = character - 26);
-            printf("%c", character);
+            printf("ciphercode: %c", character);
         }
     }
     // Return error message
