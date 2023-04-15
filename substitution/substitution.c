@@ -46,11 +46,12 @@ int main(int argc, string argv[])
         printf("Key must contain 26 characters.\n");
         return 1;
     }
-    for (i = 0; key[i] != 26; i++)
+    for (i = 0; i < 26; i++)
     {
         int prev_key = key[i] - 1;
         if (key[i] == prev_key)
         {
+            printf("duplicate!");
             return 1;
         }
     }
