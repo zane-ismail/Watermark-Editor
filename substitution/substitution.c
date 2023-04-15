@@ -47,12 +47,12 @@ int main(int argc, string argv[])
             // Validation for input characters
             if (character >= ASCII_UPP_START && character <= ASCII_UPP_END)
             {
-                // if (key[i] >= ASCII_LOW_START && key[i] <= ASCII_LOW_END)
-                // {
-                //     character = (plaintext[i] - ASCII_UPP_START);
-                //     character = key[character];
-                //     character = (character - 32);
-                // }
+                if (key[i] >= ASCII_LOW_START && key[i] <= ASCII_LOW_END)
+                {
+                    character = (plaintext[i] - ASCII_UPP_START);
+                    character = key[character];
+                    character = (character - 32);
+                }
                 if (key[i] >= ASCII_LOW_START)
                 {
                     character = (plaintext[i] - ASCII_UPP_START);
