@@ -70,7 +70,8 @@ int main(int argc, string argv[])
         for (length = 0; plaintext[length] != '\0'; length++)
         // Keep within a 26 letter range
         {
-            int character = (plaintext[length] - new_key);
+            // int character = (plaintext[length] - new_key);
+            int character = plaintext[length];
             printf("character: %i", character);
             // printf("newkey: %i\n", new_key);
             // printf("ch: %i", character);
@@ -85,6 +86,7 @@ int main(int argc, string argv[])
             }
             else if (character >= ASCII_LOW_START)
             {
+                character = (plaintext[length] - new_key);
                 if (character < 97)
                 {
                     // printf("lower: %c", character);
