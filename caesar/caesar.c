@@ -34,6 +34,7 @@ int main(int argc, string argv[])
         {
             // Convert from ascii character into decimal number
             digit = digit - 48;
+            digit = (digit * multi);
             key += digit;
             multi = (multi / 10);
             // printf("Key: %i\n", character);
