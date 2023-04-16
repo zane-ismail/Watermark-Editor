@@ -19,13 +19,15 @@ int main(int argc, string argv[])
         return 1;
     }
     // Iterate through argv to add each value to an array
-    for (i = 0; argv[1][i] != '\0'; i++)
+    for (int i = 0; argv[1][i] != '\0'; i++)
     {
+        // Validate alphabetical uppercase characters only
         num = argv[1][i];
         if (num >= ASCII_UPP_START && num <= ASCII_UPP_END)
         {
             key[i] = num;
         }
+        // Validate alphabetical lowercase characters only
         else if (num >= ASCII_LOW_START && num <= ASCII_LOW_END)
         {
             key[i] = num;
@@ -41,7 +43,7 @@ int main(int argc, string argv[])
         printf("Key must contain 26 characters.\n");
         return 1;
     }
-    // Check for duplicates
+    // Check for duplicate characters
     for (i = 0; i < ALPHABET; i++)
     {
         for (int j = 0; j < i; j++)
