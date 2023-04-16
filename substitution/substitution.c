@@ -11,7 +11,7 @@ int main(int argc, string argv[])
     const int ASCII_LOW_START = 97;
     const int ASCII_LOW_END = 122;
     int num;
-    int letters[26];
+    // int letters[26];
     int key[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
     int i;
     string plaintext;
@@ -49,9 +49,12 @@ int main(int argc, string argv[])
     // Check for duplicates
     for (i = 0; i < ALPHABET; i++)
     {
-        if letters[i] == int key[i]
+        for (int j = 0; j <i; j++)
         {
-            printf("DUPLICATE!");
+            if (key[j] == key[i])
+            {
+                printf("DUPLICATE!");
+            }
         }
     }
 
