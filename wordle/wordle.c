@@ -115,8 +115,10 @@ int main(int argc, string argv[])
     {
         printf("You won!\n");
     }
-    else (printf("Target word: %s\n", choice));
-
+    else
+    {
+        (printf("Target word: %s\n", choice));
+    }
     // that's all folks!
     return 0;
 }
@@ -135,7 +137,9 @@ string get_guess(int wordsize)
     {
         guess = get_string("Input a %i-letter word: ", wordsize);
         for (i = 0; guess[i] != '\0'; i++)
-        guess_size++;
+        {
+            guess_size++;
+        }
         if (guess_size != wordsize)
         {
             guess_size = 0;
@@ -154,11 +158,11 @@ int check_word(string guess, int wordsize, int status[], string choice)
 
     // HINTS
     // iterate over each letter of the guess
-        // iterate over each letter of the choice
-            // compare the current guess letter to the current choice letter
-                // if they're the same position in the word, score EXACT points (green) and break so you don't compare that letter further
-                // if it's in the word, but not the right spot, score CLOSE point (yellow)
-        // keep track of the total score by adding each individual letter's score from above
+    // iterate over each letter of the choice
+    // compare the current guess letter to the current choice letter
+    // if they're the same position in the word, score EXACT points (green) and break so you don't compare that letter further
+    // if it's in the word, but not the right spot, score CLOSE point (yellow)
+    // keep track of the total score by adding each individual letter's score from above
 
     for (int i = 0; i < wordsize; i++)
     {
@@ -167,7 +171,7 @@ int check_word(string guess, int wordsize, int status[], string choice)
         {
             if (guess[j] == choice[j])
             {
-                if ( i == j)
+                if (i == j)
                 {
                     score += EXACT;
                     status[i] = EXACT;
@@ -177,7 +181,7 @@ int check_word(string guess, int wordsize, int status[], string choice)
 
             else if (guess[i] == choice[j])
             {
-                score +=1;
+                score += 1;
                 status[i] = CLOSE;
             }
         }
