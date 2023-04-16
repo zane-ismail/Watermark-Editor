@@ -91,6 +91,7 @@ int main(int argc, string argv[])
         for (int j = 0; j < wordsize; j++)
         {
             status[wordsize] = WRONG;
+            printf("GUESSSIZE: %i\n", guess_size);
         }
 
         // Calculate score for the guess
@@ -136,17 +137,14 @@ string get_guess(int wordsize)
     do
     {
         guess = get_string("Input a %i-letter word: ", wordsize);
-        printf("GUESSSIZE: %i\n", guess_size);
         for (i = 0; guess[i] != '\0'; i++)
         {
             guess_size++;
         }
-        printf("GUESSSIZE2: %i\n", guess_size);
         if (guess_size != wordsize)
         {
             guess_size = 0;
         }
-        printf("GUESSSIZE3: %i\n", guess_size);
     }
     while (guess_size != wordsize);
     return guess;
