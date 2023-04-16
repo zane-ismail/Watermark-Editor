@@ -85,7 +85,6 @@ int main(int argc, string argv[])
         string guess = get_guess(wordsize);
 
         // array to hold guess status, initially set to zero
-        // printf("WS: %i\n", wordsize);
         int status[8];
         // set all elements of status array initially to 0, aka WRONG
         // TODO #4
@@ -136,20 +135,13 @@ string get_guess(int wordsize)
     {
         guess = get_string("Input a %i-letter word: ", wordsize);
         for (i = 0; guess[i] != '\0'; i++)
-        {
-            guess_size++;
-            // printf("guesssize: %i\n", guess_size);
-            // printf("Wordsize: %i\n", wordsize);
-        }
+        guess_size++;
         if (guess_size != wordsize)
         {
             guess_size = 0;
         }
     }
     while (guess_size != wordsize);
-    // printf("WRONG\n");
-    // printf("guesssize: %i\n", guess_size);
-    // printf("Wordsize: %i\n", wordsize);
     return guess;
 }
 
