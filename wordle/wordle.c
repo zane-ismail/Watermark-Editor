@@ -85,7 +85,7 @@ int main(int argc, string argv[])
         string guess = get_guess(wordsize);
 
         // array to hold guess status, initially set to zero
-        int status[7];
+        int status[10];
         // set all elements of status array initially to 0, aka WRONG
         // TODO #4
         for (int j = 0; j < wordsize; j++)
