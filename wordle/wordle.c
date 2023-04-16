@@ -169,7 +169,7 @@ int check_word(string guess, int wordsize, int status[], string choice)
                 if ( i == j)
                 {
                     score += EXACT;
-                    status[j] = EXACT;
+                    status[i] = EXACT;
                     break;
                 }
             }
