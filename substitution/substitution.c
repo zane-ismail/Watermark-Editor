@@ -19,22 +19,22 @@ int main(int argc, string argv[])
         return 1;
     }
     // Iterate through argv to add each value to an array
-     for (i = 0; argv[1][i] != '\0'; i++)
+    for (i = 0; argv[1][i] != '\0'; i++)
+    {
+        num = argv[1][i];
+        if (num >= ASCII_UPP_START && num <= ASCII_UPP_END)
         {
-            num = argv[1][i];
-            if (num >= ASCII_UPP_START && num <= ASCII_UPP_END)
-            {
-                key[i] = num;
-            }
-            else if (num >= ASCII_LOW_START && num <= ASCII_LOW_END)
-            {
-                key[i] = num;
-            }
-            else
-            {
-                return 1;
-            }
+            key[i] = num;
         }
+        else if (num >= ASCII_LOW_START && num <= ASCII_LOW_END)
+        {
+            key[i] = num;
+        }
+        else
+        {
+            return 1;
+        }
+    }
     // Validate correct number of characters
     if (i != ALPHABET)
     {
@@ -44,7 +44,7 @@ int main(int argc, string argv[])
     // Check for duplicates
     for (i = 0; i < ALPHABET; i++)
     {
-        for (int j = 0; j <i; j++)
+        for (int j = 0; j < i; j++)
         {
             if (key[j] == key[i])
             {
@@ -53,33 +53,33 @@ int main(int argc, string argv[])
         }
     }
     // Prompt user for plaintext
-        plaintext = get_string("plaintext: ");
-        printf("ciphertext: ");
+    plaintext = get_string("plaintext: ");
+    printf("ciphertext: ");
 
-        for (i = 0; plaintext[i] != '\0'; i++)
+    for (i = 0; plaintext[i] != '\0'; i++)
+    {
+        int character = plaintext[i];
+        // Keep uppercase characters in uppercase
+        if (character >= ASCII_UPP_START && character <= ASCII_UPP_END)
         {
-            int character = plaintext[i];
-            // Keep uppercase characters in uppercase
-            if (character >= ASCII_UPP_START && character <= ASCII_UPP_END)
+            character = (plaintext[i] - ASCII_UPP_START);
+            character = key[character];
+            if (character >= ASCII_LOW_START)
             {
-                character = (plaintext[i] - ASCII_UPP_START);
-                character = key[character];
-                if (character >= ASCII_LOW_START)
-                {
-                    character = (character - 32);
-                }
+                character = (character - 32);
             }
-            // Keep lowercase characters in lowercase
-            else if (character >= ASCII_LOW_START && character <= ASCII_LOW_END)
-            {
-                character = (plaintext[i] - ASCII_LOW_START);
-                character = key[character];
-                if (character <= ASCII_UPP_END)
-                {
-                    character = (character + 32);
-                }
-            }
-            printf("%c", character);
         }
+        // Keep lowercase characters in lowercase
+        else if (character >= ASCII_LOW_START && character <= ASCII_LOW_END)
+        {
+            character = (plaintext[i] - ASCII_LOW_START);
+            character = key[character];
+            if (character <= ASCII_UPP_END)
+            {
+                character = (character + 32);
+            }
+        }
+        printf("%c", character);
+    }
     printf("\n");
 }
