@@ -53,7 +53,7 @@ int main(int argc, string argv[])
         {
             if (key[j] == key[i])
             {
-                printf("DUPLICATE!");
+                return 1;
             }
         }
     }
