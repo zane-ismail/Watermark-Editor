@@ -45,11 +45,7 @@ int main(int argc, string argv[])
             wordsize = i;
         }
     }
-    // wordsize = argv[1][0] - 48;
-    // if (wordsize < 5 || wordsize > 8)
-    {
-        printf("Error: wordsize must be either 5, 6, 7, or 8\n");
-    }
+    printf("Error: wordsize must be either 5, 6, 7, or 8\n");
 
     // open correct file, each file has exactly LISTSIZE words
     char wl_filename[6];
