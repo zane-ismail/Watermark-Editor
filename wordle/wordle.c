@@ -164,6 +164,7 @@ int check_word(string guess, int wordsize, int status[], string choice)
     {
         for (int j = 0; j < wordsize; j++)
         {
+            status[i] = WRONG;
             if (guess[j] == choice[j])
             {
                 if ( i == j)
