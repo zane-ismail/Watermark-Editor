@@ -19,7 +19,7 @@ int main(int argc, string argv[])
         return 1;
     }
     // Iterate through argv to add each value to an array
-    for (int i = 0; argv[1][i] != '\0'; i++)
+    for (i = 0; argv[1][i] != '\0'; i++)
     {
         // Validate alphabetical uppercase characters only
         num = argv[1][i];
