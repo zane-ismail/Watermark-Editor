@@ -49,7 +49,10 @@ int main(int argc, string argv[])
     // Check for duplicates
     for (i = 0; i < ALPHABET; i++)
     {
-        if letters[i] == 
+        if letters[i] == int key[i]
+        {
+            printf("DUPLICATE!");
+        }
     }
 
     // Prompt user for plaintext
