@@ -88,6 +88,7 @@ int main(int argc, string argv[])
         int status[10];
         // set all elements of status array initially to 0, aka WRONG
         // TODO #4
+        // It
         for (int j = 0; j < wordsize; j++)
         {
             status[wordsize] = WRONG;
