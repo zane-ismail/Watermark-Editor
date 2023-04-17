@@ -27,7 +27,6 @@ int main(int argc, string argv[])
 {
     // ensure proper usage
     // TODO #1
-    // Check input is two stings in total
     int wordsize;
     if (argc != 2)
     {
@@ -88,7 +87,6 @@ int main(int argc, string argv[])
         int status[10];
         // set all elements of status array initially to 0, aka WRONG
         // TODO #4
-        // It
         for (int j = 0; j < wordsize; j++)
         {
             status[wordsize] = WRONG;
@@ -154,24 +152,22 @@ int check_word(string guess, int wordsize, int status[], string choice)
 {
     int score = 0;
 
-    // compare guess to choice and score points as appropriate, storing points in status
+
     // TODO #5
-
     // HINTS
-    // iterate over each letter of the guess
-    // iterate over each letter of the choice
-    // compare the current guess letter to the current choice letter
-    // if they're the same position in the word, score EXACT points (green) and break so you don't compare that letter further
-    // if it's in the word, but not the right spot, score CLOSE point (yellow)
     // keep track of the total score by adding each individual letter's score from above
-
+    // compare guess to choice and score points as appropriate, storing points in status
+    // iterate over each letter of the guess
     for (int i = 0; i < wordsize; i++)
     {
+        // iterate over each letter of the choice
         status[i] = WRONG;
         for (int j = 0; j < wordsize; j++)
         {
+            // compare the current guess letter to the current choice letter
             if (guess[j] == choice[j])
             {
+                // if they're the same position in the word, score EXACT points (green) and break so you don't compare that letter further
                 if (i == j)
                 {
                     score += EXACT;
@@ -179,7 +175,7 @@ int check_word(string guess, int wordsize, int status[], string choice)
                     break;
                 }
             }
-
+            // if it's in the word, but not the right spot, score CLOSE point (yellow)
             else if (guess[i] == choice[j])
             {
                 score += 1;
