@@ -91,9 +91,6 @@ int main(int argc, string argv[])
         for (int j = 0; j < wordsize; j++)
         {
             status[wordsize] = WRONG;
-            printf("J: %i\n", j);
-
-            printf("GUESSSIZE: %i\n", wordsize);
         }
 
         // Calculate score for the guess
