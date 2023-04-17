@@ -27,7 +27,7 @@ int main(int argc, string argv[])
 {
     // ensure proper usage
     // TODO #1
-    // Check input is one string
+    // Check input is two stings in total
     int wordsize;
     if (argc != 2)
     {
