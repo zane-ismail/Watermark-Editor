@@ -27,7 +27,7 @@ int main(int argc, string argv[])
 {
     // ensure proper usage
     // TODO #1
-
+    // Check input is one string
     int wordsize;
     if (argc != 2)
     {
@@ -37,7 +37,7 @@ int main(int argc, string argv[])
 
     // ensure argv[1] is either 5, 6, 7, or 8 and store that value in wordsize instead
     // TODO #2
-    // Convery string to integer
+    // Convert string to integer
     for (int i = 5; i <= 8; i++)
     {
         if (atoi(argv[1]) == i)
