@@ -17,7 +17,7 @@ int main(void)
     {
         candidates_array[i] = get_candidate("Enter a candidate: ");
     }
-    printf("%i\n", candidates_array[2]);
+    printf("%t\n", candidates_array[2]);
 }
 
 candidate get_candidate(string prompt)
