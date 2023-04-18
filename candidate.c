@@ -10,6 +10,10 @@ candidate;
 
 int main(void)
 {
-
+    candidate president = get_candidate("Enter a candidate: ")
 }
 
+candidate get candidate(string prompt)
+{
+
+}
