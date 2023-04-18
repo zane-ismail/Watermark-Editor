@@ -28,14 +28,20 @@ int convert(string input)
 {
     int count = strlen(input);
     int tempint = 0;
-
+    printf("Count: %i\n", count);
+    printf("Number: %i\n", number);
     if (count == 0)
     {
         return number;
     }
+
     tempint = input[count-1] - '0';
+    printf("Input: %s\n", input);
     input[count-1] = '\0';
     convert(input);
+
     number = number * 10 + tempint;
+    printf("Output: %i\n", tempint);
+    printf("Number1: %i\n", number);
     return number;
 }
