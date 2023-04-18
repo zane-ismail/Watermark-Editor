@@ -1,10 +1,12 @@
 #include <cs50.h>
 #include <stdio.h>
 
-typdef struct
+candidate get candidate(string prompt);
+
+typedef struct
 {
     string name;
-    in votes;
+    int votes;
 }
 candidate;
 
