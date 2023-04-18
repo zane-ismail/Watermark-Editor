@@ -27,7 +27,7 @@ int main(int argc, string argv[])
 {
     // ensure proper usage
     // TODO #1
-    int wordsize = 0;
+    int wordsize;
     if (argc != 2)
     {
         printf("Usage: ./wordle wordsize\n");
@@ -84,7 +84,7 @@ int main(int argc, string argv[])
         string guess = get_guess(wordsize);
 
         // array to hold guess status, initially set to zero
-        int status[10];
+        int status[wordsize];
         // set all elements of status array initially to 0, aka WRONG
         // TODO #4
         for (int j = 0; j < wordsize; j++)
