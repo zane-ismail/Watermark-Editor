@@ -76,6 +76,6 @@ void sort_cities(void)
 
                 }
         }
-        j = temps[i].temp;
+        high_temp = temps[i].temp;
     }
 }
