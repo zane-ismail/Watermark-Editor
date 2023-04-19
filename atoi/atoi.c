@@ -28,8 +28,6 @@ int convert(string input)
 {
     int count = strlen(input);
     int tempint = 0;
-    printf("Count: %i\n", count);
-    printf("Number: %i\n", number);
     if (count == 0)
     {
         return number;
