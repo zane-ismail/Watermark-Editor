@@ -64,21 +64,19 @@ void sort_cities(void)
 {
     int count = 10;
     int temp;
-    int j;
+    int j = 0;
     // Add your code here
-    for (j = 0; j < count; j++)
+    do
     {
-        do
+        if (temps[j].temp < temps[j+1].temp)
         {
-            if (temps[j].temp > temps[j+1].temp)
-            {
-                temp = temps[j].temp;
-                temps[j].temp = temps[j+1].temp;
-                temps[j].temp = temp;
-                printf("%i\n", temp);
-
-            }
+            temp = temps[j].temp;
+            temps[j].temp = temps[j+1].temp;
+            temps[j].temp = temp;
+            printf("%i\n", temp);
+            j++;
         }
-        while (temps[j].temp < temps[j+1].temp);
+        else j++;
     }
+    while (temps[j].temp < temps[j+1].temp);
 }
