@@ -62,12 +62,11 @@ int main(void)
 // TODO: Sort cities by temperature in descending order
 void sort_cities(void)
 {
-    int count = 10;
     int tempo;
     // Add your code here
-    for (int i = 0; i < 10; i++)
+    for (int i = 0; i < NUM_CITIES-1; i++)
     {
-        for (int j = i+1; j < 10; i++)
+        for (int j = i+1; j < NUM_CITIES-1; i++)
         {
             if (temps[i].temp > temps[j].temp)
             {
@@ -75,16 +74,16 @@ void sort_cities(void)
                 tempo = temps[i].temp;
                 temps[i].temp = temps[i+1].temp;
                 temps[j].temp = tempo;
+
+                j = 0;
+
                 printf("TEMPO: %i\n", tempo);
                 printf("TEMP1: %i\n", temps[0].temp);
                 printf("TEMP2: %i\n", temps[1].temp);
 
                 printf("I: %i\n", i);
                 printf("J: %i\n", j);
-                j = 0;
                 }
-
-            else (i = 0);
         }
     }
 }
