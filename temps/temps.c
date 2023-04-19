@@ -64,4 +64,5 @@ void sort_cities(void)
 {
     // Add your code here
     printf("%s\n", temps[0].city);
+    for i = count; i < count
 }
