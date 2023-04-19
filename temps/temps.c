@@ -72,10 +72,7 @@ void sort_cities(void)
         {
             if (temps[i].temp > temps[j].temp)
             {
-
-                j = num;
-
-
+                num = j;
                 }
         }
         temps[i].temp = high_temp
