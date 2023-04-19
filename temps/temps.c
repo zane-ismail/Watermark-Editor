@@ -63,7 +63,7 @@ int main(void)
 void sort_cities(void)
 {
     int count = 10;
-    int temp;
+    int tempo;
     int j = 0;
     // Add your code here
     do
@@ -74,15 +74,15 @@ void sort_cities(void)
             {
                 for (j = 0; j < 100; j++)
                 {
-                    temp = temps[j].temp;
-                    temps[j].temp = temps[j+1].temp;
-                    temps[j].temp = temp;
-                    printf("%i\n", temp);
+                    tempo = temps[i].temp;
+                    temps[i].temp = temps[i+1].temp;
+                    temps[j].temp = tempo;
+                    printf("TEMPO: %i\n", tempo);
                     printf("I: %i\n", i);
                     printf("J: %i\n", j);
                 }
             }
-            else i++;
+            else j++;
         }
     }
     while (temps[j].temp < temps[j+1].temp);
