@@ -72,16 +72,10 @@ void sort_cities(void)
             {
 
                 high_temp = temps[i].temp;
-                
-                j = temps[i].temp;
 
-                printf("high_temp: %i\n", high_temp);
-                printf("TEMP1: %i\n", temps[0].temp);
-                printf("TEMP2: %i\n", temps[1].temp);
 
-                printf("I: %i\n", i);
-                printf("J: %i\n", j);
                 }
         }
+        j = temps[i].temp;
     }
 }
