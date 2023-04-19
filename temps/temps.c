@@ -79,5 +79,5 @@ void sort_cities(void)
         }
         else j = j + 1;
     }
-    while (j < 10);
+    while (j < 100);
 }
