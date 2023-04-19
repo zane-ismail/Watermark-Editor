@@ -72,15 +72,18 @@ void sort_cities(void)
         {
             if (temps[i].temp < temps[i+1].temp)
             {
-                temp = temps[j].temp;
-                temps[i].temp = temps[i+1].temp;
-                temps[i].temp = temp;
-                printf("%i\n", temp);
-                j++;
-                printf("%i\n", i);
+                for (j = 0; j < 100; j++)
+                {
+                    temp = temps[j].temp;
+                    temps[j].temp = temps[j+1].temp;
+                    temps[j].temp = temp;
+                    printf("%i\n", temp);
+                    printf("I: %i\n", i);
+                    printf("J: %i\n", j);
+                }
             }
             else i++;
         }
     }
-    while (j < 100);
+    while (temps[j].temp < temps[j+1].temp);
 }
