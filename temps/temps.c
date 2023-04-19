@@ -69,11 +69,11 @@ void sort_cities(void)
     {
         int num = i;
 
-        for (j = 0 j < NUM_CITIES-1; j++)
+        for (j = 0; j < NUM_CITIES-1; j++)
         {
             if (temps[j+1].temp > temps[j].temp)
             {
-                num = j;
+                num = j+1;
             }
         }
         high_temp = temps[num].temp;
