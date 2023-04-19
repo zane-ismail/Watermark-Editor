@@ -74,7 +74,7 @@ void sort_cities(void)
             temps[j].temp = temps[j+1].temp;
             temps[j].temp = temp;
             printf("%i\n", temp);
-            j++;
+            j = 0;
             printf("%i\n", j);
         }
         else j++;
