@@ -77,7 +77,7 @@ void sort_cities(void)
             j++;
             printf("%i\n", j);
         }
-        else j++;
+        else j = j + 1;
     }
     while (j < 10);
 }
