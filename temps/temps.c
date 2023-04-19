@@ -71,13 +71,13 @@ void sort_cities(void)
 
         for (j = i+1; j < NUM_CITIES-1; j++)
         {
-            if (temps[i].temp > temps[j].temp)
+            if (temps[i].temp < temps[j].temp)
             {
                 num = j;
             }
         }
-        high_temp = temps[i].temp;
-        temps[i].temp = temps[j].temp;
+        high_temp = temps[num].temp;
+        temps[num].temp = temps[j].temp;
         temps[j].temp = high_temp;
     }
 }
