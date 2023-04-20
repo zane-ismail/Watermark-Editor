@@ -104,7 +104,7 @@ float get_cost(string item)
     for (int i = 0; i < 10; i++)
         {
             if (item == menu[i].item)
-            printf
+            printf("SUCCESS");
             return menu[i].price;
         }
     return 0.0;
