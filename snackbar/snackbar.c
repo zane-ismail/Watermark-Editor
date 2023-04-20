@@ -75,6 +75,22 @@ int main(void)
 void add_items(void)
 {
     menu[0].item = "Burger: $9.5\n";
+    menu[1].item = "Vegan Burger: $11\n";
+    menu[1].item = "Hot Dog: $5\n";
+    menu[1].item = "Cheese Dog: $7\n";
+    menu[1].item = "Fries: $5\n";
+    menu[1].item = "Cheese Fries: $6\n";
+    menu[1].item = "Cold Pressed Juice: $7\n"
+    menu[1].item =
+    menu[1].item =
+ *
+ *
+ *
+ *
+ *
+ * Cold Brew: $3
+ * Water: $2
+ * Soda: $2
     // Burger: $9.5
     // Vegan Burger: $11
     // Hot Dog: $5
