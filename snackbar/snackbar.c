@@ -104,7 +104,7 @@ float get_cost(string item)
     int j;
     for (int i = 0; i < 10; i++)
         {
-            if (strncasecmp(menu[i].item, item))
+            if (strncasecmp(menu[i].item, item) == 0)
             return menu[j].price;
             }
         }
