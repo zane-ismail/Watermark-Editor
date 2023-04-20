@@ -34,13 +34,13 @@ int max(int array[], int n)
         {
             for (j = 0; j < n; j++)
             {
-                if (array[j] > array[j+1])
+                if (array[j] > array[j-1])
                 {
                     max = array[j];
                 }
                 else
                 {
-                    max ;
+                    max = array[i];
                 }
             }
         return max;
