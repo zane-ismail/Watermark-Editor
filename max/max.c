@@ -32,16 +32,13 @@ int max(int array[], int n)
     {
         for (i = 0; i < n; i++)
         {
+        if (array[0] > array[1])
             for (j = 0; j < n; j++)
             {
                 if (array[j] > array[j-1])
                 {
                     max = array[j];
                     printf("MAX: %i\n", max);
-                }
-                else if (array[0] > array[1])
-                {
-                    max = array[0];
                 }
             }
         return max;
