@@ -64,23 +64,17 @@ void sort_cities(void)
 {
     int high_temp;
     int min, i, j;
-    avg_temp x, y;
+    avg_temp x;
     // Add your code here
     for (i = 0; i < NUM_CITIES; i++)
     {
         for (j = 0; j < NUM_CITIES; j++)
         {
-            min = i;
-            if (temps[j+1].temp > temps[j].temp)
-            {
-                min = j;
-            }
-            if (min != i)
+            if (temps[j].temp < temps[j+1].temp)
             {
                 x = temps[j];
                 temps[j] = temps[j+1];
                 temps[j+1] = x;
-
             }
         }
     }
