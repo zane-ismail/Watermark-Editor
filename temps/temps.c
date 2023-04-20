@@ -64,6 +64,7 @@ void sort_cities(void)
 {
     int high_temp;
     int min, max, j;
+    int x;
     // Add your code here
     for (int i = 0; i < NUM_CITIES-1; i++)
     {
@@ -74,7 +75,14 @@ void sort_cities(void)
             min = i;
             if (temps[j+1].temp > temps[j].temp)
             {
-                max =
+                min = j;
+            }
+            if (min != i)
+            {
+                x = temps[j];
+                temps[j] = temps[j+1];
+                temps[j+1] = x;
+
             }
         }
         high_temp = temps[num].temp;
