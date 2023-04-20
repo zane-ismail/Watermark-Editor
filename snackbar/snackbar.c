@@ -74,6 +74,7 @@ int main(void)
 // Add at least the first for items to the menu array
 void add_items(void)
 {
+    menu[0].item = "Burger: $9.5\n";
     // Burger: $9.5
     // Vegan Burger: $11
     // Hot Dog: $5
