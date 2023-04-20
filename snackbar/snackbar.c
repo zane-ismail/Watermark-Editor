@@ -80,10 +80,10 @@ void add_items(void)
     menu[1].item = "Cheese Dog: $7\n";
     menu[1].item = "Fries: $5\n";
     menu[1].item = "Cheese Fries: $6\n";
-    menu[1].item = "Cold Pressed Juice: $7\n"
+    menu[1].item = "Cold Pressed Juice: $7\n";
     menu[1].item = "Cold Brew: $3\n";
     menu[1].item = "Water: $2\n";
-    Soda: $2;
+    menu[1].item = "Soda: $2;\n";
  *
  *
  *
