@@ -103,9 +103,11 @@ float get_cost(string item)
 {
     for (int i = 0; i < 10; i++)
         {
-            if (item == menu[i].item)
-            printf("SUCCESS%s",  menu[i].item);
-            return menu[i].price;
+            for (int j = 0; j < 10; j++)
+            {
+                if (menu[i].item == item)
+                printf("SUCCESS%s",  menu[i].item);
+                return menu[i].price;
         }
     return 0.0;
 }
