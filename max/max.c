@@ -28,7 +28,7 @@ int main(void)
 int max(int array[], int n)
 {
     int i, j;
-    int max = 0;
+    int max = array[0];
     {
         for (i = 0; i < n; i++)
         {
@@ -38,11 +38,6 @@ int max(int array[], int n)
                 {
                     max = array[j];
                     printf("MAX: %i\n", max);
-                }
-                else if (array[-1] < array[0])
-                {
-                    max = array[0];
-                    printf("MAX ELSE: %i\n", max);
                 }
             }
         return max;
