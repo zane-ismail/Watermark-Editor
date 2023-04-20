@@ -40,7 +40,7 @@ int max(int array[], int n)
                 }
                 else
                 {
-                    max = array[i];
+                    max ;
                 }
             }
         return max;
