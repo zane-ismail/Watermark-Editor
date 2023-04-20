@@ -92,7 +92,7 @@ void add_items(void)
     menu[7].price = 3.000;
     menu[8].item = "Water";
     menu[8].price = 2.00;
-    menu[9].item = "Soda;";
+    menu[9].item = "Soda";
     menu[9].price = 2.00;
 
     return;
