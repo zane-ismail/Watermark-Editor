@@ -88,9 +88,9 @@ void add_items(void)
     menu[5].price = 9.50;
     menu[6].item = "Cold Pressed Juice: $7";
     menu[6].price = 9.50;
-    menu[7].item = "Cold Brew: $3";
+    menu[7].item = "Cold Brew";
     menu[7].price = 9.50;
-    menu[8].item = "Water: $2";
+    menu[8].item = "Water";
     menu[8].price = 9.50;
     menu[9].item = "Soda: $2;";
     menu[9].price = 9.50;
@@ -101,6 +101,9 @@ void add_items(void)
 // Search through the menu array to find an item's cost
 float get_cost(string item)
 {
-    for (int i = 0; i < )
+    for (int i = 0; i < 10; i++)
+        {
+            menu[item]
+        }
     return 0.0;
 }
