@@ -84,19 +84,6 @@ void add_items(void)
     menu[1].item = "Cold Brew: $3\n";
     menu[1].item = "Water: $2\n";
     menu[1].item = "Soda: $2;\n";
- *
- *
- *
- *
- *
- *
- *
- *
-    // Burger: $9.5
-    // Vegan Burger: $11
-    // Hot Dog: $5
-    // Cheese Dog: $7
-    // Fries: $5
     return;
 }
 
