@@ -74,6 +74,11 @@ int main(void)
 // Add at least the first for items to the menu array
 void add_items(void)
 {
+    // Burger: $9.5
+    // Vegan Burger: $11
+    // Hot Dog: $5
+    // Cheese Dog: $7
+    // Fries: $5
     return;
 }
 
