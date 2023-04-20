@@ -77,23 +77,23 @@ void add_items(void)
     menu[0].item = "Burger";
     menu[0].price = 9.50;
     menu[1].item = "Vegan Burger";
-    menu[1].price = 9.50;
+    menu[1].price = 11.00;
     menu[2].item = "Hot Dog";
-    menu[2].price = 9.50;
+    menu[2].price = 5.00;
     menu[3].item = "Cheese Dog";
-    menu[3].price = 9.50;
+    menu[3].price = 7.00;
     menu[4].item = "Fries";
-    menu[4].price = 9.50;
+    menu[4].price = 5.00;
     menu[5].item = "Cheese Fries";
-    menu[5].price = 9.50;
-    menu[6].item = "Cold Pressed Juice: $7";
-    menu[6].price = 9.50;
+    menu[5].price = 6.00;
+    menu[6].item = "Cold Pressed Juice";
+    menu[6].price = 7.00;
     menu[7].item = "Cold Brew";
-    menu[7].price = 9.50;
+    menu[7].price = 3.000;
     menu[8].item = "Water";
-    menu[8].price = 9.50;
-    menu[9].item = "Soda: $2;";
-    menu[9].price = 9.50;
+    menu[8].price = 2.00;
+    menu[9].item = "Soda;";
+    menu[9].price = 2.00;
 
     return;
 }
@@ -103,7 +103,8 @@ float get_cost(string item)
 {
     for (int i = 0; i < 10; i++)
         {
-            menu[item]
+            if (menu[i].item == item)
+            return menu[i].price;
         }
     return 0.0;
 }
