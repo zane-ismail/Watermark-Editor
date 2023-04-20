@@ -63,13 +63,11 @@ int main(void)
 void sort_cities(void)
 {
     int high_temp;
-    int min, max, j;
+    int min, i, j;
     avg_temp x, y;
     // Add your code here
-    for (int i = 0; i < NUM_CITIES; i++)
+    for (i = 0; i < NUM_CITIES; i++)
     {
-        int num = i;
-
         for (j = 0; j < NUM_CITIES; j++)
         {
             min = i;
@@ -85,8 +83,5 @@ void sort_cities(void)
 
             }
         }
-        high_temp = temps[num].temp;
-        temps[num].temp = temps[j].temp;
-        temps[j].temp = high_temp;
     }
 }
