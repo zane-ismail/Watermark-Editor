@@ -28,7 +28,7 @@ int main(void)
 int max(int array[], int n)
 {
     int i, j;
-    int max;
+    int max = 0;
     {
         for (i = 0; i < n; i++)
         {
@@ -37,8 +37,14 @@ int max(int array[], int n)
                 if (array[j] > array[j+1])
                 {
                     max = array[j];
-                    return max;
                 }
+                else
+                {
+                    max = array[i];
+                }
+            }
+        return max;
         }
     }
+    return max;
 }
