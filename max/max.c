@@ -37,6 +37,7 @@ int max(int array[], int n)
                 if (array[j] > array[j-1])
                 {
                     max = array[j];
+                    printf("MAX: %i\n", max);
                 }
                 else
                 {
