@@ -75,30 +75,32 @@ int main(void)
 void add_items(void)
 {
     menu[0].item = "Burger";
+    menu[0].price = 9.50;
     menu[1].item = "Vegan Burger";
+    menu[1].price = 9.50;
     menu[2].item = "Hot Dog";
+    menu[2].price = 9.50;
     menu[3].item = "Cheese Dog";
+    menu[3].price = 9.50;
     menu[4].item = "Fries";
+    menu[4].price = 9.50;
     menu[5].item = "Cheese Fries";
+    menu[5].price = 9.50;
     menu[6].item = "Cold Pressed Juice: $7";
+    menu[6].price = 9.50;
     menu[7].item = "Cold Brew: $3";
+    menu[7].price = 9.50;
     menu[8].item = "Water: $2";
+    menu[8].price = 9.50;
     menu[9].item = "Soda: $2;";
+    menu[9].price = 9.50;
+
     return;
 }
 
 // Search through the menu array to find an item's cost
 float get_cost(string item)
 {
-    menu[0].price = 9.50;
-    menu[1].price = 9.50;
-    menu[2].price = 9.50;
-    menu[3].price = 9.50;
-    menu[4].price = 9.50;
-    menu[5].price = 9.50;
-    menu[6].price = 9.50;
-    menu[7].price = 9.50;
-    menu[8].price = 9.50;
-    menu[9].price = 9.50;
-    return menu[item].price;
+    for (int i = 0; i < )
+    return 0.0;
 }
