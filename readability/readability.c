@@ -32,7 +32,7 @@ int count_letters(string text)
     return l_count;
 }
 
-int count_words(string text);
+int count_words(string text)
 {
     // count words (a word is any sequence of characters separated by spaces)
     int w_count = 1;
@@ -47,7 +47,7 @@ int count_words(string text);
     return w_count;
 }
 
-int count_sentences(string text);
+int count_sentences(string text)
 {
     // count sentences (any occurrence of a period, exclamation point, or question mark indicates the end of a sentence)
     int s_count = 0;
