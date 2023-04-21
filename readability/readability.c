@@ -16,19 +16,19 @@ int main(void)
     // count_words(text);
     // count_sentences(text);
 
-    int j = 1;
-    for (int i = 0; text[i] != '\0'; i++)
-        {
-            if (count_words(text) % 100 == 0)
-            {
-                j++;
-            }
-        }
+    // int j = 1;
+    // for (int i = 0; text[i] != '\0'; i++)
+    //     {
+    //         if (count_words(text) % 100 == 0)
+    //         {
+    //             j++;
+    //         }
+    //     }
 
     // calculate average number of letters per 100 words
-    float L = count_letters(text) / j;
+    float L = count_letters(text) /count_words(text) * 100;
     // calculate average number of sentences per 100 words
-    float S = count_sentences(text)/ j;
+    float S = count_sentences(text)/ ;
     int index = round(0.0588 * L - 0.296 * S - 15.8);
     printf("L: %f\n", L);
     printf("S: %f\n", S);
