@@ -18,7 +18,7 @@ int main(void)
     float S = 100 / count_words(text) * count_sentences(text);
     // calculate grade by the Coleman-Liau formula, rounded to the nearest integer
     int index = round(0.0588 * L - 0.296 * S - 15.8);
-    
+
     // if index number is less than 1, output "Before Grade 1"
     if (index < 1)
     {
@@ -47,7 +47,6 @@ float count_letters(string text)
                 l_count++;
             }
         }
-    // printf("%i letters\n", l_count);
     return l_count;
 }
 
@@ -62,7 +61,6 @@ float count_words(string text)
             w_count++;
         }
     }
-    // printf("%i words\n", w_count);
     return w_count;
 }
 
@@ -77,7 +75,6 @@ float count_sentences(string text)
             s_count++;
         }
     }
-    // printf("%i sentences\n", s_count);
     return s_count;
 }
 
