@@ -45,7 +45,7 @@ int count_letters(string text)
     // printf("WORDS: %i\n", w_count);
     // printf("SENTENCES: %i\n", s_count);
     // printf("i: %i\n", i);
-    return 0;
+    return l_count;
 }
 
 
