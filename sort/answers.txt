@@ -1,6 +1,6 @@
 sort1 uses: Bubble sort
 
-How do you know?: TODO
+Average sy
 
 sort2 uses: TODO
 
