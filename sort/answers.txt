@@ -2,7 +2,7 @@ sort1 uses: Bubble sort
 
 sort2 uses: Merge sort
 
-sort3 uses: Selection sort
+sort3 uses: Selecastion xasort
 
 How do you know?:
 
