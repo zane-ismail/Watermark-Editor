@@ -15,26 +15,40 @@ int main(void)
 
 int count_letters(string text)
 {
-    // count letters
-    int l_count = strlen(text);
+    int w_count = 0;
+    int s_count = 0;
+
+    // count words (a word is any sequence of characters separated by spaces)
+    for (int i = 0; i != '\0'; i++)
+    {
+        if (text[i] == ' ')
+        {
+            w_count++;
+        }
+    // count sentences (any occurrence of a period, exclamation point, or question mark indicates the end of a sentence)
+        else if (text[i] == '.' || text[i] == '!' || text[i] == '?')
+        {
+            s_count++;
+        }
+    }
+    
+    // count letters (a letter is any lowercase character from a to z or any uppercase character from A to Z)
+    int l_count = strlen(text) - w_count;
     printf("LETTERS: %i\n", l_count);
-
-
-    // count words
-    int w_count = 
-    return txt_len;
+    printf("WORDS: %i\n", w_count);
+    printf("SENTENCES: %i\n", s_count);
+    return 0;
 }
 
 
 
 
-    // count sentences
 
-    // a letter is any lowercase character from a to z or any uppercase character from A to Z
 
-    // a word is any sequence of characters separated by spaces
+    //
 
-    // any occurrence of a period, exclamation point, or question mark indicates the end of a sentence
+    //
+    //
 
 
     // print as output "Grade X" where X is the grade level computed by the Coleman-Liau formula, rounded to the nearest integer
