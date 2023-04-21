@@ -16,11 +16,12 @@ int main(void)
 int count_letters(string text)
 {
     // count letters
-    int txt_len = strlen(text);
-    printf("LENGTH: %i\n", txt_len);
+    int l_count = strlen(text);
+    printf("LETTERS: %i\n", l_count);
 
 
     // count words
+    int w_count = 
     return txt_len;
 }
 
