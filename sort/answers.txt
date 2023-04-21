@@ -4,14 +4,14 @@ Average run times on all three of the "sorted" text files was lowest.
 Sort1 also had the overall lowest runtime for all the "sorted" text files.
 
 Bubble sort has an upper bound of O(n2), so it did not perform optimally on the "random" and "reversed" text files.
-However, it's lower bound is Ω(n), meaning if the data is in order, it only needs one iteration to verify this.
+However, it's lower bound is Ω(n), meaning if the data is in order, it can verify this in only one iteration.
 
 sort2 uses: Merge sort
 
 Average run times on all "random" and "reversed" text files was lowest.
 Sort2 had the least range in 7 out of 9 runtimes, meaning it was the most consistent.
 
-Because merge sort has an upper bound of O(n log n), it is able to sort through large amounts of data quicker than bubble and selection sort.
+Merge sort has an upper bound of O(n log n), so it is able to sort through large amounts of data more optimally than bubble and selection sort.
 The organization and size of the data is less important, so the lowest and highest run times are more consistant with the average run times regardless of the text file.
 
 sort3 uses: Selection sort
