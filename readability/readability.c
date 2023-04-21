@@ -17,13 +17,15 @@ int count_letters(string text)
 {
     int w_count = 0;
     int s_count = 0;
+    int i;
 
     // count words (a word is any sequence of characters separated by spaces)
-    for (int i = 0; i != '\0'; i++)
+    for (i = 0; i != '\0'; i++)
     {
         if (text[i] == ' ')
         {
             w_count++;
+            printf("CHAR: %c\n", text[i]);
         }
     // count sentences (any occurrence of a period, exclamation point, or question mark indicates the end of a sentence)
         else if (text[i] == '.' || text[i] == '!' || text[i] == '?')
@@ -31,12 +33,13 @@ int count_letters(string text)
             s_count++;
         }
     }
-    
+
     // count letters (a letter is any lowercase character from a to z or any uppercase character from A to Z)
     int l_count = strlen(text) - w_count;
     printf("LETTERS: %i\n", l_count);
     printf("WORDS: %i\n", w_count);
     printf("SENTENCES: %i\n", s_count);
+    printf("i: %i\n", i);
     return 0;
 }
 
