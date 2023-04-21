@@ -18,6 +18,8 @@ int main(void)
     L = L * count_letters(text);
     // calculate average number of sentences per 100 words
     float S = 100 / count_words(text) * count_sentences(text);
+    printf("%f\n", L);
+    printf("%f\n", S);
     int index = round(0.0588 * L - 0.296 * S - 15.8);
 
     // if index number is less than 1, output "Before Grade 1"
