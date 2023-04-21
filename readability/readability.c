@@ -4,9 +4,9 @@
 #include <stdio.h>
 #include <string.h>
 
-int count_letters(string text);
-int count_words(string text);
-int count_sentences(string text);
+float count_letters(string text);
+float count_words(string text);
+float count_sentences(string text);
 
 int main(void)
 {
@@ -14,17 +14,17 @@ int main(void)
     string text = get_string("Text: ");
 
     // calculate average number of letters per 100 words
-    double L = 100 / count_words(text) * count_letters(text);
+    float L = 100 / count_words(text) * count_letters(text);
     // calculate average number of sentences per 100 words
-    double S = 100 / count_words(text) * count_sentences(text);
-    printf("L: %f\n", L);
-    printf("S: %f\n", S);
-    float index = round(0.0588 * L - 0.296 * S - 15.8);
+    float S = 100 / count_words(text) * count_sentences(text);
+    // printf("L: %f\n", L);
+    // printf("S: %f\n", S);
+    int index = round(0.0588 * L - 0.296 * S - 15.8);
 
     // if index number is less than 1, output "Before Grade 1"
     if (index < 1)
     {
-        printf("Before Grade 1 %f\n", index);
+        printf("Before Grade 1");
     }
     // if index number is 16 or higher, output
     else if (index >= 16)
@@ -34,11 +34,11 @@ int main(void)
     // print as output "Grade X" where X is the grade level computed by the Coleman-Liau formula, rounded to the nearest integer
     else
     {
-        printf("Grade %f\n", index);
+        printf("Grade %i\n", index);
     }
 }
 
-int count_letters(string text)
+float count_letters(string text)
 {
     // count letters (a letter is any lowercase character from a to z or any uppercase character from A to Z)
     int l_count = 0;
@@ -49,11 +49,11 @@ int count_letters(string text)
                 l_count++;
             }
         }
-    printf("%i letters\n", l_count);
+    // printf("%i letters\n", l_count);
     return l_count;
 }
 
-int count_words(string text)
+float count_words(string text)
 {
     // count words (a word is any sequence of characters separated by spaces)
     int w_count = 1;
@@ -64,11 +64,11 @@ int count_words(string text)
             w_count++;
         }
     }
-    printf("%i words\n", w_count);
+    // printf("%i words\n", w_count);
     return w_count;
 }
 
-int count_sentences(string text)
+float count_sentences(string text)
 {
     // count sentences (any occurrence of a period, exclamation point, or question mark indicates the end of a sentence)
     int s_count = 0;
@@ -79,7 +79,7 @@ int count_sentences(string text)
             s_count++;
         }
     }
-    printf("%i sentences\n", s_count);
+    // printf("%i sentences\n", s_count);
     return s_count;
 }
 
