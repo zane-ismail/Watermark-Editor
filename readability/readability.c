@@ -16,7 +16,7 @@ int main(void)
 int count_letters(string text)
 {
     int w_count = 1;
-    int s_count = 1;
+    int s_count = 0;
     int i;
 
     // count words (a word is any sequence of characters separated by spaces)
