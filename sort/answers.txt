@@ -1,6 +1,8 @@
 sort1 uses: Bubble sort
 
-Average run time was generally slower on the reversed text files
+Average run time was on all three of the "sorted" text files was faster.
+Sort1 also had the overall lowest runtime for all the "sorted" text files.
+This is because 
 
 sort2 uses: TODO
 
