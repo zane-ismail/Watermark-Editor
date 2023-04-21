@@ -17,7 +17,7 @@ int main(void)
     float L = count_letters(text) / count_words(text) * 100;
     // calculate average number of sentences per 100 words
     float S = count_sentences(text) / count_words(text) * 100;
-    int index = round(0.0588 * L - 0.296 * S - 15.8);
+    float index = (0.0588 * L - 0.296 * S - 15.8);
 
     // if index number is less than 1, output "Before Grade 1"
     if (index < 1)
@@ -32,7 +32,7 @@ int main(void)
     // print as output "Grade X" where X is the grade level computed by the Coleman-Liau formula, rounded to the nearest integer
     else
     {
-        printf("Grade %i\n", index);
+        printf("Grade %f\n", index);
     }
 }
 
