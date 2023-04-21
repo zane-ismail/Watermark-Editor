@@ -20,6 +20,6 @@ Average run times are lowest for all text files, with only one exception.
 Sort3 had the highest run times for the "sorted" text files.
 
 Like bubble sort, selection sort has an upper bound of O(n2), which creates proportionately higher run times for more amounts of data.
-If the data is already sorted, it still needs to iterate through an extra time to confirm this, so unlike bubble sort it has an upper bound of Ω(n2).
+If the data is already sorted, it still needs to iterate through an extra time to confirm this, so unlike bubble sort it has an lower bound of Ω(n2).
 
 How do you know?: TODO
