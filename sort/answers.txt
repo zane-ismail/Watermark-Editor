@@ -2,7 +2,7 @@ sort1 uses: Bubble sort
 
 Average run times on all three of the "sorted" text files was lowest.
 Sort1 also had the overall lowest runtime for all the "sorted" text files.
-Because bubble sort has a big O of n, if the list is in order, it only needs one iteration to verify this.
+Because bubble sort has a big O of n squared, if the list is in order, it only needs one iteration to verify this.
 
 sort2 uses: Merge sort
 
