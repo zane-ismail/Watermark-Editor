@@ -33,29 +33,21 @@ int count_letters(string text)
         {
             s_count++;
         }
+    // count letters (a letter is any lowercase character from a to z or any uppercase character from A to Z)
         else if (isalpha(text[i]))
         {
             l_count++;
         }
     }
 
-    // count letters (a letter is any lowercase character from a to z or any uppercase character from A to Z)
-    printf("LETTERS: %i\n", l_count);
-    printf("WORDS: %i\n", w_count);
-    printf("SENTENCES: %i\n", s_count);
-    printf("i: %i\n", i);
+
+    // printf("LETTERS: %i\n", l_count);
+    // printf("WORDS: %i\n", w_count);
+    // printf("SENTENCES: %i\n", s_count);
+    // printf("i: %i\n", i);
     return 0;
 }
 
-
-
-
-
-
-    //
-
-    //
-    //
 
 
     // print as output "Grade X" where X is the grade level computed by the Coleman-Liau formula, rounded to the nearest integer
