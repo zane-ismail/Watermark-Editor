@@ -12,15 +12,13 @@ int main(void)
 {
     // prompt the user for a string of text using get_string.
     string text = get_string("Text: ");
-
     // calculate average number of letters per 100 words
     float L = 100 / count_words(text) * count_letters(text);
     // calculate average number of sentences per 100 words
     float S = 100 / count_words(text) * count_sentences(text);
-    // printf("L: %f\n", L);
-    // printf("S: %f\n", S);
+    // calculate grade by the Coleman-Liau formula, rounded to the nearest integer
     int index = round(0.0588 * L - 0.296 * S - 15.8);
-
+    
     // if index number is less than 1, output "Before Grade 1"
     if (index < 1)
     {
@@ -31,7 +29,7 @@ int main(void)
     {
         printf("Grade 16+\n");
     }
-    // print as output "Grade X" where X is the grade level computed by the Coleman-Liau formula, rounded to the nearest integer
+    // print as output "Grade X" where X is the grade level
     else
     {
         printf("Grade %i\n", index);
