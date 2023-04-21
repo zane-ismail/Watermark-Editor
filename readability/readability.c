@@ -20,12 +20,12 @@ int main(void)
     float S = 100 / count_words(text) * count_sentences(text);
     printf("%f\n", L);
     printf("%f\n", S);
-    int index = round(0.0588 * L - 0.296 * S - 15.8);
+    float index = round(0.0588 * L - 0.296 * S - 15.8);
 
     // if index number is less than 1, output "Before Grade 1"
     if (index < 1)
     {
-        printf("Before Grade 1 %i\n", index);
+        printf("Before Grade 1 %f\n", index);
     }
     // if index number is 16 or higher, output
     else if (index >= 16)
@@ -35,7 +35,7 @@ int main(void)
     // print as output "Grade X" where X is the grade level computed by the Coleman-Liau formula, rounded to the nearest integer
     else
     {
-        printf("Grade %i\n", index);
+        printf("Grade %f\n", index);
     }
 }
 
