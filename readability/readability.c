@@ -19,9 +19,9 @@ int main(void)
     // calculate average number of letters per 100 words
     float L = count_letters(text) / count_words(text);
     float S = count_words(text) / count_sentences(text);
-    float index = round(0.0588 * L - 0.296 * S - 15.8);
+    int index = round((0.0588 * L) - 0.296 * S - 15.8);
 
-    printf("INDEX: %f\n", index);
+    printf("INDEX: %i\n", index);
 }
 
 int count_letters(string text)
