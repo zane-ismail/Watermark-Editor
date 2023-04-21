@@ -14,7 +14,7 @@ int main(void)
     string text = get_string("Text: ");
 
     // calculate average number of letters per 100 words
-    float L = count_letters(text) / count_words(text) * 100;
+    float L = count_letters(text) * 100 / count_words(text);
     // calculate average number of sentences per 100 words
     float S = count_sentences(text) / count_words(text) * 100;
     int index = round(0.0588 * L - 0.296 * S - 15.8);
