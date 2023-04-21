@@ -16,6 +16,12 @@ int main(void)
     count_words(text);
     count_sentences(text);
 
+    // calculate average number of letters per 100 words
+    float L = l_count / w_count;
+    float S = w_count / s_count;
+    float index = round(0.0588 * L - 0.296 * S - 15.8)
+
+    
 }
 
 int count_letters(string text)
