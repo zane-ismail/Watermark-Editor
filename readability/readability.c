@@ -12,6 +12,7 @@ int main(void)
 {
     // prompt the user for a string of text using get_string.
     string text = get_string("Text: ");
+    
     // calculate average number of letters per 100 words
     float L = 100 / count_words(text) * count_letters(text);
     // calculate average number of sentences per 100 words
@@ -41,12 +42,12 @@ float count_letters(string text)
     // count letters (a letter is any lowercase character from a to z or any uppercase character from A to Z)
     int l_count = 0;
     for (int i = 0; text[i] != '\0'; i++)
+    {
+        if (isalpha(text[i]))
         {
-            if (isalpha(text[i]))
-            {
-                l_count++;
-            }
+            l_count++;
         }
+    }
     return l_count;
 }
 
@@ -77,6 +78,3 @@ float count_sentences(string text)
     }
     return s_count;
 }
-
-
-
