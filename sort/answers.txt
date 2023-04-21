@@ -1,6 +1,6 @@
 sort1 uses: Bubble sort
 
-Average sy
+Average run time was generally slower on the reversed text files
 
 sort2 uses: TODO
 
