@@ -7,7 +7,8 @@ Because bubble sort has a big O of n, if the list is in order, it only needs one
 sort2 uses: Merge sort
 
 Average run times on all "random" and "reversed" text files was lowest.
-Sort 3 had the least range in runtimes, meaning it was the most consistent
+Sort 3 had the least range in 7 out of 9 runtimes, meaning it was the most consistent.
+Because merge sort has a big O of n\sort
 
 sort3 uses: TODO
 
