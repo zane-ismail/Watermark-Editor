@@ -1,6 +1,7 @@
 #include <cs50.h>
 #include <ctype.h>
 #include <stdio.h>
+#include <string.h>
 
 int count_letters(string text);
 
@@ -8,6 +9,8 @@ int main(void)
 {
     // prompt the user for a string of text using get_string.
     string text = get_string("Text: ");
+    count_letters(text);
+
 }
 
 int count_letters(string text)
@@ -16,9 +19,9 @@ int count_letters(string text)
     int txt_len = strlen(text);
     printf("LENGTH: %i\n", txt_len);
 
+
     // count words
-
-
+    return txt_len;
 }
 
 
