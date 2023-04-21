@@ -14,7 +14,7 @@ int main(void)
     string text = get_string("Text: ");
 
     // calculate average number of letters per 100 words
-    float L = count_words(text) / count_letters(text) * 100;
+    float L = count_letters(text) / count_words(text) * 100;
     // calculate average number of sentences per 100 words
     float S = count_sentences(text) / count_words(text) * 100;
     int index = round(0.0588 * L - 0.296 * S - 15.8);
@@ -22,7 +22,7 @@ int main(void)
     // if index number is less than 1, output "Before Grade 1"
     if (index < 1)
     {
-        printf("Before Grade 1\n");
+        printf("Before Grade 1%i\n", index);
     }
     // if index number is 16 or higher, output
     else if (index >= 16)
@@ -47,7 +47,7 @@ int count_letters(string text)
                 l_count++;
             }
         }
-    // printf("%i letters\n", l_count);
+    printf("%i letters\n", l_count);
     return l_count;
 }
 
@@ -77,7 +77,7 @@ int count_sentences(string text)
             s_count++;
         }
     }
-    // printf("%i sentences\n", s_count);
+    printf("%i sentences\n", s_count);
     return s_count;
 }
 
