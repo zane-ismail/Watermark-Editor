@@ -15,6 +15,7 @@ int main(void)
 
 int count_letters(string text)
 {
+    int l_count = 0;
     int w_count = 1;
     int s_count = 0;
     int i;
@@ -32,10 +33,13 @@ int count_letters(string text)
         {
             s_count++;
         }
+        else if (isalpha(text[i]))
+        {
+            l_count++;
+        }
     }
 
     // count letters (a letter is any lowercase character from a to z or any uppercase character from A to Z)
-    int l_count = strlen(text) - w_count - s_count;
     printf("LETTERS: %i\n", l_count);
     printf("WORDS: %i\n", w_count);
     printf("SENTENCES: %i\n", s_count);
