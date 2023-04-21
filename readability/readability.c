@@ -21,7 +21,8 @@ int main(void)
     // calculate average number of sentences per 100 words
     float S = count_sentences(text);
     int index = round(0.0588 * L - 0.296 * S - 15.8);
-
+    printf("L: %f\n", L);
+    printf("S: %f\n", S);
     printf("INDEX: %i\n", index);
 }
 
