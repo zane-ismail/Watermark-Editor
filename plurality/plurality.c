@@ -78,7 +78,7 @@ bool vote(string name)
             // The vote function in this case should return true to indicate a successful ballot
             return true;
         }
-        else if (strcmp(name, candidates[i].name) != 0)
+        else if (i == MAX)
         {
             return false;
         }
