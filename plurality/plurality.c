@@ -68,17 +68,18 @@ bool vote(string name)
 {
     // TODO
     // vote takes a single argument, a string called name, representing the name of the candidate who was voted for
-
+    bool is_match = false;
     // If name matches one of the names of the candidates in the election, then update that candidate’s vote total to account for the new vote
     for (int i = 0; i <= MAX; i++)
     {
         if (strcmp(name, candidates[i].name) == 0)
         {
             candidates[i].votes++;
+            is_match = true;
             // The vote function in this case should return true to indicate a successful ballot
             return true;
         }
-        else if (i == MAX)
+        else if (i == MAX && is_match == false)
         {
             return false;
         }
@@ -122,7 +123,7 @@ void print_winner(void)
     // In that case, you should output the names of each of the winning candidates, each on a separate line.
     if (max_a > max_b)
     {
-        printf("%s\n ", winner_a);
+        printf("%s\n", winner_a);
         // printf("MAX A: %i\n", max_a);
         // printf("MAX B: %i\n", max_b);
         if (max_a == max_b)
