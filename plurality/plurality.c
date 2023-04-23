@@ -120,9 +120,9 @@ void print_winner(void)
             // }
         }
     }
-    printf("%s ", winner_a);
-    printf("%s\n", winner_b);
     // It is possible that the election could end in a tie if multiple candidates each have the maximum number of votes.
     // In that case, you should output the names of each of the winning candidates, each on a separate line.
+    printf("%s\n ", winner_a);
+    printf("%s\n", winner_b);
     return;
 }
