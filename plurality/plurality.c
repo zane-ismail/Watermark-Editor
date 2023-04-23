@@ -67,6 +67,22 @@ int main(int argc, string argv[])
 bool vote(string name)
 {
     // TODO
+    // vote takes a single argument, a string called name, representing the name of the candidate who was voted for
+
+    // If name matches one of the names of the candidates in the election, then update that candidate’s vote total to account for the new vote
+    for (int i = 0; i < MAX; i++)
+    {
+        if (name == candidates[i])
+        {
+            
+        }
+    }
+
+    // The vote function in this case should return true to indicate a successful ballot
+
+    // If name does not match the name of any of the candidates in the election, no vote totals should change, and the vote function should return false to indicate an invalid ballot
+
+    // You may assume that no two candidates will have the same name
     return false;
 }
 
