@@ -90,7 +90,7 @@ void print_winner(void)
     // TODO
     // The function should print out the name of the candidate who received the most votes in the election, and then print a newline.
     string winner_a;
-    string winnder_b;
+    string winner_b;
     // Find max votes
     int max = candidates[0].votes;
     for (int i = 0; i <= MAX; i++)
@@ -101,14 +101,14 @@ void print_winner(void)
             {
                 winner_a = candidates[j].name;
                 max = candidates[j].votes;
-                printf("%s\n", winner);
+                printf("%s\n", winner_a);
                 if (candidates[j].votes == max)
                     {
+                        winner_b = winner_a;
                         winner_a = candidates[j].name;
-                        winner_b =
                         max = candidates[j].votes;
-                        printf("%s ", winner);
-                        printf("%s\n", candidates[j].name);
+                        printf("%s ", winner_a);
+                        printf("%s\n", winner_b);
                     }
             }
         }
