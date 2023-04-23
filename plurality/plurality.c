@@ -92,22 +92,24 @@ void print_winner(void)
     string winner_a = candidates[0].name;
     string winner_b = 0;
     // Find max votes
-    int max = candidates[0].votes;
+    int max_a = candidates[0].votes;
+    int max_b;
     for (int i = 0; i <= MAX; i++)
     {
         for (int j = 0; j <= MAX; j++)
         {
-            if (candidates[j].votes > max)
+            if (candidates[j].votes > max_a)
             {
                 winner_a = candidates[j].name;
-                max = candidates[j].votes;
+                max_a = candidates[j].votes;
 
             }
-            else if (candidates[j].votes == max)
+            else if (candidates[j].votes == max_a)
             {
                 winner_b = winner_a;
                 winner_a = candidates[j].name;
-                max = candidates[j].votes;
+                max_b = max_a;
+                max_a = candidates[j].votes;
 
             }
             // else if (candidates[j].votes == max)
@@ -122,13 +124,18 @@ void print_winner(void)
     }
     // It is possible that the election could end in a tie if multiple candidates each have the maximum number of votes.
     // In that case, you should output the names of each of the winning candidates, each on a separate line.
-    if (winner_a > winner_b)
+    if (max_a > max_b)
     {
         printf("%s\n ", winner_a);
+        printf("MAX A: %i\n", max_a);
+        printf("MAX B: %i\n", max_b);
     }
-    else if (winner_a == winner_b)
+    else if (max_a == max_b)
     {
+        printf("%s\n ", winner_a);
         printf("%s\n", winner_b);
+        printf("MAX A: %i\n", max_a);
+        printf("MAX B: %i\n", max_b);
     }
     return;
 }
