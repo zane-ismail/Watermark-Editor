@@ -93,6 +93,8 @@ void print_winner(void)
     // The function should print out the name of the candidate who received the most votes in the election, and then print a newline.
     string winner;
     // Find max votes
+    int i, j;
+    int max = array[0];
     for (int i = 0; i <= MAX; i++)
     {
         for (int j = 0; j <= MAX; j++)
