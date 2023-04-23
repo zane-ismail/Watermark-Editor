@@ -94,5 +94,9 @@ bool vote(string name)
 void print_winner(void)
 {
     // TODO
+    // The function should print out the name of the candidate who received the most votes in the election, and then print a newline.
+    
+    // It is possible that the election could end in a tie if multiple candidates each have the maximum number of votes.
+    // In that case, you should output the names of each of the winning candidates, each on a separate line.
     return;
 }
