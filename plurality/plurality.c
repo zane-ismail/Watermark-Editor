@@ -81,10 +81,6 @@ bool vote(string name)
             return true;
         }
         // If name does not match the name of any of the candidates in the election, no vote totals should change, and the vote function should return false to indicate an invalid ballot
-        else
-        {
-            return false;
-        }
     }
     // You may assume that no two candidates will have the same name
     return false;
