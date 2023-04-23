@@ -79,7 +79,7 @@ bool vote(string name)
             // The vote function in this case should return true to indicate a successful ballot
             return true;
         }
-        else if (strcmp(name, candidates[i].name) > 0)
+        else if (is_match == false)
         return false;
 
         // If name does not match the name of any of the candidates in the election, no vote totals should change, and the vote function should return false to indicate an invalid ballot
