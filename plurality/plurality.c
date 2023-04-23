@@ -70,7 +70,7 @@ bool vote(string name)
     // vote takes a single argument, a string called name, representing the name of the candidate who was voted for
 
     // If name matches one of the names of the candidates in the election, then update that candidate’s vote total to account for the new vote
-    for (int i = 0; i < MAX; i++)
+    for (int i = 0; i <+ MAX; i++)
     {
         if (name == candidates[i].name)
         {
