@@ -112,14 +112,6 @@ void print_winner(void)
                 max_a = candidates[j].votes;
 
             }
-            // else if (candidates[j].votes == max)
-            // {
-            //     winner_b = winner_a;
-            //     winner_a = candidates[j].name;
-            //     max = candidates[j].votes;
-            //     printf("%s ", winner_a);
-            //     printf("%s\n", winner_b);
-            // }
         }
     }
     // It is possible that the election could end in a tie if multiple candidates each have the maximum number of votes.
