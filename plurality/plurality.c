@@ -75,6 +75,8 @@ bool vote(string name)
         if (strcmp(name, candidates[i].name))
         {
             candidates[i].votes++;
+            printf("Voted for: %s\n", candidates[i].name);
+            printf("Number of votes: %i\n", candidates[i].votes);
             // The vote function in this case should return true to indicate a successful ballot
             return true;
         }
