@@ -102,14 +102,14 @@ void print_winner(void)
                 winner_a = candidates[j].name;
                 max = candidates[j].votes;
                 printf("%s\n", winner_a);
-                if (candidates[j].votes == max)
-                    {
-                        winner_b = winner_a;
-                        winner_a = candidates[j].name;
-                        max = candidates[j].votes;
-                        printf("%s ", winner_a);
-                        printf("%s\n", winner_b);
-                    }
+            }
+            else if (candidates[j].votes == max)
+            {
+                winner_b = winner_a;
+                winner_a = candidates[j].name;
+                max = candidates[j].votes;
+                printf("%s ", winner_a);
+                printf("%s\n", winner_b);
             }
         }
     }
