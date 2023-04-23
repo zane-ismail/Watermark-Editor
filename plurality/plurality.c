@@ -102,10 +102,11 @@ void print_winner(void)
                 printf("Winner name: %s\n", candidates[j].name);
                 printf("Winner votes: %i\n", candidates[j].votes);
                 winner = candidates[i].name;
+                printf("WINNER WINNER, CHICKEN DINNER: %s\n", winner);
             }
         }
     }
-    printf("WINNER WINNER, CHICKEN DINNER: %s\n", winner);
+
     // It is possible that the election could end in a tie if multiple candidates each have the maximum number of votes.
     // In that case, you should output the names of each of the winning candidates, each on a separate line.
     return;
