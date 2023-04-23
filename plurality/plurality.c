@@ -21,7 +21,7 @@ int candidate_count;
 
 // Function prototypes
 bool vote(string name);
-void print_winner(bool vote);
+void print_winner(void);
 
 int main(int argc, string argv[])
 {
@@ -91,11 +91,11 @@ bool vote(string name)
 }
 
 // Print the winner (or winners) of the election
-void print_winner(bool vote)
+void print_winner(void)
 {
     // TODO
     // The function should print out the name of the candidate who received the most votes in the election, and then print a newline.
-    if vote
+    if (vote == )
     {
         printf("%s\n", candidates[0].name)
     }
