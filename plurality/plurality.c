@@ -111,11 +111,6 @@ void print_winner(void)
             //     printf("%s ", winner_a);
             //     printf("%s\n", winner_b);
             // }
-            else
-            {
-                winner_a = candidates[0].name;
-                printf("%s\n", winner_a);
-            }
         }
     }
 
