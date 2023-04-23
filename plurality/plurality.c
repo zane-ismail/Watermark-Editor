@@ -106,7 +106,8 @@ void print_winner(void)
             {
                 winner = candidates[j].name;
                 max = candidates[j].votes;
-                printf("%s\n", winner max);
+                printf("%s ", winner);
+                printf("%s\n", candidates[j].name);
             }
         }
     }
