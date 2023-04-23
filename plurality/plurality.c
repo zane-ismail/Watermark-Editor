@@ -101,7 +101,8 @@ void print_winner(void)
         {
             if (candidates[j].votes > candidates[i].votes)
             {
-                printf("WINNER WINNER, CHICKEN DINNER: %s\n", candidates[0].name);
+                printf("Number of votes %i\n", candidates[j].votes);
+                printf("WINNER WINNER, CHICKEN DINNER: %s\n", candidates[j].name);
             }
         }
     }
