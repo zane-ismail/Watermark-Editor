@@ -74,13 +74,17 @@ bool vote(string name)
     {
         printf("Names on list: %s\n", candidates[i].name);
         printf("Name typed: %s\n", name);
-        if (name == candidates[i].name)
+        if (strcmp(name, candidates[i].name))
         {
             candidates[i].votes++;
             // The vote function in this case should return true to indicate a successful ballot
             return true;
         }
         // If name does not match the name of any of the candidates in the election, no vote totals should change, and the vote function should return false to indicate an invalid ballot
+        else
+        {
+            return false;
+        }
     }
     // You may assume that no two candidates will have the same name
     return false;
@@ -93,8 +97,9 @@ void print_winner(void)
     // The function should print out the name of the candidate who received the most votes in the election, and then print a newline.
     for (int i = 0; i <= MAX; i++)
     {
+        for (int j = 0; j <= MAX; j++)
         {
-            if (candidates[i].votes == 1)
+            if (candidates[j].votes > candidates[i].votes)
             {
                 printf("WINNER WINNER, CHICKEN DINNER: %s\n", candidates[0].name);
             }
