@@ -75,8 +75,6 @@ bool vote(string name)
         if (strcmp(name, candidates[i].name) == 0)
         {
             candidates[i].votes++;
-            printf("Voted for: %s\n", candidates[i].name);
-            printf("Number of votes: %i\n", candidates[i].votes);
             // The vote function in this case should return true to indicate a successful ballot
             return true;
         }
@@ -93,18 +91,16 @@ void print_winner(void)
     // The function should print out the name of the candidate who received the most votes in the election, and then print a newline.
     string winner;
     // Find max votes
-    int i, j;
-    int max = array[0];
+    int max = candidates[0].votes;
     for (int i = 0; i <= MAX; i++)
     {
         for (int j = 0; j <= MAX; j++)
         {
-            if (candidates[j].votes > candidates[i].votes)
+            if (candidates[j].votes > max)
             {
-                printf("Winner name: %s\n", candidates[j].name);
-                printf("Winner votes: %i\n", candidates[j].votes);
-                winner = candidates[i].name;
-                printf("WINNER WINNER, CHICKEN DINNER: %s\n", winner);
+                winner = candidates[j].name;
+                max = candidates[j].votes;
+                printf("%s\n", winner);
             }
         }
     }
