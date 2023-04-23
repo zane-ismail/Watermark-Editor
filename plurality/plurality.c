@@ -122,13 +122,13 @@ void print_winner(void)
         printf("MAX A: %i\n", max_a);
         if (max_a == max_b)
         {
-            printf("MAX B: %i\n", max_b);
+            printf("Winner: %s\n", winner_a);
         }
     }
     else
     {
         // printf("%s\n ", winner_a);
-        printf("MAX B: %s\n", winner_b);
+        printf("Winner: %s\n", winner_b);
         printf("MAX A: %i\n", max_a);
     }
     return;
