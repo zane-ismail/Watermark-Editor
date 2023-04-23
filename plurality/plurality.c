@@ -72,16 +72,18 @@ bool vote(string name)
     // If name matches one of the names of the candidates in the election, then update that candidate’s vote total to account for the new vote
     for (int i = 0; i < MAX; i++)
     {
-        if (name == candidates[i])
+        if (name == candidates[i].name)
         {
-            
+            candidates[i].votes++;
+            // The vote function in this case should return true to indicate a successful ballot
+            return true;
+        }
+        // If name does not match the name of any of the candidates in the election, no vote totals should change, and the vote function should return false to indicate an invalid ballot
+        else
+        {
+            return false;
         }
     }
-
-    // The vote function in this case should return true to indicate a successful ballot
-
-    // If name does not match the name of any of the candidates in the election, no vote totals should change, and the vote function should return false to indicate an invalid ballot
-
     // You may assume that no two candidates will have the same name
     return false;
 }
