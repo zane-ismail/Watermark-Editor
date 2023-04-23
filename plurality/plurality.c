@@ -95,10 +95,16 @@ void print_winner(void)
 {
     // TODO
     // The function should print out the name of the candidate who received the most votes in the election, and then print a newline.
-    if (vote == )
+    for (int i = 0; i <= MAX; i++)
     {
-        printf("%s\n", candidates[0].name)
+        {
+            if (candidates[i].votes == 1)
+            {
+                printf("WINNER WINNER, CHICKEN DINNER: %s\n", candidates[0].name);
+            }
+        }
     }
+
     // It is possible that the election could end in a tie if multiple candidates each have the maximum number of votes.
     // In that case, you should output the names of each of the winning candidates, each on a separate line.
     return;
