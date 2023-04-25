@@ -153,12 +153,15 @@ void tabulate(void)
     // The function should update the number of votes each candidate has at this stage in the runoff
     for (int i = 0; i < candidate_count; i++)
     {
-        for (int j = 0; j < voter_count; j++)
+        if (!candidates[i].eliminated)
         {
-            if (preferences[j][0] == i && (!candidates[i].eliminated))
-               {
-                candidates[i].votes++;
-               }
+            for (int j = 0; j < voter_count; j++)
+            {
+                if (preferences[j][0] == i)
+                {
+                    candidates[i].votes++;
+                }
+            }
         }
     }
 }
