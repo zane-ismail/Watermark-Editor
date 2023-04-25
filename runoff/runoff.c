@@ -132,7 +132,7 @@ int main(int argc, string argv[])
 bool vote(int voter, int rank, string name)
 {
     // TODO
-// if name is a match for the name of a valid candidate, update the global preferences array to indicate that the voter voter has that candidate as their rank preference (where 0 is the first preference, 1 is the second preference, etc.).
+    // if name is a match for the name of a valid candidate, update the global preferences array to indicate that the voter voter has that candidate as their rank preference (where 0 is the first preference, 1 is the second preference, etc.).
     for (int i = 0; i < candidate_count; i++)
     {
         if (strcmp(candidates[i].name, name) == 0)
@@ -150,7 +150,6 @@ bool vote(int voter, int rank, string name)
 void tabulate(void)
 {
     // TODO
-
     // The function should update the number of votes each candidate has at this stage in the runoff
     for (int i = 0; i < candidate_count; i++)
     {
@@ -163,7 +162,6 @@ void tabulate(void)
                }
         }
     }
-    // Recall that at each stage in the runoff, every voter effectively votes for their top-preferred candidate who has not already been eliminated.
 }
 
 // Print the winner of the election, if there is one
@@ -239,7 +237,7 @@ void eliminate(int min)
     // The function takes an argument min, which will be the minimum number of votes that anyone in the election currently has.
     for (int i = 0; i < candidate_count; i++)
     {
-        if (candidates[i].votes == min)
+        if (!candidates[i].eliminated && candidates[i].votes == min)
         {
             // The function should eliminate the candidate (or candidates) who have min number of votes.
             candidates[i].eliminated = true;
