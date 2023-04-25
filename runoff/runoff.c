@@ -153,13 +153,14 @@ void tabulate(void)
     // The function should update the number of votes each candidate has at this stage in the runoff
     for (int i = 0; i < candidate_count; i++)
     {
-        if (!candidates[i].eliminated)
         {
             for (int j = 0; j < voter_count; j++)
             {
-                if (preferences[j][0] == i)
+                if (preferences[j][0] == i && !candidates[i].eliminated)
                 {
                     candidates[i].votes++;
+                    printf("VOTES FOR %s", candidates[i].name);
+                    printf(": %i", candidates[i].votes);
                 }
             }
         }
@@ -174,7 +175,7 @@ bool print_winner(void)
     for (int i = 0; i < candidate_count; i++)
     {
         // If any candidate has more than half of the vote, their name should be printed and the function should return true.
-        if (candidates[i].votes > voter_count / 2 + 0.5)
+        if (candidates[i].votes > voter_count / 2 + 0.5 && !candidates[i].eliminated)
         {
             winner = candidates[i].name;
             printf("%s\n", winner);
