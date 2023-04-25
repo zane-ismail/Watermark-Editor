@@ -160,7 +160,7 @@ void tabulate(void)
                 {
                     candidates[i].votes++;
                     printf("VOTES FOR %s", candidates[i].name);
-                    printf(": %i", candidates[i].votes);
+                    printf(": %i\n", candidates[i].votes);
                 }
             }
         }
