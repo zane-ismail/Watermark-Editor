@@ -135,7 +135,7 @@ bool vote(int voter, int rank, string name)
 // if name is a match for the name of a valid candidate, update the global preferences array to indicate that the voter voter has that candidate as their rank preference (where 0 is the first preference, 1 is the second preference, etc.).
     for (int i = 0; i < candidate_count; i++)
     {
-        if (strcmp(candidates[i].name, name) == 0 && (!candidates[i].eliminated))
+        if (strcmp(candidates[i].name, name) == 0)
         {
             preferences[voter][rank] = i;
             // if preference is successfully recorded, the function should return true
@@ -162,10 +162,8 @@ void tabulate(void)
                 break;
                }
         }
-
     }
     // Recall that at each stage in the runoff, every voter effectively votes for their top-preferred candidate who has not already been eliminated.
-    return;
 }
 
 // Print the winner of the election, if there is one
@@ -188,7 +186,7 @@ bool print_winner(void)
             return false;
         }
     }
-    return 0;
+    return false;
 }
 // Return the minimum number of votes any remaining candidate has
 int find_min(void)
@@ -205,8 +203,6 @@ int find_min(void)
             }
         }
     }
-
-
     // TODO
     // The function should return the minimum vote total for any candidate who is still in the election.
     return min_votes;
@@ -232,7 +228,7 @@ bool is_tie(int min)
             return false;
         }
     }
-    return true;
+    return false;
 }
 
 // Eliminate the candidate (or candidates) in last place
@@ -249,6 +245,4 @@ void eliminate(int min)
             candidates[i].eliminated = true;
         }
     }
-
-    return;
 }
