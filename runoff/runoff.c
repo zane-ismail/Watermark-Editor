@@ -240,4 +240,5 @@ void eliminate(int min)
             candidates[i].eliminated = true;
         }
     }
+    min = candidate_count;
 }
