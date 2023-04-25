@@ -176,6 +176,7 @@ bool print_winner(void)
     // iterate through candidates to find who has the most votes
     for (int i = 0; i < candidate_count; i++)
     {
+        printf("%i\n", candidates[i].votes);
         // If any candidate has more than half of the vote, their name should be printed and the function should return true.
         if (candidates[i].votes > voter_count / 2 + 0.5)
         {
