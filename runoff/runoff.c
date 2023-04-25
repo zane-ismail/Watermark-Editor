@@ -223,12 +223,13 @@ bool is_tie(int min)
     {
         if (!candidates[i].eliminated && candidates[i].votes == min)
         {
-            i
+            i = i;
+        }
+        else if (i == candidate_count)
+        {
+            return true;
         }
         else
-        {
-            return false;
-        }
     }
     return true;
 }
