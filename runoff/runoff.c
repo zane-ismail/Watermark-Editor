@@ -191,18 +191,19 @@ int find_min(void)
     int min_votes = MAX_VOTERS;
     for (int i = 0; i < candidate_count; i++)
     {
-        if (candidates[i].votes < min_votes)
+        if (!candidates[i].eliminated)
         {
-            // set the max vote integer as the highest vote count
-            min_votes = candidates[i].votes;
+            if (candidates[i].votes < min_votes)
+            {
+                // set the max vote integer as the highest vote count
+                min_votes = candidates[i].votes;
+            }
         }
     }
-
     // TODO
     // The function should return the minimum vote total for any candidate who is still in the election.
     return min_votes;
 }
-
 
 // Return true if the election is tied between all candidates, false otherwise
 bool is_tie(int min)
