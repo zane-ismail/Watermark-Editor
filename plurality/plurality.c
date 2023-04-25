@@ -68,75 +68,42 @@ bool vote(string name)
 {
     // TODO
     // vote takes a single argument, a string called name, representing the name of the candidate who was voted for
-    bool is_match = false;
-    // If name matches one of the names of the candidates in the election, then update that candidate’s vote total to account for the new vote
-    for (int i = 0; i <= MAX; i++)
+    for (int i = 0; i < candidate_count; i++)
     {
+        // if name matches one of the candidates then update that candidate’s vote total to account for the new vote
         if (strcmp(name, candidates[i].name) == 0)
         {
             candidates[i].votes++;
-            is_match = true;
-            // The vote function in this case should return true to indicate a successful ballot
+            // vote function should return true to indicate a successful ballot
             return true;
         }
-        else if (is_match == false)
-        return false;
-
-        // If name does not match the name of any of the candidates in the election, no vote totals should change, and the vote function should return false to indicate an invalid ballot
     }
-    // You may assume that no two candidates will have the same name
+    // if name does not match any of the candidates, no vote totals should change, vote function should return false
     return false;
 }
 
-// Print the winner (or winners) of the election
 void print_winner(void)
 {
     // TODO
-    // The function should print out the name of the candidate who received the most votes in the election, and then print a newline.
-    string winner_a = candidates[0].name;
-    string winner_b = 0;
-    // Find max votes
-    int max_a = candidates[0].votes;
-    int max_b;
-    for (int i = 0; i <= MAX; i++)
+    int max_votes = 0;
+    // iterate through candidates to find who has the most votes
+    for (int i = 0; i < candidate_count; i++)
     {
-        for (int j = 0; j <= MAX; j++)
+        if (candidates[i].votes > max_votes)
         {
-            if (candidates[j].votes > max_a)
-            {
-                winner_a = candidates[j].name;
-                max_a = candidates[j].votes;
-
-            }
-            else if (candidates[j].name != winner_a && candidates[j].votes == max_a)
-            {
-                winner_b = winner_a;
-                winner_a = candidates[j].name;
-                max_b = max_a;
-                max_a = candidates[j].votes;
-
-            }
+            // set the max vote integer as the highest vote count
+            max_votes = candidates[i].votes;
         }
     }
-    // It is possible that the election could end in a tie if multiple candidates each have the maximum number of votes.
-    // In that case, you should output the names of each of the winning candidates, each on a separate line.
-    if (max_a > max_b)
+    // iterate through candidates to find the ones with the highest number of votes
+    for (int j = 0; j < candidate_count; j++)
     {
-        printf("%s\n", winner_a);
-        // printf("MAX A: %i\n", max_a);
-        // printf("MAX B: %i\n", max_b);
-        if (max_a == max_b)
+        // if election is a tie output the names of each of the winning candidates, each on a separate line.
+        if (candidates[j].votes == max_votes)
         {
-            printf("%s\n", winner_a);
+            // print out the name of the candidate who received the most votes in the election, and then print a newline.
+            printf("%s\n", candidates[j].name);
+            candidates[j].votes = 0;
         }
     }
-    else
-    {
-        // printf("%s\n ", winner_a);
-        printf("%s\n", winner_b);
-        printf("%s\n", winner_a);
-        // printf("MAX A: %i\n", max_a);
-        // printf("MAX B: %i\n", max_b);
-    }
-    return;
 }
