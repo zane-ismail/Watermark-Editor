@@ -239,7 +239,7 @@ void eliminate(int min)
     // The function takes an argument min, which will be the minimum number of votes that anyone in the election currently has.
     for (int i = 0; i < candidate_count; i++)
     {
-        if (!candidates[i].eliminated && candidates[i].votes == min)
+        if (candidates[i].votes == min)
         {
             // The function should eliminate the candidate (or candidates) who have min number of votes.
             candidates[i].eliminated = true;
