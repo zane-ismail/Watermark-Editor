@@ -168,6 +168,7 @@ void tabulate(void)
                         preferences[j][0] = preferences[j][k];
                         {
                             l++;
+                            candidates[k].votes = 0;
                             tabulate();
                             break;
                         }
