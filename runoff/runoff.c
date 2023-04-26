@@ -162,11 +162,11 @@ void tabulate(void)
                 }
                 else if (preferences[j][0] == i && candidates[i].eliminated)
                 {
-                    for (int k = 0; k < candidate_count; k++)
+                    for (int k = 1; k < candidate_count; k++)
                     {
-                        if (preferences[j][k] == i)
+                        preferences[j][0] = preferences[j][k];
                         {
-                            candidates[k].votes++;
+                            tabulate();
                         }
                     }
                 }
