@@ -162,12 +162,16 @@ void tabulate(void)
                 }
                 else if (preferences[j][0] == i && candidates[i].eliminated)
                 {
-                    candidates[i+1].votes++;
+                    if (preferences[j][1] == i)
+                    {
+                        candidates[i].votes++;
+                    }
+
                 }
-                printf("VOTES FOR %s", candidates[i].name);
-                printf(": %i\n", candidates[i].votes);
             }
         }
+    printf("VOTES FOR %s", candidates[i].name);
+    printf(": %i\n", candidates[i].votes);
     }
 }
 
