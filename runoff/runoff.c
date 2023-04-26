@@ -172,8 +172,8 @@ void tabulate(void)
                 }
             }
         }
-    printf("VOTES FOR %s", candidates[i].name);
-    printf(": %i\n", candidates[i].votes);
+    // printf("VOTES FOR %s", candidates[i].name);
+    // printf(": %i\n", candidates[i].votes);
     }
 }
 
