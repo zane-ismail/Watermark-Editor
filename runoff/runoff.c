@@ -162,17 +162,12 @@ void tabulate(void)
                 }
                 else if (preferences[j][0] == i && candidates[i].eliminated)
                 {
-
                     for (int k = 1; k < candidate_count; k++)
                     {
-                        do
+                        preferences[j][0] = preferences[j][k];
                         {
-                            preferences[j][0] = preferences[j][k];
-                            {
-                                tabulate();
-                            }
+                            tabulate();
                         }
-                        while (candidates[k].eliminated);
                     }
                 }
             }
