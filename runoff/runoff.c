@@ -149,6 +149,7 @@ bool vote(int voter, int rank, string name)
 // Tabulate votes for non-eliminated candidates
 void tabulate(void)
 {
+    int l = 1;
     // TODO
     // The function should update the number of votes each candidate has at this stage in the runoff
     for (int i = 0; i < candidate_count; i++)
@@ -159,15 +160,16 @@ void tabulate(void)
                 if (preferences[j][0] == i && !candidates[i].eliminated)
                 {
                     candidates[i].votes++;
-                    break;
                 }
                 else if (preferences[j][0] == i && candidates[i].eliminated)
                 {
-                    for (int k = 1; k < candidate_count; k++)
+                    for (int k = l; k < candidate_count; k++)
                     {
                         preferences[j][0] = preferences[j][k];
                         {
+                            l++;
                             tabulate();
+                            break;
                         }
                     }
                 }
