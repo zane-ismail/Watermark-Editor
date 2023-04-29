@@ -1,4 +1,5 @@
 #include <cs50.h>
+#include <string.h>
 #include <stdio.h>
 
 // Max number of candidates
@@ -100,6 +101,18 @@ int main(int argc, string argv[])
 bool vote(int rank, string name, int ranks[])
 {
     // TODO
+    // the function takes arguments rank, name, and ranks. If name is a match for the name of a valid candidate
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if (strcmp(candidates[i], name) == 0)
+        {
+            // update the ranks array to indicate that the voter has the candidate as their rank preference
+            ranks[rank] = i;
+            // function should return true if the rank was successfully recorded
+            return true;
+        }
+    }
+    // otherwise (if, for instance, name is not the name of one of the candidates).
     return false;
 }
 
@@ -107,6 +120,21 @@ bool vote(int rank, string name, int ranks[])
 void record_preferences(int ranks[])
 {
     // TODO
+    // the function is called once for each voter
+    for (int i = 0; i < candidate_count-1; i++)
+    {
+        for (int j = 0; j < candidate_count-1; j++)
+        // update the global preferences array to add the current voter’s preferences
+        {
+            if (i != j)
+            {
+                preferences[i][j] =+ candidate_count-j;
+                printf("I: %i\n", i);
+                printf("%i: ", j);
+                printf("PREFERENCES j: %i\n", preferences[i][ranks[j]]);
+            }
+        }
+    }
     return;
 }
 
@@ -114,13 +142,51 @@ void record_preferences(int ranks[])
 void add_pairs(void)
 {
     // TODO
+    // add all pairs of candidates where one candidate is preferred to the pairs array
+    for (int i = 0; i < candidate_count; i++)
+    {
+        for (int j = 0; j < candidate_count; j++)
+        {
+            if (preferences[i][i] > preferences [i][j])
+            {
+                pairs[pair_count].winner = i;
+                pairs[pair_count].loser = j;
+                // update the global variable pair_count to be the number of pairs of candidates
+                pair_count++;
+            }
+            else if (preferences[i][i] < preferences [i][j])
+            {
+                pairs[pair_count].winner = j;
+                pairs[pair_count].loser = i;
+                // update the global variable pair_count to be the number of pairs of candidates
+                pair_count++;
+            }
+            // a pair of candidates who are tied (one is not preferred over the other) should not be added to the array
+            // The pairs should thus all be stored between pairs[0] and pairs[pair_count - 1], inclusive)
+        }
+    }
     return;
 }
 
 // Sort pairs in decreasing order by strength of victory
 void sort_pairs(void)
 {
+    int max_pair = 0;
     // TODO
+    // sort the pairs array in decreasing order of strength of victory
+    // strength of victory is defined to be the number of voters who prefer the preferred candidate.
+    for (int i = 0; i < pair_count; i++)
+    {
+        for (int j = 0; j < pair_count; j++)
+        {
+            if (pairs[i].winner > pairs[j].winner)
+            {
+                max_pair = pairs[i].winner;
+                pairs[i].winner = max_pair;
+            }
+        }
+    }
+    // if multiple pairs have the same strength of victory, you may assume that the order does not matter.
     return;
 }
 
@@ -128,6 +194,17 @@ void sort_pairs(void)
 void lock_pairs(void)
 {
     // TODO
+    // create the locked graph, adding all edges in decreasing order of victory strength so long as the edge would not create a cycle
+    for (int i = 0; i < pair_count; i++)
+    {
+        for (int j = 0; j < pair_count; j++)
+        {
+            if (pairs[i].winner != pairs[j].winner)
+            {
+                locked[i][j] = true;
+            }
+        }
+    }
     return;
 }
 
@@ -135,5 +212,7 @@ void lock_pairs(void)
 void print_winner(void)
 {
     // TODO
+    // print out the name of the candidate who is the source of the graph (assume there will not be more than one source.)
+    printf("%s\n", candidates[pairs[0].winner]);
     return;
 }
