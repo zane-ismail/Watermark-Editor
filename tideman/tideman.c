@@ -197,9 +197,9 @@ void sort_pairs(void)
                     }
                 }
             max_count = 0;
+            }
         printf("Winner %i: ", i);
         printf("%i\n", pairs[i].winner);
-            }
         }
 
     // TODO
