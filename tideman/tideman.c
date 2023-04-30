@@ -197,7 +197,6 @@ void sort_pairs(void)
                         max_count = temp_max_count;
                         pairs[i+1].winner = pairs[i].winner;
                         pairs[i].winner = j;
-
                     }
                 }
             max_count = 0;
