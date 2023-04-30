@@ -161,7 +161,7 @@ void add_pairs(void)
             {
                 // The pairs should thus all be stored between pairs[0] and pairs[pair_count - 1], inclusive)// The pairs should thus all be stored between pairs[0] and pairs[pair_count - 1], inclusive)
                 pairs[pair_count].winner = i;
-                pairs[pair_count].loser = j;;
+                pairs[pair_count].loser = j;
                 // update the global variable pair_count to be the number of pairs of candidates
                 printf("Winner: %d\n", pairs[pair_count].winner);
                 printf("Lose: %d\n", pairs[pair_count].loser);
