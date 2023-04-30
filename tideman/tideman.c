@@ -166,12 +166,12 @@ void add_pairs(void)
                 // printf("1Loser: %d\n", pairs[pair_count].winner);
 
                 // update the global variable pair_count to be the number of pairs of candidates
-                printf("Winner %i: ", i);
-                printf("%i\n ", pairs[i].winner);
                 pair_count++;
             }
         }
-        // printf("total: %i\n", pair_count);
+
+    printf("Winner %i: ", i);
+    printf("%i\n", pairs[i].winner);
     }
     return;
 }
@@ -197,27 +197,15 @@ void sort_pairs(void)
                     }
                 }
             max_count = 0;
-            printf("MAX COUNT: %i\n", max_count);
-            printf("Winner: %i\n", pairs[i].winner);
+        printf("Winner %i: ", i);
+        printf("%i\n", pairs[i].winner);
             }
         }
-
-
-
 
     // TODO
     // sort the pairs array in decreasing order of strength of victory
     // strength of victory is defined to be the number of voters who prefer the preferred candidate.
-    for (int i = 0; i < pair_count; i++)
-    {
-        for (int j = 0; j < candidate_count; j++)
-        {
-            if (pairs[i].winner == j)
-            {
-                max_pair[i]++;
-            }
-        }
-    }
+
     // if multiple pairs have the same strength of victory, you may assume that the order does not matter.
     return;
 }
