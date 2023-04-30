@@ -189,7 +189,7 @@ void sort_pairs(void)
             {
                 max_pair[j]++;
                 printf("max pair %i: ", i);
-                printf("%i\n", max_pair[i]);
+                printf("%i\n", max_pair[j]);
             }
         }
     }
