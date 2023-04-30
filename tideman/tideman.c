@@ -179,6 +179,7 @@ void sort_pairs(void)
 {
     int max_pair[pair_count];
     int max_count = 0;
+    int temp_max_count = 0;
 
     for (int i = 0; i < candidate_count; i++)
         {
@@ -186,7 +187,14 @@ void sort_pairs(void)
             {
                 // a pair of candidates who are tied (one is not preferred over the other) should not be added to the array
                 if (preferences[i][j] > preferences[j][i])
-                {max_count
+                {
+                    temp_max_count = preferences[i][j] - preferences[j][i];
+                    if (temp_max_count > max_count)
+                    {
+                        max_count = temp_max_count
+                        
+                    }
+                }
 
 
 
