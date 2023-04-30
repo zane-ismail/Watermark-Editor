@@ -163,7 +163,7 @@ void add_pairs(void)
                 // update the global variable pair_count to be the number of pairs of candidates
                 pair_count++;
             }
-            else if (preferences[i][i] < preferences [i][j])
+            else if (preferences[i] == 0)
             {
                 pairs[pair_count].winner = j;
                 pairs[pair_count].loser = i;
