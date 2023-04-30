@@ -190,8 +190,8 @@ void sort_pairs(void)
                 // a pair of candidates who are tied (one is not preferred over the other) should not be added to the array
                 temp_max_count = preferences[pairs[i].winner][pairs[i].loser] - preferences[pairs[j].winner][pairs[j].loser];
                 {
-                        printf("TMC: %i\n", temp_max_count);
-                        printf("MC: %i\n", max_count);
+                        // printf("TMC: %i\n", temp_max_count);
+                        // printf("MC: %i\n", max_count);
                     if (temp_max_count > max_count)
                     {
                         max_count = temp_max_count;
