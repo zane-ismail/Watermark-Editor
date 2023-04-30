@@ -181,19 +181,20 @@ void sort_pairs(void)
     int max_count = 0;
     int temp_max_count = 0;
 
-    for (int i = 0; i < candidate_count; i++)
+    for (int i = 0; i < pair_count; i++)
         {
             for (int j = 0; j < candidate_count; j++)
             {
                 // a pair of candidates who are tied (one is not preferred over the other) should not be added to the array
-                if (preferences[i][j] > preferences[j][i])
+                temp_max_count = preferences[i][j] - preferences[j][i];
                 {
-                    temp_max_count = preferences[i][j] - preferences[j][i];
                     if (temp_max_count > max_count)
                     {
                         max_count = j;
+                        pairs[0].winner = i;
                     }
                 }
+            printf("MAX COUNT: %i\n", max_count);
             }
         }
 
@@ -213,7 +214,6 @@ void sort_pairs(void)
             }
         }
     }
-
     // if multiple pairs have the same strength of victory, you may assume that the order does not matter.
     return;
 }
