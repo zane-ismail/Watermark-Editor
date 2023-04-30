@@ -167,12 +167,16 @@ void add_pairs(void)
                 // update the global variable pair_count to be the number of pairs of candidates
                 pair_count++;
             }
-            else
+            else if (preferences[i][j] < preferences[j][i])
             {
                 pairs[pair_count].winner = j;
                 pairs[pair_count].loser = i;
-                printf("1Winner: %d\n", pairs[pair_count].loser);
-                printf("1Loser: %d\n", pairs[pair_count].winner);
+                // printf("1Winner: %d\n", pairs[pair_count].loser);
+                // printf("1Loser: %d\n", pairs[pair_count].winner);
+                pair_count++;
+            }
+            else
+            {
                 pair_count++;
             }
         }
