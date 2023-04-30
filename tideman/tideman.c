@@ -143,15 +143,6 @@ void add_pairs(void)
 {
     // TODO
     // add all pairs of candidates where one candidate is preferred to the pairs array
-    // printf("A/A: %i\n", preferences[0][0]);
-    // printf("A/B: %i\n", preferences[0][1]);
-    // printf("A/C: %i\n", preferences[0][2]);
-    // printf("B/A: %i\n", preferences[1][0]);
-    // printf("B/B: %i\n", preferences[1][1]);
-    // printf("B/C: %i\n", preferences[1][2]);
-    // printf("C/A: %i\n", preferences[2][0]);
-    // printf("C/B: %i\n", preferences[2][1]);
-    // printf("C/C: %i\n", preferences[2][2]);
     for (int i = 0; i < candidate_count; i++)
     {
         for (int j = 0; j < candidate_count; j++)
@@ -205,8 +196,6 @@ void sort_pairs(void)
     }
     return;
 }
-
-    // if multiple pairs have the same strength of victory, you may assume that the order does not matter.
 
 // Lock pairs into the candidate graph in order, without creating cycles
 void lock_pairs(void)
