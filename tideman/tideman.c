@@ -176,6 +176,7 @@ void add_pairs(void)
                 pair_count++;
             }
         }
+        printf("total: %i", pair_count[-1])
     }
     return;
 }
