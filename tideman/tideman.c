@@ -121,9 +121,9 @@ void record_preferences(int ranks[])
 {
     // TODO
     // the function is called once for each voter
-    for (int i = 0; i < candidate_count-1; i++)
+    for (int i = 0; i < candidate_count; i++)
     {
-        for (int j = 0; j < candidate_count; j++)
+        for (int j = 0; j < candidate_count-1; j++)
             // update the global preferences array to add the current voter’s preferences
             {
                 if (i != ranks[j])
@@ -144,15 +144,15 @@ void add_pairs(void)
 {
     // TODO
     // add all pairs of candidates where one candidate is preferred to the pairs array
-    printf("PREFERENCES: %i\n", preferences[0][0]);
-    printf("PREFERENCES: %i\n", preferences[0][1]);
-    printf("PREFERENCES: %i\n", preferences[0][2]);
-    printf("PREFERENCES: %i\n", preferences[1][0]);
-    printf("PREFERENCES: %i\n", preferences[1][1]);
-    printf("PREFERENCES: %i\n", preferences[1][2]);
-    printf("PREFERENCES: %i\n", preferences[2][0]);
-    printf("PREFERENCES: %i\n", preferences[2][1]);
-    printf("PREFERENCES: %i\n", preferences[2][2]);
+    printf("A/A: %i\n", preferences[0][0]);
+    printf("A/B: %i\n", preferences[0][1]);
+    printf("A/C: %i\n", preferences[0][2]);
+    printf("B/A: %i\n", preferences[1][0]);
+    printf("B/B: %i\n", preferences[1][1]);
+    printf("B/C: %i\n", preferences[1][2]);
+    printf("C/A: %i\n", preferences[2][0]);
+    printf("C/B: %i\n", preferences[2][1]);
+    printf("C/C: %i\n", preferences[2][2]);
     for (int i = 0; i < candidate_count; i++)
     {
         for (int j = 0; j < candidate_count; j++)
