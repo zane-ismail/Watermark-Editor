@@ -204,16 +204,11 @@ void lock_pairs(void)
     // create the locked graph, adding all edges in decreasing order of victory strength so long as the edge would not create a cycle
     for (int i = 0; i < pair_count; i++)
     {
-        for (int j = 0; j < pair_count; j++)
-        {
-            if (pairs[i].winner != pairs[j].winner)
-            {
-                locked[i][j] = true;
-            }
-        }
+        locked[i][i+1] = true;
     }
     return;
 }
+
 
 // Print the winner of the election
 void print_winner(void)
