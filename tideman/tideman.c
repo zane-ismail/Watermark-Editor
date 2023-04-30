@@ -154,7 +154,7 @@ void add_pairs(void)
     // printf("C/C: %i\n", preferences[2][2]);
     for (int i = 0; i < candidate_count; i++)
     {
-        for (int j = 0; j < pairs[pair_count-1]; j++)
+        for (int j = candidate_count; j < pairs[pair_count-1]; j++)
         {
             // a pair of candidates who are tied (one is not preferred over the other) should not be added to the array
             if (preferences[i][j] > 0 && i != j && preferences[i][j] != 0)
