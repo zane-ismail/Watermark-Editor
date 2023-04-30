@@ -181,37 +181,33 @@ void sort_pairs(void)
 {
     int max_pair[pair_count];
     int max_count = 0;
-    int temp_max_count = 0;
+    pair temp_max_count;
 
     for (int i = 0; i < pair_count; i++)
+    {
+        for (int j = 0; j < candidate_count; j++)
         {
-            for (int j = 0; j < candidate_count; j++)
+            // a pair of candidates who are tied (one is not preferred over the other) should not be added to the array
+            if (preferences[pairs[j].winner][pairs[j].loser] < preferences[pairs[j+1].winner][pairs[j+1].loser])
             {
-                // a pair of candidates who are tied (one is not preferred over the other) should not be added to the array
-                temp_max_count = preferences[pairs[j].winner][pairs[j].loser] - preferences[pairs[j+1].winner][pairs[j+1].loser];
-                {
-                        printf("TMC: %i\n", temp_max_count);
-                        printf("MC: %i\n", max_count);
-                    if (temp_max_count > max_count)
-                    {
-                        max_count = temp_max_count;
-                        pairs[i+1].winner = pairs[i].winner;
-                        pairs[i].winner = j;
-                    }
-                }
+                printf("MC: %i\n", max_count);
+                temp_max_count = pairs[j];
+                pairs[j] = pairs[j+1];
+                pairs[j+1] = temp_max_count;
             }
+        }
         max_count = 0;
         printf("Winner %i: ", i);
         printf("%i\n", pairs[i].winner);
-        }
+    }
+    return;
+}
 
     // TODO
     // sort the pairs array in decreasing order of strength of victory
     // strength of victory is defined to be the number of voters who prefer the preferred candidate.
 
     // if multiple pairs have the same strength of victory, you may assume that the order does not matter.
-    return;
-}
 
 // Lock pairs into the candidate graph in order, without creating cycles
 void lock_pairs(void)
