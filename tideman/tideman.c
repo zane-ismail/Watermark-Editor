@@ -157,7 +157,7 @@ void add_pairs(void)
         for (int j = 0; j < candidate_count; j++)
         {
             // a pair of candidates who are tied (one is not preferred over the other) should not be added to the array
-            if (preferences[i][j] != 0 && i != j)
+            if (preferences[i][j] != 0 && i != j && preferences[i][j] != preferences[j][i])
             {
                 // The pairs should thus all be stored between pairs[0] and pairs[pair_count - 1], inclusive)// The pairs should thus all be stored between pairs[0] and pairs[pair_count - 1], inclusive)
                 pairs[pair_count].winner = i;
