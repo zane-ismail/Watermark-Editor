@@ -175,10 +175,6 @@ void add_pairs(void)
                 // printf("1Loser: %d\n", pairs[pair_count].winner);
                 pair_count++;
             }
-            else
-            {
-                pair_count++;
-            }
         }
         // printf("total: %i\n", pair_count);
     }
