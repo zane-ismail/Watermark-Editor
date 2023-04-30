@@ -214,31 +214,31 @@ void sort_pairs(void)
         }
     }
     printf("max pair %i: ", 0);
-    printf("%i\n", pairs[0]);
+    printf("%i\n", pairs[0].winner);
     printf("max pair %i: ", 1);
-    printf("%i\n", pairs[1]);
+    printf("%i\n", pairs[1].winner);
     printf("max pair %i: ", 2);
-    printf("%i\n", pairs[2]);
+    printf("%i\n", pairs[2].winner);
     printf("max pair %i: ", 3);
-    printf("%i\n", pairs[3]);
+    printf("%i\n", pairs[3].winner);
     printf("max pair %i: ", 4);
-    printf("%i\n", pairs[4]);
+    printf("%i\n", pairs[4].winner);
     printf("max pair %i: ", 5);
-    printf("%i\n", pairs[5]);
+    printf("%i\n", pairs[5].winner);
     printf("max pair %i: ", 6);
-    printf("%i\n", pairs[6]);
+    printf("%i\n", pairs[6].winner);
     printf("max pair %i: ", 7);
-    printf("%i\n", pairs[7]);
+    printf("%i\n", pairs[7].winner);
     printf("max pair %i: ", 8);
-    printf("%i\n", pairs[8]);
+    printf("%i\n", pairs[8].winner);
     printf("max pair %i: ", 9);
-    printf("%i\n", pairs[9]);
+    printf("%i\n", pairs[9].winner);
     printf("max pair %i: ",10);
-    printf("%i\n", pairs[10]);
+    printf("%i\n", pairs[10].winner);
     printf("max pair %i: ", 11);
-    printf("%i\n", pairs[11]);
+    printf("%i\n", pairs[11].winner);
     printf("max pair %i: ", 12);
-    printf("%i\n", pairs[12]);
+    printf("%i\n", pairs[12].winner);
     // if multiple pairs have the same strength of victory, you may assume that the order does not matter.
     return;
 }
