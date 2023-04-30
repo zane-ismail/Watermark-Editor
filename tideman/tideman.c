@@ -188,7 +188,7 @@ void sort_pairs(void)
             for (int j = 0; j < candidate_count; j++)
             {
                 // a pair of candidates who are tied (one is not preferred over the other) should not be added to the array
-                temp_max_count = preferences[pairs[j].winner][i] - preferences[pairs[i].loser][j];
+                temp_max_count = preferences[pairs[j].winner][i] - preferences[pairs[j].loser][i];
                 {
                     if (temp_max_count > max_count)
                     {
@@ -198,6 +198,7 @@ void sort_pairs(void)
                         pairs[i+1].winner = pairs[i].winner;
                         pairs[i].winner = j;
                     }
+                    
                 }
             max_count = 0;
             }
