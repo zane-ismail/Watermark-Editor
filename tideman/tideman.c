@@ -126,7 +126,7 @@ void record_preferences(int ranks[])
         for (int j = 0; j < candidate_count-1; j++)
             // update the global preferences array to add the current voter’s preferences
             {
-                if (i != ranks[j])
+                if (i != ranks[0])
                 {
                     preferences[i][ranks[j]]++;
                 }
