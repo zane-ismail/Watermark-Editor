@@ -128,7 +128,7 @@ void record_preferences(int ranks[])
             {
                 if (i != ranks[0] && i != ranks[j])
                 {
-                    preferences[i][ranks[j]]++;
+                    preferences[ranks[j]][i]++;
                 }
                 printf("%i: ", i);
                 printf("%i:  ", j);
