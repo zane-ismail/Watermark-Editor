@@ -191,9 +191,12 @@ void sort_pairs(void)
                     temp_max_count = preferences[i][j] - preferences[j][i];
                     if (temp_max_count > max_count)
                     {
-                        max_count[i] = j
+                        max_count[i] = j;
                     }
                 }
+            }
+        }
+        
 
 
 
@@ -211,31 +214,31 @@ void sort_pairs(void)
         }
     }
     printf("max pair %i: ", 0);
-    printf("%i\n", max_pair[0]);
+    printf("%i\n", pair_count[0]);
     printf("max pair %i: ", 1);
-    printf("%i\n", max_pair[1]);
+    printf("%i\n", pair_count[1]);
     printf("max pair %i: ", 2);
-    printf("%i\n", max_pair[2]);
+    printf("%i\n", pair_count[2]);
     printf("max pair %i: ", 3);
-    printf("%i\n", max_pair[3]);
+    printf("%i\n", pair_count[3]);
     printf("max pair %i: ", 4);
-    printf("%i\n", max_pair[4]);
+    printf("%i\n", pair_count[4]);
     printf("max pair %i: ", 5);
-    printf("%i\n", max_pair[5]);
+    printf("%i\n", pair_count[5]);
     printf("max pair %i: ", 6);
-    printf("%i\n", max_pair[6]);
+    printf("%i\n", pair_count[6]);
     printf("max pair %i: ", 7);
-    printf("%i\n", max_pair[7]);
+    printf("%i\n", pair_count[7]);
     printf("max pair %i: ", 8);
-    printf("%i\n", max_pair[8]);
+    printf("%i\n", pair_count[8]);
     printf("max pair %i: ", 9);
-    printf("%i\n", max_pair[9]);
+    printf("%i\n", pair_count[9]);
     printf("max pair %i: ",10);
-    printf("%i\n", max_pair[10]);
+    printf("%i\n", pair_count[10]);
     printf("max pair %i: ", 11);
-    printf("%i\n", max_pair[11]);
+    printf("%i\n", pair_count[11]);
     printf("max pair %i: ", 12);
-    printf("%i\n", max_pair[12]);
+    printf("%i\n", pair_count[12]);
     // if multiple pairs have the same strength of victory, you may assume that the order does not matter.
     return;
 }
