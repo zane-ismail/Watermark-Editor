@@ -121,17 +121,17 @@ void record_preferences(int ranks[])
 {
     // TODO
     // the function is called once for each voter
-    for (int i = 0; i < candidate_count; i++)
+    for (int i = 0; i < candidate_count-1; i++)
     {
         for (int j = 0; j < candidate_count; j++)
             // update the global preferences array to add the current voter’s preferences
             {
-                if (i != ranks[j])
+                if (j != ranks[i])
                 {
-                    preferences[i][ranks[j]]++;
+                    preferences[i][ranks[i]]++;
                 }
                 printf("%i: ", j);
-                printf("PREFERENCES j: %i\n", preferences[i][ranks[j]]);
+                printf("PREFERENCES j: %i\n", preferences[i][ranks[i]]);
             }
 
     return;
