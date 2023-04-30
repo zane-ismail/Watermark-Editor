@@ -126,13 +126,14 @@ void record_preferences(int ranks[])
         for (int j = 0; j < candidate_count; j++)
             // update the global preferences array to add the current voter’s preferences
             {
-                if (j != ranks[i])
+                if (i != ranks[j])
                 {
-                    preferences[i][ranks[i]]++;
+                    preferences[i][ranks[j]]++;
                 }
                 printf("%i: ", j);
                 printf("PREFERENCES j: %i\n", preferences[i][ranks[i]]);
             }
+
 
     return;
     }
@@ -143,6 +144,15 @@ void add_pairs(void)
 {
     // TODO
     // add all pairs of candidates where one candidate is preferred to the pairs array
+    printf("PREFERENCES: %i\n", preferences[0][0]);
+    printf("PREFERENCES: %i\n", preferences[0][1]);
+    printf("PREFERENCES: %i\n", preferences[0][2]);
+    printf("PREFERENCES: %i\n", preferences[1][0]);
+    printf("PREFERENCES: %i\n", preferences[1][1]);
+    printf("PREFERENCES: %i\n", preferences[1][2]);
+    printf("PREFERENCES: %i\n", preferences[2][0]);
+    printf("PREFERENCES: %i\n", preferences[2][1]);
+    printf("PREFERENCES: %i\n", preferences[2][2]);
     for (int i = 0; i < candidate_count; i++)
     {
         for (int j = 0; j < candidate_count; j++)
