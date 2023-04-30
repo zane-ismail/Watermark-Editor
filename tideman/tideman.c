@@ -164,8 +164,8 @@ void add_pairs(void)
                 pairs[pair_count].loser = j;
                 // update the global variable pair_count to be the number of pairs of candidates
                 pair_count++;
-                printf("%d\n", pairs[i].winner);
-                printf("%d\n", pairs[i].loser);
+                printf("Winner: %d\n", pairs[i].winner);
+                printf("Lose: %d\n", pairs[i].loser);
             }
         }
     }
