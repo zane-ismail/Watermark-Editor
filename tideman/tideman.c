@@ -187,7 +187,7 @@ void sort_pairs(void)
         {
             if (pairs[i].winner == j)
             {
-                max_pair[i]++;
+                max_pair[j]++;
                 printf("max pair %i: ", i);
                 printf("%i\n", max_pair[i]);
             }
