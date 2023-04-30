@@ -191,12 +191,12 @@ void sort_pairs(void)
                     temp_max_count = preferences[i][j] - preferences[j][i];
                     if (temp_max_count > max_count)
                     {
-                        max_count[i] = j;
+                        max_count = j;
                     }
                 }
             }
         }
-        
+
 
 
 
