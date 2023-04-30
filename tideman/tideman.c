@@ -192,11 +192,11 @@ void sort_pairs(void)
                 {
                     if (temp_max_count > max_count)
                     {
+                        max_count = temp_max_count;
                         printf("TMC: %i\n", temp_max_count);
                         printf("MC: %i\n", max_count);
-                        max_count = temp_max_count;
                         pairs[i].winner = j;
-
+\
                     }
                 }
             max_count = -100;
