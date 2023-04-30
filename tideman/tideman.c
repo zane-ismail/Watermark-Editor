@@ -205,6 +205,18 @@ void sort_pairs(void)
     printf("%i\n", max_pair[5]);
     printf("max pair %i: ", 6);
     printf("%i\n", max_pair[6]);
+    printf("max pair %i: ", 7);
+    printf("%i\n", max_pair[7]);
+    printf("max pair %i: ", 8);
+    printf("%i\n", max_pair[8]);
+    printf("max pair %i: ", 9);
+    printf("%i\n", max_pair[9]);
+    printf("max pair %i: ",10);
+    printf("%i\n", max_pair[10]);
+    printf("max pair %i: ", 11);
+    printf("%i\n", max_pair[11]);
+    printf("max pair %i: ", 12);
+    printf("%i\n", max_pair[12]);
     // if multiple pairs have the same strength of victory, you may assume that the order does not matter.
     return;
 }
