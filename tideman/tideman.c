@@ -188,9 +188,9 @@ void sort_pairs(void)
             if (pairs[i].winner == j)
             {
                 max_pair[i]++;
-                printf("max pair %i: ", i);
-                printf("%i\n", max_pair[i]);
             }
+        printf("max pair %i: ", i);
+        printf("%i\n", max_pair[i]);
         }
     }
     // if multiple pairs have the same strength of victory, you may assume that the order does not matter.
