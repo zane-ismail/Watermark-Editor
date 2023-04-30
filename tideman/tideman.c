@@ -180,7 +180,7 @@ void add_pairs(void)
 void sort_pairs(void)
 {
     int max_pair[pair_count];
-    int max_count = -100;
+    int max_count = 0;
     int temp_max_count = 0;
 
     for (int i = 0; i < pair_count; i++)
@@ -200,7 +200,7 @@ void sort_pairs(void)
                     }
                 }
             }
-        max_count = -100;
+        max_count = 0;
         printf("Winner %i: ", i);
         printf("%i\n", pairs[i].winner);
         }
