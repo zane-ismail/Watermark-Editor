@@ -184,26 +184,25 @@ void sort_pairs(void)
     int temp_max_count = 0;
 
     for (int i = 0; i < pair_count; i++)
+
         {
-            for (int j = 0; j < candidate_count; j++)
+            // a pair of candidates who are tied (one is not preferred over the other) should not be added to the array
+            temp_max_count = preferences[pairs[i].winner][i] - preferences[pairs[i].loser][i];
             {
-                // a pair of candidates who are tied (one is not preferred over the other) should not be added to the array
-                temp_max_count = preferences[pairs[i].winner][j] - preferences[pairs[i].loser][j];
+                    printf("TMC: %i\n", temp_max_count);
+                    printf("MC: %i\n", max_count);
+                if (temp_max_count > max_count)
                 {
-                        printf("TMC: %i\n", temp_max_count);
-                        printf("MC: %i\n", max_count);
-                    if (temp_max_count > max_count)
-                    {
-                        max_count = temp_max_count;
-                        pairs[i+1].winner = pairs[i].winner;
-                        pairs[i].winner = j;
-                    }
+                    max_count = temp_max_count;
+                    pairs[i+1].winner = pairs[i].winner;
+                    pairs[i].winner = i;
                 }
             }
         max_count = -100;
         printf("Winner %i: ", i);
         printf("%i\n", pairs[i].winner);
         }
+}
 
     // TODO
     // sort the pairs array in decreasing order of strength of victory
