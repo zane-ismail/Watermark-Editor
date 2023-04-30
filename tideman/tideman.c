@@ -177,7 +177,7 @@ void add_pairs(void)
 // Sort pairs in decreasing order by strength of victory
 void sort_pairs(void)
 {
-    int max_pair[pair_count];
+    int max_pair = 0;
     // TODO
     // sort the pairs array in decreasing order of strength of victory
     // strength of victory is defined to be the number of voters who prefer the preferred candidate.
