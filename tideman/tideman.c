@@ -192,6 +192,7 @@ void sort_pairs(void)
                 {
                     if (temp_max_count > max_count)
                     {
+                        max_count = temp_;
                         pairs[i].winner = pairs[i].winner;
                     }
                 }
