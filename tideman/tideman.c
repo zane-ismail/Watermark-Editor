@@ -177,19 +177,19 @@ void add_pairs(void)
 // Sort pairs in decreasing order by strength of victory
 void sort_pairs(void)
 {
-    int max_pair = 0;
+    int max_pair[pair_count];
     // TODO
     // sort the pairs array in decreasing order of strength of victory
     // strength of victory is defined to be the number of voters who prefer the preferred candidate.
     for (int i = 0; i < pair_count; i++)
     {
-        for (int j = 0; j < pair_count; j++)
+        for (int j = 0; j < candidate_count; j++)
         {
             if (pairs[i].winner == j)
             {
-                max_pair[j]++;
+                max_pair[i]++;
                 printf("max pair %i: ", i);
-                printf("%i\n", max_pair[j]);
+                printf("%i\n", max_pair[i]);
             }
         }
     }
