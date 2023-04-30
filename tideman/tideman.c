@@ -156,16 +156,16 @@ void add_pairs(void)
     {
         for (int j = 0; j < candidate_count; j++)
         {
+            // a pair of candidates who are tied (one is not preferred over the other) should not be added to the array
             if (preferences[i][j] > 0 && i != j && preferences[i][j] != 0)
             {
+                // The pairs should thus all be stored between pairs[0] and pairs[pair_count - 1], inclusive)// The pairs should thus all be stored between pairs[0] and pairs[pair_count - 1], inclusive)
                 pairs[pair_count].winner = i;
                 pairs[pair_count].loser = j;
                 // update the global variable pair_count to be the number of pairs of candidates
                 pair_count++;
             }
 
-            // a pair of candidates who are tied (one is not preferred over the other) should not be added to the array
-            // The pairs should thus all be stored between pairs[0] and pairs[pair_count - 1], inclusive)
         }
     }
     return;
