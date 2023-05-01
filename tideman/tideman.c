@@ -25,6 +25,7 @@ pair pairs[MAX * (MAX - 1) / 2];
 
 int pair_count;
 int candidate_count;
+int locked_count;
 
 // Function prototypes
 bool vote(int rank, string name, int ranks[]);
@@ -220,15 +221,16 @@ void lock_pairs(void)
             }
         }
         locked[pairs[i].winner][pairs[i].loser] = true;
+        locked_count++;
     }
     return;
 }
 
 bool recursion(int winner, int loser)
 {
-    for (int i = 0; i < pair_count; i++)
+    for (int i = 0; i < locked_count; i++)
     {
-        if (i == pair_count-1 && locked[pairs[i].winner] && pairs[i].winner == loser)
+        if (i == locked_count-1 && locked[pairs[i].winner] && pairs[i].winner == loser)
         {
             return true;
         }
