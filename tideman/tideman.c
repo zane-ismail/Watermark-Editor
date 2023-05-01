@@ -230,7 +230,8 @@ bool recursion(int w, int l)
 {
     for (int i = 0; i < locked_count; i++)
     {
-        if (i == locked_count-1 && pairs[w].winner == l && locked[pairs[w].winner])
+        // check 1) the loser of new pair is the same as a winner in a previous pair, 2) that previous pair is locked
+        if (pairs[w].winner == l && locked[pairs[w].winner])
         {
             return true;
         }
