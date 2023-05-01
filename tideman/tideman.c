@@ -231,7 +231,7 @@ bool recursion(int w, int l)
     for (int i = 0; i < locked_count; i++)
     {
         // check 1) the winner leads back to the loser
-        if (i == locked_count-1 && locked[l])
+        if (i == locked_count-1 && locked[l]==true)
         {
             return true;
         }
