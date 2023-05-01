@@ -228,7 +228,7 @@ bool recursion(int winner, int loser)
 {
     for (int i = 0; i < pair_count; i++)
     {
-        if (i == pair_count-1 && locked[winner] == loser)
+        if (i == pair_count-1 && locked[pairs[i].winner] && pairs[i].winner == loser)
         {
             return true;
         }
