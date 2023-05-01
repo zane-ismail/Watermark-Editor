@@ -208,8 +208,9 @@ void lock_pairs(void)
         {
             if (i < pair_count-1)
             {
-                if (pairs[i].loser == pairs[j].winner && locked[pairs[j].winner][pairs[j].loser] == true)
+                if (pairs[i].loser == pairs[j].winner && locked[pairs[j].winner][pairs[j].loser])
                 {
+                    
                     locked[pairs[i].winner][pairs[i].loser] = false;
                 }
             }
