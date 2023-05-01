@@ -35,7 +35,7 @@ void sort_pairs(void);
 void lock_pairs(void);
 void print_winner(void);
 
-bool recursion(int winner, int loser);
+bool recursion(int w, int l);
 
 int main(int argc, string argv[])
 {
@@ -226,11 +226,11 @@ void lock_pairs(void)
     return;
 }
 
-bool recursion(int winner, int loser)
+bool recursion(int w, int l)
 {
     for (int i = 0; i < locked_count; i++)
     {
-        if (i == locked_count-1 && locked[pairs[winner].winner] == loser)
+        if (i == locked_count-1 && locked[pairs[w].winner] == l)
         {
             return true;
         }
