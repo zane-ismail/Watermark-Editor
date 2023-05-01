@@ -26,6 +26,9 @@ pair pairs[MAX * (MAX - 1) / 2];
 int pair_count;
 int candidate_count;
 
+bool winner;
+bool loser;
+
 // Function prototypes
 bool vote(int rank, string name, int ranks[]);
 void record_preferences(int ranks[]);
@@ -33,6 +36,8 @@ void add_pairs(void);
 void sort_pairs(void);
 void lock_pairs(void);
 void print_winner(void);
+
+int recursion(bool winner, bool loser);
 
 int main(int argc, string argv[])
 {
@@ -210,7 +215,7 @@ void lock_pairs(void)
             {
                 if (pairs[i].loser == pairs[j].winner && locked[pairs[j].winner][pairs[j].loser])
                 {
-                    
+
                     locked[pairs[i].winner][pairs[i].loser] = false;
                 }
             }
@@ -218,6 +223,11 @@ void lock_pairs(void)
         locked[pairs[i].winner][pairs[i].loser] = true;
     }
     return;
+}
+
+int recursion(bool winner, bool loser)
+{
+
 }
 
 // Print the winner of the election
