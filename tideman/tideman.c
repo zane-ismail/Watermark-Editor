@@ -225,7 +225,6 @@ void lock_pairs(void)
                     {
                         // if it is a cycle, do not lock it
                         locked[pairs[i].winner][pairs[i].loser] = false;
-                        return;
                     }
                 }
             }
