@@ -214,7 +214,7 @@ void lock_pairs(void)
                 if (pairs[i].loser == pairs[j].winner)
                 {
                     // check to see it's a cycle
-                    if (recursion(i-1, pairs[i].loser) == true)
+                    if (recursion(pairs[i].winner, i-1) == true)
                     {
                         // if it is a cycle, do not lock it
                         locked[pairs[i].winner][pairs[i].loser] = false;
