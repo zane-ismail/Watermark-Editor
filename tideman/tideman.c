@@ -132,9 +132,6 @@ void record_preferences(int ranks[])
                 {
                     preferences[ranks[j]][i]++;
                 }
-                // printf("%i: ", i);
-                // printf("%i:  ", j);
-                // printf("%i\n", preferences[i][ranks[i]]);
             }
     }
     return;
@@ -155,16 +152,10 @@ void add_pairs(void)
                 // The pairs should thus all be stored between pairs[0] and pairs[pair_count - 1], inclusive)
                 pairs[pair_count].winner = i;
                 pairs[pair_count].loser = j;
-                // printf("1Winner: %d\n", pairs[pair_count].loser);
-                // printf("1Loser: %d\n", pairs[pair_count].winner);
-
                 // update the global variable pair_count to be the number of pairs of candidates
                 pair_count++;
             }
         }
-
-    printf("Winner %i: ", i);
-    printf("%i\n", pairs[i].winner);
     }
     return;
 }
@@ -186,15 +177,12 @@ void sort_pairs(void)
             // strength of victory is defined to be the number of voters who prefer the preferred candidate.
             if (preferences[pairs[j].winner][pairs[j].loser] < preferences[pairs[j+1].winner][pairs[j+1].loser])
             {
-                printf("MC: %i\n", max_count);
                 temp_max_count = pairs[j];
                 pairs[j] = pairs[j+1];
                 pairs[j+1] = temp_max_count;
             }
         }
         max_count = 0;
-        printf("Winner %i: ", i);
-        printf("%i\n", pairs[i].winner);
     }
     return;
 }
