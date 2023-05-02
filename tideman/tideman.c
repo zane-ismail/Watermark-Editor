@@ -213,20 +213,28 @@ void lock_pairs(void)
     {
         for (int j = 0; j < i; j++)
         {
-            // check to see it's a cycle
-            ORIGINAL = pairs[i].winner;
-            if (recursion(pairs[i].winner, pairs[j].loser) == true)
+            // if the loser of the pair is the same as a winner of a previous pair
+            if (pairs[i].loser == pairs[j].winner)
             {
-                // if it is a cycle, do not lock it
-                locked[pairs[i].winner][pairs[i].loser] = false;
-        }
-        else
-        {
-            // otherwise lock it
-            locked[pairs[i].winner][pairs[i].loser] = true;
-            locked_count++;
-            new_count++;
-        }
+                // check the pair is locked
+                if (locked[pairs[j].winner][pairs[j].loser] == true)
+                {
+                    // check to see it's a cycle
+                    ORIGINAL = pairs[i].winner;
+                    if (recursion(pairs[i].winner, pairs[j].loser) == true)
+                    {
+                        // if it is a cycle, do not lock it
+                        locked[pairs[i].winner][pairs[i].loser] = false;
+                    }
+                }
+            }
+            else
+            {
+                // otherwise lock it
+                locked[pairs[i].winner][pairs[i].loser] = true;
+                locked_count++;
+                new_count++;
+            }
         }
     }
     return;
