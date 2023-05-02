@@ -232,8 +232,8 @@ void lock_pairs(void)
     locked[pairs[i].winner][pairs[i].loser] = true;
     locked_count++;
     new_count++;
-    }
     return;
+    }
 }
 
 bool recursion(int w, int l)
