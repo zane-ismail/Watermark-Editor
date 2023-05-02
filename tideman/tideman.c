@@ -209,32 +209,24 @@ void lock_pairs(void)
     // first pair is locked
     locked[pairs[0].winner][pairs[0].loser] = true;
     // create the locked graph, adding all edges in decreasing order of victory strength so long as the edge would not create a cycle
-    for (int i = 1; i < pair_count+1; i++)
+    for (int i = 1; i < pair_count; i++)
     {
         for (int j = 0; j < i; j++)
         {
-            // if the loser of the pair is the same as a winner of a previous pair
-            if (pairs[i].loser == pairs[j].winner)
+            // check to see it's a cycle
+            ORIGINAL = pairs[i].winner;
+            if (recursion(pairs[i].winner, pairs[j].loser) == true)
             {
-                // check the pair is locked
-                if (locked[pairs[j].winner][pairs[j].loser] == true)
-                {
-                    // check to see it's a cycle
-                    ORIGINAL = pairs[i].winner;
-                    if (recursion(pairs[i].winner, pairs[j].loser) == true)
-                    {
-                        // if it is a cycle, do not lock it
-                        locked[pairs[i].winner][pairs[i].loser] = false;
-                    }
-                }
-            }
-            else
-            {
-                // otherwise lock it
-                locked[pairs[i].winner][pairs[i].loser] = true;
-                locked_count++;
-                new_count++;
-            }
+                // if it is a cycle, do not lock it
+                locked[pairs[i].winner][pairs[i].loser] = false;
+        }
+        else
+        {
+            // otherwise lock it
+            locked[pairs[i].winner][pairs[i].loser] = true;
+            locked_count++;
+            new_count++;
+        }
         }
     }
     return;
