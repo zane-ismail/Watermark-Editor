@@ -25,8 +25,6 @@ pair pairs[MAX * (MAX - 1) / 2];
 
 int pair_count;
 int candidate_count;
-int locked_count;
-int new_count;
 
 // Function prototypes
 bool vote(int rank, string name, int ranks[]);
@@ -212,18 +210,16 @@ void lock_pairs(void)
     {
         // lock pair by default
         locked[pairs[i].winner][pairs[i].loser] = true;
-        locked_count++;
-        new_count++;
         for (int j = 0; j < i; j++)
         {
             // if the loser of the pair is the same as a winner of a previous pair
             if (pairs[i].loser == pairs[j].winner)
             {
                 // check that previous pair is locked
-                if (locked[pairs[j].winner][pairs[j].loser] == true)
+                if (locked[pairs[j].winner][pairs[j].loser])
                 {
                     // check to see it's a cycle
-                    if (recursion(pairs[i].winner, pairs[j].loser) == true)
+                    if (recursion(pairs[i].winner, pairs[j].loser))
                     {
                         // if it is a cycle, do not lock it
                         locked[pairs[i].winner][pairs[i].loser] = false;
@@ -249,10 +245,10 @@ bool recursion(int w, int l)
         if (l == pairs[i].winner)
         {
             // check the previous pair is locked
-            if (locked[pairs[i].winner][pairs[i].loser] == true)
+            if (locked[pairs[i].winner][pairs[i].loser])
             {
                 // checks if new pair loservis the same as previous pair winner
-                if (recursion(w, pairs[i].loser) == true)
+                if (recursion(w, pairs[i].loser))
                 {
                     return true;
                 }
