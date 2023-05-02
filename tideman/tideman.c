@@ -261,7 +261,7 @@ void print_winner(void)
     // print out the name of the candidate who is the source of the graph (assume there will not be more than one source.)
     for (int i = 0; i < candidate_count; i++)
     {
-        int win_count;
+        int win_count = 0;
         for (int j = 0; j < candidate_count; j++)
         {
             if (locked[pairs[j].winner][pairs[i].loser] == false)
