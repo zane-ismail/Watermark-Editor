@@ -228,11 +228,14 @@ void lock_pairs(void)
                     }
                 }
             }
+            else
+            {
+                // otherwise lock it
+                locked[pairs[i].winner][pairs[i].loser] = true;
+                locked_count++;
+                new_count++;
+            }
         }
-        // otherwise lock it
-        locked[pairs[i].winner][pairs[i].loser] = true;
-        locked_count++;
-        new_count++;
     }
     return;
 }
