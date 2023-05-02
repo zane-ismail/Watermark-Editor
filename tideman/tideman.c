@@ -233,9 +233,9 @@ void lock_pairs(void)
 
 bool recursion(int w, int l)
 {
-    for (int i = 0; i < locked_count; i++)
+    for (int i = 0; i < pair_count; i++)
     {
-        // check the winner leads back to the loser
+        // check the pair is locked
         if (locked[pairs[i].winner][pairs[i].loser] == true)
         {
             if (i == locked_count-1)
