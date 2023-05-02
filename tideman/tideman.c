@@ -244,7 +244,7 @@ bool recursion(int w, int l)
     {
         return true;
     }
-    for (int i = pair_count-1; i > 0; i--)
+    for (int i = 0; i < pair_count>; i++)
     {
     // check the previous is locked
         if (locked[pairs[i].winner][pairs[i].loser] == true)
