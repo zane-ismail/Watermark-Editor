@@ -125,14 +125,14 @@ void record_preferences(int ranks[])
     // the function is called once for each voter
     for (int i = 0; i < candidate_count; i++)
     {
-        for (int j = 0; j < candidate_count-1; j++)
+        for (int j = 0; j < candidate_count - 1; j++)
+        {
             // update the global preferences array to add the current voter’s preferences
+            if (i != ranks[0] && i != ranks[j])
             {
-                if (i != ranks[0] && i != ranks[j])
-                {
-                    preferences[ranks[j]][i]++;
-                }
+                preferences[ranks[j]][i]++;
             }
+        }
     }
     return;
 }
@@ -175,11 +175,11 @@ void sort_pairs(void)
         for (int j = 0; j < candidate_count; j++)
         {
             // strength of victory is defined to be the number of voters who prefer the preferred candidate.
-            if (preferences[pairs[j].winner][pairs[j].loser] < preferences[pairs[j+1].winner][pairs[j+1].loser])
+            if (preferences[pairs[j].winner][pairs[j].loser] < preferences[pairs[j + 1].winner][pairs[j + 1].loser])
             {
                 temp_max_count = pairs[j];
-                pairs[j] = pairs[j+1];
-                pairs[j+1] = temp_max_count;
+                pairs[j] = pairs[j + 1];
+                pairs[j + 1] = temp_max_count;
             }
         }
         max_count = 0;
@@ -252,12 +252,13 @@ void print_winner(void)
         for (int j = 0; j < candidate_count; j++)
         {
             if (locked[j][i] == false)
-            win_count++;
-            if (win_count == candidate_count)
             {
-                printf("%s\n", candidates[i]);
+                win_count++;
+                if (win_count == candidate_count)
+                {
+                    printf("%s\n", candidates[i]);
+                }
             }
-
         }
     }
     return;
