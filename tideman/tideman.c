@@ -264,7 +264,7 @@ void print_winner(void)
         int win_count = 0;
         for (int j = 0; j < candidate_count; j++)
         {
-            if (locked[pairs[j].winner][pairs[i].loser] == false)
+            if (locked[j][i] == false)
             win_count++;
             if (win_count == candidate_count)
             {
