@@ -240,7 +240,7 @@ void lock_pairs(void)
 bool recursion(int w, int l)
 {
     // check if original new pair winner is the same as a recurive pair loser
-    if (w == ORIGINAL)
+    if (l == ORIGINAL)
     {
         return true;
     }
