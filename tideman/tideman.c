@@ -209,9 +209,6 @@ void lock_pairs(void)
     {
         for (int j = 0; j < i+1; j++)
         {
-            // if its the last pair in this iteration
-            if (i < pair_count-1 && i !=j)
-            {
                 // if the loser of the pair is the same as a winner of a previous pair
                 if (pairs[i].loser == pairs[j].winner)
                 {
@@ -222,7 +219,7 @@ void lock_pairs(void)
                         locked[pairs[i].winner][pairs[i].loser] = false;
                     }
                 }
-            }
+            
         }
         // otherwise lock it
         locked[pairs[i].winner][pairs[i].loser] = true;
