@@ -213,7 +213,7 @@ void lock_pairs(void)
             {
                 if (pairs[i].loser == pairs[j].winner)
                 {
-                    if (recursion(pairs[j].winner, pairs[j].loser) == true)
+                    if (recursion(pairs[i].winner, pairs[i].loser) == true)
                     {
                         locked[pairs[i].winner][pairs[i].loser] = false;
                     }
@@ -233,7 +233,10 @@ bool recursion(int w, int l)
         // check 1) the winner leads back to the loser
         if (locked[pairs[i].winner][pairs[i].loser] == true)
         {
-            return true;
+            if (locked[pairs[i].winner] == l)
+                {
+                    return true;
+                }
         }
     }
     return false;
