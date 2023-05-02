@@ -223,17 +223,15 @@ void lock_pairs(void)
                     {
                         // if it is a cycle, do not lock it
                         locked[pairs[i].winner][pairs[i].loser] = false;
+                        return;
                     }
                 }
             }
-            else
-            {
-                // otherwise lock it
-                locked[pairs[i].winner][pairs[i].loser] = true;
-                locked_count++;
-                new_count++;
-            }
         }
+    // otherwise lock it
+    locked[pairs[i].winner][pairs[i].loser] = true;
+    locked_count++;
+    new_count++;
     }
     return;
 }
