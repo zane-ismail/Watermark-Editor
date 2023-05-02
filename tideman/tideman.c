@@ -247,11 +247,11 @@ bool recursion(int w, int l)
     // check the previous is locked
         if (locked[pairs[i].winner][pairs[i].loser] == true)
         {
-            // checks if previous pair loser is the same as new pair winner
-            if (pairs[i].loser == w)
+            // checks if new pair loser is the same as previous pair winner
+            if (l == pairs[i].winner)
             {
-                // checks if previous pair winner is the same as new pair loser
-                recursion(pairs[i].winner, l);
+                // checks if new pair winner is the same as previous pair loser
+                recursion(pairs[i].loser, l);
                 return true;
             }
         }
