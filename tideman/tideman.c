@@ -213,14 +213,17 @@ void lock_pairs(void)
                 // if the loser of the pair is the same as a winner of a previous pair
                 if (pairs[i].loser == pairs[j].winner)
                 {
-                    // check to see it's a cycle
-                    if (recursion(pairs[i].winner, i-1) == true)
+                    // check the pair is locked
+                    if (locked[pairs[j].winner][pairs[j].loser] == true)
                     {
-                        // if it is a cycle, do not lock it
-                        locked[pairs[i].winner][pairs[i].loser] = false;
+                        // check to see it's a cycle
+                        if (recursion(pairs[i].winner, i-1) == true)
+                        {
+                            // if it is a cycle, do not lock it
+                            locked[pairs[i].winner][pairs[i].loser] = false;
+                        }
                     }
                 }
-
         }
         // otherwise lock it
         locked[pairs[i].winner][pairs[i].loser] = true;
@@ -234,12 +237,6 @@ bool recursion(int w, int l)
 {
     for (int i = 0; i < pair_count; i++)
     {
-        // check the pair is locked
-        if (locked[pairs[i].winner][pairs[i].loser] == true)
-        {
-            // check if final pair so far
-            if (i == w)
-            {
                 // check the winner of new pair is the loser of the final locked pair
                 if (pairs[i].loser == w)
                     {
