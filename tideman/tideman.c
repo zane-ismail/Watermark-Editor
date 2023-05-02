@@ -26,6 +26,7 @@ pair pairs[MAX * (MAX - 1) / 2];
 int pair_count;
 int candidate_count;
 int locked_count;
+int new_count;
 
 // Function prototypes
 bool vote(int rank, string name, int ranks[]);
@@ -224,6 +225,7 @@ void lock_pairs(void)
         // otherwise lock it
         locked[pairs[i].winner][pairs[i].loser] = true;
         locked_count++;
+        new_count++;
     }
     return;
 }
