@@ -239,7 +239,7 @@ bool recursion(int w, int l)
         if (locked[pairs[i].winner][pairs[i].loser] == true)
         {
             // check if pair is the final one in the LOCKED cycle
-            if (i == pair_count-1)
+            if (i == pair_count-locked_count)
             {
                 // check the winner of new pair is the loser of the final locked pair
                 if (pairs[i].loser == w)
