@@ -251,7 +251,7 @@ bool recursion(int w, int l)
             if (pairs[i].loser == w)
             {
                 // checks if previous pair winner is the same as new pair loser
-                recursion(pairs[i].winner, pairs[]);
+                recursion(pairs[i].winner, l);
                 return true;
             }
         }
