@@ -265,7 +265,7 @@ void print_winner(void)
         for (int j = 0; j < candidate_count; j++)
         {
             if (locked[pairs[j].winner][pairs[i].loser] == false)
-            win_count++
+            win_count++;
             if (win_count == candidate_count)
             {
                 printf("%s\n", candidates[i]);
