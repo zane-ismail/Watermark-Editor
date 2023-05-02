@@ -207,9 +207,9 @@ void lock_pairs(void)
 {
     // TODO
     // create the locked graph, adding all edges in decreasing order of victory strength so long as the edge would not create a cycle
-    for (int i = 0; i < pair_count; i++)
+    for (int i = 1; i < pair_count; i++)
     {
-        for (int j = 0; j < i+1; j++)
+        for (int j = 0; j < i; j++)
         {
                 // if the loser of the pair is the same as a winner of a previous pair
                 if (pairs[i].loser == pairs[j].winner)
