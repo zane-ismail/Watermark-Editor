@@ -239,23 +239,20 @@ void lock_pairs(void)
 bool recursion(int w, int l)
 {
     // check if original new pair winner is the same as a recurive pair loser
-    if (l == w)
+    if (w == l)
     {
         return true;
     }
-    else
+    for (int i = 0; i < pair_count; i++)
     {
-        for (int i = 0; i < pair_count; i++)
+    // check the previous is locked
+        if (locked[pairs[i].winner][pairs[i].loser] == true)
         {
-        // check the previous is locked
-            if (locked[pairs[i].winner][pairs[i].loser] == true)
+            // checks if new pair loser is the same as previous pair winner
+            if (l == pairs[i].winner)
             {
-                // checks if new pair loser is the same as previous pair winner
-                if (l == pairs[i].winner)
-                {
-                    // checks if new pair winner is the same as previous pair loser
-                    recursion(w, pairs[i].loser);
-                }
+                // checks if new pair winner is the same as previous pair loser
+                recursion(w, pairs[i].loser);
             }
         }
     }
