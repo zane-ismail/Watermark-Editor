@@ -233,7 +233,7 @@ bool recursion(int w, int l)
         // check 1) the winner leads back to the loser
         if (locked[pairs[i].winner][pairs[i].loser] == true)
         {
-            if (locked[pairs[i].winner] == l)
+            if (pairs[i].winner == l)
                 {
                     return true;
                 }
