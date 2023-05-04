@@ -1,6 +1,6 @@
 #include <cs50.h>
-#include <string.h>
 #include <stdio.h>
+#include <string.h>
 
 // Max number of candidates
 #define MAX 9
@@ -32,8 +32,7 @@ void record_preferences(int ranks[]);
 void add_pairs(void);
 void sort_pairs(void);
 void lock_pairs(void);
-void print_winner(void);
-
+void print_winner(void)
 bool recursion(int w, int l);
 
 int main(int argc, string argv[])
@@ -103,7 +102,7 @@ int main(int argc, string argv[])
 bool vote(int rank, string name, int ranks[])
 {
     // TODO
-    // the function takes arguments rank, name, and ranks. If name is a match for the name of a valid candidate
+    //  if name is a match for the name of a valid candidate
     for (int i = 0; i < candidate_count; i++)
     {
         if (strcmp(candidates[i], name) == 0)
