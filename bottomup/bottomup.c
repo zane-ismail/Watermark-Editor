@@ -52,7 +52,8 @@ int main(int argc, char *argv[])
         printf("Unsupported file format.\n");
         return 4;
     }
-    
+    // MY CODE TO NEGATE HEIGHT AND WRITE IMAGE TOPDOWN
+    bi.biHeight = bi.biHeight * -1;
     // Write outfile's BITMAPFILEHEADER
     fwrite(&bf, sizeof(BITMAPFILEHEADER), 1, outptr);
 
