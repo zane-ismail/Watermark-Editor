@@ -78,7 +78,7 @@ int main(int argc, char *argv[])
             fwrite(&triple, sizeof(RGBTRIPLE), 1, outptr);
         }
 
-    for (int i = 0, biHeight = abs(bi.biHeight); i < biHeight; i++)
+    for (int k = 0, biHeight = abs(bi.biHeight); k < biHeight; k++)
         {
             printf("%i\n", bi.biHeight);
             bi.biHeight = bi.biHeight * -1;
