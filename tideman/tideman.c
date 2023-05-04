@@ -33,7 +33,7 @@ void add_pairs(void);
 void sort_pairs(void);
 void lock_pairs(void);
 void print_winner(void);
-bool recursion(int w, int l);
+bool recursion(int win, int loss);
 
 int main(int argc, string argv[])
 {
@@ -189,6 +189,8 @@ void sort_pairs(void)
 void lock_pairs(void)
 {
     // TODO
+    // first pair is locked
+    locked[pairs[0].winner][pairs[0].loser] = true;
     // create the locked graph, adding all edges in decreasing order of victory strength so long as the edge would not create a cycle
     for (int i = 1; i < pair_count; i++)
     {
@@ -202,7 +204,7 @@ void lock_pairs(void)
                 // check to see it's a cycle
                 if (recursion(pairs[i].winner, pairs[j].loser))
                 {
-                    // if it is a cycle, do not lock it
+                    // if pair creates a cycle, do not lock it
                     locked[pairs[i].winner][pairs[i].loser] = false;
                 }
             }
@@ -211,23 +213,23 @@ void lock_pairs(void)
     return;
 }
 
-bool recursion(int w, int l)
+bool recursion(int win, int loss)
 {
     // check if original new pair winner is the same as a recurive pair loser
-    if (w == l)
+    if (win == loss)
     {
         return true;
     }
     for (int i = 0; i < pair_count; i++)
     {
         // checks if new pair loser is the same as previous pair winner
-        if (l == pairs[i].winner)
+        if (loss == pairs[i].winner)
         {
             // check the previous pair is locked
             if (locked[pairs[i].winner][pairs[i].loser])
             {
-                // checks if new pair loservis the same as previous pair winner
-                if (recursion(w, pairs[i].loser))
+                // repeat recursion
+                if (recursion(win, pairs[i].loser))
                 {
                     return true;
                 }
