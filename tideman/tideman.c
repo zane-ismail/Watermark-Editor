@@ -163,21 +163,21 @@ void add_pairs(void)
 void sort_pairs(void)
 {
     // TODO
-    // a pair of candidates who are tied (one is not preferred over the other) should not be added to the array
     int max_pair[pair_count];
     int max_count = 0;
-    pair max_pairs;
+    pair temp;
 
+    // a pair of candidates who are tied (one is not preferred over the other) should not be added to the array
     for (int i = 0; i < pair_count; i++)
     {
         for (int j = 0; j < candidate_count; j++)
         {
             // strength of victory is defined to be the number of voters who prefer the preferred candidate.
-            if (preferences[pairs[j].winner][pairs[j].loser] > preferences[pairs[j + 1].winner][pairs[j + 1].loser])
+            if (preferences[pairs[j].winner][pairs[j].loser] < preferences[pairs[j + 1].winner][pairs[j + 1].loser])
             {
-                max_pairs = pairs[j + 1];
-                pairs[j + 1] = pairs[j];
-                pairs[j] = max_pairs;
+                temp = pairs[j];
+                pairs[j] = pairs[j + 1];
+                pairs[j + 1] = temp;
             }
         }
         max_count = 0;
