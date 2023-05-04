@@ -78,12 +78,6 @@ int main(int argc, char *argv[])
             fwrite(&triple, sizeof(RGBTRIPLE), 1, outptr);
         }
 
-    for (int k = 0, biHeight = abs(bi.biHeight); k < biHeight; k++)
-        {
-            printf("%i\n", bi.biHeight);
-            bi.biHeight = bi.biHeight * -1;
-        }
-
         // Skip over padding, if any
         fseek(inptr, padding, SEEK_CUR);
 
