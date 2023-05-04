@@ -228,7 +228,7 @@ bool recursion(int win, int loss)
             // check the previous pair is locked
             if (locked[pairs[i].winner][pairs[i].loser])
             {
-                // repeat recursion
+                // if recursion returns true, function should return true
                 if (recursion(win, pairs[i].loser))
                 {
                     return true;
@@ -246,6 +246,7 @@ void print_winner(void)
     // print out the name of the candidate who is the source of the graph (assume there will not be more than one source.)
     for (int i = 0; i < candidate_count; i++)
     {
+        // count how many times a candidate is a winner
         int win_count = 0;
         for (int j = 0; j < candidate_count; j++)
         {
