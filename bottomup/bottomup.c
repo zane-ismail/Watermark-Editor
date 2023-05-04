@@ -59,7 +59,7 @@ int main(int argc, char *argv[])
     // Write outfile's BITMAPINFOHEADER
     fwrite(&bi, sizeof(BITMAPINFOHEADER), 1, outptr);
 
-     for (int i = 0, biHeight = abs(bi.biHeight); i < biHeight; i++)
+     for (int i = 0, i < biHeight; i++)
             {
                 bi.biHeight = bi.biHeight * -1;
                 printf("%i\n", bi.biHeight);
@@ -69,9 +69,7 @@ int main(int argc, char *argv[])
     int padding = (4 - (bi.biWidth * sizeof(RGBTRIPLE)) % 4) % 4;
     // Iterate over infile's scanlines
     for (int i = 0, biHeight = abs(bi.biHeight); i < biHeight; i++)
-    {
-        printf("%i\n", bi.biHeight);
-        // Iterate over pixels in scanline
+    {   // Iterate over pixels in scanline
         for (int j = 0; j < bi.biWidth; j++)
         {
             // Temporary storage
