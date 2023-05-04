@@ -247,13 +247,13 @@ void print_winner(void)
     for (int i = 0; i < candidate_count; i++)
     {
         // count how many times a candidate has been a loser in pair that is not locked
-        int winner_count;
+        int winner_count = 0;
         for (int j = 0; j < candidate_count; j++)
         {
-            if (locked[j][i] == false)
+            if (locked[j][i] != true)
             {
                 winner_count++;
-                the winning candidate will be the candidate 
+                // the winning candidate will be the candidate
                 if (winner_count == candidate_count)
                 {
                     printf("%s\n", candidates[i]);
