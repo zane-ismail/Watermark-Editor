@@ -246,14 +246,15 @@ void print_winner(void)
     // print out the name of the candidate who is the source of the graph (assume there will not be more than one source.)
     for (int i = 0; i < candidate_count; i++)
     {
-        // count how many times a candidate is a winner
-        int win_count = 0;
+        // count how many times a candidate has been a loser in pair that is not locked
+        int winner_count;
         for (int j = 0; j < candidate_count; j++)
         {
             if (locked[j][i] == false)
             {
-                win_count++;
-                if (win_count == candidate_count)
+                winner_count++;
+                the winning candidate will be the candidate 
+                if (winner_count == candidate_count)
                 {
                     printf("%s\n", candidates[i]);
                 }
