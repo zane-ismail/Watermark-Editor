@@ -54,7 +54,7 @@ int main(int argc, char *argv[])
     }
 
     bi.biHeight = bi.biHeight * -1;
-    
+
     // Write outfile's BITMAPFILEHEADER
     fwrite(&bf, sizeof(BITMAPFILEHEADER), 1, outptr);
 
@@ -67,7 +67,6 @@ int main(int argc, char *argv[])
     // Iterate over infile's scanlines
     for (int i = 0, biHeight = abs(bi.biHeight); i < biHeight; i++)
     {   // Iterate over pixels in scanline
-        printf("biHeight: %i\n", bi.biHeight);
         for (int j = 0; j < bi.biWidth; j++)
         {
             // Temporary storage
