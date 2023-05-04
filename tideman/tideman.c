@@ -163,12 +163,12 @@ void add_pairs(void)
 void sort_pairs(void)
 {
     // TODO
-    // sort the pairs array in decreasing order of strength of victory
     // a pair of candidates who are tied (one is not preferred over the other) should not be added to the array
     int max_pair[pair_count];
     int max_count = 0;
     pair temp_max_count;
 
+    // sort the pairs array in decreasing order of strength of victory
     for (int i = 0; i < pair_count; i++)
     {
         for (int j = 0; j < candidate_count; j++)
