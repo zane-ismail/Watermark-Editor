@@ -28,10 +28,8 @@ int main(int argc, char *argv[])
         for (int i = 0; i < 8; i++)
         {
             // Save plate number in array
-            plates[idx] =
+            plates[idx][i] = buffer[i];
         }
-        buffer;
-        idx++;
     }
 
     for (int i = 0; i < 8; i++)
