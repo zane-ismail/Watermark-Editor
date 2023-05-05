@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+
 
 int main(int argc, char *argv[])
 {
@@ -14,7 +16,7 @@ int main(int argc, char *argv[])
     char buffer[7];
 
     // Create array to store plate numbers
-    char plates[8][7];
+    char *plates[8];
 
     FILE *infile = fopen(argv[1], "r");
 
@@ -22,18 +24,22 @@ int main(int argc, char *argv[])
 
     while (fread(buffer, 1, 7, infile) == 7)
     {
+        plates[idx] = malloc(length); // dynamically allocate every array element for new address
+        if (plates[idx] == NULL)
+        {
+            printf("error \n");
+            return 1;
+        }
+
         // Replace '\n' with '\0'
         buffer[6] = '\0';
 
-        for (int i = 0; i < 7; i++)
-        {
-            // Save plate number in array
-            plates[idx][i] = buffer[i];
-        }
-    }
+        // Save plate number in array
+        strcpy(plates[idx], buffer);
+        printf("%s\n", plates[idx]);
+        free(plates[idx]);
+        idx++;
 
-    for (int i = 0; i < 8; i++)
-    {
-        printf("%s\n", plates[i]);
     }
+    fclose(infile);
 }
