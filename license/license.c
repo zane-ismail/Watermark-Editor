@@ -24,17 +24,10 @@ int main(int argc, char *argv[])
     {
         // Replace '\n' with '\0'
         buffer[6] = '\0';
-        // printf("BUFFER: %s\n", buffer);
 
         // Save plate number in array
         plates[idx] = buffer;
-        // printf("Plates %i: ", idx);
         printf("%s\n", plates[idx]);
         idx++;
     }
-
-//     for (int i = 0; i < 8; i++)
-//     {
-//         printf("%s\n", plates[i]);
-//     }
 }
