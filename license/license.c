@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 
     // Create buffer to read into
     char buffer[7];
-    printf("BUFFER: %s", buffer);
+    printf("BUFFER1: %s\n", buffer);
 
     // Create array to store plate numbers
     char *plates[8];
@@ -25,14 +25,15 @@ int main(int argc, char *argv[])
     {
         // Replace '\n' with '\0'
         buffer[6] = '\0';
+        printf("BUFFER2: %s\n", buffer);
 
         // Save plate number in array
-        plates[idx] = &buffer[0];
+        plates[idx] = buffer;
         idx++;
     }
 
     for (int i = 0; i < 8; i++)
     {
-        printf("%s\n", &plates[idx]);
+        printf("%s\n", plates[i]);
     }
 }
