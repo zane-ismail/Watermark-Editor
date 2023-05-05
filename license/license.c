@@ -21,10 +21,13 @@ int main(int argc, char *argv[])
     FILE *infile = fopen(argv[1], "r");
 
     int idx = 0;
+    int length = sizeof(buffer);
+
 
     while (fread(buffer, 1, 7, infile) == 7)
     {
-        plates[idx] = malloc(length); // dynamically allocate every array element for new address
+        // dynamically allocate every array element for new address
+        plates[idx] = malloc(length);
         if (plates[idx] == NULL)
         {
             printf("error \n");
