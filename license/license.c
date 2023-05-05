@@ -30,4 +30,6 @@ int main(int argc, char *argv[])
         printf("%s\n", plates[idx]);
         idx++;
     }
+
+    fclose(infile);
 }
