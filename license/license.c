@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
         // Replace '\n' with '\0'
         buffer[6] = '\0';
 
-        for (int i = 0; i < 8; i++)
+        for (int i = 0; i < 7; i++)
         {
             // Save plate number in array
             plates[idx][i] = buffer[i];
