@@ -142,6 +142,8 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 tempblue_avg[i][j] = (image[i][j].rgbtBlue + image[i-1][j].rgbtBlue + image[i-1][j-1].rgbtBlue + image[i][j-1].rgbtBlue + image[i+1][j].rgbtBlue + image[i+1][j-1].rgbtBlue) / 6.0;
 
             }
+
+            else
         }
     }
     for (int i = 0; i < height; i++)
