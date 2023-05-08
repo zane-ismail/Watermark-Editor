@@ -146,6 +146,12 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             }
 
             else if ( i == height-1 && j == width-1)
+            {
+                tempblue_avg[i][j] = (image[i][j].rgbtBlue + image[i-1][j].rgbtBlue + image[i-1][j-1].rgbtBlue + image[i][j-1].rgbtBlue + image[i+1][j].rgbtBlue + image[i+1][j-1].rgbtBlue) / 6.0;
+                tempgreen_avg[i][j] = (image[i][j].rgbtGreen + image[i-1][j].rgbtGreen + image[i-1][j-1].rgbtGreen + image[i][j-1].rgbtGreen + image[i+1][j].rgbtGreen + image[i+1][j-1].rgbtGreen) / 6.0;
+                tempred_avg[i][j] = (image[i][j].rgbtRed + image[i-1][j].rgbtRed + image[i-1][j-1].rgbtRed + image[i][j-1].rgbtRed + image[i+1][j].rgbtRed + image[i+1][j-1].rgbtRed) / 6.0;
+
+            }
         }
     }
     for (int i = 0; i < height; i++)
