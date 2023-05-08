@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
 
     while (fread(buffer, 1, 7, infile) == 7)
     {
-        // dynamically allocate every array element for new address
+        // allocate every array element for new address
         plates[idx] = malloc(length);
         if (plates[idx] == NULL)
         {
