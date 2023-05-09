@@ -63,11 +63,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 {
     // Store values in temporary variable
     RGBTRIPLE temp[height][width];
-    // Initialise values
-    double b_sum = 0;
-    double g_sum = 0;
-    double r_sum = 0;
-    int count = 0;
+
 
     for (int i = 0; i < height; i++)
     {
@@ -81,6 +77,12 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
+            // Initialise values
+            double b_sum = 0;
+            double g_sum = 0;
+            double r_sum = 0;
+            int count = 0;
+            
             for (int k = -1; k < 2; k++)
             {
                 for (int l = -1; l <2; l++)
