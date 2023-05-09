@@ -37,6 +37,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
+            // create temporary array to store new values
             temp[i][j] = image[i][width - x];
             x++;
             // reset x value at the end (leftside) of the row
