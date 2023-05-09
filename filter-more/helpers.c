@@ -29,9 +29,7 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
 void reflect(int height, int width, RGBTRIPLE image[height][width])
 {
     // Store values in temporary variable
-    int tempblue[height][width];
-    int tempgreen[height][width];
-    int tempred[height][width];
+    int RGBT temp[height][width];
     int x = 1;
 
     // begin with right most pixel and work left
