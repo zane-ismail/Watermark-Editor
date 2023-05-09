@@ -67,7 +67,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
     // Store values in temporary variable
-    double tempblue_avg[height][width];
+    double RGBT temp[height][width];
     double tempgreen_avg[height][width];
     double tempred_avg[height][width];
 
@@ -78,7 +78,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             // top left corner
             if (i == 0 && j == 0)
             {
-                tempblue_avg[i][j] = (image[i][j].rgbtBlue + image[i][j + 1].rgbtBlue + image[i + 1][j].rgbtBlue +
+                RGBT temp[i][j] = (image[i][j].rgbtBlue + image[i][j + 1].rgbtBlue + image[i + 1][j].rgbtBlue +
                                       image[i + 1][j + 1].rgbtBlue) / 4.0;
                 tempgreen_avg[i][j] = (image[i][j].rgbtGreen + image[i][j + 1].rgbtGreen + image[i + 1][j].rgbtGreen +
                                        image[i + 1][j + 1].rgbtGreen) / 4.0;
@@ -88,7 +88,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             // top right corner
             else if (i == 0 && j == width - 1)
             {
-                tempblue_avg[i][j] = (image[i][j].rgbtBlue + image[i][j - 1].rgbtBlue + image[i + 1][j - 1].rgbtBlue +
+                RGBT temp[i][j] = (image[i][j].rgbtBlue + image[i][j - 1].rgbtBlue + image[i + 1][j - 1].rgbtBlue +
                                       image[i + 1][j].rgbtBlue) / 4.0;
                 tempgreen_avg[i][j] = (image[i][j].rgbtGreen + image[i][j - 1].rgbtGreen + image[i + 1][j - 1].rgbtGreen +
                                        image[i + 1][j].rgbtGreen) / 4.0;
@@ -99,7 +99,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             // bottom left corner
             else if (i == height - 1 && j == 0)
             {
-                tempblue_avg[i][j] = (image[i][j].rgbtBlue + image[i - 1][j].rgbtBlue + image[i - 1][j + 1].rgbtBlue +
+                RGBT temp[i][j] = (image[i][j].rgbtBlue + image[i - 1][j].rgbtBlue + image[i - 1][j + 1].rgbtBlue +
                                       image[i][j + 1].rgbtBlue) / 4.0;
                 tempgreen_avg[i][j] = (image[i][j].rgbtGreen + image[i - 1][j].rgbtGreen + image[i - 1][j + 1].rgbtGreen +
                                        image[i][j + 1].rgbtGreen) / 4.0;
@@ -109,7 +109,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             // bottom right corner
             else if (i == height - 1 && j == width - 1)
             {
-                tempblue_avg[i][j] = (image[i][j].rgbtBlue + image[i - 1][j].rgbtBlue + image[i - 1][j - 1].rgbtBlue +
+                RGBT temp[i][j] = (image[i][j].rgbtBlue + image[i - 1][j].rgbtBlue + image[i - 1][j - 1].rgbtBlue +
                                       image[i][j - 1].rgbtBlue) / 4.0;
                 tempgreen_avg[i][j] = (image[i][j].rgbtGreen + image[i - 1][j].rgbtGreen + image[i - 1][j - 1].rgbtGreen +
                                        image[i][j - 1].rgbtGreen) / 4.0;
@@ -120,7 +120,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             // top row
             else if (i == 0)
             {
-                tempblue_avg[i][j] = (image[i][j].rgbtBlue + image[i][j - 1].rgbtBlue + image[i][j + 1].rgbtBlue +
+                RGBT temp[i][j] = (image[i][j].rgbtBlue + image[i][j - 1].rgbtBlue + image[i][j + 1].rgbtBlue +
                                       image[i + 1][j - 1].rgbtBlue + image[i + 1][j].rgbtBlue + image[i + 1][j + 1].rgbtBlue) / 6.0;
                 tempgreen_avg[i][j] = (image[i][j].rgbtGreen + image[i][j - 1].rgbtGreen + image[i][j + 1].rgbtGreen +
                                        image[i + 1][j - 1].rgbtGreen + image[i + 1][j].rgbtGreen + image[i + 1][j + 1].rgbtGreen) / 6.0;
@@ -130,7 +130,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             // left column
             else if (j == 0)
             {
-                tempblue_avg[i][j] = (image[i][j].rgbtBlue + image[i][j + 1].rgbtBlue + image[i + 1][j].rgbtBlue +
+                RGBT temp[i][j] = (image[i][j].rgbtBlue + image[i][j + 1].rgbtBlue + image[i + 1][j].rgbtBlue +
                                       image[i + 1][j + 1].rgbtBlue + image[i - 1][j].rgbtBlue + image[i - 1][j + 1].rgbtBlue) / 6.0;
                 tempgreen_avg[i][j] = (image[i][j].rgbtGreen + image[i][j + 1].rgbtGreen + image[i + 1][j].rgbtGreen +
                                        image[i + 1][j + 1].rgbtGreen + image[i - 1][j].rgbtGreen + image[i - 1][j + 1].rgbtGreen) / 6.0;
@@ -140,7 +140,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             // bottom row
             else if (i == height - 1)
             {
-                tempblue_avg[i][j] = (image[i][j].rgbtBlue + image[i][j - 1].rgbtBlue + image[i][j + 1].rgbtBlue +
+                RGBT temp[i][j] = (image[i][j].rgbtBlue + image[i][j - 1].rgbtBlue + image[i][j + 1].rgbtBlue +
                                       image[i - 1][j - 1].rgbtBlue + image[i - 1][j].rgbtBlue + image[i - 1][j + 1].rgbtBlue) / 6.0;
                 tempgreen_avg[i][j] = (image[i][j].rgbtGreen + image[i][j - 1].rgbtGreen + image[i][j + 1].rgbtGreen +
                                        image[i - 1][j - 1].rgbtGreen + image[i - 1][j].rgbtGreen + image[i - 1][j + 1].rgbtGreen) / 6.0;
@@ -150,7 +150,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             // right column
             else if (j == width - 1)
             {
-                tempblue_avg[i][j] = (image[i][j].rgbtBlue + image[i - 1][j].rgbtBlue + image[i - 1][j - 1].rgbtBlue +
+                RGBT temp[i][j] = (image[i][j].rgbtBlue + image[i - 1][j].rgbtBlue + image[i - 1][j - 1].rgbtBlue +
                                       image[i][j - 1].rgbtBlue + image[i + 1][j].rgbtBlue + image[i + 1][j - 1].rgbtBlue) / 6.0;
                 tempgreen_avg[i][j] = (image[i][j].rgbtGreen + image[i - 1][j].rgbtGreen + image[i - 1][j - 1].rgbtGreen +
                                        image[i][j - 1].rgbtGreen + image[i + 1][j].rgbtGreen + image[i + 1][j - 1].rgbtGreen) / 6.0;
@@ -160,7 +160,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             // middle
             else
             {
-                tempblue_avg[i][j] = (image[i][j].rgbtBlue + image[i - 1][j].rgbtBlue + image[i - 1][j - 1].rgbtBlue +
+                RGBT temp[i][j] = (image[i][j].rgbtBlue + image[i - 1][j].rgbtBlue + image[i - 1][j - 1].rgbtBlue +
                                       image[i][j - 1].rgbtBlue + image[i + 1][j].rgbtBlue + image[i + 1][j - 1].rgbtBlue +
                                       image[i + 1][j + 1].rgbtBlue + image[i][j + 1].rgbtBlue + image[i - 1][j + 1].rgbtBlue) / 9.0;
                 tempgreen_avg[i][j] = (image[i][j].rgbtGreen + image[i - 1][j].rgbtGreen + image[i - 1][j - 1].rgbtGreen +
@@ -178,7 +178,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            image[i][j].rgbtBlue = round(tempblue_avg[i][j]);
+            image[i][j].rgbtBlue = round(RGBT temp[i][j]);
             image[i][j].rgbtGreen = round(tempgreen_avg[i][j]);
             image[i][j].rgbtRed = round(tempred_avg[i][j]);
         }
