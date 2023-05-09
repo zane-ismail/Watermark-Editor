@@ -95,27 +95,23 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             // left column
             else if (j == 0)
             {
-                temp[i][j] = (image[i][j] + image[i][j + 1] + image[i + 1][j] +
-                                      image[i + 1][j + 1] + image[i - 1][j] + image[i - 1][j + 1]) / 6.0;
+                temp[i][j] = (image[i][j] + image[i][j + 1] + image[i + 1][j] + image[i + 1][j + 1] + image[i - 1][j] + image[i - 1][j + 1]) / 6.0;
             }
             // bottom row
             else if (i == height - 1)
             {
-                temp[i][j] = (image[i][j] + image[i][j - 1] + image[i][j + 1] +
-                                      image[i - 1][j - 1] + image[i - 1][j] + image[i - 1][j + 1]) / 6.0;
+                temp[i][j] = (image[i][j] + image[i][j - 1] + image[i][j + 1] + image[i - 1][j - 1] + image[i - 1][j] + image[i - 1][j + 1]) / 6.0;
             }
             // right column
             else if (j == width - 1)
-
-                temp[i][j] = (image[i][j] + image[i - 1][j] + image[i - 1][j - 1] +
-                                      image[i][j - 1] + image[i + 1][j] + image[i + 1][j - 1]) / 6.0;
+            {
+                temp[i][j] = (image[i][j] + image[i - 1][j] + image[i - 1][j - 1] + image[i][j - 1] + image[i + 1][j] + image[i + 1][j - 1]) / 6.0;
             }
             // middle
             else
             {
-                temp[i][j] = (image[i][j] + image[i - 1][j] + image[i - 1][j - 1] +
-                                      image[i][j - 1] + image[i + 1][j] + image[i + 1][j - 1] +
-                                      image[i + 1][j + 1] + image[i][j + 1] + image[i - 1][j + 1]) / 9.0;
+                temp[i][j] = (image[i][j] + image[i - 1][j] + image[i - 1][j - 1] + image[i][j - 1] + image[i + 1][j] + image[i + 1][j - 1] +
+                              image[i + 1][j + 1] + image[i][j + 1] + image[i - 1][j + 1]) / 9.0;
             }
         }
     }
