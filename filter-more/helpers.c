@@ -99,11 +99,19 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     {
                         continue;
                     }
-                    r_sum += temp[
+                    b_sum += temp[i + k][j + l].rgbtBlue;
+                    g_sum += temp[i + k][j + l].rgbtGreen;
+                    r_sum += temp[i + k][j + l].rgbtRed;
+                    count++;
+
+                    image[i][j].rgbtRed = round(b_sum / count);
+                    image[i][j].rgbtGreen = round(g_sum / count);
+                    image[i][j].rgbtBlue = round(r_sum / count);
                 }
             }
         }
     }
+}
 
     // apply temp values to actual pixels
     for (int i = 0; i < height; i++)
@@ -113,7 +121,6 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             image[i][j] = round(temp[i][j]);
         }
     }
-}
 
 // Detect edges
 void edges(int height, int width, RGBTRIPLE image[height][width])
