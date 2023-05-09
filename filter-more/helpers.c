@@ -201,9 +201,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     double gblue;
     double ggreen;
     double gred;
-    int gb;
-    int gg;
-    int gr;
+    int b;
+    int g;
+    int r;
 
 
 
@@ -424,11 +424,11 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
 
             }
             gblue = (gxblue * gxblue) + (gyblue * gyblue);
-            gb = round(gblue / gblue);
+            b = round(gblue / gblue);
             ggreen = (gxgreen * gxgreen) + (gygreen * gygreen);
-            gg = round(ggreen / ggreen);
+            g = round(ggreen / ggreen);
             gred = (gxred * gxred) + (gyred * gyred);
-            gr = round(gred / gred);
+            r = round(gred / gred);
         }
     }
 
@@ -437,20 +437,32 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            if (gb > 255 || gb < 0)
+            if (b > 255 || b < 0)
             {
                 image[i][j].rgbtBlue = 255;
-                printf("%i\n", gb);
+                printf("%i\n", b);
             }
-            if (gg > 255 || gg < 0)
+            else
+            {
+                image[i][j].rgbtBlue = b;
+            }
+            if (g > 255 || g < 0)
             {
                 image[i][j].rgbtGreen = 255;
-                printf("%i\n", gg);
+                printf("%i\n", g);
             }
-            if (gr > 255 || gr < 0)
+            else
+            {
+                image[i][j].rgbtBlue = g;
+            }
+            if (r > 255 || r < 0)
             {
                 image[i][j].rgbtRed = 255;
-                printf("%i\n", gr);
+                printf("%i\n", r);
+            }
+            else
+            {
+                image[i][j].rgbtBlue = r;
             }
         }
     }
