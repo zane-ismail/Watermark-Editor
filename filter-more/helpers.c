@@ -78,18 +78,14 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             else if (i == 0 && j == width - 1)
             {
                 RGBT temp[i][j] = (image[i][j] + image[i][j - 1] + image[i + 1][j - 1] +
-                                      image[i + 1][j].rgbtBlue) / 4.0;
+                                      image[i + 1][j]) / 4.0;
 
             }
             // bottom left corner
             else if (i == height - 1 && j == 0)
             {
-                RGBT temp[i][j] = (image[i][j].rgbtBlue + image[i - 1][j].rgbtBlue + image[i - 1][j + 1].rgbtBlue +
-                                      image[i][j + 1].rgbtBlue) / 4.0;
-                tempgreen_avg[i][j] = (image[i][j].rgbtGreen + image[i - 1][j].rgbtGreen + image[i - 1][j + 1].rgbtGreen +
-                                       image[i][j + 1].rgbtGreen) / 4.0;
-                tempred_avg[i][j] = (image[i][j].rgbtRed + image[i - 1][j].rgbtRed + image[i - 1][j + 1].rgbtRed +
-                                     image[i][j + 1].rgbtRed) / 4.0;
+                RGBT temp[i][j] = (image[i][j] + image[i - 1][j] + image[i - 1][j + 1] +
+                                      image[i][j + 1]) / 4.0;
             }
             // bottom right corner
             else if (i == height - 1 && j == width - 1)
