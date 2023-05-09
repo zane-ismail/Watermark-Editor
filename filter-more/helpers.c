@@ -71,44 +71,43 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             double b_sum = 0;
             double g_sum = 0;
             int count = 0;
-        }
-    }
 
-    for (int i = 0; i < height; i++)
-    {
-        for (int j = 0; j < width; j++)
-        {
-            temp[i][j] = image[i][j];
-        }
-    }
-
-
-    for (int i = 0; i < height; i++)
-    {
-        for (int j = 0; j < width; j++)
-        {
-            for (int k = -1; k < 2; k++)
+            for (int i = 0; i < height; i++)
             {
-                for (int l = -1; l <2; l++)
+                for (int j = 0; j < width; j++)
                 {
-                    if (i + k < 0 || i + k == height)
-                    {
-                        continue;
-                    }
-                    else if (j + l < 0 || j + l == width)
-                    {
-                        continue;
-                    }
-                    b_sum += temp[i + k][j + l].rgbtBlue;
-                    g_sum += temp[i + k][j + l].rgbtGreen;
-                    r_sum += temp[i + k][j + l].rgbtRed;
-                    count++;
-
-                    image[i][j].rgbtRed = round(b_sum / count);
-                    image[i][j].rgbtGreen = round(g_sum / count);
-                    image[i][j].rgbtBlue = round(r_sum / count);
+                    temp[i][j] = image[i][j];
                 }
             }
+
+            for (int i = 0; i < height; i++)
+            {
+                for (int j = 0; j < width; j++)
+                {
+                    for (int k = -1; k < 2; k++)
+                    {
+                        for (int l = -1; l <2; l++)
+                        {
+                            if (i + k < 0 || i + k == height)
+                            {
+                                continue;
+                            }
+                            else if (j + l < 0 || j + l == width)
+                            {
+                                continue;
+                            }
+                            b_sum += temp[i + k][j + l].rgbtBlue;
+                            g_sum += temp[i + k][j + l].rgbtGreen;
+                            r_sum += temp[i + k][j + l].rgbtRed;
+                            count++;
+                        }
+                    }
+                }
+            }
+
+            image[i][j].rgbtRed = round(b_sum / count);
+            image[i][j].rgbtGreen = round(g_sum / count);
+            image[i][j].rgbtBlue = round(r_sum / count);
         }
     }
 }
