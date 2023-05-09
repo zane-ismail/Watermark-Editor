@@ -444,7 +444,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             }
             else
             {
-                image[i][j].rgbtBlue = b;
+                image[i][j].rgbtBlue = b
             }
             if (g > 255 || g < 0)
             {
@@ -453,16 +453,16 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             }
             else
             {
-                image[i][j].rgbtBlue = g;
+                image[i][j].rgbtBlue = g
             }
             if (r > 255 || r < 0)
             {
                 image[i][j].rgbtRed = 255;
-                printf("%i\n", r);
+                printf("%i\n", gr);
             }
             else
             {
-                image[i][j].rgbtBlue = r;
+                image[i][j].rgbtBlue = r
             }
         }
     }
