@@ -64,9 +64,6 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 {
     // Store values in temporary variable
     double RGBT temp[height][width];
-    double tempgreen_avg[height][width];
-    double tempred_avg[height][width];
-
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
@@ -76,10 +73,6 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             {
                 RGBT temp[i][j] = (image[i][j].rgbtBlue + image[i][j + 1].rgbtBlue + image[i + 1][j].rgbtBlue +
                                       image[i + 1][j + 1].rgbtBlue) / 4.0;
-                tempgreen_avg[i][j] = (image[i][j].rgbtGreen + image[i][j + 1].rgbtGreen + image[i + 1][j].rgbtGreen +
-                                       image[i + 1][j + 1].rgbtGreen) / 4.0;
-                tempred_avg[i][j] = (image[i][j].rgbtRed + image[i][j + 1].rgbtRed + image[i + 1][j].rgbtRed +
-                                     image[i + 1][j + 1].rgbtRed) / 4.0;
             }
             // top right corner
             else if (i == 0 && j == width - 1)
