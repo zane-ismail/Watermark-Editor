@@ -192,18 +192,18 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     double tempblue[height][width];
     double tempgreen[height][width];
     double tempred[height][width];
-    double gxblue[height][width];
-    double gxgreen[height][width];
-    double gxred[height][width];
-    double gyblue[height][width];
-    double gygreen[height][width];
-    double gyred[height][width];
-    double gblue[height][width];
-    double ggreen[height][width];
-    double gred[height][width];
-    int gb[height][width];
-    int gg[height][width];
-    int gr[height][width];
+    double gxblue;
+    double gxgreen;
+    double gxred;
+    double gyblue;
+    double gygreen;
+    double gyred;
+    double gblue;
+    double ggreen;
+    double gred;
+    int gb;
+    int gg;
+    int gr;
 
 
 
@@ -401,10 +401,6 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             {
                 for (int k = - 1; k < 2; k++)
                 {
-                    if (i == - 1)
-                    {
-                        i
-                    }
                     gxblue = (image[i - 1][j - 1].rgbtBlue * - 1 + image[i - 1][j].rgbtBlue * 0 + image[i - 1][j + 1].rgbtBlue * 1) +
                                     (image[i][j - 1].rgbtBlue * - 2 + image[i][j].rgbtBlue * 0 + image[i][j + 1].rgbtBlue * 2) +
                                     (image[i + 1][j - 1].rgbtBlue * - 1 + image[i + 1][j].rgbtBlue * 0 + image[i + 1][j + 1].rgbtBlue * 1);
