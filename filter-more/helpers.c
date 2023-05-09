@@ -66,52 +66,12 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            // top left corner
-            if (i == 0 && j == 0)
+            for (int k = -1; k < 2; k++)
             {
-                temp[i][j] = (image[i][j] + image[i][j + 1] + image[i + 1][j] + image[i + 1][j + 1]) / 4.0;
-            }
-            // top right corner
-            else if (i == 0 && j == width - 1)
-            {
-                RGBTRIPLE temp[i][j] = (image[i][j] + image[i][j - 1] + image[i + 1][j - 1] + image[i + 1][j]) / 4.0;
-
-            }
-            // bottom left corner
-            else if (i == height - 1 && j == 0)
-            {
-                temp[i][j] = (image[i][j] + image[i - 1][j] + image[i - 1][j + 1] + image[i][j + 1]) / 4.0;
-            }
-            // bottom right corner
-            else if (i == height - 1 && j == width - 1)
-            {
-                temp[i][j] = (image[i][j] + image[i - 1][j] + image[i - 1][j - 1] + image[i][j - 1]) / 4.0;
-            }
-            // top row
-            else if (i == 0)
-            {
-                temp[i][j] = (image[i][j] + image[i][j - 1] + image[i][j + 1] + image[i + 1][j - 1] + image[i + 1][j] + image[i + 1][j + 1]) / 6.0;
-            }
-            // left column
-            else if (j == 0)
-            {
-                temp[i][j] = (image[i][j] + image[i][j + 1] + image[i + 1][j] + image[i + 1][j + 1] + image[i - 1][j] + image[i - 1][j + 1]) / 6.0;
-            }
-            // bottom row
-            else if (i == height - 1)
-            {
-                temp[i][j] = (image[i][j] + image[i][j - 1] + image[i][j + 1] + image[i - 1][j - 1] + image[i - 1][j] + image[i - 1][j + 1]) / 6.0;
-            }
-            // right column
-            else if (j == width - 1)
-            {
-                temp[i][j] = (image[i][j] + image[i - 1][j] + image[i - 1][j - 1] + image[i][j - 1] + image[i + 1][j] + image[i + 1][j - 1]) / 6.0;
-            }
-            // middle
-            else
-            {
-                temp[i][j] = (image[i][j] + image[i - 1][j] + image[i - 1][j - 1] + image[i][j - 1] + image[i + 1][j] + image[i + 1][j - 1] +
-                              image[i + 1][j + 1] + image[i][j + 1] + image[i - 1][j + 1]) / 9.0;
+                for (int l = -1; l <2; l++)
+                {
+                    if (i + k == < 0)
+                }
             }
         }
     }
