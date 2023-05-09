@@ -37,7 +37,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            temp[i][j] = image[i][width - x].rgbtBlue;
+            RGBTRIPLE temp[i][j] = image[i][width - x].rgbtBlue;
             x++;
             // reset x value at the end (leftside) of the row
             if (x == width + 1)
