@@ -402,7 +402,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 for (int k = - 1; k < 2; k++)
                 {
                     if (i == - 1)
-                    
+                    {
+                        i
+                    }
                     gxblue[i][j] = (image[i - 1][j - 1].rgbtBlue * - 1 + image[i - 1][j].rgbtBlue * 0 + image[i - 1][j + 1].rgbtBlue * 1) +
                                     (image[i][j - 1].rgbtBlue * - 2 + image[i][j].rgbtBlue * 0 + image[i][j + 1].rgbtBlue * 2) +
                                     (image[i + 1][j - 1].rgbtBlue * - 1 + image[i + 1][j].rgbtBlue * 0 + image[i + 1][j + 1].rgbtBlue * 1);
