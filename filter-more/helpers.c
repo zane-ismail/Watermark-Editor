@@ -82,10 +82,10 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             double g_sum = 0;
             double r_sum = 0;
             int count = 0;
-            
-            for (int k = -1; k < 2; k++)
+
+            for (int k = - 1; k < 2; k++)
             {
-                for (int l = -1; l <2; l++)
+                for (int l = - 1; l < 2; l++)
                 {
                     if (i + k < 0 || i + k == height)
                     {
@@ -108,15 +108,6 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     }
 }
 
-//     // apply temp values to actual pixels
-//     for (int i = 0; i < height; i++)
-//     {
-//         for (int j = 0; j < width; j++)
-//         {
-//             image[i][j] = round(temp[i][j]);
-//         }
-//     }
-// }
 
 // Detect edges
 void edges(int height, int width, RGBTRIPLE image[height][width])
