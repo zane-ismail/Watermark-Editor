@@ -29,7 +29,7 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
 void reflect(int height, int width, RGBTRIPLE image[height][width])
 {
     // Store values in temporary variable
-    temp[height][width];
+    RGBTRIPLE temp[height][width];
     int x = 1;
 
     // begin with right most pixel and work left
@@ -52,7 +52,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            image[i][j] = temp;
+            image[i][j] = temp[i][j];
         }
     }
 }
