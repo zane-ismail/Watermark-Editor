@@ -153,7 +153,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                             continue;
                         }
                         gxblue =+ temp[i + k][j + l].rgbtBlue * x;
-                        gxgreen =+  temp[i + k][j + l].rgbtGreen * x;
+                        gxgreen =+ temp[i + k][j + l].rgbtGreen * x;
                         gxred =+ temp[i + k][j + l].rgbtRed * x;
                     }
                     for (int y = -2; y < 3; y++)
@@ -168,7 +168,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                             continue;
                         }
                         gxblue =+ temp[i + k][j + l].rgbtBlue * y;
-                        gxgreen =+  temp[i + k][j + l].rgbtGreen * y;
+                        gxgreen =+ temp[i + k][j + l].rgbtGreen * y;
                         gxred =+ temp[i + k][j + l].rgbtRed * y;
                         y++;
                     }
@@ -184,7 +184,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                             continue;
                         }
                         gxblue =+ temp[i + k][j + l].rgbtBlue * z;
-                        gxgreen =+  temp[i + k][j + l].rgbtGreen * z;
+                        gxgreen =+ temp[i + k][j + l].rgbtGreen * z;
                         gxred =+  temp[i + k][j + l].rgbtRed * z;
                     }
                 }
