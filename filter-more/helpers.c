@@ -61,7 +61,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
-    // Store values in temporary variable
+    // store values in temporary variable
     RGBTRIPLE temp[height][width];
 
 
@@ -112,6 +112,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 // Detect edges
 void edges(int height, int width, RGBTRIPLE image[height][width])
 {
+    // store values in temporary variable
+    RGBTRIPLE temp[height][width];
+
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
@@ -149,9 +152,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                         {
                             continue;
                         }
-                        gblue =+ temp[k][l] * x;
-                        ggreen =+ temp[k][l] * x;
-                        gred =+ temp[k][l] * x;
+                        gblue =+ [i + k][j + l].rgbtBlue * x;
+                        ggreen =+  [i + k][j + l].rgbtGreen * x;
+                        gred =+ [i + k][j + l].rgbtRed * x;
                     }
                     for (int y = -2; y < 3; y++)
                     {
@@ -164,9 +167,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                         {
                             continue;
                         }
-                        gblue =+ temp[k][l] * y;
-                        ggreen =+ temp[k][l] * y;
-                        gred =+ temp[k][l] * y;
+                        gblue =+ [i + k][j + l].rgbtBlue * y;
+                        ggreen =+  [i + k][j + l].rgbtGreen * y;
+                        gred =+ [i + k][j + l].rgbtRed * y;
                         y++;
                     }
                     for (int z = -1; z < 2; z++)
@@ -180,9 +183,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                         {
                             continue;
                         }
-                        gblue =+ temp[k][l] * z;
-                        ggreen =+ temp[k][l] * z;
-                        gred =+ temp[k][l] * z;
+                        gblue =+ [i + k][j + l].rgbtBlue * z;
+                        ggreen =+  [i + k][j + l].rgbtGreen * z;
+                        gred =+  [i + k][j + l].rgbtRed * z;
                     }
                 }
             }
