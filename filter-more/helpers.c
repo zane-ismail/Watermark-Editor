@@ -133,15 +133,48 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     for (int x = -1; x < 2; x++)
                     {
 
-                    if (i + k < 0 || i + k == height)
-                    {
-                        continue;
+                        if (i + k < 0 || i + k == height)
+                        {
+                            continue;
+                        }
+                        else if (j + l < 0 || j + l == width)
+                        {
+                            continue;
+                        }
+                        gblue =+ gxblue[k][l] * x;
+                        ggreen =+ gxblue[k][l] * x;
+                        gred =+ gxblue[k][l] * x;
                     }
-                    else if (j + l < 0 || j + l == width)
+                    for (int y = -2; y < 3; y++)
                     {
-                        continue;
+
+                        if (i + k < 0 || i + k == height)
+                        {
+                            continue;
+                        }
+                        else if (j + l < 0 || j + l == width)
+                        {
+                            continue;
+                        }
+                        gblue =+ gxblue[k][l] * y;
+                        ggreen =+ gxblue[k][l] * y;
+                        gred =+ gxblue[k][l] * y;
+                        y++;
                     }
-                    gblue =+ gxblue[k][l] * x;
+                    for (int z = -1; z < 2; z++)
+                    {
+
+                        if (i + k < 0 || i + k == height)
+                        {
+                            continue;
+                        }
+                        else if (j + l < 0 || j + l == width)
+                        {
+                            continue;
+                        }
+                        gblue =+ gxblue[k][l] * z;
+                        ggreen =+ gxblue[k][l] * z;
+                        gred =+ gxblue[k][l] * z;
                     }
                 }
             }
