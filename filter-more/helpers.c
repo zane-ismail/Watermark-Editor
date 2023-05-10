@@ -127,8 +127,8 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            double gxblue = 0;
-            double gxgreen = 0;
+            double gxblue;
+            double gxgreen;
             double gxred = 0;
             double gyblue = 0;
             double gygreen = 0;
@@ -152,9 +152,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                         {
                             continue;
                         }
-                        gxblue =+ temp[i + k][j + l].rgbtBlue * x;
-                        gxgreen =+ temp[i + k][j + l].rgbtGreen * x;
-                        gxred =+ temp[i + k][j + l].rgbtRed * x;
+                        gxblue += temp[i + k][j + l].rgbtBlue * x;
+                        gxgreen += temp[i + k][j + l].rgbtGreen * x;
+                        gxred += temp[i + k][j + l].rgbtRed * x;
                     }
                     for (int y = -2; y < 3; y++)
                     {
@@ -167,9 +167,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                         {
                             continue;
                         }
-                        gxblue =+ temp[i + k][j + l].rgbtBlue * y;
-                        gxgreen =+ temp[i + k][j + l].rgbtGreen * y;
-                        gxred =+ temp[i + k][j + l].rgbtRed * y;
+                        gxblue += temp[i + k][j + l].rgbtBlue * y;
+                        gxgreen += temp[i + k][j + l].rgbtGreen * y;
+                        gxred += temp[i + k][j + l].rgbtRed * y;
                         y++;
                     }
                     for (int z = -1; z < 2; z++)
@@ -183,9 +183,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                         {
                             continue;
                         }
-                        gxblue =+ temp[i + k][j + l].rgbtBlue * z;
-                        gxgreen =+ temp[i + k][j + l].rgbtGreen * z;
-                        gxred =+  temp[i + k][j + l].rgbtRed * z;
+                        gxblue += temp[i + k][j + l].rgbtBlue * z;
+                        gxgreen += temp[i + k][j + l].rgbtGreen * z;
+                        gxred +=  temp[i + k][j + l].rgbtRed * z;
                     }
                 }
             }
