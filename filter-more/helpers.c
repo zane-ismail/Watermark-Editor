@@ -116,6 +116,14 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
+            temp[i][j] = image[i][j];
+        }
+    }
+
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
             double gxblue = 0;
             double gxgreen = 0;
             double gxred = 0;
@@ -141,9 +149,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                         {
                             continue;
                         }
-                        gblue =+ gxblue[k][l] * x;
-                        ggreen =+ gxblue[k][l] * x;
-                        gred =+ gxblue[k][l] * x;
+                        gblue =+ temp[k][l] * x;
+                        ggreen =+ temp[k][l] * x;
+                        gred =+ temp[k][l] * x;
                     }
                     for (int y = -2; y < 3; y++)
                     {
@@ -156,9 +164,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                         {
                             continue;
                         }
-                        gblue =+ gxblue[k][l] * y;
-                        ggreen =+ gxblue[k][l] * y;
-                        gred =+ gxblue[k][l] * y;
+                        gblue =+ temp[k][l] * y;
+                        ggreen =+ temp[k][l] * y;
+                        gred =+ temp[k][l] * y;
                         y++;
                     }
                     for (int z = -1; z < 2; z++)
@@ -172,9 +180,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                         {
                             continue;
                         }
-                        gblue =+ gxblue[k][l] * z;
-                        ggreen =+ gxblue[k][l] * z;
-                        gred =+ gxblue[k][l] * z;
+                        gblue =+ temp[k][l] * z;
+                        ggreen =+ temp[k][l] * z;
+                        gred =+ temp[k][l] * z;
                     }
                 }
             }
