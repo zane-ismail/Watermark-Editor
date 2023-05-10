@@ -112,20 +112,27 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 // Detect edges
 void edges(int height, int width, RGBTRIPLE image[height][width])
 {
-    // Store values in temporary variable
-    double tempblue[height][width];
-    double tempgreen[height][width];
-    double tempred[height][width];
-    double gxblue;
-    double gxgreen;
-    double gxred;
-    double gyblue;
-    double gygreen;
-    double gyred;
-    double gblue;
-    double ggreen;
-    double gred;
-    int b;
-    int g;
-    int r;
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            double gxblue = 0;
+            double gxgreen = 0;
+            double gxred = 0;
+            double gyblue = 0;
+            double gygreen = 0;
+            double gyred = 0;
+            double gblue = 0;
+            double ggreen = 0;
+            double gred = 0;
+
+            for(int k = -1; k < 2; k++)
+            {
+                for (int l = -1; l < 2; l++)
+                {
+
+                }
+            }
+        }
+    }
 }
