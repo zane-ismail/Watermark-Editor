@@ -130,6 +130,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             {
                 for (int l = -1; l < 2; l++)
                 {
+                    for (int x = -1; x < 2; x++)
+                    {
+
                     if (i + k < 0 || i + k == height)
                     {
                         continue;
@@ -138,9 +141,8 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     {
                         continue;
                     }
-                    gblue = (gxblue[k][l] * - 1) + (gxblue[k][l] * 0) + (gxblue[k][l] * 1) +
-                    (gxblue[k][l] * - 2) + (gxblue[k][l] * 0) + (gxblue[k][l] * 2) +
-                    (gxblue[k][l] * - 1) + (gxblue[k][l] * 0) + (gxblue[k][l] * 1) +
+                    gblue =+ gxblue[k][l] * x;
+                    }
                 }
             }
         }
