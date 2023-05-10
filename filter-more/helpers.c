@@ -138,7 +138,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     {
                         continue;
                     }
-                    gxblue
+                    (gxblue[k][l] * -1) + (gxblue[k][l] * 0) + (gxblue[k][l] * 1)
                 }
             }
         }
