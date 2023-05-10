@@ -152,9 +152,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                         {
                             continue;
                         }
-                        gblue =+ [i + k][j + l].rgbtBlue * x;
-                        ggreen =+  [i + k][j + l].rgbtGreen * x;
-                        gred =+ [i + k][j + l].rgbtRed * x;
+                        gxblue =+ [i + k][j + l].rgbtBlue * x;
+                        gxgreen =+  [i + k][j + l].rgbtGreen * x;
+                        gxred =+ [i + k][j + l].rgbtRed * x;
                     }
                     for (int y = -2; y < 3; y++)
                     {
@@ -167,9 +167,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                         {
                             continue;
                         }
-                        gblue =+ [i + k][j + l].rgbtBlue * y;
-                        ggreen =+  [i + k][j + l].rgbtGreen * y;
-                        gred =+ [i + k][j + l].rgbtRed * y;
+                        gxblue =+ [i + k][j + l].rgbtBlue * y;
+                        gxgreen =+  [i + k][j + l].rgbtGreen * y;
+                        gxred =+ [i + k][j + l].rgbtRed * y;
                         y++;
                     }
                     for (int z = -1; z < 2; z++)
@@ -183,9 +183,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                         {
                             continue;
                         }
-                        gblue =+ [i + k][j + l].rgbtBlue * z;
-                        ggreen =+  [i + k][j + l].rgbtGreen * z;
-                        gred =+  [i + k][j + l].rgbtRed * z;
+                        gxblue =+ [i + k][j + l].rgbtBlue * z;
+                        gxgreen =+  [i + k][j + l].rgbtGreen * z;
+                        gxred =+  [i + k][j + l].rgbtRed * z;
                     }
                 }
             }
