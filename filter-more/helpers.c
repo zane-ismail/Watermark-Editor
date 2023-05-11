@@ -427,17 +427,17 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            if (gb[i][j] > 255 || gb[i][j] < 0)
+            if (gb[i][j] > 255)
             {
                 image[i][j].rgbtBlue = 255;
                 printf("%i\n", gb[i][j]);
             }
-            if (gg[i][j] > 255 || gg[i][j] < 0)
+            if (gg[i][j] > 255)
             {
                 image[i][j].rgbtGreen = 255;
                 printf("%i\n", gg[i][j]);
             }
-            if (gr[i][j] > 255 || gr[i][j] < 0)
+            if (gr[i][j] > 255)
             {
                 image[i][j].rgbtRed = 255;
                 printf("%i\n", gr[i][j]);
