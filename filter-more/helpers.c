@@ -206,7 +206,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-        // top left corner
+            // top left corner
             if (i == 0 && j == 0)
             {
                 gxblue[i][j] = (0  * - 1 + 0 * 0 + 0 * 1) +
