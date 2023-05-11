@@ -403,7 +403,8 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 gxred[i][j] = (image[i - 1][j - 1].rgbtRed * - 1 + image[i - 1][j].rgbtRed * 0 + image[i - 1][j + 1].rgbtRed * 1) +
                                 (image[i][j - 1].rgbtRed * - 2 + image[i][j].rgbtRed * 0 + image[i][j + 1].rgbtRed * 2) +
                                 (image[i + 1][j - 1].rgbtRed * - 1 + image[i + 1][j].rgbtRed * 0 + image[i + 1][j + 1].rgbtRed * 1);
-                gyblue[i][j] = (image[i - 1][j - 1].rgbtBlue  * - 1 + image[i][j - 1].rgbtBlue * 0 + image[i + 1][j - 1].rgbtBlue * 1) +
+
+                gyblue[i][j] = (image[i - 1][j - 1].rgbtBlue * - 1 + image[i][j - 1].rgbtBlue * 0 + image[i + 1][j - 1].rgbtBlue * 1) +
                                 (image[i - 1][j].rgbtBlue * - 2 + image[i][j].rgbtBlue * 0 + image[i + 1][j].rgbtBlue * 2) +
                                 (image[i - 1][j + 1].rgbtBlue * - 1 + image[i][j + 1].rgbtBlue * 0 + image[i + 1][j + 1].rgbtBlue * 1);
                 gygreen[i][j] = (image[i - 1][j - 1].rgbtGreen  * - 1 + image[i][j - 1].rgbtGreen * 0 + image[i + 1][j - 1].rgbtGreen * 1) +
