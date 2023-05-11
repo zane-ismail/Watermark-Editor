@@ -209,7 +209,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             // top left corner
             if (i == 0 && j == 0)
             {
-                gxblue[i][j] = (0) +
+                gxblue[i][j] = (0  * - 1 + 0 * 0 + 0 * 1) +
                                 (0 * - 2 + image[i][j].rgbtBlue * 0 + image[i + 1][j].rgbtBlue * 2) +
                                 (0 * - 1 + image[i][j + 1].rgbtBlue * 0 + image[i + 1][j + 1].rgbtBlue * 1);
                 gxgreen[i][j] = (0  * - 1 + 0 * 0 + 0 * 1) +
