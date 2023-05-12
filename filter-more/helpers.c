@@ -193,19 +193,14 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     float gblue[height][width];
     float ggreen[height][width];
     float gred[height][width];
+    float temp
 
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
         {
             // create temporary array to store new values
-            temp[i][j] = image[i][width - x];
-            x++;
-            // reset x value at the end (leftside) of the row
-            if (x == width + 1)
-            {
-                x = 1;
-            }
+            temp[i][j] = image[i][j];
         }
     }
 
