@@ -341,8 +341,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             ggreen = round(sqrt((gxgreen * gxgreen) + (gygreen * gygreen)));
             gred = round(sqrt((gxred * gxred) + (gyred * gyred)));
 
-    // apply temp values to actual pixels
-
+            // apply temp values to actual pixels
             if (gblue >= 255)
             {
                 image[i][j].rgbtBlue = 255;
