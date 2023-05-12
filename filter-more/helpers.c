@@ -220,7 +220,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 gyred = (temp[i + 1][j].rgbtRed * 2) + (temp[i + 1][j + 1].rgbtRed * 1);
             }
             // top right corner
-            if (i == 0 && j == width - 1)
+            else if (i == 0 && j == width - 1)
             {
                 gxblue = (temp[i][j - 1].rgbtBlue * - 2) + (temp[i + 1][j - 1].rgbtBlue * - 1);
                 gxgreen = (temp[i][j - 1].rgbtGreen * - 2) + (temp[i + 1][j - 1].rgbtGreen * - 1);
@@ -231,7 +231,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 gyred = (temp[i + 1][j - 1].rgbtRed * 1) + (temp[i + 1][j].rgbtRed * 2);
             }
             // bottom left corner
-            if (i == height - 1 && j == 0)
+            else if (i == height - 1 && j == 0)
             {
                 gxblue = (temp[i - 1][j + 1].rgbtBlue * 1) + (temp[i][j + 1].rgbtBlue * 2);
                 gxgreen = (temp[i - 1][j + 1].rgbtGreen * 1) + (temp[i][j + 1].rgbtGreen * 2);
@@ -242,7 +242,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 gyred = (temp[i - 1][j].rgbtRed * - 2) + (temp[i - 1][j + 1].rgbtRed * - 1);
             }
             // bottom right corner
-            if (i == height - 1 && j == width - 1)
+            else if (i == height - 1 && j == width - 1)
             {
                 gxblue = (temp[i - 1][j - 1].rgbtBlue * - 1) + (temp[i][j - 1].rgbtBlue * - 2);
                 gxgreen = (temp[i - 1][j - 1].rgbtGreen * - 1) + (temp[i][j - 1].rgbtGreen * - 2);
@@ -253,7 +253,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 gyred = (temp[i - 1][j - 1].rgbtRed  * - 1) + (temp[i - 1][j].rgbtRed * - 2);
             }
             // top row
-            if (i == 0)
+            else if (i == 0)
             {
                 gxblue = (temp[i][j - 1].rgbtBlue * - 2 + temp[i][j + 1].rgbtBlue * 2) +
                                 (temp[i + 1][j - 1].rgbtBlue * - 1 + temp[i + 1][j + 1].rgbtBlue * 1);
@@ -267,7 +267,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 gyred = (temp[i + 1][j - 1].rgbtRed * 1) + (temp[i + 1][j].rgbtRed * 2) + (temp[i + 1][j + 1].rgbtRed * 1);
             }
             // left column
-            if (j == 0)
+            else if (j == 0)
             {
                 gxblue = (temp[i - 1][j + 1].rgbtBlue * 1) + (temp[i][j + 1].rgbtBlue * 2) + (temp[i + 1][j + 1].rgbtBlue * 1);
                 gxgreen = (temp[i - 1][j + 1].rgbtGreen * 1) + (temp[i][j + 1].rgbtGreen * 2) + (temp[i + 1][j + 1].rgbtGreen * 1);
@@ -281,7 +281,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                                 (temp[i - 1][j + 1].rgbtRed * - 1 + temp[i + 1][j + 1].rgbtRed * 1);
             }
             // bottom row
-            if (i == height - 1)
+            else if (i == height - 1)
             {
                 gxblue = (temp[i - 1][j - 1].rgbtBlue * - 1 + temp[i - 1][j + 1].rgbtBlue * 1) +
                                 (temp[i][j - 1].rgbtBlue * - 2 + temp[i][j + 1].rgbtBlue * 2);
@@ -295,7 +295,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 gyred = (temp[i - 1][j - 1].rgbtRed  * - 1) + (temp[i - 1][j].rgbtRed * - 2) + (temp[i - 1][j + 1].rgbtRed * - 1);
             }
             // right column
-            if (j == width - 1)
+            else if (j == width - 1)
             {
                 gxblue = (temp[i - 1][j - 1].rgbtBlue * - 1) +
                                 (temp[i][j - 1].rgbtBlue * - 2) +
