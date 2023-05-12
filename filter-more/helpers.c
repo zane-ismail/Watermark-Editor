@@ -344,9 +344,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     }
 
     // apply temp values to actual pixels
-    for (int i = 0; i < height; i++)
+    for (int k = 0; i < height; i++)
     {
-        for (int j = 0; j < width; j++)
+        for (int l = 0; j < width; j++)
         {
             if (gblue[i][j] >= 255)
             {
