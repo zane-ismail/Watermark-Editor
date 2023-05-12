@@ -210,7 +210,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 gyred[i][j] = (image[i + 1][j].rgbtRed * 2) + (image[i + 1][j + 1].rgbtRed * 1);
             }
             // top right corner
-            else if (j == width - 1 && i == 0)
+            else if (i == 0 && j == width - 1)
             {
                 gxblue[i][j] = (image[i][j - 1].rgbtBlue * - 2) + (image[i + 1][j - 1].rgbtBlue * - 1);
                 gxgreen[i][j] = (image[i][j - 1].rgbtGreen * - 2) + (image[i + 1][j - 1].rgbtGreen * - 1);
