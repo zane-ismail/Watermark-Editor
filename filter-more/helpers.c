@@ -190,9 +190,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     float gyblue[height][width];
     float gygreen[height][width];
     float gyred[height][width];
-    float gblue[height][width];
-    float ggreen[height][width];
-    float gred[height][width];
+    float gblue;
+    float ggreen;
+    float gred;
     RGBTRIPLE temp[height][width];
 
     for (int i = 0; i < height; i++)
