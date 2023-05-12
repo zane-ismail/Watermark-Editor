@@ -193,7 +193,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     float gblue[height][width];
     float ggreen[height][width];
     float gred[height][width];
-    float temp
+    RGBTRIPLE temp[height][width]
 
     for (int i = 0; i < height; i++)
     {
