@@ -17,7 +17,7 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
                 double average = (image[i][j].rgbtBlue + image[i][j].rgbtGreen + image[i][j].rgbtRed) / 3.0;
                 int avg = round(average);
 
-                image[i][j].rgbtBlue = avg;
+                image[i][j]= avg;
                 image[i][j].rgbtGreen = avg;
                 image[i][j].rgbtRed = avg;
             }
@@ -219,7 +219,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 gygreen = (temp[i + 1][j].rgbtGreen * 2) + (temp[i + 1][j + 1].rgbtGreen * 1);
                 gyred = (temp[i + 1][j].rgbtRed * 2) + (temp[i + 1][j + 1].rgbtRed * 1);
             }
-            
+
             // top right corner
             else if (i == 0 && j == width - 1)
             {
