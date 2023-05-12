@@ -417,6 +417,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             gblue[i][j] = sqrt(gxblue[i][j] * gxblue[i][j]) + (gyblue[i][j] * gyblue[i][j]);
             ggreen[i][j] = sqrt(gxgreen[i][j] * gxgreen[i][j]) + (gygreen[i][j] * gygreen[i][j]);
             gred[i][j] = sqrt(gxred[i][j] * gxred[i][j]) + (gyred[i][j] * gyred[i][j]);
+            gb[i][j] = round(gblue[i][j]);
+            gg[i][j] = round(ggreen[i][j]);
+            gr[i][j] = round(gred[i][j]);
         }
     }
 
@@ -425,30 +428,30 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            if (gblue[i][j] > 255)
+            if (gb[i][j] > 255)
             {
                 image[i][j].rgbtBlue = 255;
             }
             else
             {
-                image[i][j].rgbtBlue = round(gblue[i][j]);
+                image[i][j].rgbtBlue = gb[i][j];
             }
-            if (ggreen[i][j] > 255)
+            if (gg[i][j] > 255)
             {
                 image[i][j].rgbtGreen = 255;
             }
             else
             {
-                image[i][j].rgbtGreen = round(ggreen[i][j]);
+                image[i][j].rgbtGreen = gg[i][j];
             }
-            if (gred[i][j] > 255)
+            if (gr[i][j] > 255)
             {
                 image[i][j].rgbtRed = 255;
             }
 
             else
             {
-                image[i][j].rgbtRed = round(gred[i][j]);
+                image[i][j].rgbtRed = gr[i][j];
             }
         }
     }
