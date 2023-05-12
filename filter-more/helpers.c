@@ -184,23 +184,15 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 void edges(int height, int width, RGBTRIPLE image[height][width])
 {
     // Store values in temporary variable
-    double tempblue[height][width];
-    double tempgreen[height][width];
-    double tempred[height][width];
-    double gxblue[height][width];
-    double gxgreen[height][width];
-    double gxred[height][width];
-    double gyblue[height][width];
-    double gygreen[height][width];
-    double gyred[height][width];
-    double gblue[height][width];
-    double ggreen[height][width];
-    double gred[height][width];
-    int gb[height][width];
-    int gg[height][width];
-    int gr[height][width];
-
-
+    float gxblue[height][width];
+    float gxgreen[height][width];
+    float gxred[height][width];
+    float gyblue[height][width];
+    float gygreen[height][width];
+    float gyred[height][width];
+    float gblue[height][width];
+    float ggreen[height][width];
+    float gred[height][width];
 
     for (int i = 0; i < height; i++)
     {
@@ -415,9 +407,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                                 (image[i - 1][j + 1].rgbtRed * - 1 + image[i][j + 1].rgbtRed * 0 + image[i + 1][j + 1].rgbtRed * 1);
             }
 
-            gblue[i][j] = sqrt((gxblue[i][j] * gxblue[i][j]) + (gyblue[i][j] * gyblue[i][j]));
-            ggreen[i][j] = sqrt((gxgreen[i][j] * gxgreen[i][j]) + (gygreen[i][j] * gygreen[i][j]));
-            gred[i][j] = sqrt((gxred[i][j] * gxred[i][j]) + (gyred[i][j] * gyred[i][j]));
+            gblue[i][j] = round(sqrt((gxblue[i][j] * gxblue[i][j]) + (gyblue[i][j] * gyblue[i][j])));
+            ggreen[i][j] = round(sqrt((gxgreen[i][j] * gxgreen[i][j]) + (gygreen[i][j] * gygreen[i][j])));
+            gred[i][j] = round(sqrt((gxred[i][j] * gxred[i][j]) + (gyred[i][j] * gyred[i][j])));
             gb[i][j] = round(gblue[i][j]);
             gg[i][j] = round(ggreen[i][j]);
             gr[i][j] = round(gred[i][j]);
