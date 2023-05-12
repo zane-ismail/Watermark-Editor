@@ -334,7 +334,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                                 (temp[i - 1][j + 1].rgbtGreen * - 1 + temp[i + 1][j + 1].rgbtGreen * 1);
                 gyred = (temp[i - 1][j - 1].rgbtRed  * - 1 + temp[i + 1][j - 1].rgbtRed * 1) +
                                 (temp[i - 1][j].rgbtRed * - 2 + temp[i + 1][j].rgbtRed * 2) +
-                                (temp[i - 1][j + 1].rgbtRed * - 1 + image[i + 1][j + 1].rgbtRed * 1);
+                                (temp[i - 1][j + 1].rgbtRed * - 1 + temp[i + 1][j + 1].rgbtRed * 1);
             }
 
             gblue = round(sqrt((gxblue * gxblue) + (gyblue * gyblue)));
