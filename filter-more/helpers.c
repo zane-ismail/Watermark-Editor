@@ -184,7 +184,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 void edges(int height, int width, RGBTRIPLE image[height][width])
 {
     // Store values in temporary variable
-    float gxblue[height][width];
+    float gxblue[height][width] = 0;
     float gxgreen[height][width];
     float gxred[height][width];
     float gyblue[height][width];
