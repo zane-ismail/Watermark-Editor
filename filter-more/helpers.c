@@ -337,9 +337,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                                 (temp[i - 1][j + 1].rgbtRed * - 1 + image[i + 1][j + 1].rgbtRed * 1);
             }
 
-            gblue = round(sqrt((gxblue[i][j] * gxblue[i][j]) + (gyblue[i][j] * gyblue[i][j])));
-            ggreen = round(sqrt((gxgreen[i][j] * gxgreen[i][j]) + (gygreen[i][j] * gygreen[i][j])));
-            gred = round(sqrt((gxred[i][j] * gxred[i][j]) + (gyred[i][j] * gyred[i][j])));
+            gblue = round(sqrt((gxblue * gxblue) + (gyblue * gyblue)));
+            ggreen = round(sqrt((gxgreen] * gxgreen) + (gygreen * gygreen)));
+            gred = round(sqrt((gxred * gxred) + (gyred * gyred)));
 
 
     // apply temp values to actual pixels
@@ -350,7 +350,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             }
             else
             {
-                image[i][j].rgbtBlue = round(gblue[i][j]);
+                image[i][j].rgbtBlue = round(gblue);
             }
             if (ggreen >= 255)
             {
@@ -358,7 +358,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             }
             else
             {
-                image[i][j].rgbtGreen = round(ggreen[i][j]);
+                image[i][j].rgbtGreen = round(ggreen);
             }
             if (gred >= 255)
             {
@@ -367,7 +367,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
 
             else
             {
-                image[i][j].rgbtRed = round(gred[i][j]);
+                image[i][j].rgbtRed = round(gred);
             }
         }
     }
