@@ -348,7 +348,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            if (gblue[i][j] > 255)
+            if (gblue[i][j] >= 255)
             {
                 image[i][j].rgbtBlue = 255;
             }
@@ -356,7 +356,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             {
                 image[i][j].rgbtBlue = round(gblue[i][j]);
             }
-            if (ggreen[i][j] > 255)
+            if (ggreen[i][j] >= 255)
             {
                 image[i][j].rgbtGreen = 255;
             }
@@ -364,7 +364,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             {
                 image[i][j].rgbtGreen = round(ggreen[i][j]);
             }
-            if (gred[i][j] > 255)
+            if (gred[i][j] >= 255)
             {
                 image[i][j].rgbtRed = 255;
             }
