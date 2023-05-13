@@ -93,7 +93,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     {
                         continue;
                     }
-                    blue_avg  += image[i][j].rgbtBlue;
+                    blue_avg += image[i][j].rgbtBlue;
                     green_avg += image[i][j].rgbtGreen;
                     red_avg += image[i][j].rgbtRed;
                     pixel_count++;
