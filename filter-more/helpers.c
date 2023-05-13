@@ -17,6 +17,7 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
                 double average = (image[i][j].rgbtBlue + image[i][j].rgbtGreen + image[i][j].rgbtRed) / 3.0;
                 int avg = round(average);
 
+                // apply averages to original image pixels
                 image[i][j].rgbtBlue = avg;
                 image[i][j].rgbtGreen = avg;
                 image[i][j].rgbtRed = avg;
@@ -28,7 +29,7 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
 // Reflect image horizontally
 void reflect(int height, int width, RGBTRIPLE image[height][width])
 {
-    // Store values in temporary variable
+    // create temporary array to store new values
     RGBTRIPLE temp[height][width];
     int x = 1;
 
@@ -37,7 +38,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            // create temporary array to store new values
+            // store original pixel values in temp array
             temp[i][j] = image[i][width - x];
             x++;
             // reset x value at the end (leftside) of the row
@@ -48,7 +49,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
         }
     }
 
-    // apply temp values to actual pixels
+    // apply values to original image pixels
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
@@ -104,7 +105,6 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             blue_avg = blue_avg / pixel_count;
             green_avg = green_avg / pixel_count;
             red_avg = red_avg / pixel_count;
-
 
             // apply average values to temp pixels
             temp[i][j].rgbtBlue = round(blue_avg);
@@ -258,6 +258,8 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 gyred = (temp[i - 1][j - 1].rgbtRed  * - 1 + temp[i + 1][j - 1].rgbtRed * 1) +
                         (temp[i - 1][j].rgbtRed * - 2 + temp[i + 1][j].rgbtRed * 2);
             }
+
+            // centre pixels
             else
             {
                 gxblue = (temp[i - 1][j - 1].rgbtBlue * - 1 + temp[i - 1][j + 1].rgbtBlue * 1) + (temp[i][j - 1].rgbtBlue * - 2 +
@@ -309,3 +311,4 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
         }
     }
 }
+
