@@ -92,17 +92,17 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     {
                         continue;
                     }
-                    blue_avg += temp[i][j].rgbtBlue;
-                    green_avg += temp[i][j].rgbtGreen;
-                    red_avg += temp[i][j].rgbtRed;
+                    temp[i][j].rgbtBlue += temp[i][j].rgbtBlue;
+                    temp[i][j].rgbtGreen += temp[i][j].rgbtGreen;
+                    temp[i][j].rgbtRed += temp[i][j].rgbtRed;
                     pixel_count++;
 
                 }
             }
             // create averages
-            blue_avg = blue_avg / pixel_count;
-            green_avg = green_avg / pixel_count;
-            red_avg = red_avg / pixel_count;
+            blue_avg = temp[i][j].rgbtBlue / pixel_count;
+            green_avg = temp[i][j].rgbtGreen / pixel_count;
+            red_avg = temp[i][j].rgbtRed / pixel_count;
 
 
             // apply average values to original pixels
