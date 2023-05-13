@@ -88,7 +88,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     {
                         continue;
                     }
-                    if (i + y >= height)
+                    if (i + y == height)
                     {
                         continue;
                     }
@@ -96,11 +96,11 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     {
                         continue;
                     }
-                    if (j + x >= width)
+                    if (j + x == width)
                     {
                         continue;
                     }
-                    blue_avg += image[i + ][j + x].rgbtBlue;
+                    blue_avg += image[i + y][j + x].rgbtBlue;
                     green_avg += image[i + y][j + x].rgbtGreen;
                     red_avg += image[i + y][j + x].rgbtRed;
                     pixel_count++;
