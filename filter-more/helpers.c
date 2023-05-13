@@ -86,8 +86,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 for (int y = -1; y < 2; y++)
                 {
                     // pass over edge cases
-                    if (i + y < 0 || i + y == width || i + y == height || i + x < 0 || i + x == height || i + x == width ||
-                        j + y < 0 || j + y == width || j + y == height || j + x < 0 || j + x == height || j + x == width)
+                    if (i + y < 0 || i + y == height || j + x < 0 || j + x == width)
                     {
                         continue;
                     }
