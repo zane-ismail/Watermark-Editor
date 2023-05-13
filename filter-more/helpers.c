@@ -63,7 +63,8 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 {
     // Store values in temporary variable
     RGBTRIPLE temp[height][width];
-
+    float pixel count;
+    
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
@@ -87,8 +88,13 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     temp[i][j].rgbtBlue += image[i][j].rgbtBlue;
                     temp[i][j].rgbtGreen += image[i][j].rgbtGreen;
                     temp[i][j].rgbtRed += image[i][j].rgbtRed;
+                    pixel_count++;
                 }
             }
+            create averages;
+
+
+            // apply temp values to original pixels
             image[i][j].rgbtBlue = temp[i][j].rgbtBlue;
             image[i][j].rgbtGreen = temp[i][j].rgbtGreen;
             image[i][j].rgbtRed = temp[i][j].rgbtRed;
@@ -368,7 +374,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             ggreen = round(sqrt((gxgreen * gxgreen) + (gygreen * gygreen)));
             gred = round(sqrt((gxred * gxred) + (gyred * gyred)));
 
-            // apply temp values to actual pixels
+            // apply temp values to original pixels
             // set limit at 255
             if (gblue >= 255)
             {
