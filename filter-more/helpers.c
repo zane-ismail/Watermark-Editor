@@ -94,6 +94,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     temp[i][j].rgbtGreen += image[i][j].rgbtGreen;
                     temp[i][j].rgbtRed += image[i][j].rgbtRed;
                     pixel_count++;
+                    printf("%f/n", pixel_count);
                 }
             }
             // create averages
