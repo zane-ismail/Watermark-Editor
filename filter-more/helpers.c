@@ -61,12 +61,12 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
-    // Store values in temporary variable
     RGBTRIPLE temp[height][width];
     float blue_avg = 0.0;
     float green_avg = 0.0;
     float red_avg = 0.0;
 
+    // store original pixel values in temp array
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
@@ -75,19 +75,23 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         }
     }
 
+    // iterate through pixels
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
         {
-            int pixel_count = 0.0;
+            float pixel_count = 0.0;
             for (int x = -1; x < 2; x++)
             {
                 for (int y = -1; y < 2; y++)
                 {
+                    // pass over edge cases
                     if (i + y < 0 || i + y == width || j + x < 0 || j + x == height)
                     {
                         continue;
                     }
+
+                    // add each pixel together in kernel
                     blue_avg += image[i + y][j + x].rgbtBlue;
                     green_avg += image[i + y][j + x].rgbtGreen;
                     red_avg += image[i + y][j + x].rgbtRed;
@@ -101,18 +105,19 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             red_avg = red_avg / pixel_count;
 
 
-            // apply average values to original pixels
+            // apply average values to temp pixels
             temp[i][j].rgbtBlue = round(blue_avg);
             temp[i][j].rgbtGreen = round(green_avg);
             temp[i][j].rgbtRed = round(red_avg);
         }
     }
 
+    // apply values to original image pixels
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
         {
-            image[i][j].rgbtBlue = temp[i][j].rgbtBlue;
+            image[i][j] = temp[i][j];
         }
     }
 }
