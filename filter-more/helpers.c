@@ -102,7 +102,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             float red_avg = temp[i][j].rgbtRed / pixel_count;
 
 
-            // apply temp values to original pixels
+            // apply average values to original pixels
             image[i][j].rgbtBlue = round(blue_avg);
             image[i][j].rgbtGreen = round(green_avg);
             image[i][j].rgbtRed = round(red_avg);
