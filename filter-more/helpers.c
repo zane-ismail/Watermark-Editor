@@ -63,10 +63,10 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 {
     // Store values in temporary variable
     RGBTRIPLE temp[height][width];
-    float pixel count;
-    float blue-avg;
-    float green_avg;
-    float red_avg;
+    float pixel_count = 0.0;
+    float blue_avg = 0.0;
+    float green_avg = 0.0;
+    float red_avg = 0.0;
 
     for (int i = 0; i < height; i++)
     {
@@ -96,6 +96,8 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             }
             // create averages
             blue_avg = temp[i][j].rgbtBlue / pixel_count;
+            green_avg = temp[i][j].rgbtGreen / pixel_count;
+            red_avg = temp[i][j].rgbtRed / pixel_count;
 
 
             // apply temp values to original pixels
