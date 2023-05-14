@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 
     while argc > 2
     {
-        printf("incorrect usage")
+        printf("incorrect usage");
     }
     input = (argc[1])
     // open memory card
