@@ -29,6 +29,7 @@ int main(int argc, char *argv[])
         // if start of new JPEG
     if (buffer[0] == "0xff" && buffer[1] == "0xd8" && buffer[2] == "0xff")
             // if first JPEG
+            FILE *output
             fwrite(buffer, 512, 1, input)
 
             // else
