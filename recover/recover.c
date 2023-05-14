@@ -10,4 +10,9 @@ int main(int argc, char *argv[])
     // The files you generate should each be named ###.jpg, where ### is a three-digit decimal number, starting with 000 for the first image and counting up.
     // Your program, if it uses malloc, must not leak any memory.
 
+    // open memory card
+
+    repeat until end  of card
+
+    if start of new jpef
 }
