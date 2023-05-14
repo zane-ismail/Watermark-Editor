@@ -10,14 +10,14 @@ int main(int argc, char *argv[])
     // The files you generate should each be named ###.jpg, where ### is a three-digit decimal number, starting with 000 for the first image and counting up.
     // Your program, if it uses malloc, must not leak any memory.
 
-    while argc > 2
+    while (argc > 2)
     {
-        printf("Correct usage");
+        printf("Usage: ./recover [input file]");
         return 1;
     }
-    input = (argc[1])
+    char *input = argc[1];
     // open memory card
-    fread(data, size, number, input)
+    // fread(data, size, number, input)
     // repeat until end  of card:
 
         // read 512 bytes into a buffer
