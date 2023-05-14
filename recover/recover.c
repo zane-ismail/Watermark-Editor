@@ -16,9 +16,12 @@ int main(int argc, char *argv[])
         return 1;
     }
     char *input = argv[1];
+
     // open memory card
-    // fread(data, size, number, input)
+    char *buffer;
+    fread(buffer, 512, number, input)
     // repeat until end  of card:
+
 
         // read 512 bytes into a buffer
 
