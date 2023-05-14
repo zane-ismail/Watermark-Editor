@@ -12,7 +12,15 @@ int main(int argc, char *argv[])
 
     // open memory card
 
-    repeat until end  of card
+    // repeat until end  of card
+
+        // read 512 bytes into a buffer
+        
+        // if start of new JPEG
+
+            // if first JPEG
+
+            // else
 
     if start of new jpef
 }
