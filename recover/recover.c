@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
     // open memory card
     char *buffer;
     FILE *f = fopen(input, "r");
-    fread(buffer, 512, 1, input)
+    fread(buffer, 512, 1, f)
     // repeat until end  of card:
 
 
