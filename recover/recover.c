@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 
     // open memory card
     char *buffer;
-    fread(buffer, 512, number, input)
+    fread(buffer, 512, 1, input)
     // repeat until end  of card:
 
 
