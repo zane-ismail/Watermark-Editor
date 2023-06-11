@@ -3,39 +3,47 @@
 
 int main(int argc, char *argv[])
 {
+    int count = 0;
+    char *input = argv[1];
+    char *filename = malloc(8 * sizeof(char));
+    // read 512 bytes into a buffer
+    unsigned char buffer[512];
 
-    // If the forensic image cannot be opened for reading, your program should inform the user as much, and main should return 1.
-    // The files you generate should each be named ###.jpg, where ### is a three-digit decimal number, starting with 000 for the first image and counting up.
-    // Your program, if it uses malloc, must not leak any memory.
-
-    // Your program should accept exactly one command-line argument, the name of a forensic image from which to recover JPEGs.
-    // If your program is not executed with exactly one command-line argument, it should remind the user of correct usage, and main should return 1.
+    // Accept exactly one command-line argument. If not, remind user of correct usage, and return 1.
     if (argc != 2)
     {
         printf("Usage: ./recover [input file]");
         return 1;
     }
-    char *input = argv[1];
 
     // open memory card
-    char *buffer;
     FILE *f = fopen(input, "r");
-    fread(buffer, 512, 1, f)
-    // repeat until end  of card:
+    if (f == NULL)
+    {
+        printf("Could not open file");
+        return 1;
+    }
 
 
-        // read 512 bytes into a buffer
+    // repeat until end of card:
+    while (fread(buffer, sizeof(char), 512, f) != 0)
 
         // if start of new JPEG
-    if (buffer[0] == "0xff" && buffer[1] == "0xd8" && buffer[2] == "0xff")
-            // if first JPEG
-            FILE *output
-            fwrite(buffer, 512, 1, input)
+        if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
+        // Files are each be named ###.jpg, where ### is a three-digit decimal number, starting with 000 for the first image and counting up.
+        {
+            FILE *output;
+            sprintf(filename, "%03i.jpg", count);
+            FILE *img = fopen(filename, "w");
+            fwrite(img)
+        }
 
             // else
 
-        // else
             // if already found new JPEG
+
+    // If the forensic image cannot be opened for reading, your program should inform the user as much, and main should return 1.
+    // Your program, if it uses malloc, must not leak any memory.
 
     // close any remaining files
 }
