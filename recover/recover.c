@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
             FILE *output;
             sprintf(filename, "%03i.jpg", count);
             FILE *img = fopen(filename, "w");
-            fwrite(img)
+            fwrite(filename, sizeof(char), count, img);
         }
 
             // else
