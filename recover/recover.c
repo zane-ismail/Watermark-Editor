@@ -25,8 +25,6 @@ int main(int argc, char *argv[])
     }
 
     unsigned char buffer[512];
-    sprintf(filename, "%03i.jpg", count);
-    FILE *img = fopen(filename, "w");
     // repeat until end of card
     while (fread(buffer, sizeof(char), BLOCK_SIZE, f) == BLOCK_SIZE)
         // read 512 bytes into a buffer
@@ -37,7 +35,8 @@ int main(int argc, char *argv[])
             if (count == 0)
             {
                 // Files are each be named ###.jpg, where ### is a three-digit decimal number, starting with 000 for the first image and counting up.
-                fwrite(buffer, sizeof(char), (BLOCK_SIZE), img);
+                sprintf(filename, "%03i.jpg", count);
+                FILE *img = fopen(filename, "w");
             }
             else
             {
