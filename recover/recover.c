@@ -44,7 +44,6 @@ int main(int argc, char *argv[])
         FILE *img = fopen(filename, "w");
         fwrite(filename, sizeof(char), (block * b_count), img);
         count++;
-
     }
 
         // else if (buffer[b_count] == 0xff && buffer[b_count + 1] == 0xd8 && buffer[b_count + 2] == 0xff && (buffer[b_count + 3] & 0xf0) == 0xe0)
