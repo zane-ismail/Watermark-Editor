@@ -27,6 +27,8 @@ int main(int argc, char *argv[])
     }
 
 
+    sprintf(filename, "%03i.jpg", count);
+    FILE *img = fopen(filename, "w");
     // repeat until end of card:
     while (fread(buffer, sizeof(char), BLOCK_SIZE, f) == BLOCK_SIZE)
 
@@ -38,13 +40,9 @@ int main(int argc, char *argv[])
         {
             b_count++;
             printf("%i\n", b_count);
+            fwrite(buffer, sizeof(char), (BLOCK_SIZE), img);
+            count++;
         }
-    {
-        sprintf(filename, "%03i.jpg", count);
-        FILE *img = fopen(filename, "w");
-        fwrite(buffer, sizeof(char), (BLOCK_SIZE * b_count), img);
-        count++;
-    }
 
         // else if (buffer[b_count] == 0xff && buffer[b_count + 1] == 0xd8 && buffer[b_count + 2] == 0xff && (buffer[b_count + 3] & 0xf0) == 0xe0)
 
