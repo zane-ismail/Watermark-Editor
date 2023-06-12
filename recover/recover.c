@@ -25,27 +25,23 @@ int main(int argc, char *argv[])
     }
 
     unsigned char buffer[512];
+    sprintf(filename, "%03i.jpg", count);
+    FILE *img = fopen(filename, "w");
     // repeat until end of card
     while (fread(buffer, sizeof(char), BLOCK_SIZE, f) == BLOCK_SIZE)
         // read 512 bytes into a buffer
         // if start of new JPEG
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
         {
-            b_count++;
-            printf("%i\n", b_count);
             // if first jpeg
             if (count == 0)
             {
                 // Files are each be named ###.jpg, where ### is a three-digit decimal number, starting with 000 for the first image and counting up.
-                sprintf(filename, "%03i.jpg", count);
-                FILE *img = fopen(filename, "w");
                 fwrite(buffer, sizeof(char), (BLOCK_SIZE), img);
             }
             else
             {
                 // close any remaining files
-                FILE *img = fopen(filename, "w");
-                fwrite(buffer, sizeof(char), (BLOCK_SIZE), img);
                 fclose(img);
                 // Files are each be named ###.jpg, where ### is a three-digit decimal number, starting with 000 for the first image and counting up.
                 sprintf(filename, "%03i.jpg", count);
@@ -53,7 +49,6 @@ int main(int argc, char *argv[])
         }
         else
         {
-            FILE *img = fopen(filename, "w");
             fwrite(buffer, sizeof(char), (BLOCK_SIZE), img);
         }
     count++;
