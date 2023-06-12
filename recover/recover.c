@@ -25,43 +25,37 @@ int main(int argc, char *argv[])
     }
 
     unsigned char buffer[512];
-    FILE *img = fopen(filename, "w");
     // repeat until end of card
     while (fread(buffer, sizeof(char), BLOCK_SIZE, f) == BLOCK_SIZE)
         // read 512 bytes into a buffer
         // if start of new JPEG
-            if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
+        if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
+        {
+            b_count++;
+            printf("%i\n", b_count);
+            // if first jpeg
+            if (count == 0)
             {
-                b_count++;
-                printf("%i\n", b_count);
-                fwrite(buffer, sizeof(char), (BLOCK_SIZE), img);
-                // if first jpeg
-                if (count == 0)
-                {
-                    // Files are each be named ###.jpg, where ### is a three-digit decimal number, starting with 000 for the first image and counting up.
-                    sprintf(filename, "%03i.jpg", count);
-                    FILE *img = fopen(filename, "w");
-                }
-                else
-                {
-                    fclose(img);
-                    // Files are each be named ###.jpg, where ### is a three-digit decimal number, starting with 000 for the first image and counting up.
-                    sprintf(filename, "%03i.jpg", count);
-                    FILE *img = fopen(filename, "w");
-                }
-            else
-            {
+                // Files are each be named ###.jpg, where ### is a three-digit decimal number, starting with 000 for the first image and counting up.
+                sprintf(filename, "%03i.jpg", count);
+                FILE *img = fopen(filename, "w");
                 fwrite(buffer, sizeof(char), (BLOCK_SIZE), img);
             }
-        count++;
-    }
-    // if first jpeg
-
-
-            // if already found new JPEG
+            else
+            {
+                // close any remaining files
+                fclose(img);
+                // Files are each be named ###.jpg, where ### is a three-digit decimal number, starting with 000 for the first image and counting up.
+                sprintf(filename, "%03i.jpg", count);
+            }
+        }
+        else
+        {
+            fwrite(buffer, sizeof(char), (BLOCK_SIZE), img);
+        }
+    count++;
 
     // If the forensic image cannot be opened for reading, your program should inform the user as much, and main should return 1.
     // Your program, if it uses malloc, must not leak any memory.
 
-    // close any remaining files
 }
