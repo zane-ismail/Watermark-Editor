@@ -27,8 +27,6 @@ int main(int argc, char *argv[])
 
     unsigned char buffer[512];
     // repeat until end of card
-    sprintf(filename, "%03i.jpg", count);
-    FILE *img = fopen(filename, "w");   
     while (fread(buffer, sizeof(char), BLOCK_SIZE, f) == BLOCK_SIZE)
         // read 512 bytes into a buffer
         // if start of new JPEG
