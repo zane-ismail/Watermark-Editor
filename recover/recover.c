@@ -40,13 +40,10 @@ int main(int argc, char *argv[])
             printf("%i\n", b_count);
         }
     {
-        block = block * b_count;
-
-        printf("%i\n", block);
         FILE *output;
         sprintf(filename, "%03i.jpg", count);
         FILE *img = fopen(filename, "w");
-        fwrite(filename, sizeof(char), (block), img);
+        fwrite(filename, sizeof(char), (block * b_count), img);
         count++;
     }
 
