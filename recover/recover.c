@@ -40,9 +40,8 @@ int main(int argc, char *argv[])
             printf("%i\n", b_count);
         }
     {
-        FILE *output;
-        sprintf(filename, "%03i.jpg", count);
         FILE *img = fopen(filename, "w");
+        sprintf(filename, "%03i.jpg", count);
         fwrite(filename, sizeof(char), (BLOCK_SIZE * b_count), img);
         count++;
     }
