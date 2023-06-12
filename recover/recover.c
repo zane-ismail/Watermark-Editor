@@ -8,7 +8,6 @@ int main(int argc, char *argv[])
     char *input = argv[1];
     char *filename = malloc(8 * sizeof(char));
     int BLOCK_SIZE = 512;
-    // read 512 bytes into a buffer
     unsigned char buffer[512];
 
     // Accept exactly one command-line argument. If not, remind user of correct usage, and return 1.
@@ -30,11 +29,14 @@ int main(int argc, char *argv[])
     sprintf(filename, "%03i.jpg", count);
     FILE *img = fopen(filename, "w");
 
-    // repeat until end of card:
+    // read 512 bytes into a buffer (repeat until end of card)
     while (fread(buffer, sizeof(char), BLOCK_SIZE, f) == BLOCK_SIZE)
 
         // if start of new JPEG
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
+
+            // if first jpeg
+
 
         {
             count++;
