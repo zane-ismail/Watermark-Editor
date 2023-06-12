@@ -23,10 +23,11 @@ int main(int argc, char *argv[])
         printf("Could not open file");
         return 1;
     }
+
+    unsigned char buffer[512];
     // repeat until end of card
     while (fread(buffer, sizeof(char), BLOCK_SIZE, f) == BLOCK_SIZE)
         // read 512 bytes into a buffer
-        unsigned char buffer[512];
         // if start of new JPEG
             if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
             {
@@ -49,14 +50,10 @@ int main(int argc, char *argv[])
                 }
             else
             {
-
+                fwrite(buffer, sizeof(char), (BLOCK_SIZE), img);
             }
-
-            }
-
         count++;
     }
-    while (count < 10);
     // if first jpeg
 
 
