@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
             }
         count++;
     }
-    while (count < 50);
+    while (count < 10);
     // if first jpeg
 
 
