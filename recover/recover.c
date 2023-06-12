@@ -33,16 +33,21 @@ int main(int argc, char *argv[])
                 b_count++;
                 printf("%i\n", b_count);
                 fwrite(buffer, sizeof(char), (BLOCK_SIZE), img);
-            }
-            // if first jpeg
-            if (count == 0)
-            {
-            // Files are each be named ###.jpg, where ### is a three-digit decimal number, starting with 000 for the first image and counting up.
-            sprintf(filename, "%03i.jpg", count);
-            FILE *img = fopen(filename, "w");
-            }
+                // if first jpeg
+                if (count == 0)
+                {
+                    // Files are each be named ###.jpg, where ### is a three-digit decimal number, starting with 000 for the first image and counting up.
+                    sprintf(filename, "%03i.jpg", count);
+                    FILE *img = fopen(filename, "w");
+                }
+                else
+                {
+                }
             else
             {
+                
+            }
+
             fclose(img);
             // Files are each be named ###.jpg, where ### is a three-digit decimal number, starting with 000 for the first image and counting up.
             sprintf(filename, "%03i.jpg", count);
