@@ -38,6 +38,7 @@ int main(int argc, char *argv[])
             if (count == 0)
             {
                 fwrite(buffer, sizeof(char), (BLOCK_SIZE), img);
+                count++;
             }
             else
             {
@@ -49,8 +50,7 @@ int main(int argc, char *argv[])
         }
         else
         {
-            count++;
-            sprintf(filename, "%03i.jpg", count);
+
             FILE *img = fopen(filename, "w");
             fwrite(buffer, sizeof(char), (BLOCK_SIZE), img);
         }
