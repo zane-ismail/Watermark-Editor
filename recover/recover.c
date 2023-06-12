@@ -30,9 +30,9 @@ int main(int argc, char *argv[])
     while (fread(buffer, sizeof(char), 512, f) != 0)
 
         // if start of new JPEG
-        if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
-            // if first jpeg
 
+        // if first jpeg
+        if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
             // Files are each be named ###.jpg, where ### is a three-digit decimal number, starting with 000 for the first image and counting up.
         {
             FILE *output;
@@ -42,6 +42,7 @@ int main(int argc, char *argv[])
             count++;
             b_count++;
         }
+        else if (buffer[b_count] == 0xff && buffer[b_count + 1] == 0xd8 && buffer[b_count + 2] == 0xff && (buffer[b_count + 3] & 0xf0) == 0xe0)
 
 
             // else
