@@ -4,6 +4,7 @@
 int main(int argc, char *argv[])
 {
     int count = 0;
+    int b_count = 0;
     char *input = argv[1];
     char *filename = malloc(8 * sizeof(char));
     // read 512 bytes into a buffer
@@ -37,8 +38,9 @@ int main(int argc, char *argv[])
             FILE *output;
             sprintf(filename, "%03i.jpg", count);
             FILE *img = fopen(filename, "w");
-            fwrite(filename, sizeof(char), count, img);
+            fwrite(filename, sizeof(char), 1, img);
             count++;
+            b_count++;
         }
 
 
