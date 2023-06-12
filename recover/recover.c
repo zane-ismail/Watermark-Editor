@@ -8,7 +8,7 @@ int main(int argc, char *argv[])
     char *input = argv[1];
     char *filename = malloc(8 * sizeof(char));
     int BLOCK_SIZE = 512;
-    
+
 
     // Accept exactly one command-line argument. If not, remind user of correct usage, and return 1.
     if (argc != 2)
@@ -27,6 +27,8 @@ int main(int argc, char *argv[])
 
     unsigned char buffer[512];
     // repeat until end of card
+    sprintf(filename, "%03i.jpg", count);
+    FILE *img = fopen(filename, "w");   
     while (fread(buffer, sizeof(char), BLOCK_SIZE, f) == BLOCK_SIZE)
         // read 512 bytes into a buffer
         // if start of new JPEG
