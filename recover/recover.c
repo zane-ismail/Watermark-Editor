@@ -37,12 +37,16 @@ int main(int argc, char *argv[])
             // Files are each be named ###.jpg, where ### is a three-digit decimal number, starting with 000 for the first image and counting up.
         {
             b_count++;
+            printf("%i\n", b_count);
         }
     {
+        block = block * b_count;
+
+        printf("%i\n", block);
         FILE *output;
         sprintf(filename, "%03i.jpg", count);
         FILE *img = fopen(filename, "w");
-        fwrite(filename, sizeof(char), (block * b_count), img);
+        fwrite(filename, sizeof(char), (block), img);
         count++;
     }
 
