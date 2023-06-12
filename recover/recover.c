@@ -50,8 +50,6 @@ int main(int argc, char *argv[])
         }
         else
         {
-
-            FILE *img = fopen(filename, "w");
             fwrite(buffer, sizeof(char), (BLOCK_SIZE), img);
         }
 
