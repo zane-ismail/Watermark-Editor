@@ -25,6 +25,7 @@ int main(int argc, char *argv[])
     }
 
     unsigned char buffer[512];
+    FILE *img = fopen(filename, "w");
     // repeat until end of card
     while (fread(buffer, sizeof(char), BLOCK_SIZE, f) == BLOCK_SIZE)
         // read 512 bytes into a buffer
