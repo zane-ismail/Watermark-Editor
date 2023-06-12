@@ -38,6 +38,7 @@ int main(int argc, char *argv[])
             sprintf(filename, "%03i.jpg", count);
             FILE *img = fopen(filename, "w");
             fwrite(filename, sizeof(char), count, img);
+            count++;
         }
 
 
