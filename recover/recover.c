@@ -44,6 +44,8 @@ int main(int argc, char *argv[])
             else
             {
                 // close any remaining files
+                FILE *img = fopen(filename, "w");
+                fwrite(buffer, sizeof(char), (BLOCK_SIZE), img);
                 fclose(img);
                 // Files are each be named ###.jpg, where ### is a three-digit decimal number, starting with 000 for the first image and counting up.
                 sprintf(filename, "%03i.jpg", count);
@@ -51,6 +53,7 @@ int main(int argc, char *argv[])
         }
         else
         {
+            FILE *img = fopen(filename, "w");
             fwrite(buffer, sizeof(char), (BLOCK_SIZE), img);
         }
     count++;
