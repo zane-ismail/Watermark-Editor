@@ -54,5 +54,6 @@ int main(int argc, char *argv[])
 
     // If the forensic image cannot be opened for reading, your program should inform the user as much, and main should return 1.
     // Your program, if it uses malloc, must not leak any memory.
+    free();
 
 }
