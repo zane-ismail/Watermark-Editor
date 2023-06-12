@@ -7,7 +7,7 @@ int main(int argc, char *argv[])
     int b_count = 0;
     char *input = argv[1];
     char *filename = malloc(8 * sizeof(char));
-    int block = 512;
+    int BLOCK_SIZE = 512;
     // read 512 bytes into a buffer
     unsigned char buffer[512];
 
@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
 
 
     // repeat until end of card:
-    while (fread(buffer, sizeof(char), block, f) != 0)
+    while (fread(buffer, sizeof(char), BLOCK_SIZE, f) == BLOCK_SIZE)
 
         // if start of new JPEG
 
@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
         FILE *output;
         sprintf(filename, "%03i.jpg", count);
         FILE *img = fopen(filename, "w");
-        fwrite(filename, sizeof(char), (block * b_count), img);
+        fwrite(filename, sizeof(char), (BLOCK_SIZE * b_count), img);
         count++;
     }
 
