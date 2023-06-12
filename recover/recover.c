@@ -36,12 +36,16 @@ int main(int argc, char *argv[])
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
             // Files are each be named ###.jpg, where ### is a three-digit decimal number, starting with 000 for the first image and counting up.
         {
-            FILE *output;
-            sprintf(filename, "%03i.jpg", count);
-            FILE *img = fopen(filename, "w");
-            fwrite(filename, sizeof(char), block, img);
-            count++;
+            b_count++;
         }
+    {
+        FILE *output;
+        sprintf(filename, "%03i.jpg", count);
+        FILE *img = fopen(filename, "w");
+        fwrite(filename, sizeof(char), (block * b_count), img);
+        count++;
+
+    }
 
         // else if (buffer[b_count] == 0xff && buffer[b_count + 1] == 0xd8 && buffer[b_count + 2] == 0xff && (buffer[b_count + 3] & 0xf0) == 0xe0)
 
