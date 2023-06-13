@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
 
     // Write header to file
     // TODO #6
-    fwrite(output_file, sizeof(WAVHEADER), 12, input_file);
+    fwrite(&header, sizeof(WAVHEADER), 12, output_file);
 
     int x = ftell(input_file);
     printf("ftell: %i\n", x);
