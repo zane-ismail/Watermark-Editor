@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
                 continue;
             }
             // if not first jpeg
-            else
+            else if (img != NULL)
             {
                 fclose(img);
             }
