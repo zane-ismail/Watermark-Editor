@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
     FILE *input_file = fopen(input, "r");
     if (input == NULL)
     {
-        fclose(input);
+        fclose(input_file);
         printf("Could not open file\n");
         return 1;
     }
@@ -63,8 +63,8 @@ int main(int argc, char *argv[])
         // Simultaneously writing each block to the output file so they are written in reverse order.
         fread(buffer, block_size, 1, input_file);
         fwrite(buffer, block_size, 1, output_file);
-        int y = ftell(input_file);
-        printf("ftell: %i\n", y);
+        // int y = ftell(input_file);
+        // printf("ftell: %i\n", y);
     }
     fclose(input_file);
     fclose(output_file);
