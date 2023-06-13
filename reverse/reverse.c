@@ -12,6 +12,7 @@ int main(int argc, char *argv[])
     WAVHEADER header;
     char *input = argv[1];
     char *output = argv[2];
+    
     // Ensure proper usage
     // TODO #1
     if (argc != 3)
