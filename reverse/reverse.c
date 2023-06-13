@@ -10,7 +10,7 @@ int get_block_size(WAVHEADER header);
 int main(int argc, char *argv[])
 {
     WAVHEADER header;
-    int count = 0;
+    int count = - 2;
     char *input = argv[1];
     char *output = argv[2];
     // Ensure proper usage
@@ -74,7 +74,7 @@ int check_format(WAVHEADER header)
     }
     else
     {
-        printf("Input is not a WAV file.\n")
+        printf("Input is not a WAV file.\n");
         return 1;
     }
 }
