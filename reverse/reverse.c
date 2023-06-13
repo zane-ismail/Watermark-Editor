@@ -20,6 +20,7 @@ int main(int argc, char *argv[])
         printf("Usage: ./reverse input.wav output.wav\n");
         return 1;
     }
+
     // Open input file for reading
     // TODO #2
     FILE *input_file = fopen(input, "r");
@@ -69,13 +70,12 @@ int main(int argc, char *argv[])
     unsigned char buffer[block_size];
     // Iterate through the input file audio data
     // Read in each block of auditory data starting from the very end of the input file and moving backwards
-    for (fseek(input_file, 0, SEEK_END); ftell(input_file) != x - block_size; fseek(input_file, 0 - (2 * block_size), SEEK_CUR))
+    for (fseek(input_file, 0 - block_size, SEEK_END); ftell(input_file) != x - block_size;
+         fseek(input_file, 0 - (2 * block_size), SEEK_CUR))
     {
         // Simultaneously writing each block to the output file so they are written in reverse order.
         fread(buffer, block_size, 1, input_file);
         fwrite(buffer, block_size, 1, output_file);
-        int y = ftell(input_file);
-        printf("ftell: %i\n", y);
     }
     fclose(input_file);
     fclose(output_file);
