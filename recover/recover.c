@@ -40,7 +40,6 @@ int main(int argc, char *argv[])
                 img = fopen(filename, "w");
                 fwrite(buffer, sizeof(char), BLOCK_SIZE, img);
                 count++;
-                continue;
             }
             // if not first jpeg
             else
