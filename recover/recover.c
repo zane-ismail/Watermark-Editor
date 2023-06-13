@@ -32,22 +32,15 @@ int main(int argc, char *argv[])
         // if start of new JPEG
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
         {
-            // if first jpeg
-            if (count == 0)
-            {
-                // Files are named ###.jpg, (a 3-digit number), starting with 000 and counting up.
-                sprintf(filename, "%03i.jpg", count);
-                img = fopen(filename, "w");
-                count++;
-            }
             // if not first jpeg
-            else if (img != NULL)
+            if (img != NULL)
             {
                 fclose(img);
-                sprintf(filename, "%03i.jpg", count);
-                img = fopen(filename, "w");
-                count++;
             }
+            // Files are named ###.jpg, (a 3-digit number), starting with 000 and counting up.
+            sprintf(filename, "%03i.jpg", count);
+            img = fopen(filename, "w");
+            count++;
         }
         // if not start of new JPEG
         if (img != NULL)
