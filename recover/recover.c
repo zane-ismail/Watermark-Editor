@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
     // Accept exactly one command-line argument. If not, remind user of correct usage, and return 1.
     if (argc != 2)
     {
-        printf("Usage: ./recover [input file]");
+        printf("Usage: ./recover [input file]\n");
         return 1;
     }
 
@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
     // If the forensic image cannot be opened for reading, inform the user and return 1.
     if (card == NULL)
     {
-        printf("Could not open file");
+        printf("Could not open file\n");
         return 1;
     }
 

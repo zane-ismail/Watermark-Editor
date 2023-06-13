@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
     // TODO #1
     if (argc != 3)
     {
-        printf("Usage: ./reverse input.wav output.wav");
+        printf("Usage: ./reverse input.wav output.wav\n");
         return 1;
     }
     // Open input file for reading
@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
     FILE *file = fopen(input, "r");
     if (file == NULL)
     {
-        printf("Could not open file");
+        printf("Could not open file\n");
         return 1;
     }
 
