@@ -65,8 +65,8 @@ int main(int argc, char *argv[])
         fwrite(buffer, block_size, 1, output_file);
         // count = count - block_size * 2;
     }
-    fclose(input_file);
-    fclose(output_file);
+    // fclose(input_file);
+    // fclose(output_file);
 }
 
 int check_format(WAVHEADER header)
@@ -86,6 +86,6 @@ int check_format(WAVHEADER header)
 int get_block_size(WAVHEADER header)
 {
     // TODO #7
-    int block_size = (header.bitsPerSample / 8) * header.numChannels;
-    return block_size;
+    int block = (header.bitsPerSample / 8) * header.numChannels;
+    return block;
 }
