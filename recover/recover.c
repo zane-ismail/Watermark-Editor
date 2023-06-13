@@ -42,6 +42,7 @@ int main(int argc, char *argv[])
         if (img != NULL)
         {
             fclose(img);
+            img = fopen(filename, "w");
             fwrite(buffer, sizeof(char), BLOCK_SIZE, img);
         }
     }
