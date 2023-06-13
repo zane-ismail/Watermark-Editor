@@ -58,9 +58,9 @@ int main(int argc, char *argv[])
     while (fread(buffer, sizeof(block_size), 1, input_file) != 0)
     {
         // Read in each block of auditory data starting from the very end of the input file and moving backwards
-        int fseek(input_file, count, SEEK_END);
+        FILE *data = fseek(input_file, count, SEEK_END);
         // Simultaneously writing each block to the output file so they are written in reverse order.
-        fwrite(output, sizeof(block_size), 1, buffer);
+        fwrite(output_file, sizeof(block_size), 1, data);
         count = count - 2;
     }
 }
