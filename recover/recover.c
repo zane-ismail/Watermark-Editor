@@ -32,7 +32,6 @@ int main(int argc, char *argv[])
         // if start of new JPEG
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
         {
-            fclose(img);
             // Files are named ###.jpg, (a 3-digit number), starting with 000 and counting up.
             sprintf(filename, "%03i.jpg", count);
             img = fopen(filename, "w");
@@ -42,10 +41,10 @@ int main(int argc, char *argv[])
         // if not start of new JPEG
         if (img != NULL)
         {
+            fclose(img);
             fwrite(buffer, sizeof(char), BLOCK_SIZE, img);
         }
     }
-
 
     // If used malloc, must not leak any memory.
     free(filename);
