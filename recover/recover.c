@@ -7,9 +7,9 @@ int main(int argc, char *argv[])
     char *input = argv[1];
     char *filename = malloc(8 * sizeof(char));
     int BLOCK_SIZE = 512;
-    unsigned char buffer[BLOCK_SIZE];
+    unsigned char buffer[512];
     FILE *img;
-    
+
     // Accept exactly one command-line argument. If not, remind user of correct usage, and return 1.
     if (argc != 2)
     {
