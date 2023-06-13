@@ -54,7 +54,10 @@ int main(int argc, char *argv[])
         // if not start of new JPEG
         else
         {
-            fwrite(buffer, BLOCK_SIZE, 1, img);
+            if (img != NULL)
+            {
+                fwrite(buffer, BLOCK_SIZE, 1, img);
+            }
         }
 
     // Your program, if it uses malloc, must not leak any memory.
