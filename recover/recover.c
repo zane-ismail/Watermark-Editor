@@ -9,8 +9,7 @@ int main(int argc, char *argv[])
     int BLOCK_SIZE = 512;
     unsigned char buffer[BLOCK_SIZE];
     FILE *img;
-
-
+    
     // Accept exactly one command-line argument. If not, remind user of correct usage, and return 1.
     if (argc != 2)
     {
@@ -40,7 +39,7 @@ int main(int argc, char *argv[])
             // if first jpeg
             if (count == 0)
             {
-                fwrite(buffer, sizeof(char), (BLOCK_SIZE), img);
+                fwrite(buffer, sizeof(char), BLOCK_SIZE, img);
             }
             else
             {
@@ -50,7 +49,7 @@ int main(int argc, char *argv[])
         }
         else
         {
-            fwrite(buffer, sizeof(char), (BLOCK_SIZE), img);
+            fwrite(buffer, sizeof(char), BLOCK_SIZE, img);
         }
 
     // Your program, if it uses malloc, must not leak any memory.
