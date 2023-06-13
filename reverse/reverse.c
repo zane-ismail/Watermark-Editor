@@ -38,7 +38,6 @@ int main(int argc, char *argv[])
     // TODO #4
     check_format(header);
 
-
     // Open output file for writing
     // TODO #5
     FILE *output_file = fopen(output, "w");
