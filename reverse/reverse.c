@@ -46,6 +46,13 @@ int main(int argc, char *argv[])
     // Open output file for writing
     // TODO #5
     FILE *output_file = fopen(output, "w");
+    if (output_file == NULL)
+    {
+        fclose(input_file);
+        fclose(output_file);
+        printf("Could not open file\n");
+        return 1;
+    }
 
     // Write header to file
     // TODO #6
