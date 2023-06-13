@@ -55,12 +55,12 @@ int main(int argc, char *argv[])
     // Declare an array to store each block we read in
     unsigned char buffer[block_size];
     // Iterate through the input file audio data
-    while (fread(buffer, sizeof(block_size), 1, input_file) != 0)
+    // Read in each block of auditory data starting from the very end of the input file and moving backwards
+    for (fseek(input_file, count, SEEK_END))
     {
-        // Read in each block of auditory data starting from the very end of the input file and moving backwards
-        fseek(input_file, count, SEEK_END);
         // Simultaneously writing each block to the output file so they are written in reverse order.
-        fwrite(output_file, sizeof(block_size), 1, data);
+        fread(buffer, block_size, 1, input_file);
+        fwrite(output_file, block_size, 1, data);
         count = count - 2;
     }
 }
