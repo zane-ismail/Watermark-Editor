@@ -9,6 +9,7 @@ int get_block_size(WAVHEADER header);
 
 int main(int argc, char *argv[])
 {
+    WAVHEADER *header[11];
     char *input = argv[1];
     // Ensure proper usage
     // TODO #1
@@ -28,7 +29,7 @@ int main(int argc, char *argv[])
 
     // Read header
     // TODO #3
-   fread(WAVHEADER, sizeof(char), 1, file)
+   fread(header, sizeof(char), 1, file);
 
     // Use check_format to ensure WAV format
     // TODO #4
