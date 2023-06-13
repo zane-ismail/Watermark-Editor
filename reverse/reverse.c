@@ -51,6 +51,13 @@ int main(int argc, char *argv[])
 
     // Write reversed audio to file
     // TODO #8
+    unsigned char buffer[get_block_size];
+    // Read in each block of auditory data starting from the very end of the input file and moving backwards
+    while (fread(buffer, sizeof(get_block_size), 1, input_file) != 0);
+    {
+        // Simultaneously writing each block to the output file so they are written in reverse order.
+        fwrite(output, sizeof(get_block_size), 1, input_file))
+    }
 }
 
 int check_format(WAVHEADER header)
