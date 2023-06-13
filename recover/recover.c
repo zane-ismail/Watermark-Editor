@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
                 // Files are each be named ###.jpg, where ### is a three-digit decimal number, starting with 000 for the first image and counting up.
                 sprintf(filename, "%03i.jpg", count);
                 img = fopen(filename, "w");
-                fwrite(buffer, sizeof(char), BLOCK_SIZE, img);
+                fwrite(buffer, BLOCK_SIZE, 1, img);
                 count++;
             }
             // if not first jpeg
@@ -47,14 +47,14 @@ int main(int argc, char *argv[])
                 fclose(img);
                 sprintf(filename, "%03i.jpg", count);
                 img = fopen(filename, "w");
-                fwrite(buffer, sizeof(char), BLOCK_SIZE, img);
+                fwrite(buffer, BLOCK_SIZE, 1, img);
                 count++;
             }
         }
         // if not start of new JPEG
         else
         {
-            fwrite(buffer, sizeof(char), BLOCK_SIZE, img);
+            fwrite(buffer, BLOCK_SIZE, 1, img);
         }
 
     // Your program, if it uses malloc, must not leak any memory.
