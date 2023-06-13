@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
     }
     // Open input file for reading
     // TODO #2
-    FILE *input = fopen(input, "r");
+    FILE *input_file = fopen(input, "r");
     if (input == NULL)
     {
         printf("Could not open file\n");
@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
 
     // Read header
     // TODO #3
-   fread(&header, sizeof(char), 12, input);
+   fread(&header, sizeof(char), 12, input_file);
 
     // Use check_format to ensure WAV format
     // TODO #4
@@ -39,10 +39,11 @@ int main(int argc, char *argv[])
 
     // Open output file for writing
     // TODO #5
-    FILE *output = fopen()
+    FILE *output_file = fopen(output, "w");
 
     // Write header to file
     // TODO #6
+    fwrite(output_file, sizeof(char), 12, input_file);
 
     // Use get_block_size to calculate size of block
     // TODO #7
