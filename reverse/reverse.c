@@ -68,6 +68,7 @@ int main(int argc, char *argv[])
     // TODO #8
     // Declare an array to store each block we read in
     unsigned char buffer[block_size];
+
     // Iterate through the input file audio data
     // Read in each block of auditory data starting from the very end of the input file and moving backwards
     for (fseek(input_file, 0 - block_size, SEEK_END); ftell(input_file) != x - block_size;
@@ -77,6 +78,7 @@ int main(int argc, char *argv[])
         fread(buffer, block_size, 1, input_file);
         fwrite(buffer, block_size, 1, output_file);
     }
+    // Close all files
     fclose(input_file);
     fclose(output_file);
 }
