@@ -9,12 +9,12 @@ int get_block_size(WAVHEADER header);
 
 int main(int argc, char *argv[])
 {
-    char *input = argv[1]
+    char *input = argv[1];
     // Ensure proper usage
     // TODO #1
     if (argc != 3)
     {
-        fprint("Usage: ./reverse input.wav output.wav");
+        printf("Usage: ./reverse input.wav output.wav");
         return 1;
     }
     // Open input file for reading
@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
 
     // Read header
     // TODO #3
-   fread(WAVHEADER, )
+   fread(WAVHEADER, sizeof(char), 1, file)
 
     // Use check_format to ensure WAV format
     // TODO #4
