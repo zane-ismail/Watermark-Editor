@@ -10,7 +10,7 @@ int get_block_size(WAVHEADER header);
 int main(int argc, char *argv[])
 {
     WAVHEADER header;
-    int count = - 2;
+    int count = - 1;
     char *input = argv[1];
     char *output = argv[2];
     // Ensure proper usage
