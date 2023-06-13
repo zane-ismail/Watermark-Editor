@@ -7,7 +7,9 @@ int main(int argc, char *argv[])
     int BLOCK_SIZE = 512;
     char *input = argv[1];
     char *filename = malloc(8 * sizeof(char));
-    unsigned char buffer[512];
+    typedef uint8_t BYTE;
+    BYTE block[BLOCK_SIZE];
+    BYTE *buffer = malloc(512);
     FILE *img;
 
     // Accept exactly one command-line argument. If not, remind user of correct usage, and return 1.
@@ -48,7 +50,7 @@ int main(int argc, char *argv[])
 
     // If used malloc, must not leak any memory.
     free(filename);
-    
+
     // close any remaining files
     fclose(img);
     fclose(card);
