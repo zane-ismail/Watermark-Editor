@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
 
         }
         // if not start of new JPEG
-        if (img != NULL)
+        else if (img != NULL)
         {
             fwrite(buffer, sizeof(char), BLOCK_SIZE, img);
         }
