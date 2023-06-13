@@ -29,10 +29,13 @@ int main(int argc, char *argv[])
 
     // Read header
     // TODO #3
-   fread(header, sizeof(char), 1, file);
+   while (fread(header, sizeof(char), 1, file));
 
     // Use check_format to ensure WAV format
     // TODO #4
+    {
+        check_format(WAVHEADER header);
+    }
 
 
     // Open output file for writing
@@ -51,7 +54,10 @@ int main(int argc, char *argv[])
 int check_format(WAVHEADER header)
 {
     // TODO #4
-    if (header[8] == 57 && 
+    if (header[8] == W &&  header[9] == 0xa && header [10] == V && header[11] == 0xe)
+    {
+        printf("YEH BABY")
+    }
     return 0;
 }
 
