@@ -52,7 +52,7 @@ int main(int argc, char *argv[])
 int check_format(WAVHEADER header)
 {
     // TODO #4
-    if (header.format[0] == 57 &&  header.format[1] == 41 && header.format[2] == 56 && header.format[3] == 45)
+    if (header.format[0] == 87 &&  header.format[1] == 65 && header.format[2] == 86 && header.format[3] == 45)
     {
         printf("YEH BABY\n");
         return 0;
