@@ -46,9 +46,10 @@ int main(int argc, char *argv[])
     }
 
 
-    // Your program, if it uses malloc, must not leak any memory.
-    // close any remaining files
+    // If used malloc, must not leak any memory.
     free(filename);
+
+    // close any remaining files
     fclose(img);
     fclose(card);
 
