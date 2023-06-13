@@ -19,15 +19,16 @@ int main(int argc, char *argv[])
     }
 
     // open memory card
-    FILE *f = fopen(input, "r");
-    if (f == NULL)
+    FILE *card = fopen(input, "r");
+    // If the forensic image cannot be opened for reading, your program should inform the user as much, and main should return 1.
+    if (card == NULL)
     {
         printf("Could not open file");
         return 1;
     }
 
     // read 512 bytes into a buffer & repeat until end of card
-    while (fread(buffer, sizeof(char), BLOCK_SIZE, f) == BLOCK_SIZE)
+    while (fread(buffer, sizeof(char), BLOCK_SIZE, card) == BLOCK_SIZE)
         // if start of new JPEG
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
         {
@@ -52,7 +53,6 @@ int main(int argc, char *argv[])
             fwrite(buffer, sizeof(char), (BLOCK_SIZE), img);
         }
 
-    // If the forensic image cannot be opened for reading, your program should inform the user as much, and main should return 1.
     // Your program, if it uses malloc, must not leak any memory.
 
 }
