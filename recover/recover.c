@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
         // if start of new JPEG
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
         {
-            fwrite(buffer, sizeof(char), BLOCK_SIZE, img);
+            fwrite(buffer, sizeof(char), BLOCK_SIZE, img)-1
             count++;
             printf("%i\n", count);
             // Files are each be named ###.jpg, where ### is a three-digit decimal number, starting with 000 for the first image and counting up.
@@ -43,6 +43,7 @@ int main(int argc, char *argv[])
                 img = fopen(filename, "w");
                 fwrite(buffer, sizeof(char), BLOCK_SIZE, img);
                 count++;
+                printf("%i1: \n", count);
             }
             else
             {
