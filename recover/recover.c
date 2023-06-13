@@ -35,16 +35,12 @@ int main(int argc, char *argv[])
             // Files are named ###.jpg, (a 3-digit number), starting with 000 and counting up.
             sprintf(filename, "%03i.jpg", count);
             img = fopen(filename, "w");
-            fclose(img);
             count++;
-
         }
         // if not start of new JPEG
         if (img != NULL)
         {
-            img = fopen(filename, "w");
             fwrite(buffer, sizeof(char), BLOCK_SIZE, img);
-            fclose(img);
         }
     }
 
@@ -53,6 +49,7 @@ int main(int argc, char *argv[])
 
     // close any remaining files
     fclose(card);
+    fclose(img);
 
     return 0;
 }
