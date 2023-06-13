@@ -29,13 +29,11 @@ int main(int argc, char *argv[])
 
     // Read header
     // TODO #3
-   while (fread(header, sizeof(char), 1, file));
+   fread(header, sizeof(char), 11, file);
 
     // Use check_format to ensure WAV format
     // TODO #4
-    {
-        check_format(header);
-    }
+    check_format(header);
 
 
     // Open output file for writing
