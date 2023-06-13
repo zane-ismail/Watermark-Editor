@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
     // Open input file for reading
     // TODO #2
     FILE *input_file = fopen(input, "r");
-    if (input == NULL)
+    if (input_file == NULL)
     {
         fclose(input_file);
         printf("Could not open file\n");
