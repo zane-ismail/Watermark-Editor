@@ -29,6 +29,7 @@ int main(int argc, char *argv[])
     img = fopen(filename, "w");
     // read 512 bytes into a buffer & repeat until end of card
     while (fread(buffer, 1, BLOCK_SIZE, card) == BLOCK_SIZE)
+    {
         // if start of new JPEG
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
         {
@@ -52,13 +53,12 @@ int main(int argc, char *argv[])
             }
         }
         // if not start of new JPEG
-        else
+        if (img != NULL)
         {
-            if (img != NULL)
-            {
-                fwrite(buffer, BLOCK_SIZE, 1, img);
-            }
+            fwrite(buffer, BLOCK_SIZE, 1, img);
         }
+    }
+
 
     // Your program, if it uses malloc, must not leak any memory.
     // close any remaining files
