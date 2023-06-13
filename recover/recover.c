@@ -25,8 +25,7 @@ int main(int argc, char *argv[])
         printf("Could not open file");
         return 1;
     }
-    sprintf(filename, "%03i.jpg", count);
-    img = fopen(filename, "w");
+
     // read 512 bytes into a buffer & repeat until end of card
     while (fread(buffer, sizeof(char), BLOCK_SIZE, card) == BLOCK_SIZE)
     {
@@ -52,5 +51,6 @@ int main(int argc, char *argv[])
     free(filename);
     fclose(img);
     fclose(card);
+
     return 0;
 }
