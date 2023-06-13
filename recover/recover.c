@@ -48,7 +48,8 @@ int main(int argc, char *argv[])
 
     // If used malloc, must not leak any memory.
     free(filename);
-
+    free(input);
+    
     // close any remaining files
     fclose(img);
     fclose(card);
