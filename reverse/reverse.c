@@ -13,11 +13,13 @@ int main(int argc, char *argv[])
     // TODO #1
     if (argc != 3)
     {
-        fprint("")
+        fprint("Usage: ./reverse input.wav output.wav");
+        return 1;
     }
-
+    FILE file =
     // Open input file for reading
     // TODO #2
+    fopen()
 
     // Read header
     // TODO #3
