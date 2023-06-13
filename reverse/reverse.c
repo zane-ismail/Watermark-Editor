@@ -10,7 +10,7 @@ int get_block_size(WAVHEADER header);
 int main(int argc, char *argv[])
 {
     WAVHEADER header;
-    int count = - 1;
+    int count = 0;
     char *input = argv[1];
     char *output = argv[2];
     // Ensure proper usage
@@ -56,13 +56,14 @@ int main(int argc, char *argv[])
     unsigned char buffer[block_size];
     // Iterate through the input file audio data
     // Read in each block of auditory data starting from the very end of the input file and moving backwards
-    for (fseek(input_file, count, SEEK_END); ftell(input_file) > sizeof(header) - block_size;)
+    for (fseek(input_file, count - block_size, SEEK_END); ftell(input_file) > sizeof(header) - block_size;)
     {
         // Simultaneously writing each block to the output file so they are written in reverse order.
         fread(buffer, block_size, 1, input_file);
         fwrite(buffer, block_size, 1, output_file);
-        count = count - 2;
+        count = count - block_size * 2;
     }
+    fclose(output_file);
 }
 
 int check_format(WAVHEADER header)
