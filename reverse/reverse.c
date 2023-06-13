@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
     // Use check_format to ensure WAV format
     // TODO #4
     {
-        check_format(WAVHEADER header);
+        check_format();
     }
 
 
