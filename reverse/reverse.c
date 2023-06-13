@@ -11,6 +11,7 @@ int main(int argc, char *argv[])
 {
     WAVHEADER header;
     char *input = argv[1];
+    char *output = argv[2];
     // Ensure proper usage
     // TODO #1
     if (argc != 3)
@@ -29,7 +30,7 @@ int main(int argc, char *argv[])
 
     // Read header
     // TODO #3
-   fread(&header, sizeof(char), 11, file);
+   fread(&header, sizeof(char), 12, file);
 
     // Use check_format to ensure WAV format
     // TODO #4
@@ -38,6 +39,7 @@ int main(int argc, char *argv[])
 
     // Open output file for writing
     // TODO #5
+    FILE *
 
     // Write header to file
     // TODO #6
@@ -54,18 +56,12 @@ int check_format(WAVHEADER header)
     // TODO #4
     if (header.format[0] == 87 &&  header.format[1] == 65 && header.format[2] == 86 && header.format[3] == 69)
     {
-        printf("YEH BABY\n");
         return 0;
     }
     else
     {
-        printf("HELL NAW: %i\n", header.format[0]);
-        printf("HELL NAW: %i\n", header.format[1]);
-        printf("HELL NAW: %i\n", header.format[2]);
-        printf("HELL NAW: %i\n", header.format[3]);
         return 1;
     }
-    return 0;
 }
 
 int get_block_size(WAVHEADER header)
