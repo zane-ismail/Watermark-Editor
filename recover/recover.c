@@ -35,17 +35,19 @@ int main(int argc, char *argv[])
             // if first jpeg
             if (count == 0)
             {
-                continue;
+                // Files are named ###.jpg, (a 3-digit number), starting with 000 and counting up.
+                sprintf(filename, "%03i.jpg", count);
+                img = fopen(filename, "w");
+                count++;
             }
             // if not first jpeg
             else if (img != NULL)
             {
                 fclose(img);
+                sprintf(filename, "%03i.jpg", count);
+                img = fopen(filename, "w");
+                count++;
             }
-            // Files are named ###.jpg, (a 3-digit number), starting with 000 and counting up.
-            sprintf(filename, "%03i.jpg", count);
-            img = fopen(filename, "w");
-            count++;
         }
         // if not start of new JPEG
         if (img != NULL)
