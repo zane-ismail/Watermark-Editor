@@ -59,7 +59,10 @@ int check_format(WAVHEADER header)
     }
     else
     {
-        printf("HELL NAW\n");
+        printf("HELL NAW: %i\n", header.format[0]);
+        printf("HELL NAW: %i\n", header.format[1]);
+        printf("HELL NAW: %i\n", header.format[2]);
+        printf("HELL NAW: %i\n", header.format[3]);
         return 1;
     }
     return 0;
