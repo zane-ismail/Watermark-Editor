@@ -9,7 +9,7 @@ int get_block_size(WAVHEADER header);
 
 int main(int argc, char *argv[])
 {
-    WAVHEADER header[11];
+    WAVHEADER header[12];
     char *input = argv[1];
     // Ensure proper usage
     // TODO #1
@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 
     // Use check_format to ensure WAV format
     // TODO #4
-    check_format(header);
+    check_format(WAVHEADER header);
 
 
     // Open output file for writing
@@ -54,7 +54,13 @@ int check_format(WAVHEADER header)
     // TODO #4
     if (header[8] == W &&  header[9] == 0xa && header [10] == V && header[11] == 0xe)
     {
-        printf("YEH BABY")
+        printf("YEH BABY");
+        return 0;
+    }
+    else
+    {
+        printf("HELL NAW");
+        return 1;
     }
     return 0;
 }
