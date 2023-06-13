@@ -51,7 +51,7 @@ int main(int argc, char *argv[])
 int check_format(WAVHEADER header)
 {
     // TODO #4
-    if header[7] == 
+    if (header[8] == 57 && 
     return 0;
 }
 
