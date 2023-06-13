@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
     WAVHEADER header;
     char *input = argv[1];
     char *output = argv[2];
-    
+
     // Ensure proper usage
     // TODO #1
     if (argc != 3)
@@ -25,6 +25,7 @@ int main(int argc, char *argv[])
     FILE *input_file = fopen(input, "r");
     if (input == NULL)
     {
+        fclose(input);
         printf("Could not open file\n");
         return 1;
     }
