@@ -40,7 +40,6 @@ int main(int argc, char *argv[])
                 img = fopen(filename, "w");
                 fwrite(buffer, sizeof(char), BLOCK_SIZE, img);
                 count++;
-                printf("%i: \n", count);
             }
             // if not first jpeg
             else
@@ -49,7 +48,6 @@ int main(int argc, char *argv[])
                 img = fopen(filename, "w");
                 fwrite(buffer, sizeof(char), BLOCK_SIZE, img);
                 count++;
-                printf("%i: \n", count);
             }
         }
         // if not start of new JPEG
