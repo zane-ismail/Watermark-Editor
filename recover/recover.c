@@ -3,7 +3,7 @@
 
 int main(int argc, char *argv[])
 {
-    int count = - 1;
+    int count = 0;
     char *input = argv[1];
     char *filename = malloc(8 * sizeof(char));
     int BLOCK_SIZE = 512;
@@ -32,24 +32,23 @@ int main(int argc, char *argv[])
         // if start of new JPEG
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
         {
-            count++;
-            fwrite(buffer, sizeof(char), BLOCK_SIZE, img);
-            printf("%i\n", count);
-            // Files are each be named ###.jpg, where ### is a three-digit decimal number, starting with 000 for the first image and counting up.
             // if first jpeg
             if (count == 0)
             {
+                // Files are each be named ###.jpg, where ### is a three-digit decimal number, starting with 000 for the first image and counting up.
                 sprintf(filename, "%03i.jpg", count);
                 img = fopen(filename, "w");
                 fwrite(buffer, sizeof(char), BLOCK_SIZE, img);
                 count++;
                 printf("%i1: \n", count);
             }
+            // if not first jpeg
             else
             {
                 fwrite(buffer, sizeof(char), BLOCK_SIZE, img);
             }
         }
+        // if not start of new JPEG
         else
         {
             fwrite(buffer, sizeof(char), BLOCK_SIZE, img);
