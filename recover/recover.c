@@ -4,7 +4,6 @@
 int main(int argc, char *argv[])
 {
     int count = - 1;
-    int b_count = 0;
     char *input = argv[1];
     char *filename = malloc(8 * sizeof(char));
     int BLOCK_SIZE = 512;
