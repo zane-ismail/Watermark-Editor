@@ -63,6 +63,7 @@ int main(int argc, char *argv[])
         fwrite(buffer, block_size, 1, output_file);
         count = count - block_size * 2;
     }
+    fclose(input_file);
     fclose(output_file);
 }
 
