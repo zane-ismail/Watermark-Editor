@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
 
     // Read header
     // TODO #3
-   fread(&header, sizeof(char), 12, input_file);
+   fread(&header, sizeof(WAVHEADER), 12, input_file);
 
     // Use check_format to ensure WAV format
     // TODO #4
@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
 
     // Write header to file
     // TODO #6
-    fwrite(output_file, sizeof(char), 12, input_file);
+    fwrite(output_file, sizeof(WAVHEADER), 12, input_file);
 
     // Use get_block_size to calculate size of block
     // TODO #7
@@ -69,11 +69,6 @@ int check_format(WAVHEADER header)
 int get_block_size(WAVHEADER header)
 {
     // TODO #7
-    int bps = header.bitsPerSample;
-    int channels = header.numChannels;
-    printf("bps: %i\n", bps);
-    printf("bps: %hu\n", header.bitsPerSample);
-    printf("channels: %i\n", channels);
-    printf("channels: %hu\n", header.numChannels);
-    return 0;
+    int block_size = (header.bitsPerSample / 8) * header.numChannels;
+    return block_size;
 }
