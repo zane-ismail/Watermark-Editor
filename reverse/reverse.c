@@ -69,8 +69,9 @@ int check_format(WAVHEADER header)
 int get_block_size(WAVHEADER header)
 {
     // TODO #7
-    printf("bps: %i\n", header.bitsPerSample);
-    printf("bps: %i\n", header.bitsPerSample);
-    printf("bps: %i\n", header.bitsPerSample);
+    printf("bps: %hu\n", header.bitsPerSample);
+    printf("bps: %hu\n", header.bitsPerSample);
+    printf("channels: %hu\n", header.numChannels);
+    printf("channels: %hu\n", header.numChannels);
     return 0;
 }
