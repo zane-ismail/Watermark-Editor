@@ -35,7 +35,6 @@ int main(int argc, char *argv[])
             // Files are each be named ###.jpg, where ### is a three-digit decimal number, starting with 000 for the first image and counting up.
             sprintf(filename, "%03i.jpg", count);
             img = fopen(filename, "w");
-            fwrite(buffer, sizeof(char), BLOCK_SIZE, img);
             count++;
         }
         // if not start of new JPEG
