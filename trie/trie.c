@@ -111,12 +111,9 @@ int main(int argc, char *argv[])
 bool check(char* word)
 {
     cursor->root;
-    for (int i = 0; i < SIZE_OF_ALPHABET; i++)
+    for (int i = 0; i < lengthof(word); i++)
     {
-        if (root[i] == word[i])
-        {
-            if children[i]
-        }
+        
     }
     return false;
 }
