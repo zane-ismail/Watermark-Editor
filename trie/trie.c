@@ -116,7 +116,7 @@ bool check(char* word)
     {
 
         // int index = tolower(word[i]) - 'a';
-        if (cursor[i] == NULL)
+        if (children[i] == NULL)
         {
             return false;
         }
