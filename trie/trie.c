@@ -123,7 +123,7 @@ bool check(char* word)
             return false;
         }
     }
-    return false;
+    return true;
 }
 
 // Unload trie from memory
