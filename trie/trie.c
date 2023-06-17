@@ -120,7 +120,7 @@ bool check(char* word)
         }
         else
         {
-            cursor->children[i];
+            cursor->children[i]=;
         }
         return true;
     }
