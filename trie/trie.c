@@ -111,17 +111,16 @@ int main(int argc, char *argv[])
 bool check(char* word)
 {
     node *cursor = root;
-    root->children;
     for (int i = 0; i < strlen(word); i++)
     {
         // int index = tolower(word[i]) - 'a';
-        if (children[i] == NULL)
+        if (cursor->children[i] == NULL)
         {
             return false;
         }
         else
         {
-            cursor->children[i];
+            continue;
         }
         return true;
     }
