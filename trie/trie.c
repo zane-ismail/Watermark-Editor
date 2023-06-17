@@ -113,7 +113,14 @@ bool check(char* word)
     cursor->root;
     for (int i = 0; i < lengthof(word); i++)
     {
-        
+        if (children[i] == NULL)
+        {
+            return false;
+        }
+        else
+        {
+            cursor->children[i];
+        }
     }
     return false;
 }
