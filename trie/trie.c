@@ -117,14 +117,12 @@ bool check(char* word)
         i = tolower(word[i]) - 'a';
         if (cursor->children[i] == NULL)
         {
+            printf("NOPE!\n");
             return false;
         }
-        else
-        {
-            cursor = cursor->children[i];
-        }
+        cursor = cursor->children[i];
     }
-    return true;
+    return false;
 }
 
 // Unload trie from memory
