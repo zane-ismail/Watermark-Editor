@@ -116,7 +116,7 @@ bool check(char* word)
 
         cursor = cursor->children[i];
         printf("%i\n", i);
-        // i = tolower(word[i]) - 'a';
+        if i = tolower(word[i]) - 'a';
         if (cursor->children[i] == NULL)
         {
             printf("NOPE!\n");
