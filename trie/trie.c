@@ -120,7 +120,7 @@ bool check(char* word)
             printf("NOPE!\n");
             return false;
         }
-        cursor = cursor->children[i];
+        cursor = cursor->children[index];
     }
     return true;
 }
