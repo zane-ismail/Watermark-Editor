@@ -110,9 +110,11 @@ int main(int argc, char *argv[])
 // TODO: Complete the check function, return true if found, false if not found
 bool check(char* word)
 {
-    cursor->root;
+    node *cursor = root;
     for (int i = 0; i < lengthof(word); i++)
     {
+
+        // int index = tolower(word[i]) - 'a';
         if (children[i] == NULL)
         {
             return false;
@@ -121,6 +123,7 @@ bool check(char* word)
         {
             cursor->children[i];
         }
+        return true;
     }
     return false;
 }
