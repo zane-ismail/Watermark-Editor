@@ -113,11 +113,9 @@ bool check(char* word)
     node *cursor = root;
     for (int i = 0; i < strlen(word); i++)
     {
-        printf("%i\n", i);
         int index = tolower(word[i]) - 'a';
         if (cursor->children[index] == NULL)
         {
-            printf("NOPE!\n");
             return false;
         }
         cursor = cursor->children[index];
