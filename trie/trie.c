@@ -120,11 +120,10 @@ bool check(char* word)
         }
         else
         {
-            cursor->children[i] = children[i];
+            cursor = cursor->children[i];
         }
-        return true;
     }
-    return false;
+    return true;
 }
 
 // Unload trie from memory
