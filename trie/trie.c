@@ -114,7 +114,6 @@ bool check(char* word)
     cursor->children;
     for (int i = 0; i < strlen(word); i++)
     {
-
         // int index = tolower(word[i]) - 'a';
         if (children[i] == NULL)
         {
