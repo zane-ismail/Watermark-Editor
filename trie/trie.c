@@ -113,9 +113,9 @@ bool check(char* word)
     cursor->root;
     for (int i = 0; i < SIZE_OF_ALPHABET; i++)
     {
-        if (index[i] == word[i])
+        if (root[i] == word[i])
         {
-            if children[index]
+            if children[i]
         }
     }
     return false;
