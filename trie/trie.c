@@ -122,6 +122,7 @@ bool check(char* word)
             printf("NOPE!\n");
             return false;
         }
+        cursor = cursor->children[i];
     }
     return true;
 }
