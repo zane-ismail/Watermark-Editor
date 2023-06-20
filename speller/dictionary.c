@@ -42,7 +42,6 @@ bool load(const char *dictionary)
     {
         return true;
     }
-    fclose(dictionary);
     return false;
 }
 
@@ -57,5 +56,6 @@ unsigned int size(void)
 bool unload(void)
 {
     // TODO
+    fclose(dictionary);
     return false;
 }
