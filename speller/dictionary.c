@@ -38,7 +38,10 @@ unsigned int hash(const char *word)
 bool load(const char *dictionary)
 {
     // TODO
-    fopen(dictionary, "r");
+    if (fopen(dictionary, "r"))
+    {
+        return true;
+    }
     return false;
 }
 
