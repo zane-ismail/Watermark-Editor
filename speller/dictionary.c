@@ -42,6 +42,7 @@ bool load(const char *dictionary)
     {
         return true;
     }
+    fclose(dictionary);
     return false;
 }
 
