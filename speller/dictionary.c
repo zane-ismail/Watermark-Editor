@@ -39,11 +39,16 @@ bool load(const char *dictionary)
 {
     // TODO
     // Open dictonary file
-    if (fopen(dictionary, "r"))
+    if (fopen(dictionary, "r")) == NULL
     {
-        return true;
+        return false;
+    }
+    else
+    {
+        continue
     }
     // Read strings from file one at a time
+    fscan(file, "%s", word)
 
     // Create a new node for each word
 
