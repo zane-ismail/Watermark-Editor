@@ -58,9 +58,7 @@ bool load(const char *dictionary)
 
         }
         strcpy(n->word, tmp);
-
     }
-
 
     // Hash word to obtain hash function
 
