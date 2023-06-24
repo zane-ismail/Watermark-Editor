@@ -39,7 +39,7 @@ bool load(const char *dictionary)
 {
     // TODO
     // Open dictonary file
-    if (fopen(dictionary, "r")) == NULL
+    if (fopen(dictionary, "r") == NULL)
     {
         return false;
     }
@@ -48,10 +48,11 @@ bool load(const char *dictionary)
         continue
     }
     // Read strings from file one at a time
-    while (fscan(file, "%s", word)) != EOF
+    while (fscan(file, "%s", word) != EOF)
     {
         // Create a new node for each word
-        if (node *n = malloc(sizeof(node))) == NULL
+        node *n = malloc(sizeof(node));
+        if (node *n = malloc(sizeof(node)) == NULL)
         {
             return false;
         }
