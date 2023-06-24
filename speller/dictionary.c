@@ -3,6 +3,7 @@
 #include <ctype.h>
 #include <stdbool.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 #include "dictionary.h"
 
@@ -45,13 +46,14 @@ bool load(const char *dictionary)
         return false;
     }
     // Read strings from file one at a time
-    while (fscan(file, "%s", w) != EOF)
+    while (fscanf(file, "%s", w) != EOF)
     {
         // Create a new node for each word
         node *n = malloc(sizeof(node));
         if (n == NULL)
         {
             return false;
+
         }
         strcopy(n->word, w);
 
