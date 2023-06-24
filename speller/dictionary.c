@@ -69,7 +69,7 @@ bool load(const char *dictionary)
     {
         return false;
     }
-    if (table[h]->n)
+    if (table[h]->next == NULL)
     {
         return false;
     }
