@@ -64,8 +64,14 @@ bool load(const char *dictionary)
     int h = hash(tmp);
 
     // Insert word into hash table at that function
-    pointer = n->next;
-    table = table[h]->n;
+    if (n->next == NULL)
+    {
+        return false;
+    }
+    if (table[h]->n)
+    {
+        return false;
+    }
 
     return false;
 }
