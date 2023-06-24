@@ -61,10 +61,10 @@ bool load(const char *dictionary)
     }
 
     // Hash word to obtain hash function
-    int h = hash(n);
+    int h = hash(tmp);
 
     // Insert word into hash table at that function
-    n = n->next;
+    pointer = n->next;
     table = table[h]->n;
 
     return false;
