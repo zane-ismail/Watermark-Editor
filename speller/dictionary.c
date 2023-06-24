@@ -39,24 +39,21 @@ bool load(const char *dictionary)
 {
     // TODO
     // Open dictonary file
-    if (fopen(dictionary, "r") == NULL)
+    FILE *w = (fopen(dictionary, "r"));
+    if (w == NULL)
     {
         return false;
-    }
-    else
-    {
-        continue
     }
     // Read strings from file one at a time
     while (fscan(file, "%s", word) != EOF)
     {
         // Create a new node for each word
         node *n = malloc(sizeof(node));
-        if (node *n = malloc(sizeof(node)) == NULL)
+        if (n == NULL)
         {
             return false;
         }
-        strcopy(n->word, file);
+        strcopy(n->word, w);
 
     }
 
