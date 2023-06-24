@@ -77,6 +77,6 @@ unsigned int size(void)
 bool unload(void)
 {
     // TODO
-    fclose(dictionary);
+    // fclose(dictionary);
     return false;
 }
