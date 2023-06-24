@@ -51,6 +51,8 @@ bool load(const char *dictionary)
     while (fscan(file, "%s", word)) != EOF
     {
         // Create a new node for each word
+        node *n = malloc(sizeof(node))
+        strcopy(n->word, "Hello")
 
     }
 
