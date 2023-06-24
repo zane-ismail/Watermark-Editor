@@ -38,10 +38,18 @@ unsigned int hash(const char *word)
 bool load(const char *dictionary)
 {
     // TODO
+    // Open dictonary file
     if (fopen(dictionary, "r"))
     {
         return true;
     }
+    // Read strings from file one at a time
+
+    // Create a new node for each word
+
+    // Hash word to obtain hash function
+
+    // Insert word into hash table at that function
     return false;
 }
 
