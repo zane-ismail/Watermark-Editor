@@ -62,8 +62,8 @@ bool load(const char *dictionary)
 
     // Hash word to obtain hash function
     // Insert word into hash table at that function
-    n->table
-    table[hash(n)]->n;
+    n = n->next;
+    table = table[hash(n)]->n;
 
     return false;
 }
