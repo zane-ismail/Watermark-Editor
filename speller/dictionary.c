@@ -48,9 +48,12 @@ bool load(const char *dictionary)
         continue
     }
     // Read strings from file one at a time
-    while (fscan(file, "%s", word)) != NULL
+    while (fscan(file, "%s", word)) != EOF
+    {
+        // Create a new node for each word
 
-    // Create a new node for each word
+    }
+
 
     // Hash word to obtain hash function
 
