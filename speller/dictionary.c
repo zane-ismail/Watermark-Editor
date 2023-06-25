@@ -117,17 +117,16 @@ unsigned int size(void)
 bool unload(void)
 {
     // TODO
-    node *cursor = table[h];
-    node *tmp = table[h];
     // Keep moving cursor until it gets to NULL
-    for (int h = 0; h < LENGTH, h++)
+    for (int h = 0; h < LENGTH; h++)
     {
+        node *cursor = table[h];
+        node *tmp = table[h];
         while (cursor != NULL)
-            {
-                cursor = cursor->next;
-                free(tmp);
-            }
-        free(cursor);
+        {
+            cursor = cursor->next;
+            free(tmp);
+        }
     }
     return false;
 }
