@@ -21,7 +21,7 @@ typedef struct node
 node;
 
 // TODO: Choose number of buckets in hash table
-const unsigned int N = 123;
+const unsigned int N = 150;
 
 // Hash table
 node *table[N];
@@ -67,19 +67,19 @@ unsigned int hash(const char *word)
     }
     else if (w_length == 2)
     {
-        hash = (toupper(word[0]) - 'A') + (toupper(word[1]) - 'A') + (w_length * 2);
+        hash = (toupper(word[0]) - 'A') + (toupper(word[1]) - 'A') + (w_length);
     }
     else if (w_length == 3)
     {
-        hash = (toupper(word[0]) - 'A') + (toupper(word[1]) - 'A') + (toupper(word[2]) - 'A') + (w_length * 3);
+        hash = (toupper(word[0]) - 'A') + (toupper(word[1]) - 'A') + (toupper(word[2]) - 'A') + (w_length);
     }
     else if (w_length == 4)
     {
-        hash = (toupper(word[0]) - 'A') + (toupper(word[1]) - 'A') + (toupper(word[2]) - 'A') + (toupper(word[3]) - 'A') + (w_length * 4);
+        hash = (toupper(word[0]) - 'A') + (toupper(word[1]) - 'A') + (toupper(word[2]) - 'A') + (toupper(word[3]) - 'A') + (w_length);
     }
     else
     {
-        hash = (toupper(word[0]) - 'A') + (toupper(word[1]) - 'A') + (toupper(word[2]) - 'A') + (toupper(word[3]) - 'A') + (toupper(word[4]) - 'A') + (w_length * 5);
+        hash = (toupper(word[0]) - 'A') + (toupper(word[1]) - 'A') + (toupper(word[2]) - 'A') + (toupper(word[3]) - 'A') + (toupper(word[4]) - 'A') + (w_length);
     }
     // printf("%i\n", hash);
     return hash;
