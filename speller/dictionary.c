@@ -35,14 +35,16 @@ bool check(const char *word)
     // Access linked list at that index in the hash table
     // Set cursor to first item in linked list
     node *cursor = table[h];
-    printf("hash %i", h);
-    printf(": %s\n", cursor->word);
+
+    // printf("hash %i", h);
+    // printf(": %s\n", cursor->word);
+
     // Keep moving cursor until it gets to NULL
     while (cursor != NULL)
     {
         // printf("word: %s\n", word);
         // printf("node: %s\n", cursor->word);
-        
+
         // Traverse linked list, looking for that word
         // Return true if word is in the dictionary
         if (strcasecmp(cursor->word, word) == 0)
