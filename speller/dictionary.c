@@ -32,7 +32,12 @@ bool check(const char *word)
     // Return true if word is in the dictionary
     if
     {
+        // Hash word to obatin hash value
         int h = hash(word[0])
+        // Access linked list at that index in the hash table
+
+        // Traverse linked list, looking for that word
+        strcasecmp()
         // Case insensitive
         return true;
     }
