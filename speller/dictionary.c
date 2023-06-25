@@ -59,13 +59,13 @@ bool check(const char *word)
 // Hashes word to a number
 unsigned int hash(const char *word)
 {
-    int h_num;
+    int h_num = 0;
     // TODO: Improve this hash function
     if (w_length > 1)
     {
         h_num = ((toupper(word[0]) - 'A') + (toupper(word[1]) - 'A')) + (w_length - 1);
     }
-    else
+    else if (w_length == 1)
     {
         h_num = (toupper(word[0]) - 'A') + (w_length - 1);
     }
