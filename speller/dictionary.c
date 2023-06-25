@@ -30,20 +30,28 @@ node *table[N];
 bool check(const char *word)
 {
 // TODO
-// Return true if word is fin the dictionary
-
     // Hash word to obatin hash value
     int h = hash(word);
     int result;
     // Access linked list at that index in the hash table
+    // Set cursor to first item in linked list
     node *cursor = table[h]->next;
+    // Keep moving cursor until it gets to NULL
     while (cursor != NULL)
     {
         // Traverse linked list, looking for that word
         result = strcasecmp(cursor, word);
-        cursor = cursor->next;
+        // Return true if word is in the dictionary
+        if (result == 0)
+        {
+            return true;
+        }
+        // False otherwise
+        else
+        {
+            cursor = cursor->next;
+        }
         // Case insensitive
-    // False otherwise
     }
     return false;
 }
