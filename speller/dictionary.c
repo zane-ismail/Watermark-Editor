@@ -47,7 +47,7 @@ bool check(const char *word)
 
         // Traverse linked list, looking for that word
         // Return true if word is in the dictionary
-        if (strcasecmp(cursor->word, tolower(word)) == 0)
+        if (strcasecmp(cursor->word, word) == 0)
         {
             return true;
         }
