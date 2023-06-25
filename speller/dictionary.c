@@ -117,6 +117,14 @@ unsigned int size(void)
 bool unload(void)
 {
     // TODO
-    // fclose(dic);
+    node *cursor = table[h];
+    // Keep moving cursor until it gets to NULL
+    for (int h = 0; h < LENGTH, h++)
+    {
+    while (cursor != NULL)
+        {
+
+        }
+    }
     return false;
 }
