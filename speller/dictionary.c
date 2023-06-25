@@ -67,7 +67,7 @@ unsigned int hash(const char *word)
     }
     else
     {
-        inthash = (toupper(word[0]) - 'A') + (w_length - 1);
+        hash = (toupper(word[0]) - 'A') + (w_length - 1);
     }
     return hash;
 }
