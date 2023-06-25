@@ -35,12 +35,15 @@ bool check(const char *word)
         // Hash word to obatin hash value
         int h = hash(word[0]);
         // Access linked list at that index in the hash table
-        for 
-        cursor = table[h]->next;
-        cursor = cursor->next;
-        // Traverse linked list, looking for that word
-        strcasecmp(word, h);
-        // Case insensitive
+        while (next != NULL)
+        {
+            cursor = table[h]->next;
+            cursor = cursor->next;
+            // Traverse linked list, looking for that word
+            strcasecmp(word, cursor);
+            // Case insensitive
+
+        }
         return true;
     }
     // False otherwise
@@ -70,7 +73,7 @@ bool load(const char *dictionary)
     char word[LENGTH + 1];
     node *n;
     // Read strings from file one at a time
-    while (fscanf(dic, "%s", word) != EOF)
+    {while} (fscanf(dic, "%s", word) != EOF)
     {
         // Create a new node for each word
         n = malloc(sizeof(node));
