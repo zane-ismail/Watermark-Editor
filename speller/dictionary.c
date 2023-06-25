@@ -31,6 +31,7 @@ bool check(const char *word)
 {
 // TODO
     // Hash word to obtain hash value
+    w_length = strlen(word);
     int h = hash(word);
     // Access linked list at that index in the hash table
     // Set cursor to first item in linked list
