@@ -4,7 +4,6 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 
 #include "dictionary.h"
 
@@ -47,33 +46,24 @@ bool load(const char *dictionary)
     {
         return false;
     }
-    node *n;
     // Read strings from file one at a time
     while (fscanf(w, "%s", tmp) != EOF)
     {
         // Create a new node for each word
-        n = malloc(sizeof(node));
+        node *n = malloc(sizeof(node));
         if (n == NULL)
         {
             return false;
 
         }
-        strcpy(n->word, tmp);
+        strcopy(n->word, tmp);
+
     }
+
 
     // Hash word to obtain hash function
-    int h = hash(tmp);
 
     // Insert word into hash table at that function
-    if (n->next[h] == NULL)
-    {
-        return false;
-    }
-    if (table[h]->next)
-    {
-        return false;
-    }
-
     return false;
 }
 
