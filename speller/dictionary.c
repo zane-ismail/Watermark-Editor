@@ -66,8 +66,6 @@ unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
 
-    // Keep track of words in dictionary
-    num++;
     // printf("%i: \n", num);
     // printf("%i\n", toupper(word[0]) - 'A');
     return toupper(word[0]) - 'A';
@@ -89,7 +87,10 @@ bool load(const char *dictionary)
     while (fscanf(dic, "%s", word) != EOF)
     {
         // Create a new node for each word
+
         n = malloc(sizeof(node));
+        // Keep track of words in dictionary
+        num++;
         if (n == NULL)
         {
             return false;
