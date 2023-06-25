@@ -40,7 +40,7 @@ bool check(const char *word)
     while (cursor != NULL)
     {
         // Traverse linked list, looking for that word
-        result = strcasecmp(cursor, word);
+        result = strcasecmp(cursor->word, word);
         // Return true if word is in the dictionary
         if (result == 0)
         {
@@ -61,8 +61,8 @@ unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
     num++;
-    printf("%i: \n", num);
-    printf("%i\n", toupper(word[0]) - 'A');
+    // printf("%i: \n", num);
+    // printf("%i\n", toupper(word[0]) - 'A');
     return toupper(word[0]) - 'A';
 }
 
