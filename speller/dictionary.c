@@ -11,6 +11,7 @@
 
 int num = 0;
 int w_length = 0;
+int max = 0;
 
 // Represents a node in a hash table
 typedef struct node
@@ -81,7 +82,11 @@ unsigned int hash(const char *word)
     {
         hash = (toupper(word[0]) - 'A') + (toupper(word[1]) - 'A') + (toupper(word[2]) - 'A') + (toupper(word[3]) - 'A') + (toupper(word[4]) - 'A') + (w_length);
     }
-    // printf("%i\n", hash);
+    if (hash > max)
+    {
+        max = hash;
+    }
+    printf("%i\n", max);
     return hash;
 }
 
