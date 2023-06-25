@@ -67,7 +67,6 @@ bool load(const char *dictionary)
 
         printf("3: %s\n", tmp);
         // Insert word into hash table at that function
-        next = n->next;
         if (n->next == NULL)
         {
             return false;
