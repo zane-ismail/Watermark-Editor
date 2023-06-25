@@ -33,11 +33,11 @@ bool check(const char *word)
     if
     {
         // Hash word to obatin hash value
-        int h = hash(word[0])
+        int h = hash(word[0]);
         // Access linked list at that index in the hash table
-
+        
         // Traverse linked list, looking for that word
-        strcasecmp()
+        strcasecmp(word, h);
         // Case insensitive
         return true;
     }
