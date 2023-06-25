@@ -21,7 +21,7 @@ typedef struct node
 node;
 
 // TODO: Choose number of buckets in hash table
-const unsigned int N = 26;
+const unsigned int N = 71;
 
 // Hash table
 node *table[N];
@@ -34,7 +34,7 @@ bool check(const char *word)
     int h = hash(word);
     // Access linked list at that index in the hash table
     // Set cursor to first item in linked list
-    node *cursor = table[h];\
+    node *cursor = table[h];
 
     // Keep moving cursor until it gets to NULL
     while (cursor != NULL)
