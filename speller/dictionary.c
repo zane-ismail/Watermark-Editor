@@ -59,21 +59,21 @@ bool check(const char *word)
 // Hashes word to a number
 unsigned int hash(const char *word)
 {
-    int h;
+    int h_num;
     // TODO: Improve this hash function
     if (w_length > 1)
     {
-        h = ((toupper(word[0]) - 'A') + (toupper(word[1]) - 'A')) + (w_length - 1);
+        h_num = ((toupper(word[0]) - 'A') + (toupper(word[1]) - 'A')) + (w_length - 1);
     }
     else
     {
-        h = (toupper(word[0]) - 'A') + (w_length - 1);
+        h_num = (toupper(word[0]) - 'A') + (w_length - 1);
     }
     // else
     // {
     //     hash = (toupper(word[0]) - 'A') + (toupper(word[1]) - 'A') + (toupper(word[2]) - 'A') + (w_length - 1);
     // }
-    return h;
+    return h_num;
 }
 
 // Loads dictionary into memory, returning true if successful, else false
