@@ -35,8 +35,8 @@ bool check(const char *word)
     // Access linked list at that index in the hash table
     // Set cursor to first item in linked list
     node *cursor = table[h];
-
-    printf("node 1: %s\n", cursor->word);
+    printf("hash %i", h);
+    printf(": %s\n", cursor->word);
     // Keep moving cursor until it gets to NULL
     while (cursor != NULL)
     {
