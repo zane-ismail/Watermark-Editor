@@ -106,6 +106,7 @@ bool load(const char *dictionary)
         table[h] = n;
         // printf("1: %s\n", tmp);
     }
+        fclose(dic);
         return true;
 }
 
