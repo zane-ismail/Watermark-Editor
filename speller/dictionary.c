@@ -121,12 +121,12 @@ bool unload(void)
     for (int h = 0; h < LENGTH; h++)
     {
         node *cursor = table[h];
-        node *tmp = table[h];
         while (cursor != NULL)
         {
+            node *tmp = cursor;
             cursor = cursor->next;
             free(tmp);
         }
     }
-    return false;
+    return true;
 }
