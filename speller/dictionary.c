@@ -59,21 +59,20 @@ bool load(const char *dictionary)
 
         }
         strcpy(n->word, tmp);
-    }
 
-    // Hash word to obtain hash function
-    int h = hash(tmp);
+        // Hash word to obtain hash function
+        int h = hash(tmp);
 
-    // Insert word into hash table at that function
-    if (n->next == NULL)
-    {
-        return false;
+        // Insert word into hash table at that function
+        if (n->next == NULL)
+        {
+            return false;
+        }
+        if (table[h]->next == NULL)
+        {
+            return false;
+        }
     }
-    if (table[h]->next == NULL)
-    {
-        return false;
-    }
-
     return true;
 }
 
