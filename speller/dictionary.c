@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <strings.h>
 
 #include "dictionary.h"
 
@@ -40,7 +41,7 @@ bool check(const char *word)
     {
         cursor = cursor->next;
         // Traverse linked list, looking for that word
-        result = strcasecmp(word[0], cursor);
+        result = strcasecmp(word, cursor->next);
         // Case insensitive
     // False otherwise
     }
