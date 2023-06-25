@@ -118,12 +118,13 @@ bool unload(void)
 {
     // TODO
     node *cursor = table[h];
+    node *tmp = table[h];
     // Keep moving cursor until it gets to NULL
     for (int h = 0; h < LENGTH, h++)
     {
     while (cursor != NULL)
         {
-
+            cursor = cursor->next;
         }
     }
     return false;
