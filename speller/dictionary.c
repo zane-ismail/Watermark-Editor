@@ -65,6 +65,8 @@ bool check(const char *word)
 unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
+
+    // Keep track of words in dictionary
     num++;
     // printf("%i: \n", num);
     // printf("%i\n", toupper(word[0]) - 'A');
