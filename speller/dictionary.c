@@ -32,15 +32,15 @@ bool check(const char *word)
 // Return true if word is in the dictionary
 
     // Hash word to obatin hash value
-    int h = hash(&word[0]);
-    int 
+    int h = hash(word);
+    int result;
     // Access linked list at that index in the hash table
     node *cursor = table[h]->next;
     while (cursor != NULL)
     {
         cursor = cursor->next;
         // Traverse linked list, looking for that word
-        strcasecmp(word, cursor);
+        result = strcasecmp(word[0], cursor);
         // Case insensitive
     // False otherwise
     }
