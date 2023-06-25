@@ -34,17 +34,11 @@ bool check(const char *word)
     int h = hash(word);
     // Access linked list at that index in the hash table
     // Set cursor to first item in linked list
-    node *cursor = table[h];
-
-    // printf("hash %i", h);
-    // printf(": %s\n", cursor->word);
+    node *cursor = table[h];\
 
     // Keep moving cursor until it gets to NULL
     while (cursor != NULL)
     {
-        // printf("word: %s\n", word);
-        // printf("node: %s\n", cursor->word);
-
         // Traverse linked list, looking for that word
         // Return true if word is in the dictionary
         if (strcasecmp(cursor->word, word) == 0)
@@ -65,9 +59,6 @@ bool check(const char *word)
 unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
-
-    // printf("%i: \n", num);
-    // printf("%i\n", toupper(word[0]) - 'A');
     return toupper(word[0]) - 'A';
 }
 
@@ -87,14 +78,14 @@ bool load(const char *dictionary)
     while (fscanf(dic, "%s", word) != EOF)
     {
         // Create a new node for each word
-
         n = malloc(sizeof(node));
+
         // Keep track of words in dictionary
         num++;
+        Return false is 
         if (n == NULL)
         {
             return false;
-
         }
         strcpy(n->word, word);
 
@@ -104,7 +95,6 @@ bool load(const char *dictionary)
         // Insert word into hash table at that function
         n->next = table[h];
         table[h] = n;
-        // printf("1: %s\n", tmp);
     }
         fclose(dic);
         return true;
