@@ -59,7 +59,7 @@ bool check(const char *word)
 unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
-    return toupper(word[0]) - 'A';
+    return toupper(word[0]) - 'A' + ;
 }
 
 // Loads dictionary into memory, returning true if successful, else false
@@ -82,12 +82,18 @@ bool load(const char *dictionary)
 
         // Keep track of words in dictionary
         num++;
-        Return false is 
+
+        // Return false if node is null
         if (n == NULL)
         {
             return false;
         }
+
+        // Copy word from file to node
         strcpy(n->word, word);
+
+        // Count letters in word
+        w_length = strlen(word);
 
         // Hash word to obtain hash function
         int h = hash(word);
