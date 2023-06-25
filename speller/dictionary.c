@@ -50,6 +50,7 @@ bool load(const char *dictionary)
     {
         return false;
     }
+    char word[LENGTH + 1];
     node *n;
     // Read strings from file one at a time
     while (fscanf(dic, "%s", word) != EOF)
