@@ -61,17 +61,25 @@ unsigned int hash(const char *word)
 {
     int hash;
     // TODO: Improve this hash function
-    if (w_length == 1 || word[1] < 41 || word[2] < 41)
+    if (w_length == 1 || word[1] < 41 || word[2] < 41 || word[3] < 41 || word[4] < 41)
     {
-        hash = (toupper(word[0]) - 'A') + (w_length - 1);
+        hash = (toupper(word[0]) - 'A') + (w_length);
     }
     else if (w_length == 2)
     {
-        hash = (toupper(word[0]) - 'A') + (toupper(word[1]) - 'A') + (w_length - 1);
+        hash = (toupper(word[0]) - 'A') + (toupper(word[1]) - 'A') + (w_length * 2);
+    }
+    else if (w_length == 3)
+    {
+        hash = (toupper(word[0]) - 'A') + (toupper(word[1]) - 'A') + (toupper(word[2]) - 'A') + (w_length * 4);
+    }
+    else if (w_length == 4)
+    {
+        hash = (toupper(word[0]) - 'A') + (toupper(word[1]) - 'A') + (toupper(word[2]) - 'A') + (toupper(word[3]) - 'A') + (w_length * 6);
     }
     else
     {
-        hash = (toupper(word[0]) - 'A') + (toupper(word[1]) - 'A') + (toupper(word[2]) - 'A') + (w_length - 1);
+        hash = (toupper(word[0]) - 'A') + (toupper(word[1]) - 'A') + (toupper(word[2]) - 'A') + (toupper(word[3]) - 'A') + (toupper(word[4]) - 'A') + (w_length * 8);
     }
     // printf("%i\n", hash);
     return hash;
