@@ -10,7 +10,6 @@
 #include "dictionary.h"
 
 int num = 0;
-int w_length = 0;
 
 // Represents a node in a hash table
 typedef struct node
@@ -21,7 +20,7 @@ typedef struct node
 node;
 
 // TODO: Choose number of buckets in hash table
-const unsigned int N = 70;
+const unsigned int N = 26;
 
 // Hash table
 node *table[N];
@@ -31,15 +30,20 @@ bool check(const char *word)
 {
 // TODO
     // Hash word to obtain hash value
-    w_length = strlen(word);
     int h = hash(word);
     // Access linked list at that index in the hash table
     // Set cursor to first item in linked list
     node *cursor = table[h];
 
+    // printf("hash %i", h);
+    // printf(": %s\n", cursor->word);
+
     // Keep moving cursor until it gets to NULL
     while (cursor != NULL)
     {
+        // printf("word: %s\n", word);
+        // printf("node: %s\n", cursor->word);
+
         // Traverse linked list, looking for that word
         // Return true if word is in the dictionary
         if (strcasecmp(cursor->word, word) == 0)
@@ -60,7 +64,10 @@ bool check(const char *word)
 unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
-    return (toupper(word[0]) - 'A') + (w_length - 1);
+
+    // printf("%i: \n", num);
+    // printf("%i\n", toupper(word[0]) - 'A');
+    return toupper(word[0]) - 'A';
 }
 
 // Loads dictionary into memory, returning true if successful, else false
@@ -79,22 +86,16 @@ bool load(const char *dictionary)
     while (fscanf(dic, "%s", word) != EOF)
     {
         // Create a new node for each word
-        n = malloc(sizeof(node));
 
+        n = malloc(sizeof(node));
         // Keep track of words in dictionary
         num++;
-
-        // Return false if node is null
         if (n == NULL)
         {
             return false;
+
         }
-
-        // Copy word from file to node
         strcpy(n->word, word);
-
-        // Count letters in word
-        w_length = strlen(word);
 
         // Hash word to obtain hash function
         int h = hash(word);
@@ -102,6 +103,7 @@ bool load(const char *dictionary)
         // Insert word into hash table at that function
         n->next = table[h];
         table[h] = n;
+        // printf("1: %s\n", tmp);
     }
         fclose(dic);
         return true;
