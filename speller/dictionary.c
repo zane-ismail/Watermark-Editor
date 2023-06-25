@@ -31,7 +31,7 @@ bool check(const char *word)
 {
 // TODO
     // Hash word to obtain hash value
-    int h = hash(word);
+    int h = hash(word, w_length);
     // Access linked list at that index in the hash table
     // Set cursor to first item in linked list
     node *cursor = table[h];
@@ -56,10 +56,10 @@ bool check(const char *word)
 }
 
 // Hashes word to a number
-unsigned int hash(const char *word)
+unsigned int hash(const char *word, length)
 {
     // TODO: Improve this hash function
-    return toupper(word[0]) - 'A' + (w_length - 1);
+    return (toupper(word[0]) - 'A') + (length - 1);
 }
 
 // Loads dictionary into memory, returning true if successful, else false
@@ -96,7 +96,7 @@ bool load(const char *dictionary)
         w_length = strlen(word);
 
         // Hash word to obtain hash function
-        int h = hash(word);
+        int h = hash(word, w_length);
 
         // Insert word into hash table at that function
         n->next = table[h];
