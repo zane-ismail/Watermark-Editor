@@ -73,6 +73,7 @@ bool load(const char *dictionary)
         }
 
         printf("4: %s\n", tmp);
+        table[h]->next
         if (table[h]->next == NULL)
         {
             return false;
