@@ -4,6 +4,7 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #include "dictionary.h"
 
@@ -56,14 +57,15 @@ bool load(const char *dictionary)
             return false;
 
         }
-        strcopy(n->word, tmp);
-
+        strcpy(n->word, tmp);
     }
 
-
     // Hash word to obtain hash function
+    hash(n);
 
     // Insert word into hash table at that function
+
+
     return false;
 }
 
