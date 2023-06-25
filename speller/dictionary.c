@@ -71,15 +71,15 @@ unsigned int hash(const char *word)
     }
     else if (w_length == 3)
     {
-        hash = (toupper(word[0]) - 'A') + (toupper(word[1]) - 'A') + (toupper(word[2]) - 'A') + (w_length * 4);
+        hash = (toupper(word[0]) - 'A') + (toupper(word[1]) - 'A') + (toupper(word[2]) - 'A') + (w_length * 3);
     }
     else if (w_length == 4)
     {
-        hash = (toupper(word[0]) - 'A') + (toupper(word[1]) - 'A') + (toupper(word[2]) - 'A') + (toupper(word[3]) - 'A') + (w_length * 6);
+        hash = (toupper(word[0]) - 'A') + (toupper(word[1]) - 'A') + (toupper(word[2]) - 'A') + (toupper(word[3]) - 'A') + (w_length * 4);
     }
     else
     {
-        hash = (toupper(word[0]) - 'A') + (toupper(word[1]) - 'A') + (toupper(word[2]) - 'A') + (toupper(word[3]) - 'A') + (toupper(word[4]) - 'A') + (w_length * 8);
+        hash = (toupper(word[0]) - 'A') + (toupper(word[1]) - 'A') + (toupper(word[2]) - 'A') + (toupper(word[3]) - 'A') + (toupper(word[4]) - 'A') + (w_length * 5);
     }
     // printf("%i\n", hash);
     return hash;
