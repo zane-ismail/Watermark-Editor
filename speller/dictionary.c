@@ -30,7 +30,7 @@ node *table[N];
 bool check(const char *word)
 {
 // TODO
-// Return true if word is in the dictionary
+// Return true if word is fin the dictionary
 
     // Hash word to obatin hash value
     int h = hash(word);
