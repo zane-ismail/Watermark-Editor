@@ -42,7 +42,7 @@ bool load(const char *dictionary)
     // TODO
     // Open dictonary file
     char *tmp = malloc(sizeof(node));;
-    printf("%c\n", tmp[0]);
+    printf("%s\n", tmp);
 
     FILE *w = (fopen(dictionary, "r"));
     if (w == NULL)
