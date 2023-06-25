@@ -40,8 +40,9 @@ bool check(const char *word)
     // Keep moving cursor until it gets to NULL
     while (cursor != NULL)
     {
-        printf("word: %s\n", word);
-        printf("node: %s\n", cursor->word);
+        // printf("word: %s\n", word);
+        // printf("node: %s\n", cursor->word);
+        
         // Traverse linked list, looking for that word
         // Return true if word is in the dictionary
         if (strcasecmp(cursor->word, word) == 0)
@@ -97,7 +98,7 @@ bool load(const char *dictionary)
 
         // Insert word into hash table at that function
         n->next = table[h];
-        table[h] = n->next;
+        table[h] = n;
         // printf("1: %s\n", tmp);
     }
         return true;
