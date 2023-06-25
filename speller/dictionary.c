@@ -122,10 +122,12 @@ bool unload(void)
     // Keep moving cursor until it gets to NULL
     for (int h = 0; h < LENGTH, h++)
     {
-    while (cursor != NULL)
-        {
-            cursor = cursor->next;
-        }
+        while (cursor != NULL)
+            {
+                cursor = cursor->next;
+                free(tmp);
+            }
+        free(cursor);
     }
     return false;
 }
