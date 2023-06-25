@@ -47,6 +47,7 @@ bool load(const char *dictionary)
     {
         return false;
     }
+    printf("1: %s\n", tmp);
     node *n;
     // Read strings from file one at a time
     while (fscanf(w, "%s", tmp) != EOF)
@@ -59,20 +60,26 @@ bool load(const char *dictionary)
 
         }
         strcpy(n->word, tmp);
+
+        printf("2: %s\n", tmp);
         // Hash word to obtain hash function
         int h = hash(tmp);
 
+        printf("3: %s\n", tmp);
         // Insert word into hash table at that function
         if (n->next == NULL)
         {
             return false;
         }
+
+        printf("4: %s\n", tmp);
         if (table[h]->next == NULL)
         {
             return false;
         }
+        printf("5: %s\n", tmp);
     }
-    return true;
+        return true;
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
