@@ -8,6 +8,8 @@
 
 #include "dictionary.h"
 
+FILE *w;
+
 // Represents a node in a hash table
 typedef struct node
 {
@@ -42,7 +44,7 @@ bool load(const char *dictionary)
     // TODO
     // Open dictonary file
     char *tmp = malloc(sizeof(char));
-    FILE *w = (fopen(dictionary, "r"));
+    w = (fopen(dictionary, "r"));
     if (w == NULL)
     {
         return false;
@@ -82,6 +84,6 @@ unsigned int size(void)
 bool unload(void)
 {
     // TODO
-    fclose(*w);
+    fclose(w);
     return false;
 }
