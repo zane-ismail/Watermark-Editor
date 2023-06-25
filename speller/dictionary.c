@@ -41,32 +41,38 @@ bool load(const char *dictionary)
 {
     // TODO
     // Open dictonary file
-    char *tmp = NULL;
+    char *tmp = malloc(sizeof(char));
     FILE *w = (fopen(dictionary, "r"));
     if (w == NULL)
     {
         return false;
     }
+    node *n;
     // Read strings from file one at a time
     while (fscanf(w, "%s", tmp) != EOF)
     {
         // Create a new node for each word
-        node *n = malloc(sizeof(node));
+        n = malloc(sizeof(node));
         if (n == NULL)
         {
             return false;
 
         }
         strcpy(n->word, tmp);
+        // Hash word to obtain hash function
+        int h = hash(tmp);
+
+        // Insert word into hash table at that function
+        if (n->next == NULL)
+        {
+            return false;
+        }
+        if (table[h]->next == NULL)
+        {
+            return false;
+        }
     }
-
-    // Hash word to obtain hash function
-    hash(n);
-
-    // Insert word into hash table at that function
-
-
-    return false;
+    return true;
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
