@@ -4,6 +4,7 @@
         "string_view": "c",
         "numeric": "c",
         "stdio.h": "c",
-        "stdlib.h": "c"
+        "stdlib.h": "c",
+        "string.h": "c"
     }
 }

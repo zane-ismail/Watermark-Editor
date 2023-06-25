@@ -5,8 +5,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-int num = 0;
+
 #include "dictionary.h"
+
+int num = 0;
 
 
 // Represents a node in a hash table
@@ -79,7 +81,7 @@ bool load(const char *dictionary)
 unsigned int size(void)
 {
     // TODO
-    return 0;
+    return num;
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
