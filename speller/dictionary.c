@@ -8,7 +8,6 @@
 int num = 0;
 #include "dictionary.h"
 
-FILE *w;
 
 // Represents a node in a hash table
 typedef struct node
@@ -46,14 +45,14 @@ bool load(const char *dictionary)
 {
     // TODO
     // Open dictonary file
-    word = (fopen(dictionary, "r"));
-    if (word == NULL)
+    FILE *dic = (fopen(dictionary, "r"));
+    if (dic == NULL)
     {
         return false;
     }
     node *n;
     // Read strings from file one at a time
-    while (fscanf(word, "%s", word) != EOF)
+    while (fscanf(dic, "%s", word) != EOF)
     {
         // Create a new node for each word
         n = malloc(sizeof(node));
@@ -62,10 +61,10 @@ bool load(const char *dictionary)
             return false;
 
         }
-        strcpy(n->word, tmp);
+        strcpy(n->word, word);
 
         // Hash word to obtain hash function
-        int h = hash(tmp);
+        int h = hash(word);
 
         // Insert word into hash table at that function
         n->next = table[h];
@@ -86,6 +85,6 @@ unsigned int size(void)
 bool unload(void)
 {
     // TODO
-    fclose(w);
+    // fclose(dic);
     return false;
 }
