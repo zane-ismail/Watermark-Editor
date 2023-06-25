@@ -10,7 +10,7 @@
 #include "dictionary.h"
 
 int num = 0;
-
+int w_length = 0;
 
 // Represents a node in a hash table
 typedef struct node
