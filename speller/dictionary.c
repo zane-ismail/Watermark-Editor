@@ -61,13 +61,17 @@ unsigned int hash(const char *word)
 {
     int hash;
     // TODO: Improve this hash function
-    if (w_length > 1)
-    {
-        hash = (toupper(word[0]) - 'A') + (toupper(word[0]) - 'A') + (w_length - 1);
-    }
-    else
+    if (w_length == 1)
     {
         hash = (toupper(word[0]) - 'A') + (w_length - 1);
+    }
+    else if (w_length == 2)
+    {
+        hash = (toupper(word[0]) - 'A') + (toupper(word[1]) - 'A') + (w_length - 1);
+    }
+    else if (w_length == 3)
+    {
+        hash = (toupper(word[0]) - 'A') + (toupper(word[1]) - 'A') + (toupper(word[2]) - 'A') + (w_length - 1);
     }
     return hash;
 }
