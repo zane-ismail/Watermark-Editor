@@ -67,12 +67,13 @@ bool load(const char *dictionary)
 
         printf("3: %s\n", tmp);
         // Insert word into hash table at that function
+        n->next = table[h];
         if (n->next == NULL)
         {
             return false;
         }
-
         printf("4: %s\n", tmp);
+        table[h]->n = next;
         if (table[h]->next == NULL)
         {
             return false;
