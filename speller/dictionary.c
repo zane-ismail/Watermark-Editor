@@ -39,7 +39,7 @@ bool check(const char *word)
     {
         cursor = cursor->next;
         // Traverse linked list, looking for that word
-        strcasecmp(word, cursor);
+        bool is_match = strcasecmp(word, cursor);
         // Case insensitive
     // False otherwise
     }
