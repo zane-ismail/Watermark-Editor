@@ -63,12 +63,13 @@ unsigned int hash(const char *word)
     // TODO: Improve this hash function
     if (w_length > 1)
     {
-        hash = (toupper(word[0]) - 'A') + (toupper(word[1]) - 'A') + (w_length - 1);
+        hash = (toupper(word[0]) - 'A') + (w_length - 1);
     }
     else
     {
         hash = (toupper(word[0]) - 'A') + (w_length - 1);
     }
+    printf("%i\n", hash);
     return hash;
 }
 
