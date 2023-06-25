@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
+int num = 0;
 #include "dictionary.h"
 
 FILE *w;
@@ -35,7 +35,9 @@ bool check(const char *word)
 unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
-    printf("1: %i\n", toupper(word[0]) - 'A');
+    num++;
+    printf("%i: \n", num);
+    printf("%i\n", toupper(word[0]) - 'A');
     return toupper(word[0]) - 'A';
 }
 
