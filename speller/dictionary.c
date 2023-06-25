@@ -39,9 +39,9 @@ bool check(const char *word)
     node *cursor = table[h]->next;
     while (cursor != NULL)
     {
-        cursor = cursor->next;
         // Traverse linked list, looking for that word
-        result = strcasecmp(*cursor, word);
+        result = strcasecmp(cursor, word);
+        cursor = cursor->next;
         // Case insensitive
     // False otherwise
     }
