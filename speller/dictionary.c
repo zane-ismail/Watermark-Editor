@@ -28,25 +28,21 @@ node *table[N];
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
-    // TODO
-    // Return true if word is in the dictionary
-    if
-    {
-        // Hash word to obatin hash value
-        int h = hash(word[0]);
-        // Access linked list at that index in the hash table
-        while (next != NULL)
-        {
-            cursor = table[h]->next;
-            cursor = cursor->next;
-            // Traverse linked list, looking for that word
-            strcasecmp(word, cursor);
-            // Case insensitive
+// TODO
+// Return true if word is in the dictionary
 
-        }
-        return true;
-    }
+    // Hash word to obatin hash value
+    int h = hash(&word[0]);
+    // Access linked list at that index in the hash table
+    node *cursor = table[h]->next;
+    while (cursor != NULL)
+    {
+        cursor = cursor->next;
+        // Traverse linked list, looking for that word
+        strcasecmp(word, cursor);
+        // Case insensitive
     // False otherwise
+    }
     return false;
 }
 
