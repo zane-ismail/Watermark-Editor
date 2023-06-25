@@ -46,15 +46,14 @@ bool load(const char *dictionary)
 {
     // TODO
     // Open dictonary file
-    char *tmp = malloc(sizeof(char));
-    w = (fopen(dictionary, "r"));
-    if (w == NULL)
+    word = (fopen(dictionary, "r"));
+    if (word == NULL)
     {
         return false;
     }
     node *n;
     // Read strings from file one at a time
-    while (fscanf(w, "%s", tmp) != EOF)
+    while (fscanf(word, "%s", word) != EOF)
     {
         // Create a new node for each word
         n = malloc(sizeof(node));
