@@ -62,31 +62,40 @@ unsigned int hash(const char *word)
 {
     int hash;
     // TODO: Improve this hash function
-    if (w_length == 1 || word[1] < 41 || word[2] < 41 || word[3] < 41 || word[4] < 41)
+    for (int i = 0; i < w_length; i++)
     {
-        hash = ((toupper(word[0]) - 'A') * (toupper(word[0]) - 'A')) + (w_length);
+        if (i > 41)
+        {
+            hash = hash + ((toupper(word[i]) - 'A') * i) + (w_length);
+        }
     }
-    else if (w_length == 2)
-    {
-        hash = (toupper(word[0]) - 'A') + ((toupper(word[1]) - 'A') * 2) + (w_length);
-    }
-    else if (w_length == 3)
-    {
-        hash = (toupper(word[0]) - 'A') + ((toupper(word[1]) - 'A') * 2) + ((toupper(word[2]) - 'A') * 3) + (w_length);
-    }
-    else if (w_length == 4)
-    {
-        hash = (toupper(word[0]) - 'A') + ((toupper(word[1]) - 'A') * 2) + ((toupper(word[2]) - 'A') * 3) + ((toupper(word[3]) - 'A') * 4) + (w_length);
-    }
-    else
-    {
-        hash = (toupper(word[0]) - 'A') + ((toupper(word[1]) - 'A') * 2) + ((toupper(word[2]) - 'A') * 3) + ((toupper(word[3]) - 'A') * 4) + ((toupper(word[4]) - 'A') * 5) + (w_length);
-    }
+
+
+    // if (w_length == 1 || word[1] < 41 || word[2] < 41 || word[3] < 41 || word[4] < 41)
+    // {
+    //     hash = ((toupper(word[0]) - 'A') * (toupper(word[0]) - 'A')) + (w_length);
+    // }
+    // else if (w_length == 2)
+    // {
+    //     hash = ((toupper(word[0]) - 'A') * 2) + ((toupper(word[1]) - 'A') * 3) + (w_length);
+    // }
+    // else if (w_length == 3)
+    // {
+    //     hash = ((toupper(word[0]) - 'A') * 2) + ((toupper(word[1]) - 'A') * 3) + ((toupper(word[2]) - 'A') * 4) + (w_length);
+    // }
+    // else if (w_length == 4)
+    // {
+    //     hash = ((toupper(word[0]) - 'A') * 2) + ((toupper(word[1]) - 'A') * 3) + ((toupper(word[2]) - 'A') * 4) + ((toupper(word[3]) - 'A') * 5) + (w_length);
+    // }
+    // else
+    // {
+    //     hash = ((toupper(word[0]) - 'A') * 2) + ((toupper(word[1]) - 'A') * 3) + ((toupper(word[2]) - 'A') * 4) + ((toupper(word[3]) - 'A') * 5) + ((toupper(word[4]) - 'A') * 6) + (w_length);
+    // }
     if (hash > max)
     {
         max = hash;
     }
-    // printf("%i\n", max);
+    // printf("%i\n", hash);
     return hash;
 }
 
