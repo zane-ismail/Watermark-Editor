@@ -11,7 +11,6 @@
 
 int num = 0;
 int w_length = 0;
-int max = 0;
 
 // Represents a node in a hash table
 typedef struct node
@@ -22,7 +21,7 @@ typedef struct node
 node;
 
 // TODO: Choose number of buckets in hash table
-const unsigned int N = 1500;
+const unsigned int N = 27019;
 
 // Hash table
 node *table[N];
@@ -31,13 +30,13 @@ node *table[N];
 bool check(const char *word)
 {
 // TODO
-    // Hash word to obtain hash value
+    // Get length of word
     w_length = strlen(word);
+    // Hash word to obtain hash value
     int h = hash(word);
     // Access linked list at that index in the hash table
     // Set cursor to first item in linked list
     node *cursor = table[h];
-
     // Keep moving cursor until it gets to NULL
     while (cursor != NULL)
     {
@@ -52,7 +51,6 @@ bool check(const char *word)
         {
             cursor = cursor->next;
         }
-        // Case insensitive
     }
     return false;
 }
@@ -60,46 +58,26 @@ bool check(const char *word)
 // Hashes word to a number
 unsigned int hash(const char *word)
 {
-    int hash;
+    int hash = 0;
     // TODO: Improve this hash function
     for (int i = 0; i < w_length; i++)
     {
-        if (i > 41)
+        // Upper case
+        if (word[i] > 64 && word[i] < 91)
         {
-            hash = hash + ((toupper(word[i]) - 'A') * i) + (w_length);
+            hash = hash + ((word[i] - 'A') * (i + 1));
         }
+        // Lower case
+        else if (word[i] > 96 && word[i] < 123)
+        {
+            hash = hash + ((word[i] - 'a') * (i + 1));
+        }
+        // Other characters
         else
         {
-            hash = ((toupper(word[0]) - 'A') * (toupper(word[0]) - 'A')) + (w_length);
+            hash = hash + (word[i]);
         }
     }
-
-
-    // if (w_length == 1 || word[1] < 41 || word[2] < 41 || word[3] < 41 || word[4] < 41)
-    // {
-    //     hash = ((toupper(word[0]) - 'A') * (toupper(word[0]) - 'A')) + (w_length);
-    // }
-    // else if (w_length == 2)
-    // {
-    //     hash = ((toupper(word[0]) - 'A') * 2) + ((toupper(word[1]) - 'A') * 3) + (w_length);
-    // }
-    // else if (w_length == 3)
-    // {
-    //     hash = ((toupper(word[0]) - 'A') * 2) + ((toupper(word[1]) - 'A') * 3) + ((toupper(word[2]) - 'A') * 4) + (w_length);
-    // }
-    // else if (w_length == 4)
-    // {
-    //     hash = ((toupper(word[0]) - 'A') * 2) + ((toupper(word[1]) - 'A') * 3) + ((toupper(word[2]) - 'A') * 4) + ((toupper(word[3]) - 'A') * 5) + (w_length);
-    // }
-    // else
-    // {
-    //     hash = ((toupper(word[0]) - 'A') * 2) + ((toupper(word[1]) - 'A') * 3) + ((toupper(word[2]) - 'A') * 4) + ((toupper(word[3]) - 'A') * 5) + ((toupper(word[4]) - 'A') * 6) + (w_length);
-    // }
-    if (hash > max)
-    {
-        max = hash;
-    }
-    // printf("%i\n", hash);
     return hash;
 }
 
@@ -120,31 +98,25 @@ bool load(const char *dictionary)
     {
         // Create a new node for each word
         n = malloc(sizeof(node));
-
         // Keep track of words in dictionary
         num++;
-
         // Return false if node is null
         if (n == NULL)
         {
             return false;
         }
-
         // Copy word from file to node
         strcpy(n->word, word);
-
-        // Count letters in word
+        // Get length of word
         w_length = strlen(word);
-
         // Hash word to obtain hash function
         int h = hash(word);
-
         // Insert word into hash table at that function
         n->next = table[h];
         table[h] = n;
     }
-        fclose(dic);
-        return true;
+    fclose(dic);
+    return true;
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
@@ -162,10 +134,14 @@ bool unload(void)
     for (int h = 0; h < LENGTH; h++)
     {
         node *cursor = table[h];
+        // Free each node
         while (cursor != NULL)
         {
+            // Create a temporary pointer
             node *tmp = cursor;
+            // Move node pointer
             cursor = cursor->next;
+            // Free temporary node
             free(tmp);
         }
     }
