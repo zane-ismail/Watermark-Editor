@@ -150,6 +150,6 @@ bool unload(void)
             free(tmp);
         }
     }
-    printf("MAX: %i\n", max);
+    printf("%i\n", max);
     return true;
 }
