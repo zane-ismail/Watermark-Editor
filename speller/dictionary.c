@@ -68,6 +68,10 @@ unsigned int hash(const char *word)
         {
             hash = hash + ((toupper(word[i]) - 'A') * i) + (w_length);
         }
+        else
+        {
+            hash = ((toupper(word[0]) - 'A') * (toupper(word[0]) - 'A')) + (w_length);
+        }
     }
 
 
