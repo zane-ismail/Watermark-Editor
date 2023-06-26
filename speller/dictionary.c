@@ -9,8 +9,7 @@
 
 #include "dictionary.h"
 
-int max = 0;
-int num = 0;
+int count = 0;
 int w_length = 0;
 
 // Represents a node in a hash table
@@ -78,10 +77,6 @@ unsigned int hash(const char *word)
         {
             hash = hash + (word[i]);
         }
-    if (hash > max)
-    {
-        max = hash;
-    }
     }
     return hash;
 }
@@ -104,7 +99,7 @@ bool load(const char *dictionary)
         // Create a new node for each word
         n = malloc(sizeof(node));
         // Keep track of words in dictionary
-        num++;
+        count++;
         // Return false if node is null
         if (n == NULL)
         {
@@ -128,7 +123,7 @@ bool load(const char *dictionary)
 unsigned int size(void)
 {
     // TODO
-    return num;
+    return count;
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
@@ -136,7 +131,7 @@ bool unload(void)
 {
     // TODO
     // Keep moving cursor until it gets to NULL
-    for (int h = 0; h < LENGTH; h++)
+    for (int h = 0; h < N + 1; h++)
     {
         node *cursor = table[h];
         // Free each node
@@ -150,6 +145,5 @@ bool unload(void)
             free(tmp);
         }
     }
-    printf("%i\n", max);
     return true;
 }
