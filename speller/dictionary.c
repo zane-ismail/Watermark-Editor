@@ -144,6 +144,7 @@ bool unload(void)
             // Free temporary node
             free(tmp);
         }
+        free(N);
     }
     return true;
 }
