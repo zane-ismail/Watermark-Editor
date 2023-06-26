@@ -131,9 +131,9 @@ bool unload(void)
 {
     // TODO
     // Keep moving cursor until it gets to NULL
-    for (int h = 0; h < N + 1; h++)
+    for (int i = 0; i < N + 1; i++)
     {
-        node *cursor = table[h];
+        node *cursor = table[i];
         // Free each node
         while (cursor != NULL)
         {
