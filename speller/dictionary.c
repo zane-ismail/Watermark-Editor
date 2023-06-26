@@ -9,6 +9,7 @@
 
 #include "dictionary.h"
 
+int max = 0;
 int num = 0;
 int w_length = 0;
 
@@ -21,7 +22,7 @@ typedef struct node
 node;
 
 // TODO: Choose number of buckets in hash table
-const unsigned int N = 27019;
+const unsigned int N = 25875;
 
 // Hash table
 node *table[N];
@@ -77,6 +78,10 @@ unsigned int hash(const char *word)
         {
             hash = hash + (word[i]);
         }
+    if (hash > max)
+    {
+        max = hash;
+    }
     }
     return hash;
 }
@@ -144,7 +149,7 @@ bool unload(void)
             // Free temporary node
             free(tmp);
         }
-        free(N);
     }
+    printf("MAX: %i\n", max);
     return true;
 }
