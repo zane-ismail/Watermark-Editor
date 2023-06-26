@@ -193,5 +193,4 @@ double calculate(const struct rusage *b, const struct rusage *a)
                   (b->ru_stime.tv_sec * 1000000 + b->ru_stime.tv_usec)))
                 / 1000000.0);
     }
-printf("Hello world!");
 }
