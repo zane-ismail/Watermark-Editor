@@ -7,8 +7,8 @@ figlet = Figlet()
 if len(sys.argv) == 3:
     if sys.argv[1] == "-f" or sys.argv[1] == "--font":
         try:
-            input = input("Input: ")
             figlet.setFont(font=sys.argv[2])
+            input = input("Input: ")
             print(f"Output: {figlet.renderText(input)}")
         except:
             sys.exit("Font not found")
@@ -16,8 +16,8 @@ if len(sys.argv) == 3:
         sys.exit("Invalid usage")
 
 elif len(sys.argv) == 1:
-    input = input("Input: ")
     figlet.setFont(font=random.choice(figlet.getFonts()))
+    input = input("Input: ")
     print(f"Output: {figlet.renderText(input)}")
 
 else:
