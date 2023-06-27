@@ -15,10 +15,10 @@ class Jar:
         return("🍪")
 
     def deposit(self, n):
-        jar.append(n)
+        self+n
 
     def withdraw(self, n):
-        jar.remove(n)
+        self.size=-n
 
     @property
     def capacity(self):
