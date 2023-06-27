@@ -8,6 +8,9 @@ figlet.getFonts()
 
 figlet.setFont(font="5lineoblique")
 
-print(f"Output: {figlet.renderText(input)}")
+if argv[2] == "-f":
+    print(f"Output: {figlet.renderText(input)}")
+elif argv[2] == "-font":
+    
 
 
