@@ -41,15 +41,15 @@ def calculate(reader):
                 "State" : "Cases"
                 }
 
+    for i in range(14):
+        for row in reader:
+            r = row
+            new_cases["State"][i] = r["state"]
+            new_cases["Cases"][i] = r["cases"]
 
-    for row in reader:
-        r = row
-        new_cases["State"] = row["state"]
-        new_cases["Cases"] = row["cases"]
-
-        # print(row)
-        # states.append(row["state"])
-
+            # print(row)
+            # states.append(row["state"])
+    print(new_cases)
     return(new_cases)
 
 # TODO: Calculate and print out seven day average for given state
