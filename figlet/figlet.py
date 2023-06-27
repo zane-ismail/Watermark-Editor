@@ -14,6 +14,7 @@ if len(sys.argv) == 3:
             print("Font not found ")
             sys.exit()
     else:
+        print("Invalid usage")
         sys.exit()
 
 elif len(sys.argv) == 1:
