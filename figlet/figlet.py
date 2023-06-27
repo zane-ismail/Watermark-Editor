@@ -24,7 +24,7 @@ elif len(sys.argv) == 1:
 
 else:
     print("Invalid usage")
-    sys.exit()
+    sys.exit
 
 
 
