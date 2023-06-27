@@ -1,5 +1,7 @@
+from jar import Jar
+
 def main():
-    jar = Jar(1)
+    jar = Jar()
     print(str(f"Capacity: {jar.capacity}"))
     jar.deposit(3)
     jar.withdraw(1)
@@ -8,7 +10,7 @@ def main():
 
 class Jar:
     def __init__(self, capacity=12):
-        if capacity < 0 or self.size > 12:
+        if capacity < 0 or self.cookies > 12:
             raise ValueError("Wrong capacity")
         self.capacity = capacity
         self.size = 0
