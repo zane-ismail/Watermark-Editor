@@ -8,20 +8,20 @@ def main():
 
 class Jar:
     def __init__(self, capacity=12):
-        if self._capacity < 0 or self._capacity > 12:
+        if self.capacity < 0 or self.capacity > 12:
             raise ValueError("Wrong capacity")
-        self._capacity = capacity
-        self._size = 0
+        self.capacity = capacity
+        self.size = 0
 
     def __str__(self):
-        return "🍪" * self._size
+        return "🍪" * self.size
 
     def deposit(self, n):
-        if n > self._capacity:
+        if n > self.capacity:
             raise ValueError("Exceeds capacity")
-        if self.size + n > self._capacity:
+        if self.size + n > self.capacity:
             raise ValueError("Exceeds capacity")
-        self.cookies += n
+        self._size += n
 
     def withdraw(self, n):
         if self._size < n:
