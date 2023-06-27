@@ -1,16 +1,20 @@
 def main():
     jar = Jar()
     print(str(jar.capacity))
-    print(str(jar.size))
     # print(str(jar))
     jar.deposit(5)
+    jar.withdraw(11)
+    print(str(jar.size))
     # print(str(jar))
-    # jar.withdraw(11)
     print(str(jar))
 
 class Jar:
     def __init__(self, capacity=12):
-        self.cookies=0
+        self.cookies = 0
+        self.exceed = False
+        if self.cookies < 0 or self.cookies > 12:
+            self.exceed = True
+            raise ValueError
 
     def __str__(self):
         for c in range(self.cookies-1):
