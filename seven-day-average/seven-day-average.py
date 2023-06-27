@@ -40,11 +40,12 @@ def calculate(reader):
     print(new_cases)
     for row in reader:
         r = row
-        for state in row["state"]:
-            if state != states[]
-            states.append(state)
+        for value in states:
+            for state in row["state"]:
+                if state != value:
+                    states.append(state)
 
-
+    print(states)
 
 # TODO: Calculate and print out seven day average for given state
 def comparative_averages(new_cases, states):
