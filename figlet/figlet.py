@@ -2,7 +2,7 @@ from pyfiglet import Figlet
 import sys
 from random import random
 
-if len(sys.argv) == 2 or len(sys.argv) == 3:
+if len(sys.argv) == 1 or len(sys.argv) == 3:
     input = input("Input: ")
     figlet = Figlet()
     figlet.getFonts()
