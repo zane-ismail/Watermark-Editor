@@ -37,14 +37,19 @@ def calculate(reader):
     new_cases = {
                 "State" : "Cases"
                 }
+    i = 0
     print(new_cases)
-    for row in reader:
-        r = row
-        # print(row)
-        new_cases["State"] = row["state"]
-        new_cases["Cases"] = row["cases"]
-        print(new_cases)
-        # states.append(row["state"])
+
+    while i < 14:
+        for row in reader:
+            r = row
+            # print(row)
+            new_cases["State"] = row["state"]
+            new_cases["Cases"] = row["cases"]
+            print(new_cases)
+            i =+ 1
+            print(i)
+            # states.append(row["state"])
 
     # print(states)
 
