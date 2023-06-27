@@ -41,9 +41,7 @@ def calculate(reader):
     for row in reader:
         r = row
         # print(row["state"])
-        for state in states:
-            if row["state"] != state:
-                states.append(row["state"])
+        states.append(row["state"])
 
     print(states)
 
