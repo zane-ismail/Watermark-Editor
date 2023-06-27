@@ -37,6 +37,9 @@ def calculate(reader):
     new_cases = {
                 "State" : "Cases"
                 }
+    previous_cases = {
+                "State" : "Cases"
+                }
     i = 0
     print(new_cases)
 
