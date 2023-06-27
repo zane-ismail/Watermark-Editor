@@ -40,10 +40,8 @@ def calculate(reader):
     print(new_cases)
     for row in reader:
         r = row
-        for value in states:
-            for state in row["state"]:
-                if state != value:
-                    states.append(state)
+        for state in row["state"]:
+            states.append(state)
 
     print(states)
 
