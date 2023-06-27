@@ -6,12 +6,16 @@ if len(sys.argv) == 1 or len(sys.argv) == 3:
     input = input("Input: ")
     figlet = Figlet()
     figlet.getFonts()
-    figlet.setFont(font="5lineoblique")
+
     if len(sys.argv) == 3:
         if sys.argv[3] == "-f" or sys.argv[3] == "--font":
+            figlet.setFont(font=sys.arg[3])
             print(f"Output: {figlet.renderText(input)}")
     else:
-        print(f"Output: {figlet.renderText(random.choice(['basic', 'doom', 'moo']))}")
+        figlet.setFont(font=random.choice(['basic', 'doom', 'moo']))
+        print(f"Output: {figlet.renderText(input)}")
+else:
+    print("Invalid usage")
 
 
 
