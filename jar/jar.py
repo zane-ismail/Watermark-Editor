@@ -9,10 +9,11 @@ def main():
 
 class Jar:
     def __init__(self, capacity=12):
-        self.size
+        capacity=12
 
     def __str__(self):
-        return("🍪")
+        for i in range(self.capacity):
+            return("🍪")
 
     def deposit(self, n):
         self=+n
