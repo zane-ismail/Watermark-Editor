@@ -6,10 +6,11 @@ figlet = Figlet()
 
 if len(sys.argv) == 3:
     input = input("Input: ")
+    for font in figlet.getFonts():
+        if sys.argv[1] != font:
+            sys.exit
     if sys.argv[1] == "-f" or sys.argv[1] == "--font":
         figlet.setFont(font=sys.argv[2])
-    elif sys.argv[2] !=
-        sys.exit
     else:
         sys.exit
 
@@ -20,7 +21,7 @@ elif len(sys.argv) == 1:
 else:
     print("Invalid usage")
     sys.exit
-    
+
 print(f"Output: {figlet.renderText(input)}")
 
 
