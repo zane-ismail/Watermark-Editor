@@ -12,9 +12,9 @@ if len(sys.argv) == 3:
             print(f"Output: {figlet.renderText(input)}")
         except:
             print("Font not found ")
-            sys.exit
+            sys.exit()
     else:
-        sys.exit
+        sys.exit()
 
 elif len(sys.argv) == 1:
     input = input("Input: ")
@@ -23,7 +23,7 @@ elif len(sys.argv) == 1:
 
 else:
     print("Invalid usage")
-    sys.exit
+    sys.exit()
 
 
 
