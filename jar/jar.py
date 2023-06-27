@@ -1,11 +1,9 @@
 def main():
     jar = Jar()
-    print(str(jar.capacity))
-    # print(str(jar))
+    print(str(f"Capacity: {jar.capacity}"))
     jar.deposit(3)
-    jar.withdraw(0)
-    print(str(jar.size))
-    # print(str(jar))
+    jar.withdraw(1)
+    print(str(f"Size: {jar.size}"))
     print(str(jar))
 
 class Jar:
