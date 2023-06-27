@@ -12,8 +12,7 @@ class Jar:
         pass
 
     def __str__(self):
-        pass
-        # return("🍪")
+        return("🍪")
 
     def deposit(self, n):
         jar.append(n)
