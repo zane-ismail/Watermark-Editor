@@ -17,10 +17,10 @@ class Jar:
 
     @property
     def capacity(self):
-        return self.capacity
+        return (self.capacity)
 
     @property
     def size(self):
-        return self.size
+        return (self.size)
 
 main()
