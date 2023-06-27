@@ -44,9 +44,9 @@ def calculate(reader):
     for i in range(14):
         for row in reader:
             r = row
-            new_cases["State"] = r["state"]
-            new_cases["Cases"] = r["cases"]
-            print(new_cases)
+            new_cases["State"].update(r["state"])
+            new_cases["Cases"].update(r["cases"])
+            # print(new_cases)
 
             # print(row)
             # states.append(row["state"])
