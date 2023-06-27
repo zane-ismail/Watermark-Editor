@@ -6,11 +6,11 @@ figlet = Figlet()
 
 if len(sys.argv) == 3:
     input = input("Input: ")
-    for font in figlet.getFonts():
-        if sys.argv[1] != font:
-            sys.exit
     if sys.argv[1] == "-f" or sys.argv[1] == "--font":
-        figlet.setFont(font=sys.argv[2])
+        try:
+            figlet.setFont(font=sys.argv[2])
+        except FontNotFound(font):
+            print("Font not found ")
     else:
         sys.exit
 
