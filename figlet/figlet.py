@@ -5,16 +5,16 @@ import random
 figlet = Figlet()
 
 if len(sys.argv) == 3:
-    input = input("Input: ")
     if sys.argv[1] == "-f" or sys.argv[1] == "--font":
         try:
+            input = input("Input: ")
             figlet.setFont(font=sys.argv[2])
             print(f"Output: {figlet.renderText(input)}")
         except:
             print("Font not found ")
-            sys.exit()
+            sys.exit
     else:
-        sys.exit()
+        sys.exit
 
 elif len(sys.argv) == 1:
     input = input("Input: ")
@@ -23,7 +23,7 @@ elif len(sys.argv) == 1:
 
 else:
     print("Invalid usage")
-    sys.exit()
+    sys.exit
 
 
 
