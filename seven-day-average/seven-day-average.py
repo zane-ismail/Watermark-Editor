@@ -40,9 +40,9 @@ def calculate(reader):
     previous_cases = {
                 "State" : "Cases"
                 }
-
     for i in range(14):
         for row in reader:
+            print(row)
             r = row
             new_cases["State"] = r["state"]
             new_cases["Cases"] = r["cases"]
