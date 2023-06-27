@@ -1,5 +1,5 @@
 def main():
-    jar = Jar()
+    jar = Jar(1)
     print(str(f"Capacity: {jar.capacity}"))
     jar.deposit(3)
     jar.withdraw(1)
@@ -8,25 +8,32 @@ def main():
 
 class Jar:
     def __init__(self, capacity=12):
-        self.cookies = 0
+        if capacity < 0 or self.size > 12:
+            raise ValueError("Wrong capacity")
+        self.capacity = capacity
+        self.size = 0
 
     def __str__(self):
-        if self.cookies < 0 or self.cookies > 12:
-            raise ValueError
-        return "🍪" * self.cookies
+        return "🍪" * self.size
 
     def deposit(self, n):
-        self.cookies+=n
+        if n > self.capacity:
+            raise ValueError("Exceeds capacity")
+        if self.size + n > self.capacity:
+            raise ValueError("Exceeds capacity")
+        self.cookies += n
 
     def withdraw(self, n):
-        self.cookies-=n
+        if self.size < n:
+            raise ValueError("There aren't enough cookies")
+        self.size -= n
 
     @property
     def capacity(self):
-        return 12
+        return self.capacity
 
     @property
     def size(self):
-        return self.cookies
+        return self.size
 
 main()
