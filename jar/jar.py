@@ -9,7 +9,7 @@ def main():
 
 class Jar:
     def __init__(self, capacity=12):
-        capacity=12
+        self.size
 
     def __str__(self):
         return("🍪")
@@ -22,7 +22,6 @@ class Jar:
 
     @property
     def capacity(self):
-        # return (self.capacity)
         pass
 
     @property
