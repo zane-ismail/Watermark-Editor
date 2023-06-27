@@ -12,7 +12,7 @@ class Jar:
         capacity=12
 
     def __str__(self):
-        return("🍪" )
+        return("🍪")
 
     def deposit(self, n):
         self=+n
