@@ -10,7 +10,7 @@ if len(sys.argv) == 0: or len(sys.argv) == 2:
     if sys.argv[2] == "-f" or sys.argv[2] == "--font":
         print(f"Output: {figlet.renderText(input)}")
     else:
-        print(f"Output: {figlet.renderText(input)}")
+        print(f"Output: {figlet.renderText(random.choice)}")
 
 
 
