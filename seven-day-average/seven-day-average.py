@@ -46,6 +46,7 @@ def calculate(reader):
             r = row
             new_cases["State"] = r["state"]
             new_cases["Cases"] = r["cases"]
+            print(new_cases)
 
             # print(row)
             # states.append(row["state"])
