@@ -2,8 +2,8 @@ def main():
     jar = Jar()
     print(str(jar.capacity))
     # print(str(jar))
-    jar.deposit(12)
-    jar.withdraw(1)
+    jar.deposit(1)
+    jar.withdraw(0)
     print(str(jar.size))
     # print(str(jar))
     print(str(jar))
@@ -15,9 +15,9 @@ class Jar:
     def __str__(self):
         if self.cookies < 0 or self.cookies > 12:
             raise ValueError
-        for c in range(self.cookies-1):
-            print("🍪", end="\n")
-        return("🍪")
+        for c in range(self.cookies):
+            print("🍪", end="")
+        return("")
 
     def deposit(self, n):
         self.cookies+=n
