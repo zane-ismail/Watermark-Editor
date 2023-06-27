@@ -1,11 +1,13 @@
 from pyfiglet import Figlet
 
+input = input("Input: ")
+
 figlet = Figlet()
 
 figlet.getFonts()
 
-figlet.setFont(font=f)
+figlet.setFont(font="5lineoblique")
 
-print(figlet.renderText(s))
+print(f"Output: {figlet.renderText(input)}")
 
 
