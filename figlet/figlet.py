@@ -8,8 +8,8 @@ if len(sys.argv) == 1 or len(sys.argv) == 3:
     figlet.getFonts()
 
     if len(sys.argv) == 3:
-        if sys.argv[3] == "-f" or sys.argv[3] == "--font":
-            figlet.setFont(font=sys.arg[3])
+        if sys.argv[2] == "-f" or sys.argv[2] == "--font":
+            figlet.setFont(font=sys.argv[2])
             print(f"Output: {figlet.renderText(input)}")
     else:
         figlet.setFont(font=random.choice(['basic', 'doom', 'moo']))
