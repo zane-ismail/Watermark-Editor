@@ -30,7 +30,7 @@ def calculate_quarters(cash):
         print(f"q{q}")
         return q
     else:
-        return
+        return 0
 
 
 def calculate_dimes(cash):
@@ -39,7 +39,7 @@ def calculate_dimes(cash):
         print(f"d{d}")
         return d
     else:
-        return
+        return 0
 
 
 
@@ -49,7 +49,7 @@ def calculate_nickels(cash):
         print(f"n{n}")
         return n
     else:
-        return
+        return 0
 
 
 
