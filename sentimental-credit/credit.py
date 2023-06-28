@@ -48,6 +48,7 @@ def validate_card(card, length):
 
 # Identify card type
 def get_card_type(card, length):
+    if length == 15 and digits == 34
 
 
 main()
