@@ -44,8 +44,8 @@ def main():
                         seq_list[s_reader[i:j]] +=1
                         if i == (len(s_reader)):
                             seq_list[s_reader[i:j]] +=1
-
         print(seq_list[s_reader[i:j]])
+
 
 
     # TODO: Check database for matching profiles
