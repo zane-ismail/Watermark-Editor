@@ -25,6 +25,7 @@ def get_cash():
 
 def calculate_quarters(cash):
     q = cash / 25
+    print(f"q{q}")
     return q
 
 
