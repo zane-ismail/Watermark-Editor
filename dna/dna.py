@@ -42,8 +42,9 @@ def main():
                     if s_reader[i+len(s_reader[i:j]):j+len(s_reader[i:j])] == s_reader[i:j]:
                         # print(s_reader[i+len(s_reader[i:j]):j+len(s_reader[i:j])])
                         seq_list[s_reader[i:j]] +=1
-    for k in seq_list:
-        if seq_list[k]
+    for k in range(len(seq_list)):
+        if seq_list[k] > 1:
+            seq_list[s_reader[i:j]] +=1
         print(seq_list)
 
 
