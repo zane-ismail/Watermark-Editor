@@ -1,7 +1,4 @@
 # TODO
-import re
-
-
 def main():
     text = input("Text: ")
     # calculate average number of letters per 100 words
@@ -21,6 +18,7 @@ def main():
         print(f"Grade {index}")
 
 
+# Counts letters in text
 def count_letters(text):
     letter_count = 0
     for word in text:
@@ -31,6 +29,7 @@ def count_letters(text):
     return letter_count
 
 
+# Counts words in text
 def count_words(text):
     word_count = 1
     for space in text:
@@ -41,6 +40,7 @@ def count_words(text):
     return word_count
 
 
+# Counts sentences in text
 def count_sentences(text):
     sentence_count = 0
     for end in text:
