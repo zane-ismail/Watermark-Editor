@@ -36,12 +36,13 @@ def main():
 
     for i in range(len(s_reader)):
         for j in range(len(s_reader)):
-            for k in range(8):
-                if s_reader[i:j] == seq_list.index[k]:
+            for k in seq_list:
+                if s_reader[i:j] == k:
                     # print(f"MATCH{seq_list[k]}")
                     if s_reader[i+len(s_reader[i:j]):j+len(s_reader[i:j])] == s_reader[i:j]:
                         print(s_reader[i+len(s_reader[i:j]):j+len(s_reader[i:j])])
-                        print(count)
+                        s_reader[k][0] +=1
+                        print(s_reader[k][0])
 
 
 
