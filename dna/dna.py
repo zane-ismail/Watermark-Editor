@@ -46,15 +46,11 @@ def main():
 
                         # print(f"j: {j}")
                         # print(f"i: {i}")
-                        if i + j == len(s_reader) - 1:
-                            # seq_list[s_reader[i:j]] +=1
-                            print(f"SEQ LIST: {seq_list}")
-                            print(f"AAAAAA:{seq_list[s_reader[i:j]]}")
-                            print("\n")
-                            print("\n")
-                            print("\n")
-                            print("\n")
-                            print("\n")
+                        # if i + j == len(s_reader) - 1:
+                        #     # seq_list[s_reader[i:j]] +=1
+                        #     print(f"SEQ LIST: {seq_list}")
+                        #     print(f"AAAAAA:{seq_list[s_reader[i:j]]}")
+                        #     print("\n")
 
 
     # TODO: Check database for matching profiles
