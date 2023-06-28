@@ -1,4 +1,6 @@
 # TODO
+import re
+
 
 def main():
     text = input("Text: ")
@@ -22,7 +24,9 @@ def main():
 def count_letters(text):
     letter_count = 0
     for word in text:
-        if word 
+        if re.search('[a-zA-Z]', text) == True:
+            letter_count = letter_count + 1
+    print(letter_count)
 
     return letter_count
 
