@@ -61,7 +61,6 @@ def main():
     for x in seq_list:
         print("\n")
         print(f"1: {x}")
-        db_reader = csv.DictReader(file)
         for row in db_reader:
             # row[x] = int(row[x])
             print(f"2: {row}")
