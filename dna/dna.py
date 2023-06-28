@@ -31,16 +31,16 @@ def main():
 
 
     # TODO: Find longest match of each STR in DNA sequence
-    seq_dict = ["AGATC", "TTTTTTCT", "AATG", "TCTAG", "GATA", "TATC", "GAAA", "TCTG"]
+    seq_list = {"AGATC": 0, "TTTTTTCT": 0, "AATG": 0, "TCTAG": 0, "GATA": 0, "TATC": 0, "GAAA": 0, "TCTG": 0}
     count = 0
 
     for i in range(len(s_reader)):
         for j in range(len(s_reader)):
-            for k in range(len(seq_list)):
-                if s_reader[i:j] == seq_list[k]:
+            for k in range(8):
+                if s_reader[i:j] == seq_list.index[k]:
                     # print(f"MATCH{seq_list[k]}")
                     if s_reader[i+len(s_reader[i:j]):j+len(s_reader[i:j])] == s_reader[i:j]:
-                        count = count + 1
+                        print(s_reader[i+len(s_reader[i:j]):j+len(s_reader[i:j])])
                         print(count)
 
 
