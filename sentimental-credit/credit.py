@@ -2,9 +2,8 @@
 def main():
     card = get_card_number()
     card_length = get_card_length(card)
-    validate_card(card, card_length)
-    print(validate_card(card, card_length))
-
+    if validate_card(card, card_length):
+        check
 
 # Get card number
 def get_card_number():
@@ -43,7 +42,10 @@ def validate_card(card, length):
     for digit in digits:
         sum = sum + int(digit)
 
-    return sum
+    if sum % 10 == 0:
+        return 0
+    else:
+        return 1
 
 
 # Identify card type
