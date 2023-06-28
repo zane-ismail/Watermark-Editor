@@ -44,7 +44,8 @@ def main():
                         # print(s_reader[i+len(s_reader[i:j]):j+len(s_reader[i:j])])
                         seq_list[s_reader[i:j]] +=1
 
-                        print(j)
+                        print(f"j: {j}")
+                        print(f"i: {i}")
                         if i == len(s_reader) - 2:
                             seq_list[s_reader[i:j]] +=1
                             print(f"AAAAAA:{seq_list[s_reader[i:j]]}")
