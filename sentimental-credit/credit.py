@@ -27,10 +27,9 @@ def get_card_length(card):
 def validate_card(card, length):
     print(card)
     # Iterate to find the second to last digit and every other digit after that
-    for digit in range(0, length, 2):
-        for digit in card:
-            print(digit)
-            sum = digit * 2
+    for i in range(lenght, length, -2):
+        print(card[i])
+        sum = card[i] * 2
 
     return
 
