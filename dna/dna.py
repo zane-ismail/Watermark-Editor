@@ -11,7 +11,9 @@ def main():
     # Second command-line argument the name of a text file
     sequences = argc[2]
 
-    if
+    # if the incorrect number of command-line arguments print an error message
+    if len(argv) != 3:
+        print("Incorrect input ")
 
     # TODO: Read database file into a variable
 
