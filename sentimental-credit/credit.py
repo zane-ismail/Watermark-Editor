@@ -51,7 +51,9 @@ def validate_card(card, length):
 
 # Identify card type
 def get_card_type(card, length):
-    if length == 15 and digits == 34
+    digits = card[0] + card[1]
+    if (length == 15) and (digits == "34" or digits == "37"):
+        print("AMEX")
 
 
 main()
