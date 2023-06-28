@@ -60,8 +60,8 @@ def main():
     # TODO: Check database for matching profiles
     for x in seq_list:
         print("\n")
-        print(f"1: {x}")
-        for row in db_reader:
+        print(f"1: {x[0]}")
+        for row in db_reader.items():
             # row[x] = int(row[x])
             print(f"2: {row}")
             # if x == row[x]:
