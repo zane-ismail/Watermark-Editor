@@ -35,6 +35,7 @@ def main():
     count = 0
 
     for i in range(len(s_reader)):
+        print
         for j in range(len(s_reader)):
             for k in seq_list:
                 if s_reader[i:j] == k:
