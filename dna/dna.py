@@ -54,6 +54,7 @@ def main():
 
 
     # TODO: Check database for matching profiles
+    if
 
     return
 
