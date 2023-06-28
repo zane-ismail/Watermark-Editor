@@ -20,7 +20,9 @@ def main():
 
 
 def count_letters(text):
-    letter_count = len(text)
+    letter_count = 0
+    for word in text:
+        if word 
 
     return letter_count
 
