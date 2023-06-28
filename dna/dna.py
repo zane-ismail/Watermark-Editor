@@ -20,23 +20,29 @@ def main():
     list = []
     with open(database) as file:
         db_reader = csv.DictReader(file)
-        for row in db_reader:
-            print(row)
+        # for row in db_reader:
+            # print(row)
 
 
     # TODO: Read DNA sequence file into a variable
     with open(sequences) as f:
         s_reader = f.read()
-        print(s_reader)
+        # print(s_reader)
 
 
     # TODO: Find longest match of each STR in DNA sequence
-    seq_list = ["AGATC", "TTTTTTCT", "AATG", "TCTAG", "GATA", "TATC", "GAAA", "TCTG"]
+    seq_dict = ["AGATC", "TTTTTTCT", "AATG", "TCTAG", "GATA", "TATC", "GAAA", "TCTG"]
+    count = 0
 
     for i in range(len(s_reader)):
         for j in range(len(s_reader)):
-            if s_reader[i:j] == seq_list[i]:
-                print(f"MATCH{seq_list[i]}")
+            for k in range(len(seq_list)):
+                if s_reader[i:j] == seq_list[k]:
+                    # print(f"MATCH{seq_list[k]}")
+                    if s_reader[i+len(s_reader[i:j]):j+len(s_reader[i:j])] == s_reader[i:j]:
+                        count = count + 1
+                        print(count)
+
 
 
     # TODO: Check database for matching profiles
