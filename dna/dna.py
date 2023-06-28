@@ -61,8 +61,8 @@ def main():
     for i in seq_list:
         print("\n")
         print(f"1: {i[0]}")
-        for j in db_reader:
-            for k in j.items():
+        for j in db_reader.items():
+            for k in j:
             # row[x] = int(row[x])
              print(f"2: {k}")
             # if x == row[x]:
