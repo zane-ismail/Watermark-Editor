@@ -37,15 +37,16 @@ def validate_card(card, length):
     # Iterate to find the second to last digit and every other digit after that
     for i in range(length-2, -1, -2):
         # Multiply digit by 2
-        digit = int(card[i] * 2)
+        digit = int(card[i])
+        digit = digit * 2
         print(digit)
         if digit < 9:
             digits.append(digit)
         # Split 2 digit numbers into single digits
         if digit > 9:
             digit = str(digit)
-            digits.append(str(digit[0]))
-            digits.append(str(digit[1]))
+            digits.append(int(digit[0]))
+            digits.append(int(digit[1]))
 
         # Add all single digits together
     print(digits)
