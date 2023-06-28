@@ -6,6 +6,7 @@ def main():
     if validate_card(card, card_length) == 1:
         print("INVALID")
 
+
 # Get card number
 def get_card_number():
     try:
