@@ -42,10 +42,10 @@ def main():
                     if s_reader[i+len(s_reader[i:j]):j+len(s_reader[i:j])] == s_reader[i:j]:
                         # print(s_reader[i+len(s_reader[i:j]):j+len(s_reader[i:j])])
                         seq_list[s_reader[i:j]] +=1
-                        if i == (len(s_reader)):
+                        if i == (len(s_reader)) - 1:
                             seq_list[s_reader[i:j]] +=1
                             print(f"AAAAAA:{seq_list[s_reader[i:j]]}")
-
+                            print("\n")
 
 
     # TODO: Check database for matching profiles
