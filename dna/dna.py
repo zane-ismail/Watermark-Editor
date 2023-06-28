@@ -6,22 +6,27 @@ def main():
 
     # TODO: Check for command-line usage
     # First command-line argument the name of a CSV file
-    database = argv[1]
+    database = sys.argv[1]
 
     # Second command-line argument the name of a text file
-    sequences = argc[2]
+    sequences = sys.argv[2]
 
     # if the incorrect number of command-line arguments print an error message
-    if len(argv) != 3:
+    if len(sys.argv) != 3:
         print("Incorrect input ")
 
     # TODO: Read database file into a variable
     # open the CSV file and read its contents into memory
     with open(database) as file:
-        reader = csv.Dictreader(file)
-        
+        reader = csv.DictReader(file)
+        for row in reader:
+            print(row)
+
 
     # TODO: Read DNA sequence file into a variable
+    with open(sequences) as file:
+        reader = read(file)
+        print(reader)
 
     # TODO: Find longest match of each STR in DNA sequence
 
