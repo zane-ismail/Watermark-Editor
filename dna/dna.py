@@ -31,8 +31,8 @@ def main():
 
     # TODO: Find longest match of each STR in DNA sequence
     seq_list = []
-    for str in s_reader:
-        if
+    for i in range(len(s_reader)):
+        if s_reader[i] == "A" and s_reader[i+1] == "G"
 
 
     # TODO: Check database for matching profiles
