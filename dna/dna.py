@@ -19,6 +19,7 @@ def main():
     # open the CSV file and read its contents into memory
     with open(database) as file:
         reader = csv.Dictreader(file)
+        
 
     # TODO: Read DNA sequence file into a variable
 
