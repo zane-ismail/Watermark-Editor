@@ -39,12 +39,12 @@ def validate_card(card, length):
         # Multiply digit by 2
         digit = int(card[i])
         digit = digit * 2
-        print(digit)
         if digit < 9:
             digits.append(digit)
         # Split 2 digit numbers into single digits
         if digit > 9:
             digit = str(digit)
+            print(digit)
             digits.append(int(digit[0]))
             digits.append(int(digit[1]))
 
