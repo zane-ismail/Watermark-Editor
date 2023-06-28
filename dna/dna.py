@@ -20,14 +20,14 @@ def main():
     list = []
     with open(database) as file:
         db_reader = csv.DictReader(file)
-        for row in db_reader:
-            print(row)
+        # for row in db_reader:
+            # print(row)
 
 
     # TODO: Read DNA sequence file into a variable
     with open(sequences) as f:
         s_reader = f.read()
-        print(s_reader)
+        # print(s_reader)
 
 
     # TODO: Find longest match of each STR in DNA sequence
