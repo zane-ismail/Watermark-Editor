@@ -2,9 +2,10 @@
 def main():
     card = get_card_number()
     card_length = get_card_length(card)
-    card_type = get_card_type(card, card_length)
     if validate_card(card, card_length) == 1:
         print("INVALID")
+    else:
+        card_type = get_card_type(card, card_length)
 
 
 # Get card number
@@ -50,9 +51,9 @@ def validate_card(card, length):
         sum = sum + int(digit)
 
     if sum % 10 == 0:
-        print(sum)
         return 1
     else:
+        print(sum)
         return 0
 
 
