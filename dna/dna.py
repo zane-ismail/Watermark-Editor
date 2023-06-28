@@ -17,18 +17,21 @@ def main():
 
     # TODO: Read database file into a variable
     # open the CSV file and read its contents into memory
+    list = []
     with open(database) as file:
-        reader = csv.DictReader(file)
+        db_reader = csv.DictReader(file)
         for row in reader:
             print(row)
 
 
     # TODO: Read DNA sequence file into a variable
     with open(sequences) as f:
-        reader = f.readline()
-        print(reader)
+        s_reader = f.readline()
+
 
     # TODO: Find longest match of each STR in DNA sequence
+    for str in s_reader:
+        
 
     # TODO: Check database for matching profiles
 
