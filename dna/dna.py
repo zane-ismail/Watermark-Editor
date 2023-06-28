@@ -31,10 +31,12 @@ def main():
 
 
     # TODO: Find longest match of each STR in DNA sequence
-    seq_list = []
+    seq_list = ["AGATC", "TTTTTTCT", "AATG", "TCTAG", "GATA", "TATC", "GAAA", "TCTG"]
+
     for i in range(len(s_reader)):
-        if s_reader[i] == "A" and s_reader[i+1] == "G" and s_reader[i+2] == "A" and s_reader[i+3] == "T" and s_reader[i+4] == "C" and s_reader[i+5] == "G":
-            
+        for j in range(len(s_reader)):
+            if s_reader[i:j] == seq_list[i]:
+                print(f"MATCH{seq_list[i]}")
 
 
     # TODO: Check database for matching profiles
