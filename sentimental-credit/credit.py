@@ -47,6 +47,7 @@ def validate_card(card, length):
             digits.append(str(digit[1]))
 
         # Add all single digits together
+    print(digits)
     for digit in digits:
         sum = sum + int(digit)
 
