@@ -8,7 +8,11 @@ def main():
 
 # Get card number
 def get_card_number():
-    card_number = input("Card number: ")
+    try:
+        card_number = int(input("Card number: "))
+    except:
+        get_card_number()
+
     return card_number
 
 
