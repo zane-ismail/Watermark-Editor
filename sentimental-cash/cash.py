@@ -4,20 +4,20 @@ import cs50
 def main():
     cash = get_cash()
     print(cash)
-    # quarters = calculate_quarters(cash)
-    # cash = cash - quarters * 25
-    # quarters = calculate_dimes(cash)
-    # cash = cash - quarters * 10
-    # quarters = calculate_nickels(cash)
-    # cash = cash - quarters * 5
-    # quarters = calculate_cents(cash)
-    # cash = cash - quarters * 1
+    quarters = calculate_quarters(cash)
+    cash = cash - quarters * 25
+    dimes = calculate_dimes(cash)
+    cash = cash - dimes * 10
+    nickels = calculate_nickels(cash)
+    cash = cash - nickels * 5
+    cents = calculate_cents(cash)
+    cash = cash - cents * 1
 
-    # coins = quarters + dimes + nickels + pennies
-    # print(coins)
+    coins = quarters + dimes + nickels + cents
+    print(coins)
 
 def get_cash():
-    c = 0
+    c = -1
     while c < 0:
         c = cs50.get_float("Change owed: ")
     return c
