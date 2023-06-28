@@ -41,8 +41,8 @@ def main():
                     # print(f"MATCH{seq_list[k]}")
                     if s_reader[i+len(s_reader[i:j]):j+len(s_reader[i:j])] == s_reader[i:j]:
                         print(s_reader[i+len(s_reader[i:j]):j+len(s_reader[i:j])])
-                        s_reader[k][0] +=1
-                        print(s_reader[k][0])
+                        # s_reader[k][0] +=1
+                        print(s_reader[k])
 
 
 
