@@ -56,7 +56,6 @@ def main():
     # TODO: Check database for matching profiles
     for k in seq_list:
         for row in db_reader:
-            print(row[k])
             if k == row[k]:
                 print("MATCH!")
 
