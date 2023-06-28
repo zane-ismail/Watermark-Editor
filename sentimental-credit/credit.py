@@ -1,5 +1,5 @@
 # TODO
-def main()
+def main():
     card = get_card_number()
     card_length = get_card_length(card)
     print(card)
