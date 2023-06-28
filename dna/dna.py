@@ -21,7 +21,7 @@ def main():
     with open(database) as file:
         db_reader = csv.DictReader(file)
         # for row in db_reader:
-            # print(row)
+            print(row)
 
 
     # TODO: Read DNA sequence file into a variable
@@ -40,10 +40,9 @@ def main():
                 if s_reader[i:j] == k:
                     # print(f"MATCH{seq_list[k]}")
                     if s_reader[i+len(s_reader[i:j]):j+len(s_reader[i:j])] == s_reader[i:j]:
-                        print(s_reader[i+len(s_reader[i:j]):j+len(s_reader[i:j])])
-                        # s_reader[k][0] +=1
-                        print(s_reader[i:j])
-                        print(seq_list(s_reader[i:j]))
+                        # print(s_reader[i+len(s_reader[i:j]):j+len(s_reader[i:j])])
+                        seq_list[s_reader[i:j]] +=1
+    print(seq_list)
 
 
 
