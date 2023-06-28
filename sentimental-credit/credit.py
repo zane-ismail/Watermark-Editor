@@ -2,7 +2,7 @@
 def main():
     card = get_card_number()
     card_length = get_card_length(card)
-    print(card)
+    # print(card_length)
 
 
 # Get card number
