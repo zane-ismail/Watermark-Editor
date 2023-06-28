@@ -25,36 +25,25 @@ def get_cash():
 
 
 def calculate_quarters(cash):
-    if cash % 25 == 0:
-        q = cash / 25
-        print(f"q{q}")
-        return q
-    else:
-        return 0
+    q = cash % 25
+    print(f"q{q}")
+    return q
 
 
 def calculate_dimes(cash):
-    if cash % 10 == 0:
-        d = cash / 10
-        print(f"d{d}")
-        return d
-    else:
-        return 0
-
+    d = cash % 10
+    print(f"d{d}")
+    return d
 
 
 def calculate_nickels(cash):
-    if cash % 5 == 0:
-        n = cash / 5
-        print(f"n{n}")
-        return n
-    else:
-        return 0
-
+    n = cash % 5
+    print(f"n{n}")
+    return n
 
 
 def calculate_cents(cash):
-    c = cash / 1
+    c = cash % 1
     print(f"c{c}")
     return c
 
