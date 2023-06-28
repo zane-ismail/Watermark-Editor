@@ -6,8 +6,8 @@ def main():
     print(cash)
     quarters = calculate_quarters(cash)
     dimes = calculate_dimes(quarters)
-    nickels = calculate_nickels(cash)
-    cents = calculate_cents(cash)
+    nickels = calculate_nickels(dimes)
+    cents = calculate_cents(nickels)
 
     coins = quarters + dimes + nickels + cents
     print(coins)
