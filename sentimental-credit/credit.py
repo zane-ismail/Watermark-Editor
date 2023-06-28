@@ -4,7 +4,7 @@ def main():
     card_length = get_card_length(card)
     card_type = get_card_type(card, card_length)
     if validate_card(card, card_length) == 1:
-        print("INVALID")
+        print("1INVALID")
 
 
 # Get card number
@@ -24,7 +24,7 @@ def get_card_length(card):
 
     # Reject cards with less than 13 or more than 16 numbers
     if length < 13 or length > 16:
-        print("INVALID")
+        print("2INVALID")
 
     return length
 
@@ -72,7 +72,7 @@ def get_card_type(card, length):
         print("VISA")
 
     else:
-        print("INVALID")
+        print("3INVALID")
 
 
 main()
