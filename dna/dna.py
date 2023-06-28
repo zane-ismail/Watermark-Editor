@@ -27,7 +27,7 @@ def main():
     # TODO: Read DNA sequence file into a variable
     with open(sequences) as f:
         s_reader = f.read()
-        # print(s_reader)
+        print(s_reader)
 
 
     # TODO: Find longest match of each STR in DNA sequence
@@ -54,10 +54,10 @@ def main():
 
 
     # TODO: Check database for matching profiles
-    for k in seq_list:
-        for row in db_reader:
-            if k == row[k]:
-                print("MATCH!")
+    # for k in seq_list:
+    #     for row in db_reader:
+    #         if k == row[k]:
+    #             print("MATCH!")
 
     return
 
