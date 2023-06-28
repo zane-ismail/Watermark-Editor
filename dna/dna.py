@@ -20,7 +20,7 @@ def main():
     list = []
     with open(database) as file:
         db_reader = csv.DictReader(file)
-        # for row in db_reader:
+        for row in db_reader:
             print(row)
 
 
