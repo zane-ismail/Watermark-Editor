@@ -30,8 +30,10 @@ def main():
 
 
     # TODO: Find longest match of each STR in DNA sequence
+    seq_list = []
     for str in s_reader:
-        
+        if
+
 
     # TODO: Check database for matching profiles
 
