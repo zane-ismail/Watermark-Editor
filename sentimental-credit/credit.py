@@ -3,7 +3,7 @@ def main():
     card = get_card_number()
     card_length = get_card_length(card)
     validate_card(card, card_length)
-    # print(card_length)
+    print(validate_card(card, card_length))
 
 
 # Get card number
@@ -25,22 +25,29 @@ def get_card_length(card):
 
 # Luhn's algorithm
 def validate_card(card, length):
-    print(card)
+    digits = []
+    sum = 0
     # Iterate to find the second to last digit and every other digit after that
     for i in range(length-2, -1, -2):
-        print(card[i])
         # Multiply digit by 2
         digit = int(card[i] * 2)
-        print(digit)
+        if digit < 9:
+            digits.append(digit)
         # Split 2 digit numbers into single digits
         if digit > 9:
             digit = str(digit)
-            digit_a = str(digit[0])
-            digit_b = str(digit[1])
-            print(digit[0])
-            print(digit[1])
+            digits.append(str(digit[0]))
+            digits.append(str(digit[1]))
 
-    return
+        # Add all single digits together
+    for digit in digits:
+        sum = sum + int(digit)
+
+    return sum
+
+
+# Identify card type
+def get_card_type(card, length):
 
 
 main()
