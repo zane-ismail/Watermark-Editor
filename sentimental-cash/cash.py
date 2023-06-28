@@ -3,19 +3,14 @@ import cs50
 
 def main():
     cash = get_cash()
-    print(cash)
     quarters = calculate_quarters(cash)
     cash = cash - quarters * 25
-    print(cash)
     dimes = calculate_dimes(cash)
     cash = cash - dimes * 10
-    print(cash)
     nickels = calculate_nickels(cash)
     cash = cash - nickels * 5
-    print(cash)
     cents = calculate_cents(cash)
     cash = cash - cents * 1
-    print(cash)
 
     coins = quarters + dimes + nickels + cents
     print(coins)
@@ -29,26 +24,22 @@ def get_cash():
 
 
 def calculate_quarters(cash):
-    q = round(cash / 25)
-    print(f"q{q}")
+    q = int(cash / 25)
     return q
 
 
 def calculate_dimes(cash):
-    d = round(cash / 10)
-    print(f"d{d}")
+    d = int(cash / 10)
     return d
 
 
 def calculate_nickels(cash):
-    n = round(cash / 5)
-    print(f"n{n}")
+    n = int(cash / 5)
     return n
 
 
 def calculate_cents(cash):
-    c = round(cash / 1)
-    print(f"c{c}")
+    c = int(cash / 1)
     return c
 
 main()
