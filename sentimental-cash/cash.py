@@ -32,16 +32,19 @@ def calculate_quarters(cash):
 
 def calculate_dimes(cash):
     d = cash / 10
+    print(f"d{d}")
     return d
 
 
 def calculate_nickels(cash):
     n = cash / 5
+    print(f"n{n}")
     return n
 
 
 def calculate_cents(cash):
     c = cash / 1
+    print(f"c{c}")
     return c
 
 main()
