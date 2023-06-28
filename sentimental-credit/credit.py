@@ -42,27 +42,23 @@ def validate_card(card, length):
         digit = digit * 2
         if digit < 9:
             digits.append(digit)
-    # Split 2 digit numbers into single digits
-    if digit > 9:
-        digit = str(digit)
-        print(digit)
-        digits.append(int(digit[0]))
-        digits.append(int(digit[1]))
+        # Split 2 digit numbers into single digits
+        if digit > 9:
+            digit = str(digit)
+            digits.append(int(digit[0]))
+            digits.append(int(digit[1]))
 
     # Iterate to find every other digit
     for j in range(length-1, -1, -2):
         digits.append(int(card[j]))
 
     # Add all single digits together
-    print(digits)
     for digit in digits:
         sum = sum + int(digit)
 
     if sum % 10 == 0:
-        print(sum)
         return 1
     else:
-        print(sum)
         return 0
 
 
