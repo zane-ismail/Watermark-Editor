@@ -20,7 +20,7 @@ def get_cash():
     c = -1
     while c < 0:
         c = cs50.get_float("Change owed: ")
-        c = c * 100
+        c = int(c * 100)
     return c
 
 
