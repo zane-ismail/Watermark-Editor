@@ -6,12 +6,16 @@ def main():
     print(cash)
     quarters = calculate_quarters(cash)
     cash = cash - quarters * 25
+    print(cash)
     dimes = calculate_dimes(cash)
     cash = cash - dimes * 10
+    print(cash)
     nickels = calculate_nickels(cash)
     cash = cash - nickels * 5
+    print(cash)
     cents = calculate_cents(cash)
     cash = cash - cents * 1
+    print(cash)
 
     coins = quarters + dimes + nickels + cents
     print(coins)
