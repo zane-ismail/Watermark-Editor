@@ -2,6 +2,7 @@
 def main():
     card = get_card_number()
     card_length = get_card_length(card)
+    validate_card(card, card_length)
     # print(card_length)
 
 
@@ -22,7 +23,15 @@ def get_card_length(card):
     return length
 
 
-main()
 # Luhn's algorithm
-# def validate_card(card, length)
+def validate_card(card, length):
+    # Iterate to find the second to last digit and every other digit after that
+    for digit in card in range(length-1, 0, 2):
+        print(digit)
+        sum = digit * 2
+
+    return
+
+
+main()
 
