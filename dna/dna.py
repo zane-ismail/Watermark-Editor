@@ -27,7 +27,7 @@ def main():
     # TODO: Read DNA sequence file into a variable
     with open(sequences) as f:
         s_reader = f.read()
-        print(s_reader)
+        # print(s_reader)
 
 
     # TODO: Find longest match of each STR in DNA sequence
@@ -50,7 +50,9 @@ def main():
                         # print(f"i: {i}")
                         # if i + j == len(s_reader) - 1:
                         #     # seq_list[s_reader[i:j]] +=1
-                        print(f"SEQ LIST: {seq_list}")
+
+                        # print(f"SEQ LIST: {seq_list}")
+
                         #     print(f"AAAAAA:{seq_list[s_reader[i:j]]}")
                         #     print("\n")
 
@@ -59,7 +61,7 @@ def main():
     for k in seq_list:
         print(k)
         for row in db_reader:
-            row[k] = int(row[k])
+            # row[k] = int(row[k])
             print(f"ROW!!: {row}")
             if k == row[k]:
                 print(f"ROWK: {row[k]}")
