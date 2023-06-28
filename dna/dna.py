@@ -31,7 +31,7 @@ def main():
 
 
     # TODO: Find longest match of each STR in DNA sequence
-    seq_list = {"AGATC": 0, "TTTTTTCT": 0, "AATG": 0, "TCTAG": 0, "GATA": 0, "TATC": 0, "GAAA": 0, "TCTG": 0}
+    seq_list = {"AGATC": 1, "TTTTTTCT": 1, "AATG": 1, "TCTAG": 0, "GATA": 0, "TATC": 0, "GAAA": 0, "TCTG": 0}
     count = 0
 
     for i in range(len(s_reader)):
