@@ -44,16 +44,29 @@ def validate_card(card, length):
         sum = sum + int(digit)
 
     if sum % 10 == 0:
-        return 0
-    else:
         return 1
+    else:
+        return 0
 
 
 # Identify card type
 def get_card_type(card, length):
+    visa_digit = card[0]
     digits = card[0] + card[1]
-    if (length == 15) and (digits == "34" or digits == "37"):
+    if length == 15 and digits == "34" or digits == "37":
         print("AMEX")
+
+    elif length == 16 and digits == "51" or digits == "52" or digits == "53" or digits == "54" or digits == "55":
+        print("MASTERCARD")
+
+    elif visa_digit == "4":
+        print("VISA")
+
+    elif length == 13 and visa_digit == "4":
+        print("VISA")
+
+    else:
+        print("INVALID")
 
 
 main()
