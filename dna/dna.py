@@ -58,12 +58,13 @@ def main():
 
 
     # TODO: Check database for matching profiles
-    for x in seq_list:
+    for i in seq_list:
         print("\n")
-        print(f"1: {x[0]}")
-        for row in db_reader:
+        print(f"1: {i[0]}")
+        for j in db_reader:
+            for k in j.items():
             # row[x] = int(row[x])
-            print(f"2: {row}")
+             print(f"2: {k}")
             # if x == row[x]:
             #     print(f"ROWK: {row[k]}")
             #     print("MATCH!")
