@@ -5,9 +5,13 @@ def main():
     cash = get_cash()
     print(cash)
     quarters = calculate_quarters(cash)
-    dimes = calculate_dimes(quarters)
-    nickels = calculate_nickels(dimes)
-    cents = calculate_cents(nickels)
+    cash = cash - quarters * 25
+    dimes = calculate_dimes(cash)
+    cash = cash - dimes * 10
+    nickels = calculate_nickels(cash)
+    cash = cash - nickels * 5
+    cents = calculate_cents(cash)
+    cash = cash - cents * 1
 
     coins = quarters + dimes + nickels + cents
     print(coins)
@@ -21,25 +25,25 @@ def get_cash():
 
 
 def calculate_quarters(cash):
-    q = cash % 25
+    q = round(cash / 25)
     print(f"q{q}")
     return q
 
 
 def calculate_dimes(cash):
-    d = cash % 10
+    d = round(cash / 10)
     print(f"d{d}")
     return d
 
 
 def calculate_nickels(cash):
-    n = cash % 5
+    n = round(cash / 5)
     print(f"n{n}")
     return n
 
 
 def calculate_cents(cash):
-    c = cash % 1
+    c = round(cash / 1)
     print(f"c{c}")
     return c
 
