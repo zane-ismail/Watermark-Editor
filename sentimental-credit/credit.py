@@ -4,8 +4,7 @@ def main():
     card_length = get_card_length(card)
     if validate_card(card, card_length) == 1:
         print("INVALID")
-    else:
-        card_type = get_card_type(card, card_length)
+    card_type = get_card_type(card, card_length)
 
 
 # Get card number
