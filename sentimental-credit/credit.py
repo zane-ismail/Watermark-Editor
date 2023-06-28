@@ -34,6 +34,7 @@ def get_card_length(card):
 def validate_card(card, length):
     digits = []
     sum = 0
+
     # Iterate to find the second to last digit and every other digit after that
     for i in range(length-2, -1, -2):
         # Multiply digit by 2
@@ -41,11 +42,18 @@ def validate_card(card, length):
         digit = digit * 2
         if digit < 9:
             digits.append(digit)
+    # Split 2 digit numbers into single digits
+    if digit > 9:
+        digit = str(digit)
+        print(digit)
+        digits.append(int(digit[0]))
+        digits.append(int(digit[1]))
+
     # Iterate to find every other digit
     for j in range(length-1, -1, -2):
         digits.append(int(card[j]))
 
-        # Add all single digits together
+    # Add all single digits together
     print(digits)
     for digit in digits:
         sum = sum + int(digit)
