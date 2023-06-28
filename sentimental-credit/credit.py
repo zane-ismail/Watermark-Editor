@@ -38,6 +38,7 @@ def validate_card(card, length):
     for i in range(length-2, -1, -2):
         # Multiply digit by 2
         digit = int(card[i] * 2)
+        print(digit)
         if digit < 9:
             digits.append(digit)
         # Split 2 digit numbers into single digits
