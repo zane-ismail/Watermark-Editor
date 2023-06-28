@@ -33,8 +33,9 @@ def count_letters(text):
 
 def count_words(text):
     word_count = 1
-    for word in text:
-        word_count = word_count + 1
+    for space in text:
+        if space == " ":
+            word_count = word_count + 1
     print(word_count)
 
     return word_count
