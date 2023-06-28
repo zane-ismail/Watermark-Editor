@@ -36,6 +36,7 @@ def count_words(text):
     for space in text:
         if space == " ":
             word_count = word_count + 1
+    print(word_count)
 
     return word_count
 
@@ -45,6 +46,7 @@ def count_sentences(text):
     for end in text:
         if end == "." or end == "!" or end == "?":
             sentence_count = sentence_count + 1
+    print(count_sentences)
 
     return sentence_count
 
