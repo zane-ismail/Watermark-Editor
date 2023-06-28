@@ -51,8 +51,10 @@ def validate_card(card, length):
         sum = sum + int(digit)
 
     if sum % 10 == 0:
+        print(sum)
         return 1
     else:
+        print(sum)
         return 0
 
 
