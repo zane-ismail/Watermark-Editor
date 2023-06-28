@@ -60,6 +60,7 @@ def main():
         print(k)
         for row in db_reader:
             row[k] = int(row[k])
+            print(f"ROW!!: {row}")
             if k == row[k]:
                 print(f"ROWK: {row[k]}")
                 print("MATCH!")
