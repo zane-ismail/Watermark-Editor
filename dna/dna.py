@@ -54,7 +54,8 @@ def main():
 
 
     # TODO: Check database for matching profiles
-    if
+    for k in seq_list:
+                if s_reader[i:j] == k:
 
     return
 
