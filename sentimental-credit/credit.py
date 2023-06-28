@@ -11,6 +11,7 @@ def main():
 def get_card_number():
     try:
         card_number = int(input("Card number: "))
+        card_number = str(card_number)
     except:
         get_card_number()
 
