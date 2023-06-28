@@ -14,11 +14,11 @@ def main():
     if index < 1:
         print("Before Grade 1")
     # if index number is 16 or higher, output
-    elif (index >= 16):
+    elif index >= 16:
         print("Grade 16+")
     # print as output "Grade X" where X is the grade level
     else:
-        print("Grade {index}")
+        print(f"Grade {index}")
 
 
 def count_letters(text):
