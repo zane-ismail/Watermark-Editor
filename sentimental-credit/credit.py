@@ -30,7 +30,7 @@ def validate_card(card, length):
     for i in range(length-2, -1, -2):
         print(card[i])
         # Multiply digit by 2
-        digit = card[i] * 2
+        digit = int(card[i] * 2)
         # Split 2 digit numbers into single digits
         if digit > 9:
             d = (digit / 10) + (digit % 10)
