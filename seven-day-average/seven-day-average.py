@@ -24,7 +24,7 @@ def main():
             states.append(state)
         if len(state) == 0:
             break
-
+    print(states)
     print(f"\nSeven-Day Averages")
 
     # Print out 7-day averages for this week vs last week
@@ -33,20 +33,31 @@ def main():
 
 # TODO: Create a dictionary to store 14 most recent days of new cases by state
 def calculate(reader):
-
+    x = -1
+    temp = []
+    states = []
+    list_new_cases = []
+    list_previous_cases = []
     new_cases = {}
+    previous_cases = {}
 
-    previous_cases = {
-                "State" : "Cases"
-                }
-    for case in range(14):
-        for row in reader:
-            case = {"State": row["state"], "Cases": row["cases"]}
-            new_cases.update(case)
+    # Reads each row into dictionary into a list
+    for row in reader:
+        x = x + 1
+        case = {"State": row["state"], "Cases": row["cases"], "Date": row["date"]}
+        # Creates a list of cases
+        list_new_cases.append(case)
+        # Creates a list of states
+        temp.append(list_new_cases[x]["State"])
+    # Removes duplcate states
+    for i in temp:
+        if i not in states:
+            states.append(i)
 
-            print(new_cases)
-            # states.append(row["state"])
-    print(new_cases)
+
+
+    # print(states)
+    print(list_new_cases)
     return(new_cases)
 
 # TODO: Calculate and print out seven day average for given state

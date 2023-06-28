@@ -1,0 +1,21 @@
+Times:
+
+10 simulations: 0m0.027s format
+100 simulations: 0m0.031s format
+1000 simulations: 0m0.038s format
+10000 simulations: 0m0.105s format
+100000 simulations: 0m0.773s format
+1000000 simulations: 0m6.901s format
+
+Questions:
+
+Which predictions, if any, proved incorrect as you increased the number of simulations?:
+
+Initially, 10 simulations only output four teams.
+Of those teams, three of them almost halved in probability when simulated 1000000 times
+
+Suppose you're charged a fee for each second of compute time your program uses.
+After how many simulations would you call the predictions "good enough"?:
+
+10000 simulations consistently yields the same order of results as 1000000 simulations.
+Though the individual chances vary by small degrees, 100 milliseconds runtime is significantly shorter.
