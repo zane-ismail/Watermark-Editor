@@ -13,7 +13,7 @@ def get_card_number():
 
 # Get card number length
 def get_card_length(card):
-    length = len(card)
+    length = len(str(card))
 
     # Reject cards with less than 13 or more than 16 numbers
     if length < 13 or length > 16:
