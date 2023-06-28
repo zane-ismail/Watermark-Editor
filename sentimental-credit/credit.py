@@ -43,7 +43,7 @@ def validate_card(card, length):
             digits.append(digit)
     # Iterate to find every other digit
     for j in range(0, length, 2):
-        digits.append(digit)
+        digits.append(int(card[j]))
 
         # Add all single digits together
     print(digits)
