@@ -44,8 +44,8 @@ def main():
                         seq_list[s_reader[i:j]] +=1
     for k in range(len(seq_list)):
         if seq_list[k] > 1:
-            seq_list[s_reader[i:j]] +=1
-        print(seq_list)
+            seq_list[k] +=1
+    print(seq_list)
 
 
 
