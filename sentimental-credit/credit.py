@@ -26,6 +26,7 @@ def get_card_length(card):
     # Reject cards with less than 13 or more than 16 numbers
     if length < 13 or length > 16:
         print("INVALID")
+        return
 
     return length
 
@@ -71,13 +72,13 @@ def get_card_type(card, length):
 
     elif length == 16 and digits == "51" or digits == "52" or digits == "53" or digits == "54" or digits == "55":
         print("MASTERCARD")
-        
+
     elif length == 13 or length == 16 and visa_digit == "4":
         print("VISA")
 
     else:
         print("INVALID")
+        return
 
 
 main()
-
