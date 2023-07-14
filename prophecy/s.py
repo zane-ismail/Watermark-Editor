@@ -1,7 +1,7 @@
 import csv
 
-with open('students.csv', newline='') as csvfile:
-    reader = csv.DictReader(csvfile)
-
-    for student in s['student_name']:
+with open("students.csv", "r") as file:
+    reader = csv.DictReader(file)
+    counts = {}
+    for student in reader['student_name']:
         print(student)
