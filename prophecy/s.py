@@ -7,11 +7,10 @@ houses = []
 relationships = []
 
 
-def create_house(house, houses, head):
-    for h in houses:
-        if h["house"] != house:
-            houses.append[{"house": house, "head": head}]
-            print(houses)
+def create_house(houses, house, head):
+     if house not in houses:
+        houses.append[{"house": house, "head": head}]
+        print(houses)
 
 
 
@@ -23,8 +22,9 @@ with open("students.csv", "r") as file:
         name = row["student_name"]
         house = row["house"]
         head = row["head"]
-
-        create_house(house, houses, head)
+        # print(house)
+        create_house(houses, house, head)
+        print(houses)
 
         # rows = db.execute("SELECT * FROM students")
         # db.execute(f"INSERT INTO students VALUES (student_name, {row['student_name']})");
