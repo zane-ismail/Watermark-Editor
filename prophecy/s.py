@@ -20,6 +20,9 @@ def create_students(students, name):
     if count == 0:
         students.append({"student_name": name})
 
+def create_relationships(relationships, name, house):
+    relationships.append({"student_name": name, "house": house})
+
 students = []
 houses = []
 relationships = []
@@ -34,7 +37,7 @@ with open("students.csv", "r") as file:
         head = row["head"]
         create_house(houses, house, head)
         create_students(students, name)
-    print(houses, students)
+    print(houses, students, relationships)
 
         # rows = db.execute("SELECT * FROM students")
         # db.execute(f"INSERT INTO students VALUES (student_name, {row['student_name']})");
