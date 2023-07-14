@@ -13,12 +13,7 @@ def create_house(houses, house, head):
         houses.append({"house": house, "head": head})
 
 def create_students(students, name):
-    count = 0
-    for s in students:
-        if s["student_name"] == name:
-            count += 1
-    if count == 0:
-        students.append({"student_name": name})
+    students.append({"student_name": name})
 
 def create_relationships(relationships, name, house):
     relationships.append({"student_name": name, "house": house})
