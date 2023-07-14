@@ -12,7 +12,13 @@ def create_house(houses, house, head):
     if count == 0:
         houses.append({"house": house, "head": head})
 
-def create
+def create_students(students, name):
+    count = 0
+    for s in students:
+        if s["student_name"] == name:
+            count += 1
+    if count == 0:
+        students.append({"student_name": name})
 
 students = []
 houses = []
@@ -27,7 +33,8 @@ with open("students.csv", "r") as file:
         house = row["house"]
         head = row["head"]
         create_house(houses, house, head)
-        print(houses)
+        create_students(students, name)
+    print(houses, students)
 
         # rows = db.execute("SELECT * FROM students")
         # db.execute(f"INSERT INTO students VALUES (student_name, {row['student_name']})");
