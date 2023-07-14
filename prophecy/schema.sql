@@ -12,7 +12,7 @@ CREATE TABLE houses (
     PRIMARY KEY(id)
 );
 
-CREATE TABLE students (
+UPDATE TABLE students (
     id INTEGER,
     student_name TEXT,
     house TEXT,
@@ -20,4 +20,4 @@ CREATE TABLE students (
     PRIMARY KEY(id)
 );
 
-
+EXEC sp_rename 'students', 's';
