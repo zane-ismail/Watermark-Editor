@@ -10,7 +10,7 @@ with open("students.csv", "r") as file:
         # print(row["student_name"])
 
         rows = db.execute("SELECT * FROM students")
-        db.execute(f"INSERT INTO students VALUES (student_name, {row['student_name']}")
-        print(r)
+        db.execute(f"INSERT INTO students VALUES (student_name, {row['student_name']})")
+        print(row)
         # if row['head'] not in row:
         #     db.execute(f"INSERT INTO students VALUES (house, {row['head']}");
