@@ -2,9 +2,6 @@ import csv
 from cs50 import SQL
 
 db = SQL("sqlite:///roster.db")
-students = []
-houses = []
-relationships = []
 
 
 def create_house(houses, house, head):
@@ -17,6 +14,9 @@ def create_house(houses, house, head):
         print(houses)
 
 
+students = []
+houses = []
+relationships = []
 
 
 with open("students.csv", "r") as file:
@@ -26,7 +26,6 @@ with open("students.csv", "r") as file:
         name = row["student_name"]
         house = row["house"]
         head = row["head"]
-        # print(house)
         create_house(houses, house, head)
         print(houses)
 
