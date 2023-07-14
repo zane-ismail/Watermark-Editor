@@ -4,6 +4,7 @@ Answer:
 
 Hypothesize about why the way you’ve calculated this aura might not be very representative of the listener.
 What better ways of calculating this aura would you propose?
+Answer: 
 
 Answer:
 Average energy = 0.65906, average valence = 0.484443, average danceability = 0.71646
