@@ -10,7 +10,7 @@ with open("students.csv", "r") as file:
         # print(row["student_name"])
 
         rows = db.execute("SELECT * FROM students")
-        for r in rows:
+        for r in row:
             db.execute(f"INSERT INTO students VALUES (student_name, {row['student_name']}")
             print(r)
         # if row['head'] not in row:
