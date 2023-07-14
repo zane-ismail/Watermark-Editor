@@ -37,6 +37,7 @@ with open("students.csv", "r") as file:
         head = row["head"]
         create_house(houses, house, head)
         create_students(students, name)
+        create_relationships(relationships, name, house)
     print(houses, students, relationships)
 
         # rows = db.execute("SELECT * FROM students")
