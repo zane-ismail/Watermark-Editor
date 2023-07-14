@@ -10,9 +10,9 @@ def create_house(houses, house, head):
         if h["house"] == house:
             count += 1
     if count == 0:
-        houses.append[{"house": house, "head": head}]
-        print(houses)
+        houses.append({"house": house, "head": head})
 
+def create
 
 students = []
 houses = []
