@@ -13,3 +13,11 @@ CREATE TABLE students (
     PRIMARY KEY(id)
 );
 
+CREATE TABLE relationships (
+    id INTEGER,
+    student_id INTEGER,
+    house_id INTEGER,
+    PRIMARY KEY(id)
+);
+
+
