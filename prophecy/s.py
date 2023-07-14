@@ -9,7 +9,9 @@ relationships = []
 
 def create_house(house, houses, head):
     for h in houses:
-        if h["house"] == house:
+        if h["house"] != house:
+            houses.append[{"house": house, "head": head}]
+            print(houses)
 
 
 
