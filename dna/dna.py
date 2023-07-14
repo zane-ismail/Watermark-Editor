@@ -17,58 +17,44 @@ def main():
 
     # TODO: Read database file into a variable
     # open the CSV file and read its contents into memory
-    list = []
-    with open(database) as file:
-        db_reader = csv.DictReader(file)
-        for row in db_reader:
-            print(row)
-
+    csv_list = []
+    with open(database) as csvfile:
+        str_csv = csv.DictReader(csvfile)
+        for row in str_csv:
+            csv_list.append(row)
 
     # TODO: Read DNA sequence file into a variable
-    with open(sequences) as f:
-        s_reader = f.read()
-        print(s_reader)
-
+    with open(sequences) as file:
+        str_txt = file.read()
+        txt_list = str_txt
 
     # TODO: Find longest match of each STR in DNA sequence
-    seq_list = {"AGATC": 1, "TTTTTTCT": 1, "AATG": 1, "TCTAG": 1, "GATA": 1, "TATC": 1, "GAAA": 1, "TCTG": 1}
-    count = 0
+    str_dict = {"AGATC": 0, "TTTTTTCT": 0, "AATG": 0, "TCTAG": 0, "GATA": 0, "TATC": 0, "GAAA": 0, "TCTG": 0}
 
-    for i in range(len(s_reader)):
-        # print(f"length:{len(s_reader)}")
-        for j in range(len(s_reader)):
-            for k in seq_list:
-                if s_reader[i:j] == k:
-                    # print(f"MATCH{seq_list[k]}")
-                    if s_reader[i+len(s_reader[i:j]):j+len(s_reader[i:j])] == s_reader[i:j]:
-                        seq_list[s_reader[i:j]] +=1
-
-                        # print(s_reader[i+len(s_reader[i:j]):j+len(s_reader[i:j])])
-
-
-                        # print(f"j: {j}")
-                        # print(f"i: {i}")
-                        # if i + j == len(s_reader) - 1:
-                        #     # seq_list[s_reader[i:j]] +=1
-
-                        # print(f"SEQ LIST: {seq_list}")
-
-                        #     print(f"AAAAAA:{seq_list[s_reader[i:j]]}")
-                        #     print("\n")
-
+    for seq in str_dict:
+        str_dict[seq] = longest_match(txt_list, seq)
 
     # TODO: Check database for matching profiles
-    for i in seq_list:
-        print("\n")
-        print(f"1: {i[0]}")
-        for j in db_reader.items():
-            for k in j:
-            # row[x] = int(row[x])
-             print(f"2: {k}")
-            # if x == row[x]:
-            #     print(f"ROWK: {row[k]}")
-            #     print("MATCH!")
+    matches = {
+    }
 
+    for row in csv_list:
+        matches.update({row["name"]: 0})
+
+    for i in str_dict:
+        with open(database) as csvfile:
+            str_csv = csv.DictReader(csvfile)
+            try:
+                for row in str_csv:
+                    if str_dict[i] == int(row[i]):
+                        matches[row["name"]] += 1
+                        if matches[row["name"]] == len(row) - 1:
+                            print(row["name"])
+                            return
+            except KeyError:
+                pass
+
+    print("No match")
     return
 
 
