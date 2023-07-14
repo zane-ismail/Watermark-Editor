@@ -35,7 +35,7 @@ with open("students.csv", "r") as file:
         create_relationships(relationships, name, house)
     print(houses, students, relationships)
 
-        # rows = db.execute("SELECT * FROM students")
-        # db.execute(f"INSERT INTO students VALUES (student_name, {row['student_name']})");
+for student in students:
+    db.execute(f"INSERT INTO students VALUES (student_name, {student['student_name']})");
         # if row['head'] not in row:
         #     db.execute(f"INSERT INTO students VALUES (house, {row['head']}");
