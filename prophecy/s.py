@@ -1,7 +1,7 @@
 import csv
 from cs50 import SQL
 
-db = SQL("sqlite:///students.db")
+db = SQL("sqlite:///roster.db")
 
 with open("students.csv", "r") as file:
     reader = csv.DictReader(file)
