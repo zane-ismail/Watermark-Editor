@@ -5,7 +5,7 @@ CREATE TABLE assignments (
     PRIMARY KEY(id)
 );
 
-UPDATE TABLE houses (
+Create TABLE houses (
     id INTEGER NOT NULL,
     house_name TEXT NOT NULL,
     head TEXT NOT NULL,
