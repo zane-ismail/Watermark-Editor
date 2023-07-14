@@ -5,6 +5,7 @@ High danceability, medium energy, low valence
 
 Hypothesize about why the way you’ve calculated this aura might not be very representative of the listener.
 What better ways of calculating this aura would you propose?
-Answer: The songs of that particular year may follow specific trends and influences of the artists' peers.
-By taking a r
+Answer: The listener may have listened to one song many times more over another.
+The data should reflect how many instances the listener has heard a particular song.
+The characteristics of a song should be measured in proportion to the amount of repeated listens, and reflected in overall Aura.
 
