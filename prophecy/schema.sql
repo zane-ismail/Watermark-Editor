@@ -1,22 +1,22 @@
 CREATE TABLE assignments (
-    id INTEGER,
-    student_id INTEGER,
-    house_id INTEGER,
+    id INTEGER NOT NULL,
+    student_id INTEGER NOT NULL,
+    house_id INTEGER NOT NULL,
     PRIMARY KEY(id)
 );
 
-CREATE TABLE houses (
-    id INTEGER,
-    house_name TEXT,
-    head TEXT,
+UPDATE TABLE houses (
+    id INTEGER NOT NULL,
+    house_name TEXT NOT NULL,
+    head TEXT NOT NULL,
     PRIMARY KEY(id)
 );
 
 CREATE TABLE students (
-    id INTEGER,
-    student_name TEXT,
-    house TEXT,
-    head TEXT,
+    id INTEGER NOT NULL,
+    student_name TEXT NOT NULL,
+    house TEXT NOT NULL,
+    head TEXT NOT NULL,
     PRIMARY KEY(id)
 );
 
