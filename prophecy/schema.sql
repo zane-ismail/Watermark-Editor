@@ -21,3 +21,4 @@ CREATE TABLE students (
 );
 
 EXEC sp_rename 'students', 's';
+ALTER TABLE 'students' RENAME TO 's';
