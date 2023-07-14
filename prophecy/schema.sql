@@ -1,3 +1,10 @@
+CREATE TABLE assignments (
+    id INTEGER,
+    student_id INTEGER,
+    house_id INTEGER,
+    PRIMARY KEY(id)
+);
+
 CREATE TABLE houses (
     id INTEGER,
     house_name TEXT,
@@ -10,13 +17,6 @@ CREATE TABLE students (
     student_name TEXT,
     house TEXT,
     head TEXT,
-    PRIMARY KEY(id)
-);
-
-CREATE TABLE relationships (
-    id INTEGER,
-    student_id INTEGER,
-    house_id INTEGER,
     PRIMARY KEY(id)
 );
 
