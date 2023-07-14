@@ -5,4 +5,4 @@ with open("students.csv", "r") as file:
     counts = {}
     for row in reader:
         print(row["student_name"])
-        with open 
+        print(students.db)
