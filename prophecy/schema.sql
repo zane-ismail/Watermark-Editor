@@ -12,7 +12,7 @@ CREATE TABLE houses (
     PRIMARY KEY(id)
 );
 
-UPDATE TABLE students (
+CREATE TABLE students (
     id INTEGER,
     student_name TEXT,
     house TEXT,
