@@ -45,4 +45,4 @@ for rel in relationships:
 
 for house in houses:
     print(house)
-#     db.execute("INSERT INTO houses (house, head) VALUES (?,?)", house["house"], head["head"])
+    db.execute("INSERT INTO houses (house, head) VALUES (?,?)", house["house"], head["head"])
