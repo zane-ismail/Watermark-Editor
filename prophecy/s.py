@@ -11,7 +11,7 @@ with open("students.csv", "r") as file:
 
         rows = db.execute("SELECT * FROM students")
         for r in rows:
-            insert = db.execute(f"INSERT INTO students VALUES (student_name, {row['student_name']}")
-            print(rows)
+            db.execute(f"INSERT INTO students VALUES (student_name, {row['student_name']}")
+            print(r)
         # if row['head'] not in row:
         #     db.execute(f"INSERT INTO students VALUES (house, {row['head']}");
