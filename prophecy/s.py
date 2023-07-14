@@ -7,9 +7,9 @@ with open("students.csv", "r") as file:
     reader = csv.DictReader(file)
     counts = {}
     for row in reader:
-        # print(row["student_name"])
-
-        rows = db.execute("SELECT * FROM students")
+        print(row["student_name"])
+        print(row)
+        # rows = db.execute("SELECT * FROM students")
         db.execute(f"INSERT INTO students VALUES (student_name, {row['student_name']})")
         print(row)
         # if row['head'] not in row:
