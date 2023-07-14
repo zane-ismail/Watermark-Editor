@@ -9,8 +9,9 @@ with open("students.csv", "r") as file:
     for row in reader:
         # print(row["student_name"])
 
-        insert = db.execute(f"INSERT INTO students VALUES (student_name, {row['student_name']}")
-        data = db.execute("SELECT * FROM students")
-        print(data)
+        rows = db.execute("SELECT * FROM students")
+        for r in rows:
+            insert = db.execute(f"INSERT INTO students VALUES (student_name, {row['student_name']}")
+            print(r)
         # if row['head'] not in row:
         #     db.execute(f"INSERT INTO students VALUES (house, {row['head']}");
