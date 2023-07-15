@@ -12,7 +12,7 @@ SELECT license_plate FROM bakery_security_logs WHERE year = 2021 AND month = 7 A
 
 --Look at atm_transactions in the morning from Leggett Street before the theft for someone Eugene recognised
 SELECT person_id FROM bank_accounts WHERE person_id IN
-(atm_transactions WHERE year = 2021 AND month = 7 AND day = 28 AND atm_location = "Leggett Street");
+(SELECT id FROM atm_transactions WHERE year = 2021 AND month = 7 AND day = 28 AND atm_location = "Leggett Street");
 
 --Look at phone_calls lasting less than a minute around the time of the theft
 SELECT caller FROM phone_calls WHERE year = 2021 AND month = 7 AND day = 28 AND duration < 60;
@@ -33,7 +33,7 @@ SELECT name FROM people WHERE license_plate IN
 year = 2021 AND month = 7 AND day = 28 AND hour = 10 AND minute >= 15 AND minute <= 25)
 AND id IN
 (SELECT person_id FROM bank_accounts WHERE person_id IN
-(atm_transactions WHERE year = 2021 AND month = 7 AND day = 28 AND atm_location = "Leggett Street")
+(SELECT id FROM atm_transactions WHERE year = 2021 AND month = 7 AND day = 28 AND atm_location = "Leggett Street"))
 AND phone_number IN
 (SELECT caller FROM phone_calls WHERE year = 2021 AND month = 7 AND day = 28 AND duration < 60)
 AND passport_number IN
