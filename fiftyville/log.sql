@@ -38,8 +38,9 @@ AND passport_number IN
 (SELECT ID FROM airports WHERE city = "Fiftyville")));
 
 -- Find the accomplice
-SELECT caller FROM phone_calls WHERE caller =
-(SELECT name FROM people WHERE license_plate IN
+SELECT name FROM people WHERE phone_number =
+(SELECT receiver FROM phone_calls WHERE caller =
+(SELECT phone_number FROM people WHERE license_plate IN
 (SELECT license_plate FROM bakery_security_logs WHERE
 year = 2021 AND month = 7 AND day = 28 AND hour = 10 AND minute >= 15 AND minute <= 25
 ) AND phone_number IN
@@ -47,5 +48,5 @@ year = 2021 AND month = 7 AND day = 28 AND hour = 10 AND minute >= 15 AND minute
 AND passport_number IN
 (SELECT passport_number FROM passengers WHERE flight_id =
 (SELECT id FROM flights WHERE year = 2021 AND month = 7 AND day = 29 AND origin_airport_id IN
-(SELECT ID FROM airports WHERE city = "Fiftyville"))))
-AND year = 2021 AND month = 7 AND day = 28 AND duration < 60;
+(SELECT ID FROM airports WHERE city = "Fiftyville")))
+AND year = 2021 AND month = 7 AND day = 28 AND duration < 60));
