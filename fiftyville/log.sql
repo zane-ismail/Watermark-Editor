@@ -33,7 +33,7 @@ SELECT name FROM people WHERE license_plate IN
 year = 2021 AND month = 7 AND day = 28 AND hour = 10 AND minute >= 15 AND minute <= 25)
 AND id IN
 (SELECT person_id FROM bank_accounts WHERE person_id IN
-(atm_transactions WHERE year = 2021 AND month = 7 AND day = 28 AND atm_location = "Leggett Street"))
+(atm_transactions WHERE year = 2021 AND month = 7 AND day = 28 AND atm_location = "Leggett Street")
 AND phone_number IN
 (SELECT caller FROM phone_calls WHERE year = 2021 AND month = 7 AND day = 28 AND duration < 60)
 AND passport_number IN
