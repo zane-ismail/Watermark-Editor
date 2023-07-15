@@ -4,3 +4,5 @@ In 9.sql, write a SQL query to list the names of all people who starred in a mov
     People with the same birth year may be listed in any order.
     No need to worry about people who have no birth year listed, so long as those who do have a birth year are listed in order.
     If a person appeared in more than one movie in 2004, they should only appear in your results once.
+
+SELECT name FROM people WHERE id IN (SELECT person_id from stars WHERE movie_id = (SELECT id from movies WHERE year = 2004));
