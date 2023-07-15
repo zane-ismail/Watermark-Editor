@@ -17,5 +17,6 @@ SELECT account_number FROM atm_transactions WHERE year = 2021 AND month = 7 AND 
 SELECT caller FROM phone_calls WHERE year = 2021 AND month = 7 AND day = 28 AND duration < 60;
 
 --Look at flights for the earliest flight from fiftyville on 29/07/2021
-SELECT city FROM airports WHERE id IN (SELECT destination_airport_id FROM flights WHERE origin_airport_id =
-(SELECT ID FROM airports WHERE city = "Fiftyville"));
+SELECT city FROM airports WHERE id IN
+(SELECT destination_airport_id FROM flights WHERE year = 2021 AND month = 7 AND day = 29 AND origin_airport_id IN
+(SELECT ID FROM airports WHERE city = "Fiftyville")) LIMIT 1;
