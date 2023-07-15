@@ -35,9 +35,9 @@ AND id IN
 (SELECT person_id FROM bank_accounts WHERE person_id IN
 (SELECT id FROM atm_transactions WHERE year = 2021 AND month = 7 AND day = 28 AND atm_location = "Leggett Street"))
 AND phone_number IN
-(SELECT caller FROM phone_calls WHERE year = 2021 AND month = 7 AND day = 28 AND duration < 60)
+(SELECT caller FROM phone_calls WHERE year = 2021 AND month = 7 AND day = 28 AND duration <= 60)
 AND passport_number IN
-(SELECT passport_number FROM passengers WHERE flight_id =
+(SELECT passport_number FROM passengers WHERE flight_id IN
 (SELECT id FROM flights WHERE year = 2021 AND month = 7 AND day = 29 AND origin_airport_id IN
 (SELECT ID FROM airports WHERE city = "Fiftyville")));
 
