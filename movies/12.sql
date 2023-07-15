@@ -8,6 +8,6 @@ SELECT title FROM movies WHERE id IN (SELECT movie_id FROM stars WHERE person_id
 
 
 SELECT title FROM movies WHERE id IN
-(SELECT id FROM movies HAVING COUNT
+(SELECT id FROM movies WHERE id IN
 (SELECT movie_id FROM stars WHERE person_id IN
-(SELECT id FROM people WHERE name = "Bradley Cooper" OR name = "Jennifer Lawrence")) > 1);
+(SELECT id FROM people WHERE name = "Bradley Cooper" OR name = "Jennifer Lawrence")) HAVING COUNT(id) > 1);
