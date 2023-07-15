@@ -11,7 +11,8 @@ SELECT * FROM interviews WHERE year = 2021 AND month = 7 AND day = 28 AND transc
 SELECT license_plate FROM bakery_security_logs WHERE year = 2021 AND month = 7 AND day = 28 AND hour = 10 AND minute >= 15 AND minute <= 25;
 
 --Look at atm_transactions in the morning before the theft for someone Eugene recognised
-SELECT
+SELECT account_number FROM atm_transactions
+WHERE year = 2021 AND month = 7 AND day = 28;
 
 --Look at phone_calls lasting less than a minute around the time of the theft
 
