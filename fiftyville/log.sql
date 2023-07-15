@@ -19,8 +19,8 @@ SELECT caller FROM phone_calls WHERE year = 2021 AND month = 7 AND day = 28 AND 
 
 --Look at destination city from earliest flight from fiftyville on 29/07/2021
 SELECT city FROM airports WHERE id IN
-(SELECT destination_airport_id FROM flights WHERE year = 2021 AND month = 7 AND day = 29 AND origin_airport_id IN
-(SELECT ID FROM airports WHERE city = "Fiftyville") ORDER BY flights.hour) LIMIT 1;
+(SELECT destination_airport_id FROM flights WHERE year = 2021 AND month = 7 AND day = 29 AND origin_airport_id =
+(SELECT ID FROM airports WHERE city = "Fiftyville") ORDER BY flights.hour);
 
 -- Look for passport_number from that booking
 SELECT passport_number FROM passengers WHERE flight_id =
