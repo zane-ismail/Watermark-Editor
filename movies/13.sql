@@ -5,4 +5,5 @@ In 13.sql, write a SQL query to list the names of all people who starred in a mo
     Kevin Bacon himself should not be included in the resulting list.
 
 SELECT name FROM people WHERE id IN
-(SELECT )
+(SELECT person_id FROM stars WHERE movie_id IN
+(SELECT ))
