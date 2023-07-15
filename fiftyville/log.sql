@@ -21,6 +21,9 @@ SELECT city FROM airports WHERE id IN
 (SELECT destination_airport_id FROM flights WHERE year = 2021 AND month = 7 AND day = 29 AND origin_airport_id IN
 (SELECT ID FROM airports WHERE city = "Fiftyville") ORDER BY flights.hour) LIMIT 1;
 
+-- Look for passport_number from that booking
+SELECT
+
 --Find person with matching licence_plate, account_number and caller from people
 SELECT name FROM people WHERE license_plate IN
 (SELECT license_plate FROM bakery_security_logs WHERE
