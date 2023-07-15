@@ -42,8 +42,8 @@ AND passport_number IN
 (SELECT ID FROM airports WHERE city = "Fiftyville") ORDER BY flights.hour));
 
 -- Find the accomplice
-SELECT name FROM people WHERE phone_number =
-(SELECT receiver FROM phone_calls WHERE caller =
+SELECT name FROM people WHERE phone_number IN
+(SELECT receiver FROM phone_calls WHERE caller IN
 (SELECT phone_number FROM people WHERE license_plate IN
 (SELECT license_plate FROM bakery_security_logs WHERE
 year = 2021 AND month = 7 AND day = 28 AND hour = 10 AND minute >= 15 AND minute <= 25)
