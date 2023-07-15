@@ -55,4 +55,4 @@ AND phone_number IN
 AND passport_number IN
 (SELECT passport_number FROM passengers WHERE flight_id =
 (SELECT id FROM flights WHERE year = 2021 AND month = 7 AND day = 29 AND origin_airport_id =
-(SELECT ID FROM airports WHERE city = "Fiftyville") ORDER BY flights.hour))));
+(SELECT ID FROM airports WHERE city = "Fiftyville") ORDER BY flights.hour))) AND year = 2021 AND month = 7 AND day = 28 AND duration <= 60);
