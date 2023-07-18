@@ -9,8 +9,8 @@
             // TODO: Add code to check answers to questions
                 function alertCorrect()
                 {
-                    document.querySelector(".correctAnswer").style.background = 'green';
-                    document.getElementById("correct").innerHTML = "correct";
+                    document.querySelector(".correctAnswer").style.background = "green";
+                    document.getElementById("answerOne").innerHTML = "Correct!";
                 }
 
                 function alertIncorrect()
@@ -18,8 +18,8 @@
                     let incorrects = document.querySelectorAll(".incorrectAnswer");
                     for (let i = 0; i < incorrects.length; i++) {
                             incorrects[i].addEventListener("click", function(){
-                                incorrects[i].style.background = 'red';
-                                document.getElementById("incorrect").innerHTML = "incorrect";
+                                incorrects[i].style.background = "red";
+                                document.getElementById("answerOne").innerHTML = "Incorrect!";
                         })};
                 }
 
@@ -29,12 +29,12 @@
                         if (input.value == "Acid House")
                         {
                             document.querySelector(".textBox").style.background = "green";
-                            document.getElementById("answer").innerHTML = "correct";
+                            document.getElementById("answerTwo").innerHTML = "Correct!";
                         }
                         else
                         {
                             document.querySelector(".textBox").style.background = "red";
-                            document.getElementById("answer").innerHTML = "incorrect";
+                            document.getElementById("answerTwo").innerHTML = "Incorrect!";
                         }
                     }
 
@@ -54,8 +54,7 @@
                 <button class="correctAnswer" onclick="alertCorrect()">Cornwall</button>
                 <button class="incorrectAnswer" onmouseover="alertIncorrect()">Devon</button>
                 <button class="incorrectAnswer" onmouseover="alertIncorrect()">London</button>
-                <p id="correct"></p>
-                <p id="incorrect"></p>
+                <p id="answerOne"></p>
             </div>
 
 
@@ -66,7 +65,7 @@
                 <h3>What music genre is Aphex Twin considered to be of?</h3>
                 <input class="textBox" type="text"></input>
                 <button type="submit" onclick="alertCheckAnswer(event)">Submit</button>
-                <p id="answer"></p>
+                <p id="answerTwo"></p>
 
             </div>
         </div>
