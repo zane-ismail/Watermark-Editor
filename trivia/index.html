@@ -28,23 +28,20 @@
                 <p id="incorrect2"></p>
             </div>
             <script>
-
-                document.querySelector(".correctAnswer").addEventListener("click", function(){
-                    document.querySelector(".correctAnswer").style.background = "green";
+                function alertCorrect(event)
+                {
+                    document.querySelector(".correctAnswer").style.background = 'green';
                     document.getElementById("correct").innerHTML = "correct";
-                })
+                }
 
-                document.querySelector(".incorrectAnswer").addEventListener("click", function(){
-                    document.querySelector(".incorrectAnswer").style.background = "red";
-                    document.getElementById("incorrect").innerHTML = "incorrect";
-                })
-
-
-                // function alertIncorrect(event)
-                // {
-                //     document.querySelector(".incorrectAnswer").style.background = "red";
-                //     document.getElementById("incorrect").innerHTML = "incorrect";
-                // }
+                function alertIncorrect(event)
+                {
+                    let incorrects = document.querySelectorAll(".incorrectAnswer");
+                    for (let i = 0; i < incorrects.length; i++) {
+                        incorrects[i].style.background = 'red';
+                        document.getElementById("incorrect").innerHTML = "incorrect";
+                    }
+                }
 
             </script>
 
