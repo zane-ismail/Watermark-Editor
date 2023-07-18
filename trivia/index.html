@@ -28,6 +28,9 @@
                 <p id="incorrect2"></p>
             </div>
             <script>
+                document.addEventListene('DOMContentLoaded', function(){
+
+
                 function alertCorrect(event)
                 {
                     document.querySelector('.correctAnswer').style.background = 'green';
@@ -46,8 +49,8 @@
                     document.getElementById("incorrect2").innerHTML = "incorrect";
                 }
 
+                })
 
-                // document.getElementById("button").addEventListener("click", alertCorrect);
 
             </script>
 
