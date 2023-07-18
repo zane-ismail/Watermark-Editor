@@ -27,11 +27,11 @@
             <script>
                 function alertCorrect(event)
                 {
-                    document.getElementById("correctAnswer").innerHTML ="Cornwall"
-                    
+                    document.getElementById("correctAnswer").innerHTML ="Cornwall";
+                    button.background-color = "green";
                 }
 
-                button.addEventListener("click", correctAnswer);
+                button.addEventListener("click", alertCorrect);
 
 
                 function alertIncorrect(event)
