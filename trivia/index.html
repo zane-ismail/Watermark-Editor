@@ -21,16 +21,13 @@
                 <!-- TODO: Add multiple choice question here -->
                 <h3>What region is Aphex Twin from?</h3>
                 <button class="correctAnswer" onclick="alertCorrect(event)">Cornwall</button>
-                <button class="incorrectAnswer" onclick="alertIncorrect1(event)">Devon</button>
-                <button class="incorrectAnswer" onclick="alertIncorrect2(event)">London</button>
+                <button class="incorrectAnswer1" onclick="alertIncorrect1(event)">Devon</button>
+                <button class="incorrectAnswer2" onclick="alertIncorrect2(event)">London</button>
                 <p id="correct"></p>
                 <p id="incorrect1"></p>
                 <p id="incorrect2"></p>
             </div>
             <script>
-                document.addEventListene('DOMContentLoaded', function(){
-
-
                 function alertCorrect(event)
                 {
                     document.querySelector('.correctAnswer').style.background = 'green';
@@ -49,8 +46,8 @@
                     document.getElementById("incorrect2").innerHTML = "incorrect";
                 }
 
-                })
 
+                // document.getElementById("button").addEventListener("click", alertCorrect);
 
             </script>
 
