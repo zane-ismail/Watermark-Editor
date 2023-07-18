@@ -42,8 +42,11 @@
 
                 function alertIncorrect2(event)
                 {
-                    document.querySelector('.incorrectAnswer2').style.background = 'red';
-                    document.getElementById("incorrect2").innerHTML = "incorrect";
+                    for (let i = 0; i < incorrect.length; i++){
+                        document.querySelector('.incorrectAnswer[i]').style.background = 'red';
+                        document.getElementById("incorrect2").innerHTML = "incorrect";
+                    }
+
                 }
 
 
