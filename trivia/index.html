@@ -27,17 +27,15 @@
             <script>
                 function alertCorrect(event)
                 {
-                    document.querySelector('.button').style.background = 'green'
+                    document.querySelector('button').style.background = 'green';
                 }
-
-                document.getElementById("button").addEventListener("click", alertCorrect);
-
-
                 function alertIncorrect(event)
                 {
-                    var trigger = event.srcElement;
-                    alert('Incorrect')
+                    document.querySelector('button').style.background = 'red';
                 }
+
+                // document.getElementById("button").addEventListener("click", alertCorrect);
+
             </script>
 
             <div class="section">
