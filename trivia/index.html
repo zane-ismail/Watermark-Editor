@@ -20,15 +20,20 @@
                 <hr>
                 <!-- TODO: Add multiple choice question here -->
                 <h3>What region is Aphex Twin from?</h3>
-                <button onclick="alertName(event)">Cornwall</button>
-                <button onclick="alertName(event)">Devon</button>
-                <button onclick="alertName(event)">London</button>
+                <button onclick="alertCorrect(event)">Cornwall</button>
+                <button onclick="alertIncorrect(event)">Devon</button>
+                <button onclick="alertIncorrect(event)">London</button>
             </div>
             <script>
-                function alertName(event)
+                function alertCorrect(event)
                 {
                     var trigger = event.srcElement;
-                    alert('You are ' + trigger.innerHTML);
+                    alert('Correct')
+                }
+                function alertIncorrect(event)
+                {
+                    var trigger = event.srcElement;
+                    alert('Incorrect')
                 }
             </script>
 
