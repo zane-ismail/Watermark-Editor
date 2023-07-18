@@ -31,16 +31,20 @@
 
                 document.querySelector(".correctAnswer").addEventListener("click", function(){
                     document.querySelector(".correctAnswer").style.background = "green";
+                    document.getElementById("correct").innerHTML = "correct";
                 })
 
-                    document.getElementById("correct").innerHTML = "correct";
-                }
-
-                function alertIncorrect(event)
-                {
+                document.querySelector(".incorrectAnswer").addEventListener("click", function(){
                     document.querySelector(".incorrectAnswer").style.background = "red";
                     document.getElementById("incorrect").innerHTML = "incorrect";
-                }
+                })
+
+
+                // function alertIncorrect(event)
+                // {
+                //     document.querySelector(".incorrectAnswer").style.background = "red";
+                //     document.getElementById("incorrect").innerHTML = "incorrect";
+                // }
 
             </script>
 
