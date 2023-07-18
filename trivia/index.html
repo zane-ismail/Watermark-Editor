@@ -57,12 +57,12 @@
                 <!-- TODO: Add free response question here -->
                 <h3>What music genre is Aphex Twin considered to be of?</h3>
                 <input class="textBox" type="text"></input>
-                <button type="submit" onclick="alertCorrectAnswer(event)">Submit</button>
+                <button type="submit" onclick="alertCheckAnswer(event)">Submit</button>
                 <p id="correctAnswer"></p>
                 <p id="incorrectAnswer"></p>
 
                 <script>
-                    function alertCorrectAnswer(event)
+                    function alertCheckAnswer(event)
                     {
                         if (document.querySelector(".textBox").innerHTML == "Acid House")
                         {
