@@ -5,38 +5,35 @@
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
         <link href="styles.css" rel="stylesheet">
         <title>Trivia!</title>
+        
         <script>
             // TODO: Add code to check answers to questions
-                function alertCorrect()
-                {
-                    document.querySelector(".correctAnswer").style.background = "green";
-                    document.getElementById("answerOne").innerHTML = "Correct!";
-                }
+            function alertCorrect() {
+                document.querySelector(".correctAnswer").style.background = "green";
+                document.getElementById("answerOne").innerHTML = "Correct!";
+            }
 
-                function alertIncorrect()
-                {
-                    let incorrects = document.querySelectorAll(".incorrectAnswer");
-                    for (let i = 0; i < incorrects.length; i++) {
-                            incorrects[i].addEventListener("click", function(){
-                                incorrects[i].style.background = "red";
-                                document.getElementById("answerOne").innerHTML = "Incorrect!";
-                        })};
-                }
+            function alertIncorrect() {
+                let incorrects = document.querySelectorAll(".incorrectAnswer");
+                for (let i = 0; i < incorrects.length; i++) {
+                        incorrects[i].addEventListener("click", function() {
+                            incorrects[i].style.background = "red";
+                            document.getElementById("answerOne").innerHTML = "Incorrect!";
+                        })
+                };
+            }
 
-                function alertCheckAnswer(event)
-                    {
-                        let input = document.querySelector("input");
-                        if (input.value == "Acid House")
-                        {
-                            document.querySelector(".textBox").style.background = "green";
-                            document.getElementById("answerTwo").innerHTML = "Correct!";
-                        }
-                        else
-                        {
-                            document.querySelector(".textBox").style.background = "red";
-                            document.getElementById("answerTwo").innerHTML = "Incorrect!";
-                        }
+            function alertCheckAnswer(event) {
+                    let input = document.querySelector("input");
+                    if (input.value == "Acid House") {
+                        document.querySelector(".textBox").style.background = "green";
+                        document.getElementById("answerTwo").innerHTML = "Correct!";
                     }
+                    else {
+                        document.querySelector(".textBox").style.background = "red";
+                        document.getElementById("answerTwo").innerHTML = "Incorrect!";
+                    };
+                }
 
         </script>
     </head>
@@ -51,12 +48,12 @@
                 <hr>
                 <!-- TODO: Add multiple choice question here -->
                 <h3>What region is Aphex Twin from?</h3>
-                <button class="correctAnswer" onclick="alertCorrect()">Cornwall</button>
                 <button class="incorrectAnswer" onmouseover="alertIncorrect()">Devon</button>
+                <button class="correctAnswer" onclick="alertCorrect()">Cornwall</button>
                 <button class="incorrectAnswer" onmouseover="alertIncorrect()">London</button>
+                <button class="incorrectAnswer" onmouseover="alertIncorrect()">Barcelona</button>
                 <p id="answerOne"></p>
             </div>
-
 
             <div class="section">
                 <h2>Part 2: Free Response</h2>
