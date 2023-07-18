@@ -13,13 +13,18 @@
                     document.getElementById("correct").innerHTML = "correct";
                 }
 
+                function alertIncorrect()
+                {
                     let incorrects = document.querySelectorAll(".incorrectAnswer");
                     for (let i = 0; i < incorrects.length; i++) {
-                        incorrects[i].addEventListener("click", function(){
-                            incorrects[i].style.background = 'red';
-                            document.getElementById("incorrect").innerHTML = "incorrect";
-                        });
+                        while (incorrects[i] != 'red'){
+                            incorrects[i].addEventListener("click", function(){
+                                incorrects[i].style.background = 'red';
+                                document.getElementById("incorrect").innerHTML = "incorrect";
+                        })
+                    };
                     }
+                }
 
         </script>
     </head>
