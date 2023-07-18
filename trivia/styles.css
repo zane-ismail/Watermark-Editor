@@ -38,8 +38,15 @@ h1 {
 }
 
 .correctAnswer{
-    
+
 }
+.incorrectAnswer1{
+
+}
+.incorrectAnswer2{
+
+}
+
 
 .button, input[type="submit"] {
     background-color: #d9edff;

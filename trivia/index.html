@@ -20,18 +20,18 @@
                 <hr>
                 <!-- TODO: Add multiple choice question here -->
                 <h3>What region is Aphex Twin from?</h3>
-                <button onclick="alertCorrect(event)">Cornwall</button>
-                <button onclick="alertIncorrect(event)">Devon</button>
+                <button id="correctAnswer" onclick="alertCorrect(event)">Cornwall</button>
+                <button type="incorrectAnswer1" onclick="alertIncorrect(event)">Devon</button>
                 <button onclick="alertIncorrect(event)">London</button>
             </div>
             <script>
                 function alertCorrect(event)
                 {
-                    document.querySelector('button').style.background = 'green';
+                    document.querySelector('correctAnswer').style.background = 'green';
                 }
                 function alertIncorrect(event)
                 {
-                    document.querySelector('button').style.background = 'red';
+                    document.querySelector('incorrectAnswer1').style.background = 'red';
                 }
 
                 // document.getElementById("button").addEventListener("click", alertCorrect);
