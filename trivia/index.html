@@ -20,12 +20,16 @@
                 <hr>
                 <!-- TODO: Add multiple choice question here -->
                 <h3>What region is Aphex Twin from?</h3>
-                <button type="submit">Cornwall</button>
-                <button type="submit">Devon</button>
-                <button type="button">London</button>
+                <button onclick="alertName(event)">Cornwall</button>
+                <button onclick="alertName(event)">Devon</button>
+                <button onclick="alertName(event)">London</button>
             </div>
             <script>
-                
+                function alertName(event)
+                {
+                    var trigger = event.srcElement;
+                    alert('You are ' + trigger.innerHTML);
+                }
             </script>
 
             <div class="section">
