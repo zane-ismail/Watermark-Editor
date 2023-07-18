@@ -7,6 +7,23 @@
         <title>Trivia!</title>
         <script>
             // TODO: Add code to check answers to questions
+                function alertCorrect()
+                {
+                    document.querySelector(".correctAnswer").style.background = 'green';
+                    document.getElementById("correct").innerHTML = "correct";
+                }
+
+                function alertIncorrect()
+                {
+                    let incorrects = document.querySelectorAll(".incorrectAnswer");
+                    for (let i = 0; i < incorrects.length; i++) {
+                        incorrects[i].addEventListener("click", function(){
+                            incorrects[i].style.background = 'red';
+                            document.getElementById("incorrect").innerHTML = "incorrect";
+                        });
+                    }
+                }
+
         </script>
     </head>
     <body>
@@ -20,31 +37,13 @@
                 <hr>
                 <!-- TODO: Add multiple choice question here -->
                 <h3>What region is Aphex Twin from?</h3>
-                <button class="correctAnswer" onclick="alertCorrect(event)">Cornwall</button>
-                <button class="incorrectAnswer" onclick="alertInorrect(event)">Devon</button>
-                <button class="incorrectAnswer" onclick="alertIncorrect(event)">London</button>
+                <button class="correctAnswer" onclick="alertCorrect()">Cornwall</button>
+                <button class="incorrectAnswer" onclick="alertInorrect()">Devon</button>
+                <button class="incorrectAnswer" onclick="alertIncorrect()">London</button>
                 <p id="correct"></p>
                 <p id="incorrect"></p>
             </div>
-            <script>
-                function alertCorrect(event)
-                {
-                    document.querySelector(".correctAnswer").style.background = 'green';
-                    document.getElementById("correct").innerHTML = "correct";
-                }
 
-                function alertIncorrect(event)
-                {
-                    let incorrects = document.querySelectorAll(".incorrectAnswer");
-                    for (let i = 0; i < incorrects.length; i++) {
-                        incorrects[i].addEventListener("click", function(){
-                            incorrects[i].style.background = 'red';
-                            document.getElementById("incorrect").innerHTML = "incorrect";
-                        });
-                    }
-                }
-
-            </script>
 
             <div class="section">
                 <h2>Part 2: Free Response</h2>
