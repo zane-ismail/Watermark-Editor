@@ -27,10 +27,10 @@
             <script>
                 function alertCorrect(event)
                 {
-                    button.style.backgroundColor = "green";
+                    button.setItem("bg-color", "yellow");
                 }
 
-                document.getElementById("button").innerHTML ="Cornwall".addEventListener("click", alertCorrect);
+                document.getElementById("button").addEventListener("click", alertCorrect);
 
 
                 function alertIncorrect(event)
