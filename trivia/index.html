@@ -17,14 +17,25 @@
                 {
                     let incorrects = document.querySelectorAll(".incorrectAnswer");
                     for (let i = 0; i < incorrects.length; i++) {
-                        document.addEventListener("DOMDocumentLoaded", function(){
                             incorrects[i].addEventListener("click", function(){
                                 incorrects[i].style.background = 'red';
                                 document.getElementById("incorrect").innerHTML = "incorrect";
-                        })});
-                }
+                        })};
                 }
 
+                function alertCheckAnswer(event)
+                    {
+                        if (document.querySelector(".textBox").innerHTML == "Acid House")
+                        {
+                            document.querySelector(".textBox").style.background = "green";
+                            document.getElementById("correctAnswer").innerHTML = "correct";
+                        }
+                        else if (document.querySelector(".textBox").innerHTML !== "Acid House")
+                        {
+                            document.querySelector(".textBox").style.background = "red";
+                            document.getElementById("incorrectAnswer").innerHTML = "incorrect";
+                        }
+                    }
 
         </script>
     </head>
@@ -40,8 +51,8 @@
                 <!-- TODO: Add multiple choice question here -->
                 <h3>What region is Aphex Twin from?</h3>
                 <button class="correctAnswer" onclick="alertCorrect()">Cornwall</button>
-                <button class="incorrectAnswer" onclick="alertIncorrect()">Devon</button>
-                <button class="incorrectAnswer" onclick="alertIncorrect()">London</button>
+                <button class="incorrectAnswer" onmouseover="alertIncorrect()">Devon</button>
+                <button class="incorrectAnswer" onmouseover="alertIncorrect()">London</button>
                 <p id="correct"></p>
                 <p id="incorrect"></p>
             </div>
@@ -57,22 +68,6 @@
                 <p id="correctAnswer"></p>
                 <p id="incorrectAnswer"></p>
 
-                <script>
-                    function alertCheckAnswer(event)
-                    {
-                        if (document.querySelector(".textBox").innerHTML == "Acid House")
-                        {
-                            document.querySelector(".textBox").style.background = "green";
-                            document.getElementById("correctAnswer").innerHTML = "correct";
-                        }
-                        else if (document.querySelector(".textBox").innerHTML !== "Acid House")
-                        {
-                            document.querySelector(".textBox").style.background = "red";
-                            document.getElementById("incorrectAnswer").innerHTML = "incorrect";
-                        }
-                    }
-
-                </script>
             </div>
         </div>
     </body>
