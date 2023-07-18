@@ -21,8 +21,8 @@
                 <!-- TODO: Add multiple choice question here -->
                 <h3>What region is Aphex Twin from?</h3>
                 <button class="correctAnswer" onclick="alertCorrect(event)">Cornwall</button>
-                <button class="incorrectAnswer" onclick="alertIncorrect1(event)">Devon</button>
-                <button class="incorrectAnswer" onclick="alertIncorrect2(event)">London</button>
+                <button class="incorrectAnswer1" onclick="alertIncorrect1(event)">Devon</button>
+                <button class="incorrectAnswer2" onclick="alertIncorrect2(event)">London</button>
                 <p id="correct"></p>
                 <p id="incorrect1"></p>
                 <p id="incorrect2"></p>
@@ -31,25 +31,19 @@
                 function alertCorrect(event)
                 {
                     document.querySelector('.correctAnswer').style.background = 'green';
-                    document.getElementById("correct").innerHTML = "Correct!";
+                    document.getElementById("correct").innerHTML = "correct";
                 }
 
                 function alertIncorrect1(event)
                 {
-                    document.querySelectorAll('.incorrectAnswer').style.background = 'red';
+                    document.querySelector('.incorrectAnswer1').style.background = 'red';
                     document.getElementById("incorrect1").innerHTML = "incorrect";
                 }
 
                 function alertIncorrect2(event)
                 {
-                    for (let i = 0; i < incorrect.length; i++){
-                        incorrect[i].addEventListener('click', function(){
-                            document.querySelector('.incorrectAnswer[i]').style.background = 'red';
-                            document.getElementById("incorrect2").innerHTML = "incorrect";
-                        })
-
-                    }
-
+                    document.querySelector('.incorrectAnswer2').style.background = 'red';
+                    document.getElementById("incorrect2").innerHTML = "incorrect";
                 }
 
 
