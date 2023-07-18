@@ -25,11 +25,12 @@
                 <button onclick="alertIncorrect(event)">London</button>
             </div>
             <script>
-                function alertCorrect(event)
+                function correctAnswer(event)
                 {
-                    var trigger = event.srcElement;
-                    alert('Correct')
+                    document.innerHTML ="Cornwall"
                 }
+
+                button.addEventListener("click", correctAnswer);
                 function alertIncorrect(event)
                 {
                     var trigger = event.srcElement;
