@@ -43,10 +43,6 @@ h1 {
 .incorrectAnswer{
 
 }
-.incorrectAnswer2{
-
-}
-
 
 .button, input[type="submit"] {
     background-color: #d9edff;
@@ -71,7 +67,7 @@ h1 {
 }
 
 .textBox{
-    
+
 }
 
 input[type="text"] {
