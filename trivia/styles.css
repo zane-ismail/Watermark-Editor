@@ -37,7 +37,7 @@ h1 {
     font-size: 48px;
 }
 
-button, input[type="submit"] {
+.button, input[type="submit"] {
     background-color: #d9edff;
     border: 1px solid transparent;
     border-radius: 0.25rem;
@@ -53,6 +53,7 @@ button, input[type="submit"] {
 }
 
 .button:hover {
+    opacity: 1;
     background-color: #4CAF50; /* Green */
     color: white;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
