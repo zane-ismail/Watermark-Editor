@@ -25,12 +25,13 @@
 
                 function alertCheckAnswer(event)
                     {
-                        if (document.querySelector(".textBox").innerHTML == "Acid House")
+                        let input = document.querySelector("input");
+                        if (input.value == "Acid House")
                         {
                             document.querySelector(".textBox").style.background = "green";
                             document.getElementById("correctAnswer").innerHTML = "correct";
                         }
-                        else if (document.querySelector(".textBox").innerHTML !== "Acid House")
+                        else 
                         {
                             document.querySelector(".textBox").style.background = "red";
                             document.getElementById("incorrectAnswer").innerHTML = "incorrect";
