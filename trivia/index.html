@@ -36,13 +36,13 @@
                 function alertIncorrect(event)
                 {
                     let incorrects = document.querySelectorAll(".incorrectAnswer");
-                    for (let i = 0; i < incorrects.length; i++)
-                    {
-                        incorrects[i].style.background = 'red';
-                        document.getElementById("incorrect").innerHTML = "incorrect";
+                    for (let i = 0; i < incorrects.length; i++) {
+                        incorrects[i].addEventListener("click", function(){
+                            incorrects[i].style.background = 'red';
+                            document.getElementById("incorrect").innerHTML = "incorrect";
+                        });
                     }
                 }
-
 
             </script>
 
