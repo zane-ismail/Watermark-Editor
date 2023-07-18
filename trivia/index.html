@@ -13,8 +13,6 @@
                     document.getElementById("correct").innerHTML = "correct";
                 }
 
-                function alertIncorrect()
-                {
                     let incorrects = document.querySelectorAll(".incorrectAnswer");
                     for (let i = 0; i < incorrects.length; i++) {
                         incorrects[i].addEventListener("click", function(){
@@ -22,7 +20,6 @@
                             document.getElementById("incorrect").innerHTML = "incorrect";
                         });
                     }
-                }
 
         </script>
     </head>
