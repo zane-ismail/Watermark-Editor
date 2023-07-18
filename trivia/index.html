@@ -18,10 +18,10 @@
                     let incorrects = document.querySelectorAll(".incorrectAnswer");
                     for (let i = 0; i < incorrects.length; i++) {
                         document.addEventListener("DOMDocumentLoaded", function(){
-                        incorrects[i].addEventListener("click", function(){
-                            incorrects[i].style.background = 'red';
-                            document.getElementById("incorrect").innerHTML = "incorrect";
-                        }, true)});
+                            incorrects[i].addEventListener("click", function(){
+                                incorrects[i].style.background = 'red';
+                                document.getElementById("incorrect").innerHTML = "incorrect";
+                        })});
                 }
                 }
 
