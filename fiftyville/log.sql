@@ -14,7 +14,7 @@ SELECT license_plate FROM bakery_security_logs WHERE year = 2021 AND month = 7 A
 SELECT person_id FROM bank_accounts WHERE person_id IN
 (SELECT id FROM atm_transactions WHERE year = 2021 AND month = 7 AND day = 28 AND atm_location = "Leggett Street");
 
---Look at phone_calls lasting less than a minute around the time of the theft
+--Look at phone_calls lasting less than a minute, around the time of the theft
 SELECT caller FROM phone_calls WHERE year = 2021 AND month = 7 AND day = 28 AND duration < 60;
 
 --Look at destination city from earliest flight from fiftyville on 29/07/2021
