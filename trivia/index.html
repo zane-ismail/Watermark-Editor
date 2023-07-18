@@ -17,12 +17,11 @@
                 {
                     let incorrects = document.querySelectorAll(".incorrectAnswer");
                     for (let i = 0; i < incorrects.length; i++) {
-
                             incorrects[i].style.background = 'red';
                             document.getElementById("incorrect").innerHTML = "incorrect";
                         };
                 }
-                
+
 
         </script>
     </head>
@@ -38,7 +37,7 @@
                 <!-- TODO: Add multiple choice question here -->
                 <h3>What region is Aphex Twin from?</h3>
                 <button class="correctAnswer" onclick="alertCorrect()">Cornwall</button>
-                <button class="incorrectAnswer" onclick="alertInorrect()">Devon</button>
+                <button class="incorrectAnswer" onclick="alertIncorrect()">Devon</button>
                 <button class="incorrectAnswer" onclick="alertIncorrect()">London</button>
                 <p id="correct"></p>
                 <p id="incorrect"></p>
