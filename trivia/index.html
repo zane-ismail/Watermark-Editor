@@ -29,12 +29,12 @@
                         if (input.value == "Acid House")
                         {
                             document.querySelector(".textBox").style.background = "green";
-                            document.getElementById("correctAnswer").innerHTML = "correct";
+                            document.getElementById("answer").innerHTML = "correct";
                         }
-                        else 
+                        else
                         {
                             document.querySelector(".textBox").style.background = "red";
-                            document.getElementById("incorrectAnswer").innerHTML = "incorrect";
+                            document.getElementById("answer").innerHTML = "incorrect";
                         }
                     }
 
@@ -66,8 +66,7 @@
                 <h3>What music genre is Aphex Twin considered to be of?</h3>
                 <input class="textBox" type="text"></input>
                 <button type="submit" onclick="alertCheckAnswer(event)">Submit</button>
-                <p id="correctAnswer"></p>
-                <p id="incorrectAnswer"></p>
+                <p id="answer"></p>
 
             </div>
         </div>
