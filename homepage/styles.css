@@ -17,11 +17,10 @@
     background-color: orange;
 }
 
-.carousel {
-    width:50;
-    size: 50;
-    height:100;
-  }
+.carousel-inner > .item > img, .carousel-inner > .item > a > img {
+    width: 10%;
+    height: 10%
+}
 
 .carousel-item active{
     size: 10;
