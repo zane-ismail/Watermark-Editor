@@ -5,9 +5,17 @@
 
 .carousel-image{
     size: 10;
+    height: 10;
     background-color: yellow;
 }
 
 .carousel-inner{
+    background-color: red;
+    height: 10;
+}
+
+.carousel-item active{
+    background-color: green;
+    height: 10;
     size: 10;
 }
