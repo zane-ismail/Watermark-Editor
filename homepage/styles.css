@@ -17,12 +17,10 @@
     background-color: orange;
 }
 
-.carousel-inner{
-   size: 10;
-   height: 10;
-   width: 10;
-   background-color: red;
-}
+.carousel-inner > .item > img {
+    width:640px;
+    height:360px;
+  }
 
 .carousel-item active{
     size: 10;
