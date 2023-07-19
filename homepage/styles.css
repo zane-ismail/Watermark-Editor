@@ -9,6 +9,12 @@
     background-color: yellow;
 }
 
+.carousel-indicators{
+    size: 10;
+    height: 10;
+    background-color: orange;
+}
+
 .carousel-inner{
     background-color: red;
     height: 10;
@@ -21,5 +27,7 @@
 }
 
 .carousel-slide{
-
+    size: 10;
+    height: 10;
+    background-color: blue;
 }
