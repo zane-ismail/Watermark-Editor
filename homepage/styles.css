@@ -4,6 +4,7 @@
 
 
 .d-block w-100{
-    size = 100;
-    width = 50;
+    border: 5px solid darkblue;
+    height: 100px;
+    width: 50px;
 }
