@@ -4,30 +4,29 @@
 
 
 .carousel-image{
-    /* size: 10;
-    height: 10; */
+    size: 10;
+    /* height: 10; */
     /* background-color: yellow; */
 }
 
 .carousel-indicators{
-    /* size: 10; */
+    size: 10;
     /* height: 10; */
-    /* background-color: orange; */
+    background-color: orange;
 }
 
 .carousel-inner{
-    /* background-color: red;
-    height: 10; */
+    /* background-color: red; */
+   size: 10;
 }
 
 .carousel-item active{
-    /* size: 10;
-    height: 10;
-    background-color: green; */
+    size: 10;
+    /* height: 10; */
+    /* background-color: green; */
 }
 
-.carousel-slide{
-    /* size: 10;
-    height: 10; */
-    /* background-color: blue; */
+.carousel slide{
+    size: 10;
+    background-color: blue;
 }
