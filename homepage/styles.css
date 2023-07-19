@@ -14,8 +14,12 @@
     height: 10;
 }
 
-.carousel-item active{
+.carousel-item{
     background-color: green;
     height: 10;
     size: 10;
+}
+
+.carousel-slide{
+
 }
