@@ -34,7 +34,9 @@
 
 .nav-link{
   font-size: 35px;
-  font-family: 'Monoton', cursive;
+  /* font-family: 'Kaushan Script', cursive; */
+  font-family: 'Shrikhand', cursive;
+  color: #893f71;
 }
 
 .right {
