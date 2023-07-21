@@ -8,11 +8,11 @@
 }
 
 .accordion-item{
-    background-color: #893f71;
+    background-color: #faf986;
 }
 
 .accordion-button{
-
+    margin-top: 30px;
     z-index: 0;
     background-color: #9fddba;
 }
@@ -34,12 +34,14 @@
 .navbar-brand{
   position: absolute;
   text-align: top;
+  background-color: #faf986;
 }
 
 .navbar-nav{
   z-index: 1;
   position: absolute;
   right: 175px;
+  background-color: #faf986;
 }
 
 .nav-link{
