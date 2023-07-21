@@ -39,18 +39,19 @@
 }
 
 body {
-    background-color: green;
+    background-color: #893f71;
   }
 
 head {
-    background-color: green;
+    background-color: #893f71;
+    opacity: 0.3;
   }
 
 h1 {
-    background-color: green;
+    background-color: #f3d0a4;
   }
-  
+
 a {
-    background-color: "D291BC";
+    background-color: "#893f71";
   }
 
