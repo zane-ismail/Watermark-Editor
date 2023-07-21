@@ -36,7 +36,6 @@
 
 .navbar-nav{
   position: absolute;
-  
   right: 175px;
 
 }
@@ -47,7 +46,6 @@
   font-family: 'Shrikhand', cursive;
   color: #44c0ed;
   background-color: #cdeba0;
-
   margin-bottom: 10px;
   padding-right: 50px;
   border-radius: 15px;
