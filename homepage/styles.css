@@ -28,17 +28,6 @@
   margin:0px;
 }
 
-.container-fluid{
-
-  position: fixed;
-  top: 0px;
-}
-
-nav
-{
-   position: fixed;
-   top: 0px;
-}
 
 .navbar-brand{
   position: absolute;
@@ -47,6 +36,7 @@ nav
 
 .navbar-nav{
   position: absolute;
+  
   right: 175px;
 
 }
