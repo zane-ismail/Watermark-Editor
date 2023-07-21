@@ -36,8 +36,8 @@
   font-size: 35px;
   /* font-family: 'Kaushan Script', cursive; */
   font-family: 'Shrikhand', cursive;
-  color: #faaac7;
-  background-color: #fdffb6;
+  color: #44c0ed;
+  background-color: #cdeba0;
 }
 
 .right {
@@ -55,7 +55,7 @@
   font-size: 60px;
   font-family: 'Monoton', cursive;
   font-size: 100px;
-  color: #fdffb6;
+  color: #faf986;
 }
 
 .w-100 {
@@ -65,12 +65,12 @@
 
 
 body {
-    background-color: #fdffb6;
+    background-color: #faf986;
   }
 
 
 head {
-    background-color: #fdffb6;
+    background-color: #faf986;
     opacity: 0.3;
   }
 
@@ -83,6 +83,6 @@ h1 {
   }
 
 a {
-    background-color: #cfa093;
+    background-color: #cdeba0;
   }
 
