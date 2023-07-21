@@ -28,7 +28,12 @@
   margin:0px;
 }
 
-.
+.container-fluid{
+
+  padding: 15px;
+  margin: auto;
+
+}
 
 .navbar-brand{
   position: absolute;
