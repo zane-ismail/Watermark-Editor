@@ -52,7 +52,7 @@
 
 /* Top left text */
 .top-left {
-  position: absolute;
+  position: fixed;
   top: 8px;
   left: 16px;
   font-size: 60px;
