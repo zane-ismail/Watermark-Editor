@@ -12,11 +12,11 @@
 }
 
 .accordion-button{
-    background-color: #893f71;
+    background-color: #9fddba;
 }
 
 .accordion-collapse{
-    background-color: #9fddba;
+    background-color: #faf986;
 
 }
 
@@ -110,8 +110,8 @@ h4 {
 
 h5 {
   font-family: 'Kaushan Script', cursive;
-  color: #faf986;
-  font-size: 30px;
+  color: #44c0ed;
+  font-size: 25px;
 
 }
 
