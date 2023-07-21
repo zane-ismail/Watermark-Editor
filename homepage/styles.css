@@ -76,8 +76,6 @@ body {
 head {
     background-color: #faf986;
     opacity: 0.3;
-    padding: 100px;
-    margin-bottom: 50px;
   }
 
 
@@ -104,8 +102,8 @@ h3 {
 
 h4 {
   font-family: 'Kaushan Script', cursive;
-  color: #faf986;
-  font-size: 40px;
+  color: #44c0ed;
+  font-size: 30px;
 }
 
 h5 {
