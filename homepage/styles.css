@@ -33,6 +33,12 @@
   font-size: 35px;
 }
 
+.right {
+  right: 0px;
+  width: 500px;
+  border: 3px solid #73AD21;
+}
+
 .w-100 {
     width: 100% !important;
     height: 70vh;
