@@ -7,7 +7,7 @@
 }
 
 .accordion-item{
-    background-color: #ac6f82;
+    background-color:#893f71;
 }
 
 .accordion-button{
@@ -15,7 +15,7 @@
 }
 
 .accordion-collapse{
-    background-color: #ac6f82;
+    background-color: #893f71;
 }
 
 .accordion-header{
@@ -46,6 +46,7 @@ h1 {
     background-color: #cfa093;
     font-family: Palatino, Palatino Linotype, Palatino LT STD;
     font-size: 60px;
+    color: #660e60;
   }
 
 a {
