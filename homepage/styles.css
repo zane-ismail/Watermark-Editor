@@ -28,6 +28,17 @@
   margin:0px;
 }
 
+.navbar-brand{
+  position: absolute;
+
+  text-align: top;
+}
+
+.navbar-nav{
+  position: absolute;
+  align: right;
+
+}
 
 .nav-link{
   font-size: 35px;
