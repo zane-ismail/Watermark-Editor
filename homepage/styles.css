@@ -30,9 +30,14 @@
 
 .container-fluid{
 
-  padding: 15px;
-  margin: auto;
+  position: fixed;
+  top: 0px;
+}
 
+nav
+{
+   position: fixed;
+   top: 0px;
 }
 
 .navbar-brand{
