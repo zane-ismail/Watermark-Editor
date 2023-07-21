@@ -16,7 +16,7 @@
 }
 
 .accordion-collapse{
-    background-color: #893f71;
+    background-color: #9fddba;
 }
 
 .carousel-image{
@@ -72,13 +72,10 @@ head {
 
 
 h1 {
-    background-color: #bee2ff;
+    background-color: #faf986;
     font-family: Palatino, Palatino Linotype, Palatino LT STD;
-    font-size: 75px;
     font-size: 60px;
-    font-family: 'Monoton', cursive;
-    font-size: 100px;
-    color: #faf986;
+    color: #44c0ed;
   }
 
 h2 {
@@ -90,6 +87,6 @@ h2 {
 }
 
 a {
-    background-color: #cdeba0;
+    background-color: #faf986;
   }
 
