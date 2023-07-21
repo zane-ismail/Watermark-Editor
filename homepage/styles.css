@@ -5,20 +5,14 @@
 
 .accordion{
     background-color: #893f71;
-    padding: 0px, 200px;
-    margin-top: 50%;
 }
 
 .accordion-item{
     background-color: #893f71;
-    padding: 0px, 200px;
-    margin-top: 50%;
 }
 
 .accordion-button{
     background-color: #893f71;
-    padding: 0px, 200px;
-    margin-top: 50%;
 }
 
 .accordion-collapse{
@@ -26,7 +20,6 @@
 }
 
 .carousel-image{
-  padding: 200%;
 }
 
 .container {
