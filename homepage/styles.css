@@ -34,9 +34,10 @@
 }
 
 .right {
-  right: 0px;
-  width: 500px;
-  border: 3px solid #73AD21;
+  position:relative;
+  width: 1500px;
+  border: 3px solid #893f71;
+  z-index:-1;
 }
 
 .w-100 {
