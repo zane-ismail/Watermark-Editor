@@ -25,8 +25,10 @@
 .carousel-image{
 }
 
-.container-fluid{
-    background-color: #ac6f82;
+.container {
+  position: relative;
+  text-align: left;
+  margin:0px;
 }
 
 .nav-link{
@@ -34,10 +36,21 @@
 }
 
 .right {
-  position:absolute;
+  position:relative;
   width: 1500px;
   border: 3px solid #893f71;
   z-index:-1;
+}
+
+/* Top left text */
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  font-size: 60px;
+  font-family: Palatino, Palatino Linotype, Palatino LT STD;
+  font-size: 75px;
+  color: #cfa093;
 }
 
 .w-100 {
@@ -62,7 +75,6 @@ h1 {
     font-family: Palatino, Palatino Linotype, Palatino LT STD;
     font-size: 75px;
     color: #660e60;
-    z-index:1;
   }
 
 a {
