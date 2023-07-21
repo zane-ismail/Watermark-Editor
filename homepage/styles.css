@@ -34,7 +34,6 @@
 .navbar-brand{
   position: absolute;
   text-align: top;
-  margin: 100px;
   background-color: #faf986;
 }
 
@@ -42,7 +41,6 @@
   z-index: 1;
   position: absolute;
   right: 175px;
-  margin: 100px;
   background-color: #faf986;
 }
 
