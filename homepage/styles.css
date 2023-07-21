@@ -37,7 +37,7 @@
   /* font-family: 'Kaushan Script', cursive; */
   font-family: 'Shrikhand', cursive;
   color: #faaac7;
-  background-color: #a2d2ff;
+  background-color: #fdffb6;
 }
 
 .right {
@@ -55,7 +55,7 @@
   font-size: 60px;
   font-family: 'Monoton', cursive;
   font-size: 100px;
-  color: #cdb4db;
+  color: #fdffb6;
 }
 
 .w-100 {
@@ -65,12 +65,12 @@
 
 
 body {
-    background-color: #cdb4db;
+    background-color: #fdffb6;
   }
 
 
 head {
-    background-color: #cdb4db;
+    background-color: #fdffb6;
     opacity: 0.3;
   }
 
