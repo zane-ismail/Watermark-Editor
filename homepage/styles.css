@@ -28,8 +28,6 @@
   margin:0px;
 }
 
-.container-fluid {
-}
 
 .navbar-brand{
   position: absolute;
@@ -80,8 +78,8 @@ head {
 
     background-color: #faf986;
     opacity: 0.3;
-    z-index: 1000;
     padding: 100px;
+    margin-bottom: 50px;
   }
 
 
