@@ -15,7 +15,7 @@
 }
 
 .accordion-collapse{
-    background-color: #893f71;
+    background-color: #cfa093;
 }
 
 .accordion-header{
@@ -27,10 +27,6 @@
 
 .container-fluid{
     background-color: #ac6f82;
-}
-
-.navbar{
-    background-color: green;
 }
 
 .w-100 {
