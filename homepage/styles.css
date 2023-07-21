@@ -91,10 +91,28 @@ h1 {
 
 h2 {
     font-size: 50px;
-    /* font-family: 'Kaushan Script', cursive; */
     font-family: 'Shrikhand', cursive;
     color: #44c0ed;
-    /* background-color: #cdeba0; */
+}
+
+h3 {
+
+    font-family: 'Kaushan Script', cursive;
+    color: #faf986;
+    font-size: 50px;
+}
+
+h4 {
+  font-family: 'Kaushan Script', cursive;
+  color: #faf986;
+  font-size: 40px;
+}
+
+h5 {
+  font-family: 'Kaushan Script', cursive;
+  color: #faf986;
+  font-size: 30px;
+
 }
 
 a {
