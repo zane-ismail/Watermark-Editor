@@ -5,7 +5,8 @@
 
 .accordion{
     background-color: #893f71;
-    
+    position: absolute;
+
 }
 
 .accordion-item{
