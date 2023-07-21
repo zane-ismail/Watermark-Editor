@@ -34,6 +34,7 @@
 
 .nav-link{
   font-size: 35px;
+  font-family: 'Monoton', cursive;
 }
 
 .right {
@@ -50,7 +51,7 @@
   left: 16px;
   font-size: 60px;
   font-family: 'Monoton', cursive;
-  font-size: 75px;
+  font-size: 100px;
   color: #cfa093;
 }
 
