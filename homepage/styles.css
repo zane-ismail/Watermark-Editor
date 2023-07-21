@@ -24,7 +24,7 @@
 }
 
 .container {
-  position: relative;
+  position: sticky;
   text-align: left;
   margin:0px;
 }
@@ -52,12 +52,6 @@
   border-radius: 15px;
 }
 
-.right {
-  position:relative;
-  width: 1500px;
-  border: 3px solid #893f71;
-  z-index:-1;
-}
 
 /* Top left text */
 .top-left {
@@ -85,6 +79,7 @@ body {
 
 
 head {
+
     background-color: #faf986;
     opacity: 0.3;
     z-index: 1000;
