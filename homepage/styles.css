@@ -19,10 +19,6 @@
     background-color: #893f71;
 }
 
-.accordion-header{
-    background-color: #893f71;
-}
-
 .carousel-image{
 }
 
@@ -79,8 +75,19 @@ h1 {
     background-color: #bee2ff;
     font-family: Palatino, Palatino Linotype, Palatino LT STD;
     font-size: 75px;
-    color: #660e60;
+    font-size: 60px;
+    font-family: 'Monoton', cursive;
+    font-size: 100px;
+    color: #faf986;
   }
+
+h2 {
+    font-size: 50px;
+    /* font-family: 'Kaushan Script', cursive; */
+    font-family: 'Shrikhand', cursive;
+    color: #44c0ed;
+    /* background-color: #cdeba0; */
+}
 
 a {
     background-color: #cdeba0;
