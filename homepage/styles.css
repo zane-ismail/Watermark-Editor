@@ -12,6 +12,8 @@
 }
 
 .accordion-button{
+
+    z-index: 0;
     background-color: #9fddba;
 }
 
@@ -35,13 +37,14 @@
 }
 
 .navbar-nav{
+  z-index: 1;
   position: absolute;
   right: 175px;
 }
 
 .nav-link{
   font-size: 35px;
-  /* font-family: 'Kaushan Script', cursive; */
+  z-index: 1;
   font-family: 'Shrikhand', cursive;
   color: #44c0ed;
   background-color: #cdeba0;
