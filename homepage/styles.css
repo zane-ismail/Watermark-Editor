@@ -9,7 +9,6 @@
 
 .accordion-item{
     background-color: #893f71;
-    margin: 1000px;
 }
 
 .accordion-button{
@@ -32,13 +31,12 @@
 
 .navbar-brand{
   position: absolute;
-
   text-align: top;
 }
 
 .navbar-nav{
   position: absolute;
-  right: 75px;
+  right: 175px;
 
 }
 
