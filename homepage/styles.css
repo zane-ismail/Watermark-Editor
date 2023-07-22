@@ -24,13 +24,16 @@
 
 .card{
   background-color: #cdeba0;
-  margin:75px;
+  margin:60px;
 }
 
 .card-img-top{
   width: 50%;
 }
 
+.card-text{
+  background-color: #cdeba0;
+}
 .carousel-image{
 }
 
