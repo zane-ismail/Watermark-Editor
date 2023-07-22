@@ -8,22 +8,22 @@
 }
 
 .accordion-item{
-    background-color: #faf986;
+    background-color: #f3d0a4;
 }
 
 .accordion-button{
     margin-top: 30px;
     z-index: 0;
-    background-color: #cdeba0;
+    background-color: #cfa093;
 }
 
 .accordion-collapse{
-    background-color: #faf986;
+    background-color: #f3d0a4;
 
 }
 
 .card{
-  background-color: #cdeba0;
+  background-color: #cfa093;
   margin:60px;
 }
 
@@ -32,7 +32,7 @@
 }
 
 .card-text{
-  background-color: #cdeba0;
+  background-color: #cfa093;
 }
 
 .carousel-image{
@@ -53,22 +53,22 @@
 .navbar-brand{
   position: absolute;
   text-align: top;
-  background-color: #faf986;
+  background-color: #f3d0a4;
 }
 
 .navbar-nav{
   z-index: 1;
   position: absolute;
   right: 175px;
-  background-color: #faf986;
+  background-color: #f3d0a4;
 }
 
 .nav-link{
   font-size: 35px;
   z-index: 1;
   font-family: 'Shrikhand', cursive;
-  color: #44c0ed;
-  background-color: #cdeba0;
+  color: #660e60;
+  background-color: #cfa093;
   margin-bottom: 10px;
   padding-right: 50px;
   border-radius: 15px;
@@ -82,7 +82,7 @@
   font-size: 60px;
   font-family: 'Monoton', cursive;
   font-size: 100px;
-  color: #faf986;
+  color: #f3d0a4;
 }
 
 .w-100 {
@@ -92,53 +92,53 @@
 
 
 body {
-    background-color: #faf986;
+    background-color: #f3d0a4;
 
   }
 
 
 head {
-    background-color: #faf986;
+    background-color: #f3d0a4;
     opacity: 0.3;
   }
 
 
 
 h1 {
-    background-color: #faf986;
+    background-color: #f3d0a4;
     font-family: Palatino, Palatino Linotype, Palatino LT STD;
     font-size: 60px;
-    color: #44c0ed;
+    color: #660e60;
   }
 
 h2 {
     font-size: 50px;
     font-family: 'Shrikhand', cursive;
-    color: #44c0ed;
+    color: #660e60;
 }
 
 h3 {
 
     font-family: 'Kaushan Script', cursive;
-    color: #faf986;
+    color: #f3d0a4;
     font-size: 50px;
 }
 
 h4 {
   font-family: 'Kaushan Script', cursive;
-  color: #44c0ed;
+  color: #660e60;
   font-size: 30px;
 }
 
 h5 {
   font-family: 'Kaushan Script', cursive;
-  color: #44c0ed;
+  color: #660e60;
   font-size: 25px;
 
 }
 
 a {
-    background-color: #faf986;
+    background-color: #f3d0a4;
   }
 
   --#{$prefix}card-spacer-y: #{$card-spacer-y};
