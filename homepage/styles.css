@@ -34,7 +34,14 @@
 .card-text{
   background-color: #cdeba0;
 }
+
 .carousel-image{
+}
+
+.col {
+  width: 300px;
+  height: 200px;
+  size: 50%;
 }
 
 .container {
@@ -158,4 +165,3 @@ a {
 
 
 
-  
