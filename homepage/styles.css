@@ -14,7 +14,7 @@
 .accordion-button{
     margin-top: 30px;
     z-index: 0;
-    background-color: #9fddba;
+    background-color: #cdeba0;
 }
 
 .accordion-collapse{
@@ -107,7 +107,7 @@ h3 {
 
 h4 {
   font-family: 'Kaushan Script', cursive;
-  color: #faf986;
+  color: #44c0ed;
   font-size: 30px;
 }
 
