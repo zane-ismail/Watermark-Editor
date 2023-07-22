@@ -22,6 +22,15 @@
 
 }
 
+.card{
+  background-color: #cdeba0;
+  margin:75px;
+}
+
+.card-img-top{
+  width: 50%;
+}
+
 .carousel-image{
 }
 
