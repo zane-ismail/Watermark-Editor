@@ -86,6 +86,11 @@
 .carousel-item{
 }
 
+.clearfix:after {
+  content: "";
+  display: table;
+}
+
 .col {
   width: 300px;
   height: 200px;
@@ -101,6 +106,23 @@
 }
 
 .d-block{
+}
+
+.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+
+.gallery:hover {
+  border: 1px solid #777;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  width: 600px;
+  height: 400px;
 }
 
 .icon{
@@ -143,6 +165,12 @@
 
 .navbar-toggler{
 }
+
+.responsive {
+      width: 49.99999%;
+      margin: 6px 0;
+      width: 100%;
+    }
 
 .row{
   padding-top: 30px;
@@ -253,44 +281,10 @@ a {
 
 
 
-  div.gallery {
-    border: 1px solid #ccc;
-  }
-
-  div.gallery:hover {
-    border: 1px solid #777;
-  }
-
-  div.gallery img {
-    width: 100%;
-    height: auto;
-  }
-
-  div.desc {
-    padding: 15px;
-    text-align: center;
-  }
-
+  div
   * {
     box-sizing: border-box;
   }
 
-  .responsive {
-    padding: 0 6px;
-    float: left;
-    width: 24.99999%;
-  }
 
-.responsive {
-      width: 49.99999%;
-      margin: 6px 0;
-    }
 
-.responsive {
-      width: 100%;
-    }
-
-  .clearfix:after {
-    content: "";
-    display: table;
-    clea
