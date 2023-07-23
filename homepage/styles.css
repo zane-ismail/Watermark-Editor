@@ -42,6 +42,9 @@
   size: 50%;
 }
 
+.collapse{
+}
+
 .container {
   text-align: left;
   margin:0px;
@@ -51,15 +54,11 @@
   position: absolute;
 }
 
-.navbar-brand{
-  position: absolute;
-  background-color: #f3d0a4;
+.navbar{
 }
 
-.navbar-nav{
-  z-index: 1;
+.navbar-brand{
   position: absolute;
-  right: 175px;
   background-color: #f3d0a4;
 }
 
@@ -74,8 +73,14 @@
   border-radius: 15px;
 }
 
+.navbar-nav{
+  z-index: 1;
+  position: absolute;
+  right: 175px;
+  background-color: #f3d0a4;
+}
+
 .navbar-toggler{
-  
 }
 
 .row{
