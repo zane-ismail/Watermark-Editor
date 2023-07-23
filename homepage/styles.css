@@ -139,6 +139,7 @@ h4 {
 
 h5 {
   font-family: 'Kaushan Script', cursive;
+  color: #660e60;
   font-size: 25px;
   padding: 10px;
 
@@ -146,7 +147,7 @@ h5 {
 
 h6 {
   font-family: 'Kaushan Script', cursive;
-  color: #893f71;
+  color: #660e60;
   float: left;
   font-size: 25px;
   padding: 30px;
