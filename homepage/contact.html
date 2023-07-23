@@ -19,6 +19,9 @@
           var name =  document.getElementById('name').value;
           if (name == "") {
               document.querySelector('.status').innerHTML = "Name cannot be empty";
+              <div class="alert alert-warning" role="alert">
+              This is a warning alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+              </div>
               return false;
           }
           var email =  document.getElementById('email').value;
