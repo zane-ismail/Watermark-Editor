@@ -52,7 +52,7 @@
 }
 
 .carousel-control-prev-icon{
-  
+
 }
 
 .carousel-image{
@@ -82,6 +82,14 @@
 }
 
 .d-block{
+}
+
+.icon{
+  width: 125px;
+  position: sticky;
+  top: 30px;
+  left: 300px;
+  z-position: 1;
 }
 
 .img-fluid {
