@@ -197,17 +197,14 @@
   }
 
 
+a {
+    background-color: #f3d0a4;
+  }
+
+
 body {
     background-color: #f3d0a4;
   }
-
-
-head {
-    background-color: #f3d0a4;
-    opacity: 0.3;
-  }
-
-
 
 h1 {
     background-color: #f3d0a4;
@@ -239,7 +236,6 @@ h5 {
   color: #660e60;
   font-size: 25px;
   padding: 10px;
-
 }
 
 h6 {
@@ -250,9 +246,11 @@ h6 {
   padding: 30px;
 }
 
-a {
-    background-color: #f3d0a4;
-  }
+head {
+  background-color: #f3d0a4;
+  opacity: 0.3;
+}
+
 
   --#{$prefix}card-spacer-y: #{$card-spacer-y};
   --#{$prefix}card-spacer-x: #{$card-spacer-x};
@@ -273,17 +271,3 @@ a {
   --#{$prefix}card-bg: #{$card-bg};
   --#{$prefix}card-img-overlay-padding: #{$card-img-overlay-padding};
   --#{$prefix}card-group-margin: #{$card-group-margin};
-
-
-
-
-
-
-
-  div
-  * {
-    box-sizing: border-box;
-  }
-
-
-
