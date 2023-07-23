@@ -129,16 +129,12 @@
   width: 125px;
   position: absolute;
   top: 110px;
-  left: 1100px;
+  left: 1137px;
   border: 1px solid #000000;
 }
 
 .nav-item{
 }
-
-.navbar{
-}
-
 
 .nav-link{
   font-size: 35px;
@@ -147,8 +143,11 @@
   color: #660e60;
   background-color: #cfa093;
   margin-bottom: 10px;
-  padding-right: 50px;
   border-radius: 15px;
+}
+
+.navbar{
+  right: 80px;
 }
 
 .navbar-brand{
