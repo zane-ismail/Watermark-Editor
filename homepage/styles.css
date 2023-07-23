@@ -38,8 +38,20 @@
   margin:60px;
 }
 
+.card-body{
+}
+
+.card-footer{
+}
+
+.card-group{
+}
+
 .card-img-top{
   width: 50%;
+}
+
+.card-title{
 }
 
 .card-text{
