@@ -135,14 +135,15 @@ h4 {
 
 h5 {
   font-family: 'Kaushan Script', cursive;
-  align: left;
   font-size: 25px;
+  padding: 10px;
 
 }
 
-h5 {
+h6 {
   font-family: 'Kaushan Script', cursive;
   color: #893f71;
+  float: left;
   font-size: 25px;
   padding: 30px;
 }
