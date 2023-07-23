@@ -26,6 +26,13 @@
 .accordion-header{
 }
 
+.banner{
+  position: relative;
+  top: 0;
+  left: 0;
+  border: 1px solid #000000;
+}
+
 .card{
   background-color: #cfa093;
   margin:60px;
@@ -86,10 +93,11 @@
 
 .icon{
   width: 125px;
-  position: sticky;
+  left: 300px
+  position: absolute;
   top: 30px;
-  left: 300px;
-  z-position: 1;
+  left: 30px;
+  border: 1px solid #000000;
 }
 
 .img-fluid {
