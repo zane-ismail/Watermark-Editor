@@ -93,15 +93,10 @@
 
 .icon{
   width: 125px;
-  left: 300px
   position: absolute;
-  top: 30px;
-  left: 30px;
+  top: 110px;
+  left: 1100px;
   border: 1px solid #000000;
-}
-
-.img-fluid {
-  position: absolute;
 }
 
 .nav-item{
