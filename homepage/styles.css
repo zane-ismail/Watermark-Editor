@@ -6,8 +6,7 @@
     background-color: #893f71;
 }
 
-.accordion-item{
-    background-color: #f3d0a4;
+.accordion-body{
 }
 
 .accordion-button{
@@ -18,6 +17,13 @@
 
 .accordion-collapse{
     background-color: #f3d0a4;
+}
+
+.accordion-item{
+    background-color: #f3d0a4;
+}
+
+.accordion-header{
 }
 
 .card{
@@ -33,7 +39,32 @@
   background-color: #cfa093;
 }
 
+.carousel-caption{
+}
+
+.carousel-control-next{
+}
+
+.carousel-control-next-icon{
+}
+
+.carousel-control-prev{
+}
+
+.carousel-control-prev-icon{
+  
+}
+
 .carousel-image{
+}
+
+.carousel-inner{
+}
+
+.carousel-indicators{
+}
+
+.carousel-item{
 }
 
 .col {
@@ -50,17 +81,19 @@
   margin:0px;
 }
 
+.d-block{
+}
+
 .img-fluid {
   position: absolute;
+}
+
+.nav-item{
 }
 
 .navbar{
 }
 
-.navbar-brand{
-  position: absolute;
-  background-color: #f3d0a4;
-}
 
 .nav-link{
   font-size: 35px;
@@ -71,6 +104,11 @@
   margin-bottom: 10px;
   padding-right: 50px;
   border-radius: 15px;
+}
+
+.navbar-brand{
+  position: absolute;
+  background-color: #f3d0a4;
 }
 
 .navbar-nav{
@@ -87,7 +125,9 @@
   padding-top: 30px;
 }
 
-/* Top left text */
+.sr-only{
+}
+
 .top-left {
   position: absolute;
   top: 8px;
