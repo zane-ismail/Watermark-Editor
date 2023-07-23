@@ -77,6 +77,10 @@
   border-radius: 15px;
 }
 
+.row{
+  padding-top: 30px;
+}
+
 /* Top left text */
 .top-left {
   position: absolute;
