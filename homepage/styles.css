@@ -49,6 +49,10 @@
   margin:0px;
 }
 
+.img-fluid {
+  position: absolute;
+  margin-bottom: 75px;
+}
 
 .navbar-brand{
   position: absolute;
