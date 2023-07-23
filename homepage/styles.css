@@ -119,10 +119,9 @@
 }
 
 .gallery img {
-  width: 100%;
-  height: auto;
-  width: 600px;
-  height: 400px;
+  width: 1000px;
+  height: 600px;
+  right: 100px;
 }
 
 .icon{
