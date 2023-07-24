@@ -42,6 +42,8 @@
 
 .card-body{
   background-color: #cfa093;
+  width: 300px;
+  height: 450px;
 }
 
 .card-footer{
@@ -57,9 +59,10 @@
 }
 
 .card-img-top{
+  position: relative;
   width: 300px;
   height: 200px;
-  size: 50%;
+  left: 20px;
 }
 
 .card-title{
