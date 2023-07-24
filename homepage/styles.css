@@ -41,6 +41,7 @@
 }
 
 .card-body{
+  background-color: #cfa093;
 }
 
 .card-footer{
@@ -51,15 +52,21 @@
 
 .card-group{
   font-family: 'Kaushan Script', cursive;
-  color: #660e60;
-  font-size: 15px;
+  color: black;
+  font-size: 20px;
 }
 
 .card-img-top{
-  width: 50%;
+  width: 300px;
+  height: 200px;
+  size: 50%;
 }
 
 .card-title{
+  font-family: 'Kaushan Script', cursive;
+  color: black;
+  font-size: 30px;
+  text-align: center;
 }
 
 .card-text{
