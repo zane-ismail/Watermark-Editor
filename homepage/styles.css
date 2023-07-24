@@ -45,6 +45,9 @@
 }
 
 .card-footer{
+  font-family: 'Kaushan Script', cursive;
+  color: #660e60;
+  font-size: 15px;
 }
 
 .card-group{
