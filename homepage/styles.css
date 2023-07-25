@@ -127,8 +127,8 @@
 }
 
 .collapse{
-  opacity: 0.8;
-  outline: 2px dashed #f3d0a4;
+  opacity: 0.85;
+  box-shadow: 5px 10px;
 }
 
 .container {
