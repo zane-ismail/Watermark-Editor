@@ -81,19 +81,17 @@
 }
 
 .carousel-control-next{
-  size: 50px;
+  cursor: grab;
 }
 
 .carousel-control-next-icon{
-  color: green;
 }
 
 .carousel-control-prev{
-  /* background-color: #cfa093; */
+  cursor: grab;
 }
 
 .carousel-control-prev-icon{
-
 }
 
 .carousel-image{
