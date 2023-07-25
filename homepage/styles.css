@@ -212,10 +212,7 @@
 }
 
 .sr-only{
-  height: 100px;
-  width: 100px;
-  background-color: #cfa093;
-  color: #660e60;
+  color: #614c65;
 }
 
 .text-body-secondary{
