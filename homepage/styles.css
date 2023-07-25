@@ -84,6 +84,7 @@
 
 .carousel-caption {
     font-family: 'Kaushan Script', cursive;
+    object-fit: none;
 }
 
 .carousel-control-next {
@@ -113,6 +114,7 @@
 .carousel-image {
     border-color: #f3d0a4;
     border-style: double;
+    object-fit: none;
 }
 
 .carousel-indicators {
@@ -122,11 +124,13 @@
 .carousel-inner {
     border-color: #660e60;
     border-style: double;
+    object-fit: none;
 }
 
 .carousel-item {
     border-color: #f3d0a4;
     border-style: double;
+    object-fit: none;
 }
 
 .col {
@@ -147,6 +151,7 @@
 .d-block {
     border-color: #893f71;
     border-style: ridge;
+    object-fit: none;
 }
 
 .desc {
