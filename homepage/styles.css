@@ -233,9 +233,10 @@
 
 .text-left{
   color: #660e60;
+  font-family: 'Shrikhand', cursive;
+  font-size: 30px;
   padding-left: 25px;
-  font-align: left;
-  text-size: 50px;
+  text-align: left;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #893f71;
 }
