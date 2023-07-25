@@ -65,15 +65,15 @@
   width: 300px;
 }
 
+.card-text{
+  font-family: 'Kaushan Script', cursive;
+}
+
 .card-title{
   color: black;
   text-align: center;
   font-family: 'Kaushan Script', cursive;
   font-size: 30px;
-}
-
-.card-text{
-  font-family: 'Kaushan Script', cursive;
 }
 
 .carousel-caption{
