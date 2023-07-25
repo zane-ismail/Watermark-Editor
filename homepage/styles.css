@@ -195,17 +195,13 @@
 }
 
 .navbar-toggler{
-  color: green;
-  outline-color: green;
-  border-style: double;
-  border-color: #f3d0a4;
 }
 
 .responsive {
-      width: 49.99999%;
-      margin: 6px 0;
-      width: 100%;
-    }
+  width: 49.99999%;
+  margin: 6px 0;
+  width: 100%;
+}
 
 .row{
   padding-top: 30px;
