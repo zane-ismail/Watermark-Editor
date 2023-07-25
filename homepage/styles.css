@@ -234,7 +234,7 @@
 .text-left{
   color: #660e60;
   margin: 20px;
-  /* text-align: left; */
+  text-align: center;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: black;
 }
