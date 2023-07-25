@@ -233,7 +233,7 @@
 
 .text-left{
   color: #660e60;
-  margin: 20px;
+  padding-left: 200px;
   text-align: left;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: black;
