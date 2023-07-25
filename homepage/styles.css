@@ -224,7 +224,8 @@
 }
 
 .text-body-secondary{
-  
+  border-color: #893f71;
+  border-style: ridge;
 }
 
 .text-left{
