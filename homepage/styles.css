@@ -95,10 +95,11 @@
 }
 
 .carousel-control-next-prev{
-  color: yellow;
+  color: #f3d0a4;
+  font-size: 20px;
   opacity: 0.95;
   -webkit-text-stroke-width: 1.5px;
-  -webkit-text-stroke-color: #f3d0a4;
+  -webkit-text-stroke-color: black;
 }
 
 .carousel-control-prev{
@@ -149,6 +150,9 @@
 }
 
 .desc {
+  color: black;
+  font-family: 'Kaushan Script', cursive;
+  font-size: 30px;
   padding: 15px;
   text-align: center;
 }
