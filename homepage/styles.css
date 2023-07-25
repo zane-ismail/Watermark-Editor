@@ -81,11 +81,13 @@
 }
 
 .carousel-control-next{
-  color: #893f71;
+  color: #f3d0a4;
+  size: 20px;
 }
 
 .carousel-control-next-icon{
-  /* background-color: #cfa093; */
+  color: #f3d0a4;
+  size: 20px;
 }
 
 .carousel-control-prev{
