@@ -177,17 +177,21 @@
 }
 
 .nav-link{
-  font-size: 35px;
-  z-index: 1;
-  font-family: 'Shrikhand', cursive;
-  color: #893f71;
   background-color: #cfa093;
-  margin-bottom: 10px;
   border-radius: 15px;
+  color: #893f71;
+  font-family: 'Shrikhand', cursive;
+  font-size: 35px;
+  margin-bottom: 10px;
+  z-index: 1;
 }
 
 .navbar{
-  margin-right: 210px;
+  left: 10px;
+  height: 40px;
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
   opacity: 0.95;
   position: relative;
   -webkit-text-stroke-width: 2px;
@@ -202,7 +206,6 @@
 .navbar-nav{
   background-color: #f3d0a4;
   position: absolute;
-  right: 175px;
   z-index: 1;
 }
 
