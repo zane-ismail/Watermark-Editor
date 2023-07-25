@@ -80,19 +80,19 @@
   font-family: 'Kaushan Script', cursive;
 }
 
-.carousel-control-next-prev{
-  color: yellow;
-  opacity: 0.95;
-  -webkit-text-stroke-width: 1.5px;
-  -webkit-text-stroke-color: #f3d0a4;
-}
-
 .carousel-control-next{
   cursor: grab;
 }
 
 .carousel-control-next-icon{
   border-style: dotted;
+}
+
+.carousel-control-next-prev{
+  color: yellow;
+  opacity: 0.95;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: #f3d0a4;
 }
 
 .carousel-control-prev{
