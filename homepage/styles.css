@@ -76,6 +76,10 @@
   font-family: 'Kaushan Script', cursive;
 }
 
+.carousel-control-next-prev{
+
+}
+
 .carousel-control-next{
   cursor: grab;
 }
