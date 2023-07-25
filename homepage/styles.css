@@ -77,7 +77,10 @@
 }
 
 .carousel-control-next-prev{
-
+  opacity: 0.95;
+  color: #f3d0a4
+  -webkit-text-stroke-width: 0.2px;
+  -webkit-text-stroke-color: #f3d0a4;
 }
 
 .carousel-control-next{
