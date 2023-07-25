@@ -108,13 +108,13 @@
   border-style: double;
 }
 
+.carousel-indicators{
+  visibility: hidden;
+}
+
 .carousel-inner{
   border-color: #660e60;
   border-style: double;
-}
-
-.carousel-indicators{
-  visibility: hidden;
 }
 
 .carousel-item{
@@ -146,7 +146,6 @@
   padding: 15px;
   text-align: center;
 }
-
 
 .gallery:hover {
   border: 1px solid #777;
