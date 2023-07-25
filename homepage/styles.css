@@ -122,11 +122,6 @@
   border-style: double;
 }
 
-.clearfix:after {
-  content: "";
-  display: table;
-}
-
 .col {
   height: 200px;
   size: 50%;
@@ -143,6 +138,7 @@
 }
 
 .d-block{
+  opacity: 0.15;
 }
 
 .desc {
