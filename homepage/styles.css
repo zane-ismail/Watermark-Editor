@@ -73,16 +73,15 @@
 }
 
 .card-text{
-  /* opacity: 0.8;
-  background-color: #cfa093; */
+  font-family: 'Kaushan Script', cursive;
 }
 
 .carousel-caption{
-  /* background-color: #cfa093; */
+  font-family: 'Kaushan Script', cursive;
 }
 
 .carousel-control-next{
-  /* background-color: #cfa093; */
+  color: #893f71;
 }
 
 .carousel-control-next-icon{
