@@ -187,8 +187,9 @@
 }
 
 .navbar{
-  margin-right: 550px;
+  margin-right: 210px;
   opacity: 0.95;
+  position: relative;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: #660e60;
 }
