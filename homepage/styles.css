@@ -171,7 +171,7 @@
   font-size: 35px;
   z-index: 1;
   font-family: 'Shrikhand', cursive;
-  color: #660e60;
+  color: #893f71;
   background-color: #cfa093;
   margin-bottom: 10px;
   border-radius: 15px;
@@ -179,7 +179,7 @@
 
 .navbar{
   margin-right: 80px;
-  opacity: 0.75;
+  opacity: 0.85;
 }
 
 .navbar-brand{
@@ -212,7 +212,8 @@
 }
 
 .sr-only{
-  color: #614c65;
+  color: #660e60;
+
 }
 
 .text-body-secondary{
