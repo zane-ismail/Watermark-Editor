@@ -47,29 +47,29 @@
 }
 
 .card-footer{
-  font-family: 'Kaushan Script', cursive;
   color: black;
+  font-family: 'Kaushan Script', cursive;
   font-size: 15px;
 }
 
 .card-group{
-  font-family: 'Kaushan Script', cursive;
   color: black;
+  font-family: 'Kaushan Script', cursive;
   font-size: 20px;
 }
 
 .card-img-top{
-  position: relative;
-  width: 300px;
   height: 200px;
   left: 20px;
+  position: relative;
+  width: 300px;
 }
 
 .card-title{
-  font-family: 'Kaushan Script', cursive;
   color: black;
-  font-size: 30px;
   text-align: center;
+  font-family: 'Kaushan Script', cursive;
+  font-size: 30px;
 }
 
 .card-text{
@@ -81,8 +81,8 @@
 }
 
 .carousel-control-next-prev{
-  opacity: 0.95;
   color: #black;
+  opacity: 0.95;
   -webkit-text-stroke-width: 1.5px;
   -webkit-text-stroke-color: #f3d0a4;
 }
@@ -104,13 +104,13 @@
 }
 
 .carousel-image{
-  border-style: double;
   border-color: #f3d0a4;
+  border-style: double;
 }
 
 .carousel-inner{
-  border-style: double;
   border-color: #660e60;
+  border-style: double;
 }
 
 .carousel-indicators{
@@ -118,8 +118,8 @@
 }
 
 .carousel-item{
-  border-style: double;
   border-color: #f3d0a4;
+  border-style: double;
 }
 
 .clearfix:after {
@@ -128,9 +128,9 @@
 }
 
 .col {
-  width: 300px;
   height: 200px;
   size: 50%;
+  width: 300px;
 }
 
 .collapse{
@@ -156,18 +156,18 @@
 }
 
 .gallery img {
-  width: 1000px;
   height: 600px;
-  margin: 10px auto 20px;
   display: block;
+  margin: 10px auto 20px;
+  width: 1000px;
 }
 
 .icon{
-  width: 125px;
+  border: 1px solid #000000;
+  left: 1137px;
   position: absolute;
   top: 110px;
-  left: 1137px;
-  border: 1px solid #000000;
+  width: 125px;
 }
 
 .nav-item{
@@ -192,28 +192,28 @@
 }
 
 .navbar-brand{
-  position: absolute;
   background-color: #f3d0a4;
+  position: absolute;
 }
 
 .navbar-nav{
-  z-index: 1;
+  background-color: #f3d0a4;
   position: absolute;
   right: 175px;
-  background-color: #f3d0a4;
+  z-index: 1;
 }
 
 .navbar-toggler{
-  height: 100px;
-  width: 100px;
   background-color: #cfa093;
   color: #660e60;
+  height: 100px;
+  width: 100px;
 }
 
 .responsive {
-  width: 49.99999%;
   margin: 6px 0;
   width: 100%;
+  width: 49.99999%;
 }
 
 .row{
