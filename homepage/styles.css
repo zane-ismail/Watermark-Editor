@@ -241,17 +241,17 @@
 
 .top-left {
   color: #f3d0a4;
-  position: absolute;
-  top: 8px;
-  left: 16px;
   font-size: 60px;
   font-family: 'Monoton', cursive;
   font-size: 100px;
+  left: 16px;
+  position: absolute;
+  top: 8px;
 }
 
 .w-100 {
-  width: 100%;
   height: 70vh;
+  width: 100%;
 }
 
 a {
@@ -263,28 +263,28 @@ body {
 }
 
 h1 {
-  font-size: 50px;
-  font-family: 'Shrikhand', cursive;
   color: #893f71;
+  font-family: 'Shrikhand', cursive;
+  font-size: 50px;
 }
 
 h2 {
-  font-family: 'Kaushan Script', cursive;
   color: #f3d0a4;
+  font-family: 'Kaushan Script', cursive;
   font-size: 50px;
 }
 
 h3 {
-  font-family: 'Kaushan Script', cursive;
   color: #660e60;
   float: left;
+  font-family: 'Kaushan Script', cursive;
   font-size: 25px;
   padding: 30px;
 }
 
 h4 {
-  font-family: 'Kaushan Script', cursive;
   color: #660e60;
+  font-family: 'Kaushan Script', cursive;
   font-size: 25px;
   padding: 10px;
 }
