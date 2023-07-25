@@ -20,12 +20,12 @@
   background-color: #cfa093;
 }
 
-.accordion-item{
-  background-color: #f3d0a4;
-}
-
 .accordion-header{
   opacity: 0.8;
+}
+
+.accordion-item{
+  background-color: #f3d0a4;
 }
 
 .banner{
