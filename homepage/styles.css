@@ -197,7 +197,8 @@
 .navbar-toggler{
   height: 100px;
   width: 100px;
-  color: green;
+  background-color: #cfa093;
+  color: #660e60;
 }
 
 .responsive {
