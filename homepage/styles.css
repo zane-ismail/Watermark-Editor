@@ -231,8 +231,8 @@
 .text-body-secondary{
 }
 
-.text-center{
-  /* text-align: left; */
+.text-left{
+  text-align: left;
   color: #660e60;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: black;
