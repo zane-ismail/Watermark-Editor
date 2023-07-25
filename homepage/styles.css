@@ -28,6 +28,12 @@
   background-color: #f3d0a4;
 }
 
+.background-image{
+  background-image: url("https://i.ibb.co/x7WwTqf/background2.jpg");
+}
+/* https://i.ibb.co/Vx66QSY/background1.jpg */
+/* https://i.ibb.co/VH4Zhc9/background3.jpg */
+
 .banner{
   border: 1px solid #000000;
   left: 0;
