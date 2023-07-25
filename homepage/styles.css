@@ -233,9 +233,9 @@
 
 .text-left{
   color: #660e60;
-  padding-left: 100px;
+  padding-left: 50px;
   text-align: left;
-  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
 }
 
