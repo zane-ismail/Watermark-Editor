@@ -8,11 +8,12 @@
 
 .accordion-button{
   background-color: #cfa093;
-  color: #f3d0a4;
+  color: #893f71;
+  font-family: 'Kaushan Script', cursive;
+  font-size: 30px;
   margin-top: 25px;
-  font-size: 25px;
-  -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: #660e60;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: black;
   z-index: 0;
 }
 
