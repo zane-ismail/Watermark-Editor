@@ -147,7 +147,7 @@
 .d-block {
     border-color: #893f71;
     border-style: ridge;
-    object-fit: scale-down;
+    object-fit: cover;
 }
 
 .desc {
