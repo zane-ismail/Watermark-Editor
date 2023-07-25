@@ -179,7 +179,9 @@
 
 .navbar{
   margin-right: 80px;
-  opacity: 0.85;
+  opacity: 0.95;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #660e60;
 }
 
 .navbar-brand{
@@ -213,6 +215,8 @@
 
 .sr-only{
   color: #660e60;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
 
 }
 
@@ -230,37 +234,35 @@
 }
 
 .w-100 {
-    width: 100%;
-    height: 70vh;
-  }
-
+  width: 100%;
+  height: 70vh;
+}
 
 a {
-    background-color: #f3d0a4;
-  }
-
+  background-color: #f3d0a4;
+}
 
 body {
-    background-color: #f3d0a4;
-  }
+  background-color: #f3d0a4;
+}
 
 h1 {
-    background-color: #f3d0a4;
-    font-family: Palatino, Palatino Linotype, Palatino LT STD;
-    font-size: 60px;
-    color: #660e60;
-  }
+  background-color: #f3d0a4;
+  font-family: Palatino, Palatino Linotype, Palatino LT STD;
+  font-size: 60px;
+  color: #660e60;
+}
 
 h2 {
-    font-size: 50px;
-    font-family: 'Shrikhand', cursive;
-    color: #893f71;
+  font-size: 50px;
+  font-family: 'Shrikhand', cursive;
+  color: #893f71;
 }
 
 h3 {
-    font-family: 'Kaushan Script', cursive;
-    color: #f3d0a4;
-    font-size: 50px;
+  font-family: 'Kaushan Script', cursive;
+  color: #f3d0a4;
+  font-size: 50px;
 }
 
 h4 {
@@ -290,22 +292,22 @@ head {
 }
 
 
-  --#{$prefix}card-spacer-y: #{$card-spacer-y};
-  --#{$prefix}card-spacer-x: #{$card-spacer-x};
-  --#{$prefix}card-title-spacer-y: #{$card-title-spacer-y};
-  --#{$prefix}card-title-color: #{$card-title-color};
-  --#{$prefix}card-subtitle-color: #{$card-subtitle-color};
-  --#{$prefix}card-border-width: #{$card-border-width};
-  --#{$prefix}card-border-color: #{$card-border-color};
-  --#{$prefix}card-border-radius: #{$card-border-radius};
-  --#{$prefix}card-box-shadow: #{$card-box-shadow};
-  --#{$prefix}card-inner-border-radius: #{$card-inner-border-radius};
-  --#{$prefix}card-cap-padding-y: #{$card-cap-padding-y};
-  --#{$prefix}card-cap-padding-x: #{$card-cap-padding-x};
-  --#{$prefix}card-cap-bg: #{$card-cap-bg};
-  --#{$prefix}card-cap-color: #{$card-cap-color};
-  --#{$prefix}card-height: #{$card-height};
-  --#{$prefix}card-color: #{$card-color};
-  --#{$prefix}card-bg: #{$card-bg};
-  --#{$prefix}card-img-overlay-padding: #{$card-img-overlay-padding};
-  --#{$prefix}card-group-margin: #{$card-group-margin};
+--#{$prefix}card-spacer-y: #{$card-spacer-y};
+--#{$prefix}card-spacer-x: #{$card-spacer-x};
+--#{$prefix}card-title-spacer-y: #{$card-title-spacer-y};
+--#{$prefix}card-title-color: #{$card-title-color};
+--#{$prefix}card-subtitle-color: #{$card-subtitle-color};
+--#{$prefix}card-border-width: #{$card-border-width};
+--#{$prefix}card-border-color: #{$card-border-color};
+--#{$prefix}card-border-radius: #{$card-border-radius};
+--#{$prefix}card-box-shadow: #{$card-box-shadow};
+--#{$prefix}card-inner-border-radius: #{$card-inner-border-radius};
+--#{$prefix}card-cap-padding-y: #{$card-cap-padding-y};
+--#{$prefix}card-cap-padding-x: #{$card-cap-padding-x};
+--#{$prefix}card-cap-bg: #{$card-cap-bg};
+--#{$prefix}card-cap-color: #{$card-cap-color};
+--#{$prefix}card-height: #{$card-height};
+--#{$prefix}card-color: #{$card-color};
+--#{$prefix}card-bg: #{$card-bg};
+--#{$prefix}card-img-overlay-padding: #{$card-img-overlay-padding};
+--#{$prefix}card-group-margin: #{$card-group-margin};
