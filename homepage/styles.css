@@ -138,7 +138,8 @@
 }
 
 .d-block{
-  border-style: dotted;
+  border-color: #893f71;
+  border-style: ridge;
 }
 
 .desc {
@@ -223,6 +224,7 @@
 }
 
 .text-body-secondary{
+  
 }
 
 .text-left{
