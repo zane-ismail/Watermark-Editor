@@ -160,15 +160,14 @@
       function validateForm() {
         var name =  document.getElementById('name').value;
         if (name == "") {
-            document.querySelector('.status').innerHTML = "Name cannot be empty";
+            document.querySelector('.status').innerHTML = "You must include a name";
             return false;
           }
         var email =  document.getElementById('email').value;
         if (email == "") {
-            document.querySelector('.status').innerHTML = "Email cannot be empty";
+            document.querySelector('.status').innerHTML = "You must include an email address";
             return false;
           }
-        }
         var subject =  document.getElementById('subject').value;
         if (subject == "") {
             document.querySelector('.status').innerHTML = "You must include a subject";
@@ -176,7 +175,7 @@
           }
         var message =  document.getElementById('message').value;
         if (message == "") {
-            document.querySelector('.status').innerHTML = "Please type message.";
+            document.querySelector('.status').innerHTML = "Please type message";
             return false;
           }
         document.querySelector('.status').innerHTML = "Sending...";
