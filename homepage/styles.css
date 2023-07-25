@@ -7,9 +7,13 @@
 }
 
 .accordion-button{
-  margin-top: 30px;
-  z-index: 0;
   background-color: #cfa093;
+  color: #f3d0a4;
+  margin-top: 25px;
+  font-size: 25px;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #660e60;
+  z-index: 0;
 }
 
 .accordion-collapse{
