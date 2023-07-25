@@ -107,6 +107,7 @@
 }
 
 .carousel-indicators{
+  visibility: hidden;
 }
 
 .carousel-item{
@@ -126,6 +127,7 @@
 }
 
 .collapse{
+  
 }
 
 .container {
