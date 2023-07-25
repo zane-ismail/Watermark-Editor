@@ -212,7 +212,6 @@
 
 .responsive {
   margin: 6px 0;
-  width: 100%;
   width: 49.99999%;
 }
 
@@ -241,13 +240,13 @@
 }
 
 .top-left {
+  color: #f3d0a4;
   position: absolute;
   top: 8px;
   left: 16px;
   font-size: 60px;
   font-family: 'Monoton', cursive;
   font-size: 100px;
-  color: #f3d0a4;
 }
 
 .w-100 {
