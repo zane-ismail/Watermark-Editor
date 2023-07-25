@@ -78,8 +78,8 @@
 
 .carousel-control-next-prev{
   opacity: 0.95;
-  color: #660e60
-  -webkit-text-stroke-width: 0.15px;
+  color: #black;
+  -webkit-text-stroke-width: 1.5px;
   -webkit-text-stroke-color: #f3d0a4;
 }
 
