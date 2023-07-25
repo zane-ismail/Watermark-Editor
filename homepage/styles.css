@@ -233,8 +233,8 @@
 
 .text-left{
   color: #660e60;
-  margin-left: 20px;
-  text-align: left;
+  left: 20px;
+  /* text-align: left; */
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: black;
 }
