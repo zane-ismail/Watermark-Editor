@@ -127,7 +127,8 @@
 }
 
 .collapse{
-  background-color: green;
+  opacity: 0.8;
+  outline: 2px dashed #f3d0a4;
 }
 
 .container {
@@ -136,6 +137,7 @@
 }
 
 .d-block{
+  background-color: green;
 }
 
 .desc {
