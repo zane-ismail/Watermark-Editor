@@ -85,6 +85,7 @@
 }
 
 .carousel-control-next-icon{
+  border-style: dotted;
 }
 
 .carousel-control-prev{
@@ -92,18 +93,26 @@
 }
 
 .carousel-control-prev-icon{
+  border-style: dotted;
 }
 
 .carousel-image{
+  border-style: double;
+  border-color: #f3d0a4;
 }
 
 .carousel-inner{
+  border-style: double;
+  border-color: #660e60;
 }
 
 .carousel-indicators{
+  border-style: double;
 }
 
 .carousel-item{
+  border-style: double;
+  border-color: #f3d0a4;
 }
 
 .clearfix:after {
