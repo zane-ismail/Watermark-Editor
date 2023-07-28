@@ -41,6 +41,9 @@ def index():
 def delete():
     if request.method == "POST":
         print("DELETE")
+        items_to_delete = request.POST.getlist('delete_items')
+
+        
         id = db.execute("SELECT id from birthdays WHERE (name) VALUES (?)")
         db.execute("DELETE FROM birthdays WHERE (id) VALUES (?, ?, ?)", id)
         return redirect("/")
