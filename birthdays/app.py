@@ -50,7 +50,7 @@ def index():
 def update(id):
     if request.method == "POST":
         # db.execute("UPDATE FROM birthdays WHERE id = ?", id)
-        return render_template("/update/<int:id>")
+        return redirect(urlfor"update)
 
 
 # Delete entry
