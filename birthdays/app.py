@@ -36,8 +36,7 @@ def index():
 
         if request.form['action'] == 'delete':
             d_name = request.form.get("name")
-            print("delete!!!!!!!!!!")
-            db.execute("DELETE * FROM birthdays WHERE VALUES (?)", d_name)
+            db.execute("DELETE FROM birthdays WHERE name = ?", d_name)
             return redirect("/")
 
     else:
