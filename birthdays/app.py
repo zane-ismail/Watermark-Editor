@@ -54,7 +54,7 @@ def update(id):
         new_name = request.form.get("updated_name")
         print(f"new name1: {new_name}")
         if new_name:
-            db.execute("UPDATE birthdays SET name = new_name")
+            db.execute("UPDATE birthdays SET name = ? WHERE id = ?", new_name, id)
             return render_template("index.html", rows=rows)
         else:
             return render_template("/update.html", rows=rows, name=name)
