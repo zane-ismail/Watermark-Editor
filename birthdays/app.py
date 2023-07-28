@@ -53,7 +53,12 @@ def update(id):
         rows = db.execute("SELECT * FROM birthdays")
         new_name = request.form.get("updated_name")
         print(f"new name1: {new_name}")
-        return render_template("/update.html", rows=rows, name=name)
+        if new_name:
+            db.execute("UPDATE birthdays SET name = new_name")
+            return render_template("index.html", rows=rows)
+        else:
+            return render_template("/update.html", rows=rows, name=name)
+
     else:
         new_name = request.form.get("updated_name")
         print(f"new name2: {new_name}")
