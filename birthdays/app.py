@@ -46,9 +46,11 @@ def index():
 
 # Delete entry
 @app.route("/", methods=["GET", "POST"])
-def delete(id):
+def delete():
     if request.method == "POST":
         message = "Entry deleted"
+        id = request.form.get("id")
+        print(id)
         db.execute("DELETE FROM birthdays WHERE (id) VALUES (?)", id)
         rows = db.execute("SELECT * FROM birthdays")
         return redirect("index.html",message=message, rows=rows)
