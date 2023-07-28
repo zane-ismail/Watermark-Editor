@@ -35,6 +35,7 @@ def index():
             return redirect("/")
 
         if request.form['action'] == 'delete':
+            print(">>>>")
             id = request.form.get("id")
             db.execute("DELETE FROM birthdays WHERE name = ?", id)
             return redirect("/")
