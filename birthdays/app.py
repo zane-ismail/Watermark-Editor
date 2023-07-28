@@ -32,9 +32,9 @@ def index():
 
         db.execute("INSERT into birthdays (name, month, day) VALUES (?, ?, ?)", name, month, day)
         delete = request.form.get("delete")
-        if delete:
-            print("DELETE")
-            # db.execute("DELETE * FROM birthdays WHERE id ==)
+
+        print("DELETE")
+        db.execute("DELETE FROM birthdays WHERE (id) VALUES (?)", 4)
         return redirect("/")
 
     else:
