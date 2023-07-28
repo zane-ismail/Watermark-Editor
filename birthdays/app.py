@@ -32,7 +32,7 @@ def index():
         print(name)
         print(month)
         print(day)
-        db.execute("INSERT into birthdays (name) VALUES (?)", name, "birthdays (month) VALUES (?)", month, "birthdays (day) VALUES (?)", day)
+        db.execute("INSERT into birthdays (name, month, day) VALUES (?)" name, month, day)
         return redirect("/")
 
     else:
