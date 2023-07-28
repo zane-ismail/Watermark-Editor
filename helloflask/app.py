@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route("/", methods=["GET", "POST"])
 def index():
-    if requests.method == "GET":
+    if request.method == "GET":
         return render_template("index.html")
     else:
         print("Form submitted!")
