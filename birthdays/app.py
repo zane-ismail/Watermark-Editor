@@ -46,7 +46,7 @@ def index():
 
 # Delete entry
 @app.route('/delete/<int:postID>', methods=["GET", "POST"])
-def delete():
+def delete(postID):
     if request.method == "POST":
         message = "Entry deleted"
         id = request.form.get("id")
