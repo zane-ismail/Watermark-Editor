@@ -48,10 +48,10 @@ def index():
 @app.route("/update/<int:id>", methods=["POST"])
 def update(id, name):
     if request.method == "POST":
-        name = db.execute("SELECT (name) FROM birthdays WHERE id = ?", id)
+        # name = db.execute("SELECT (name) FROM birthdays WHERE id = ?", id)
         # update_name = request.form['name']
         rows = db.execute("SELECT * FROM birthdays")
-        return render_template("/update.html", rows=rows)
+        return render_template("/update.html", rows=rows, name=name)
 
 
 # Delete entry
