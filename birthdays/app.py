@@ -45,11 +45,9 @@ def index():
         return render_template("index.html", rows=rows)
 
 
-@app.route("/update", methods=["POST"])
+@app.route("/update/<int:id>", methods=["POST"])
 def update(id):
-    if id:
-        rows = db.execute("SELECT * FROM birthdays WHERE id = ?", id)
-    return render_template("/update.html", id)
+    return render_template("/update/<int:id>.html", id)
 
 
 # Delete entry
