@@ -48,11 +48,13 @@ def index():
 @app.route("/update/<int:id>", methods=["GET", "POST"])
 def update(id):
     if request.method == "POST":
-        birthday = db.execute("SELECT * FROM birthdays WHERE id = ?", id)
-        name = birthday[0]['name']
-        rows = db.execute("SELECT * FROM birthdays")
-        birthday[0]['name'] = request.form['updated_name']
-        print("NOTHING")
+        birthday = db.query.get_or_404(id)
+        print(birthday)
+        # birthday = db.execute("SELECT * FROM birthdays WHERE id = ?", id)
+        # name = birthday[0]['name']
+        # rows = db.execute("SELECT * FROM birthdays")
+        # birthday[0]["name"] = request.form["updated_name"]
+        # print("NOTHING")
         try:
             db.session.commit()
             print("COMMITTED")
