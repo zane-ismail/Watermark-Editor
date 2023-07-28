@@ -38,9 +38,9 @@
                         <!-- TODO: Loop through the database entries to display them in this table -->
                         {% for row in rows %}
                             <tr>
-                                <td>{{ rows["name"] }}</td>
-                                <td>{{ rows["month" ]}}</td>
-                                <td>{{ rows["day" ]}}</td>
+                                <td>{{ row["name"] }}</td>
+                                <td>{{ row["month"] }}</td>
+                                <td>{{ row["day"] }}</td>
                             </tr>
                         {% endfor %}
                     </tbody>
