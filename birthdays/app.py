@@ -45,12 +45,14 @@ def index():
         return render_template("index.html", rows=rows)
 
 
-# Update entry
-@app.route("/update/<int:id>", methods=["POST"])
-def update(id):
-    if request.method == "POST":
-        # db.execute("UPDATE FROM birthdays WHERE id = ?", id)
-        return redirect(urlfor"update)
+@app.route("/edit", methods=["POST"])
+def edit():
+
+    # Forget registrant
+    id = request.form.get("id")
+    if id:
+        rows = db.execute("SELECT * FROM birthdays WHERE id = ?", id)
+    return render_template("/edit.html", rows=rows)
 
 
 # Delete entry
