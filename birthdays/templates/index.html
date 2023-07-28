@@ -38,8 +38,8 @@
                         <!-- TODO: Loop through the database entries to display them in this table -->
                         {% for row in rows %}
                             <tr>
-                                <td>{{row["name"]}}</td>
-                                <td>{{row["month"]}}/{{row["day"]}}
+                                <td>{ {row.name }}</td>
+                                <td>{{ row.month }}/{{ row.day}}
                                     <form action="/ " method="post">
                                         <button name="delete" type="submit">Delete Birthday</button>
                                     </form>
