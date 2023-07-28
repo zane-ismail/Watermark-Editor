@@ -36,7 +36,7 @@ def index():
         else:
             message = "Input incomplete"
             rows = db.execute("SELECT * FROM birthdays")
-            return render_template("index.html",message=message, rows=rows)
+            return render_template("index.html", message=message, rows=rows)
 
     else:
         # TODO: Display the entries in the database on index.html
@@ -51,10 +51,9 @@ def delete(id):
         message = "Entry deleted"
         print(id)
         print("????????")
-        db.execute("DELETE FROM birthdays WHERE id = ?)", [request.form["id"]])
-        db.commit()
+        db.execute("DELETE FROM birthdays WHERE id = ?", id)
         rows = db.execute("SELECT * FROM birthdays")
-        return redirect("index.html",message=message, rows=rows)
+        return redirect("index.html", message=message, rows=rows)
 
 
 
