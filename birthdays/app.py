@@ -45,22 +45,12 @@ def index():
         return render_template("index.html", rows=rows)
 
 
-@app.route('/update/<int:id>', methods=["GET", "POST"])
+@app.route("/update/<int:id>", methods=["POST"])
 def update(id):
-    qry = db_session.query(album).filter(
-                album.id==id)
-    album = qry.first()
-
-    if album:
-        form = albumform(formdata=request.form, obj=album)
-        if request.method == 'post' and form.validate():
-            # save edits
-            save_changes(album, form)
-            print('album updated successfully!')
-            return redirect('/')
-        return render_template('edit_album.html', form=form)
-    else:
-        return 'error loading #{id}'.format(id=id)
+    if request.method == "POST":
+        rows = db.execute("SELECT * FROM birthdays")
+        message = "Update input"
+    return render_template("/update.html", id)
 
 
 # Delete entry
