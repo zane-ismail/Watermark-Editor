@@ -50,7 +50,8 @@ def update(id):
     if request.method == "POST":
         name = db.execute("SELECT (name) FROM birthdays WHERE id = ?", id)
         print(name)
-    return render_template("/update.html", id)
+        rows = db.execute("SELECT * FROM birthdays")
+        return render_template("/update.html", rows=rows)
 
 
 # Delete entry
