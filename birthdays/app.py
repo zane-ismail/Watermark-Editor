@@ -25,7 +25,7 @@ def after_request(response):
 @app.route("/", methods=["GET", "POST"])
 def index():
     if request.method == "POST":
-        if request.form.post['action'] == 'add':
+        if request.form['action'] == 'add':
             # TODO: Add the user's entry into the database
             name = request.form.get("name")
             month = request.form.get("month")
@@ -34,10 +34,10 @@ def index():
             db.execute("INSERT into birthdays (name, month, day) VALUES (?, ?, ?)", name, month, day)
             return redirect("/")
 
-        if request.form.post['action'] == 'delete':
-            print("delete!!!!!!!!!!")
+        if request.form['action'] == 'delete':
             d_name = request.form.get("name")
-            db.remove(d_name)
+            print("delete!!!!!!!!!!")
+            db.execute("DELETE * FROM birthdays WHERE VALUES (?)", d_name)
             return redirect("/")
 
     else:
