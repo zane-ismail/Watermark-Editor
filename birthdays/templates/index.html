@@ -19,7 +19,7 @@
                     <input autocomplete="off" autofocus="name" name="name" type="text">
                     <input autocomplete="off" autofocus="month" name="month" type="text">
                     <input autocomplete="off" autofocus="day" name="day" type="text">
-                    <button type="submit">Submit</button>
+                    <button type="submit">Add Birthday</button>
                 </form>
 
             </div>
@@ -38,9 +38,8 @@
                         <!-- TODO: Loop through the database entries to display them in this table -->
                         {% for row in rows %}
                             <tr>
-                                <td>{{ row["name"] }}</td>
-                                <td>{{ row["month"] }}</td>
-                                <td>{{ row["day"] }}</td>
+                                <td>{{row["name"]}}</td>
+                                <td>{{row["month"]}}/{{row["day"]}}</td>
                             </tr>
                         {% endfor %}
                     </tbody>
