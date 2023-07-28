@@ -38,7 +38,7 @@ def index():
         rows = db.execute("SELECT * from birthdays;")
         return render_template("index.html", rows=rows)
 
-def delete():
+def delete(request):
     if request.method == "POST":
         print("DELETE")
         items_to_delete = request.post.getlist('delete_items')
