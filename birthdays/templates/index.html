@@ -44,13 +44,13 @@
                                 <td>{{ row.name }}</td>
                                 <td>{{ row.month }}/{{ row.day}}</td>
                                     <td>
-                                        <form action="{{ url_for('delete', id=row.id) }}" method="post">
-                                            <input type=hidden name="{{ row.id }}">
-                                            <button class="button" type="delete">Delete</button>
-                                        </form>
                                         <form action="{{ url_for('update', id=row.id) }}" method="post">
                                             <input type=hidden name="{{ row.id }}">
                                             <button class="button" type="update">Update</button>
+                                        </form>
+                                        <form action="{{ url_for('delete', id=row.id) }}" method="post">
+                                            <input type=hidden name="{{ row.id }}">
+                                            <button class="button" type="delete">Delete</button>
                                         </form>
                                     </td>
                             </tr>
