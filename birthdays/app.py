@@ -50,7 +50,7 @@ def delete(id):
     if request.method == "POST":
         print(id)
         print("????????")
-        db.execute("DELETE FROM birthdays WHERE id = ?", [request.form["id"]])
+        db.execute("DELETE FROM birthdays WHERE id = ?", id)
         rows = db.execute("SELECT * FROM birthdays")
         flash('Entry deleted')
         return redirect("index.html", rows=rows)
