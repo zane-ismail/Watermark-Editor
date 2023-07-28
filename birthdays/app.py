@@ -52,10 +52,13 @@ def update(id):
         name = birthday[0]['name']
         rows = db.execute("SELECT * FROM birthdays")
         new_name = request.form.get("updated_name")
-        print(f"new name: {new_name}")
+        print(f"new name1: {new_name}")
         return render_template("/update.html", rows=rows, name=name)
     else:
-        return render_template("/update.html", rows=rows, name=name)
+        new_name = request.form.get("updated_name")
+        print(f"new name2: {new_name}")
+        rows = db.execute("SELECT * FROM birthdays")
+        return render_template("index.html", rows=rows)
 
 
 # Delete entry
