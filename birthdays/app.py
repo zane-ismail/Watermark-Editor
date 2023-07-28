@@ -29,14 +29,14 @@ def index():
         name = request.form.get("name")
         month = request.form.get("month")
         day = request.form.get("day")
-        db.execute("INSERT into birthdays (name) VAVLUES (?)", name)
-        db.execute("INSERT into birthdays (month) VAVLUES (?)", month)
-        db.execute("INSERT into birthdays (day) VAVLUES (?)", day)
+        db.execute("INSERT into birthdays (name) VALUES (?)", name)
+        db.execute("INSERT into birthdays (month) VALUES (?)", month)
+        db.execute("INSERT into birthdays (day) VALUES (?)", day)
         return redirect("/")
 
     else:
         # TODO: Display the entries in the database on index.html
         rows = db.execute("SELECT * from birthdays;")
-        return render_template("index.html")
+        return render_template("index.html", rows)
 
 
