@@ -34,7 +34,7 @@ def index():
         delete = request.form.get("delete")
         if delete:
             print("DELETE")
-            # db.execute("INSERT into birthdays
+            # db.execute("DELETE  FROM birthdays)
         return redirect("/")
 
     else:
