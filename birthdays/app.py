@@ -43,6 +43,9 @@ def index():
         rows = db.execute("SELECT * from birthdays;")
         return render_template("index.html", rows=rows)
 
+
+# Delete entry
+@app.route("/delete", methods=["GET", "POST"])
 def delete():
     if request.method == "POST":
         message = "Entry deleted"
