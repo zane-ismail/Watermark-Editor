@@ -14,9 +14,9 @@
             <div class="section">
                 <h2>Update a Birthday</h2>
                 {% for row in rows %}
-                    <form action="{{ url_for('update', id=row.id, name=row.name) }}">
+                    <form action="{{ url_for('update', id=row.id) }}">
                 {% endfor %}
-                        <input type="text", placeholder="name", name="name", value="{{  row.name }}">
+                        <input type="text", placeholder="name", name="name", value="{{  name }}">
                         <input type="submit", value="Update Name" class="btn btn-secondary">
                     </form>
             </div>
