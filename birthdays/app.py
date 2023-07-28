@@ -33,6 +33,10 @@ def index():
         print(month)
         print(day)
         db.execute("INSERT into birthdays (name, month, day) VALUES (?, ?, ?)", name, month, day)
+        delete = request.form.get("delete")
+        if delete:
+            print("DELETE")
+            # db.execute("INSERT into birthdays
         return redirect("/")
 
     else:
