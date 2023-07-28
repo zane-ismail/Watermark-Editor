@@ -45,9 +45,11 @@ def index():
         return render_template("index.html", rows=rows)
 
 
-@app.route("/update/<int:id>", methods=["POST"])
+@app.route("/update/<int:id>", methods=["GET", "POST"])
 def update(id):
     if request.method == "POST":
+        birthday = db.execute("SELECT * FROM birthdays WHERE id = ?", id)
+        name = birthday[0]['name']
         rows = db.execute("SELECT * FROM birthdays")
         birthday[0]['name'] = request.form['updated_name']
         print("NOTHING")
