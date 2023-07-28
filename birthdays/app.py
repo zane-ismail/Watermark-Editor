@@ -56,7 +56,7 @@ def update(id):
         if new_name:
             db.execute("UPDATE birthdays SET name = ? WHERE id = ?", new_name, id)
             print("222222222")
-            return render_template("index.html", rows=rows)
+            return redirect("/")
         else:
             if request.method == "POST":
                 print("33333333333")
