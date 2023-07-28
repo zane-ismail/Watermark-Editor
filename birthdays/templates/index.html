@@ -19,7 +19,7 @@
                     <input name="name" type="text">
                     <input name="month" type="number" min="1" max="12">
                     <input name="day" type="number" min="1" max="31">
-                    <button classtype="submit" value="add">Add Birthday</button>
+                    <button type="submit" value="add">Add Birthday</button>
                 </form>
                 <div class="error_message">
                     <h4 style="color:red;">{{ message }}</h4>
@@ -34,6 +34,7 @@
                         <tr>
                             <th>Name</th>
                             <th>Birthday</th>
+                            <th>Delete?</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -41,12 +42,13 @@
                         {% for row in rows %}
                             <tr>
                                 <td>{{ row.name }}</td>
-                                <td>{{ row.month }}/{{ row.day}}
-                                    <form action="/" method="post">
-                                        <input type=hidden value="{{ row.id }}">
-                                        <button class="button" type="delete">Delete</button>
-                                    </form>
-                                </td>
+                                <td>{{ row.month }}/{{ row.day}}</td>
+                                    <td>
+                                        <form action="/" method="post">
+                                            <input type=hidden value="{{ row.id }}">
+                                            <button class="button" type="delete">Delete</button>
+                                        </form>
+                                    </td>
                             </tr>
                         {% endfor %}
                     </tbody>
