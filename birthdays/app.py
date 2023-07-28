@@ -49,7 +49,7 @@ def index():
 def update(id):
     if request.method == "POST":
         name = db.execute("SELECT (name) FROM birthdays WHERE id = ?", id)
-        print(name)
+        id.name = request.form['name']
         rows = db.execute("SELECT * FROM birthdays")
         return render_template("/update.html", rows=rows)
 

@@ -14,13 +14,13 @@
             <div class="section">
 
                 <h2>Update a Birthday</h2>
-                <!-- TODO: Create a form for users to submit a name, a month, and a day -->
-                <form action="{{ url_for('update', id=row.id) }}" method="post">
-                    <input name="name" type="text">
-                    <input name="month" type="number" min="1" max="12">
-                    <input name="day" type="number" min="1" max="31">
-                    <button type="submit" value="add">Add Birthday</button>
-                </form>
+                {% for row in rows %}
+                    <!-- TODO: Create a form for users to submit a name, a month, and a day -->
+                    <form action="{{ url_for('update', id=row.id) }}" method="post">
+                        <button type="submit" value="add">Add Birthday</button>
+                    </form>
+
+                {% endfor %}
                 <div class="error_message">
                     <h4 style="color:red;">{{ message }}</h4>
                 </div>
