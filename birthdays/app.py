@@ -51,10 +51,11 @@ def update(id):
         # birthday = db.execute("SELECT * FROM birthdays WHERE id = ?", id)
         # name = birthday[0]['name']
         # rows = db.execute("SELECT * FROM birthdays")
-        # birthday[0]["name"] = request.form["updated_name"]
+        new_name = request.form["updated_name"]
+        print(new_name)
         # print("NOTHING")
         try:
-            db.session.commit()
+            # db.execute("UPDATE birthdays SET name =
             print("COMMITTED")
             return render_template("index.html", message=message, rows=rows)
         except:
