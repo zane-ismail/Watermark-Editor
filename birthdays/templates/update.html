@@ -17,6 +17,8 @@
                     <form action="{{ url_for('update', id=current_id) }}" method="post">
                 {% endfor %}
                         <input type="text", name="updated_name", value="{{ name }}">
+                        <input type="number", name="updated_month" min="1" max="12" value="{{ month }}">
+                        <input type="number", name="updated_day" min="1" max="31" value="{{ day }}">
                         <input type="submit", value="Update Name" class="btn btn-secondary">
                     </form>
             </div>

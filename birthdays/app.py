@@ -50,18 +50,20 @@ def update(id):
     if request.method == "POST":
         birthday = db.execute("SELECT * FROM birthdays WHERE id = ?", id)
         name = birthday[0]['name']
+        month = birthday[0]['month']
+        day = birthday[0]['day']
         rows = db.execute("SELECT * FROM birthdays")
         new_name = request.form.get("updated_name")
-        print("1111111111")
+        new_month = request.form.get("updated_month")
+        new_day = request.form.get("updated_day")
         if new_name:
             db.execute("UPDATE birthdays SET name = ? WHERE id = ?", new_name, id)
-            print("222222222")
+            db.execute("UPDATE birthdays SET month = ? WHERE id = ?", new_month, id)
+            db.execute("UPDATE birthdays SET day = ? WHERE id = ?", new_day, id)
             return redirect("/")
         else:
             if request.method == "POST":
-                print("33333333333")
-                return render_template("/update.html", rows=rows, name=name, current_id=id)
-
+                return render_template("/update.html", rows=rows, name=name, month=month, day=day, current_id=id)
     else:
         rows = db.execute("SELECT * FROM birthdays")
         return render_template("index.html", message=message, rows=rows)
