@@ -31,12 +31,13 @@ def index():
         day = request.form.get("day")
 
         db.execute("INSERT into birthdays (name, month, day) VALUES (?, ?, ?)", name, month, day)
-        delete = request.form.get("name", "month", "day")
-
-    if request.method == "DELETE":
-        print("DELETE")
-        db.execute("DELETE FROM birthdays WHERE (id) VALUES (?, ?, ?)", delete)
         return redirect("/")
+
+def delete():
+    request.method == "POST":
+    print("DELETE")
+    id = db.execute("SELECT id from birthdays WHERE (name) VALUES (?)")
+    db.execute("DELETE FROM birthdays WHERE (id) VALUES (?, ?, ?)", id)
 
     else:
         # TODO: Display the entries in the database on index.html
