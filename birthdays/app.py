@@ -45,7 +45,7 @@ def index():
 
 
 # Delete entry
-@app.route("/delete", methods=["GET", "POST"])
+@app.route('/delete/<int:postID>', methods=["GET", "POST"])
 def delete():
     if request.method == "POST":
         message = "Entry deleted"
