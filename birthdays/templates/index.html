@@ -40,8 +40,8 @@
                             <tr>
                                 <td>{{ row.name }}</td>
                                 <td>{{ row.month }}/{{ row.day}}
-                                    <form action="/" method="delete">
-                                        <button name="delete" type="submit">Delete Birthday</button>
+                                    <form action="/" method="post">
+                                        <button name="delete" type="submit" value="'.$row['id'].'">Delete Birthday</button>
                                     </form>
                                 </td>
                             </tr>
