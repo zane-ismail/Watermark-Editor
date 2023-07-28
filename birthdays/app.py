@@ -48,20 +48,13 @@ def index():
 @app.route("/update/<int:id>", methods=["GET", "POST"])
 def update(id):
     if request.method == "POST":
-        # birthday = db.execute("SELECT * FROM birthdays WHERE id = ?", id)
-        # name = birthday[0]['name']
-        # rows = db.execute("SELECT * FROM birthdays")
-        new_name = request.form.get["updated_name"]
-        print(new_name)
-        # print("NOTHING")
-        try:
-            # db.execute("UPDATE birthdays SET name =
-            print("COMMITTED")
-            return render_template("index.html", message=message, rows=rows)
-        except:
-            print("ERROR")
-            return "Error"
-    else:
+        birthday = db.execute("SELECT * FROM birthdays WHERE id = ?", id)
+        name = birthday[0]['name']
+        rows = db.execute("SELECT * FROM birthdays")
+        new_name = request.form.get("updated_name")
+
+        print(f"new name: {new_name}")
+
         return render_template("/update.html", rows=rows, name=name)
 
 
