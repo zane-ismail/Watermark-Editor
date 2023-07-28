@@ -45,14 +45,11 @@ def index():
         return render_template("index.html", rows=rows)
 
 
-@app.route("/edit", methods=["POST"])
-def edit():
-
-    # Forget registrant
-    id = request.form.get("id")
+@app.route("/update", methods=["POST"])
+def update(id):
     if id:
         rows = db.execute("SELECT * FROM birthdays WHERE id = ?", id)
-    return render_template("/edit.html", rows=rows)
+    return render_template("/update.html", id)
 
 
 # Delete entry
