@@ -49,7 +49,7 @@ def index():
 def delete(id):
     if request.method == "POST":
         message = "Entry deleted"
-        db.execute("DELETE FROM birthdays WHERE (id)", id)
+        db.execute("DELETE FROM birthdays WHERE (id) VALUES (?)", id)
         rows = db.execute("SELECT * FROM birthdays")
         return redirect("index.html",message=message, rows=rows)
 
