@@ -12,12 +12,12 @@
         </div>
         <div class="container">
             <div class="section">
+                <h2>Update a Birthday</h2>
                 {% for row in rows %}
-                    <h2>Update a Birthday</h2>
-                    <form action="{{ url_for('update', id=row.id) }}">
-                        <input type="text", placeholder="name", name="name", value="birthdays.id['name']">
+                    <form action="{{ url_for('update', id=row.id, name=row.name) }}">
+                {% endfor %}
+                        <input type="text", placeholder="name", name="name", value="{{  row.name }}">
                         <input type="submit", value="Update Name" class="btn btn-secondary">
                     </form>
-                {% endfor %}
             </div>
         </div>
