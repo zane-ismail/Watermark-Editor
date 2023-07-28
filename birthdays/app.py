@@ -48,6 +48,7 @@ def index():
 @app.route("/update/<int:id>", methods=["POST"])
 def update(id):
     if request.method == "POST":
+        birthday_update = birthdays.query.getor404(id)
         rows = db.execute("SELECT * FROM birthdays")
         message = "Update input"
     return render_template("/update.html", id)
