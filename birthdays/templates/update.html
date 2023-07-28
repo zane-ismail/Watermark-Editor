@@ -16,7 +16,7 @@
                 {% for row in rows %}
                     <form action="{{ url_for('update', id=row.id) }}">
                 {% endfor %}
-                        <input type="text", placeholder="name", name="name", value="{{  name }}">
+                        <input type="text", placeholder="Name", name="name", value="{{ name }}">
                         <input type="submit", value="Update Name" class="btn btn-secondary">
                     </form>
             </div>
