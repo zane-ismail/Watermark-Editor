@@ -46,7 +46,7 @@
                                     <td>
                                         <form action="{{ url_for('update', id=row.id) }}" method="post">
                                             <input type=hidden name="{{ row.id }}">
-                                            <button class="button" type="update">Update</button>
+                                            <button class="button" type="submit">Update</button>
                                         </form>
                                         <form action="{{ url_for('delete', id=row.id) }}" method="post">
                                             <input type=hidden name="{{ row.id }}">
