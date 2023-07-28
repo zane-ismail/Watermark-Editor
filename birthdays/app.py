@@ -33,15 +33,16 @@ def index():
         db.execute("INSERT into birthdays (name, month, day) VALUES (?, ?, ?)", name, month, day)
         return redirect("/")
 
-def delete():
-    request.method == "POST":
-    print("DELETE")
-    id = db.execute("SELECT id from birthdays WHERE (name) VALUES (?)")
-    db.execute("DELETE FROM birthdays WHERE (id) VALUES (?, ?, ?)", id)
-
     else:
         # TODO: Display the entries in the database on index.html
         rows = db.execute("SELECT * from birthdays;")
         return render_template("index.html", rows=rows)
+
+def delete():
+    if request.method == "POST":
+        print("DELETE")
+        id = db.execute("SELECT id from birthdays WHERE (name) VALUES (?)")
+        db.execute("DELETE FROM birthdays WHERE (id) VALUES (?, ?, ?)", id)
+        return redirect("/")
 
 
