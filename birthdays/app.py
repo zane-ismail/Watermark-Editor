@@ -12,13 +12,13 @@ app.config["TEMPLATES_AUTO_RELOAD"] = True
 # Configure CS50 Library to use SQLite database
 db = SQL("sqlite:///birthdays.db")
 
-
 @app.after_request
 def after_request(response):
     """Ensure responses aren't cached"""
     response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
     response.headers["Expires"] = 0
     response.headers["Pragma"] = "no-cache"
+    id = request.form.get("id")
     return response
 
 
@@ -45,14 +45,13 @@ def index():
 
 
 # Delete entry
-@app.route('/delete/<int:postID>', methods=["GET", "POST"])
-def delete(postID):
+@app.route('/delete/<int:id>', methods=["GET", "POST"])
+def delete(id):
     if request.method == "POST":
         message = "Entry deleted"
-        id = request.form.get("id")
         print(id)
         print("????????")
-        db.execute("DELETE FROM birthdays WHERE (id) VALUES (?)", id)
+        db.execute("DELETE FROM birthdays WHERE id=?)", id)
         rows = db.execute("SELECT * FROM birthdays")
         return redirect("index.html",message=message, rows=rows)
 
