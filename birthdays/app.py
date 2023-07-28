@@ -51,7 +51,7 @@ def delete():
         message = "Entry deleted"
         id = request.form.get("id")
         print(id)
-        
+        print("????????")
         db.execute("DELETE FROM birthdays WHERE (id) VALUES (?)", id)
         rows = db.execute("SELECT * FROM birthdays")
         return redirect("index.html",message=message, rows=rows)
