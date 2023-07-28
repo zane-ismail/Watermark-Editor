@@ -19,7 +19,7 @@
                     <input name="name" type="text">
                     <input name="month" type="number" min="1" max="12">
                     <input name="day" type="number" min="1" max="31">
-                    <button type="submit">Add Birthday</button>
+                    <button name="action" type="submit" value="add">Add Birthday</button>
                 </form>
 
             </div>
@@ -40,8 +40,8 @@
                             <tr>
                                 <td>{{ row.name }}</td>
                                 <td>{{ row.month }}/{{ row.day}}
-                                    <form action="delete" method="post">
-                                        <button name="delete_items" type="submit">Delete Birthday</button>
+                                    <form action="/" method="post">
+                                        <button name="action" type="submit" value="delete">Delete Birthday</button>
                                     </form>
                                 </td>
                             </tr>
