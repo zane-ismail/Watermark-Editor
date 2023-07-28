@@ -9,5 +9,5 @@ def index():
         return render_template("index.html")
     else:
         print("Form submitted!")
-        color = request.form.get("color")
+        color = request.form.get("test")
         return render_template("color.html", color=color)
