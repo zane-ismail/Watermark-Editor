@@ -55,7 +55,7 @@ def update(id):
         print("NOTHING")
         try:
             db.session.commit()
-            print("COMMITED")
+            print("COMMITTED")
             return render_template("index.html", message=message, rows=rows)
         except:
             print("ERROR")
