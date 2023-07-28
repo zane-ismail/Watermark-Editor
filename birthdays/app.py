@@ -29,9 +29,14 @@ def index():
         name = request.form.get("name")
         month = request.form.get("month")
         day = request.form.get("day")
+        if name or not month or not day:
+            db.execute("INSERT into birthdays (name, month, day) VALUES (?, ?, ?)", name, month, day)
+            return redirect("/")
+        else:
+            message = "Input incomplete"
+            rows = db.execute("SELECT * FROM birthdays")
+            return render_template("index.html",message=message, rows=rows)
 
-        db.execute("INSERT into birthdays (name, month, day) VALUES (?, ?, ?)", name, month, day)
-        return redirect("/")
     else:
         # TODO: Display the entries in the database on index.html
         rows = db.execute("SELECT * from birthdays;")
@@ -45,7 +50,7 @@ def delete(id):
         message = "Entry deleted"
         db.execute("DELETE FROM birthdays WHERE id=?", id)
         birthdays = db.execute("SELECT * FROM birthdays")
-        return redirect("index.html",message=message, birthdays=birthdays)
+        return redirect("index.html",message=message, rows=rows)
 
 
 
