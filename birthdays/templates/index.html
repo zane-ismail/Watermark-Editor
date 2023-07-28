@@ -19,9 +19,11 @@
                     <input name="name" type="text">
                     <input name="month" type="number" min="1" max="12">
                     <input name="day" type="number" min="1" max="31">
-                    <button name="action" type="submit" value="add">Add Birthday</button>
+                    <button classtype="submit" value="add">Add Birthday</button>
                 </form>
-
+                <div class="error_message">
+                    <h4 style="color:red;">{{ message }}</h4>
+                </div>
             </div>
 
             <div class="section">
