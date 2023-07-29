@@ -80,7 +80,7 @@ def login():
 
         # Remember which user has logged in
         session["user_id"] = rows[0]["id"]
-
+        db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
         # Redirect user to home page
         return redirect("/")
 
@@ -114,7 +114,7 @@ def register():
     # Require that a user input a username
     username = request.form.get("username")
     # Render an apology if the user’s input is blank or the username already exists
-    for name in 
+    for name in
     return apology("TODO")
 
 
