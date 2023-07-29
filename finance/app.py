@@ -118,7 +118,6 @@ def register():
     password = request.form.get("password")
     confirmation = request.form.get("confirmation")
 
-    # Render an apology if either input is blank or the passwords do not match.
     if username and password and confirmation == password:
         # store a hash of the user’s password, not the password itself
         hash = generate_password_hash(password)
