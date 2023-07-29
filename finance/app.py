@@ -125,7 +125,7 @@ def register():
     # Render an apology if either input is blank or the passwords do not match.
     if password != confirmation:
         ...
-    if password:
+    if username and password:
         # store a hash of the user’s password, not the password itself
         hash = password
         hash = generate_password_hash(password)
