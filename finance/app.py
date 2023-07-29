@@ -128,7 +128,7 @@ def register():
         hash = generate_password_hash(password)
         # INSERT the new user into users
         db.execute("INSERT into users (username, password) VALUES (?, ?)", username, hash)
-    return redirect("/")
+    return redirect("/register")
 
 
 
