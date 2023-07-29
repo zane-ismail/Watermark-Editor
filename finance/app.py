@@ -128,9 +128,9 @@ def register():
             db.execute("INSERT into users (username, hash) VALUES (?, ?)", username, hash)
         # Render an apology if the user’s input is blank or the username already exists
         except ValueError:
-            return apology("must provide username", 403)
+            return apology("Username already taken", 403)
         else:
-            return render_template("register.html")
+            return apology("Please enter ", 403)
 
     return render_template("register.html")
 
