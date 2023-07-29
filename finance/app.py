@@ -133,8 +133,6 @@ def register():
             db.execute("INSERT into users (username, hash) VALUES (?, ?)", username, hash)
         except ValueError:
             return render_template("apology.html")
-    else:
-        return render_template("register.html")
     return render_template("register.html")
 
 
