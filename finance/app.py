@@ -118,7 +118,7 @@ def register():
     confirmation = request.form.get("confirmation")
 
     if username and password and confirmation == password:
-        # store a hash of the user’s password, not the password itself
+        # Store a hash of the user’s password
         hash = generate_password_hash(password)
         # try:
         # except ValueError:
