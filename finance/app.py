@@ -120,6 +120,8 @@ def register():
     # Require that a user input a password
     password = request.form.get("password")
     confirmation = request.form.get("confirmation")
+
+    session.update()
     # Render an apology if either input is blank or the passwords do not match.
     if password != confirmation:
         ...
