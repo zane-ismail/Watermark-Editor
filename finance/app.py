@@ -112,7 +112,9 @@ def register():
     """Register user"""
 
     # Require that a user input a username
-    
+    username = request.form.get("username")
+    # Render an apology if the user’s input is blank or the username already exists
+    for name in 
     return apology("TODO")
 
 
