@@ -122,16 +122,19 @@ def register():
     if username and password and confirmation == password:
         # store a hash of the user’s password, not the password itself
         hash = generate_password_hash(password)
-        # INSERT the new user into users
         # try:
+        # except ValueError:
+
+        # INSERT the new user into users
         user = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
         existing_user = user[0]['username']
+
+        # Render an apology if the user’s input is blank or the username already exists
         if existing_user == username:
+            return apology("Username already taken", 403)
         else:
             db.execute("INSERT into users (username, hash) VALUES (?, ?)", username, hash)
             # for u in existing_username
-        # Render an apology if the user’s input is blank or the username already exists
-        # except ValueError:
 
     # Render an apology if either input is blank or the passwords do not match.
     elif username == "":
@@ -143,9 +146,7 @@ def register():
     elif password != confirmation:
         return apology("Passwords do not match", 403)
 
-
     return render_template("register.html")
-
 
 
 @app.route("/sell", methods=["GET", "POST"])
