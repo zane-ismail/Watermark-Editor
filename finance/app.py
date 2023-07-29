@@ -123,16 +123,15 @@ def register():
     confirmation = request.form.get("confirmation")
 
     # Render an apology if either input is blank or the passwords do not match.
-    # if password != confirmation:
-    #     ...
-    # else:
+    if password != confirmation:
+        ...
+    else:
         # store a hash of the user’s password, not the password itself
-        # hash = password
+        hash = password
         # hash = generate_password_hash(password)
         # INSERT the new user into users
         # db.execute("INSERT into users (username, hash) VALUES (?, ?)", username, hash)
-    return render_template("/register")
-
+    return render_template("register.html")
 
 
 
