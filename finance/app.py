@@ -114,8 +114,13 @@ def register():
     # Require that a user input a username
     username = request.form.get("username")
     # Render an apology if the user’s input is blank or the username already exists
-    for name in
-    return apology("TODO")
+    u = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
+    if u != username:
+        return apology("TODO")
+    else:
+        username = request.form.get("password")
+        confirmation = request.form.get("confirmation")
+    # Require that a user input a password
 
 
 @app.route("/sell", methods=["GET", "POST"])
