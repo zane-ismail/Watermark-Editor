@@ -49,9 +49,9 @@ def index():
 def update(id):
     if request.method == "POST":
         birthday = db.execute("SELECT * FROM birthdays WHERE id = ?", id)
-        name = birthday[0]['name']
-        month = birthday[0]['month']
-        day = birthday[0]['day']
+        name = birthday[0]["name"]
+        month = birthday[0]["month"]
+        day = birthday[0]["day"]
         rows = db.execute("SELECT * FROM birthdays")
         new_name = request.form.get("updated_name")
         new_month = request.form.get("updated_month")
