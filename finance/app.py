@@ -115,14 +115,14 @@ def register():
     # Render an apology if the user’s input is blank or the username already exists
     u = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
     if u != username:
-        return apology("TODO")
+        ...
     username = request.form.get("password")
     # Require that a user input a password
     password = request.form.get("password")
     confirmation = request.form.get("confirmation")
     # Render an apology if either input is blank or the passwords do not match.
     if password != confirmation:
-        return apology("TODO")
+        ...
     else:
         # store a hash of the user’s password, not the password itself
         hash = generate_password_hash(password)
