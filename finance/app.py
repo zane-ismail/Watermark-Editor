@@ -112,7 +112,7 @@ def register():
     """Register user"""
     # Require that a user input a username
     username = request.form.get("username")
-    
+
     # u = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
 
     # Require that a user input a password
@@ -128,7 +128,7 @@ def register():
             db.execute("INSERT into users (username, hash) VALUES (?, ?)", username, hash)
         # Render an apology if the user’s input is blank or the username already exists
         except ValueError:
-            return render_template("apology.html")
+            return apology("must provide username", 403)
         else:
             return render_template("register.html")
 
