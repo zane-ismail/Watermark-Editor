@@ -128,7 +128,8 @@ def register():
         # store a hash of the user’s password, not the password itself
         hash = generate_password_hash(password)
         # INSERT the new user into users
-        db.execute("INSERT into users (username, month, day) VALUES (?, ?, ?)", username, hash, day)
+        db.execute("INSERT into users (username, password) VALUES (?, ?)", username, hash)
+    return redirect("/")
 
 
 
