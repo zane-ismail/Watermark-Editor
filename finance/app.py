@@ -123,16 +123,15 @@ def register():
         # store a hash of the user’s password, not the password itself
         hash = generate_password_hash(password)
         # INSERT the new user into users
-        try:
-            user = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
-            existing_user = existing_user[0]['username']
-            if existing_user == username:
-                print("ERROR!!!")
+        # try:
+        user = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
+        existing_user = user[0]['username']
+        if existing_user == username:
+        else:
             db.execute("INSERT into users (username, hash) VALUES (?, ?)", username, hash)
             # for u in existing_username
         # Render an apology if the user’s input is blank or the username already exists
-        except ValueError:
-            return apology("Username already taken", 403)
+        # except ValueError:
 
     # Render an apology if either input is blank or the passwords do not match.
     elif username == "":
