@@ -129,8 +129,17 @@ def register():
         # Render an apology if the user’s input is blank or the username already exists
         except ValueError:
             return apology("Username already taken", 403)
-        else:
-            return apology("Please enter ", 403)
+        
+    # Render an apology if either input is blank or the passwords do not match.
+    elif username == "":
+        return apology("Please enter username", 403)
+    elif password == "":
+        return apology("Please enter password", 403)
+    elif confirmation == "":
+        return apology("Please reenter password", 403)
+    elif password != confirmation:
+        return apology("Passwords do not match", 403)
+
 
     return render_template("register.html")
 
