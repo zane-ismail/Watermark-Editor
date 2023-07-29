@@ -113,7 +113,6 @@ def register():
     # Require that a user input a username
     username = request.form.get("username")
 
-
     # Require that a user input a password, and then that same password again
     password = request.form.get("password")
     confirmation = request.form.get("confirmation")
@@ -128,7 +127,7 @@ def register():
         user = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
         existing_user = user[0]['username']
 
-        # Render an apology if the user’s input is blank or the username already exists
+        # Render an apology if username already exists
         if existing_user == username:
             return apology("Username already taken", 403)
         else:
