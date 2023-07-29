@@ -23,7 +23,7 @@ def after_request(response):
     return response
 
 
-@app.route("/", methods=["GET", "POST"])
+@app.route("/", methods=["GET", "POST"])update50
 def index():
     if request.method == "POST":
         message = ""
