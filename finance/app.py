@@ -128,8 +128,7 @@ def register():
         hash = generate_password_hash(password)
         # INSERT the new user into users
         user = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
-        print(user)
-
+        
         try:
             existing_user = user[0]['username']
             # Render an apology if username already exists
@@ -144,7 +143,7 @@ def register():
             elif not request.form.get("password"):
                 return apology("Please enter password", 403)
             elif not request.form.get("confirmation"):
-                return apology("Please reenter password", 403)
+                return apology("Please confirm password", 403)
             elif password != confirmation:
                 return apology("Passwords do not match", 403)
 
