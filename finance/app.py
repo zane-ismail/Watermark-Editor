@@ -108,6 +108,7 @@ def quote():
     symbol = request.form.get("username")
     # Submit the user’s input via POST to /quote.
     if request.method == "POST":
+        ...
     #  In response to a POST, quote can render that second template, embedding within it one or more values from lookup.
     return apology("TODO")
 
@@ -137,15 +138,15 @@ def register():
         except:
             db.execute("INSERT into users (username, hash) VALUES (?, ?)", username, hash)
 
-    # Render an apology if either input is blank or the passwords do not match.
-    elif username == "":
-        return apology("Please enter username", 403)
-    elif password == "":
-        return apology("Please enter password", 403)
-    elif confirmation == "":
-        return apology("Please reenter password", 403)
-    elif password != confirmation:
-        return apology("Passwords do not match", 403)
+            # Render an apology if either input is blank or the passwords do not match.
+            if not request.form.get("username"):
+                return apology("Please enter username", 403)
+            elif not request.form.get("password"):
+                return apology("Please enter password", 403)
+            elif not request.form.get("confirmation"):
+                return apology("Please reenter password", 403)
+            elif password != confirmation:
+                return apology("Passwords do not match", 403)
 
     return render_template("register.html")
 
