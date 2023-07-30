@@ -131,6 +131,7 @@ def register():
         # try:
         # except ValueError:
 
+        print(user)
         # INSERT the new user into users
         user = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
         print(user)
