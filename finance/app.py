@@ -105,7 +105,7 @@ def logout():
 def quote():
     """Get stock quote."""
     # Require that a user input a stock’s symbol, implemented as a text field whose name is symbol
-    symbol = request.form.get("username")
+    symbol = request.form.get("symbol")
     # Submit the user’s input via POST to /quote.
     if request.method == "POST":
         symbol = lookup(symbol)
