@@ -43,7 +43,10 @@ def index():
 @login_required
 def buy():
     """Buy shares of stock"""
-    # Require that a user input a stock’s symbol, implemented as a text field whose name is symbol.
+    # Require that a user input a stock’s symbol, implemented as a text field whose name is symbol.symbol = request.form.get("symbol")
+    if request.method == "POST":
+        symbol = lookup(symbol)
+        return render_template("buy.html", symbol=symbol)
     # Render an apology if the input is blank or the symbol does not exist (as per the return value of lookup).
 
     # Require that a user input a number of shares, implemented as a text field whose name is shares. Render an apology if the input is not a positive integer.
@@ -65,7 +68,7 @@ def buy():
     # Render an apology, without completing a purchase, if the user cannot afford the number of shares at the current price.
     # You don’t need to worry about race conditions (or use transactions).\
 
-    return apology("TODO")
+    return render_template("buy.html")
 
 
 @app.route("/history")
