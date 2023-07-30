@@ -106,6 +106,8 @@ def quote():
     """Get stock quote."""
     # Require that a user input a stock’s symbol, implemented as a text field whose name is symbol
 
+    symbol = request.form.get("username")
+
     # Submit the user’s input via POST to /quote.
 
     # Odds are you’ll want to create two new templates (e.g., quote.html and quoted.html). When a user visits /quote via GET, render one of those templates, inside of which should be an HTML form that submits to /quote via POST. In response to a POST, quote can render that second template, embedding within it one or more values from lookup.
