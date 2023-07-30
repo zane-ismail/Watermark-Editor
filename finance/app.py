@@ -43,6 +43,28 @@ def index():
 @login_required
 def buy():
     """Buy shares of stock"""
+    # Require that a user input a stock’s symbol, implemented as a text field whose name is symbol.
+    # Render an apology if the input is blank or the symbol does not exist (as per the return value of lookup).
+
+    # Require that a user input a number of shares, implemented as a text field whose name is shares. Render an apology if the input is not a positive integer.
+
+    # Submit the user’s input via POST to /buy.
+
+    # Upon completion, redirect the user to the home page.
+
+    # Call lookup to look up a stock’s current price
+
+    # SELECT how much cash the user currently has in users
+
+    # Add one or more new tables to finance.db via which to keep track of the purchase. Store enough information so that you know who bought what at what price and when.
+
+    # Use appropriate SQLite types.
+    # Define UNIQUE indexes on any fields that should be unique.
+    # Define (non-UNIQUE) indexes on any fields via which you will search (as via SELECT with WHERE).
+
+    # Render an apology, without completing a purchase, if the user cannot afford the number of shares at the current price.
+    # You don’t need to worry about race conditions (or use transactions).\
+
     return apology("TODO")
 
 
