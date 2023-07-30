@@ -109,7 +109,7 @@ def quote():
 
     # Submit the user’s input via POST to /quote.
     if symbol:
-        
+        ...
 
     # Odds are you’ll want to create two new templates (e.g., quote.html and quoted.html). When a user visits /quote via GET, render one of those templates, inside of which should be an HTML form that submits to /quote via POST. In response to a POST, quote can render that second template, embedding within it one or more values from lookup.
     return apology("TODO")
@@ -125,7 +125,7 @@ def register():
     password = request.form.get("password")
     confirmation = request.form.get("confirmation")
 
-    if username and password and confirmation == password:
+    if request.method == "POST":
         # Store a hash of the user’s password
         hash = generate_password_hash(password)
         # try:
