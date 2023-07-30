@@ -97,7 +97,7 @@ def logout():
     session.clear()
 
     # Redirect user to login form
-    return redirect("/")
+    return redirect("quote.html")
 
 
 @app.route("/quote", methods=["GET", "POST"])
@@ -128,7 +128,7 @@ def register():
         hash = generate_password_hash(password)
         # INSERT the new user into users
         user = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
-        
+
         try:
             existing_user = user[0]['username']
             # Render an apology if username already exists
