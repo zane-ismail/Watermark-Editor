@@ -108,6 +108,7 @@ def quote():
     symbol = request.form.get("username")
     # Submit the user’s input via POST to /quote.
     if request.method == "POST":
+        symbol = lookup(symbol)
         return render_template("quoted.html", symbol=symbol)
     #  In response to a POST, quote can render that second template, embedding within it one or more values from lookup.
     return render_template("quote.html")
