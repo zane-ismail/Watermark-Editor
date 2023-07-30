@@ -97,7 +97,7 @@ def logout():
     session.clear()
 
     # Redirect user to login form
-    return redirect("quote.html")
+    return redirect("/")
 
 
 @app.route("/quote", methods=["GET", "POST"])
@@ -110,7 +110,7 @@ def quote():
     if request.method == "POST":
         ...
     #  In response to a POST, quote can render that second template, embedding within it one or more values from lookup.
-    return apology("TODO")
+    return render_template("quote.html")
 
 
 @app.route("/register", methods=["GET", "POST"])
