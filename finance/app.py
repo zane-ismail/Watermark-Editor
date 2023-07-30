@@ -45,6 +45,7 @@ def buy():
     """Buy shares of stock"""
     # Require that a user input a stock’s symbol, implemented as a text field whose name is symbol.symbol = request.form.get("symbol")
     if request.method == "POST":
+    symbol = request.form.get("symbol")
         symbol = lookup(symbol)
         return render_template("buy.html", symbol=symbol)
     # Render an apology if the input is blank or the symbol does not exist (as per the return value of lookup).
