@@ -134,6 +134,7 @@ def register():
         # INSERT the new user into users
         user = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
         existing_user = user[0]['username']
+        print(existing_user)
 
         # Render an apology if username already exists
         if existing_user == username:
