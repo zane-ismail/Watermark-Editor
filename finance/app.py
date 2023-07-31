@@ -114,7 +114,7 @@ def login():
         session["user_id"] = rows[0]["id"]
         db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
         # Redirect user to home page
-        return redirect("/", username)
+        return redirect("/", username=request.form.get("username"))
 
     # User reached route via GET (as by clicking a link or via redirect)
     else:
