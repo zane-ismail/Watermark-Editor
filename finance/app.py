@@ -78,7 +78,7 @@ def buy(username):
     # Render an apology, without completing a purchase, if the user cannot afford the number of shares at the current price.
     # You don’t need to worry about race conditions (or use transactions).\
 
-    return render_template("buy.html")
+    return render_template("buy.html", username)
 
 
 @app.route("/history")
