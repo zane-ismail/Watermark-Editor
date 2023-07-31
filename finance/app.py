@@ -58,11 +58,16 @@ def buy():
         else:
             # Call lookup to look up a stock’s current price
             price = lookup(symbol)
+            print(price)
             # SELECT how much cash the user currently has in users
             cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
             # Add one or more new tables to finance.db via which to keep track of the purchase.
             # Store enough information so that you know who bought what at what price and when.
-            db.execute("INSERT INTO finance)
+            CREATE TABLE purchases (
+                user_id session["user_id"],
+                price cash[0]["price"],
+                symbol cash[0]["name"],
+            );
 
 
             # Upon completion, redirect the user to the home page.
