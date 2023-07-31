@@ -65,10 +65,6 @@ def buy():
             # Upon completion, redirect the user to the home page.
             return redirect("/")
 
-
-
-
-
     # Add one or more new tables to finance.db via which to keep track of the purchase. Store enough information so that you know who bought what at what price and when.
 
     # Use appropriate SQLite types.
