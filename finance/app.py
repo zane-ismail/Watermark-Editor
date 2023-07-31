@@ -89,7 +89,7 @@ def history():
 
 
 @app.route("/login", methods=["GET", "POST"])
-def login():
+def login(username):
     """Log user in"""
 
     # Forget any user_id
