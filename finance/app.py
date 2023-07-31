@@ -43,18 +43,30 @@ def index():
 @login_required
 def buy():
     """Buy shares of stock"""
-    # Require that a user input a stock’s symbol, implemented as a text field whose name is symbol.symbol = request.form.get("symbol")
-    if request.method == "POST":
-    symbol = request.form.get("symbol")
-        symbol = lookup(symbol)
-        return render_template("buy.html", symbol=symbol)
-    # Render an apology if the input is blank or the symbol does not exist (as per the return value of lookup).
-
-    # Require that a user input a number of shares, implemented as a text field whose name is shares. Render an apology if the input is not a positive integer.
-
     # Submit the user’s input via POST to /buy.
+    if request.method == "POST":
+        # Require that a user input a stock’s symbol, implemented as a text field whose name is symbol.symbol = request.form.get("symbol")
+        symbol = request.form.get("symbol")
+        # Require that a user input a number of shares, implemented as a text field whose name is shares.
+        shares = request.form.get("shares")
+        symbol = lookup(symbol)
+        # Render an apology if the input is blank or the symbol does not exist (as per the return value of lookup).
+        if not symbol:
+            return apology("Please enter a symbol")
+        # Render an apology if the input is not a positive integer.
+        elif shares < 0:
+            return apology("Please enter shares")
+        else:
+            return render_template("buy.html", symbol=symbol)
+        # Upon completion, redirect the user to the home page.
+        return render_template("/")
 
-    # Upon completion, redirect the user to the home page.
+
+
+
+
+
+
 
     # Call lookup to look up a stock’s current price
 
