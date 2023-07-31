@@ -57,9 +57,9 @@ def buy():
             return apology("Please enter a positive amount of shares")
         else:
             # Call lookup to look up a stock’s current price
-            # price = lookup(symbol)
-            # # SELECT how much cash the user currently has in users
-            # cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
+            price = lookup(symbol)
+            # SELECT how much cash the user currently has in users
+            cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
             print(cash)
 
             # Upon completion, redirect the user to the home page.
@@ -78,7 +78,7 @@ def buy():
     # Render an apology, without completing a purchase, if the user cannot afford the number of shares at the current price.
     # You don’t need to worry about race conditions (or use transactions).\
 
-    # return render_template("buy.html")
+    return render_template("buy.html")
 
 
 @app.route("/history")
