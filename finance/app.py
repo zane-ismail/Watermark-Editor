@@ -59,8 +59,8 @@ def buy():
             # Call lookup to look up a stock’s current price
             price = lookup(symbol)
             # SELECT how much cash the user currently has in users
-            cash = db.execute("SELECT cash FROM users WHERE username = ?", username)
-            print(cash)
+            # cash = db.execute("SELECT cash FROM users WHERE username = ?")
+            # print(cash)
 
             # Upon completion, redirect the user to the home page.
             return redirect("/")
