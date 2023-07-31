@@ -49,8 +49,6 @@ def buy():
         symbol = request.form.get("symbol")
         # Require that a user input a number of shares, implemented as a text field whose name is shares.
         shares = int(request.form.get("shares"))
-        print(shares)
-        symbol = lookup(symbol)
         # Render an apology if the input is blank or the symbol does not exist (as per the return value of lookup).
         if not symbol:
             return apology("Please enter a symbol")
@@ -59,15 +57,17 @@ def buy():
             return apology("Please enter a positive amount of shares")
         else:
             # Call lookup to look up a stock’s current price
+            price = lookup(symbol)
+            # SELECT how much cash the user currently has in users
+            cash = db.execute("SELECT * FROM finance")
+            print(cash)
 
-
-            
             # Upon completion, redirect the user to the home page.
             return redirect("/")
 
 
 
-    # SELECT how much cash the user currently has in users
+
 
     # Add one or more new tables to finance.db via which to keep track of the purchase. Store enough information so that you know who bought what at what price and when.
 
