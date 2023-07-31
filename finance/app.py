@@ -34,9 +34,10 @@ def after_request(response):
 
 @app.route("/")
 @login_required
-def index():
+def index(username):
+    username = username
     """Show portfolio of stocks"""
-    return apology("TODO")
+    return buy("TODO")
 
 
 @app.route("/buy", methods=["GET", "POST"])
@@ -113,7 +114,7 @@ def login():
         session["user_id"] = rows[0]["id"]
         db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
         # Redirect user to home page
-        return redirect("/")
+        return redirect("/", username)
 
     # User reached route via GET (as by clicking a link or via redirect)
     else:
