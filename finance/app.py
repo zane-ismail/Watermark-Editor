@@ -49,6 +49,7 @@ def buy():
         symbol = request.form.get("symbol")
         # Require that a user input a number of shares, implemented as a text field whose name is shares.
         int(shares) = request.form.get("shares")
+        print(shares)
         symbol = lookup(symbol)
         # Render an apology if the input is blank or the symbol does not exist (as per the return value of lookup).
         if not symbol:
