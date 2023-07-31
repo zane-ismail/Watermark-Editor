@@ -89,7 +89,7 @@ def history():
 
 
 @app.route("/login", methods=["GET", "POST"])
-def login(username):
+def login():
     """Log user in"""
 
     # Forget any user_id
@@ -121,7 +121,7 @@ def login(username):
 
     # User reached route via GET (as by clicking a link or via redirect)
     else:
-        return render_template("login.html", username)
+        return render_template("login.html")
 
 
 @app.route("/logout")
