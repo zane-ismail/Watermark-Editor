@@ -60,7 +60,10 @@ def buy():
             price = lookup(symbol)
             # SELECT how much cash the user currently has in users
             cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
-            print(cash)
+            # Add one or more new tables to finance.db via which to keep track of the purchase.
+            # Store enough information so that you know who bought what at what price and when.
+            db.execute("INSERT INTO finance)
+
 
             # Upon completion, redirect the user to the home page.
             return redirect("/")
@@ -69,7 +72,6 @@ def buy():
 
 
 
-    # Add one or more new tables to finance.db via which to keep track of the purchase. Store enough information so that you know who bought what at what price and when.
 
     # Use appropriate SQLite types.
     # Define UNIQUE indexes on any fields that should be unique.
