@@ -34,15 +34,14 @@ def after_request(response):
 
 @app.route("/")
 @login_required
-def index(username):
-    username = username
+def index():
     """Show portfolio of stocks"""
-    return buy("TODO")
+    return apology("TODO")
 
 
 @app.route("/buy", methods=["GET", "POST"])
 @login_required
-def buy(username):
+def buy():
     """Buy shares of stock"""
     # Submit the user’s input via POST to /buy.
     if request.method == "POST":
@@ -66,6 +65,10 @@ def buy(username):
             # Upon completion, redirect the user to the home page.
             return redirect("/")
 
+
+
+
+
     # Add one or more new tables to finance.db via which to keep track of the purchase. Store enough information so that you know who bought what at what price and when.
 
     # Use appropriate SQLite types.
@@ -73,7 +76,7 @@ def buy(username):
     # Define (non-UNIQUE) indexes on any fields via which you will search (as via SELECT with WHERE).
 
     # Render an apology, without completing a purchase, if the user cannot afford the number of shares at the current price.
-    # You don’t need to worry about race conditions (or use transactions).
+    # You don’t need to worry about race conditions (or use transactions).\
 
     return render_template("buy.html")
 
@@ -114,7 +117,7 @@ def login():
         session["user_id"] = rows[0]["id"]
         db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
         # Redirect user to home page
-        return redirect("/", username=request.form.get("username"))
+        return redirect("/")
 
     # User reached route via GET (as by clicking a link or via redirect)
     else:
