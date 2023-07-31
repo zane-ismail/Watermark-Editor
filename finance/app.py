@@ -64,9 +64,9 @@ def buy():
             # Add one or more new tables to finance.db via which to keep track of the purchase.
             # Store enough information so that you know who bought what at what price and when.
             db.execute("CREATE TABLE purchases (
-                user_id session["user_id"],
-                price cash[0]["price"],
-                symbol cash[0]["name"],
+                user_id session['user_id'],
+                price cash[0]['price'],
+                symbol cash[0]['name'],
             );")
 
 
