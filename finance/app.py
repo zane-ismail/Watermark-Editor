@@ -55,12 +55,12 @@ def buy():
         if not symbol:
             return apology("Please enter a symbol")
         # Render an apology if the input is not a positive integer.
-        elif shares < 0:
-            return apology("Please enter shares")
+        elif shares <= 0:
+            return apology("Please enter a positive amount of shares")
         else:
-            return render_template("buy.html", symbol=symbol)
-        # Upon completion, redirect the user to the home page.
-        return render_template("/")
+            # return render_template("buy.html", symbol=symbol)
+            # Upon completion, redirect the user to the home page.
+            return render_template("/")
 
 
 
