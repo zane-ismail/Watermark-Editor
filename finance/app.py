@@ -59,7 +59,7 @@ def buy():
             # Call lookup to look up a stock’s current price
             price = lookup(symbol)
             # SELECT how much cash the user currently has in users
-            # cash = db.execute("SELECT cash FROM users WHERE username = ?")
+            # cash = db.execute("SELECT cash FROM users WHERE username = ?", username)
             # print(cash)
 
             # Upon completion, redirect the user to the home page.
@@ -76,9 +76,9 @@ def buy():
     # Define (non-UNIQUE) indexes on any fields via which you will search (as via SELECT with WHERE).
 
     # Render an apology, without completing a purchase, if the user cannot afford the number of shares at the current price.
-    # You don’t need to worry about race conditions (or use transactions).\
+    # You don’t need to worry about race conditions (or use transactions).
 
-    return render_template("buy.html", username)
+    return render_template("buy.html")
 
 
 @app.route("/history")
@@ -121,7 +121,7 @@ def login():
 
     # User reached route via GET (as by clicking a link or via redirect)
     else:
-        return render_template("login.html")
+        return render_template("login.html", username)
 
 
 @app.route("/logout")
