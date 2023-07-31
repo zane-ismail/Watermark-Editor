@@ -58,18 +58,14 @@ def buy():
         elif shares <= 0:
             return apology("Please enter a positive amount of shares")
         else:
-            # return render_template("buy.html", symbol=symbol)
+            # Call lookup to look up a stock’s current price
+
+
+            
             # Upon completion, redirect the user to the home page.
-            return render_template("/")
+            return redirect("/")
 
 
-
-
-
-
-
-
-    # Call lookup to look up a stock’s current price
 
     # SELECT how much cash the user currently has in users
 
