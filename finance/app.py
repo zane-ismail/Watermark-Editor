@@ -68,7 +68,7 @@ def buy():
                 price cash[0]['price'],
                 symbol cash[0]['name'],
             )", )
-
+            db.execute("INSERT INTO)
 
             # Upon completion, redirect the user to the home page.
             return redirect("/")
