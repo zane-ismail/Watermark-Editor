@@ -66,7 +66,7 @@ def buy():
             db.execute("CREATE TABLE purchases (
                 user_id session['user_id'],
                 price cash[0]['price'],
-                symbol cash[0]['name']
+                symbol cash[0]['name'],
             )", )
 
 
