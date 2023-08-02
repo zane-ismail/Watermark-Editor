@@ -68,7 +68,7 @@ def buy():
                 price cash[0]['price'],
                 symbol cash[0]['name'],
             )", )
-            db.execute("INSERT INTO)
+            db.execute("INSERT INTO purchases)
 
             # Upon completion, redirect the user to the home page.
             return redirect("/")
@@ -178,7 +178,7 @@ def register():
             if existing_user == username:
                 return apology("Username already taken", 403)
         except:
-            db.execute("INSERT into users (username, hash) VALUES (?, ?)", username, hash)
+            db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, hash)
 
             # Render an apology if either input is blank or the passwords do not match.
             if not request.form.get("username"):
