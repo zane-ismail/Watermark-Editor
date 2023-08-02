@@ -68,7 +68,7 @@ def buy():
             #     price float,
             #     symbol varchar(255),
             # ))
-            db.execute("INSERT INTO purchases VALUES (?, ?)", session['user_id'], cash[0]['price'], cash[0]['name'])
+            db.execute("INSERT INTO purchases VALUES (?, ?)", session['user_id'], (cash[0]['price'] * session['shares']), cash[0]['name'])
 
             # Upon completion, redirect the user to the home page.
             return redirect("/")
