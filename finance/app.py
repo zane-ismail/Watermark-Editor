@@ -60,16 +60,16 @@ def buy():
             price = lookup(symbol)
             print(price)
             # SELECT how much cash the user currently has in users
-            try:
-                cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
-            except:
-                print(print(f"cash: {cash}"))
+            cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
             # Add one or more new tables to finance.db via which to keep track of the purchase.
-            db.execute("CREATE TABLE purchases(user_id int, price float, symbol varchar(255))")
+            try:
+                db.execute("CREATE TABLE purchases(user_id int, price float, symbol varchar(255))")
             # Store enough information so that you know who bought what at what price and when.
+            except RuntimeError:
+                print(print(f"cash: {cash}"))
             print(f"cash: {cash[0]}")
-            print(cash[0]['price'])
-            db.execute("INSERT INTO purchases VALUES (?, ?)", session['user_id'], (cash[0]['price'] * session['shares']), cash[0]['name'])
+            # print(cash[0]['price'])
+            # db.execute("INSERT INTO purchases VALUES (?, ?)", session['user_id'], (cash[0]['price'] * session['shares']), cash[0]['name'])
             # Upon completion, redirect the user to the home page.
             return redirect("/")
 
