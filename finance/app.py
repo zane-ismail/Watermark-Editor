@@ -60,6 +60,7 @@ def buy():
             price = lookup(symbol)
             price = price['price']
             cost = (shares * price)
+            transaction = "BUY"
             # SELECT how much cash the user currently has in users
             cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
             cash = cash[0]['cash']
@@ -69,12 +70,12 @@ def buy():
             else:
                 # Add one or more new tables to finance.db via which to keep track of the purchase.
                 try:
-                    db.execute("CREATE TABLE purchases(user_id int NOT NULL, price float, shares int, symbol varchar(255))")
+                    db.execute("CREATE TABLE purchases(user_id int NOT NULL, symbol varchar(255), shares int, price float, transaction varchar(4))")
                 # Store enough information so that you know who bought what at what price and when.
                 except:
                     pass
 
-            db.execute("INSERT INTO purchases VALUES (?, ?, ?, ?)", session['user_id'], price, shares, symbol)
+            db.execute("INSERT INTO purchases VALUES (?, ?, ?, ?)", session['user_id'], symbol, shares, price, transaction)
             # Upon completion, redirect the user to the home page.
             return redirect("/")
 
