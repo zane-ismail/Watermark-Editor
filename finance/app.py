@@ -58,31 +58,25 @@ def buy():
         else:
             # Call lookup to look up a stock’s current price
             price = lookup(symbol)
-            print(f"PRICE: {price['price']}")
-            print(f"SHARES: {shares}")
-            cost = (shares * price['price'])
-            print(f"COST: {cost}")
+            price = price['price']
+            cost = (shares * price)
             # SELECT how much cash the user currently has in users
             cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
-            print(f"CASH: {cash[0]['cash']}")
-            # Add one or more new tables to finance.db via which to keep track of the purchase.
-            if cost > cash[0]['cash']:
-                print("NO MONEY")
+            cash = cash[0]['cash']
+            # Render an apology, without completing a purchase, if the user cannot afford the number of shares at the current price.
+            if cost > cash:
+                return apology("Not enough money")
+            else:
+                # Add one or more new tables to finance.db via which to keep track of the purchase.
+                try:
+                    db.execute("CREATE TABLE purchases(user_id int NOT NULL, price float, shares int, symbol varchar(255))")
+                # Store enough information so that you know who bought what at what price and when.
+                except:
+                    pass
 
-
-            try:
-                db.execute("CREATE TABLE purchases(user_id int NOT NULL, price float, shares int, symbol varchar(255))")
-            # Store enough information so that you know who bought what at what price and when.
-            except:
-                print(f"!!!: {session['user_id']}, {price['price']}, {symbol}")
-
-            db.execute("INSERT INTO purchases VALUES (?, ?, ?, ?)", session['user_id'], price['price'], shares, symbol)
+            db.execute("INSERT INTO purchases VALUES (?, ?, ?, ?)", session['user_id'], price, shares, symbol)
             # Upon completion, redirect the user to the home page.
             return redirect("/")
-
-
-
-    # You don’t need to worry about race conditions (or use transactions).\
 
     return render_template("buy.html")
 
