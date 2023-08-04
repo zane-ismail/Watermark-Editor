@@ -87,6 +87,7 @@ def history():
     """Show history of transactions"""
     # Display an HTML table summarizing all of a user’s transactions ever, listing row by row each and every buy and every sell.
     transactions = db.execute("SELECT * FROM purchases WHERE user_id = ?", session["user_id"])
+    print(transactions)
     # For each row, make clear whether a stock was bought or sold and include the stock’s symbol, the (purchase or sale) price, the number of shares bought or sold, and the date and time at which the transaction occurred.
     # You might need to alter the table you created for buy or supplement it with an additional table. Try to minimize redundancies.
 

@@ -5,8 +5,24 @@
 {% endblock %}
 
 {% block main %}
-    <tr>
-        <td>{{ transactions[0] }}</td>
-        <td>{{ transactions[1] }}</td>
-        <td>{{ transactions[2] }}</td>
+<h2>All Transactions</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Price</th>
+                <th>Shares</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for transaction in transactions %}
+            <tr>
+                <td>{{ transaction['symbol'] }}</td>
+                <td>{{ transaction['price'] }}</td>
+                <td>{{ transaction['shares'] }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
 {% endblock %}
