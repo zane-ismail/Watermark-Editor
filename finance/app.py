@@ -70,7 +70,7 @@ def buy():
                 return apology("Not enough money")
             else:
                 # Add one or more new tables to finance.db via which to keep track of the purchase.
-                db.execute("CREATE TABLE purchases(user_id int NOT NULL, symbol varchar(255), shares int, price float)")
+                db.execute("CREATE TABLE purchases(user_id int NOT NULL, symbol varchar(255), shares int, price float, type varchar(4))")
                 # Store enough information so that you know who bought what at what price and when.
                 # except:
                 #     pass
@@ -201,11 +201,11 @@ def sell():
     symbol = request.form.get("symbol")
     # Require that a user input a number of shares, implemented as a text field whose name is shares.
     shares = request.form.get("shares")
-    price = lookup(symbol)
-    price = price['price']
     transaction = "SELL"
     # Submit the user’s input via POST to /sell.
     if request.method == "POST":
+        price = lookup(symbol)
+        price = price['price']
         shares = int(shares)
         stocks = db.execute("SELECT symbol FROM purchases WHERE user_id = ?", session['user_id'])
         amount = db.execute("SELECT shares FROM purchases WHERE symbol = ?", stocks[0]['symbol'])

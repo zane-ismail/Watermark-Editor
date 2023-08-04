@@ -12,6 +12,7 @@
                 <th>Symbol</th>
                 <th>Price</th>
                 <th>Shares</th>
+                <th>Transaction</th>
             </tr>
         </thead>
         <tbody>
@@ -20,6 +21,7 @@
                 <td>{{ transaction['symbol'] }}</td>
                 <td>{{ transaction['price'] }}</td>
                 <td>{{ transaction['shares'] }}</td>
+                <td>{{ transaction['type'] }}</td>
             </tr>
         {% endfor %}
         </tbody>
