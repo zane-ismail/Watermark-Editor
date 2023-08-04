@@ -64,8 +64,9 @@ def buy():
             print(f"COST: {cost}")
             # SELECT how much cash the user currently has in users
             cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
+            print(f"CASH: {cash[0]['cash']}")
             # Add one or more new tables to finance.db via which to keep track of the purchase.
-            if cost > cash:
+            if cost > cash[0]['cash']:
                 print("NO MONEY")
 
 
@@ -81,7 +82,6 @@ def buy():
 
 
 
-    # Render an apology, without completing a purchase, if the user cannot afford the number of shares at the current price.
     # You don’t need to worry about race conditions (or use transactions).\
 
     return render_template("buy.html")
