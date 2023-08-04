@@ -217,6 +217,7 @@ def sell():
         if total_shares < shares:
             return apology("Not enough stocks")
         elif symbol == user_stocks:
+            db.execute("INSERT INTO purchases VALUES (?, ?, ?, ?)", session['user_id'], symbol, shares, price, transaction)
             return redirect("/")
             # Render an apology if the user fails to select a stock
         elif not symbol:
