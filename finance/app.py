@@ -63,22 +63,15 @@ def buy():
             cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
             # Add one or more new tables to finance.db via which to keep track of the purchase.
 
-            print(print(f"!!!: {session['user_id']}, {price['price']}, {symbol}"))
             try:
                 db.execute("CREATE TABLE purchases(user_id int NOT NULL UNIQUE, price float, shares, symbol varchar(255))")
             # Store enough information so that you know who bought what at what price and when.
             except:
-                print(print(f"cash: {session['user_id']}, {price}, {shares}, {symbol}"))
-                # cost = shares * price
+                print(f"!!!: {session['user_id']}, {price['price']}, {symbol}")
 
-            db.execute("INSERT INTO purchases VALUES (?, ?, ?, ?)", session['user_id'], price, shares, symbol)
+            db.execute("INSERT INTO purchases VALUES (?, ?, ?, ?)", session['user_id'], price['price'], shares, symbol)
             # Upon completion, redirect the user to the home page.
             return redirect("/")
-
-
-
-
-
 
     # Use appropriate SQLite types.
     # Define UNIQUE indexes on any fields that should be unique.
