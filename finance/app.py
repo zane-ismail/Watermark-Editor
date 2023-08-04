@@ -66,9 +66,10 @@ def buy():
                 db.execute("CREATE TABLE purchases(user_id int, price float, symbol varchar(255))")
             # Store enough information so that you know who bought what at what price and when.
             except RuntimeError:
-                print(print(f"cash: {cash}"))
-                print(session['shares'])
-                print(session['user_id'])
+                print(print(f"cash: {cash[0]}"))
+                cost = shares * 
+                print(shares)
+                print(symbol)
             # db.execute("INSERT INTO purchases VALUES (?, ?)", session['user_id'], (cash[0]['cash'] * session['shares']), cash[0]['name'])
             # Upon completion, redirect the user to the home page.
             return redirect("/")
