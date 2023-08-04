@@ -58,6 +58,7 @@ def buy():
         else:
             # Call lookup to look up a stock’s current price
             price = lookup(symbol)
+            print(price)
             price = price['price']
             cost = (shares * price)
             transaction = "BUY"
@@ -69,11 +70,10 @@ def buy():
                 return apology("Not enough money")
             else:
                 # Add one or more new tables to finance.db via which to keep track of the purchase.
-                try:
-                    db.execute("CREATE TABLE purchases(user_id int NOT NULL, symbol varchar(255), shares int, price float, transaction varchar(4))")
+                db.execute("CREATE TABLE purchases(user_id int NOT NULL, symbol varchar(255), shares int, price float, transaction)")
                 # Store enough information so that you know who bought what at what price and when.
-                except:
-                    pass
+                # except:
+                #     pass
 
             db.execute("INSERT INTO purchases VALUES (?, ?, ?, ?, ?)", session['user_id'], symbol, shares, price, transaction)
             # Upon completion, redirect the user to the home page.
