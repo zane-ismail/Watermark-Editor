@@ -194,22 +194,20 @@ def sell():
     symbol = request.form.get("symbol")
     # Require that a user input a number of shares, implemented as a text field whose name is shares.
     shares = request.form.get("shares")
-    int_shares = int(shares)
     # Submit the user’s input via POST to /sell.
     if request.method == "POST":
+        shares = int(shares)
         stocks = db.execute("SELECT symbol FROM purchases WHERE user_id = ?", session['user_id'])
         amount = db.execute("SELECT shares FROM purchases WHERE symbol = ?", stocks[0]['symbol'])
         rows = db.execute("SELECT * FROM purchases WHERE user_id = ?", session["user_id"])
-        # print(rows)
         i = 0
         total_shares = 0
         for row in rows:
             user_stocks = (stocks[0]['symbol'])
             total_shares += (amount[i]['shares'])
-            # print (total_shares)
             i += 1
         # Render an apology if the input is not a positive integer or if the user does not own that many shares of the stock.
-        if total_shares < int_shares:
+        if total_shares < shares:
             return apology("Not enough stocks")
         elif symbol == user_stocks:
             return redirect("/")
