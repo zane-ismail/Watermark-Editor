@@ -190,10 +190,11 @@ def register():
 @login_required
 def sell():
     """Sell shares of stock"""
-    rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
-    for row in rows:
-        print(row)
     if request.method == "POST":
+        rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
+        for row in rows:
+            print("HELLO")
+            print(row)
         # Require that a user input a stock’s symbol, implemented as a select menu whose name is symbol.
         symbol = request.form.get("symbol")
         # Render an apology if the user fails to select a stock or if (somehow, once submitted) the user does not own any shares of that stock.
