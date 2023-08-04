@@ -200,13 +200,13 @@ def sell():
         amount = db.execute("SELECT shares FROM purchases WHERE symbol = ?", stocks[0]['symbol'])
         rows = db.execute("SELECT * FROM purchases WHERE user_id = ?", session["user_id"])
         print(rows)
+        i = 0
+        total_shares = 0
         for row in rows:
-            i = 0
             user_stocks = stocks[0]['symbol']
-            print(i)
-            print(stocks[i]['symbol'])
-            print(amount[i]['shares'])
-            i = i + 1
+            total_shares += (amount[i]['shares'])
+            print (total_shares)
+            i += 1
         if symbol == user_stocks:
             return redirect("/")
             # Render an apology if the input is not a positive integer or if the user does not own that many shares of the stock.
