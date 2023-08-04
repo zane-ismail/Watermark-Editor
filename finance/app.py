@@ -190,24 +190,32 @@ def register():
 @login_required
 def sell():
     """Sell shares of stock"""
-    if request.method == "POST":
-        # Require that a user input a stock’s symbol, implemented as a select menu whose name is symbol.
-        symbol = request.form.get("symbol")
-        stocks = db.execute("SELECT symbol FROM purchases WHERE user_id = ?", session["user_id"])
-        rows = db.execute("SELECT * FROM users WHERE id = ?", session["user_id"])
-        for row in rows:
-            user_stocks = stocks[0]['symbol']
-            if symbol == user_stocks:
-                print("OKAY")
-            # Render an apology if the user fails to select a stock
-            elif not symbol:
-                return apology("Please enter a symbol")
-            # Or if (somehow, once submitted) the user does not own any shares of that stock.
-            else:
-                return apology("Stock not owned")
-    # Require that a user input a number of shares, implemented as a text field whose name is shares. Render an apology if the input is not a positive integer or if the user does not own that many shares of the stock.
+    # Require that a user input a stock’s symbol, implemented as a select menu whose name is symbol.
+    symbol = request.form.get("symbol")
+    # Require that a user input a number of shares, implemented as a text field whose name is shares.
+    shares = request.form.get("shares")
     # Submit the user’s input via POST to /sell.
+    if request.method == "POST":
+        stocks = db.execute("SELECT symbol FROM purchases WHERE user_id = ?", session['user_id'])
+        amount = db.execute("SELECT shares FROM purchases WHERE symbol = ?", stocks[0]['symbol'])
+        rows = db.execute("SELECT * FROM purchases WHERE user_id = ?", session["user_id"])
+        print(rows)
+        for row in rows:
+            i = 0
+            user_stocks = stocks[0]['symbol']
+            print(i)
+            print(stocks[i]['symbol'])
+            print(amount[i]['shares'])
+            i+=1
+        if symbol == user_stocks:
+            return redirect("/")
+            # Render an apology if the input is not a positive integer or if the user does not own that many shares of the stock.
+            # elif
+            # Render an apology if the user fails to select a stock
+        elif not symbol:
+            return apology("Please enter a symbol")
+        # Or if (somehow, once submitted) the user does not own any shares of that stock.
+        else:
+            return apology("Stock not owned")
     # Upon completion, redirect the user to the home page.
-    # You don’t need to worry about race conditions (or use transactions).
-
     return render_template("sell.html")
