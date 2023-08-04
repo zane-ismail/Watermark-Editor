@@ -190,9 +190,16 @@ def register():
 @login_required
 def sell():
     """Sell shares of stock"""
-    # Require that a user input a stock’s symbol, implemented as a select menu whose name is symbol.
-    symbol = request.form.get("symbol")
-    # Render an apology if the user fails to select a stock or if (somehow, once submitted) the user does not own any shares of that stock.
+    rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
+    for row in rows:
+        print(row)
+    if request.method == "POST":
+        # Require that a user input a stock’s symbol, implemented as a select menu whose name is symbol.
+        symbol = request.form.get("symbol")
+        # Render an apology if the user fails to select a stock or if (somehow, once submitted) the user does not own any shares of that stock.
+        if not symbol:
+            return apology("Please enter a symbol")
+        # elif
     # Require that a user input a number of shares, implemented as a text field whose name is shares. Render an apology if the input is not a positive integer or if the user does not own that many shares of the stock.
     # Submit the user’s input via POST to /sell.
     # Upon completion, redirect the user to the home page.
