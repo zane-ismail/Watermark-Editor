@@ -191,7 +191,7 @@ def register():
 def sell():
     """Sell shares of stock"""
     if request.method == "POST":
-        stocks = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
+        stocks = db.execute("SELECT shares FROM purchases WHERE user_id = ?", session["user_id"])
         rows = db.execute("SELECT * FROM users WHERE id = ?", session["user_id"])
         for row in rows:
             print(stocks)
