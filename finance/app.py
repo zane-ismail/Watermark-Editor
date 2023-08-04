@@ -63,7 +63,7 @@ def buy():
             cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
             # Add one or more new tables to finance.db via which to keep track of the purchase.
 
-            print(print(f"cash: {session['user_id']}, {price[0]['price']}, {symbol}"))
+            print(print(f"!!!: {session['user_id']}, {price['price']}, {symbol}"))
             try:
                 db.execute("CREATE TABLE purchases(user_id int NOT NULL UNIQUE, price float, shares, symbol varchar(255))")
             # Store enough information so that you know who bought what at what price and when.
