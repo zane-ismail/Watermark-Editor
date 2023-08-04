@@ -199,18 +199,19 @@ def sell():
         stocks = db.execute("SELECT symbol FROM purchases WHERE user_id = ?", session['user_id'])
         amount = db.execute("SELECT shares FROM purchases WHERE symbol = ?", stocks[0]['symbol'])
         rows = db.execute("SELECT * FROM purchases WHERE user_id = ?", session["user_id"])
-        print(rows)
+        # print(rows)
         i = 0
         total_shares = 0
         for row in rows:
             user_stocks = stocks[0]['symbol']
             total_shares += (amount[i]['shares'])
-            print (total_shares)
+            # print (total_shares)
             i += 1
         if symbol == user_stocks:
             return redirect("/")
-            # Render an apology if the input is not a positive integer or if the user does not own that many shares of the stock.
-            # elif
+        # Render an apology if the input is not a positive integer or if the user does not own that many shares of the stock.
+        elif total_shares < shares:
+            return apology("Not enough stocks")
             # Render an apology if the user fails to select a stock
         elif not symbol:
             return apology("Please enter a symbol")
