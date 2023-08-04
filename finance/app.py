@@ -63,7 +63,7 @@ def buy():
             cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
             # Add one or more new tables to finance.db via which to keep track of the purchase.
             # Store enough information so that you know who bought what at what price and when.
-            db.execute("CREATE TABLE purchases", (
+            db.execute(CREATE TABLE finances.purchases(
                 user_id int,
                 price float,
                 symbol varchar(255),
