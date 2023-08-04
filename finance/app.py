@@ -58,13 +58,15 @@ def buy():
         else:
             # Call lookup to look up a stock’s current price
             price = lookup(symbol)
-            cost = (shares * price)
+            print(f"PRICE: {price['price']}")
+            print(f"SHARES: {shares}")
+            cost = (shares * price['price'])
             print(f"COST: {cost}")
-            if cost > session
             # SELECT how much cash the user currently has in users
             cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
             # Add one or more new tables to finance.db via which to keep track of the purchase.
-            if
+            if cost > cash:
+                print("NO MONEY")
 
 
             try:
