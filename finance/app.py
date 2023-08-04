@@ -67,9 +67,9 @@ def buy():
             # Store enough information so that you know who bought what at what price and when.
             except RuntimeError:
                 print(print(f"cash: {cash}"))
-            print(f"cash: {cash[0]}")
-            # print(cash[0]['price'])
-            # db.execute("INSERT INTO purchases VALUES (?, ?)", session['user_id'], (cash[0]['price'] * session['shares']), cash[0]['name'])
+                print(session['shares'])
+                print(session['user_id'])
+            # db.execute("INSERT INTO purchases VALUES (?, ?)", session['user_id'], (cash[0]['cash'] * session['shares']), cash[0]['name'])
             # Upon completion, redirect the user to the home page.
             return redirect("/")
 
