@@ -206,7 +206,7 @@ def sell():
             print(i)
             print(stocks[i]['symbol'])
             print(amount[i]['shares'])
-            i+=1
+            i = i + 1
         if symbol == user_stocks:
             return redirect("/")
             # Render an apology if the input is not a positive integer or if the user does not own that many shares of the stock.
