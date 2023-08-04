@@ -65,7 +65,7 @@ def buy():
             try:
                 db.execute("CREATE TABLE purchases(user_id int NOT NULL UNIQUE, price float, shares, symbol varchar(255))")
             # Store enough information so that you know who bought what at what price and when.
-            except RuntimeError:
+            except:
                 print(print(f"cash: {session['user_id']}, {price}, {shares}, {symbol}"))
                 # cost = shares * price
 
