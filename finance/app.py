@@ -201,6 +201,9 @@ def sell():
     symbol = request.form.get("symbol")
     # Require that a user input a number of shares, implemented as a text field whose name is shares.
     shares = request.form.get("shares")
+    price = lookup(symbol)
+    price = price['price']
+    transaction = "SELL"
     # Submit the user’s input via POST to /sell.
     if request.method == "POST":
         shares = int(shares)
