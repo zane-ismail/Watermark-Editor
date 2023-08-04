@@ -191,9 +191,10 @@ def register():
 def sell():
     """Sell shares of stock"""
     if request.method == "POST":
-        rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
+        stocks = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
+        rows = db.execute("SELECT * FROM users WHERE id = ?", session["user_id"])
         for row in rows:
-            print("HELLO")
+            print(stocks)
             print(row)
         # Require that a user input a stock’s symbol, implemented as a select menu whose name is symbol.
         symbol = request.form.get("symbol")
