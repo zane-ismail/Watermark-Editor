@@ -58,10 +58,14 @@ def buy():
         else:
             # Call lookup to look up a stock’s current price
             price = lookup(symbol)
-            print(price)
+            cost = (shares * price)
+            print(f"COST: {cost}")
+            if cost > session
             # SELECT how much cash the user currently has in users
             cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
             # Add one or more new tables to finance.db via which to keep track of the purchase.
+            if
+
 
             try:
                 db.execute("CREATE TABLE purchases(user_id int NOT NULL, price float, shares int, symbol varchar(255))")
@@ -73,9 +77,7 @@ def buy():
             # Upon completion, redirect the user to the home page.
             return redirect("/")
 
-    # Use appropriate SQLite types.
-    # Define UNIQUE indexes on any fields that should be unique.
-    # Define (non-UNIQUE) indexes on any fields via which you will search (as via SELECT with WHERE).
+
 
     # Render an apology, without completing a purchase, if the user cannot afford the number of shares at the current price.
     # You don’t need to worry about race conditions (or use transactions).\
