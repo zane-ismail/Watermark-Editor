@@ -205,4 +205,4 @@ def sell():
     # Upon completion, redirect the user to the home page.
     # You don’t need to worry about race conditions (or use transactions).
 
-    return apology("TODO")
+    return render_template("sell.html")
