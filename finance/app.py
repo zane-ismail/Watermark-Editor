@@ -68,8 +68,8 @@ def buy():
             except RuntimeError:
                 print(print(f"cash: {cash[0]}"))
                 cost = shares * price
-                
-            # db.execute("INSERT INTO purchases VALUES (?, ?)", session['user_id'], (cash[0]['cash'] * session['shares']), cash[0]['name'])
+
+            # db.execute("INSERT INTO purchases VALUES (?, ?)", session['user_id'], price, symbol)
             # Upon completion, redirect the user to the home page.
             return redirect("/")
 
