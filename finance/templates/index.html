@@ -20,7 +20,7 @@
         <tbody>
         {% for purchase in purchases %}
             i = 0
-            {% if i < len(purchases) %}
+            {% if i < purchases|length %}
                 {% if purchase["symbol"] == purchases[i]["symbol"] %}
                     symbol = purchase["symbol"]
                     shares = shares + int(purchase['shares'])
