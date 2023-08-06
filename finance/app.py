@@ -211,6 +211,9 @@ def sell():
         price = lookup(symbol)
         price = price['price']
         shares = int(shares)
+        cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
+        cash = cash[0]['cash']
+        sum = cash + price
         stocks = db.execute("SELECT symbol FROM purchases WHERE user_id = ?", session['user_id'])
         amount = db.execute("SELECT shares FROM purchases WHERE symbol = ?", stocks[0]['symbol'])
         rows = db.execute("SELECT * FROM purchases WHERE user_id = ?", session["user_id"])
@@ -225,6 +228,7 @@ def sell():
             return apology("Not enough stocks")
         elif symbol == user_stocks:
             db.execute("INSERT INTO purchases VALUES (?, ?, ?, ?, ?)", session['user_id'], symbol, shares, price, transaction)
+            db.execute("UPDATE users SET cash = ? WHERE id = ?", sum, session["user_id"])
             return redirect("/")
             # Render an apology if the user fails to select a stock
         elif not symbol:
