@@ -19,6 +19,15 @@
         </thead>
         <tbody>
         {% for purchase in purchases %}
+            i = 0
+            {% if i < len(purchases) %}
+                {% if purchase["symbol"] == purchases[i]["symbol"] %}
+                    symbol = purchase["symbol"]
+                    shares = shares + int(purchase['shares'])
+                    price = purchase["price"]
+                    {% if purchase["type"] == "BUY" %}
+                        sum = sum + price
+                    i += 1
             <tr>
                 <td>{{ purchase["symbol"] }}</td>
                 <td>{{ purchase["shares"] }}</td>
