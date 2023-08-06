@@ -37,6 +37,11 @@ def after_request(response):
 def index():
     """Show portfolio of stocks"""
     sum = 0
+    user = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
+    purchases = db.execute("SELECT * FROM purchases WHERE user_id = ?", session["user_id"])
+    for purchase in purchases:
+        if purchase[symbol] == 
+
     symbol = db.execute("SELECT symbol FROM purchases WHERE user_id = ?", session["user_id"])
     stocks = db.execute("SELECT shares FROM purchases WHERE symbol = ?", symbol[0]['symbol'])
     price = db.execute("SELECT price FROM purchases WHERE symbol = ?", symbol[0]['symbol'])
@@ -44,7 +49,7 @@ def index():
     cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
 
 
-    return render_template("index.html", symbol = symbol, stocks=stocks, price=price, cash=cash, sum=sum)
+    return render_template("index.html", user=user, purchases=purchases, symbol=symbol, stocks=stocks, price=price, cash=cash, sum=sum)
 
 
 @app.route("/buy", methods=["GET", "POST"])
