@@ -72,10 +72,11 @@ def buy():
             else:
                 try:
                     # Add one or more new tables to finance.db via which to keep track of the purchase.
+                    # Store enough information so that you know who bought what at what price and when.
                     db.execute("CREATE TABLE purchases(user_id int NOT NULL, symbol varchar(255), shares int, price float, type varchar(4))")
                 except:
                     pass
-                # Store enough information so that you know who bought what at what price and when.
+                # Update cash in database to reflect purchase
                 db.execute("UPDATE users SET cash = ? WHERE id = ?", sum, session["user_id"])
 
             db.execute("INSERT INTO purchases VALUES (?, ?, ?, ?, ?)", session['user_id'], symbol, shares, price, transaction)
@@ -228,6 +229,7 @@ def sell():
             return apology("Not enough stocks")
         elif symbol == user_stocks:
             db.execute("INSERT INTO purchases VALUES (?, ?, ?, ?, ?)", session['user_id'], symbol, shares, price, transaction)
+            # Update cash in database to reflect sale
             db.execute("UPDATE users SET cash = ? WHERE id = ?", sum, session["user_id"])
             return redirect("/")
             # Render an apology if the user fails to select a stock
