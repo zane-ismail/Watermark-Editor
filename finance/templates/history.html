@@ -13,6 +13,7 @@
                 <th>Price</th>
                 <th>Shares</th>
                 <th>Transaction</th>
+                <th>Cash</th>
             </tr>
         </thead>
         <tbody>
@@ -22,6 +23,7 @@
                 <td>{{ transaction['price'] }}</td>
                 <td>{{ transaction['shares'] }}</td>
                 <td>{{ transaction['type'] }}</td>
+                <td>{{ cash }}</td>
             </tr>
         {% endfor %}
         </tbody>

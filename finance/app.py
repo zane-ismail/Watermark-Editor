@@ -65,6 +65,7 @@ def buy():
             # SELECT how much cash the user currently has in users
             cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
             cash = cash[0]['cash']
+            sum = cash - cost
             # Render an apology, without completing a purchase, if the user cannot afford the number of shares at the current price.
             if cost > cash:
                 return apology("Not enough money")
@@ -75,7 +76,7 @@ def buy():
                 except:
                     pass
                 # Store enough information so that you know who bought what at what price and when.
-                db.execute("UPDATE cash FROM users SET cash = WHERE id = ?", cash - cost)
+                db.execute("UPDATE users SET cash = ? WHERE id = ?", sum, session["user_id"])
 
             db.execute("INSERT INTO purchases VALUES (?, ?, ?, ?, ?)", session['user_id'], symbol, shares, price, transaction)
             # Upon completion, redirect the user to the home page.
@@ -90,11 +91,12 @@ def history():
     """Show history of transactions"""
     # Display an HTML table summarizing all of a user’s transactions ever, listing row by row each and every buy and every sell.
     transactions = db.execute("SELECT * FROM purchases WHERE user_id = ?", session["user_id"])
+    cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
     print(transactions)
     # For each row, make clear whether a stock was bought or sold and include the stock’s symbol, the (purchase or sale) price, the number of shares bought or sold, and the date and time at which the transaction occurred.
     # You might need to alter the table you created for buy or supplement it with an additional table. Try to minimize redundancies.
 
-    return render_template("history.html", transactions=transactions)
+    return render_template("history.html", transactions=transactions, cash=cash)
 
 
 @app.route("/login", methods=["GET", "POST"])
