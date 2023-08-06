@@ -19,7 +19,7 @@
         </thead>
         <tbody>
         {% for purchase in purchases %}
-            i = 0
+            # i = 0 ##
             {% if i < purchases|length %}
                 {% if purchase["symbol"] == purchases[i]["symbol"] %}
                     symbol = purchase["symbol"]
