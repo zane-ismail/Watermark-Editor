@@ -39,21 +39,22 @@ def index():
     sum = 0
     user = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
     purchases = db.execute("SELECT * FROM purchases WHERE user_id = ?", session["user_id"])
-    i = 0
-    stocks = 0
+    i = 1
+    shares = 0
     print(purchases[0])
     for purchase in purchases:
         print(i)
-        if purchase["symbol"] == purchase+1["symbol"]:
-            for stock in purchase["shares"]:
-                stocks = stocks + stock
+        if purchase["symbol"] == purchases[i]["symbol"]:
+            for share in purchase["shares"]:
+                print(f"SHARE: {share}")
+                shares = shares + share
                 price = purchase["price"]
             i =+ 1
     print(price)
     cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
 
 
-    return render_template("index.html", user=user, purchases=purchases, stocks=stocks, price=price, cash=cash, sum=sum)
+    return render_template("index.html", user=user, purchases=purchases, shares=stocks, price=price, cash=cash, sum=sum)
 
 
 @app.route("/buy", methods=["GET", "POST"])
