@@ -44,10 +44,10 @@ def index():
     print(purchases[0])
     for purchase in purchases:
         print(i)
-        if purchase[i]["symbol"] == purchase[i+1]["symbol"]:
+        if purchase["symbol"] == purchase+1["symbol"]:
             for stock in purchase["shares"]:
                 stocks = stocks + stock
-                price = purchase[i]["price"]
+                price = purchase["price"]
             i =+ 1
     print(price)
     cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
