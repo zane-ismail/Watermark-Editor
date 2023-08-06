@@ -44,6 +44,7 @@ def index():
     print(purchases[0])
     for purchase in purchases:
         print(i)
+        while i <= 
         if purchase["symbol"] == purchases[i]["symbol"]:
             print(f"SHARES: {purchase['shares']}")
             shares = shares + int(purchase['shares'])
