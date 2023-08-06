@@ -36,28 +36,27 @@ def after_request(response):
 @login_required
 def index():
     """Show portfolio of stocks"""
-    sum = 0
     user = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
     purchases = db.execute("SELECT * FROM purchases WHERE user_id = ?", session["user_id"])
     i = 1
     shares = 0
+    sum = 0
     print(purchases[0])
     for purchase in purchases:
         print(i)
-        if i <= len(purchases):
+        if i < len(purchases):
             if purchase["symbol"] == purchases[i]["symbol"]:
-                print(f"SHARES: {purchase['shares']}")
+                symbol = purchase["symbol"]
                 shares = shares + int(purchase['shares'])
-                print(f"shares {shares}")
                 price = purchase["price"]
                 i += 1
-        else:
-            pass
     print(price)
     cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
+    cash = int(cash[0]["cash"])
+    sum = cash + shares
+    print(sum)
 
-
-    return render_template("index.html", user=user, purchases=purchases, shares=stocks, price=price, cash=cash, sum=sum)
+    return render_template("index.html", user=user, symbol=symbol, purchases=purchases, shares=shares, price=price, cash=cash, sum=sum)
 
 
 @app.route("/buy", methods=["GET", "POST"])

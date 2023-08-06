@@ -18,15 +18,15 @@
             </tr>
         </thead>
         <tbody>
-        {% for purchase in purchases %}
+        <!-- {% for purchase in purchases %} -->
             <tr>
-                <td>{{ purchase['symbol'] }}</td>
-                <td>{{ purchase['shares'] }}</td>
+                <td>{{ symbol }}</td>
+                <td>{{ shares }}</td>
                 <td>{{ purchase['price'] }}</td>
                 <td>{{ cash }}</td>
                 <td>{{ sum }}</td>
             </tr>
-        {% endfor %}
+        <!-- {% endfor %} -->
         </tbody>
     </table>
 
