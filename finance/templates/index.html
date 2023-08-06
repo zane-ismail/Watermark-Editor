@@ -18,23 +18,24 @@
             </tr>
         </thead>
         <tbody>
-        {% for purchase in purchases %}
-            # i = 0 ##
-            {% if i < purchases|length %}
-                {% if purchase["symbol"] == purchases[i]["symbol"] %}
-                    symbol = purchase["symbol"]
-                    shares = shares + int(purchase['shares'])
-                    price = purchase["price"]
-                    {% if purchase["type"] == "BUY" %}
-                        sum = sum + price
-                    {% endif %}
-                    i += 1
-                {% endif %}
-            {% endif %}
             <tr>
-                <td>{{ purchase["symbol"] }}</td>
-                <td>{{ purchase["shares"] }}</td>
-                <td>{{ purchase["price"] }}</td>
+            {% for purchase in purchases %}
+                {% set i = 0 %}
+                {% if i < purchases|length %}
+                    {% if purchase["symbol"] == purchases[i]["symbol"] %}
+                        {% set symbol = purchase["symbol"] %}
+                        <td>{{ symbol }}</td>
+                        {% set shares = shares + (purchase['shares']) %}
+                        <td>{{ shares }}</td>
+                        {% set price = purchase["price"] %}
+                        <td>{{ price }}</td>
+                        {% if purchase["type"] == "BUY" %}
+                            {% set sum = sum + price %}
+                        {% endif %}
+                        {% set i = i + 1 %}
+                    {% endif %}
+                {% endif %}
+
         {% endfor %}
                 <td>{{ cash }}</td>
                 <td>{{ sum }}</td>
