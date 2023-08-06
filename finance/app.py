@@ -41,20 +41,19 @@ def index():
     i = 1
     shares = 0
     sum = 0
-    print(purchases[0])
     for purchase in purchases:
-        print(i)
         if i < len(purchases):
             if purchase["symbol"] == purchases[i]["symbol"]:
                 symbol = purchase["symbol"]
                 shares = shares + int(purchase['shares'])
                 price = purchase["price"]
+                if purchase["type"] == "BUY":
+                    sum = sum + price
                 i += 1
-    print(price)
     cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
     cash = int(cash[0]["cash"])
-    sum = cash + shares
-    print(sum)
+    sum = sum + cash
+    print(shares)
 
     return render_template("index.html", user=user, symbol=symbol, purchases=purchases, shares=shares, price=price, cash=cash, sum=sum)
 
