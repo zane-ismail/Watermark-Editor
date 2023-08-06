@@ -75,7 +75,7 @@ def buy():
                 except:
                     pass
                 # Store enough information so that you know who bought what at what price and when.
-                db.execute("UPDATE cash FROM users WHERE id = ?", cash - cost)
+                db.execute("UPDATE cash FROM users SET cash = WHERE id = ?", cash - cost)
 
             db.execute("INSERT INTO purchases VALUES (?, ?, ?, ?, ?)", session['user_id'], symbol, shares, price, transaction)
             # Upon completion, redirect the user to the home page.
