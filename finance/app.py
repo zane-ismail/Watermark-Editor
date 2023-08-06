@@ -36,11 +36,15 @@ def after_request(response):
 @login_required
 def index():
     """Show portfolio of stocks"""
-    stocks = db.execute("SELECT shares FROM purchases WHERE id = ?", session["user_id"])
+    sum = 0
+    symbol = db.execute("SELECT symbol FROM purchases WHERE user_id = ?", session["user_id"])
+    stocks = db.execute("SELECT shares FROM purchases WHERE symbol = ?", symbol[0]['symbol'])
+    price = db.execute("SELECT price FROM purchases WHERE symbol = ?", symbol[0]['symbol'])
+    print(price)
     cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
 
 
-    return render_template("index.html", stocks=stocks, cash=cash)
+    return render_template("index.html", symbol = symbol, stocks=stocks, price=price, cash=cash, sum=sum)
 
 
 @app.route("/buy", methods=["GET", "POST"])

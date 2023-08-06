@@ -13,18 +13,18 @@
                 <th>Symbol</th>
                 <th>Shares</th>
                 <th>Price</th>
-                <th>Transaction</th>
                 <th>Cash</th>
+                <th>Total value</th>
             </tr>
         </thead>
         <tbody>
         {% for transaction in transactions %}
             <tr>
-                <td>{{  }}</td>
-                <td>{{  }}</td>
-                <td>{{  }}</td>
-                <td>{{  }}</td>
-                <td>{{  }}</td>
+                <td>{{ symbol }}</td>
+                <td>{{ stocks }}</td>
+                <td>{{ price }}</td>
+                <td>{{ cash }}</td>
+                <td>{{ sum }}</td>
             </tr>
         {% endfor %}
         </tbody>
