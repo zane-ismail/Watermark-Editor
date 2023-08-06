@@ -27,7 +27,11 @@
                     price = purchase["price"]
                     {% if purchase["type"] == "BUY" %}
                         sum = sum + price
+                    {% endif %}
                     i += 1
+                {% endif %}
+            {% endif %}
+        {% endfor %}
             <tr>
                 <td>{{ purchase["symbol"] }}</td>
                 <td>{{ purchase["shares"] }}</td>
