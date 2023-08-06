@@ -55,7 +55,7 @@ def index():
     sum = sum + cash
     print(shares)
 
-    return render_template("index.html", symbol=symbol, user=user, purchases=purchases, shares=shares, price=price, cash=cash, sum=sum)
+    return render_template("index.html", purchases=purchases, shares=shares, price=price, cash=cash, sum=sum)
 
 
 @app.route("/buy", methods=["GET", "POST"])
