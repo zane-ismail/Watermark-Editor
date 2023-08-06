@@ -39,11 +39,11 @@ def index():
     user = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
     purchases = db.execute("SELECT * FROM purchases WHERE user_id = ?", session["user_id"])
     i = 1
-    shares = 0
     sum = 0
     for purchase in purchases:
         if i < len(purchases):
             if purchase["symbol"] == purchases[i]["symbol"]:
+                shares = 0
                 symbol = purchase["symbol"]
                 shares = shares + int(purchase['shares'])
                 price = purchase["price"]
@@ -55,7 +55,7 @@ def index():
     sum = sum + cash
     print(shares)
 
-    return render_template("index.html", user=user, purchases=purchases, shares=shares, price=price, cash=cash, sum=sum)
+    return render_template("index.html", symbol=symbol, user=user, purchases=purchases, shares=shares, price=price, cash=cash, sum=sum)
 
 
 @app.route("/buy", methods=["GET", "POST"])
