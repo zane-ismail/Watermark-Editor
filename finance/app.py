@@ -43,10 +43,10 @@ def index():
         stocks = []
         prices = [0]
         total = []
-
         user = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
         cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
         cash = int(cash[0]["cash"])
+        # add all user's stock symbols to a list
         try:
             purchases = db.execute("SELECT * FROM purchases WHERE user_id = ?", session["user_id"])
             for purchase in purchases:
@@ -58,6 +58,7 @@ def index():
                         break
                     else:
                         symbols.append(purchase['symbol'])
+            
             for symbol in symbols:
                 shares_amount = 0
                 i = 0
