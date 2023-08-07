@@ -51,10 +51,11 @@ def index():
                     price = purchase["price"]
                     sum = sum + price
                     i += 1
-        cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
-        cash = int(cash[0]["cash"])
-        sum = sum + cash
-        print(shares)
+                cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
+                cash = int(cash[0]["cash"])
+                sum = sum + cash
+                print(shares)
+                redirect("index.html", purchases=purchases, shares=shares, price=price, cash=cash, sum=sum)
 
     return render_template("index.html", purchases=purchases, shares=shares, price=price, cash=cash, sum=sum)
 
