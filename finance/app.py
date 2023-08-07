@@ -85,6 +85,8 @@ def index():
             prices.append(price["price"])
             for price in prices:
                 sum = sum + price
+                print(price)
+                print(sum)
         total = sum + cash
                 # if i < len(purchases):
                 #     if purchase["symbol"] == purchases[i]["symbol"] and purchase["type"] == "BUY":
