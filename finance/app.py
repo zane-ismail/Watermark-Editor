@@ -281,7 +281,6 @@ def sell():
         total_shares = 0
         for row in rows:
             if row['symbol'] == symbol:
-                user_stocks = (stocks[0]['symbol'])
                 if row["type"] == "BUY":
                     total_shares =  total_shares + row["shares"]
                 elif row["type"] == "SELL":
@@ -293,16 +292,18 @@ def sell():
         # Render an apology if the input is not a positive integer or if the user does not own that many shares of the stock.
         if total_shares < shares:
             return apology("Not enough stocks")
-        elif symbol == user_stocks:
-            db.execute("INSERT INTO purchases VALUES (?, ?, ?, ?, ?)", session['user_id'], symbol, shares, price, transaction)
-            # Update cash in database to reflect sale
-            db.execute("UPDATE users SET cash = ? WHERE id = ?", sum, session["user_id"])
-            return redirect("/")
-            # Render an apology if the user fails to select a stock
-        elif not symbol:
-            return apology("Please enter a symbol")
-        # Or if (somehow, once submitted) the user does not own any shares of that stock.
-        else:
-            return apology("Stock not owned")
+        for stock in stocks:
+            print(stock)
+            if symbol == stock:
+                db.execute("INSERT INTO purchases VALUES (?, ?, ?, ?, ?)", session['user_id'], symbol, shares, price, transaction)
+                # Update cash in database to reflect sale
+                db.execute("UPDATE users SET cash = ? WHERE id = ?", sum, session["user_id"])
+                return redirect("/")
+                # Render an apology if the user fails to select a stock
+            elif not symbol:
+                return apology("Please enter a symbol")
+            # Or if (somehow, once submitted) the user does not own any shares of that stock.
+            else:
+                return apology("Stock not owned")
     # Upon completion, redirect the user to the home page.
     return render_template("sell.html")
