@@ -69,7 +69,6 @@ def index():
                     print(f"1: {share['shares']}")
                     if share['type'] == "BUY":
                         shares_amount = shares_amount + share['shares']
-                        print(f"2: {shares_amount}")
                     else:
                         shares_amount = shares_amount - share['shares']
                     i =+ 1
