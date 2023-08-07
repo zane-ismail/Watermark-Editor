@@ -81,12 +81,13 @@ def index():
                     stocks_dict.update({symbol: shares_amount})
 
                     sum = 0
-                    for symbol in stocks_dict:
-                        price = lookup(symbol)
-                        prices.append(price["price"])
-                    for price in prices:
-                        sum = sum + price * stocks_dict[symbol]
-                    total = sum + cash
+            for symbol in stocks_dict:
+                price = lookup(symbol)
+                prices.append(price["price"])
+                print(prices)
+            for price in prices:
+                sum = sum + price * stocks_dict[symbol]
+            total = sum + cash
         # if the user has no assets
         except:
             return render_template("index.html")
