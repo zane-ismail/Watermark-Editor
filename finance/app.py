@@ -265,13 +265,16 @@ def sell():
 
         total_shares = 0
         for row in rows:
-            user_stocks = (stocks[0]['symbol'])
-            print(row)
-            if row["type"] == "BUY":
-                total_shares =  total_shares + row["shares"]
-            elif row["type"] == "SELL":
-                total_shares = total_shares - row["shares"]
-        print(total_shares)
+            if row['symbol'] == symbol:
+                user_stocks = (stocks[0]['symbol'])
+                print(row)
+                if row["type"] == "BUY":
+                    total_shares =  total_shares + row["shares"]
+                elif row["type"] == "SELL":
+                    total_shares = total_shares - row["shares"]
+                print(total_shares)
+            else:
+                pass
             # total_shares.update({row[symbol]: shares_amount})
             # try:
             #     total_shares += (amount[i]['shares'])
