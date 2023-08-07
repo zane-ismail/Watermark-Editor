@@ -80,7 +80,7 @@ def index():
             sum = sum + price * stocks_dict[symbol]
         total = sum + cash
 
-    return render_template("index.html", stocks_dict=stocks_dict, cash=cash, prices=prices, sum=sum, total=total)
+    return render_template("index.html", stocks_dict=stocks_dict, cash=cash, sum=sum, prices=prices, total=total)
 
 
 @app.route("/buy", methods=["GET", "POST"])
@@ -275,7 +275,7 @@ def sell():
                 print(total_shares)
             else:
                 pass
-            
+
         # Render an apology if the input is not a positive integer or if the user does not own that many shares of the stock.
         if total_shares < shares:
             return apology("Not enough stocks")
