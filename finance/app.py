@@ -52,16 +52,17 @@ def index():
                 else:
                     symbols.append(purchase['symbol'])
         print(symbols)
-        shares_amount = 0
-        i = 0
         for symbol in symbols:
+            shares_amount = 0
+            i = 0
             all_shares = db.execute("SELECT * FROM purchases WHERE user_id = ? AND symbol = ?", session["user_id"], symbol)
             shares = db.execute("SELECT shares FROM purchases WHERE user_id = ? AND symbol = ?", session["user_id"], symbol)
             for share in all_shares:
                 if i < len(all_shares):
-                    print(f"4: {share['shares']}")
+                    print(symbol)
+                    print(f"1: {share['shares']}")
                     shares_amount = shares_amount + share['shares']
-                    print(f"5: {shares_amount}")
+                    print(f"2: {shares_amount}")
                     i =+ 1
             stocks.append(shares_amount)
             print(stocks)
