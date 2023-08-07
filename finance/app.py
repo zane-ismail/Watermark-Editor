@@ -47,39 +47,44 @@ def index():
         user = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
         cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
         cash = int(cash[0]["cash"])
-        purchases = db.execute("SELECT * FROM purchases WHERE user_id = ?", session["user_id"])
-        for purchase in purchases:
-            while i > 0:
-                symbols.append(purchase['symbol'])
-                i =- 1
-            for symbol in symbols:
-                if purchase['symbol'] == symbol:
-                    break
-                else:
+        try:
+            purchases = db.execute("SELECT * FROM purchases WHERE user_id = ?", session["user_id"])
+            for purchase in purchases:
+                while i > 0:
                     symbols.append(purchase['symbol'])
-        for symbol in symbols:
-            shares_amount = 0
-            i = 0
-            all_shares = db.execute("SELECT * FROM purchases WHERE user_id = ? AND symbol = ?", session["user_id"], symbol)
-            shares = db.execute("SELECT shares FROM purchases WHERE user_id = ? AND symbol = ?", session["user_id"], symbol)
-            for share in all_shares:
-                if i < len(all_shares):
-                    if share['type'] == "BUY":
-                        shares_amount = shares_amount + share['shares']
+                    i =- 1
+                for symbol in symbols:
+                    if purchase['symbol'] == symbol:
+                        break
                     else:
-                        shares_amount = shares_amount - share['shares']
-                    i =+ 1
-            stocks.append(shares_amount)
-            stocks_dict.update({symbol: shares_amount})
+                        symbols.append(purchase['symbol'])
+            for symbol in symbols:
+                shares_amount = 0
+                i = 0
+                all_shares = db.execute("SELECT * FROM purchases WHERE user_id = ? AND symbol = ?", session["user_id"], symbol)
+                shares = db.execute("SELECT shares FROM purchases WHERE user_id = ? AND symbol = ?", session["user_id"], symbol)
+                for share in all_shares:
+                    if i < len(all_shares):
+                        if share['type'] == "BUY":
+                            shares_amount = shares_amount + share['shares']
+                        else:
+                            shares_amount = shares_amount - share['shares']
+                        i =+ 1
+                stocks.append(shares_amount)
+                stocks_dict.update({symbol: shares_amount})
 
-        sum = 0
-        for symbol in stocks_dict:
-            price = lookup(symbol)
-            prices.append(price["price"])
-        for price in prices:
-            print(stocks_dict[symbol])
-            sum = sum + price * stocks_dict[symbol]
-        total = sum + cash
+                sum = 0
+                for symbol in stocks_dict:
+                    price = lookup(symbol)
+                    prices.append(price["price"])
+                for price in prices:
+                    print(stocks_dict[symbol])
+                    sum = sum + price * stocks_dict[symbol]
+                total = sum + cash
+
+        except:
+            return render_template("index.html")
+
 
     return render_template("index.html", stocks_dict=stocks_dict, cash=cash, sum=sum, prices=prices, total=total)
 
@@ -135,10 +140,13 @@ def buy():
 def history():
     """Show history of transactions"""
     # Display an HTML table summarizing all of a user’s transactions ever, listing row by row each and every buy and every sell.
-    transactions = db.execute("SELECT * FROM purchases WHERE user_id = ?", session["user_id"])
-    cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
-    # For each row, make clear whether a stock was bought or sold and include the stock’s symbol, the (purchase or sale) price, the number of shares bought or sold, and the date and time at which the transaction occurred.
-    # You might need to alter the table you created for buy or supplement it with an additional table. Try to minimize redundancies.
+    try:
+        transactions = db.execute("SELECT * FROM purchases WHERE user_id = ?", session["user_id"])
+        cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
+        # For each row, make clear whether a stock was bought or sold and include the stock’s symbol, the (purchase or sale) price, the number of shares bought or sold, and the date and time at which the transaction occurred.
+        # You might need to alter the table you created for buy or supplement it with an additional table. Try to minimize redundancies.
+    except:
+        return render_template("history.html")
 
     return render_template("history.html", transactions=transactions, cash=cash)
 
