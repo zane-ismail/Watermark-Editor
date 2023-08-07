@@ -37,24 +37,26 @@ def after_request(response):
 def index():
     """Show portfolio of stocks"""
     if request.method == "GET":
-        user = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
-        purchases = db.execute("SELECT * FROM purchases WHERE user_id = ?", session["user_id"])
-        print(purchases)
-        i = 1
-        sum = 0
-        for purchase in purchases:
-            if i < len(purchases):
-                if purchase["symbol"] == purchases[i]["symbol"] and purchase["type"] == "BUY":
-                    shares = 0
-                    symbol = purchase["symbol"]
-                    shares = shares + int(purchase['shares'])
-                    price = purchase["price"]
-                    sum = sum + price
-                    i += 1
-                cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
-                cash = int(cash[0]["cash"])
-                sum = sum + cash
-                print(shares)
+        
+
+        # user = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
+        # purchases = db.execute("SELECT * FROM purchases WHERE user_id = ?", session["user_id"])
+        # print(purchases)
+        # i = 1
+        # sum = 0
+        # for purchase in purchases:
+        #     if i < len(purchases):
+        #         if purchase["symbol"] == purchases[i]["symbol"] and purchase["type"] == "BUY":
+        #             shares = 0
+        #             symbol = purchase["symbol"]
+        #             shares = shares + int(purchase['shares'])
+        #             price = purchase["price"]
+        #             sum = sum + price
+        #             i += 1
+        #         cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
+        #         cash = int(cash[0]["cash"])
+        #         sum = sum + cash
+        #         print(shares)
 
     return render_template("index.html", purchases=purchases, shares=shares, price=price, cash=cash, sum=sum)
 

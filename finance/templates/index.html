@@ -10,11 +10,18 @@
     <table>
         <thead>
             <tr>
+                <!-- stocks the user owns -->
                 <th>Symbol</th>
+                <!-- the numbers of shares owned -->
                 <th>Shares</th>
+                <!-- the current price of each stock -->
                 <th>Price</th>
+                <!-- the total value of each holding (i.e., shares times price) -->
+                <th>Total holdings</th>
+                <!-- display the user’s current cash balance -->
                 <th>Cash</th>
-                <th>Total value</th>
+                <!-- display a grand total (i.e., stocks’ total value plus cash). -->
+                <th>Total assets</th>
             </tr>
         </thead>
         <tbody>
@@ -23,7 +30,6 @@
                 <td>{{ purchase["symbol"] }}</td>
                 <td>{{ shares }}</td>
                 <td>{{ purchase['price'] }}</td>
-        {% endfor %}
                 <td>{{ cash }}</td>
                 <td>{{ sum }}</td>
             </tr>
