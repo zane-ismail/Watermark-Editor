@@ -276,8 +276,12 @@ def sell():
         total_shares = 0
         for row in rows:
             user_stocks = (stocks[0]['symbol'])
-            total_shares += (amount[i]['shares'])
-            i += 1
+            try:
+                total_shares += (amount[i]['shares'])
+                i += 1
+            except IndexError:
+                total_shares = 0
+                i += 1
         # Render an apology if the input is not a positive integer or if the user does not own that many shares of the stock.
         if total_shares < shares:
             return apology("Not enough stocks")
