@@ -262,13 +262,15 @@ def sell():
         amount = db.execute("SELECT shares FROM purchases WHERE symbol = ?", stocks[0]['symbol'])
         rows = db.execute("SELECT * FROM purchases WHERE user_id = ?", session["user_id"])
         i = 0
+
+        total_shares = 0
         for row in rows:
-            total_shares = 0
-            if row("type") == "BUY":
-                total_shares =+ row("shares")
-            elif row("type") == "SELL":
-                total_shares =- row("shares")
-            print(total_shares)
+            print(row)
+            if row["type"] == "BUY":
+                total_shares =  total_shares + row["shares"]
+            elif row["type"] == "SELL":
+                total_shares = total_shares - row["shares"]
+        print(total_shares)
             # total_shares.update({row[symbol]: shares_amount})
             # try:
             #     total_shares += (amount[i]['shares'])
