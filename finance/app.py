@@ -58,7 +58,7 @@ def index():
                         break
                     else:
                         symbols.append(purchase['symbol'])
-            
+            # tally how many shares a user has for each stock
             for symbol in symbols:
                 shares_amount = 0
                 i = 0
@@ -71,17 +71,20 @@ def index():
                         else:
                             shares_amount = shares_amount - share['shares']
                         i =+ 1
-                stocks.append(shares_amount)
-                stocks_dict.update({symbol: shares_amount})
+                if shares_amount < 1:
+                    symbols.remove(symbol)
+                    pass
+                else:
+                    stocks.append(shares_amount)
+                    stocks_dict.update({symbol: shares_amount})
 
-                sum = 0
-                for symbol in stocks_dict:
-                    price = lookup(symbol)
-                    prices.append(price["price"])
-                for price in prices:
-                    print(stocks_dict[symbol])
-                    sum = sum + price * stocks_dict[symbol]
-                total = sum + cash
+                    sum = 0
+                    for symbol in stocks_dict:
+                        price = lookup(symbol)
+                        prices.append(price["price"])
+                    for price in prices:
+                        sum = sum + price * stocks_dict[symbol]
+                    total = sum + cash
 
         except:
             return render_template("index.html")
