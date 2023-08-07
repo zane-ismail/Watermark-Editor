@@ -26,10 +26,8 @@
         <tbody>
             <tr>
                 {% for symbol in stocks_dict %}
-                    <td>{{ symbol }}
-                    {% for stock in stocks_dict["{{ symbol }}"] %}
-                        {{ stock }}</td>
-                    {% endfor %}
+                    <td>{{ symbol }}</td>
+                    <td>{{ stocks_dict["{{ symbol }}"] }}</td>
                 {% endfor %}
             </tr>
         </tbody>
