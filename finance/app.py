@@ -73,9 +73,11 @@ def index():
                         else:
                             shares_amount = shares_amount - share['shares']
                         i =+ 1
+                # Don't display stocks the user previously owned
                 if shares_amount < 1:
                     symbols.remove(symbol)
                     pass
+                # Add number of stocks owned to dictionary
                 else:
                     stocks.append(shares_amount)
                     stocks_dict.update({symbol: shares_amount})
@@ -84,8 +86,8 @@ def index():
             for symbol in stocks_dict:
                 price = lookup(symbol)
                 prices.append(price["price"])
-            for price in prices:
-                sum = sum + price * stocks_dict[symbol]
+                sum = sum + price["price"] * stocks_dict[symbol]
+
             total = sum + cash
         # if the user has no assets
         except:
