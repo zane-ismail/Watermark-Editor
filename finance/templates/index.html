@@ -25,7 +25,12 @@
         </thead>
         <tbody>
             <tr>
-                
+                {% for symbol in stocks_dict %}
+                    <td>{{ symbol }}</td>
+                    {% for stock in stocks_dict('{{ stock }}') %}
+                        <td>{{ stock }}</td>
+                    {% endfor %}
+                {% endfor %}
             </tr>
         </tbody>
     </table>

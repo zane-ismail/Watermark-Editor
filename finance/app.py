@@ -56,21 +56,22 @@ def index():
         for symbol in symbols:
             shares_amount = 0
             i = 0
-            j = 0
             all_shares = db.execute("SELECT * FROM purchases WHERE user_id = ? AND symbol = ?", session["user_id"], symbol)
             shares = db.execute("SELECT shares FROM purchases WHERE user_id = ? AND symbol = ?", session["user_id"], symbol)
             for share in all_shares:
                 if i < len(all_shares):
                     print(symbol)
                     print(f"1: {share['shares']}")
-                    shares_amount = shares_amount + share['shares']
-                    print(f"2: {shares_amount}")
+                    if share['type'] == "BUY":
+                        shares_amount = shares_amount + share['shares']
+                        print(f"2: {shares_amount}")
+                    else:
+                        shares_amount = shares_amount - share['shares']
                     i =+ 1
             stocks.append(shares_amount)
-            stock_dict={symbol: }
-            j =+ 1
+            stocks_dict.update({symbol: shares_amount})
             print(stocks)
-            print(stock_dict)
+            print(stocks_dict)
 
 
 
@@ -91,7 +92,7 @@ def index():
         #         sum = sum + cash
         #         print(shares)
 
-    return render_template("index.html")
+    return render_template("index.html", stocks_dict=stocks_dict)
 
 
 @app.route("/buy", methods=["GET", "POST"])
