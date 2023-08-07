@@ -27,7 +27,7 @@
             <tr>
                 {% for symbol in stocks_dict %}
                     <td>{{ symbol }}</td>
-                    {% for stock in stocks_dict('{{ stock }}') %}
+                    {% for stock in stocks_dict["{ symbol }"] %}
                         <td>{{ stock }}</td>
                     {% endfor %}
                 {% endfor %}

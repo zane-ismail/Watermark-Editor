@@ -71,7 +71,7 @@ def index():
             stocks.append(shares_amount)
             stocks_dict.update({symbol: shares_amount})
             print(stocks)
-            print(stocks_dict)
+            print(stocks_dict["TSLA"])
 
 
 
