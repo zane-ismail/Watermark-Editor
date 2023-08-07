@@ -57,7 +57,6 @@ def index():
                     break
                 else:
                     symbols.append(purchase['symbol'])
-        print(symbols)
         for symbol in symbols:
             shares_amount = 0
             i = 0
@@ -65,8 +64,6 @@ def index():
             shares = db.execute("SELECT shares FROM purchases WHERE user_id = ? AND symbol = ?", session["user_id"], symbol)
             for share in all_shares:
                 if i < len(all_shares):
-                    print(symbol)
-                    print(f"1: {share['shares']}")
                     if share['type'] == "BUY":
                         shares_amount = shares_amount + share['shares']
                     else:
@@ -74,19 +71,13 @@ def index():
                     i =+ 1
             stocks.append(shares_amount)
             stocks_dict.update({symbol: shares_amount})
-            print(stocks)
-            print(stocks_dict["TSLA"])
-
 
         sum = 0
         for symbol in stocks_dict:
             price = lookup(symbol)
             prices.append(price["price"])
-            print(prices)
         for price in prices:
             sum = sum + price * stocks_dict[symbol]
-            print(price)
-            print(sum)
         total = sum + cash
 
     return render_template("index.html", stocks_dict=stocks_dict, cash=cash, prices=prices, sum=sum, total=total)
@@ -111,7 +102,6 @@ def buy():
         else:
             # Call lookup to look up a stock’s current price
             price = lookup(symbol)
-            print(price)
             price = price['price']
             cost = (shares * price)
             transaction = "BUY"
@@ -146,7 +136,6 @@ def history():
     # Display an HTML table summarizing all of a user’s transactions ever, listing row by row each and every buy and every sell.
     transactions = db.execute("SELECT * FROM purchases WHERE user_id = ?", session["user_id"])
     cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
-    print(transactions)
     # For each row, make clear whether a stock was bought or sold and include the stock’s symbol, the (purchase or sale) price, the number of shares bought or sold, and the date and time at which the transaction occurred.
     # You might need to alter the table you created for buy or supplement it with an additional table. Try to minimize redundancies.
 
@@ -274,6 +263,7 @@ def sell():
         i = 0
         total_shares = 0
         for row in rows:
+            print(row)
             user_stocks = (stocks[0]['symbol'])
             try:
                 total_shares += (amount[i]['shares'])
