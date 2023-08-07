@@ -39,24 +39,19 @@ def index():
     if request.method == "GET":
         i = 1
         symbols = []
-        print(symbols)
         user = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
         purchases = db.execute("SELECT * FROM purchases WHERE user_id = ?", session["user_id"])
         for purchase in purchases:
-            print(purchase)
-            print(purchase['symbol'])
             while i > 0:
                 symbols.append(purchase['symbol'])
                 i =- 1
-                print(f"SYMBOL 1: {symbols}")
             for symbol in symbols:
                 if purchase['symbol'] == symbol:
-                    print(f"SYMBOL 2: {symbols}")
-                    pass
+                    break
                 else:
                     symbols.append(purchase['symbol'])
-                    print(f"SYMBOL 3: {symbols}")
         print(symbols)
+        for symbol in symbols:
 
 
 
