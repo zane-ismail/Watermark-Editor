@@ -287,12 +287,11 @@ def sell():
                     total_shares =  total_shares + row["shares"]
                 elif row["type"] == "SELL":
                     total_shares = total_shares - row["shares"]
-                # Render an apology if the input is not a positive integer or if the user does not own that many shares of the stock.
-                if total_shares < shares:
-                    return apology("Not enough stocks")
-
-        if not symbol:
-            return apology("Please enter a symbol")
+                elif not symbol:
+                    return apology("Please enter a symbol")
+        # Render an apology if the input is not a positive integer or if the user does not own that many shares of the stock.
+        if total_shares < shares:
+            return apology("Not enough stocks")
         else:
             db.execute("INSERT INTO purchases VALUES (?, ?, ?, ?, ?)", session['user_id'], symbol, shares, price, transaction)
             # Update cash in database to reflect sale
