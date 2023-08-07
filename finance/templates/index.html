@@ -25,15 +25,17 @@
         </thead>
         <tbody>
             <tr>
-                {% for symbol in stocks_dict %}
-                <tr>
-                    <td>{{ symbol }}</td>
-                    <td>{{ stocks_dict[symbol] }}</td>
-                    <td>Price</td>
-                    <td>Total Holdings</td>
-                    <td>{{ cash }}</td>
-                    <td>Total Assets</td>
-                {% endfor %}
+                {% set i = 0 %}
+                    {% for symbol in stocks_dict %}
+                    <tr>
+                        <td>{{ symbol }}</td>
+                        <td>{{ stocks_dict[symbol] }}</td>
+                        <td>{{ prices[i] }}</td>
+                        <td>Total Holdings</td>
+                        <td>{{ cash }}</td>
+                        <td>Total Assets</td>
+                        {% set i =+1 %}
+                    {% endfor %}
             </tr>
         </tbody>
     </table>
