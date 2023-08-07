@@ -48,11 +48,14 @@ def index():
             while i > 0:
                 symbols.append(purchase['symbol'])
                 i =- 1
+                print(f"SYMBOL 1: {symbols}")
             for symbol in symbols:
                 if purchase['symbol'] == symbol:
+                    print(f"SYMBOL 2: {symbols}")
                     pass
                 else:
                     symbols.append(purchase['symbol'])
+                    print(f"SYMBOL 3: {symbols}")
         print(symbols)
 
 
