@@ -77,19 +77,18 @@ def index():
             print(stocks_dict["TSLA"])
 
 
-
-        sum = 0
-        for purchase in purchases:
-            if i < len(purchases):
-                if purchase["symbol"] == purchases[i]["symbol"] and purchase["type"] == "BUY":
-                    shares = 0
-                    symbol = purchase["symbol"]
-                    shares = shares + int(purchase['shares'])
-                    price = purchase["price"]
-                    sum = sum + price
-                    i += 1
-                sum = sum + cash
-                print(shares)
+            sum = 0
+            for symbol in stocks_dict:
+                if i < len(purchases):
+                    if purchase["symbol"] == purchases[i]["symbol"] and purchase["type"] == "BUY":
+                        shares = 0
+                        symbol = purchase["symbol"]
+                        shares = shares + int(purchase['shares'])
+                        price = purchase["price"]
+                        sum = sum + price
+                        i += 1
+                    sum = sum + cash
+                    print(shares)
 
     return render_template("index.html", stocks_dict=stocks_dict, cash=cash)
 
