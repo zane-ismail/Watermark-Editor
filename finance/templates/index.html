@@ -26,8 +26,13 @@
         <tbody>
             <tr>
                 {% for symbol in stocks_dict %}
+                <tr>
                     <td>{{ symbol }}</td>
-                    <td>{{ stocks_dict["{{ symbol }}"] }}</td>
+                    <td>{{ stocks_dict[symbol] }}</td>
+                    <td>Price</td>
+                    <td>Total Holdings</td>
+                    <td>{{ cash }}</td>
+                    <td>Total Assets</td>
                 {% endfor %}
             </tr>
         </tbody>
