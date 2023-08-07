@@ -35,9 +35,9 @@
                 <th>Total assets</th>
             </tr>
                 <tr>
-                    <td>{{ sum }}</td>
-                    <td>{{ cash }}</td>
-                    <td>{{ total }}</td>
+                    <td>{{ sum | usd }}</td>
+                    <td>{{ cash | usd }}</td>
+                    <td>{{ total | usd }}</td>
                 </tr>
         </tbody>
     </table>

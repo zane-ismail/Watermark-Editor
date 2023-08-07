@@ -23,7 +23,7 @@
                 <td>{{ transaction['price'] }}</td>
                 <td>{{ transaction['shares'] }}</td>
                 <td>{{ transaction['type'] }}</td>
-                <td>{{ cash }}</td>
+                <td>{{ cash | usd }}</td>
             </tr>
         {% endfor %}
         </tbody>
