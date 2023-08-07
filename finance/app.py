@@ -77,6 +77,7 @@ def index():
             price = lookup(symbol)
             prices.append(price["price"])
         for price in prices:
+            print(stocks_dict[symbol])
             sum = sum + price * stocks_dict[symbol]
         total = sum + cash
 
