@@ -83,21 +83,12 @@ def index():
         for symbol in stocks_dict:
             price = lookup(symbol)
             prices.append(price["price"])
-            for price in prices:
-                sum = sum + price
-                print(price)
-                print(sum)
+            print(prices)
+        for price in prices:
+            sum = sum + price * 
+            print(price)
+            print(sum)
         total = sum + cash
-                # if i < len(purchases):
-                #     if purchase["symbol"] == purchases[i]["symbol"] and purchase["type"] == "BUY":
-                #         shares = 0
-                #         symbol = purchase["symbol"]
-                #         shares = shares + int(purchase['shares'])
-                #         price = purchase["price"]
-                #         sum = sum + price
-                #         i += 1
-                #     sum = sum + cash
-                #     print(shares)
 
     return render_template("index.html", stocks_dict=stocks_dict, cash=cash, prices=prices, sum=sum, total=total)
 
