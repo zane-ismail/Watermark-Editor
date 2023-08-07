@@ -56,10 +56,11 @@ def index():
         i = 0
         for symbol in symbols:
             all_shares = db.execute("SELECT * FROM purchases WHERE user_id = ? AND symbol = ?", session["user_id"], symbol)
-            print(all_shares)
+            print(f"1: {all_shares}")
+            print(f"2: {all_shares[i]}")
             shares = db.execute("SELECT shares FROM purchases WHERE user_id = ? AND symbol = ?", session["user_id"], symbol)
-            print(shares)
-            for share in all_shares[i]['shares']:
+            print(f"3: {shares}")
+            for share in all_shares[i]:
                 shares_amount = shares_amount + share['shares']
                 i =+ 1
             stocks.append(shares_amount)
