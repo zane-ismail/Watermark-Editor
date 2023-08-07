@@ -251,6 +251,7 @@ def sell():
     transaction = "SELL"
     # Submit the user’s input via POST to /sell.
     if request.method == "POST":
+        total_shares = {}
         price = lookup(symbol)
         price = price['price']
         shares = int(shares)
@@ -264,7 +265,7 @@ def sell():
         total_shares = 0
         for row in rows:
             print(row)
-            user_stocks = (stocks[0]['symbol'])
+            symbol[i] = (stocks[i]['symbol'])
             try:
                 total_shares += (amount[i]['shares'])
                 i += 1
