@@ -38,6 +38,7 @@ def index():
     """Show portfolio of stocks"""
     if request.method == "GET":
         i = 1
+        stocks_dict = {"Symbol":,  }
         symbols = []
         stocks = []
         user = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
