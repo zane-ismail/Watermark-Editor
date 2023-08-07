@@ -41,7 +41,8 @@ def index():
         stocks_dict = {}
         symbols = []
         stocks = []
-        prices = []
+        prices = [0]
+        total = []
 
         user = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
         cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
@@ -82,7 +83,9 @@ def index():
         for symbol in stocks_dict:
             price = lookup(symbol)
             prices.append(price["price"])
-            print(prices)
+            for price in prices:
+                sum = sum + price
+        total = sum + cash
                 # if i < len(purchases):
                 #     if purchase["symbol"] == purchases[i]["symbol"] and purchase["type"] == "BUY":
                 #         shares = 0
@@ -94,7 +97,7 @@ def index():
                 #     sum = sum + cash
                 #     print(shares)
 
-    return render_template("index.html", stocks_dict=stocks_dict, cash=cash, prices=prices)
+    return render_template("index.html", stocks_dict=stocks_dict, cash=cash, prices=prices, sum=sum, total=total)
 
 
 @app.route("/buy", methods=["GET", "POST"])

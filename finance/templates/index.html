@@ -15,6 +15,18 @@
                 <th>Shares</th>
                 <!-- the current price of each stock -->
                 <th>Price</th>
+            </tr>
+
+        </thead>
+        <tbody>
+            {% for symbol in stocks_dict %}
+                <tr>
+                    <td>{{ symbol }}</td>
+                    <td>{{ stocks_dict[symbol] }}</td>
+                    <td>{{ prices[loop.index] }}</td>
+                </tr>
+            {% endfor %}
+            <tr>
                 <!-- the total value of each holding (i.e., shares times price) -->
                 <th>Total holdings</th>
                 <!-- display the user’s current cash balance -->
@@ -22,21 +34,11 @@
                 <!-- display a grand total (i.e., stocks’ total value plus cash). -->
                 <th>Total assets</th>
             </tr>
-        </thead>
-        <tbody>
-            <tr>
-                {% set i = 0 %}
-                    {% for symbol in stocks_dict %}
-                    <tr>
-                        <td>{{ symbol }}</td>
-                        <td>{{ stocks_dict[symbol] }}</td>
-                        <td>{{ prices[i] }}</td>
-                        <td>Total Holdings</td>
-                        <td>{{ cash }}</td>
-                        <td>Total Assets</td>
-                        {% set i = i + 1 %}
-                    {% endfor %}
-            </tr>
+                <tr>
+                    <td>{{ sum }}</td>
+                    <td>{{ cash }}</td>
+                    <td>{{ total }}</td>
+                </tr>
         </tbody>
     </table>
 
