@@ -52,10 +52,13 @@ def index():
                 else:
                     symbols.append(purchase['symbol'])
         print(symbols)
+        shares_amount = 0
         for symbol in symbols:
-            shares = ("SELECT shares FROM purchases WHERE )
-
-
+            shares = db.execute("SELECT shares FROM purchases WHERE user_id = ? AND symbol = ?", session["user_id"], symbol)
+            for share in shares:
+                print(share[0])
+                shares_amount = shares_amount + share[0]
+                print(shares)
 
 
         # print(purchases)
