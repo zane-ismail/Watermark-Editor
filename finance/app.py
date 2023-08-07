@@ -39,8 +39,10 @@ def index():
     if request.method == "GET":
         user = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
         purchases = db.execute("SELECT * FROM purchases WHERE user_id = ?", session["user_id"])
+        for p in purchases:
+            print(p)
 
-        
+
         # print(purchases)
         # i = 1
         # sum = 0
@@ -58,7 +60,7 @@ def index():
         #         sum = sum + cash
         #         print(shares)
 
-    return render_template("index.html", purchases=purchases, shares=shares, price=price, cash=cash, sum=sum)
+    return render_template("index.html")
 
 
 @app.route("/buy", methods=["GET", "POST"])
