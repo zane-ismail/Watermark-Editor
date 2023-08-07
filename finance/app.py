@@ -39,6 +39,7 @@ def index():
     if request.method == "GET":
         i = 1
         symbols = []
+        stocks = []
         user = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
         purchases = db.execute("SELECT * FROM purchases WHERE user_id = ?", session["user_id"])
         for purchase in purchases:
@@ -52,6 +53,8 @@ def index():
                     symbols.append(purchase['symbol'])
         print(symbols)
         for symbol in symbols:
+            shares = ("SELECT shares FROM purchases WHERE )
+
 
 
 
