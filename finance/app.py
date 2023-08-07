@@ -45,9 +45,9 @@ def index():
             print(purchase['symbol'])
             for symbol in symbols:
                 if purchase['symbol'] == symbol:
-                    pass
+                    ...
                 else:
-                    symbols.append[purchase['symbol']]
+                    symbols.append(purchase['symbol']]
         print(symbols)
 
 
