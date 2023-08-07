@@ -286,7 +286,6 @@ def sell():
                     total_shares =  total_shares + row["shares"]
                 elif row["type"] == "SELL":
                     total_shares = total_shares - row["shares"]
-                print(total_shares)
                 # Render an apology if the input is not a positive integer or if the user does not own that many shares of the stock.
                 if total_shares < shares:
                     return apology("Not enough stocks")
