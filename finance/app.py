@@ -50,9 +50,11 @@ def index():
         try:
             purchases = db.execute("SELECT * FROM purchases WHERE user_id = ?", session["user_id"])
             for purchase in purchases:
+                # add the first symbol
                 while i > 0:
                     symbols.append(purchase['symbol'])
                     i =- 1
+                # add only unique symbols to list
                 for symbol in symbols:
                     if purchase['symbol'] == symbol:
                         break
@@ -85,7 +87,7 @@ def index():
                     for price in prices:
                         sum = sum + price * stocks_dict[symbol]
                     total = sum + cash
-
+        # if the user has no assets
         except:
             return render_template("index.html")
 
