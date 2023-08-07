@@ -55,7 +55,6 @@ def index():
                 cash = int(cash[0]["cash"])
                 sum = sum + cash
                 print(shares)
-                redirect("index.html", purchases=purchases, shares=shares, price=price, cash=cash, sum=sum)
 
     return render_template("index.html", purchases=purchases, shares=shares, price=price, cash=cash, sum=sum)
 
