@@ -37,16 +37,22 @@ def after_request(response):
 def index():
     """Show portfolio of stocks"""
     if request.method == "GET":
+        i = 1
         symbols = []
+        print(symbols)
         user = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
         purchases = db.execute("SELECT * FROM purchases WHERE user_id = ?", session["user_id"])
-        for symbol in symbols:
-            for purchase in purchases:
-                print(purchase)
+        for purchase in purchases:
+            print(purchase)
+            print(purchase['symbol'])
+            while i > 0:
+                symbols.append(purchase['symbol'])
+                i =- 1
+            for symbol in symbols:
                 if purchase['symbol'] == symbol:
-                    continue
+                    pass
                 else:
-                    symbols.append(purchase)
+                    symbols.append(purchase['symbol'])
         print(symbols)
 
 
