@@ -286,23 +286,19 @@ def sell():
                 elif row["type"] == "SELL":
                     total_shares = total_shares - row["shares"]
                 print(total_shares)
-            else:
-                pass
+                # Render an apology if the input is not a positive integer or if the user does not own that many shares of the stock.
+                if total_shares < shares:
+                    return apology("Not enough stocks")
 
-        # Render an apology if the input is not a positive integer or if the user does not own that many shares of the stock.
-        if total_shares < shares:
-            return apology("Not enough stocks")
-        for stock in stocks:
-            if symbol == stock:
-                db.execute("INSERT INTO purchases VALUES (?, ?, ?, ?, ?)", session['user_id'], symbol, shares, price, transaction)
-                # Update cash in database to reflect sale
-                db.execute("UPDATE users SET cash = ? WHERE id = ?", sum, session["user_id"])
-                return redirect("/")
-                # Render an apology if the user fails to select a stock
-            elif not symbol:
-                return apology("Please enter a symbol")
-            # Or if (somehow, once submitted) the user does not own any shares of that stock.
-            else:
-                return apology("Stock not owned")
+        if not symbol:
+            return apology("Please enter a symbol")
+        else:
+            db.execute("INSERT INTO purchases VALUES (?, ?, ?, ?, ?)", session['user_id'], symbol, shares, price, transaction)
+            # Update cash in database to reflect sale
+            db.execute("UPDATE users SET cash = ? WHERE id = ?", sum, session["user_id"])
+            return redirect("/")
+            # Render an apology if the user fails to select a stock
+        # Or if (somehow, once submitted) the user does not own any shares of that stock.
+
     # Upon completion, redirect the user to the home page.
     return render_template("sell.html")
