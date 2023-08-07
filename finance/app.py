@@ -293,7 +293,6 @@ def sell():
         if total_shares < shares:
             return apology("Not enough stocks")
         for stock in stocks:
-            print(stock)
             if symbol == stock:
                 db.execute("INSERT INTO purchases VALUES (?, ?, ?, ?, ?)", session['user_id'], symbol, shares, price, transaction)
                 # Update cash in database to reflect sale
