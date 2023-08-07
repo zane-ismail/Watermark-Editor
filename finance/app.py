@@ -251,7 +251,7 @@ def sell():
     transaction = "SELL"
     # Submit the user’s input via POST to /sell.
     if request.method == "POST":
-        total_shares = {}
+        total_shares_dict = {}
         price = lookup(symbol)
         price = price['price']
         shares = int(shares)
@@ -262,16 +262,20 @@ def sell():
         amount = db.execute("SELECT shares FROM purchases WHERE symbol = ?", stocks[0]['symbol'])
         rows = db.execute("SELECT * FROM purchases WHERE user_id = ?", session["user_id"])
         i = 0
-        total_shares = 0
         for row in rows:
-            print(row)
-            symbol[i] = (stocks[i]['symbol'])
-            try:
-                total_shares += (amount[i]['shares'])
-                i += 1
-            except IndexError:
-                total_shares = 0
-                i += 1
+            total_shares = 0
+            if row("type") == "BUY":
+                total_shares =+ row("shares")
+            elif row("type") == "SELL":
+                total_shares =- row("shares")
+            print(total_shares)
+            # total_shares.update({row[symbol]: shares_amount})
+            # try:
+            #     total_shares += (amount[i]['shares'])
+            #     i += 1
+            # except IndexError:
+            #     total_shares = 0
+            #     i += 1
         # Render an apology if the input is not a positive integer or if the user does not own that many shares of the stock.
         if total_shares < shares:
             return apology("Not enough stocks")
