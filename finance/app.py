@@ -37,10 +37,10 @@ def after_request(response):
 def index():
     """Show portfolio of stocks"""
     if request.method == "GET":
-        
+        user = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
+        purchases = db.execute("SELECT * FROM purchases WHERE user_id = ?", session["user_id"])
 
-        # user = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
-        # purchases = db.execute("SELECT * FROM purchases WHERE user_id = ?", session["user_id"])
+        
         # print(purchases)
         # i = 1
         # sum = 0
