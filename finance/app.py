@@ -85,7 +85,7 @@ def index():
             prices.append(price["price"])
             print(prices)
         for price in prices:
-            sum = sum + price * 
+            sum = sum + price * stocks_dict[symbol]
             print(price)
             print(sum)
         total = sum + cash
