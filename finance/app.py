@@ -257,10 +257,10 @@ def register():
                 return apology("Passwords don't match", 400)
             else:
                 db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, hash)
-                return redirect("/")
+                return render_template("index.html", stocks_dict=[], cash=10000, sum=0, prices=0, total=10000)
         except:
             db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, hash)
-            return redirect("/")
+            return render_template("index.html", stocks_dict=[], cash=10000, sum=0, prices=0, total=10000)
 
 
     return render_template("register.html")
