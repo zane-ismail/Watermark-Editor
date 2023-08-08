@@ -42,7 +42,6 @@ def index():
         symbols = []
         stocks = []
         prices = [0]
-        total = []
         user = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
         cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
         try:
@@ -87,7 +86,8 @@ def index():
                 price = lookup(symbol)
                 prices.append(price["price"])
                 sum = sum + price["price"] * stocks_dict[symbol]
-
+            print(sum)
+            print(cash)
             total = sum + cash
         # if the user has no assets
         except:

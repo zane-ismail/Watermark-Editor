@@ -14,7 +14,7 @@
                 <!-- the numbers of shares owned -->
                 <th>Shares</th>
                 <!-- the current price of each stock -->
-                <th>Price</th>
+                <th>Price </th>
             </tr>
 
         </thead>
@@ -23,7 +23,7 @@
                 <tr>
                     <td>{{ symbol }}</td>
                     <td>{{ stocks_dict[symbol] }}</td>
-                    <td>{{ prices[loop.index] }}</td>
+                    <td>{{ prices[loop.index] | usd}}</td>
                 </tr>
             {% endfor %}
             <tr>
@@ -35,7 +35,7 @@
                 <th>Total assets</th>
             </tr>
                 <tr>
-                    <td>{{ sum }}</td>
+                    <td>{{ sum | usd}}</td>
                     <td>{{ cash | usd }}</td>
                     <td>{{ total | usd }}</td>
                 </tr>
