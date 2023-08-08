@@ -45,9 +45,9 @@ def index():
         total = []
         user = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
         cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
-        cash = int(cash[0]["cash"])
-        # add all user's stock symbols to a list
         try:
+            cash = int(cash[0]["cash"])
+            # add all user's stock symbols to a list
             purchases = db.execute("SELECT * FROM purchases WHERE user_id = ?", session["user_id"])
             for purchase in purchases:
                 # add the first symbol
@@ -91,7 +91,7 @@ def index():
             total = sum + cash
         # if the user has no assets
         except:
-            return render_template("index.html")
+            return render_template("login.html")
 
 
     return render_template("index.html", stocks_dict=stocks_dict, cash=cash, sum=sum, prices=prices, total=total)
