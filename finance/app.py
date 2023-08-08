@@ -254,7 +254,7 @@ def register():
                 return apology("Passwords don't match", 400)
             elif password != confirmation:
                 return apology("Passwords don't match", 400)
-            else:
+            elif username != user:
                 db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, hash)
                 # Query database for username
                 rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
