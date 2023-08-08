@@ -111,8 +111,8 @@ def buy():
         if not symbol:
             return apology("Missing symbol")
         # Render an apology if the input is not a positive integer.
-        elif shares <= 0:
-            return apology("Please enter a positive amount of shares")
+        if not shares:
+            return apology("Missing shares")
         else:
             # Call lookup to look up a stock’s current price
             try:
