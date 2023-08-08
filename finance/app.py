@@ -287,6 +287,7 @@ def sell():
             cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
             cash = cash[0]['cash']
             sum = cash + price
+            print(sum)
             stocks = db.execute("SELECT symbol FROM purchases WHERE user_id = ?", session['user_id'])
             amount = db.execute("SELECT shares FROM purchases WHERE symbol = ?", stocks[0]['symbol'])
             rows = db.execute("SELECT * FROM purchases WHERE user_id = ?", session["user_id"])
