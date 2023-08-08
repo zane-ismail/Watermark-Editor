@@ -233,17 +233,14 @@ def register():
     """Register user"""
     # Require that a user input a username
     username = request.form.get("username")
-
     # Require that a user input a password, and then that same password again
     password = request.form.get("password")
     confirmation = request.form.get("confirmation")
-
     if request.method == "POST":
         # Store a hash of the user’s password
         hash = generate_password_hash(password)
         # INSERT the new user into users
         user = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
-
         try:
             existing_user = user[0]['username']
             # Render an apology if username already exists
