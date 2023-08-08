@@ -91,7 +91,7 @@ def index():
             total = sum + cash
         # if the user has no assets
         except:
-            return render_template("login.html")
+            return render_template("index.html", stocks_dict=[], cash=10000, sum=0, prices=0, total=0)
 
 
     return render_template("index.html", stocks_dict=stocks_dict, cash=cash, sum=sum, prices=prices, total=total)
