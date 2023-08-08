@@ -219,8 +219,11 @@ def quote():
     symbol = request.form.get("symbol")
     # Submit the user’s input via POST to /quote.
     if request.method == "POST":
-        symbol = lookup(symbol)
-        return render_template("quoted.html", symbol=symbol)
+        price = lookup(symbol)
+        # Render an apology if the input is blank or the symbol does not exist (as per the return value of lookup).
+        if not symbol:
+            return apology("Missing symbol")
+        return render_template("quoted.html", price=price)
     #  In response to a POST, quote can render that second template, embedding within it one or more values from lookup.
     return render_template("quote.html")
 
