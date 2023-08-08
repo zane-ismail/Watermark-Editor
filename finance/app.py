@@ -241,21 +241,19 @@ def register():
         hash = generate_password_hash(password)
         # INSERT the new user into users
         user = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
-        try:
-            existing_user = user[0]['username']
-            # Render an apology if username already exists
-            if existing_user == username:
-                return apology("Username already taken", 403)
-            # Render an apology if either input is blank or the passwords do not match.
-            elif not request.form.get("username"):
-                return apology("Missing username", 400)
-            elif not request.form.get("password"):
-                return apology("Missing password", 400)
-            elif not request.form.get("confirmation"):
-                return apology("Passwords don't match", 400)
-            elif password != confirmation:
-                return apology("Passwords don't match", 400)
-        except:
+        # Render an apology if username already exists
+        if existing_user == username:
+            return apology("Username already taken", 403)
+        # Render an apology if either input is blank or the passwords do not match.
+        elif not request.form.get("username"):
+            return apology("Missing username", 400)
+        elif not request.form.get("password"):
+            return apology("Missing password", 400)
+        elif not request.form.get("confirmation"):
+            return apology("Passwords don't match", 400)
+        elif password != confirmation:
+            return apology("Passwords don't match", 400)
+        else:
             db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, hash)
             # Query database for username
             rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
