@@ -254,7 +254,7 @@ def register():
             elif password != confirmation:
                 return apology("Passwords do not match", 403)
             else:
-                return render_template("index.html", stocks_dict=[], cash=0, sum=0, prices=0, total=0)
+                return render_template("index.html", stocks_dict=[], cash=10000, sum=0, prices=0, total=0)
 
     return render_template("register.html")
 
