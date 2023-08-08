@@ -115,8 +115,11 @@ def buy():
             return apology("Please enter a positive amount of shares")
         else:
             # Call lookup to look up a stock’s current price
-            price = lookup(symbol)
-            price = price['price']
+            try:
+                price = lookup(symbol)
+                price = price['price']
+            except:
+                return apology("Stock does not exist")
             cost = (shares * price)
             transaction = "BUY"
             # SELECT how much cash the user currently has in users
