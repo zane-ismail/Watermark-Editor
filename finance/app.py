@@ -255,10 +255,13 @@ def register():
                 return apology("Passwords don't match", 400)
             elif password != confirmation:
                 return apology("Passwords don't match", 400)
-
+            else:
+                db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, hash)
+                return redirect("/")
         except:
             db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, hash)
             return redirect("/")
+
 
     return render_template("register.html")
 
