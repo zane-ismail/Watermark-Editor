@@ -238,9 +238,9 @@ def register():
     confirmation = request.form.get("confirmation")
     if request.method == "POST":
         # Check existing usernames
-        users = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
+        users = db.execute("SELECT * FROM users")
         for user in users:
-            print(user)
+            print("USER: {user}")
             if username == user:
                 return apology("Username already taken", 403)
         # Render an apology if either input is blank or the passwords do not match.
