@@ -240,27 +240,28 @@ def register():
         # Store a hash of the user’s password
         hash = generate_password_hash(password)
         # INSERT the new user into users
-        user = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
+        users = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
         # Render an apology if username already exists
-        if existing_user == username:
-            return apology("Username already taken", 403)
-        # Render an apology if either input is blank or the passwords do not match.
-        elif not request.form.get("username"):
-            return apology("Missing username", 400)
-        elif not request.form.get("password"):
-            return apology("Missing password", 400)
-        elif not request.form.get("confirmation"):
-            return apology("Passwords don't match", 400)
-        elif password != confirmation:
-            return apology("Passwords don't match", 400)
-        else:
-            db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, hash)
-            # Query database for username
-            rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
-            session["user_id"] = rows[0]["id"]
-            db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
-            # Redirect user to home page
-            return redirect("/")
+        for user in users:
+            if username == user:
+                return apology("Username already taken", 403)
+            # Render an apology if either input is blank or the passwords do not match.
+            elif not request.form.get("username"):
+                return apology("Missing username", 400)
+            elif not request.form.get("password"):
+                return apology("Missing password", 400)
+            elif not request.form.get("confirmation"):
+                return apology("Passwords don't match", 400)
+            elif password != confirmation:
+                return apology("Passwords don't match", 400)
+            else:
+                db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, hash)
+                # Query database for username
+                rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
+                session["user_id"] = rows[0]["id"]
+                db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
+                # Redirect user to home page
+                return redirect("/")
 
     return render_template("register.html")
 
