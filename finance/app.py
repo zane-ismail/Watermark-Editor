@@ -250,7 +250,7 @@ def register():
             return apology("Passwords don't match", 400)
         elif password != confirmation:
             return apology("Passwords don't match", 400)
-        elif username != user:
+        else:
             # Store a hash of the user’s password
             hash = generate_password_hash(password)
             # INSERT the new user into users
