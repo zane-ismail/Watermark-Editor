@@ -111,7 +111,7 @@ def buy():
         if not symbol:
             return apology("Missing symbol")
         # Render an apology if the input is not a positive integer.
-        if not shares:
+        elif not shares:
             return apology("Missing shares")
         else:
             # Call lookup to look up a stock’s current price
@@ -265,45 +265,52 @@ def register():
 @app.route("/sell", methods=["GET", "POST"])
 @login_required
 def sell():
-    """Sell shares of stock"""
-    # Require that a user input a stock’s symbol, implemented as a select menu whose name is symbol.
-    symbol = request.form.get("symbol")
-    # Require that a user input a number of shares, implemented as a text field whose name is shares.
-    shares = request.form.get("shares")
-    transaction = "SELL"
     # Submit the user’s input via POST to /sell.
     if request.method == "POST":
-        total_shares_dict = {}
-        price = lookup(symbol)
-        price = price['price']
-        shares = int(shares)
-        cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
-        cash = cash[0]['cash']
-        sum = cash + price
-        stocks = db.execute("SELECT symbol FROM purchases WHERE user_id = ?", session['user_id'])
-        amount = db.execute("SELECT shares FROM purchases WHERE symbol = ?", stocks[0]['symbol'])
-        rows = db.execute("SELECT * FROM purchases WHERE user_id = ?", session["user_id"])
-        i = 0
-
-        total_shares = 0
-        for row in rows:
-            if row['symbol'] == symbol:
-                if row["type"] == "BUY":
-                    total_shares =  total_shares + row["shares"]
-                elif row["type"] == "SELL":
-                    total_shares = total_shares - row["shares"]
-                elif not symbol:
-                    return apology("Missing symbol")
-        # Render an apology if the input is not a positive integer or if the user does not own that many shares of the stock.
-        if total_shares < shares:
-            return apology("Too many shares")
+        """Sell shares of stock"""
+        # Require that a user input a stock’s symbol, implemented as a select menu whose name is symbol.
+        symbol = request.form.get("symbol")
+        # Require that a user input a number of shares, implemented as a text field whose name is shares.
+        shares = request.form.get("shares")
+        # Render an apology if the input is blank or the symbol does not exist (as per the return value of lookup).
+        if not symbol:
+            return apology("Missing symbol")
+        # Render an apology if the input is not a positive integer.
+        elif not shares:
+            return apology("Missing shares")
         else:
-            db.execute("INSERT INTO purchases VALUES (?, ?, ?, ?, ?)", session['user_id'], symbol, shares, price, transaction)
-            # Update cash in database to reflect sale
-            db.execute("UPDATE users SET cash = ? WHERE id = ?", sum, session["user_id"])
-            return redirect("/")
-            # Render an apology if the user fails to select a stock
-        # Or if (somehow, once submitted) the user does not own any shares of that stock.
+            transaction = "SELL"
+            total_shares_dict = {}
+            price = lookup(symbol)
+            price = price['price']
+            shares = int(shares)
+            cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
+            cash = cash[0]['cash']
+            sum = cash + price
+            stocks = db.execute("SELECT symbol FROM purchases WHERE user_id = ?", session['user_id'])
+            amount = db.execute("SELECT shares FROM purchases WHERE symbol = ?", stocks[0]['symbol'])
+            rows = db.execute("SELECT * FROM purchases WHERE user_id = ?", session["user_id"])
+            i = 0
+
+            total_shares = 0
+            for row in rows:
+                if row['symbol'] == symbol:
+                    if row["type"] == "BUY":
+                        total_shares =  total_shares + row["shares"]
+                    elif row["type"] == "SELL":
+                        total_shares = total_shares - row["shares"]
+                    elif not symbol:
+                        return apology("Missing symbol")
+            # Render an apology if the input is not a positive integer or if the user does not own that many shares of the stock.
+            if total_shares < shares:
+                return apology("Too many shares")
+            else:
+                db.execute("INSERT INTO purchases VALUES (?, ?, ?, ?, ?)", session['user_id'], symbol, shares, price, transaction)
+                # Update cash in database to reflect sale
+                db.execute("UPDATE users SET cash = ? WHERE id = ?", sum, session["user_id"])
+                return redirect("/")
+                # Render an apology if the user fails to select a stock
+            # Or if (somehow, once submitted) the user does not own any shares of that stock.
 
     # Upon completion, redirect the user to the home page.
     return render_template("sell.html")
