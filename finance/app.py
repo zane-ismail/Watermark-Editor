@@ -251,13 +251,13 @@ def register():
 
             # Render an apology if either input is blank or the passwords do not match.
             if not request.form.get("username"):
-                return apology("Please enter username", 403)
+                return apology("Missing username", 400)
             elif not request.form.get("password"):
-                return apology("Please enter password", 403)
+                return apology("Missing password", 400)
             elif not request.form.get("confirmation"):
-                return apology("Please confirm password", 403)
+                return apology("Passwords don't match", 400)
             elif password != confirmation:
-                return apology("Passwords do not match", 403)
+                return apology("Passwords don't match", 400)
             else:
                 return render_template("index.html", stocks_dict=[], cash=10000, sum=0, prices=0, total=10000)
 
