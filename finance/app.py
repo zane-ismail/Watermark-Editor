@@ -246,11 +246,8 @@ def register():
             # Render an apology if username already exists
             if existing_user == username:
                 return apology("Username already taken", 403)
-        except:
-            db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, hash)
-
             # Render an apology if either input is blank or the passwords do not match.
-            if not request.form.get("username"):
+            elif not request.form.get("username"):
                 return apology("Missing username", 400)
             elif not request.form.get("password"):
                 return apology("Missing password", 400)
@@ -258,8 +255,10 @@ def register():
                 return apology("Passwords don't match", 400)
             elif password != confirmation:
                 return apology("Passwords don't match", 400)
-            else:
-                return render_template("index.html", stocks_dict=[], cash=10000, sum=0, prices=0, total=10000)
+
+        except:
+            db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, hash)
+            return render_template("index.html", stocks_dict=[], cash=10000, sum=0, prices=0, total=10000)
 
     return render_template("register.html")
 
