@@ -10,20 +10,18 @@
         <thead>
             <tr>
                 <th>Symbol</th>
-                <th>Price</th>
                 <th>Shares</th>
+                <th>Price</th>
                 <th>Transaction</th>
-                <th>Cash</th>
             </tr>
         </thead>
         <tbody>
         {% for transaction in transactions %}
             <tr>
                 <td>{{ transaction['symbol'] }}</td>
-                <td>{{ transaction['price'] }}</td>
                 <td>{{ transaction['shares'] }}</td>
+                <td>{{ transaction['price'] | usd }}</td>
                 <td>{{ transaction['type'] }}</td>
-                <td>{{ cash }}</td>
             </tr>
         {% endfor %}
         </tbody>
