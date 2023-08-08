@@ -7,7 +7,7 @@
 {% block main %}
 
 <form>
-    {{ symbol }}
+    A share of {{ symbol['symbol']}} ({{ symbol['symbol'] }}) costs {{ symbol['price'] | usd }}.
 </form>
 
 {% endblock %}

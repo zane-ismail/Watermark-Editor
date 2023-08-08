@@ -255,13 +255,14 @@ def register():
                 return apology("Passwords don't match", 400)
             elif password != confirmation:
                 return apology("Passwords don't match", 400)
-            else:
-                db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, hash)
-                return render_template("index.html", stocks_dict=[], cash=10000, sum=0, prices=0, total=10000)
         except:
             db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, hash)
-            return render_template("index.html", stocks_dict=[], cash=10000, sum=0, prices=0, total=10000)
-
+            # Query database for username
+            rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
+            session["user_id"] = rows[0]["id"]
+            db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
+            # Redirect user to home page
+            return redirect("/")
 
     return render_template("register.html")
 
