@@ -109,7 +109,7 @@ def buy():
         shares = int(request.form.get("shares"))
         # Render an apology if the input is blank or the symbol does not exist (as per the return value of lookup).
         if not symbol:
-            return apology("Please enter a symbol")
+            return apology("Missing symbol")
         # Render an apology if the input is not a positive integer.
         elif shares <= 0:
             return apology("Please enter a positive amount of shares")
@@ -119,7 +119,7 @@ def buy():
                 price = lookup(symbol)
                 price = price['price']
             except:
-                return apology("Stock does not exist")
+                return apology("Invalid symbol")
             cost = (shares * price)
             transaction = "BUY"
             # SELECT how much cash the user currently has in users
@@ -128,7 +128,7 @@ def buy():
             sum = cash - cost
             # Render an apology, without completing a purchase, if the user cannot afford the number of shares at the current price.
             if cost > cash:
-                return apology("Not enough money")
+                return apology("Can't afford")
             else:
                 try:
                     # Add one or more new tables to finance.db via which to keep track of the purchase.
@@ -293,10 +293,10 @@ def sell():
                 elif row["type"] == "SELL":
                     total_shares = total_shares - row["shares"]
                 elif not symbol:
-                    return apology("Please enter a symbol")
+                    return apology("Missing symbol")
         # Render an apology if the input is not a positive integer or if the user does not own that many shares of the stock.
         if total_shares < shares:
-            return apology("Not enough stocks")
+            return apology("Too many shares")
         else:
             db.execute("INSERT INTO purchases VALUES (?, ?, ?, ?, ?)", session['user_id'], symbol, shares, price, transaction)
             # Update cash in database to reflect sale
