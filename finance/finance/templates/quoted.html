@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quoted
+{% endblock %}
+
+{% block main %}
+
+<form>
+    A share of {{ price['symbol']}} ({{ price['symbol'] }}) costs {{ price['price'] | usd }}.
+</form>
+
+{% endblock %}
