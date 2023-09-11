@@ -6,16 +6,13 @@
 
 {% block main %}
 <h2>All Transactions</h2>
-    <table>
-        <thead>
+    <table style="width:100%">
             <tr>
                 <th>Symbol</th>
                 <th>Shares</th>
                 <th>Price</th>
                 <th>Transacted</th>
             </tr>
-        </thead>
-        <tbody>
         {% for transaction in transactions %}
             <tr>
                 <td>{{ transaction['symbol'] }}</td>
@@ -24,7 +21,6 @@
                 <td>{{ transaction['type'] }}</td>
             </tr>
         {% endfor %}
-        </tbody>
     </table>
 
 {% endblock %}
