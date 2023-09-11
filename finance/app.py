@@ -122,8 +122,7 @@ def buy():
             transaction = "BUY"
             # SELECT how much cash the user currently has in users
             cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
-            cash = int(cash[0]['cash'])
-            print(cash)
+            cash = float(cash[0]['cash'])
             sum = cash - cost
             # Render an apology, without completing a purchase, if the user cannot afford the number of shares at the current price.
             if cost > cash:
