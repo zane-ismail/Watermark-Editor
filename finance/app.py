@@ -248,7 +248,8 @@ def register():
                         return apology("Username already taken", 403)
                 else:
                     i =+ 1
-        except
+        except IndexError:
+            pass
         # Render an apology if either input is blank or the passwords do not match.
         if not request.form.get("username"):
             return apology("Missing username", 400)
