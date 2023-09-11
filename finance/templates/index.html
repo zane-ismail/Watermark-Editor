@@ -31,16 +31,34 @@
                 </tr>
                 {% endfor %}
                 <tr>
+                    <th></th>
+                    <th></th>
+                    <th></th>
                     <!-- the total value of each holding (i.e., shares times price) -->
                     <th>Holdings</th>
+                    <td>{{ sum | usd}}</td>
                     <!-- display the user’s current cash balance -->
+                    <tr>
+
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+
                     <th>Cash</th>
+                    <td>{{ cash | usd }}</td>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <tr>
+                    <th></th>
+                    <th></th>
+                    <th></th>
                     <!-- display a grand total (i.e., stocks’ total value plus cash). -->
                     <th>TOTAL</th>
-                    <tr>
-                        <td>{{ sum | usd}}</td>
-                        <td>{{ cash | usd }}</td>
-                        <td>{{ total | usd }}</td>
+                    <td>{{ total | usd }}</td>
+                    </tr>
                     </tr>
 
                 </tr>
