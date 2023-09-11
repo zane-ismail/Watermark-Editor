@@ -8,22 +8,19 @@
 <h2>Portfolio</h2>
     <table style="width:100%">
         <thead>
-            <table>
-                <tr>
-                    <!-- stocks the user owns -->
-                    <th>Symbol</th>
-                    <!-- Name of the stocks the user owns -->
-                    <th>Name</th>
-                    <!-- Numbers of shares owned -->
-                    <th>Shares</th>
-                    <!-- Current price of each stock -->
-                    <th>Price</th>
-                    <!-- Display a grand total (i.e., stocks’ total value plus cash). -->
-                    <th>TOTAL</th>
-                </tr>
+            <tr>
+                <!-- stocks the user owns -->
+                <th>Symbol</th>
+                <!-- Name of the stocks the user owns -->
+                <th>Name</th>
+                <!-- Numbers of shares owned -->
+                <th>Shares</th>
+                <!-- Current price of each stock -->
+                <th>Price</th>
+                <!-- Display a grand total (i.e., stocks’ total value plus cash). -->
+                <th>TOTAL</th>
+            </tr>
 
-        </thead>
-        <tbody>
             {% for symbol in stocks_dict %}
                 <tr>
                     <td>{{ symbol }}</td>
@@ -47,8 +44,6 @@
                         <td>{{ total | usd }}</td>
                     </tr>
 
-            </table>
-        </tbody>
     </table>
 
 
