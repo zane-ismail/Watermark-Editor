@@ -45,7 +45,7 @@ def index():
         user = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
         cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
         try:
-            cash = int(cash[0]["cash"])
+            cash = float(cash[0]["cash"])
             # add all user's stock symbols to a list
             purchases = db.execute("SELECT * FROM purchases WHERE user_id = ?", session["user_id"])
             for purchase in purchases:
