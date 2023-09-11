@@ -102,7 +102,7 @@ def buy():
     # Submit the user’s input via POST to /buy.
     if request.method == "POST":
         # Require that a user input a stock’s symbol, implemented as a text field whose name is symbol.symbol = request.form.get("symbol")
-        symbol = request.form.get("symbol")
+        symbol = request.form.get("symbol").upper()
         # Require that a user input a number of shares, implemented as a text field whose name is shares.
         shares = float(request.form.get("shares"))
         # Render an apology if the input is blank or the symbol does not exist (as per the return value of lookup).
@@ -113,15 +113,12 @@ def buy():
             return apology("Missing shares")
         else:
             # Call lookup to look up a stock’s current price
-            try:
-                price = lookup(symbol)
-                price = float(price['price'])
-            except:
+            price = lookup(symbol)
+            # Render an apology if the symbol does not exist (as per the return value of lookup)
+            if price == None:
                 return apology("Invalid symbol")
+            price = float(price['price'])
             cost = (shares * price)
-            print(shares)
-            print(price)
-            print(cost)
             transaction = "BUY"
             # SELECT how much cash the user currently has in users
             cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
@@ -220,7 +217,10 @@ def quote():
     # Submit the user’s input via POST to /quote.
     if request.method == "POST":
         price = lookup(symbol)
-        # Render an apology if the input is blank or the symbol does not exist (as per the return value of lookup).
+        # Render an apology if the symbol does not exist (as per the return value of lookup)
+        if price == None:
+            return apology("Invalid symbol")
+        # Render an apology if the input is blank
         if not symbol:
             return apology("Missing symbol")
         return render_template("quoted.html", price=price)
@@ -280,7 +280,7 @@ def sell():
     if request.method == "POST":
         """Sell shares of stock"""
         # Require that a user input a stock’s symbol, implemented as a select menu whose name is symbol.
-        symbol = request.form.get("symbol")
+        symbol = request.form.get("symbol").upper()
         # Require that a user input a number of shares, implemented as a text field whose name is shares.
         shares = float(request.form.get("shares"))
         # Render an apology if the input is blank or the symbol does not exist (as per the return value of lookup).
@@ -293,6 +293,9 @@ def sell():
             transaction = "SELL"
             total_shares_dict = {}
             price = lookup(symbol)
+            # Render an apology if the symbol does not exist (as per the return value of lookup)
+            if price == None:
+                return apology("Invalid symbol")
             price = float(price['price'])
             cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
             cash = cash[0]['cash']
