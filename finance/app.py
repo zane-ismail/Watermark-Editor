@@ -122,7 +122,7 @@ def buy():
                 return apology("Invalid symbol")
             price = float(price['price'])
             cost = (shares * price)
-            transaction = "BUY"
+            transaction = ts
             # SELECT how much cash the user currently has in users
             cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
             cash = float(cash[0]['cash'])
@@ -294,7 +294,8 @@ def sell():
         elif not shares:
             return apology("Missing shares")
         else:
-            # transaction = "SELL"
+            transaction = ts
+            print(ts)
             total_shares_dict = {}
             price = lookup(symbol)
             # Render an apology if the symbol does not exist (as per the return value of lookup)
