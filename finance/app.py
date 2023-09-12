@@ -325,7 +325,7 @@ def sell():
             if total_shares < shares:
                 return apology("Too many shares")
             else:
-                db.execute("INSERT INTO purchases VALUES (?, ?, ?, ?, ?)", session['user_id'], symbol, shares, price, transaction)
+                db.execute("INSERT INTO purchases VALUES (?, ?, ?, ?, ?, ?)", session['user_id'], symbol, shares, price, transaction, time)
                 # Update cash in database to reflect sale
                 db.execute("UPDATE users SET cash = ? WHERE id = ?", sum, session["user_id"])
                 return redirect("/")
