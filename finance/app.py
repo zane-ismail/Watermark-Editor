@@ -297,7 +297,6 @@ def sell():
         else:
             transaction = "SELL"
             time = ts
-            print(ts)
             total_shares_dict = {}
             price = lookup(symbol)
             # Render an apology if the symbol does not exist (as per the return value of lookup)
