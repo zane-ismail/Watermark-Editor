@@ -294,7 +294,7 @@ def sell():
         elif not shares:
             return apology("Missing shares")
         else:
-            transaction = "SELL"
+            # transaction = "SELL"
             total_shares_dict = {}
             price = lookup(symbol)
             # Render an apology if the symbol does not exist (as per the return value of lookup)
