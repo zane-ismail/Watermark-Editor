@@ -16,7 +16,6 @@
         {% for transaction in transactions %}
             <tr>
                 <td>{{ transaction['symbol'] }}</td>
-
                 if (transaction['type'] == "SELL"){
                     <td>{{ transaction['shares'] * - 1 }}</td>};
                 else{
