@@ -123,6 +123,7 @@ def buy():
             price = float(price['price'])
             cost = (shares * price)
             transaction = "BUY"
+            time = ts
             # SELECT how much cash the user currently has in users
             cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
             cash = float(cash[0]['cash'])
