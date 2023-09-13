@@ -298,12 +298,12 @@ def sell():
                         total_shares =  total_shares + row["shares"]
                     elif row["type"] == "SELL":
                         total_shares = total_shares - row["shares"]
-            if total_shares > 0:
-                if symbol not in symbols_owned:
-                    symbols_owned.append(purchase['symbol'])
-            # add only unique symbols to list
-            else:
-                break
+                    if total_shares > 0:
+                        if symbol not in symbols_owned:
+                            symbols_owned.append(purchase['symbol'])
+                    # add only unique symbols to list
+                    else:
+                        break
     print(symbols_owned)
 
 
