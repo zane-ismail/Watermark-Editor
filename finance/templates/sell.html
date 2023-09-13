@@ -9,6 +9,8 @@
 <form action="/sell" method="post">
     <div class="mb-3">
         <input autocomplete="off" autofocus class="form-select mx-auto w-auto" id="symbol" name="symbol" placeholder="Symbol" type="text">
+        {% for symbol in symbols %}
+        <option>symbol</option>
     </div>
     <div class="mb-3">
         <input id="shares" name="shares" placeholder="Shares" type="number" min="1" required>
