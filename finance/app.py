@@ -299,11 +299,11 @@ def sell():
             if total_shares > 0:
                 symbols.append(purchase['symbol'])
         # add only unique symbols to list
-            if purchase['symbol'] == symbol:
+            elif purchase['symbol'] == symbol:
                 break
             else:
                 symbols.append(purchase['symbol'])
-        print(symbols)
+    print(symbols)
 
 
 
