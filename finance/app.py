@@ -290,16 +290,15 @@ def sell():
             symbols.append(row['symbol'])
     for symbol in symbols:
         rows = db.execute("SELECT * FROM purchases WHERE symbol = ? AND user_id = ?", symbol, session["user_id"])
-            total_shares = 0
+        total_shares = 0
+        for row in rows:
             if row["type"] == "BUY":
                 total_shares =  total_shares + row["shares"]
             elif row["type"] == "SELL":
                 total_shares = total_shares - row["shares"]
-            print(row['symbol'])
-            print(total_shares)
-            if total_shares > 0:
-                if row['symbol'] not in symbols_owned:
-                    symbols_owned.append(row['symbol'])
+        if total_shares > 0:
+            if row['symbol'] not in symbols_owned:
+                symbols_owned.append(row['symbol'])
     print(symbols_owned)
 
 
