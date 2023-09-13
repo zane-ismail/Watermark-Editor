@@ -287,7 +287,9 @@ def sell():
     rows = db.execute("SELECT * FROM purchases WHERE user_id = ?", session["user_id"])
     for row in rows:
         total_shares = -1
-        symbols.append(row['symbol'])
+        if row["symbol"] not in symbols:
+            symbols.append(row['symbol'])
+            print(symbols)
         for symbol in symbols:
             if row["symbol"] == symbol:
                 if row["type"] == "BUY":
