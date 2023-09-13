@@ -290,7 +290,10 @@ def sell():
         symbols.append(row['symbol'])
         for symbol in symbols:
             if row["symbol"] == symbol:
-                total_shares =  total_shares + row["shares"]
+                if row["type"] == "BUY":
+                    total_shares =  total_shares + row["shares"]
+                elif row["type"] == "SELL":
+                    total_shares = total_shares - row["shares"]
                 if total_shares > 0:
                     if symbol not in symbols_owned:
                         print(symbol)
