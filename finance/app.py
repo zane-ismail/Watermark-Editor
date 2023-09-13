@@ -286,16 +286,27 @@ def sell():
     # add all user's stock symbols to a list
     purchases = db.execute("SELECT * FROM purchases WHERE user_id = ?", session["user_id"])
     for purchase in purchases:
-        stocks = db.execute("SELECT symbol FROM purchases WHERE user_id = ?", session['user_id'])
         # add the symbol if 1 or more stock is owned
-        if stocks > 1:
-            symbols.append(purchase['symbol'])
-    # add only unique symbols to list
-    for symbol in symbols:
-        if purchase['symbol'] == symbol:
-            break
-        else:
-            symbols.append(purchase['symbol'])
+        for symbol in symbols:
+            total_shares = 0
+            rows = db.execute("SELECT * FROM purchases WHERE user_id = ?", session["user_id"])
+            for row in rows:
+                if row['symbol'] == symbol:
+                    if row["type"] == "BUY":
+                        total_shares =  total_shares + row["shares"]
+                    elif row["type"] == "SELL":
+                        total_shares = total_shares - row["shares"]
+            if total_shares > 0:
+                symbols.append(purchase['symbol'])
+        # add only unique symbols to list
+            if purchase['symbol'] == symbol:
+                break
+            else:
+                symbols.append(purchase['symbol'])
+        print(symbols)
+
+
+
 
 
     if request.method == "POST":
@@ -313,7 +324,6 @@ def sell():
         else:
             transaction = "SELL"
             time = ts
-            total_shares_dict = {}
             price = lookup(symbol)
             # Render an apology if the symbol does not exist (as per the return value of lookup)
             if price == None:
@@ -322,10 +332,7 @@ def sell():
             cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
             cash = cash[0]['cash']
             sum = cash + (shares * price)
-            stocks = db.execute("SELECT symbol FROM purchases WHERE user_id = ?", session['user_id'])
-            amount = db.execute("SELECT shares FROM purchases WHERE symbol = ?", stocks[0]['symbol'])
             rows = db.execute("SELECT * FROM purchases WHERE user_id = ?", session["user_id"])
-            i = 0
             total_shares = 0
             for row in rows:
                 if row['symbol'] == symbol:
