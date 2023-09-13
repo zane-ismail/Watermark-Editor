@@ -287,6 +287,9 @@ def sell():
     purchases = db.execute("SELECT * FROM purchases WHERE user_id = ?", session["user_id"])
     for purchase in purchases:
         # add the symbol if 1 or more stock is owned
+        i = 1
+        while i > 0:
+            symbols.append()
         for symbol in symbols:
             total_shares = 0
             rows = db.execute("SELECT * FROM purchases WHERE user_id = ?", session["user_id"])
