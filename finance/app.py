@@ -292,6 +292,7 @@ def sell():
         rows = db.execute("SELECT * FROM purchases WHERE user_id = ?", session["user_id"])
         for row in rows:
             symbols.append(purchase['symbol'])
+            print(symbols)
             for symbol in symbols:
                 if row['symbol'] == symbol:
                     if row["type"] == "BUY":
