@@ -283,6 +283,7 @@ def register():
 def sell():
     # Submit the user’s input via POST to /sell.
     symbols = []
+    symbols_owned = []
     # add all user's stock symbols to a list
     purchases = db.execute("SELECT * FROM purchases WHERE user_id = ?", session["user_id"])
     for purchase in purchases:
@@ -290,19 +291,21 @@ def sell():
         total_shares = 0
         rows = db.execute("SELECT * FROM purchases WHERE user_id = ?", session["user_id"])
         for row in rows:
-            if row['symbol'] == symbol:
-                if row["type"] == "BUY":
-                    total_shares =  total_shares + row["shares"]
-                elif row["type"] == "SELL":
-                    total_shares = total_shares - row["shares"]
-        if total_shares > 0:
             symbols.append(purchase['symbol'])
-        # add only unique symbols to list
-        elif purchase['symbol'] == symbol:
-            break
-        else:
-            symbols.append(purchase['symbol'])
-    print(symbols)
+            for symbol in symbols:
+                if row['symbol'] == symbol:
+                    if row["type"] == "BUY":
+                        total_shares =  total_shares + row["shares"]
+                    elif row["type"] == "SELL":
+                        total_shares = total_shares - row["shares"]
+            if total_shares > 0:
+                symbols_owned.append(purchase['symbol'])
+            # add only unique symbols to list
+            elif purchase['symbol'] == symbol:
+                break
+            else:
+                symbols_owned.append(purchase['symbol'])
+    print(symbols_owned)
 
 
 
@@ -353,4 +356,4 @@ def sell():
             # Or if (somehow, once submitted) the user does not own any shares of that stock.
 
     # Upon completion, redirect the user to the home page.
-    return render_template("sell.html", symbols=symbols)
+    return render_template("sell.html", symbols=symbols_owned)
