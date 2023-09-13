@@ -282,15 +282,14 @@ def register():
 @login_required
 def sell():
     # Submit the user’s input via POST to /sell.
-    i = 1
     symbols = []
     # add all user's stock symbols to a list
     purchases = db.execute("SELECT * FROM purchases WHERE user_id = ?", session["user_id"])
     for purchase in purchases:
-        # add the first symbol
-        while i > 0:
+        stocks = db.execute("SELECT symbol FROM purchases WHERE user_id = ?", session['user_id'])
+        # add the symbol if 1 or more stock is owned
+        if stocks > 1:
             symbols.append(purchase['symbol'])
-            i =- 1
     # add only unique symbols to list
     for symbol in symbols:
         if purchase['symbol'] == symbol:
