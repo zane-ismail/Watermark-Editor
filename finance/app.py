@@ -332,4 +332,4 @@ def sell():
             # Or if (somehow, once submitted) the user does not own any shares of that stock.
 
     # Upon completion, redirect the user to the home page.
-    return render_template("sell.html", symbols=)
+    return render_template("sell.html", stocks=stocks)
