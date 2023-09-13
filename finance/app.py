@@ -287,22 +287,21 @@ def sell():
     purchases = db.execute("SELECT * FROM purchases WHERE user_id = ?", session["user_id"])
     for purchase in purchases:
         # add the symbol if 1 or more stock is owned
-        for symbol in symbols:
-            total_shares = 0
-            rows = db.execute("SELECT * FROM purchases WHERE user_id = ?", session["user_id"])
-            for row in rows:
-                if row['symbol'] == symbol:
-                    if row["type"] == "BUY":
-                        total_shares =  total_shares + row["shares"]
-                    elif row["type"] == "SELL":
-                        total_shares = total_shares - row["shares"]
-            if total_shares > 0:
-                symbols.append(purchase['symbol'])
+        total_shares = 0
+        rows = db.execute("SELECT * FROM purchases WHERE user_id = ?", session["user_id"])
+        for row in rows:
+            if row['symbol'] == symbol:
+                if row["type"] == "BUY":
+                    total_shares =  total_shares + row["shares"]
+                elif row["type"] == "SELL":
+                    total_shares = total_shares - row["shares"]
+        if total_shares > 0:
+            symbols.append(purchase['symbol'])
         # add only unique symbols to list
-            elif purchase['symbol'] == symbol:
-                break
-            else:
-                symbols.append(purchase['symbol'])
+        elif purchase['symbol'] == symbol:
+            break
+        else:
+            symbols.append(purchase['symbol'])
     print(symbols)
 
 
