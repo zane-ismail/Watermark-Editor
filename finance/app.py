@@ -326,11 +326,6 @@ def sell():
             amount = db.execute("SELECT shares FROM purchases WHERE symbol = ?", stocks[0]['symbol'])
             rows = db.execute("SELECT * FROM purchases WHERE user_id = ?", session["user_id"])
             i = 0
-
-
-
-
-
             total_shares = 0
             for row in rows:
                 if row['symbol'] == symbol:
