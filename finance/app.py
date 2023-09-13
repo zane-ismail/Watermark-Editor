@@ -284,26 +284,22 @@ def sell():
     # Submit the user’s input via POST to /sell.
     symbols = []
     symbols_owned = []
-    # add all user's stock symbols to a list
-    purchases = db.execute("SELECT * FROM purchases WHERE user_id = ?", session["user_id"])
-    for purchase in purchases:
-        # add the symbol if 1 or more stock is owned
+    rows = db.execute("SELECT * FROM purchases WHERE user_id = ?", session["user_id"])
+    for row in rows:
         total_shares = 0
-        rows = db.execute("SELECT * FROM purchases WHERE user_id = ?", session["user_id"])
-        for row in rows:
-            symbols.append(purchase['symbol'])
-            for symbol in symbols:
-                if row["symbol"] == symbol:
-                    if row["type"] == "BUY":
-                        total_shares =  total_shares + row["shares"]
-                    elif row["type"] == "SELL":
-                        total_shares = total_shares - row["shares"]
-                    if total_shares > 0:
-                        if symbol not in symbols_owned:
-                            symbols_owned.append(purchase['symbol'])
-                    # add only unique symbols to list
-                    else:
-                        break
+        symbols.append(row['symbol'])
+        for symbol in symbols:
+            if row["symbol"] == symbol:
+                if row["type"] == "BUY":
+                    total_shares =  total_shares + row["shares"]
+                elif row["type"] == "SELL":
+                    total_shares = total_shares - row["shares"]
+                if total_shares > 0:
+                    if symbol not in symbols_owned:
+                        symbols_owned.append(row['symbol'])
+                # add only unique symbols to list
+                else:
+                    break
     print(symbols_owned)
 
 
