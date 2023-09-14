@@ -22,11 +22,9 @@ nav .navbar-brand .green
     color: #2e944b;
 }
 
-.table{
-    width: 50;
-}
-
-.th{
+.text-end{
+    border-bottom-width: 1px;
+    padding: .5rem;
     text-align: left;
 }
 
