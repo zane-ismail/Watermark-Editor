@@ -32,9 +32,22 @@ nav .navbar-brand .green
     color: #2e944b;
 }
 
-table{
-    caption-side: bottom;
+table .table{
+    --bs-table-color: var(--bs-body-color);
+    --bs-table-bg: transparent;
+    --bs-table-border-color: var(--bs-border-color);
+    --bs-table-accent-bg: transparent;
+    --bs-table-striped-color: var(--bs-body-color);
+    --bs-table-striped-bg: rgba(0, 0, 0, 0.05);
+    --bs-table-active-color: var(--bs-body-color);
+    --bs-table-active-bg: rgba(0, 0, 0, 0.1);
+    --bs-table-hover-color: var(--bs-body-color);
+    --bs-table-hover-bg: rgba(0, 0, 0, 0.075);
     border-collapse: collapse;
+    border-color: var(--bs-table-border-color);
+    caption-side: bottom;
+    margin-bottom: 1rem;
+    width: 100%;
 }
 
 td{
@@ -45,10 +58,8 @@ tr:nth-child(even) {
     background-color: #f0f0f0;
   }
 
-.table{
-    border-color: var(--bs-table-border-color);
-    margin-bottom: 1rem;
-    width: 100%;
+.container{
+    max-width: 1140px;
 }
 
 .text-center{
