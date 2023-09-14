@@ -37,38 +37,23 @@
             {% endfor %}
             </tbody>
             <tfoot>
-                <tr style="border-top:1px solid black">
-                    <!-- <th></th>
-                    <th></th>
-                    <th></th> -->
+                <tr>
                     <!-- the total value of each holding (i.e., shares times price) -->
-                    <th>Holdings</th>
-                    <td>{{ sum | usd}}</td>
+                    <th class="border-0 fw-bold text-end" colspan="4">Holdings</th>
                     <!-- display the user’s current cash balance -->
-                    </tr>
-                    <tr>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-
-                    <th class="border-0 fw-bold text-end">Cash</th>
+                    <td>{{ sum | usd}}</td>
+                </tr>
+                <tr>
+                    <th class="border-0 fw-bold text-end" colspan="4">Cash</th>
                     <td>{{ cash | usd }}</td>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <tr>
-                    <th></th>
-                    <th></th>
-                    <th></th>
+                </tr>
+                <tr>
                     <!-- display a grand total (i.e., stocks’ total value plus cash). -->
-                    <th class="border-0 fw-bold text-end">TOTAL</th>
+                    <th class="border-0 fw-bold text-end" colspan="4">TOTAL</th>
                     <td>{{ total | usd }}</td>
-                    </tr>
-                    </tr>
-
                 </tr>
             </tfoot>
-
-    </table>
+        </table>
+    </main>
 
 {% endblock %}
