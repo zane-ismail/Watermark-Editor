@@ -57,8 +57,9 @@
                 </div>
             </header>
         {% endif %}
-
-        <div class="alert alert-primary mb-0 text-center" role="alert">Registered!</div>
+        {% if get_flashed_messages() %}
+            <div class="alert alert-primary mb-0 text-center" role="alert">Registered!</div>
+        {% endif %}
         <div class="alert alert-primary mb-0 text-center" role="alert">Bought!</div>
         <div class="alert alert-primary mb-0 text-center" role="alert">Sold!</div>
 
