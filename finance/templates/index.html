@@ -28,11 +28,11 @@
             <tbody>
             {% for symbol in stocks_dict %}
                 <tr>
-                    <td>{{ symbol }}</td>
-                    <td>{{ symbol }}</td>
-                    <td>{{ stocks_dict[symbol] }}</td>
-                    <td>{{ prices[loop.index] | usd}}</td>
-                    <td>{{ (prices[loop.index] * stocks_dict[symbol]) | usd}}</td>
+                    <td class="text-start">{{ symbol }}</td>
+                    <td class="text-start">{{ symbol }}</td>
+                    <td class="text-end">{{ stocks_dict[symbol] }}</td>
+                    <td class="text-end">{{ prices[loop.index] | usd}}</td>
+                    <td class="text-end">{{ (prices[loop.index] * stocks_dict[symbol]) | usd}}</td>
                 </tr>
             {% endfor %}
             </tbody>
@@ -40,17 +40,17 @@
                 <tr>
                     <!-- the total value of each holding (i.e., shares times price) -->
                     <th class="border-0 fw-bold text-end" colspan="4">Holdings</th>
-                    <td>{{ sum | usd}}</td>
+                    <td class="text-end">{{ sum | usd}}</td>
                 </tr>
                 <tr>
                     <!-- display the user’s current cash balance -->
                     <th class="border-0 fw-bold text-end" colspan="4">Cash</th>
-                    <td>{{ cash | usd }}</td>
+                    <td class="text-end">{{ cash | usd }}</td>
                 </tr>
                 <tr>
                     <!-- display a grand total (i.e., stocks’ total value plus cash). -->
                     <th class="border-0 fw-bold text-end" colspan="4">TOTAL</th>
-                    <td>{{ total | usd }}</td>
+                    <td class="text-end">{{ total | usd }}</td>
                 </tr>
             </tfoot>
         </table>
