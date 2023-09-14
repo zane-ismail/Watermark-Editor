@@ -79,3 +79,9 @@ tr:nth-child(even) {
     text-align: right !important;
 
 }
+
+.text-start{
+    border-bottom-width: 1px;
+    padding: .5rem;
+    text-align: left !important;
+}
