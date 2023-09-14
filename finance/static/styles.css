@@ -22,61 +22,6 @@ nav .navbar-brand .green
     color: #2e944b;
 }
 
-table{
-<main class="container py-5 text-center">
-
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th class="text-start">Symbol</th>
-                <th class="text-start">Name</th>
-                <th class="text-end">Shares</th>
-                <th class="text-end">Price</th>
-                <th class="text-end">TOTAL</th>
-            </tr>
-        </thead>
-       <tbody>
-
-                <tr>
-                    <td class="text-start">MF</td>
-                    <td class="text-start">MF</td>
-                    <td class="text-end">102</td>
-                    <td class="text-end">$1.04</td>
-                    <td class="text-end">$106.08</td>
-                </tr>
-
-                <tr>
-                    <td class="text-start">TSLA</td>
-                    <td class="text-start">TSLA</td>
-                    <td class="text-end">1</td>
-                    <td class="text-end">$271.30</td>
-                    <td class="text-end">$271.30</td>
-                </tr>
-
-        </tbody>
-        <tfoot>
-            <tr>
-                <td class="border-0 fw-bold text-end" colspan="4">Cash</td>
-                <td class="border-0 text-end">$9,632.52</td>
-            </tr>
-            <tr>
-                <td class="border-0 fw-bold text-end" colspan="4">TOTAL</td>
-                <td class="border-0 w-bold text-end">$10,009.90</td>
-            </tr>
-        </tfoot>
-    </table>
-
-        </main>
-}
-
-th{
-    text-align: right;
-}
-
-td{
-    text-align: right;
-}
-
 tr:nth-child(even) {
     background-color: #f0f0f0;
   }
