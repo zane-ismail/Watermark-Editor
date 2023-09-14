@@ -4,7 +4,6 @@
 
     <head>
 
-
         <meta charset="utf-8">
         <meta name="viewport" content="initial-scale=1, width=device-width">
 
@@ -57,11 +56,6 @@
                 </div>
             </header>
         {% endif %}
-        {% if get_flashed_messages() %}
-            <div class="alert alert-primary mb-0 text-center" role="alert">Registered!</div>
-        {% endif %}
-        <div class="alert alert-primary mb-0 text-center" role="alert">Bought!</div>
-        <div class="alert alert-primary mb-0 text-center" role="alert">Sold!</div>
 
         <main class="container-fluid py-5 text-center">
             {% block main %}{% endblock %}

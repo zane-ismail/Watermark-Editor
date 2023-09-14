@@ -141,6 +141,7 @@ def buy():
 
             db.execute("INSERT INTO purchases VALUES (?, ?, ?, ?, ?, ?)", session['user_id'], symbol, shares, price, transaction, ts)
             # Upon completion, redirect the user to the home page.
+            flash("Bought!")
             return redirect("/")
 
     return render_template("buy.html")
@@ -270,8 +271,8 @@ def register():
             session["user_id"] = rows[0]["id"]
             db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
             # Redirect user to home page
+            flash("Registered!")
             return redirect("/")# Render an apology if username already exists
-
 
     return render_template("register.html")
 
@@ -343,6 +344,7 @@ def sell():
                 db.execute("INSERT INTO purchases VALUES (?, ?, ?, ?, ?, ?)", session['user_id'], symbol, shares, price, transaction, ts)
                 # Update cash in database to reflect sale
                 db.execute("UPDATE users SET cash = ? WHERE id = ?", sum, session["user_id"])
+                flash("Sold!")
                 return redirect("/")
                 # Render an apology if the user fails to select a stock
             # Or if (somehow, once submitted) the user does not own any shares of that stock.
