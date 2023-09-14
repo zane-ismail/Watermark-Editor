@@ -6,27 +6,33 @@
 
 {% block main %}
 <h2>All Transactions</h2>
-    <table style="width:100%">
-            <tr>
-                <th>Symbol</th>
-                <th>Shares</th>
-                <th>Price</th>
-                <th>Type</th>
-                <th>Transacted</th>
-            </tr>
-        {% for transaction in transactions %}
-            <tr>
-                <td>{{ transaction['symbol'] }}</td>
-                {% if (transaction['type'] == "SELL") %}
-                    <td>{{ transaction['shares'] * - 1 }}</td>
-                {% else %}
-                    <td>{{ transaction['shares'] }}</td>
-                {% endif %}
-                <td>{{ transaction['price'] | usd }}</td>
-                <td>{{ transaction['type'] }}</td>
-                <td>{{ transaction['time'] }}</td>
-            </tr>
+    <main class="container py-5 text-center">
+        <table style="width:100%">
+            <thead>
+                <tr>
+                    <th class="text-end">Symbol</th>
+                    <th class="text-end">Shares</th>
+                    <th class="text-end">Price</th>
+                    <th class="text-end">Type</th>
+                    <th class="text-end">Transacted</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for transaction in transactions %}
+                <tr>
+                    <td>{{ transaction['symbol'] }}</td>
+                    {% if (transaction['type'] == "SELL") %}
+                        <td>{{ transaction['shares'] * - 1 }}</td>
+                    {% else %}
+                        <td>{{ transaction['shares'] }}</td>
+                    {% endif %}
+                    <td>{{ transaction['price'] | usd }}</td>
+                    <td>{{ transaction['type'] }}</td>
+                    <td>{{ transaction['time'] }}</td>
+                </tr>
+            </tbody>
         {% endfor %}
-    </table>
+        </table>
+    </main>
 
 {% endblock %}
