@@ -9,20 +9,23 @@
 
 
 <h2>Portfolio</h2>
-    <table class="container py-5 text-center" style="width:100%">
-            <tr>
-                <!-- stocks the user owns -->
-                <th class="text-start">Symbol</th>
-                <!-- Name of the stocks the user owns -->
-                <th class="text-start">Name</th>
-                <!-- Numbers of shares owned -->
-                <th class="text-end">Shares</th>
-                <!-- Current price of each stock -->
-                <th class="text-end">Price</th>
-                <!-- Display a grand total (i.e., stocks’ total value plus cash). -->
-                <th class="text-end">TOTAL</th>
-            </tr>
-
+    <main class="container py-5 text-center"></main>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <!-- stocks the user owns -->
+                    <th class="text-start">Symbol</th>
+                    <!-- Name of the stocks the user owns -->
+                    <th class="text-start">Name</th>
+                    <!-- Numbers of shares owned -->
+                    <th class="text-end">Shares</th>
+                    <!-- Current price of each stock -->
+                    <th class="text-end">Price</th>
+                    <!-- Display a grand total (i.e., stocks’ total value plus cash). -->
+                    <th class="text-end">TOTAL</th>
+                </tr>
+            </thead>
+            <tbody>
             {% for symbol in stocks_dict %}
                 <tr>
                     <td>{{ symbol }}</td>
@@ -31,11 +34,13 @@
                     <td>{{ prices[loop.index] | usd}}</td>
                     <td>{{ (prices[loop.index] * stocks_dict[symbol]) | usd}}</td>
                 </tr>
-                {% endfor %}
+            {% endfor %}
+            </tbody>
+            <tfoot>
                 <tr style="border-top:1px solid black">
+                    <!-- <th></th>
                     <th></th>
-                    <th></th>
-                    <th></th>
+                    <th></th> -->
                     <!-- the total value of each holding (i.e., shares times price) -->
                     <th>Holdings</th>
                     <td>{{ sum | usd}}</td>
@@ -62,6 +67,7 @@
                     </tr>
 
                 </tr>
+            </tfoot>
 
     </table>
 
