@@ -9,8 +9,6 @@ from werkzeug.security import check_password_hash, generate_password_hash
 
 from helpers import apology, login_required, lookup, usd
 
-ts = datetime.today().strftime('%Y-%m-%d %I:%M:%S')
-
 # Configure application
 app = Flask(__name__)
 
@@ -123,7 +121,7 @@ def buy():
             price = float(price['price'])
             cost = (shares * price)
             transaction = "BUY"
-            time = ts
+            ts = datetime.today().strftime('%Y-%m-%d %I:%M:%S')
             # SELECT how much cash the user currently has in users
             cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
             cash = float(cash[0]['cash'])
@@ -141,7 +139,7 @@ def buy():
                 # Update cash in database to reflect purchase
                 db.execute("UPDATE users SET cash = ? WHERE id = ?", sum, session["user_id"])
 
-            db.execute("INSERT INTO purchases VALUES (?, ?, ?, ?, ?, ?)", session['user_id'], symbol, shares, price, transaction, time)
+            db.execute("INSERT INTO purchases VALUES (?, ?, ?, ?, ?, ?)", session['user_id'], symbol, shares, price, transaction, ts)
             # Upon completion, redirect the user to the home page.
             return redirect("/")
 
@@ -319,7 +317,7 @@ def sell():
             return apology("Missing shares")
         else:
             transaction = "SELL"
-            time = ts
+            ts = datetime.today().strftime('%Y-%m-%d %I:%M:%S')
             price = lookup(symbol)
             # Render an apology if the symbol does not exist (as per the return value of lookup)
             if price == None:
@@ -342,7 +340,7 @@ def sell():
             if total_shares < shares:
                 return apology("Too many shares")
             else:
-                db.execute("INSERT INTO purchases VALUES (?, ?, ?, ?, ?, ?)", session['user_id'], symbol, shares, price, transaction, time)
+                db.execute("INSERT INTO purchases VALUES (?, ?, ?, ?, ?, ?)", session['user_id'], symbol, shares, price, transaction, ts)
                 # Update cash in database to reflect sale
                 db.execute("UPDATE users SET cash = ? WHERE id = ?", sum, session["user_id"])
                 return redirect("/")
