@@ -23,14 +23,17 @@ nav .navbar-brand .green
 }
 
 .table{
-    width: 100%
-    color: red;
+    margin-bottom: 1rem;
+    horizontal-align: center;
+    vertical-align: top;
+    width: 75%;
 }
 
 .text-end{
     border-bottom-width: 1px;
     padding: .5rem;
-    text-align: left;
+    text-align: right !important;
+
 }
 
 td{
