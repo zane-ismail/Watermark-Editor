@@ -22,6 +22,17 @@ nav .navbar-brand .green
     color: #2e944b;
 }
 
+table{
+    caption-side: bottom;
+    border-collapse: collapse;
+}
+
+.table{
+    border-color: var(--bs-table-border-color);
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
 .text-end{
     border-bottom-width: 1px;
     padding: .5rem;
