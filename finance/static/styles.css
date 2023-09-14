@@ -23,7 +23,7 @@ nav .navbar-brand .green
 }
 
 table{
-    table-cell-padding-y:        .5rem;
+    padding-y:        .5rem;
     padding-x:        .5rem;
     padding-y-sm:     .25rem;
     padding-x-sm:     .25rem;
