@@ -23,10 +23,8 @@ nav .navbar-brand .green
 }
 
 table{
-    padding-y:        .5rem;
-    padding-x:        .5rem;
-    padding-y-sm:     .25rem;
-    padding-x-sm:     .25rem;
+    /* border: 50px solid; */
+    width: 50%;
 }
 
 th{
