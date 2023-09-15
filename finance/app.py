@@ -289,12 +289,12 @@ def sell():
         # Render an apology if the input is blank or the symbol does not exist (as per the return value of lookup).
         if not symbol:
             return apology("Missing symbol")
-        # Render an apology if the input is not a positive integer.
+        # Render an apology if (somehow, once submitted) the user does not own any shares of that stock.
         elif not shares:
             return apology("Missing shares")
         else:
             transaction = "SELL"
-            ts = datetime.today().strftime('%Y-%m-%d %I:%M:%S')
+            timestamp = datetime.today().strftime('%Y-%m-%d %I:%M:%S')
             price = lookup(symbol)
             # Render an apology if the symbol does not exist (as per the return value of lookup)
             if price == None:
@@ -302,9 +302,9 @@ def sell():
             price = float(price['price'])
             cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
             cash = cash[0]['cash']
-            sum = cash + (shares * price)
-            rows = db.execute("SELECT * FROM purchases WHERE user_id = ?", session["user_id"])
+            total = cash + (shares * price)
             total_shares = 0
+            rows = db.execute("SELECT * FROM purchases WHERE user_id = ?", session["user_id"])
             for row in rows:
                 if row['symbol'] == symbol:
                     if row["type"] == "BUY":
@@ -317,13 +317,13 @@ def sell():
             if total_shares < shares:
                 return apology("Too many shares")
             else:
-                db.execute("INSERT INTO purchases VALUES (?, ?, ?, ?, ?, ?)", session['user_id'], symbol, shares, price, transaction, ts)
+                db.execute("INSERT INTO purchases VALUES (?, ?, ?, ?, ?, ?)", session['user_id'], symbol, shares, price, transaction, timestamp)
                 # Update cash in database to reflect sale
-                db.execute("UPDATE users SET cash = ? WHERE id = ?", sum, session["user_id"])
+                db.execute("UPDATE users SET cash = ? WHERE id = ?", total, session["user_id"])
                 flash("Sold!")
                 return redirect("/")
                 # Render an apology if the user fails to select a stock
-            # Or if (somehow, once submitted) the user does not own any shares of that stock.
+
 
     # Upon completion, redirect the user to the home page.
     return render_template("sell.html", symbols=symbols_owned)
