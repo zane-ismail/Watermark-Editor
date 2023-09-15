@@ -8,7 +8,7 @@
 
 <form action="/sell" method="post">
     <div class="mb-3">
-        <select autocomplete="off" autofocus class="form-select mx-auto w-auto" id="symbol" name="symbol" type="text" pattern="[^-,]+;'">
+        <select autocomplete="off" autofocus class="form-select mx-auto w-auto" id="symbol" name="symbol" type="text">
             <option value="" disabled selected>Symbol</option>
         {% for symbol in symbols %}
             <option>{{ symbol }}</option>
