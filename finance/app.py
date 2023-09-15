@@ -244,14 +244,14 @@ def register():
         users = db.execute("SELECT username FROM users")
 
         for user in users:
-            while i < len(users):
-                print(f"USER: {user}")
-                # Render an apology if username already exists
-                if users[i]['username'] == user:
-                    return apology("Username already taken", 403)
-                else:
-                    i =+ 1
-                    print(f"USER: {users[i]['username']}")
+            print(f"USER: {user}")
+            # Render an apology if username already exists
+            if users[i]['username'] == user:
+                return apology("Username already taken", 403)
+            else:
+                print(i)
+                print(f"USER: {users[i]['username']}")
+                i =+ 1
         # Render an apology if either input is blank or the passwords do not match.
         if not request.form.get("username"):
             return apology("Missing username", 400)
