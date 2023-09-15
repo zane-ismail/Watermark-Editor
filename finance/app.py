@@ -111,11 +111,11 @@ def buy():
             price = float(price['price'])
             cost = (shares * price)
             transaction = "BUY"
-            ts = datetime.today().strftime('%Y-%m-%d %I:%M:%S')
+            timestamp = datetime.today().strftime('%Y-%m-%d %I:%M:%S')
             # SELECT how much cash the user currently has in users
             cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
             cash = float(cash[0]['cash'])
-            sum = cash - cost
+            cash_total = cash - cost
             # Render an apology, without completing a purchase, if the user cannot afford the number of shares at the current price.
             if cost > cash:
                 return apology("Can't afford")
@@ -127,9 +127,9 @@ def buy():
                 except RuntimeError:
                     pass
                 # Update cash in database to reflect purchase
-                db.execute("UPDATE users SET cash = ? WHERE id = ?", sum, session["user_id"])
+                db.execute("UPDATE users SET cash = ? WHERE id = ?", cash_total, session["user_id"])
 
-            db.execute("INSERT INTO purchases VALUES (?, ?, ?, ?, ?, ?)", session['user_id'], symbol, shares, price, transaction, ts)
+            db.execute("INSERT INTO purchases VALUES (?, ?, ?, ?, ?, ?)", session['user_id'], symbol, shares, price, transaction, timestamp)
             # Upon completion, redirect the user to the home page.
             flash("Bought!")
             return redirect("/")
