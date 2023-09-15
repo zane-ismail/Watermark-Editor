@@ -247,6 +247,7 @@ def register():
             if i < len(users):
                 print(f"USER: {user}")
                 # Render an apology if username already exists
+                print(f"USER: {users[i]['username']}")
                 if users[i]['username'] == user:
                     return apology("Username already taken", 403)
             else:
