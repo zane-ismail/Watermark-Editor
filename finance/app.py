@@ -278,7 +278,7 @@ def sell():
                 total_shares = total_shares - row["shares"]
         if total_shares > 0:
             if row['symbol'] not in symbols_owned:
-                sort.symbols_owned.append(row['symbol'])
+                symbols_owned.append(row['symbol'])
 
     if request.method == "POST":
         """Sell shares of stock"""
