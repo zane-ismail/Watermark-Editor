@@ -324,6 +324,7 @@ def sell():
                 return redirect("/")
                 # Render an apology if the user fails to select a stock
 
-
+    # Sort alphabetically
+    symbols_owned = sorted(symbols_owned)
     # Upon completion, redirect the user to the home page.
     return render_template("sell.html", symbols=symbols_owned)
