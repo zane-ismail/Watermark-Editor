@@ -243,11 +243,11 @@ def register():
         # Check existing usernames
         users = db.execute("SELECT username FROM users")
 
-        for user in users[i]['username']:
+        for user in users:
             if i < len(users):
-                print("USER: {user}")
+                print(f"USER: {user}")
                 # Render an apology if username already exists
-                if username == user:
+                if users[i]['username'] == user:
                     return apology("Username already taken", 403)
             else:
                 i =+ 1
