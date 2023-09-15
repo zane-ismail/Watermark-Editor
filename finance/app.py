@@ -40,7 +40,6 @@ def index():
     if request.method == "GET":
         stocks_dict = {}
         symbols = []
-        stocks = []
         prices = [0]
         cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
         try:
@@ -60,10 +59,9 @@ def index():
             for symbol in symbols:
                 shares_amount = 0
                 i = 0
-                all_shares = db.execute("SELECT * FROM purchases WHERE user_id = ? AND symbol = ?", session["user_id"], symbol)
-                shares = db.execute("SELECT shares FROM purchases WHERE user_id = ? AND symbol = ?", session["user_id"], symbol)
-                for share in all_shares:
-                    if i < len(all_shares):
+                shares = db.execute("SELECT * FROM purchases WHERE user_id = ? AND symbol = ?", session["user_id"], symbol)
+                for share in shares:
+                    if i < len(shares):
                         if share['type'] == "BUY":
                             shares_amount = shares_amount + share['shares']
                         else:
@@ -75,7 +73,6 @@ def index():
                     pass
                 # Add number of stocks owned to dictionary
                 else:
-                    stocks.append(shares_amount)
                     stocks_dict.update({symbol: shares_amount})
 
             sum = 0
@@ -87,7 +84,7 @@ def index():
         # if the user has no assets
         except:
             return render_template("index.html", stocks_dict=[], cash=10000, sum=0, prices=0, total=10000)
-        
+
     return render_template("index.html", stocks_dict=stocks_dict, cash=cash, sum=sum, prices=prices, total=total)
 
 
