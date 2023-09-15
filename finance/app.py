@@ -42,34 +42,36 @@ def index():
         symbols = []
         prices = [0]
         cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
-        cash = float(cash[0]["cash"])
-        # add all user's stock symbols to a list
-        purchases = db.execute("SELECT * FROM purchases WHERE user_id = ?", session["user_id"])
-        for purchase in purchases:
-            # add the first symbol\
-            symbols.append(purchase['symbol'])
-            # add only unique symbols to list
+        # If the user has assets
+        try:
+            cash = float(cash[0]["cash"])
+            # add all user's stock symbols to a list
+            purchases = db.execute("SELECT * FROM purchases WHERE user_id = ?", session["user_id"])
+            for purchase in purchases:
+                # add the first symbol\
+                symbols.append(purchase['symbol'])
+                # add only unique symbols to list
+                for symbol in symbols:
+                    if purchase['symbol'] == symbol:
+                        break
+                    else:
+                        symbols.append(purchase['symbol'])
+            # Tally how many shares a user has for each stock
             for symbol in symbols:
-                if purchase['symbol'] == symbol:
-                    break
+                shares_amount = 0
+                shares = db.execute("SELECT * FROM purchases WHERE user_id = ? AND symbol = ?", session["user_id"], symbol)
+                # Add a share if bought, minus a share if sold
+                for share in shares:
+                    if share['type'] == "BUY":
+                        shares_amount = shares_amount + share['shares']
+                    else:
+                        shares_amount = shares_amount - share['shares']
+                # Don't display stocks the user previously owned
+                if shares_amount < 1:
+                    symbols.remove(symbol)
+                # Add number of stocks owned to dictionary
                 else:
-                    symbols.append(purchase['symbol'])
-        # Tally how many shares a user has for each stock
-        for symbol in symbols:
-            shares_amount = 0
-            shares = db.execute("SELECT * FROM purchases WHERE user_id = ? AND symbol = ?", session["user_id"], symbol)
-            # Add a share if bought, minus a share if sold
-            for share in shares:
-                if share['type'] == "BUY":
-                    shares_amount = shares_amount + share['shares']
-                else:
-                    shares_amount = shares_amount - share['shares']
-            # Don't display stocks the user previously owned
-            if shares_amount < 1:
-                symbols.remove(symbol)
-            # Add number of stocks owned to dictionary
-            else:
-                stocks_dict.update({symbol: shares_amount})
+                    stocks_dict.update({symbol: shares_amount})
 
             sum = 0
             for symbol in stocks_dict:
@@ -77,6 +79,9 @@ def index():
                 prices.append(price["price"])
                 sum = sum + price["price"] * stocks_dict[symbol]
             total = sum + cash
+        # if the user has no assets
+        except:
+            return render_template("index.html", stocks_dict=[], cash=10000, sum=0, prices=0, total=10000)
 
     return render_template("index.html", stocks_dict=stocks_dict, cash=cash, sum=sum, prices=prices, total=total)
 
