@@ -72,18 +72,18 @@ def index():
                 # Add number of stocks owned to dictionary
                 else:
                     stocks_dict.update({symbol: shares_amount})
-
-            sum = 0
+            # Calculate holdings
+            holdings = 0
             for symbol in stocks_dict:
                 price = lookup(symbol)
                 prices.append(price["price"])
-                sum = sum + price["price"] * stocks_dict[symbol]
-            total = sum + cash
+                holdings = holdings + price["price"] * stocks_dict[symbol]
+            total = holdings + cash
         # if the user has no assets
         except:
-            return render_template("index.html", stocks_dict=[], cash=10000, sum=0, prices=0, total=10000)
+            return render_template("index.html", stocks_dict=[], cash=10000, holdings=0, prices=0, total=10000)
 
-    return render_template("index.html", stocks_dict=stocks_dict, cash=cash, sum=sum, prices=prices, total=total)
+    return render_template("index.html", stocks_dict=stocks_dict, cash=cash, holdings=holdings, prices=prices, total=total)
 
 
 @app.route("/buy", methods=["GET", "POST"])
