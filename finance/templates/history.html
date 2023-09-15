@@ -20,14 +20,19 @@
             <tbody>
             {% for transaction in transactions %}
                 <tr>
+                    <!-- Include the stock’s symbol -->
                     <td class="text-start">{{ transaction['symbol'] }}</td>
+                    <!-- The number of shares bought or sold -->
                     {% if (transaction['type'] == "SELL") %}
                         <td class="text-end">{{ transaction['shares'] * - 1 }}</td>
                     {% else %}
                         <td class="text-end">{{ transaction['shares'] }}</td>
                     {% endif %}
+                    <!-- The (purchase or sale) price -->
                     <td class="text-end">{{ transaction['price'] | usd }}</td>
+                    <!-- Make clear whether a stock was bought or sold -->
                     <td class="text-end">{{ transaction['type'] }}</td>
+                    <!-- The date and time at which the transaction occurred. -->
                     <td class="text-end">{{ transaction['time'] }}</td>
                 </tr>
             </tbody>
