@@ -293,12 +293,7 @@ def sell():
         if total_shares > 0:
             if row['symbol'] not in symbols_owned:
                 symbols_owned.append(row['symbol'])
-    print(symbols_owned)
-
-
-
-
-
+    
     if request.method == "POST":
         """Sell shares of stock"""
         # Require that a user input a stock’s symbol, implemented as a select menu whose name is symbol.
