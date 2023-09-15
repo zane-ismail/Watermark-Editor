@@ -57,7 +57,7 @@ def index():
                     else:
                         symbols.append(purchase['symbol'])
             # Tally how many shares a user has for each stock
-            for symbol in symbols:
+            for symbol in sorted(symbols):
                 shares_amount = 0
                 shares = db.execute("SELECT * FROM purchases WHERE user_id = ? AND symbol = ?", session["user_id"], symbol)
                 # Add a share if bought, minus a share if sold
