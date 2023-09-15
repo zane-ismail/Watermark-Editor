@@ -248,10 +248,9 @@ def register():
             # Render an apology if username already exists
             if users[i]['username'] == user:
                 return apology("Username already taken", 403)
-            else:
-                print(i)
-                print(f"USER: {users[i]['username']}")
-                i =+ 1
+            print(i)
+            print(f"USER: {users[i]['username']}")
+            i =+ 1
         # Render an apology if either input is blank or the passwords do not match.
         if not request.form.get("username"):
             return apology("Missing username", 400)
