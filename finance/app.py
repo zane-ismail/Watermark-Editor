@@ -38,7 +38,6 @@ def after_request(response):
 def index():
     """Show portfolio of stocks"""
     if request.method == "GET":
-        i = 1
         stocks_dict = {}
         symbols = []
         stocks = []
@@ -49,10 +48,8 @@ def index():
             # add all user's stock symbols to a list
             purchases = db.execute("SELECT * FROM purchases WHERE user_id = ?", session["user_id"])
             for purchase in purchases:
-                # add the first symbol
-                while i > 0:
-                    symbols.append(purchase['symbol'])
-                    i =- 1
+                # add the first symbol\
+                symbols.append(purchase['symbol'])
                 # add only unique symbols to list
                 for symbol in symbols:
                     if purchase['symbol'] == symbol:
