@@ -43,7 +43,6 @@ def index():
         symbols = []
         stocks = []
         prices = [0]
-        user = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
         cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
         try:
             cash = float(cash[0]["cash"])
@@ -293,7 +292,7 @@ def sell():
         if total_shares > 0:
             if row['symbol'] not in symbols_owned:
                 symbols_owned.append(row['symbol'])
-    
+
     if request.method == "POST":
         """Sell shares of stock"""
         # Require that a user input a stock’s symbol, implemented as a select menu whose name is symbol.
