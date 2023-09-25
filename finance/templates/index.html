@@ -10,7 +10,7 @@
 
 <h2>Portfolio</h2>
     <main class="container py-5 text-center">
-        <table class="table table-striped">
+        <table class="table">
             <thead>
                 <tr>
                     <!-- stocks the user owns -->
@@ -36,18 +36,18 @@
                 </tr>
             {% endfor %}
             </tbody>
-            <tfoot>
-                <tr>
+            <tfoot class="table-striped">
+                <tr bgcolor="#f0f0f0">
                     <!-- the total value of each holding (i.e., shares times price) -->
                     <th class="border-0 fw-bold text-end" colspan="4">Holdings</th>
                     <td class="text-end">{{ holdings | usd}}</td>
                 </tr>
-                <tr>
+                <tr bgcolor="#f0f0f0">
                     <!-- display the user’s current cash balance -->
                     <th class="border-0 fw-bold text-end" colspan="4">Cash</th>
                     <td class="text-end">{{ cash | usd }}</td>
                 </tr>
-                <tr>
+                <tr bgcolor="#f0f0f0">
                     <!-- display a grand total (i.e., stocks’ total value plus cash). -->
                     <th class="border-0 fw-bold text-end" colspan="4">TOTAL</th>
                     <td class="text-end">{{ total | usd }}</td>
