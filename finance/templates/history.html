@@ -18,8 +18,8 @@
                 </tr>
             </thead>
             <tbody>
-            {% for transaction in transactions %}
                 <tr>
+                {% for transaction in transactions %}
                     <!-- Include the stock’s symbol -->
                     <td class="text-start">{{ transaction['symbol'] }}</td>
                     <!-- The number of shares bought or sold -->
@@ -35,8 +35,8 @@
                     <!-- The date and time at which the transaction occurred. -->
                     <td class="text-end">{{ transaction['time'] }}</td>
                 </tr>
+                {% endfor %}
             </tbody>
-        {% endfor %}
         </table>
     </main>
 

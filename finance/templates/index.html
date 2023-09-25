@@ -26,15 +26,15 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
             {% for symbol in stocks_dict %}
+                <tr>
                     <td class="text-start">{{ symbol }}</td>
                     <td class="text-start">{{ symbol }}</td>
                     <td class="text-end">{{ stocks_dict[symbol] }}</td>
                     <td class="text-end">{{ prices[loop.index] | usd}}</td>
                     <td class="text-end">{{ (prices[loop.index] * stocks_dict[symbol]) | usd}}</td>
-            {% endfor %}
                 </tr>
+            {% endfor %}
             </tbody>
             <tfoot>
                 <tr>
