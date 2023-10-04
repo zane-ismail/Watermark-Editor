@@ -55,7 +55,7 @@ def read_csv():
 #         # Add one or more new tables to finance.db via which to keep track of the purchase.
 #         # Store enough information so that you know who bought what at what price and when.
 #         db.execute(
-#             "CREATE TABLE recipes(id int NOT NULL, name varchar(255), ingredients varchar(255), description varchar(255),  steps text, minutes int, tags varchar(255)")
+#             "CREATE TABLE recipes(id int NOT NULL, name varchar(255), ingredients varchar(255), description varchar(255),  steps text, minutes int, tags varchar(255), n_ingredients int, n_steps int")
 #     except RuntimeError:
 #         pass
 
