@@ -34,7 +34,7 @@ def query():
     for i in query_input:
         i = i.replace(",", "")
         # Search ONLY exact match
-        for ingredient in data['ingredients'].replace("'", " ").replace("[", " ").replace("]", " ").split(","):
+        # for ingredient in data['ingredients'].replace("'", " ").replace("[", " ").replace("]", " ").split(","):
         # Expanded search
         for ingredient in data['ingredients'].replace("'", " ").replace(",", " ").replace("[", " ").replace("]", " ").split(","):
             print(ingredient)
