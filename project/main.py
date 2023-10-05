@@ -59,7 +59,7 @@ def create_database():
     try:
         db.execute("CREATE TABLE recipes(id int NOT NULL, name varchar(255), ingredients varchar(255), description varchar(255), steps text, minutes int, tags varchar(255), n_ingredients int, n_steps int)")
         # Todo add each parameter to the db
-        db.execute("INSERT INTO purchases VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", data['id'], data['name'], data['ingredients'], data['description'], data['steps'], data['minutes'], data['tags'], data['n_ingredients'], data['n_steps'], data[''])
+        db.execute("INSERT INTO purchases VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", data['id'], data['name'], data['ingredients'], data['description'], data['steps'], data['minutes'], data['tags'], data['n_ingredients'], data['n_steps'])
     except RuntimeError:
         pass
 create_database()
