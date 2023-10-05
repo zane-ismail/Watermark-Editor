@@ -63,7 +63,7 @@ def create_database():
         # Todo Add csv into database
         try:
             # Todo add each parameter to the db
-            db.execute("INSERT INTO purchases VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", data[i]['id'], data[i]['name'], data[i]['ingredients'], data[i]['description'], data[i]['steps'], data[i]['minutes'], data[i]['tags'], data[i]['n_ingredients'], data[i]['n_steps'])
+            db.execute("INSERT INTO recipes VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", data[i]['id'], data[i]['name'], data[i]['ingredients'], data[i]['description'], data[i]['steps'], data[i]['minutes'], data[i]['tags'], data[i]['n_ingredients'], data[i]['n_steps'])
             print("DONE")
         except RuntimeError:
             pass
