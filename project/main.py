@@ -21,7 +21,7 @@ for i in query_input:
 
 
 def read_csv():
-    with open('Recipes2.csv', encoding="utf8") as data_csv:
+    with open('Recipes.csv', encoding="utf8") as data_csv:
         reader = csv.DictReader(data_csv)
         data = []
         for row in reader:
@@ -69,7 +69,7 @@ def create_database():
     #     for tag in data[i]['tags']:
     #         tag = tag.replace(",", ";").replace("'", " ").replace("[", " ").replace("]", " ")
 
-    print(data)
+    # print(data)
     # Todo Add csv into database
     try:
         # Todo add each parameter to the db
