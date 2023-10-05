@@ -60,12 +60,16 @@ def create_database():
     except:
         pass
     for i in range(len(data)):
-        data[i]['ingredients'] = data[i]['ingredients'].replace("[", " ").replace("]", " ").replace(",", ";").replace("'", " ")
-        data[i]['description'] = data[i]['description'].replace("[", " ").replace("]", " ").replace(",", ";").replace("'", " ")
-        data[i]['steps'] = data[i]['steps'].replace("[", " ").replace("]", " ").replace(",", ";").replace("'", " ")
-        data[i]['tags'] = data[i]['tags'].replace("[", " ").replace("]", " ").replace(",", ";").replace("'", " ")
+        for ingredient in data[i]['ingredients']:
+            ingredient = ingredient.replace("[", " ").replace("]", " ").replace(",", ";").replace("'", " ")
+        for description in data[i]['description']:
+            description = description.replace("[", " ").replace("]", " ").replace(",", ";").replace("'", " ")
+        for step in data[i]['steps']:
+            step = step.replace("[", " ").replace("]", " ").replace(",", ";").replace("'", " ")
+        for tag in data[i]['tags']:
+            tag = tag.replace("[", " ").replace("]", " ").replace(",", ";").replace("'", " ")
 
-        print(data[i]['ingredients'])
+        print(data)
         # Todo Add csv into database
         try:
             # Todo add each parameter to the db
