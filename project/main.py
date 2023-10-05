@@ -62,6 +62,7 @@ def create_database():
         db.execute("INSERT INTO purchases VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", data['id'], data['name'], data['ingredients'], data['description'], data['steps'], data['minutes'], data['tags'], data['n_ingredients'], data['n_steps'], data[''])
     except RuntimeError:
         pass
+create_database()
 
 
 
