@@ -21,7 +21,7 @@ for i in query_input:
 
 
 def read_csv():
-    with open('Recipes.csv', encoding="utf8") as data_csv:
+    with open('Recipes2.csv', encoding="utf8") as data_csv:
         reader = csv.DictReader(data_csv)
         data = []
         for row in reader:
@@ -59,24 +59,24 @@ def create_database():
         db.execute("CREATE TABLE recipes(id int NOT NULL, name varchar(255), ingredients varchar(255), description varchar(255), steps varchar(255), minutes int, tags varchar(255), n_ingredients int, n_steps int)")
     except:
         pass
-    for i in range(len(data)):
-        for ingredient in data[i]['ingredients']:
-            ingredient = ingredient.replace(",", ";").replace("'", " ").replace("[", " ").replace("]", " ")
-        for description in data[i]['description']:
-            description = description.replace(",", ";").replace("'", " ").replace("[", " ").replace("]", " ")
-        for step in data[i]['steps']:
-            step = step.replace(",", ";").replace("'", " ").replace("[", " ").replace("]", " ")
-        for tag in data[i]['tags']:
-            tag = tag..replace(",", ";").replace("'", " ")replace("[", " ").replace("]", " ")
+    # for i in range(len(data)):
+    #     for ingredient in data[i]['ingredients']:
+    #         ingredient = ingredient.replace(",", ";").replace("'", " ").replace("[", " ").replace("]", " ")
+    #     for description in data[i]['description']:
+    #         description = description.replace(",", ";").replace("'", " ").replace("[", " ").replace("]", " ")
+    #     for step in data[i]['steps']:
+    #         step = step.replace(",", ";").replace("'", " ").replace("[", " ").replace("]", " ")
+    #     for tag in data[i]['tags']:
+    #         tag = tag.replace(",", ";").replace("'", " ").replace("[", " ").replace("]", " ")
 
-        print(data)
-        # Todo Add csv into database
-        try:
-            # Todo add each parameter to the db
-            db.execute("INSERT INTO recipes VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", data[i]['id'], data[i]['name'], data[i]['ingredients'], data[i]['description'], data[i]['steps'], data[i]['minutes'], data[i]['tags'], data[i]['n_ingredients'], data[i]['n_steps'])
-            print("DONE")
-        except RuntimeError:
-            pass
+    print(data)
+    # Todo Add csv into database
+    try:
+        # Todo add each parameter to the db
+        db.execute("INSERT INTO recipes VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", data[i]['id'], data[i]['name'], data[i]['ingredients'], data[i]['description'], data[i]['steps'], data[i]['minutes'], data[i]['tags'], data[i]['n_ingredients'], data[i]['n_steps'])
+        print("DONE")
+    except RuntimeError:
+        pass
 
 
 create_database()
