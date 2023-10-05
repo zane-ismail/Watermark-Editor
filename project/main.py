@@ -55,12 +55,16 @@ for recipe in recipe_data:
 
 def create_database():
     data = read_csv()
+    try:
+        db.execute("CREATE TABLE recipes(id int NOT NULL, name varchar(255), ingredients varchar(255), description varchar(255), steps varchar(255), minutes int, tags varchar(255), n_ingredients int, n_steps int)")
+    except:
+        pass
     for i in range(len(data)):
         # Todo Add csv into database
         try:
-            db.execute("CREATE TABLE recipes(id int NOT NULL, name varchar(255), ingredients varchar(255), description varchar(255), steps varchar(255), minutes int, tags varchar(255), n_ingredients int, n_steps int)")
             # Todo add each parameter to the db
             db.execute("INSERT INTO purchases VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", data[i]['id'], data[i]['name'], data[i]['ingredients'], data[i]['description'], data[i]['steps'], data[i]['minutes'], data[i]['tags'], data[i]['n_ingredients'], data[i]['n_steps'])
+            print("DONE")
         except RuntimeError:
             pass
 
