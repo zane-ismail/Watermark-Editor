@@ -23,10 +23,10 @@ for i in query_input:
 def read_csv():
     with open('Recipes.csv', encoding="utf8") as data_csv:
         reader = csv.DictReader(data_csv)
-        total_recipes = 0
+        data = []
         for row in reader:
-            data = row
-            return(data)
+            data.append(row)
+        return(data)
 
 def query():
     # Todo create a new function for queries
@@ -55,6 +55,7 @@ for recipe in recipe_data:
 
 def create_database():
     data = read_csv()
+    print(data)
     # Todo Add csv into database
     try:
         db.execute("CREATE TABLE recipes(id int NOT NULL, name varchar(255), ingredients varchar(255), description varchar(255), steps text, minutes int, tags varchar(255), n_ingredients int, n_steps int)")
@@ -62,15 +63,11 @@ def create_database():
         db.execute("INSERT INTO purchases VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", data['id'], data['name'], data['ingredients'], data['description'], data['steps'], data['minutes'], data['tags'], data['n_ingredients'], data['n_steps'])
     except RuntimeError:
         pass
+
+
 create_database()
 
 
-
-
-
-
-
-read_csv()
 
 # print(data)
 # for ingredient in data['ingredients']:
