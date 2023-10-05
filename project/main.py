@@ -55,7 +55,6 @@ for recipe in recipe_data:
 
 def create_database():
     data = read_csv()
-    print(data)
     # Todo Add csv into database
     try:
         db.execute("CREATE TABLE recipes(id int NOT NULL, name varchar(255), ingredients varchar(255), description varchar(255), steps text, minutes int, tags varchar(255), n_ingredients int, n_steps int)")
