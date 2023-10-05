@@ -7,7 +7,7 @@ from flask_session import Session
 app = Flask(__name__)
 
 # Configure CS50 Library to use SQLite database
-db = SQL("sqlite:///finance.db")
+db = SQL("sqlite:///recipes.db")
 
 data = []
 recipe_data = []
