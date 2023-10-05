@@ -26,36 +26,40 @@ def read_csv():
         total_recipes = 0
         for row in reader:
             data = row
-            # Todo create a new function for queries
-            count = 0
-            for i in query_input:
-                i = i.replace(",", "")
-                # Search ONLY exact match
-                for ingredient in data['ingredients'].replace("'", " ").replace("[", " ").replace("]", " ").split(","):
-                # Expanded search
-                for ingredient in data['ingredients'].replace("'", " ").replace(",", " ").replace("[", " ").replace("]", " ").split(","):
-                    print(ingredient)
-                    if i == ingredient:
-                        count += 1
-            # Enter data into dictionary
-            if count == length:
-                total_recipes += 1
-                for x in range(total_recipes):
-                    recipe_data.append({data['name']: data['ingredients']})
-                    total_recipes = 0
-        # Todo be able to call any given recipe name and pull data for it (db query)
-        for recipe in recipe_data:
-            for name in recipe:
-                if name == 'vegan tiramisu':
-                    print(data['vegan tiramisu'])
+            return(data)
+
+def query():
+    # Todo create a new function for queries
+    count = 0
+    for i in query_input:
+        i = i.replace(",", "")
+        # Search ONLY exact match
+        for ingredient in data['ingredients'].replace("'", " ").replace("[", " ").replace("]", " ").split(","):
+        # Expanded search
+        for ingredient in data['ingredients'].replace("'", " ").replace(",", " ").replace("[", " ").replace("]", " ").split(","):
+            print(ingredient)
+            if i == ingredient:
+                count += 1
+    # Enter data into dictionary
+    if count == length:
+        total_recipes += 1
+        for x in range(total_recipes):
+            recipe_data.append({data['name']: data['ingredients']})
+            total_recipes = 0
+# Todo be able to call any given recipe name and pull data for it (db query)
+for recipe in recipe_data:
+    for name in recipe:
+        if name == 'vegan tiramisu':
+            print(data['vegan tiramisu'])
 
 
 def create_database():
+    data = read_csv()
     # Todo Add csv into database
     try:
         db.execute("CREATE TABLE recipes(id int NOT NULL, name varchar(255), ingredients varchar(255), description varchar(255), steps text, minutes int, tags varchar(255), n_ingredients int, n_steps int)")
         # Todo add each parameter to the db
-        db.execute("INSERT INTO purchases VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", session['user_id'], symbol, shares, price, transaction, timestamp)
+        db.execute("INSERT INTO purchases VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", data['id'], data['name'], data['ingredients'], data['description'], data['steps'], data['minutes'], data['tags'], data['n_ingredients'], data['n_steps'], data[''])
     except RuntimeError:
         pass
 
