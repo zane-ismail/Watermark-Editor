@@ -69,7 +69,7 @@ def create_database():
         for tag in data[i]['tags']:
             tag = tag.replace(":", " ")
 
-        print(data)
+        # print(data)
         # Todo Add csv into database
         try:
             # Todo add each parameter to the db
