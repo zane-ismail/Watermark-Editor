@@ -59,16 +59,15 @@ def create_database():
         db.execute("CREATE TABLE recipes(id int NOT NULL, name varchar(255), ingredients varchar(255), description varchar(255), steps varchar(255), minutes int, tags varchar(255), n_ingredients int, n_steps int)")
     except:
         pass
-    for i in range(len(data)):
-        for ingredient in data[i]['ingredients']:
+    for ingredient in data[i]['ingredients']:
             ingredient = ingredient.replace("@", " at ")
-        for description in data[i]['description']:
-            description = description.replace("@", " at ")
-        for step in data[i]['steps']:
-            step = step.replace("@", " at ")
-        for tag in data[i]['tags']:
-            tag = tag.replace("@", " at ")
-
+    for description in data[i]['description']:
+        description = description.replace("@", " at ")
+    for step in data[i]['steps']:
+        step = step.replace("@", " at ")
+    for tag in data[i]['tags']:
+        tag = tag.replace("@", " at ")
+    for i in range(len(data)):
         # print(data)
         # Todo Add csv into database
         try:
