@@ -21,7 +21,7 @@ for i in query_input:
 
 
 def read_csv():
-    with open('Recipes.csv', encoding="utf8") as data_csv:
+    with open('Recipes3.csv') as data_csv:
         reader = csv.DictReader(data_csv)
         data = []
         for row in reader:
