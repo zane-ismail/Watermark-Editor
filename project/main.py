@@ -59,7 +59,7 @@ def create_database():
         db.execute("CREATE TABLE recipes(id int NOT NULL, name varchar(255), ingredients varchar(255), description varchar(255), steps varchar(255), minutes int, tags varchar(255), n_ingredients int, n_steps int)")
     except:
         pass
-    # for i in range(len(data)):
+    for i in range(len(data)):
     #     for ingredient in data[i]['ingredients']:
     #         ingredient = ingredient.replace(",", ";").replace("'", " ").replace("[", " ").replace("]", " ")
     #     for description in data[i]['description']:
@@ -71,12 +71,12 @@ def create_database():
 
     # print(data)
     # Todo Add csv into database
-    try:
-        # Todo add each parameter to the db
-        db.execute("INSERT INTO recipes VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", data[i]['id'], data[i]['name'], data[i]['ingredients'], data[i]['description'], data[i]['steps'], data[i]['minutes'], data[i]['tags'], data[i]['n_ingredients'], data[i]['n_steps'])
-        print("DONE")
-    except RuntimeError:
-        pass
+        try:
+            # Todo add each parameter to the db
+            db.execute("INSERT INTO recipes VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", data[i]['id'], data[i]['name'], data[i]['ingredients'], data[i]['description'], data[i]['steps'], data[i]['minutes'], data[i]['tags'], data[i]['n_ingredients'], data[i]['n_steps'])
+            print("DONE")
+        except RuntimeError:
+            pass
 
 
 create_database()
