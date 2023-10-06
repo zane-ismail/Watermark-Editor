@@ -61,14 +61,14 @@ def create_database():
         pass
     for i in range(len(data)):
         for ingredient in data[i]['ingredients']:
-            print(ingredient)
             ingredient = ingredient.replace("@", " at ")
+            print(ingredient)
         for description in data[i]['description']:
-            print(description)
             description = description.replace("@", " at ")
+            print(description)
         for step in data[i]['steps']:
-            print(step)
             step = step.replace("@", " at ")
+            print(step)
         for tag in data[i]['tags']:
             tag = tag.replace("@", " at ")
             print(tag)
