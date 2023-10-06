@@ -61,13 +61,13 @@ def create_database():
         pass
     for i in range(len(data)):
         for ingredient in data[i]['ingredients']:
-            ingredient = ingredient.replace(":", " ")
+            ingredient = ingredient.replace(":", " ").replace("@", " at ")
         for description in data[i]['description']:
-            description = description.replace(":", " ")
+            description = description.replace(":", " ").replace("@", " at ")
         for step in data[i]['steps']:
-            step = step.replace(":", " ")
+            step = step.replace(":", " ").replace("@", " at ")
         for tag in data[i]['tags']:
-            tag = tag.replace(":", " ")
+            tag = tag.replace(":", " ").replace("@", " at ")
 
         # print(data)
         # Todo Add csv into database
