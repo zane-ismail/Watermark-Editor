@@ -60,17 +60,17 @@ def create_database():
     except:
         pass
     for i in range(len(data)):
-    #     for ingredient in data[i]['ingredients']:
-    #         ingredient = ingredient.replace(",", ";").replace("'", " ").replace("[", " ").replace("]", " ")
-    #     for description in data[i]['description']:
-    #         description = description.replace(",", ";").replace("'", " ").replace("[", " ").replace("]", " ")
-    #     for step in data[i]['steps']:
-    #         step = step.replace(",", ";").replace("'", " ").replace("[", " ").replace("]", " ")
-    #     for tag in data[i]['tags']:
-    #         tag = tag.replace(",", ";").replace("'", " ").replace("[", " ").replace("]", " ")
+        for ingredient in data[i]['ingredients']:
+            ingredient = ingredient.replace(":", " ")
+        for description in data[i]['description']:
+            description = description.replace(":", " ")
+        for step in data[i]['steps']:
+            step = step.replace(":", " ")
+        for tag in data[i]['tags']:
+            tag = tag.replace(":", " ")
 
-    # print(data)
-    # Todo Add csv into database
+        print(data)
+        # Todo Add csv into database
         try:
             # Todo add each parameter to the db
             db.execute("INSERT INTO recipes VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", data[i]['id'], data[i]['name'], data[i]['ingredients'], data[i]['description'], data[i]['steps'], data[i]['minutes'], data[i]['tags'], data[i]['n_ingredients'], data[i]['n_steps'])
