@@ -307,6 +307,7 @@ def adjust_watermark():
     global IS_TXT, IS_WM
     IS_WM = True
     IS_TXT = False
+    print("wm")
     # Deactivate text feature when watermark is added
     enable_watermark()
     watermark_image = Image.open(FILE_PATH)
