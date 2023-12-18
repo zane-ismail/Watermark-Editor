@@ -1,13 +1,12 @@
-from tkinter import *
-from PIL import Image, ImageTk, ImageDraw, ImageFont
-from tkinter import filedialog
-from tkinter import ttk
-from tkinter.filedialog import askopenfilename
-from tkinter.filedialog import asksaveasfile
-from tkinter.colorchooser import askcolor
-import tkinter.messagebox
-import os
 import atexit
+import os
+import tkinter.messagebox
+from tkinter import *
+from tkinter import ttk, filedialog
+from tkinter.colorchooser import askcolor
+from tkinter.filedialog import askopenfilename, asksaveasfile
+
+from PIL import Image, ImageTk, ImageDraw, ImageFont
 
 # /// SET GLOBAL VALUES ///
 BOX_COLOR = "black"
@@ -30,7 +29,7 @@ fonts = ("Arial", "Bahnschrift", "Calibri", "Cambria", "Ebrima", "SimSun", "Taho
 
 # Create a blank canvas
 def blank_canvas():
-    blank = Image.open("blank.png")
+    blank = Image.open("canvas.png")
     blank = ImageTk.PhotoImage(blank)
     canvas = Label(borderwidth=0)
     canvas.image = blank
@@ -59,10 +58,9 @@ def watermark_type():
 tk = tkinter
 window = Tk()
 window.resizable(True, True)
-window.title("Watermark Generator")
+window.title("Watermark Editor")
 window.config(padx=0, pady=5, background="#4d5147")
-# window.overrideredirect(1)
-window.geometry("1600x1000")
+window.geometry("1400x1400")
 # Add canvas
 blank_canvas()
 # Slider current values
@@ -105,7 +103,6 @@ def size_changed(event):
     watermark_type()
 
 
-
 # Detect text x-axis slider position
 def slider_x_changed(event):
     global X_VALUE
@@ -123,6 +120,7 @@ def slider_y_changed(event):
 # /// MAIN FUNCTIONS ///
 # Open image and add to canvas
 def add_image():
+    # Todo create a folder
     # Save folder to a generic path
     img_file_path = askopenfilename(
         initialdir="C:/Users/Public/Pictures", title="Select a File",
@@ -382,12 +380,6 @@ def on_exit():
         close_window()
 
 
-# Open file
-def open_file():
-    filename = filedialog.askopenfilename(title="open")
-    return filename
-
-
 # Remove text
 def remove_text():
     try:
@@ -435,7 +427,7 @@ def remove_watermark():
     rm_wm_btn.configure(state="disabled")
 
 
-# Reset watermark sliders once watermark is placed
+# Reset watermark sliders once text is placed
 def reset_wm_sliders():
     reset_sliders()
     adjust_text()
@@ -467,7 +459,6 @@ def save_image():
 
 # Save text onto the canvas
 def save_text():
-    remove_watermark()
     try:
         save_file = Image.open(HYBRID_IMAGE)
         save_file.save(WATERMARK_IMAGE)
@@ -484,7 +475,6 @@ def save_text():
 
 # Save watermark onto the canvas
 def save_watermark():
-    remove_text()
     try:
         save_file = Image.open(WATERMARK_IMAGE)
         save_file.save(HYBRID_IMAGE)
@@ -588,14 +578,14 @@ opacity_slider_label.grid(column=11, row=6, padx=25, sticky="E")
 opacity_slider = Scale(command=opacity_changed, variable=current_opacity_value, bg="#4d5147", fg="#d9d0b4",
                        troughcolor="#d9d0b4", from_=0, to=255, orient="horizontal")
 opacity_slider.set(255)
-opacity_slider.grid(column=12, row=6, sticky="E")
+opacity_slider.grid(column=12, row=6, sticky="W")
 # Padding
 padding_1 = Label(bg="#4d5147")
-padding_1.grid(column=1, row=0, rowspan=10, padx=40)
+padding_1.grid(column=1, row=0, rowspan=10, padx=42)
 padding_2 = Label(bg="#4d5147")
-padding_2.grid(column=8, row=0, rowspan=10, padx=30)
+padding_2.grid(column=8, row=0, rowspan=10, padx=37)
 padding_3 = Label(bg="#4d5147")
-padding_3.grid(column=9, row=0, rowspan=10, padx=20)
+padding_3.grid(column=9, row=0, rowspan=10, padx=100)
 # Close button
 close_btn = Button(text="Save and close", command=on_exit, bg="#33362f", foreground="#d9d0b4", font="bahnschrift 12",
                    height=2, width=20)
