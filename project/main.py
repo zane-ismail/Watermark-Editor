@@ -254,6 +254,7 @@ def adjust_text():
     try:
         try:
             with Image.open(WATERMARK_IMAGE).convert("RGBA") as new_image:
+                print("1")
                 add_text(
                     new_image,
                     NEW_FONT,
@@ -265,6 +266,7 @@ def adjust_text():
                 )
         except FileNotFoundError:
             with Image.open(USER_IMAGE).convert("RGBA") as new_image:
+                print("2")
                 add_text(
                     new_image,
                     NEW_FONT,
@@ -276,6 +278,7 @@ def adjust_text():
                 )
         finally:
             with Image.open(HYBRID_IMAGE).convert("RGBA") as new_image:
+                print("3")
                 add_text(
                     new_image,
                     NEW_FONT,
