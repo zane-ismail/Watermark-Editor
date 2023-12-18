@@ -24,15 +24,17 @@ USER_IMAGE = "user-image.png"
 WATERMARK_IMAGE = "user-image-watermark.png"
 HYBRID_IMAGE = "user-image-hybrid.png"
 # Font list
-fonts = ("Arial",
-         "Bahnschrift",
-         "Calibri",
-         "Cambria",
-         "Ebrima",
-         "SimSun",
-         "Tahoma",
-         "Verdana",
-         "Webdings")
+fonts = (
+    "Arial",
+    "Bahnschrift",
+    "Calibri",
+    "Cambria",
+    "Ebrima",
+    "SimSun",
+    "Tahoma",
+    "Verdana",
+    "Webdings",
+)
 
 
 # Create a blank canvas
@@ -134,7 +136,13 @@ def add_image():
     img_file_path = askopenfilename(
         initialdir="C:/Users/Public/Pictures",
         title="Select a File",
-        filetypes=(("PNG", "*.png")))
+        filetypes=(
+            ("PNG", "*.png"),
+            ("JPEG", ("*.jpg", "*.jpeg", "*.jpe")),
+            ("BMP", ("*.bmp", "*.jdib")),
+            ("GIF", "*.gif"),
+        ),
+    )
     # When file is added open up features
     if img_file_path:
         blank_canvas()
@@ -146,17 +154,21 @@ def add_image():
     img_height = img.height
 
     # Scale image and cap height and scale width
-    if img.height >= MAX_IMG_SIZE
-    and img.height > img.width
-    or MAX_IMG_SIZE > img.height > img.width:
+    if (
+        img.height >= MAX_IMG_SIZE
+        and img.height > img.width
+        or MAX_IMG_SIZE > img.height > img.width
+    ):
         img_diff = int(img.height - MAX_IMG_SIZE)
-        diff_per = (img_diff / img.height)
+        diff_per = img_diff / img.height
         img_width = int(img.width * (1 - diff_per))
         img_height = MAX_IMG_SIZE
     # Cap width at and scale height
-    elif img.width >= MAX_IMG_SIZE
-    and img.width > img.height
-    or MAX_IMG_SIZE > img.width > img.height:
+    elif (
+        img.width >= MAX_IMG_SIZE
+        and img.width > img.height
+        or MAX_IMG_SIZE > img.width > img.height
+    ):
         img_diff = int(img.width - MAX_IMG_SIZE)
         diff_per = img_diff / img.width
         img_height = int(img.height * (1 - diff_per))
@@ -177,14 +189,14 @@ def add_image():
 
 # Add text
 def add_text(
-        new_image, new_font, txt_size_slider, x_value, y_value, text_box, new_colors
-        ):
+    new_image, new_font, txt_size_slider, x_value, y_value, text_box, new_colors
+):
     txt = Image.new("RGBA", new_image.size, (255, 255, 255, 0))
     font = ImageFont.truetype(new_font, txt_size_slider)
     draw = ImageDraw.Draw(txt)
     draw.text(
         (x_value, y_value), f"{text_box.get(1.0, 'end-1c')}", font=font, fill=new_colors
-        )
+    )
     new_image = Image.alpha_composite(new_image, txt)
     new_image.save(HYBRID_IMAGE)
     opacity_slider.configure(from_=0, to=255)
@@ -195,9 +207,15 @@ def add_text(
 def add_watermark():
     global FILE_PATH
     FILE_PATH = askopenfilename(
-        initialdir="C:/Users/Public/Pictures", title="Select a File",
-        filetypes=(("PNG", "*.png"), ("JPEG", ("*.jpg", "*.jpeg", "*.jpe")),
-                   ("BMP", ("*.bmp", "*.jdib")), ("GIF", "*.gif")))
+        initialdir="C:/Users/Public/Pictures",
+        title="Select a File",
+        filetypes=(
+            ("PNG", "*.png"),
+            ("JPEG", ("*.jpg", "*.jpeg", "*.jpe")),
+            ("BMP", ("*.bmp", "*.jdib")),
+            ("GIF", "*.gif"),
+        ),
+    )
     if FILE_PATH:
         # Reset fields
         global IS_WM
@@ -233,15 +251,48 @@ def adjust_text():
     try:
         try:
             with Image.open(WATERMARK_IMAGE).convert("RGBA") as new_image:
-                add_text(new_image, NEW_FONT, txt_size_slider, X_VALUE, Y_VALUE, text_box, new_colors)
+                add_text(
+                    new_image,
+                    NEW_FONT,
+                    txt_size_slider,
+                    X_VALUE,
+                    Y_VALUE,
+                    text_box,
+                    new_colors,
+                )
         except FileNotFoundError:
             with Image.open(USER_IMAGE).convert("RGBA") as new_image:
-                add_text(new_image, NEW_FONT, txt_size_slider, X_VALUE, Y_VALUE, text_box, new_colors)
+                add_text(
+                    new_image,
+                    NEW_FONT,
+                    txt_size_slider,
+                    X_VALUE,
+                    Y_VALUE,
+                    text_box,
+                    new_colors,
+                )
         finally:
             with Image.open(HYBRID_IMAGE).convert("RGBA") as new_image:
-                add_text(new_image, NEW_FONT, txt_size_slider, X_VALUE, Y_VALUE, text_box, new_colors)
+                add_text(
+                    new_image,
+                    NEW_FONT,
+                    txt_size_slider,
+                    X_VALUE,
+                    Y_VALUE,
+                    text_box,
+                    new_colors,
+                )
         new_image = ImageTk.PhotoImage(
-            add_text(new_image, NEW_FONT, txt_size_slider, X_VALUE, Y_VALUE, text_box, new_colors))
+            add_text(
+                new_image,
+                NEW_FONT,
+                txt_size_slider,
+                X_VALUE,
+                Y_VALUE,
+                text_box,
+                new_colors,
+            )
+        )
         new_panel_1 = Label(image=new_image, borderwidth=0)
         new_panel_1.image = new_image
         new_panel_1.grid(column=1, row=1, columnspan=8, rowspan=15, padx=120, pady=15)
@@ -260,16 +311,22 @@ def adjust_watermark():
     w_img_height = 0
     w_img_width = 0
     # Cap height and scale width
-    if watermark_image.height >= MAX_WM_SIZE and watermark_image.height > watermark_image.width \
-            or MAX_WM_SIZE > watermark_image.height > watermark_image.width:
+    if (
+        watermark_image.height >= MAX_WM_SIZE
+        and watermark_image.height > watermark_image.width
+        or MAX_WM_SIZE > watermark_image.height > watermark_image.width
+    ):
         w_img_diff = int(watermark_image.height - MAX_WM_SIZE)
-        w_diff_per = (w_img_diff / watermark_image.height)
+        w_diff_per = w_img_diff / watermark_image.height
         w_img_width = int(watermark_image.width * (1 - w_diff_per))
         w_img_height = MAX_WM_SIZE
-    elif watermark_image.width >= MAX_WM_SIZE and watermark_image.width > watermark_image.height \
-            or MAX_WM_SIZE > watermark_image.width > watermark_image.height:
+    elif (
+        watermark_image.width >= MAX_WM_SIZE
+        and watermark_image.width > watermark_image.height
+        or MAX_WM_SIZE > watermark_image.width > watermark_image.height
+    ):
         w_img_diff = int(watermark_image.width - MAX_WM_SIZE)
-        w_diff_per = (w_img_diff / watermark_image.width)
+        w_diff_per = w_img_diff / watermark_image.width
         w_img_height = int(watermark_image.height * (1 - w_diff_per))
         w_img_width = MAX_WM_SIZE
 
@@ -281,8 +338,8 @@ def adjust_watermark():
 
     # Apply transparency
     opacity = current_opacity_value.get()
-    if watermark_image.mode != 'RGBA':
-        alpha = Image.new('L', watermark_image.size, 255)
+    if watermark_image.mode != "RGBA":
+        alpha = Image.new("L", watermark_image.size, 255)
         watermark_image.putalpha(alpha)
     paste_mask = watermark_image.split()[3].point(lambda i: i * opacity / 100)
 
@@ -466,9 +523,16 @@ def save_image():
 
     save_directory = asksaveasfile(
         initialdir="C:/Users/Public/Pictures",
-        filetypes=(("PNG", ".png"), ("JPEG", ("*.jpg", "*.jpeg", "*.jpe")),
-                   ("BMP", ("*.bmp", "*.jdib")), ("GIF", "*.gif"),
-                   ("All Files", "*.*")), mode="wb", defaultextension=".png")
+        filetypes=(
+            ("PNG", ".png"),
+            ("JPEG", ("*.jpg", "*.jpeg", "*.jpe")),
+            ("BMP", ("*.bmp", "*.jdib")),
+            ("GIF", "*.gif"),
+            ("All Files", "*.*"),
+        ),
+        mode="wb",
+        defaultextension=".png",
+    )
     if save_directory:
         return save_file.save(save_directory)
     close_files()
@@ -508,92 +572,231 @@ def save_watermark():
 
 # /// BUTTONS ///
 # Open image
-open_image = Button(text="Add Image...", command=add_image, bg="#7d6b57", foreground="#d9d0b4", font="bahnschrift 12",
-                    width=10, padx=15, highlightcolor="#7d6b57")
+open_image = Button(
+    text="Add Image...",
+    command=add_image,
+    bg="#7d6b57",
+    foreground="#d9d0b4",
+    font="bahnschrift 12",
+    width=10,
+    padx=15,
+    highlightcolor="#7d6b57",
+)
 open_image.grid(column=2, row=0, sticky="E")
 # Save as
-save_as = Button(text="Save as...", command=save_image, bg="#7d6b57", foreground="#d9d0b4", font="bahnschrift 10",
-                 width=10, padx=0, activebackground="#d9d0b4")
+save_as = Button(
+    text="Save as...",
+    command=save_image,
+    bg="#7d6b57",
+    foreground="#d9d0b4",
+    font="bahnschrift 10",
+    width=10,
+    padx=0,
+    activebackground="#d9d0b4",
+)
 save_as.grid(column=3, row=0)
 # Create watermark
-add_wm = Button(text="Add Watermark", command=add_watermark, bg="#ab9e86", foreground="#33362f", font="bahnschrift 9",
-                highlightcolor="#7d6b57", width=15, padx=0, state="disabled")
+add_wm = Button(
+    text="Add Watermark",
+    command=add_watermark,
+    bg="#ab9e86",
+    foreground="#33362f",
+    font="bahnschrift 9",
+    highlightcolor="#7d6b57",
+    width=15,
+    padx=0,
+    state="disabled",
+)
 add_wm.grid(column=4, row=0)
 # Remove watermark
-rm_wm_btn = Button(text="Remove Watermark", command=remove_watermark, bg="#ab9e86", foreground="#33362f",
-                   font="bahnschrift 9", activebackground="#d9d0b4", width=15, padx=0, state="disabled")
+rm_wm_btn = Button(
+    text="Remove Watermark",
+    command=remove_watermark,
+    bg="#ab9e86",
+    foreground="#33362f",
+    font="bahnschrift 9",
+    activebackground="#d9d0b4",
+    width=15,
+    padx=0,
+    state="disabled",
+)
 rm_wm_btn.grid(column=5, row=0)
 # Remove text
-rm_txt_btn = Button(text="Remove Text", command=remove_text, bg="#ab9e86", foreground="#33362f", font="bahnschrift 9",
-                    activebackground="#d9d0b4", width=15, padx=0, state="disabled")
+rm_txt_btn = Button(
+    text="Remove Text",
+    command=remove_text,
+    bg="#ab9e86",
+    foreground="#33362f",
+    font="bahnschrift 9",
+    activebackground="#d9d0b4",
+    width=15,
+    padx=0,
+    state="disabled",
+)
 rm_txt_btn.grid(column=6, row=0)
 
 # /// WATERMARK AND FONT FEATURES ///
 sep_vert_w = ttk.Separator(window, orient="vertical")
 sep_vert_w.grid(column=10, row=0, rowspan=15, sticky="NS")
 # Color panel
-color_panel = Label(bg=BOX_COLOR, foreground="#d9d0b4", width=3, borderwidth=2, relief="groove")
+color_panel = Label(
+    bg=BOX_COLOR, foreground="#d9d0b4", width=3, borderwidth=2, relief="groove"
+)
 color_panel.grid(column=12, row=1, columnspan=2, padx=25, sticky="W")
 # Color picker
-color_picker = Button(text="Color", command=change_color, bg="#666b5e", foreground="#d9d0b4",
-                      font="bahnschrift", width=10, relief="groove")
+color_picker = Button(
+    text="Color",
+    command=change_color,
+    bg="#666b5e",
+    foreground="#d9d0b4",
+    font="bahnschrift",
+    width=10,
+    relief="groove",
+)
 color_picker.grid(column=11, row=1, columnspan=1, padx=25, sticky="W")
 style = ttk.Style()
 style.theme_use("alt")
-style.configure("TButton", background="#666b5e", foreground="#d9d0b4", font="bahnschrift", width=10, relief="groove")
+style.configure(
+    "TButton",
+    background="#666b5e",
+    foreground="#d9d0b4",
+    font="bahnschrift",
+    width=10,
+    relief="groove",
+)
 style.map("TButton", background=[("active", "#666b5e")])
 # Font picker
 var = Variable(value=fonts)
-font_list = Listbox(listvariable=var, selectmode=tk.EXTENDED, bg="#d9d0b4", selectbackground="#7d6b57",
-                    font="Arial 10", width=11, height=4, relief="groove")
+font_list = Listbox(
+    listvariable=var,
+    selectmode=tk.EXTENDED,
+    bg="#d9d0b4",
+    selectbackground="#7d6b57",
+    font="Arial 10",
+    width=11,
+    height=4,
+    relief="groove",
+)
 font_list.grid(column=12, row=2, rowspan=1, sticky="W")
 font_list.select_set(0)
 scrollbar = Scrollbar(command=font_list.yview, bg="#4d5147", troughcolor="#d9d0b4")
 scrollbar.grid(column=12, row=2, rowspan=1, sticky="E")
 font_list.configure(yscrollcommand=scrollbar.set)
-font_picker = Button(text="Change font", command=adjust_text, bg="#666b5e", foreground="#d9d0b4",
-                     font="bahnschrift", width=10, relief="groove")
+font_picker = Button(
+    text="Change font",
+    command=adjust_text,
+    bg="#666b5e",
+    foreground="#d9d0b4",
+    font="bahnschrift",
+    width=10,
+    relief="groove",
+)
 font_picker.grid(column=12, row=3, columnspan=1, sticky="W")
 # Text box
 text_box = Text(height=5, width=12, bg="#d9d0b4")
 text_box.grid(column=11, row=2, columnspan=3, padx=25, sticky="W")
 # Add text
-add_txt_btn = Button(width=10, text="Add text", command=reset_wm_sliders, bg="#666b5e", foreground="#d9d0b4",
-                     font="bahnschrift", relief="groove")
+add_txt_btn = Button(
+    width=10,
+    text="Add text",
+    command=reset_wm_sliders,
+    bg="#666b5e",
+    foreground="#d9d0b4",
+    font="bahnschrift",
+    relief="groove",
+)
 add_txt_btn.grid(column=11, row=3, columnspan=1, padx=25)
 # Slider x y label
-slider_x_label = Label(text="Position:", bg="#4d5147", foreground="#d9d0b4", font="bahnschrift")
+slider_x_label = Label(
+    text="Position:", bg="#4d5147", foreground="#d9d0b4", font="bahnschrift"
+)
 slider_x_label.grid(column=11, row=4, padx=25, sticky="E")
 # Slider x
-slider_x = Scale(command=lambda event=None: slider_x_changed(event), variable=current_x_value, bg="#4d5147",
-                 fg="#d9d0b4", troughcolor="#d9d0b4", from_=-150, to=550, orient="horizontal", showvalue=False)
+slider_x = Scale(
+    command=lambda event=None: slider_x_changed(event),
+    variable=current_x_value,
+    bg="#4d5147",
+    fg="#d9d0b4",
+    troughcolor="#d9d0b4",
+    from_=-150,
+    to=550,
+    orient="horizontal",
+    showvalue=False,
+)
 slider_x.grid(column=12, row=4, sticky="W")
 # Slider y
-slider_y = Scale(command=lambda event=None: slider_y_changed(event), variable=current_y_value, bg="#4d5147",
-                 fg="#d9d0b4", troughcolor="#d9d0b4", from_=-150, to=550, orient="vertical", showvalue=False)
+slider_y = Scale(
+    command=lambda event=None: slider_y_changed(event),
+    variable=current_y_value,
+    bg="#4d5147",
+    fg="#d9d0b4",
+    troughcolor="#d9d0b4",
+    from_=-150,
+    to=550,
+    orient="vertical",
+    showvalue=False,
+)
 slider_y.grid(column=12, row=4, sticky="E")
 # Place text button
-place_txt_btn = Button(text="Stamp", command=save_text, bg="#666b5e", foreground="#d9d0b4", font="bahnschrift 10",
-                       height=1, width=10, relief="groove", state="disabled")
+place_txt_btn = Button(
+    text="Stamp",
+    command=save_text,
+    bg="#666b5e",
+    foreground="#d9d0b4",
+    font="bahnschrift 10",
+    height=1,
+    width=10,
+    relief="groove",
+    state="disabled",
+)
 place_txt_btn.grid(column=11, row=4, columnspan=2, padx=27, pady=10, sticky="NE")
 # Place text button
-place_wm_btn = Button(text="Stamp", command=save_watermark, bg="#666b5e", foreground="#d9d0b4", font="bahnschrift 10",
-                      height=1, width=10, relief="groove", state="disabled")
+place_wm_btn = Button(
+    text="Stamp",
+    command=save_watermark,
+    bg="#666b5e",
+    foreground="#d9d0b4",
+    font="bahnschrift 10",
+    height=1,
+    width=10,
+    relief="groove",
+    state="disabled",
+)
 place_wm_btn.grid(column=11, row=4, columnspan=2, padx=27, pady=10, sticky="SE")
 # Size slider label
-size_slider_label = Label(text="Size:", bg="#4d5147", foreground="#d9d0b4", font="bahnschrift")
+size_slider_label = Label(
+    text="Size:", bg="#4d5147", foreground="#d9d0b4", font="bahnschrift"
+)
 size_slider_label.grid(column=11, row=5, padx=25, sticky="E")
 # Size slider
-size_slider = Scale(command=size_changed, variable=current_size, bg="#4d5147", fg="#d9d0b4", troughcolor="#d9d0b4",
-                    from_=1, to=500, orient="horizontal")
+size_slider = Scale(
+    command=size_changed,
+    variable=current_size,
+    bg="#4d5147",
+    fg="#d9d0b4",
+    troughcolor="#d9d0b4",
+    from_=1,
+    to=500,
+    orient="horizontal",
+)
 size_slider.set(60)
 size_slider.grid(column=12, row=5, sticky="E")
 # Opacity slider label
-opacity_slider_label = Label(text="Opacity:", bg="#4d5147", foreground="#d9d0b4", font="bahnschrift")
+opacity_slider_label = Label(
+    text="Opacity:", bg="#4d5147", foreground="#d9d0b4", font="bahnschrift"
+)
 opacity_slider_label.grid(column=11, row=6, padx=25, sticky="E")
 # Opacity slider
-opacity_slider = Scale(command=opacity_changed, variable=current_opacity_value, bg="#4d5147", fg="#d9d0b4",
-                       troughcolor="#d9d0b4", from_=0, to=255, orient="horizontal")
+opacity_slider = Scale(
+    command=opacity_changed,
+    variable=current_opacity_value,
+    bg="#4d5147",
+    fg="#d9d0b4",
+    troughcolor="#d9d0b4",
+    from_=0,
+    to=255,
+    orient="horizontal",
+)
 opacity_slider.set(255)
 opacity_slider.grid(column=12, row=6, sticky="W")
 # Padding
@@ -604,8 +807,15 @@ padding_2.grid(column=8, row=0, rowspan=10, padx=30)
 padding_3 = Label(bg="#4d5147")
 padding_3.grid(column=9, row=0, rowspan=10, padx=50)
 # Close button
-close_btn = Button(text="Save and close", command=on_exit, bg="#33362f", foreground="#d9d0b4", font="bahnschrift 12",
-                   height=2, width=20)
+close_btn = Button(
+    text="Save and close",
+    command=on_exit,
+    bg="#33362f",
+    foreground="#d9d0b4",
+    font="bahnschrift 12",
+    height=2,
+    width=20,
+)
 close_btn.grid(column=11, row=9, columnspan=2, pady=20, sticky="E")
 
 window.mainloop()
