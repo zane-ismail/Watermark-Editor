@@ -588,14 +588,14 @@ opacity_slider_label.grid(column=11, row=6, padx=25, sticky="E")
 opacity_slider = Scale(command=opacity_changed, variable=current_opacity_value, bg="#4d5147", fg="#d9d0b4",
                        troughcolor="#d9d0b4", from_=0, to=255, orient="horizontal")
 opacity_slider.set(255)
-opacity_slider.grid(column=12, row=6, sticky="W")
+opacity_slider.grid(column=12, row=6, sticky="E")
 # Padding
 padding_1 = Label(bg="#4d5147")
 padding_1.grid(column=1, row=0, rowspan=10, padx=40)
 padding_2 = Label(bg="#4d5147")
 padding_2.grid(column=8, row=0, rowspan=10, padx=30)
 padding_3 = Label(bg="#4d5147")
-padding_3.grid(column=9, row=0, rowspan=10, padx=50)
+padding_3.grid(column=9, row=0, rowspan=10, padx=20)
 # Close button
 close_btn = Button(text="Save and close", command=on_exit, bg="#33362f", foreground="#d9d0b4", font="bahnschrift 12",
                    height=2, width=20)
