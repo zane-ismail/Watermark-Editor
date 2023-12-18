@@ -591,9 +591,9 @@ opacity_slider.set(255)
 opacity_slider.grid(column=12, row=6, sticky="W")
 # Padding
 padding_1 = Label(bg="#4d5147")
-padding_1.grid(column=1, row=0, rowspan=10, padx=42)
+padding_1.grid(column=1, row=0, rowspan=10, padx=40)
 padding_2 = Label(bg="#4d5147")
-padding_2.grid(column=8, row=0, rowspan=10, padx=37)
+padding_2.grid(column=8, row=0, rowspan=10, padx=30)
 padding_3 = Label(bg="#4d5147")
 padding_3.grid(column=9, row=0, rowspan=10, padx=50)
 # Close button
