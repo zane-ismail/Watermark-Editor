@@ -798,7 +798,7 @@ opacity_slider = Scale(
     orient="horizontal",
 )
 opacity_slider.set(255)
-opacity_slider.grid(column=12, row=6, sticky="W")
+opacity_slider.grid(column=12, row=6, sticky="E")
 # Padding
 padding_1 = Label(bg="#4d5147")
 padding_1.grid(column=1, row=0, rowspan=10, padx=30)
