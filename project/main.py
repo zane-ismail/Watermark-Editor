@@ -24,7 +24,15 @@ USER_IMAGE = "user-image.png"
 WATERMARK_IMAGE = "user-image-watermark.png"
 HYBRID_IMAGE = "user-image-hybrid.png"
 # Font list
-fonts = ("Arial", "Bahnschrift", "Calibri", "Cambria", "Ebrima", "SimSun", "Tahoma", "Verdana", "Webdings")
+fonts = ("Arial",
+         "Bahnschrift",
+         "Calibri",
+         "Cambria",
+         "Ebrima",
+         "SimSun",
+         "Tahoma",
+         "Verdana",
+         "Webdings")
 
 
 # Create a blank canvas
@@ -124,9 +132,9 @@ def add_image():
     # Todo create a folder
     # Save folder to a generic path
     img_file_path = askopenfilename(
-        initialdir="C:/Users/Public/Pictures", title="Select a File",
-        filetypes=(("PNG", "*.png"), ("JPEG", ("*.jpg", "*.jpeg", "*.jpe")),
-                   ("BMP", ("*.bmp", "*.jdib")), ("GIF", "*.gif")))
+        initialdir="C:/Users/Public/Pictures",
+        title="Select a File",
+        filetypes=(("PNG", "*.png")))
     # When file is added open up features
     if img_file_path:
         blank_canvas()
@@ -138,15 +146,19 @@ def add_image():
     img_height = img.height
 
     # Scale image and cap height and scale width
-    if img.height >= MAX_IMG_SIZE and img.height > img.width or MAX_IMG_SIZE > img.height > img.width:
+    if img.height >= MAX_IMG_SIZE
+    and img.height > img.width
+    or MAX_IMG_SIZE > img.height > img.width:
         img_diff = int(img.height - MAX_IMG_SIZE)
         diff_per = (img_diff / img.height)
         img_width = int(img.width * (1 - diff_per))
         img_height = MAX_IMG_SIZE
     # Cap width at and scale height
-    elif img.width >= MAX_IMG_SIZE and img.width > img.height or MAX_IMG_SIZE > img.width > img.height:
+    elif img.width >= MAX_IMG_SIZE
+    and img.width > img.height
+    or MAX_IMG_SIZE > img.width > img.height:
         img_diff = int(img.width - MAX_IMG_SIZE)
-        diff_per = (img_diff / img.width)
+        diff_per = img_diff / img.width
         img_height = int(img.height * (1 - diff_per))
         img_width = MAX_IMG_SIZE
 
@@ -164,11 +176,15 @@ def add_image():
 
 
 # Add text
-def add_text(new_image, new_font, txt_size_slider, x_value, y_value, text_box, new_colors):
+def add_text(
+        new_image, new_font, txt_size_slider, x_value, y_value, text_box, new_colors
+        ):
     txt = Image.new("RGBA", new_image.size, (255, 255, 255, 0))
     font = ImageFont.truetype(new_font, txt_size_slider)
     draw = ImageDraw.Draw(txt)
-    draw.text((x_value, y_value), f"{text_box.get(1.0, 'end-1c')}", font=font, fill=new_colors)
+    draw.text(
+        (x_value, y_value), f"{text_box.get(1.0, 'end-1c')}", font=font, fill=new_colors
+        )
     new_image = Image.alpha_composite(new_image, txt)
     new_image.save(HYBRID_IMAGE)
     opacity_slider.configure(from_=0, to=255)
