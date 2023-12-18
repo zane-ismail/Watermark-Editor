@@ -194,6 +194,8 @@ def add_text(
     txt = Image.new("RGBA", new_image.size, (255, 255, 255, 0))
     font = ImageFont.truetype(new_font, txt_size_slider)
     draw = ImageDraw.Draw(txt)
+    t = text_box.get(1.0, 'end-1c')
+    print(t)
     draw.text(
         (x_value, y_value), f"{text_box.get(1.0, 'end-1c')}", font=font, fill=new_colors
     )
