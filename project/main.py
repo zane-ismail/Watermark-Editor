@@ -11,7 +11,7 @@ from PIL import Image, ImageTk, ImageDraw, ImageFont
 # /// SET GLOBAL VALUES ///
 BOX_COLOR = "black"
 COLOR_SET = False
-NEW_FONT = "arial"
+new_font = "arial"
 MAX_IMG_SIZE = 600
 MAX_WM_SIZE = 200
 x_value = 0
@@ -84,10 +84,10 @@ current_size = tk.IntVar()
 # /// FONT FEATURES ///
 # Change font type
 def font_changed():
-    global NEW_FONT
+    global new_font
     font = [font_list.get(idx) for idx in font_list.curselection()]
     font = str(font).strip("'[]").lower()
-    NEW_FONT = font
+    new_font = font
 
 
 # Adjust font opacity
@@ -229,7 +229,7 @@ def add_watermark():
 
 # Update text properties
 def adjust_text():
-    global IS_TXT, IS_WM, NEW_FONT, COLORS
+    global IS_TXT, IS_WM, new_font, COLORS
     IS_TXT = True
     IS_WM = False
     print("text")
@@ -258,7 +258,7 @@ def adjust_text():
                 print("1")
                 add_text(
                     new_image,
-                    NEW_FONT,
+                    new_font,
                     txt_size_slider,
                     x_value,
                     y_value,
@@ -270,7 +270,7 @@ def adjust_text():
                 print("2")
                 add_text(
                     new_image,
-                    NEW_FONT,
+                    new_font,
                     txt_size_slider,
                     x_value,
                     y_value,
@@ -282,7 +282,7 @@ def adjust_text():
                 print("3")
                 add_text(
                     new_image,
-                    NEW_FONT,
+                    new_font,
                     txt_size_slider,
                     x_value,
                     y_value,
@@ -292,7 +292,7 @@ def adjust_text():
         new_image = ImageTk.PhotoImage(
             add_text(
                 new_image,
-                NEW_FONT,
+                new_font,
                 txt_size_slider,
                 x_value,
                 y_value,
