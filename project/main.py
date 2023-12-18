@@ -14,8 +14,8 @@ COLOR_SET = False
 NEW_FONT = "arial"
 MAX_IMG_SIZE = 600
 MAX_WM_SIZE = 200
-X_VALUE = 0
-Y_VALUE = 0
+x_value = 0
+y_value = 0
 IS_WM = False
 IS_TXT = True
 IS_EXIT = False
@@ -116,15 +116,15 @@ def size_changed(event):
 
 # Detect text x-axis slider position
 def slider_x_changed(event):
-    global X_VALUE
-    X_VALUE = current_x_value.get()
+    global x_value
+    x_value = current_x_value.get()
     watermark_type()
 
 
 # Detect text y-axis slider position
 def slider_y_changed(event):
-    global Y_VALUE
-    Y_VALUE = current_y_value.get()
+    global y_value
+    y_value = current_y_value.get()
     watermark_type()
 
 
@@ -260,8 +260,8 @@ def adjust_text():
                     new_image,
                     NEW_FONT,
                     txt_size_slider,
-                    X_VALUE,
-                    Y_VALUE,
+                    x_value,
+                    y_value,
                     text_box,
                     new_colors,
                 )
@@ -272,8 +272,8 @@ def adjust_text():
                     new_image,
                     NEW_FONT,
                     txt_size_slider,
-                    X_VALUE,
-                    Y_VALUE,
+                    x_value,
+                    y_value,
                     text_box,
                     new_colors,
                 )
@@ -284,8 +284,8 @@ def adjust_text():
                     new_image,
                     NEW_FONT,
                     txt_size_slider,
-                    X_VALUE,
-                    Y_VALUE,
+                    x_value,
+                    y_value,
                     text_box,
                     new_colors,
                 )
@@ -294,8 +294,8 @@ def adjust_text():
                 new_image,
                 NEW_FONT,
                 txt_size_slider,
-                X_VALUE,
-                Y_VALUE,
+                x_value,
+                y_value,
                 text_box,
                 new_colors,
             )
@@ -354,14 +354,14 @@ def adjust_watermark():
     # Paste watermark image onto canvas
     try:
         new_image = Image.open(HYBRID_IMAGE)
-        new_image.paste(watermark_image, (X_VALUE, Y_VALUE), mask=paste_mask)
+        new_image.paste(watermark_image, (x_value, y_value), mask=paste_mask)
         new_image.save(WATERMARK_IMAGE)
     except FileNotFoundError:
         new_image = Image.open(USER_IMAGE)
-        new_image.paste(watermark_image, (X_VALUE, Y_VALUE), mask=paste_mask)
+        new_image.paste(watermark_image, (x_value, y_value), mask=paste_mask)
         new_image.save(WATERMARK_IMAGE)
     else:
-        new_image.paste(watermark_image, (X_VALUE, Y_VALUE), mask=paste_mask)
+        new_image.paste(watermark_image, (x_value, y_value), mask=paste_mask)
         new_image.save(WATERMARK_IMAGE)
 
     new_image = ImageTk.PhotoImage(new_image)
