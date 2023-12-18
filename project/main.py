@@ -231,6 +231,7 @@ def adjust_text():
     global IS_TXT, IS_WM, NEW_FONT, COLORS
     IS_TXT = True
     IS_WM = False
+    print("text")
     # Deactivate watermark features
     enable_text()
     # Update fonts
