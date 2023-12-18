@@ -604,3 +604,4 @@ close_btn.grid(column=11, row=9, columnspan=2, pady=20, sticky="E")
 window.mainloop()
 if IS_EXIT is False:
     atexit.register(on_exit)
+window.mainloop()
