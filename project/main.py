@@ -191,10 +191,13 @@ def add_image():
 def add_text(
     new_image, new_font, txt_size_slider, x_value, y_value, text_box, new_colors
 ):
+    print("a")
     txt = Image.new("RGBA", new_image.size, (255, 255, 255, 0))
-    font = ImageFont.truetype(new_font, txt_size_slider)
+    print("b")
+    font = "Arial"
+    print("c")
     draw = ImageDraw.Draw(txt)
-    print("T")
+    print("d")
     t = text_box.get(1.0, 'end-1c')
     print(t)
     draw.text(
