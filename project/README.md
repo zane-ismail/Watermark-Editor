@@ -49,6 +49,26 @@ Default values are given for sliders and text font and color to ensure no errors
 These values are checked whenever a slider is changed, and update when a text watermark or image watermark is added.
 They are important values that allow the sliders to control only the current watermark type and ignore the other.
 
+#### User Interface:
+
+I chose to create a minimal interface, with as few buttons and sliders as possible, whilst still allowing a range of features.
+The top row of buttons control what goes onto or gets removed from the canvas, and allows the canvas image to be saved at any point.
+
+On the sidebar are the tools to manipulate the image and text watermarks.
+I wanted the tools to feel intuitive, and used labels where only absolutely necessary.
+The position sliders were changed to align horizontally and vertically to make it more visual to the user.
+For this reason I chose not to use numbers on the sliders, as the slider itself physically indicates the axis' positions.
+I added numbers to the opacity and size sliders to better inform users of their impact on the watermark, and to allow users to be aware of these numbers if they wish to replicate the conditions for other watermarks.
+
+On the top of the sidebar are all the text features.
+I chose to bunch them together so choosing a text felt intuitive and the user feels compelled to use them and experiment whilst adding a text watermark.
+The color box was used to give the user visual feedback of their selected color.
+It is set to black by default but will be replaced by a new panel whenever the user updates the color.
+
+I chose to put the stamp buttons close to the sliders for ease of use, as the user will most likely want to place the watermark after moving it, and may wish to repeat the process.
+I would have preferred only one stamp button, but it proved to be problematic, and instead opted for two.
+To avoid confusion, all features of the watermark type not being used are disabled, and only those for the current watermark type are active.
+
 #### Functions:
 
 The "blank_canvas" function will add the default image "canvas.png" onto the interface.
@@ -145,22 +165,4 @@ The "save_watermark" function is called when the user clicks the bottom "Stamp" 
 It will find the most recently saved temporary file (the current image on the canvas) and save it, allowing the image watermark to be effectively stamped onto the canvas.
 Once stamped, the button will be disabled until another image watermark is created.
 
-#### User Interface:
 
-I chose to create a minimal interface, with as few buttons and sliders as possible, whilst still allowing a range of features.
-The top row of buttons control what goes onto or gets removed from the canvas, and allows the canvas image to be saved at any point.
-
-On the sidebar are the tools to manipulate the image and text watermarks.
-I wanted the tools to feel intuitive, and used labels where only absolutely necessary.
-The position sliders were changed to align horizontally and vertically to make it more visual to the user.
-For this reason I chose not to use numbers on the sliders, as the slider itself physically indicates the axis' positions.
-I added numbers to the opacity and size sliders to better inform users of their impact on the watermark, and to allow users to be aware of these numbers if they wish to replicate the conditions for other watermarks.
-
-On the top of the sidebar are all the text features.
-I chose to bunch them together so choosing a text felt intuitive and the user feels compelled to use them and experiment whilst adding a text watermark.
-The color box was used to give the user visual feedback of their selected color.
-It is set to black by default but will be replaced by a new panel whenever the user updates the color.
-
-I chose to put the stamp buttons close to the sliders for ease of use, as the user will most likely want to place the watermark after moving it, and may wish to repeat the process.
-I would have preferred only one stamp button, but it proved to be problematic, and instead opted for two.
-To avoid confusion, all features of the watermark type not being used are disabled, and only those for the current watermark type are active.
