@@ -11,7 +11,7 @@ from PIL import Image, ImageTk, ImageDraw, ImageFont
 # /// SET GLOBAL VALUES ///
 BOX_COLOR = "black"
 COLOR_SET = False
-new_font = "arial"
+new_font = "arial.ttf"
 MAX_IMG_SIZE = 600
 MAX_WM_SIZE = 200
 x_value = 0
@@ -28,13 +28,13 @@ fonts = (
     "Arial",
     "Carnevalee Freakshow",
     "DonGraffiti",
-    "Dustismo_Roman",
+    "Dustismo Roman",
     "Eddie",
     "FatCow",
     "Flanella",
     "GrenadierNF",
-    "MrBedfort-Regular",
-    "Oldies cartoon",
+    "MrBedfort",
+    "Oldies Cartoon",
     "OldStandard",
     "ParkLaneNF",
     "Phantomonia",
