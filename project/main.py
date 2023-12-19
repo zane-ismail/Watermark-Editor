@@ -199,7 +199,7 @@ def add_text(
     new_image, new_font, x_value, y_value, text_box, new_colors
 ):
     txt = Image.new("RGBA", new_image.size, (255, 255, 255, 0))
-    font = ImageFont.truetype(f"{new_font}.ttf", 28, encoding="unic")
+    font = "arial.ttf"
     draw = ImageDraw.Draw(txt)
     draw.text(
         (x_value, y_value), f"{text_box.get(1.0, 'end-1c')}", font=font, fill=new_colors
