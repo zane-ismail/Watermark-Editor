@@ -46,7 +46,7 @@ fonts = (
 
 # Create a blank canvas
 def blank_canvas():
-    blank = Image.open("canvas.png")
+    blank = Image.open("images/canvas.png")
     blank = ImageTk.PhotoImage(blank)
     canvas = Label(borderwidth=0)
     canvas.image = blank
