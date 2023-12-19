@@ -26,14 +26,8 @@ HYBRID_IMAGE = "user-image-hybrid.png"
 # Font list
 fonts = (
     "Arial",
-    "Bahnschrift",
-    "Calibri",
-    "Cambria",
-    "Ebrima",
-    "SimSun",
-    "Tahoma",
-    "Verdana",
-    "Webdings",
+    "ParkLaneNF",
+
 )
 
 
