@@ -97,6 +97,7 @@ def font_changed():
     global new_font
     font = [font_list.get(idx) for idx in font_list.curselection()]
     font = str(font).strip("'[]").lower()
+    print(font)
     new_font = font
 
 
