@@ -30,6 +30,9 @@ fonts = (
     "DonGraffiti",
     "Dustismo_Roman",
     "Eddie",
+    "FatCow",
+    "Flanella",
+    "GrenadierNF",
     "ParkLaneNF",
 
 )
