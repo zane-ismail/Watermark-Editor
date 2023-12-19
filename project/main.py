@@ -190,9 +190,8 @@ def add_text(
 ):
     txt = Image.new("RGBA", new_image.size, (255, 255, 255, 0))
     draw = ImageDraw.Draw(txt)
-    font = ImageFont.truetype("/usr/share/fonts/truetype/freefont/FreeMono.ttf", 28, encoding="unic")
-
-    # t = text_box.get(1.0, 'end-1c')
+    font_type = text_box.get(1.0, 'end-1c')
+    font = ImageFont.truetype(f"{font_type}.ttf", 28, encoding="unic")
     draw.text(
         (x_value, y_value), f"{text_box.get(1.0, 'end-1c')}", font=font, fill=new_colors
     )
