@@ -78,7 +78,6 @@ window.resizable(True, True)
 window.title("Watermark Editor")
 window.config(padx=0, pady=5, background="#4d5147")
 window.geometry("1400x1400")
-# window.overrideredirect(1)
 # Add canvas
 blank_canvas()
 # Slider current values

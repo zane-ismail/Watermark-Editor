@@ -36,7 +36,7 @@ The "messagebox" module allowed me to work with error message windows.
 
 The Pillow package gave me the toolkit for adding and applying watermarks. The "Image" and "ImageTK" modules handled adding an image onto another image and manipulating the properties of those images. The "ImageDraw" and "ImageFont" modules handled adding text and manipulating the properties of the text.
 
-The first thing I needed to do was to create an interface.  The application uses a fullscreen window. I considered allowing the window to be resizable, but ultimately decided against it, as the application works best in full screen, and any dynamic scaling would create potential UI/UX problems.
+The first thing I needed to do was to create an interface.  I set the dimensions of the window, using "Tk().Geometry" and named the window "Watermark Editor".
 
 The canvas is on the left hand side of the window and the tools for manipulating watermarks are on the right. Once the user adds an image to the canvas, the features to add a watermark image or text become active. The user is then able to add a watermark onto the canvas image and can "stamp" the watermark when they wish to apply it. The same can be done with text that the user inputs into the text box.
 
