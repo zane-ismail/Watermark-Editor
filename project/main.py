@@ -190,6 +190,7 @@ def add_text(
 ):
     txt = Image.new("RGBA", new_image.size, (255, 255, 255, 0))
     font = ImageFont.load("arial.pil")
+    font = ImageFont.truetype("arial.ttf", 15)
     draw = ImageDraw.Draw(txt)
 
     t = text_box.get(1.0, 'end-1c')
