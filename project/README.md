@@ -1,5 +1,5 @@
 # Watermark Editor
-#### Video Demo:  <URL HERE>
+#### Video Demo:  https://youtu.be/4A3bY1upRPA
 #### Description:
 My project is an application that enables the user to add text or image watermarks onto an existing image.
 They can manipulate the watermark's position, size and opacity, and add multiple amounts of the same of different watermarks.
