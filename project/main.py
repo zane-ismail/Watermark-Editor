@@ -26,6 +26,10 @@ HYBRID_IMAGE = "user-image-hybrid.png"
 # Font list
 fonts = (
     "Arial",
+    "Carnevalee Freakshow",
+    "DonGraffiti",
+    "Dustismo_Roman",
+    "Eddie",
     "ParkLaneNF",
 
 )
