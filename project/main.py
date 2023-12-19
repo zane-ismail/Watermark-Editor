@@ -690,7 +690,7 @@ font_picker = Button(
 )
 font_picker.grid(column=12, row=3, columnspan=1, sticky="W")
 # Text box
-text_box = Text(height=5, width=15, bg="#d9d0b4")
+text_box = Text(height=5, width=14, bg="#d9d0b4")
 text_box.grid(column=11, row=2, columnspan=3, padx=25, sticky="W")
 # Add text
 add_txt_btn = Button(
