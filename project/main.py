@@ -11,7 +11,7 @@ from PIL import Image, ImageTk, ImageDraw, ImageFont
 # /// SET GLOBAL VALUES ///
 BOX_COLOR = "black"
 COLOR_SET = False
-new_font = "Arial.ttf"
+new_font = "fonts/Arial.ttf"
 MAX_IMG_SIZE = 600
 MAX_WM_SIZE = 200
 x_value = 0
@@ -27,7 +27,6 @@ HYBRID_IMAGE = "user-image-hybrid.png"
 fonts = (
     "Arial",
     "Carnevalee Freakshow",
-    "DonGraffiti",
     "Dustismo Roman",
     "Eddie",
     "FatCow",
@@ -39,8 +38,6 @@ fonts = (
     "ParkLaneNF",
     "Phantomonia",
     "Plexifont",
-    "Primer",
-    "Rhesmanisa",
     "Shagadelic",
     "True Crimes",
     "Volaroid",
@@ -97,7 +94,7 @@ def font_changed():
     global new_font
     font = [font_list.get(idx) for idx in font_list.curselection()]
     font = str(font).strip("'[]")
-    new_font = font + ".ttf"
+    new_font = "fonts/" + font + ".ttf"
     print(new_font)
 
 
