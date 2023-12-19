@@ -40,7 +40,10 @@ fonts = (
     "Phantomonia",
     "Plexifont",
     "Primer",
-    
+    "Rhesmanisa",
+    "Shagadelic",
+    "True Crimes",
+    "",
 )
 
 
