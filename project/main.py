@@ -707,7 +707,7 @@ add_txt_btn.grid(column=11, row=3, columnspan=1, padx=25)
 slider_x_label = Label(
     text="Position:", bg="#4d5147", foreground="#d9d0b4", font="OldStandard.ttf"
 )
-slider_x_label.grid(column=11, row=4, padx=25, sticky="W")
+slider_x_label.grid(column=11, row=4, padx=25)
 # Slider x
 slider_x = Scale(
     command=lambda event=None: slider_x_changed(event),
@@ -764,7 +764,7 @@ place_wm_btn.grid(column=11, row=4, columnspan=2, padx=27, pady=10, sticky="SE")
 size_slider_label = Label(
     text="Size:", bg="#4d5147", foreground="#d9d0b4", font="OldStandard.ttf"
 )
-size_slider_label.grid(column=11, row=5, padx=25, sticky="W")
+size_slider_label.grid(column=11, row=5, padx=25)
 # Size slider
 size_slider = Scale(
     command=size_changed,
@@ -782,7 +782,7 @@ size_slider.grid(column=12, row=5, sticky="E")
 opacity_slider_label = Label(
     text="Opacity:", bg="#4d5147", foreground="#d9d0b4", font="OldStandard.ttf"
 )
-opacity_slider_label.grid(column=11, row=6, padx=25, sticky="W")
+opacity_slider_label.grid(column=11, row=6, padx=25)
 # Opacity slider
 opacity_slider = Scale(
     command=opacity_changed,
