@@ -574,7 +574,7 @@ open_image = Button(
     command=add_image,
     bg="#7d6b57",
     foreground="#d9d0b4",
-    font="bahnschrift 12",
+    font="OldStandard.ttf 12",
     width=10,
     padx=15,
     highlightcolor="#7d6b57",
@@ -586,7 +586,7 @@ save_as = Button(
     command=save_image,
     bg="#7d6b57",
     foreground="#d9d0b4",
-    font="bahnschrift 10",
+    font="OldStandard.ttf 10",
     width=10,
     padx=0,
     activebackground="#d9d0b4",
@@ -598,7 +598,7 @@ add_wm = Button(
     command=add_watermark,
     bg="#ab9e86",
     foreground="#33362f",
-    font="bahnschrift 9",
+    font="OldStandard.ttf 9",
     highlightcolor="#7d6b57",
     width=15,
     padx=0,
@@ -611,7 +611,7 @@ rm_wm_btn = Button(
     command=remove_watermark,
     bg="#ab9e86",
     foreground="#33362f",
-    font="bahnschrift 9",
+    font="OldStandard.ttf 9",
     activebackground="#d9d0b4",
     width=15,
     padx=0,
@@ -624,7 +624,7 @@ rm_txt_btn = Button(
     command=remove_text,
     bg="#ab9e86",
     foreground="#33362f",
-    font="bahnschrift 9",
+    font="OldStandard.ttf 9",
     activebackground="#d9d0b4",
     width=15,
     padx=0,
@@ -646,7 +646,7 @@ color_picker = Button(
     command=change_color,
     bg="#666b5e",
     foreground="#d9d0b4",
-    font="bahnschrift",
+    font="OldStandard.ttf",
     width=10,
     relief="groove",
 )
@@ -657,7 +657,7 @@ style.configure(
     "TButton",
     background="#666b5e",
     foreground="#d9d0b4",
-    font="bahnschrift",
+    font="OldStandard.ttf",
     width=10,
     relief="groove",
 )
@@ -669,8 +669,8 @@ font_list = Listbox(
     selectmode=tk.EXTENDED,
     bg="#d9d0b4",
     selectbackground="#7d6b57",
-    font="Arial 10",
-    width=11,
+    font="Arial 8",
+    width=15,
     height=4,
     relief="groove",
 )
@@ -684,13 +684,13 @@ font_picker = Button(
     command=adjust_text,
     bg="#666b5e",
     foreground="#d9d0b4",
-    font="bahnschrift",
+    font="OldStandard.ttf",
     width=10,
     relief="groove",
 )
 font_picker.grid(column=12, row=3, columnspan=1, sticky="W")
 # Text box
-text_box = Text(height=5, width=12, bg="#d9d0b4")
+text_box = Text(height=5, width=15, bg="#d9d0b4")
 text_box.grid(column=11, row=2, columnspan=3, padx=25, sticky="W")
 # Add text
 add_txt_btn = Button(
@@ -699,15 +699,15 @@ add_txt_btn = Button(
     command=reset_wm_sliders,
     bg="#666b5e",
     foreground="#d9d0b4",
-    font="bahnschrift",
+    font="OldStandard.ttf",
     relief="groove",
 )
 add_txt_btn.grid(column=11, row=3, columnspan=1, padx=25)
 # Slider x y label
 slider_x_label = Label(
-    text="Position:", bg="#4d5147", foreground="#d9d0b4", font="bahnschrift"
+    text="Position:", bg="#4d5147", foreground="#d9d0b4", font="OldStandard.ttf"
 )
-slider_x_label.grid(column=11, row=4, padx=25, sticky="E")
+slider_x_label.grid(column=11, row=4, padx=25, sticky="W")
 # Slider x
 slider_x = Scale(
     command=lambda event=None: slider_x_changed(event),
@@ -740,7 +740,7 @@ place_txt_btn = Button(
     command=save_text,
     bg="#666b5e",
     foreground="#d9d0b4",
-    font="bahnschrift 10",
+    font="OldStandard.ttf 10",
     height=1,
     width=10,
     relief="groove",
@@ -753,7 +753,7 @@ place_wm_btn = Button(
     command=save_watermark,
     bg="#666b5e",
     foreground="#d9d0b4",
-    font="bahnschrift 10",
+    font="OldStandard.ttf 10",
     height=1,
     width=10,
     relief="groove",
@@ -762,9 +762,9 @@ place_wm_btn = Button(
 place_wm_btn.grid(column=11, row=4, columnspan=2, padx=27, pady=10, sticky="SE")
 # Size slider label
 size_slider_label = Label(
-    text="Size:", bg="#4d5147", foreground="#d9d0b4", font="bahnschrift"
+    text="Size:", bg="#4d5147", foreground="#d9d0b4", font="OldStandard.ttf"
 )
-size_slider_label.grid(column=11, row=5, padx=25, sticky="E")
+size_slider_label.grid(column=11, row=5, padx=25, sticky="W")
 # Size slider
 size_slider = Scale(
     command=size_changed,
@@ -780,9 +780,9 @@ size_slider.set(60)
 size_slider.grid(column=12, row=5, sticky="E")
 # Opacity slider label
 opacity_slider_label = Label(
-    text="Opacity:", bg="#4d5147", foreground="#d9d0b4", font="bahnschrift"
+    text="Opacity:", bg="#4d5147", foreground="#d9d0b4", font="OldStandard.ttf"
 )
-opacity_slider_label.grid(column=11, row=6, padx=25, sticky="E")
+opacity_slider_label.grid(column=11, row=6, padx=25, sticky="W")
 # Opacity slider
 opacity_slider = Scale(
     command=opacity_changed,
@@ -809,7 +809,7 @@ close_btn = Button(
     command=on_exit,
     bg="#33362f",
     foreground="#d9d0b4",
-    font="bahnschrift 12",
+    font="OldStandard.ttf 12",
     height=2,
     width=20,
 )
