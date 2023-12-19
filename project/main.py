@@ -186,15 +186,15 @@ def add_image():
 
 # Add text
 def add_text(
-    new_image, new_font, txt_size_slider, x_value, y_value, text_box, new_colors
+    new_image, x_value, y_value, text_box, new_colors
 ):
-    # txt = Image.new("RGBA", new_image.size, (255, 255, 255, 0))
+    txt = Image.new("RGBA", new_image.size, (255, 255, 255, 0))
     font = ImageFont.load("arial.pil")
     font = ImageFont.truetype("arial.ttf", 15)
-    # draw = ImageDraw.Draw(txt)
+    draw = ImageDraw.Draw(txt)
 
     t = text_box.get(1.0, 'end-1c')
-    txt = draw.text(
+    draw.text(
         (x_value, y_value), f"{text_box.get(1.0, 'end-1c')}", font=font, fill=new_colors
     )
     new_image = Image.alpha_composite(new_image, txt)
@@ -250,8 +250,6 @@ def adjust_text():
             with Image.open(WATERMARK_IMAGE).convert("RGBA") as new_image:
                 add_text(
                     new_image,
-                    new_font,
-                    txt_size_slider,
                     x_value,
                     y_value,
                     text_box,
@@ -261,8 +259,6 @@ def adjust_text():
             with Image.open(USER_IMAGE).convert("RGBA") as new_image:
                 add_text(
                     new_image,
-                    new_font,
-                    txt_size_slider,
                     x_value,
                     y_value,
                     text_box,
@@ -272,8 +268,6 @@ def adjust_text():
             with Image.open(HYBRID_IMAGE).convert("RGBA") as new_image:
                 add_text(
                     new_image,
-                    new_font,
-                    txt_size_slider,
                     x_value,
                     y_value,
                     text_box,
@@ -282,8 +276,6 @@ def adjust_text():
         new_image = ImageTk.PhotoImage(
             add_text(
                 new_image,
-                new_font,
-                txt_size_slider,
                 x_value,
                 y_value,
                 text_box,
