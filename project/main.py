@@ -98,6 +98,7 @@ def font_changed():
     font = [font_list.get(idx) for idx in font_list.curselection()]
     font = str(font).strip("'[]").lower()
     new_font = font
+    print(new_font)
 
 
 # Adjust font opacity
@@ -196,10 +197,10 @@ def add_image():
 
 # Add text
 def add_text(
-    new_image, new_font, x_value, y_value, text_box, new_colors
+    new_image, new_font, txt_size_slider, x_value, y_value, text_box, new_colors
 ):
     txt = Image.new("RGBA", new_image.size, (255, 255, 255, 0))
-    font = ImageFont.truetype(f"{new_font}.ttf")
+    font = ImageFont.truetype(new_font, txt_size_slider)
     draw = ImageDraw.Draw(txt)
     draw.text(
         (x_value, y_value), f"{text_box.get(1.0, 'end-1c')}", font=font, fill=new_colors
@@ -258,6 +259,7 @@ def adjust_text():
                 add_text(
                     new_image,
                     new_font,
+                    txt_size_slider,
                     x_value,
                     y_value,
                     text_box,
@@ -268,6 +270,7 @@ def adjust_text():
                 add_text(
                     new_image,
                     new_font,
+                    txt_size_slider,
                     x_value,
                     y_value,
                     text_box,
@@ -278,6 +281,7 @@ def adjust_text():
                 add_text(
                     new_image,
                     new_font,
+                    txt_size_slider,
                     x_value,
                     y_value,
                     text_box,
@@ -287,6 +291,7 @@ def adjust_text():
             add_text(
                 new_image,
                 new_font,
+                txt_size_slider,
                 x_value,
                 y_value,
                 text_box,
