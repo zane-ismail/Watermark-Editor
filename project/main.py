@@ -138,9 +138,6 @@ def add_image():
         title="Select a File",
         filetypes=(
             ("PNG", "*.png"),
-            ("JPEG", ("*.jpg", "*.jpeg", "*.jpe")),
-            ("BMP", ("*.bmp", "*.jdib")),
-            ("GIF", "*.gif"),
         ),
     )
     # When file is added open up features
@@ -217,9 +214,6 @@ def add_watermark():
         title="Select a File",
         filetypes=(
             ("PNG", "*.png"),
-            ("JPEG", ("*.jpg", "*.jpeg", "*.jpe")),
-            ("BMP", ("*.bmp", "*.jdib")),
-            ("GIF", "*.gif"),
         ),
     )
     if FILE_PATH:
