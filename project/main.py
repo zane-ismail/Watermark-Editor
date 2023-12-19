@@ -189,12 +189,12 @@ def add_text(
     new_image, new_font, txt_size_slider, x_value, y_value, text_box, new_colors
 ):
     txt = Image.new("RGBA", new_image.size, (255, 255, 255, 0))
+    font = ImageFont.load("arial.pil")
     draw = ImageDraw.Draw(txt)
-    draw.font = ImageFont.truetype("Tests/fonts/FreeMono.ttf")
 
     t = text_box.get(1.0, 'end-1c')
     draw.text(
-        (x_value, y_value), f"{text_box.get(1.0, 'end-1c')}"
+        (x_value, y_value), f"{text_box.get(1.0, 'end-1c')}", font=font, fill=new_colors
     )
     new_image = Image.alpha_composite(new_image, txt)
     new_image.save(HYBRID_IMAGE)
