@@ -63,7 +63,7 @@ I chose not to reset sliders after the user stamps a watermark onto the canvas, 
 The "watermark type" function checks which watermark type is currently being handled, and calls the function pertaining to said watermark type.
 The function allows certain features to activate or disable, depending on which watermark type the user is dealing with.
 
-The "font_changed" function listens for the current selected font in the font picked box.
+The "font_changed" function listens for the current selected font in the font picker box.
 It is called by "adjust_text", allowing the text on screen to always reflect the selected font at any given time.
 
 The "opacity_changed" function listens for the current selected opacity from the opacity slider.
