@@ -188,15 +188,10 @@ def add_image():
 def add_text(
     new_image, new_font, txt_size_slider, x_value, y_value, text_box, new_colors
 ):
-    print("a")
     txt = Image.new("RGBA", new_image.size, (255, 255, 255, 0))
-    print("b")
     font = "Arial"
-    print("c")
     draw = ImageDraw.Draw(txt)
-    print("d")
     t = text_box.get(1.0, 'end-1c')
-    print(t)
     draw.text(
         (x_value, y_value), f"{text_box.get(1.0, 'end-1c')}", font=font, fill=new_colors
     )
@@ -229,7 +224,6 @@ def adjust_text():
     global IS_TXT, IS_WM, new_font, COLORS
     IS_TXT = True
     IS_WM = False
-    print("text")
     # Deactivate watermark features
     enable_text()
     # Update fonts
@@ -252,7 +246,6 @@ def adjust_text():
     try:
         try:
             with Image.open(WATERMARK_IMAGE).convert("RGBA") as new_image:
-                print("1")
                 add_text(
                     new_image,
                     new_font,
@@ -264,7 +257,6 @@ def adjust_text():
                 )
         except FileNotFoundError:
             with Image.open(USER_IMAGE).convert("RGBA") as new_image:
-                print("2")
                 add_text(
                     new_image,
                     new_font,
@@ -276,7 +268,6 @@ def adjust_text():
                 )
         finally:
             with Image.open(HYBRID_IMAGE).convert("RGBA") as new_image:
-                print("3")
                 add_text(
                     new_image,
                     new_font,
@@ -309,7 +300,6 @@ def adjust_watermark():
     global IS_TXT, IS_WM
     IS_WM = True
     IS_TXT = False
-    print("wm")
     # Deactivate text feature when watermark is added
     enable_watermark()
     watermark_image = Image.open(FILE_PATH)
