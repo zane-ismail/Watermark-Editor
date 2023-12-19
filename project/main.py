@@ -95,7 +95,6 @@ def font_changed():
     font = [font_list.get(idx) for idx in font_list.curselection()]
     font = str(font).strip("'[]")
     new_font = "fonts/" + font + ".ttf"
-    print(new_font)
 
 
 # Adjust font opacity
