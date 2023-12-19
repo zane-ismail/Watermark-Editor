@@ -530,10 +530,6 @@ def save_image():
         initialdir="C:/Users/Public/Pictures",
         filetypes=(
             ("PNG", ".png"),
-            ("JPEG", ("*.jpg", "*.jpeg", "*.jpe")),
-            ("BMP", ("*.bmp", "*.jdib")),
-            ("GIF", "*.gif"),
-            ("All Files", "*.*"),
         ),
         mode="wb",
         defaultextension=".png",
