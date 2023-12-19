@@ -143,9 +143,7 @@ def add_image():
     img_file_path = askopenfilename(
         initialdir="C:/Users/Public/Pictures",
         title="Select a File",
-        filetypes=(
-            ("PNG", "*.png"),
-        ),
+        filetypes=(("PNG", "*.png"),),
     )
     # When file is added open up features
     if img_file_path:
@@ -213,9 +211,7 @@ def add_watermark():
     FILE_PATH = askopenfilename(
         initialdir="C:/Users/Public/Pictures",
         title="Select a File",
-        filetypes=(
-            ("PNG", "*.png"),
-        ),
+        filetypes=(("PNG", "*.png"),),
     )
     if FILE_PATH:
         # Reset fields
@@ -524,9 +520,7 @@ def save_image():
 
     save_directory = asksaveasfile(
         initialdir="C:/Users/Public/Pictures",
-        filetypes=(
-            ("PNG", ".png"),
-        ),
+        filetypes=(("PNG", ".png"),),
         mode="wb",
         defaultextension=".png",
     )
