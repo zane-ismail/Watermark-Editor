@@ -38,6 +38,8 @@ fonts = (
     "OldStandard",
     "ParkLaneNF",
     "Phantomonia",
+    "Plexifont",
+    "Primer",
     
 )
 
