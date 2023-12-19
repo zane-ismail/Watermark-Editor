@@ -27,7 +27,6 @@ By storing the fonts locally, this bypasses any potential issues.
 
 The other folders contains images to be used in the application. It contains my blank canvas image.
 
-
 #### Packages and modules:
 
 I used the Tkinter package, as the toolkit provided me with all the features I required.
