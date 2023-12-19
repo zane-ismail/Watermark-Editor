@@ -97,7 +97,7 @@ def font_changed():
     global new_font
     font = [font_list.get(idx) for idx in font_list.curselection()]
     font = str(font).strip("'[]").lower()
-    new_font = font
+    new_font = font + ".ttf"
     print(new_font)
 
 
