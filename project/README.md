@@ -11,8 +11,6 @@ For simplicity, this application only handles ".png" files, but could be expande
 #### Setup
 In the VS Code terminal, enter:
 
-"update50 --force"
-
 "pip install -r requirements.txt"
 
 "pip install tk"
