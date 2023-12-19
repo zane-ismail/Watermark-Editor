@@ -2,8 +2,8 @@
 #### Video Demo:  https://youtu.be/4A3bY1upRPA
 #### Description:
 My project is an application that enables the user to add text or image watermarks onto an existing image.
-They can manipulate the watermark's position, size and opacity, and add multiple amounts of the same of different watermarks.
-The two watermark types text and image can be used alongside each other, and the user has the ability to switch between the two at any given time.
+They can manipulate the watermark's position, size and opacity, and add multiple amounts of the same or different watermarks.
+The two watermark types, text and image can be used alongside each other, and the user has the ability to switch between the two at any given time.
 The user can save their work whenever they wish.
 Should the user choose to exit, they will be asked to save, if any updates to the canvas have been made.
 For simplicity, this application only handles ".png" files, but could be expanded to handle multiple image formats.
