@@ -189,7 +189,7 @@ def add_text(
     new_image, new_font, txt_size_slider, x_value, y_value, text_box, new_colors
 ):
     txt = Image.new("RGBA", new_image.size, (255, 255, 255, 0))
-    font = ImageFont.truetype("C:\\Windows\\Fonts\\Fira Code\\FiraCode-Regular.ttf", 100)
+    font = ImageFont.truetype("Pillow/Tests/fonts/FreeMono.ttf", 40)
     draw = ImageDraw.Draw(txt)
     t = text_box.get(1.0, 'end-1c')
     draw.text(
