@@ -33,6 +33,10 @@ fonts = (
     "FatCow",
     "Flanella",
     "GrenadierNF",
+    "MrBedfort-Regular",
+    "Oldies cartoon",
+    "OldStandard",
+    
     "ParkLaneNF",
 
 )
