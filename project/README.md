@@ -1,27 +1,49 @@
 # Watermark Editor
 #### Video Demo:  <URL HERE>
 #### Description:
-My project is an application that enables the user to add text or image watermarks onto an existing image. 
+My project is an application that enables the user to add text or image watermarks onto an existing image.
 They can manipulate the watermark's position, size and opacity, and add multiple amounts of the same of different watermarks.
 The two watermark types text and image can be used alongside each other, and the user has the ability to switch between the two at any given time.
-The user can save their work whenever they wish. 
+The user can save their work whenever they wish.
 Should the user choose to exit, they will be asked to save, if any updates to the canvas have been made.
 For simplicity, this application only handles ".png" files, but could be expanded to handle multiple image formats.
 
-##### Packages and modules:
+#### Setup
+In the VS Code terminal, enter:
+
+"update50 --force"
+
+"pip install -r requirements.txt"
+
+"pip install tk"
+
+"python main.py"
+
+Open the GUI from the CS50 menu to view the app.
+
+#### Folders and files
+The first folder, "Fonts" contains all the .ttf fonts used in the application.
+The fonts selected are all free for both personal and commercial use.
+I chose to store these locally, as a previous built worked well on my Windows system, but failed to work on a virtual operating system that wasn't Windows.
+By storing the fonts locally, this bypasses any potential issues.
+
+The other folders contains images to be used in the application. It contains my blank canvas image.
+
+
+#### Packages and modules:
 
 I used the Tkinter package, as the toolkit provided me with all the features I required.
 The "askopenfilename", "asksaveasfile" modules were imported to allow the user to browse through directories to open or save a file. The "askcolor" module lets users choose a color for their text.
-The "messagebox" module allowed me to work with error message windows. 
+The "messagebox" module allowed me to work with error message windows.
 "ttk" provided me with a seperator widget for visual purposes.
 
-The Pillow package gave me the toolkit for adding and applying watermarks. The "Image" and "ImageTK" modules handled adding an image onto another image and manipulating the properties of those images. The "ImageDraw" and "ImageFont" modules handled adding text and manipulating the properties of the text. 
+The Pillow package gave me the toolkit for adding and applying watermarks. The "Image" and "ImageTK" modules handled adding an image onto another image and manipulating the properties of those images. The "ImageDraw" and "ImageFont" modules handled adding text and manipulating the properties of the text.
 
 The first thing I needed to do was to create an interface.  The application uses a fullscreen window. I considered allowing the window to be resizable, but ultimately decided against it, as the application works best in full screen, and any dynamic scaling would create potential UI/UX problems.
 
 The canvas is on the left hand side of the window and the tools for manipulating watermarks are on the right. Once the user adds an image to the canvas, the features to add a watermark image or text become active. The user is then able to add a watermark onto the canvas image and can "stamp" the watermark when they wish to apply it. The same can be done with text that the user inputs into the text box.
 
-##### Global values:
+#### Global values:
 
 Maximum height and width for images is set for UI purposes.
 Default values are given for sliders and text font and color to ensure no errors are thrown.
@@ -29,7 +51,7 @@ Default values are given for sliders and text font and color to ensure no errors
 These values are checked whenever a slider is changed, and update when a text watermark or image watermark is added.
 They are important values that allow the sliders to control only the current watermark type and ignore the other.
 
-##### Functions:
+#### Functions:
 
 The "blank_canvas" function will add the default image "canvas.png" onto the interface.
 This sets the maximum dimensions, and any image added onto the canvas will scale to this size.
@@ -62,16 +84,16 @@ Whenever the position(x) slider is adjusted, the function will set the global va
 The "slider_y_changed" function listens for the current selected y value from the position(y) slider.
 Whenever the position(y) slider is adjusted, the function will set the global values for y position and call "watermark_type()" so that the position is changed for only the current watermark being handled (text or image).
 
-The "add_image" function enables to user to open a PNG file to be used as a base image. 
+The "add_image" function enables to user to open a PNG file to be used as a base image.
 Once opened, the image will scale down to the canvas size, if it exceeds it, and will be displayed on the canvas.
-This function is called when the user clicks the "Add Image" button displayed on the top left corner of the interface. 
+This function is called when the user clicks the "Add Image" button displayed on the top left corner of the interface.
 I chose to make this the largest button, as it is required for further use of other features. Without an image, all other features are disabled.
 
 The "add_text" function is called whenever the "adjust_text" function is called.
 The function utilises the Pillow modules ImageFont and ImageDraw to draw text onto the main image on the canvas. It checks for selected font, opacity, size, color and position, and draws text accordingly.
 
-The "add_watermark" function is called when the "Add watermark" button. 
-A pop-up window will allow the user to open a PNG file to use as a watermark. 
+The "add_watermark" function is called when the "Add watermark" button.
+A pop-up window will allow the user to open a PNG file to use as a watermark.
 
 The "adjust_text" function is called when the "Font changed" button is clicked and "reset_wm_sliders()" is called, the text color is changed or the "watermark_type" function is called whilst IS_TXT is True.
 The function sets text font, size, opacity and position, before calling "add_text" and passing in these values.
@@ -125,18 +147,18 @@ The "save_watermark" function is called when the user clicks the bottom "Stamp" 
 It will find the most recently saved temporary file (the current image on the canvas) and save it, allowing the image watermark to be effectively stamped onto the canvas.
 Once stamped, the button will be disabled until another image watermark is created.
 
-##### User Interface:
+#### User Interface:
 
 I chose to create a minimal interface, with as few buttons and sliders as possible, whilst still allowing a range of features.
 The top row of buttons control what goes onto or gets removed from the canvas, and allows the canvas image to be saved at any point.
 
-On the sidebar are the tools to manipulate the image and text watermarks. 
+On the sidebar are the tools to manipulate the image and text watermarks.
 I wanted the tools to feel intuitive, and used labels where only absolutely necessary.
 The position sliders were changed to align horizontally and vertically to make it more visual to the user.
 For this reason I chose not to use numbers on the sliders, as the slider itself physically indicates the axis' positions.
 I added numbers to the opacity and size sliders to better inform users of their impact on the watermark, and to allow users to be aware of these numbers if they wish to replicate the conditions for other watermarks.
 
-On the top of the sidebar are all the text features. 
+On the top of the sidebar are all the text features.
 I chose to bunch them together so choosing a text felt intuitive and the user feels compelled to use them and experiment whilst adding a text watermark.
 The color box was used to give the user visual feedback of their selected color.
 It is set to black by default but will be replaced by a new panel whenever the user updates the color.
