@@ -193,7 +193,7 @@ def add_text(
     draw = ImageDraw.Draw(txt)
     font = ImageFont.load("arial.pil")
 
-    t = text_box.get(1.0, 'end-1c')
+    # t = text_box.get(1.0, 'end-1c')
     draw.text(
         (x_value, y_value), f"{text_box.get(1.0, 'end-1c')}", font=font, fill=new_colors
     )
